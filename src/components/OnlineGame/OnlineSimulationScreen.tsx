@@ -6,11 +6,12 @@ import { useAuth } from '../../contexts/AuthContext';
 import { Button } from '../shared/Button';
 import {
   Player, AtBatResult, PlayLogEntry, GameBoxScore, BatterBoxScore,
-  PitcherBoxScore, TeamBoxScore, InningScore,
+  PitcherBoxScore, TeamBoxScore, InningScore, ParkEffect,
 } from '../../types';
 import { buildAllPlayersMap, hydratePlayerIds } from '../../utils/draftLogic';
 import { calculateEloChange } from '../../utils/eloCalculation';
 import { simulateAtBat, advanceRunners, shouldSubstitutePitcher, selectEmergencyPitcher, findPinchHitter, findPinchRunner } from '../../utils/simulation';
+import { getStadiumEffect, NEUTRAL_PARK } from '../../utils/synergy';
 import { OnlineGameReplay } from './OnlineGameReplay';
 import { SeriesCelebration } from '../Game/SeriesCelebration';
 
@@ -355,6 +356,7 @@ function simulateFullGame(
   homeTeamKey: 'player1' | 'player2',
   awayBench?: Player[],
   homeBench?: Player[],
+  activePark?: ParkEffect,
 ): FullGameData {
   playIdCounter = 0;
 
@@ -476,7 +478,7 @@ function simulateFullGame(
         }
       }
 
-      const result = simulateAtBat(batter, pitcherState.current, undefined, undefined);
+      const result = simulateAtBat(batter, pitcherState.current, undefined, undefined, undefined, undefined, activePark);
       const advance = advanceRunners(result, runners, batter, outs);
 
       // Update batter box score
@@ -845,6 +847,12 @@ function OnlineSimulationInner({ onComplete }: { onComplete: () => void }) {
     let p2Wins = 0;
     const results: { score: [number, number]; winner: string }[] = [];
 
+    // Stadium park effects
+    const p1Roster = hydratePlayerIds(p1RosterIds);
+    const p2Roster = hydratePlayerIds(p2RosterIds);
+    const p1Park = getStadiumEffect(p1Roster) ?? NEUTRAL_PARK;
+    const p2Park = getStadiumEffect(p2Roster) ?? NEUTRAL_PARK;
+
     const p1SeriesLog: SeriesPitcherLog = {};
     const p2SeriesLog: SeriesPitcherLog = {};
 
@@ -862,12 +870,14 @@ function OnlineSimulationInner({ onComplete }: { onComplete: () => void }) {
       const homeStaff = buildGameStaff(homeData.rotation, homeData.bullpen, homeData.closer, game, homeLog, isElim);
       const awayStaff = buildGameStaff(awayData.rotation, awayData.bullpen, awayData.closer, game, awayLog, isElim);
 
+      const homePark = actualHome === 'player1' ? p1Park : p2Park;
       const gameData = simulateFullGame(
         awayData.lineup, homeData.lineup,
         awayStaff, homeStaff,
         actualHome === 'player1' ? 'player2' : 'player1',
         actualHome,
         awayData.bench, homeData.bench,
+        homePark,
       );
 
       // Update pitcher logs
@@ -946,9 +956,17 @@ function OnlineSimulationInner({ onComplete }: { onComplete: () => void }) {
     const p2Setup = phaseData.player2Setup as Record<string, unknown>;
     if (!p1Setup || !p2Setup) return;
 
-    const team1 = buildTeamFromSetup(p1Setup);
-    const team2 = buildTeamFromSetup(p2Setup);
+    const wp1RosterIds = (phaseData.player1Roster as string[]) || [];
+    const wp2RosterIds = (phaseData.player2Roster as string[]) || [];
+    const team1 = buildTeamFromSetup(p1Setup, wp1RosterIds);
+    const team2 = buildTeamFromSetup(p2Setup, wp2RosterIds);
     const homeTeam = (Math.random() < 0.5 ? 'player1' : 'player2') as 'player1' | 'player2';
+
+    // Stadium park effects for watch mode
+    const wp1Roster = hydratePlayerIds(wp1RosterIds);
+    const wp2Roster = hydratePlayerIds(wp2RosterIds);
+    const wp1Park = getStadiumEffect(wp1Roster) ?? NEUTRAL_PARK;
+    const wp2Park = getStadiumEffect(wp2Roster) ?? NEUTRAL_PARK;
 
     let p1Wins = 0;
     let p2Wins = 0;
@@ -981,11 +999,13 @@ function OnlineSimulationInner({ onComplete }: { onComplete: () => void }) {
       const awayStaff = buildGameStaff(awayData.rotation, awayData.bullpen, awayData.closer, game, awayLog, isElim);
 
       // Simulate full game
+      const wHomePark = actualHome === 'player1' ? wp1Park : wp2Park;
       const gameData = simulateFullGame(
         awayData.lineup, homeData.lineup,
         awayStaff, homeStaff,
         actualAway, actualHome,
         awayData.bench, homeData.bench,
+        wHomePark,
       );
 
       // Update pitcher logs

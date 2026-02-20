@@ -12,6 +12,7 @@ import bustedProspectsData from '../data/busted-prospects.json';
 import steroidEraPlayersData from '../data/steroid-era-players.json';
 import internationalPlayersData from '../data/international-players.json';
 import coachesData from '../data/coaches.json';
+import stadiumsData from '../data/stadiums.json';
 
 export const allPlayers: Player[] = playersData as Player[];
 
@@ -44,6 +45,7 @@ export function getPositionCounts(roster: Player[]): Record<Position, number> {
     BC: 0, PH: 0, PR: 0, IFD: 0, OFD: 0,
     SP: 0, CL: 0, SU: 0, MRP: 0, LRP: 0, LOOGY: 0,
     HC: 0,
+    ST: 0,
   };
   roster.forEach(player => {
     if (player.positions.length > 0) {
@@ -147,11 +149,12 @@ export function getDraftRoundType(pickNumber: number): DraftRoundType {
   if (roundNumber === 24) return 'auction';
   if (roundNumber === 25) return 'steroid_era';
   if (roundNumber === 26) return 'international';
+  if (roundNumber === 27) return 'stadium';
   return 'normal';
 }
 
 /**
- * Quick Play: compressed 13-round draft with fewer special rounds.
+ * Quick Play: compressed draft with fewer special rounds.
  */
 export function getDraftRoundTypeQuick(pickNumber: number): DraftRoundType {
   const roundNumber = Math.ceil(pickNumber / 2);
@@ -161,6 +164,7 @@ export function getDraftRoundTypeQuick(pickNumber: number): DraftRoundType {
   if (roundNumber === 8) return 'coach';
   if (roundNumber === 10) return 'peak';
   if (roundNumber === 12) return 'fictional';
+  if (roundNumber === 13) return 'stadium';
   return 'normal';
 }
 
@@ -199,6 +203,7 @@ export function getSpecialPlayerPool(roundType: DraftRoundType): SpecialPlayer[]
     case 'steroid_era': return steroidEraPlayersData as SpecialPlayer[];
     case 'international': return internationalPlayersData as SpecialPlayer[];
     case 'coach': return coachesData as SpecialPlayer[];
+    case 'stadium': return stadiumsData as SpecialPlayer[];
     default: return [];
   }
 }
@@ -476,6 +481,7 @@ export function buildAllPlayersMap(): Map<string, Player> {
     steroidEraPlayersData as Player[],
     internationalPlayersData as Player[],
     coachesData as Player[],
+    stadiumsData as Player[],
   ];
 
   for (const source of allSources) {

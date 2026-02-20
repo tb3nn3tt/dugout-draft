@@ -102,6 +102,12 @@ const ROUND_CONFIG: Record<DraftRoundType, {
     icon: '📋',
     color: '#2c3e50',
   },
+  stadium: {
+    title: 'STADIUM ROUND',
+    subtitle: 'Choose Your Home Field',
+    icon: '🏟️',
+    color: '#1a5276',
+  },
 };
 
 export function SpecialRoundBanner({ roundType, roundNumber }: SpecialRoundBannerProps) {
@@ -149,6 +155,7 @@ export function getRoundType(pickNumber: number): DraftRoundType {
   if (roundNumber === 24) return 'auction';
   if (roundNumber === 25) return 'steroid_era';
   if (roundNumber === 26) return 'international';
+  if (roundNumber === 27) return 'stadium';
 
   return 'normal';
 }

@@ -16,6 +16,7 @@ export const SET_DEFINITIONS: { name: string; category: PlayerCategory | 'curren
   { name: 'Busted Prospects', category: 'busts', icon: '💔', color: '#dc2626', completionBonus: 200 },
   { name: 'Tainted Legends', category: 'oddity', icon: '💪', color: '#ff1744', completionBonus: 200 },
   { name: 'International Legends', category: 'international', icon: '🌍', color: '#00acc1', completionBonus: 200 },
+  { name: 'Ballparks', category: 'stadium', icon: '🏟️', color: '#1a5276', completionBonus: 300 },
 ];
 
 // Pack config — generous sizes for satisfying pulls

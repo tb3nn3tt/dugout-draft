@@ -6,7 +6,7 @@ import {
   getBenchPlayers, findPinchHitter, findPinchRunner,
 } from '../utils/simulation';
 import { Player, GameBoxScore, GameResult, GameState } from '../types';
-import { getActiveSynergies, calculateStatBoosts, getCoachBoosts } from '../utils/synergy';
+import { getActiveSynergies, calculateStatBoosts, getCoachBoosts, getStadiumEffect, NEUTRAL_PARK } from '../utils/synergy';
 import {
   MomentumState, BatterStreakMap,
   createInitialMomentum, updateMomentum, resetHalfInningMomentum,
@@ -103,6 +103,10 @@ export function useSeriesSimulation() {
     const awayCoach = getCoachBoosts(awayTeam.roster);
     const homeCoach = getCoachBoosts(homeTeamData.roster);
 
+    // Active park = home team's stadium
+    const homeStadiumEffect = getStadiumEffect(homeTeamData.roster);
+    const activePark = homeStadiumEffect ?? NEUTRAL_PARK;
+
     // Helper to simulate a half inning
     const simulateHalfInning = (
       battingTeam: typeof team1,
@@ -172,7 +176,7 @@ export function useSeriesSimulation() {
           momentum: teamMomentum,
           clutchBoost: clutchBoostVal,
           streakModifier: streakMod,
-        }, batterCoachEff, pitcherCoachEff);
+        }, batterCoachEff, pitcherCoachEff, activePark);
         const pitchesThrown = Math.floor(Math.random() * 4) + 2;
         currentPitchCount += pitchesThrown;
 

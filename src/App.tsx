@@ -522,6 +522,7 @@ function SimulationScreen({ onOpenPacks }: { onOpenPacks: () => void }) {
     team2Synergies,
     currentMatchup,
     userPlayerIds,
+    activeStadiumName,
     team1,
     team2,
   } = useSimulation();
@@ -731,6 +732,7 @@ function SimulationScreen({ onOpenPacks }: { onOpenPacks: () => void }) {
                   gameState={currentGame}
                   awayTeamName={teamNames.away}
                   homeTeamName={teamNames.home}
+                  stadiumName={activeStadiumName ?? undefined}
                 />
               </div>
 

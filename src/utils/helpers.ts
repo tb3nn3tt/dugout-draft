@@ -52,6 +52,7 @@ export function getPositionColor(position: Position): string {
     LRP: '#a04000',
     LOOGY: '#6c3483',
     HC: '#2c3e50',
+    ST: '#1a5276',
   };
   return colors[position] || '#95a5a6';
 }
@@ -79,6 +80,7 @@ export function getPositionLabel(position: Position): string {
     LRP: 'Long Relief',
     LOOGY: 'LOOGY',
     HC: 'Head Coach',
+    ST: 'Stadium',
   };
   return labels[position] || position;
 }
@@ -109,11 +111,15 @@ export function isPitcher(player: Player): boolean {
 }
 
 export function isHitter(player: Player): boolean {
-  return !isPitcher(player) && !player.positions.includes('HC' as Position);
+  return !isPitcher(player) && !player.positions.includes('HC' as Position) && !player.positions.includes('ST' as Position);
 }
 
 export function isCoach(player: Player): boolean {
   return player.positions.includes('HC' as Position);
+}
+
+export function isStadium(player: Player): boolean {
+  return player.positions.includes('ST' as Position);
 }
 
 export function canPlayPosition(player: Player, position: Position): boolean {
@@ -144,7 +150,7 @@ export function getRosterNeeds(roster: Player[]): Position[] {
     LF: 0, CF: 0, RF: 0, DH: 0,
     BC: 0, PH: 0, PR: 0, IFD: 0, OFD: 0,
     SP: 0, CL: 0, SU: 0, MRP: 0, LRP: 0, LOOGY: 0,
-    HC: 0,
+    HC: 0, ST: 0,
   };
 
   roster.forEach(player => {
@@ -275,6 +281,7 @@ export function getCategoryBadge(category?: string): string {
     case 'playoff': return '🏟️';
     case 'busts': return '💔';
     case 'coach': return '📋';
+    case 'stadium': return '🏟️';
     case 'current': return '';
     default: return '';
   }

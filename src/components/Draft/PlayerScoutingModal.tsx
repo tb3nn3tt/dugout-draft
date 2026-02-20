@@ -1,5 +1,5 @@
 import { Player } from '../../types';
-import { getOverallRating, isPitcher, getSpecialtyBadge, getCategoryBadge, gradeToLetter, getGradeColor } from '../../utils/helpers';
+import { getOverallRating, isPitcher, isStadium, getSpecialtyBadge, getCategoryBadge, gradeToLetter, getGradeColor } from '../../utils/helpers';
 import { inferGradesFromStats } from '../../utils/simulation';
 import { ScoutingBars } from './ScoutingBars';
 import './PlayerScoutingModal.css';
@@ -186,6 +186,56 @@ function CoachEffectView({ player }: { player: Player }) {
   );
 }
 
+function StadiumEffectView({ player }: { player: Player }) {
+  const effect = player.parkEffect;
+  if (!effect) return null;
+
+  const formatFactor = (v: number) => {
+    if (v > 1) return `+${Math.round((v - 1) * 100)}%`;
+    if (v < 1) return `${Math.round((v - 1) * 100)}%`;
+    return 'Neutral';
+  };
+
+  const getBarColor = (v: number) => {
+    if (v >= 1.15) return '#e74c3c';
+    if (v >= 1.05) return '#f39c12';
+    if (v > 0.95) return '#2ecc71';
+    if (v > 0.85) return '#3498db';
+    return '#8e44ad';
+  };
+
+  const bars = [
+    { label: 'Home Runs', value: effect.hrFactor, icon: '💣' },
+    { label: 'Doubles', value: effect.doublesFactor, icon: '2️⃣' },
+    { label: 'Triples', value: effect.triplesFactor, icon: '3️⃣' },
+    { label: 'Run Scoring', value: effect.runFactor, icon: '🏃' },
+    { label: 'Errors', value: effect.errorFactor, icon: '❌' },
+  ];
+
+  return (
+    <div style={{ padding: '0 16px' }}>
+      <div style={{ color: '#1a5276', fontWeight: 700, fontSize: '1.1rem', marginBottom: 12, textAlign: 'center' }}>
+        {effect.name}
+      </div>
+      {bars.map(bar => {
+        // Map factor to a bar width: 0.80 → 0%, 1.0 → 50%, 1.30 → 100%
+        const pct = Math.max(0, Math.min(100, ((bar.value - 0.80) / 0.50) * 100));
+        return (
+          <div key={bar.label} style={{ display: 'flex', alignItems: 'center', marginBottom: 8, gap: 8 }}>
+            <span style={{ width: 80, textAlign: 'right', color: '#bdc3c7', fontSize: '0.85rem' }}>{bar.icon} {bar.label}</span>
+            <div style={{ flex: 1, height: 8, background: 'rgba(255,255,255,0.1)', borderRadius: 4, overflow: 'hidden', position: 'relative' }}>
+              {/* Center marker for neutral (1.0) */}
+              <div style={{ position: 'absolute', left: '40%', top: 0, width: 1, height: '100%', background: 'rgba(255,255,255,0.3)' }} />
+              <div style={{ width: `${pct}%`, height: '100%', background: getBarColor(bar.value), borderRadius: 4 }} />
+            </div>
+            <span style={{ width: 50, color: getBarColor(bar.value), fontSize: '0.85rem', fontWeight: 600 }}>{formatFactor(bar.value)}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export function PlayerScoutingModal({ player, onDraft, onClose }: PlayerScoutingModalProps) {
   const rating = getOverallRating(player.overall);
   const specialty = getSpecialtyBadge(player);
@@ -194,6 +244,7 @@ export function PlayerScoutingModal({ player, onDraft, onClose }: PlayerScouting
   const grades = player.grades ?? inferGradesFromStats(player);
   const pitcher = isPitcher(player);
   const isCoach = player.positions.includes('HC' as any);
+  const isStadiumCard = isStadium(player);
 
   // Key grades for the quick stats row
   const keyGrades = pitcher
@@ -215,9 +266,9 @@ export function PlayerScoutingModal({ player, onDraft, onClose }: PlayerScouting
     <div className="scouting-modal-overlay" onClick={onClose}>
       <div className="scouting-modal" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
-        <div className="scouting-header" style={{ borderColor: isCoach ? '#2c3e50' : rating.color }}>
-          <div className="scouting-overall" style={{ backgroundColor: isCoach ? '#2c3e50' : rating.color }}>
-            {isCoach ? '📋' : player.overall}
+        <div className="scouting-header" style={{ borderColor: isCoach ? '#2c3e50' : isStadiumCard ? '#1a5276' : rating.color }}>
+          <div className="scouting-overall" style={{ backgroundColor: isCoach ? '#2c3e50' : isStadiumCard ? '#1a5276' : rating.color }}>
+            {isCoach ? '📋' : isStadiumCard ? '🏟️' : player.overall}
           </div>
           <div className="scouting-info">
             <div className="scouting-name">
@@ -228,17 +279,20 @@ export function PlayerScoutingModal({ player, onDraft, onClose }: PlayerScouting
               <div className="scouting-nickname">"{player.nickname}"</div>
             )}
             <div className="scouting-meta">
-              <span className="scouting-pos">{isCoach ? 'Head Coach' : player.positions.join('/')}</span>
+              <span className="scouting-pos">{isCoach ? 'Head Coach' : isStadiumCard ? 'Stadium' : player.positions.join('/')}</span>
               <span className="scouting-team">{player.team}</span>
               {player.era && <span className="scouting-era">{player.era}</span>}
             </div>
           </div>
-          <div className="scouting-tier" style={{ color: isCoach ? '#f39c12' : rating.color }}>
-            {isCoach ? 'Coach' : rating.label}
+          <div className="scouting-tier" style={{ color: isCoach ? '#f39c12' : isStadiumCard ? '#1a5276' : rating.color }}>
+            {isCoach ? 'Coach' : isStadiumCard ? 'Stadium' : rating.label}
           </div>
         </div>
 
-        {isCoach ? (
+        {isStadiumCard ? (
+          /* Stadium-specific content */
+          <StadiumEffectView player={player} />
+        ) : isCoach ? (
           /* Coach-specific content */
           <CoachEffectView player={player} />
         ) : (
@@ -287,7 +341,7 @@ export function PlayerScoutingModal({ player, onDraft, onClose }: PlayerScouting
         {/* Actions */}
         <div className="scouting-actions">
           <button className="scouting-btn draft" onClick={onDraft}>
-            {isCoach ? 'Hire This Coach' : 'Draft This Player'}
+            {isStadiumCard ? 'Select This Stadium' : isCoach ? 'Hire This Coach' : 'Draft This Player'}
           </button>
           <button className="scouting-btn close" onClick={onClose}>
             Close

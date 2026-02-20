@@ -133,6 +133,7 @@ function getSpecialCardClass(roundType: DraftRoundType): string {
     case 'busts': return 'busts-card';
     case 'mystery': return 'mystery-card';
     case 'coach': return 'coach-card';
+    case 'stadium': return 'stadium-card';
     default: return '';
   }
 }
@@ -149,10 +150,44 @@ function getSpecialBadge(roundType: DraftRoundType): string {
     case 'one_year_wonders': return '⚡';
     case 'mystery': return '❓';
     case 'coach': return '📋';
+    case 'stadium': return '🏟️';
     default: return '';
   }
 }
 
+function StadiumEffectBars({ player }: { player: Player }) {
+  const effect = player.parkEffect;
+  if (!effect) return null;
+
+  const items = [
+    { label: 'HR', value: effect.hrFactor, max: 1.25 },
+    { label: '2B', value: effect.doublesFactor, max: 1.20 },
+    { label: '3B', value: effect.triplesFactor, max: 1.30 },
+    { label: 'RUN', value: effect.runFactor, max: 1.15 },
+    { label: 'ERR', value: effect.errorFactor, max: 1.15 },
+  ].filter(b => b.value !== 1.0); // Only show non-neutral factors
+
+  if (items.length === 0) {
+    return <div className="coach-effect-style">Neutral Park</div>;
+  }
+
+  return (
+    <div className="coach-effect-bars">
+      {items.map(bar => {
+        const pct = Math.max(0, Math.min(100, ((bar.value - 0.80) / (bar.max - 0.80)) * 100));
+        const color = bar.value > 1.0 ? '#e74c3c' : '#3498db';
+        return (
+          <div key={bar.label} className="coach-bar">
+            <span className="coach-bar-label">{bar.label}</span>
+            <div className="coach-bar-track">
+              <div className="coach-bar-fill" style={{ width: `${pct}%`, background: color }} />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export function CardPool({ playerNames }: { playerNames?: { player1: string; player2: string } }) {
   const { cardPool, currentPick, pickNumber, pickPlayer, progress, neededPositions, currentTeam, mustFillNeed } = useDraft();
@@ -503,18 +538,20 @@ export function CardPool({ playerNames }: { playerNames?: { player1: string; pla
     timer,
   );
 
-  // Cards blocked during coach round (would break 1-coach-per-team rule)
-  const COACH_BLOCKED_CARDS: string[] = ['double_pick', 'skip_turn', 'upgrade_tier', 'sabotage'];
+  // Cards blocked during coach/stadium round (would break 1-per-team rule)
+  const SPECIAL_BLOCKED_CARDS: string[] = ['double_pick', 'skip_turn', 'upgrade_tier', 'sabotage'];
   const isCoachRound = roundType === 'coach';
+  const isStadiumRound = roundType === 'stadium';
+  const isSpecialOnePerTeamRound = isCoachRound || isStadiumRound;
 
   const handleUseCard = (card: PowerCard) => {
-    if (isCoachRound && COACH_BLOCKED_CARDS.includes(card.type)) return;
+    if (isSpecialOnePerTeamRound && SPECIAL_BLOCKED_CARDS.includes(card.type)) return;
     setPreviewCard(card);
   };
 
   const confirmUseCard = () => {
     if (!previewCard) return;
-    if (isCoachRound && COACH_BLOCKED_CARDS.includes(previewCard.type)) return;
+    if (isSpecialOnePerTeamRound && SPECIAL_BLOCKED_CARDS.includes(previewCard.type)) return;
     // Show announcement briefly, then dispatch the card effect
     setPowerCardAnnouncement({ card: previewCard, player: currentPick });
     dispatchCardEffect(previewCard, currentPick);
@@ -763,8 +800,13 @@ export function CardPool({ playerNames }: { playerNames?: { player1: string; pla
                   {isCoachRound && player.coachEffect && (
                     <div className="coach-effect-style">{player.coachEffect.style}</div>
                   )}
+                  {isStadiumRound && player.parkEffect && (
+                    <div className="coach-effect-style">{player.parkEffect.name}</div>
+                  )}
                 </div>
-                {isCoachRound && player.coachEffect ? (
+                {isStadiumRound && player.parkEffect ? (
+                  <StadiumEffectBars player={player} />
+                ) : isCoachRound && player.coachEffect ? (
                   <div className="coach-effect-bars">
                     {player.coachEffect.offensiveBonus > 0 && (
                       <div className="coach-bar">
@@ -820,7 +862,7 @@ export function CardPool({ playerNames }: { playerNames?: { player1: string; pla
                     <ScoutingBars player={player} compact />
                   </div>
                 ) : null}
-                {!isCoachRound && (isMystery ? (
+                {!isCoachRound && !isStadiumRound && (isMystery ? (
                   <MysteryStats player={player} />
                 ) : (
                   <CompactStats player={player} />
@@ -860,7 +902,7 @@ export function CardPool({ playerNames }: { playerNames?: { player1: string; pla
         <StealPlayerModal
           title="Steal a Player"
           description="Choose a player to steal from your opponent"
-          opponentRoster={opponentRoster.filter(p => !p.positions.includes('HC'))}
+          opponentRoster={opponentRoster.filter(p => !p.positions.includes('HC') && !p.positions.includes('ST'))}
           onSelect={(player) => {
             dispatch({ type: 'STEAL_PLAYER', fromPlayer: currentPick === 'player1' ? 'player2' : 'player1', playerId: player.id });
             setShowStealModal(false);
@@ -873,8 +915,8 @@ export function CardPool({ playerNames }: { playerNames?: { player1: string; pla
         <TradePickModal
           title="Trade Deadline"
           description="Swap one of your players with one from your opponent"
-          yourRoster={currentTeam.roster.filter(p => !p.positions.includes('HC'))}
-          opponentRoster={opponentRoster.filter(p => !p.positions.includes('HC'))}
+          yourRoster={currentTeam.roster.filter(p => !p.positions.includes('HC') && !p.positions.includes('ST'))}
+          opponentRoster={opponentRoster.filter(p => !p.positions.includes('HC') && !p.positions.includes('ST'))}
           onTrade={(myPlayer, theirPlayer) => {
             dispatch({
               type: 'TRADE_PLAYERS',

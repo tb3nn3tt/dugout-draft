@@ -1,4 +1,4 @@
-import { Player, AtBatResult, StatBoost, ScoutingGrades, CoachEffect } from '../types';
+import { Player, AtBatResult, StatBoost, ScoutingGrades, CoachEffect, ParkEffect } from '../types';
 
 export interface SimulationModifiers {
   momentum?: number;       // 0-100, batter's team momentum
@@ -99,7 +99,8 @@ export function simulateAtBat(
   statBoost?: StatBoost,
   modifiers?: SimulationModifiers,
   batterCoach?: CoachEffect | null,
-  pitcherCoach?: CoachEffect | null
+  pitcherCoach?: CoachEffect | null,
+  parkEffect?: ParkEffect | null
 ): AtBatResult {
   // Get scouting grades (use explicit grades or infer from stats)
   const batterGrades = batter.grades ?? inferGradesFromStats(batter);
@@ -164,7 +165,9 @@ export function simulateAtBat(
   // Pitcher effectiveness reduces BABIP (coaching fielding bonus also reduces BABIP)
   const pitcherEffectiveness = gradeToMultiplier((fastball + breaking + control) / 3);
   const fieldingReduction = 1 + (coachFielding * 0.005); // 5 fielding pts → ~2.5% BABIP reduction
-  const effectiveBabip = babip / (pitcherEffectiveness * fieldingReduction);
+  // Park effect: runFactor adjusts overall BABIP
+  const parkRunFactor = parkEffect?.runFactor ?? 1.0;
+  const effectiveBabip = (babip * parkRunFactor) / (pitcherEffectiveness * fieldingReduction);
 
   // === OUTCOME DETERMINATION ===
   const roll = Math.random();
@@ -186,21 +189,31 @@ export function simulateAtBat(
     const powerMod = gradeToMultiplier(power);
     const typeRoll = Math.random();
 
-    // Home run: Based on power grade
+    // Home run: Based on power grade, modified by park hrFactor
     // 80 power = ~12% HR rate, 50 power = ~4%, 20 power = ~1%
-    const hrRate = Math.min(0.15, Math.max(0.01, 0.04 * powerMod));
+    const parkHR = parkEffect?.hrFactor ?? 1.0;
+    const hrRate = Math.min(0.18, Math.max(0.01, 0.04 * powerMod * parkHR));
     if (typeRoll < hrRate) return 'homerun';
 
-    // Triple: Based on speed grade
-    const tripleRate = Math.min(0.05, Math.max(0.005, 0.02 * gradeToMultiplier(speed)));
+    // Triple: Based on speed grade, modified by park triplesFactor
+    const parkTriple = parkEffect?.triplesFactor ?? 1.0;
+    const tripleRate = Math.min(0.06, Math.max(0.005, 0.02 * gradeToMultiplier(speed) * parkTriple));
     if (typeRoll < hrRate + tripleRate) return 'triple';
 
-    // Double: Based on power + speed
-    const doubleRate = Math.min(0.30, Math.max(0.12, 0.18 * (powerMod * 0.7 + speedMod * 0.3)));
+    // Double: Based on power + speed, modified by park doublesFactor
+    const parkDouble = parkEffect?.doublesFactor ?? 1.0;
+    const doubleRate = Math.min(0.35, Math.max(0.10, 0.18 * (powerMod * 0.7 + speedMod * 0.3) * parkDouble));
     if (typeRoll < hrRate + tripleRate + doubleRate) return 'double';
 
     // Single: remainder
     return 'single';
+  }
+
+  // Reached on error: park errorFactor creates a chance that an out converts to a single
+  const parkError = parkEffect?.errorFactor ?? 1.0;
+  const errorChance = Math.max(0, (parkError - 1.0) * 0.5); // errorFactor 1.15 → ~7.5% chance
+  if (errorChance > 0 && Math.random() < errorChance) {
+    return 'single'; // reached on error → treated as a single
   }
 
   // Out on contact - determine type
@@ -623,6 +636,21 @@ export function findBackupCatcher(
   if (!startingC) return null;
 
   return { sub: bc, replacedId: startingC.id };
+}
+
+/**
+ * Determine which team is "home" for a given game in a 2-3-2 series format.
+ * Games 1,2,6,7 = higher seed (player1) home; Games 3,4,5 = away team (player2) home.
+ */
+export function getHomeTeamForGame(
+  gameNumber: number,
+  higherSeed: 'player1' | 'player2' = 'player1'
+): 'player1' | 'player2' {
+  const higherSeedHome = [1, 2, 6, 7];
+  if (higherSeedHome.includes(gameNumber)) {
+    return higherSeed;
+  }
+  return higherSeed === 'player1' ? 'player2' : 'player1';
 }
 
 export function getGameSituation(gameState: {

@@ -73,6 +73,11 @@ const ROUND_INFO: Record<string, { icon: string; name: string; description: stri
     name: 'Coach Round',
     description: 'Draft a Head Coach for your team! Each coach brings unique bonuses to your roster throughout the World Series.',
   },
+  stadium: {
+    icon: '🏟️',
+    name: 'Stadium Round',
+    description: 'Pick your home stadium! Park effects shape home games — Coors Field boosts homers, Oracle Park suppresses them. In the World Series, your park hosts games 1, 2, 6, and 7.',
+  },
 };
 
 const STORAGE_KEY = 'dugout-draft-seen-rounds';

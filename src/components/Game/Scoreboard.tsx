@@ -5,13 +5,17 @@ interface ScoreboardProps {
   gameState: GameState;
   awayTeamName: string;
   homeTeamName: string;
+  stadiumName?: string;
 }
 
-export function Scoreboard({ gameState, awayTeamName, homeTeamName }: ScoreboardProps) {
+export function Scoreboard({ gameState, awayTeamName, homeTeamName, stadiumName }: ScoreboardProps) {
   const { inning, halfInning, outs, runners, score } = gameState;
 
   return (
     <div className="scoreboard">
+      {stadiumName && (
+        <div className="scoreboard-stadium">@ {stadiumName}</div>
+      )}
       <div className="scoreboard-main">
         <div className="team-row away">
           <span className="team-name">{awayTeamName}</span>

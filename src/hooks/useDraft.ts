@@ -17,7 +17,7 @@ export function useDraft() {
       LF: 0, CF: 0, RF: 0, DH: 0,
       BC: 0, PH: 0, PR: 0, IFD: 0, OFD: 0,
       SP: 0, CL: 0, SU: 0, MRP: 0, LRP: 0, LOOGY: 0,
-      HC: 0,
+      HC: 0, ST: 0,
     };
 
     currentTeam.roster.forEach(player => {
@@ -37,7 +37,7 @@ export function useDraft() {
       LF: false, CF: false, RF: false, DH: false,
       BC: false, PH: false, PR: false, IFD: false, OFD: false,
       SP: false, CL: false, SU: false, MRP: false, LRP: false, LOOGY: false,
-      HC: false,
+      HC: false, ST: false,
     };
 
     (Object.keys(reqs) as Position[]).forEach(pos => {

@@ -2,7 +2,8 @@ export type Position =
   | 'C' | '1B' | '2B' | '3B' | 'SS' | 'LF' | 'CF' | 'RF' | 'DH'
   | 'BC' | 'PH' | 'PR' | 'IFD' | 'OFD'
   | 'SP' | 'CL' | 'SU' | 'MRP' | 'LRP' | 'LOOGY'
-  | 'HC';
+  | 'HC'
+  | 'ST';
 
 export type HandBat = 'L' | 'R' | 'S';
 export type HandThrow = 'L' | 'R';
@@ -60,6 +61,15 @@ export interface CoachEffect {
   fieldingBonus: number;   // 0-5 grade points to fielding
 }
 
+export interface ParkEffect {
+  name: string;           // "Short Porch Power", "Green Monster Haven"
+  hrFactor: number;       // 0.80-1.25 (multiplier on HR rate)
+  doublesFactor: number;  // 0.85-1.20 (multiplier on doubles rate)
+  triplesFactor: number;  // 0.80-1.30 (multiplier on triples rate)
+  runFactor: number;      // 0.90-1.15 (multiplier on overall BABIP)
+  errorFactor: number;    // 0.90-1.15 (multiplier on error chance)
+}
+
 export interface Player {
   id: string;
   name: string;
@@ -76,6 +86,7 @@ export interface Player {
   specialty?: string;        // Specialty (e.g., "5-Tool", "Power Arm", "Speedster")
   funFact?: string;          // Fun fact about the player
   coachEffect?: CoachEffect; // Coaching bonuses (HC only)
+  parkEffect?: ParkEffect;   // Park effect bonuses (ST only)
 }
 
 export interface DraftedTeam {
@@ -202,11 +213,12 @@ export interface RosterRequirements {
   LRP: number;
   LOOGY: number;
   HC: number;
+  ST: number;
 }
 
 // 15 Hitters: 9 starters (C, 1B, 2B, 3B, SS, LF, CF, RF, DH) + 6 bench (BC, PH×2, PR, IFD, OFD)
 // 11 Pitchers: 4 SP, 1 CL, 2 SU, 2 MRP, 1 LRP, 1 LOOGY
-// 1 Head Coach
+// 1 Head Coach + 1 Stadium
 export const ROSTER_REQUIREMENTS: RosterRequirements = {
   C: 1,
   '1B': 1,
@@ -229,14 +241,15 @@ export const ROSTER_REQUIREMENTS: RosterRequirements = {
   LRP: 1,
   LOOGY: 1,
   HC: 1,
+  ST: 1,
 };
 
-export const TOTAL_ROSTER_SIZE = 27;
+export const TOTAL_ROSTER_SIZE = 28;
 
 // Quick Play mode: 13 players (9 hitters + 4 pitchers), single game
 export type GameMode = 'standard' | 'quick';
 
-export const QUICK_ROSTER_SIZE = 14;
+export const QUICK_ROSTER_SIZE = 15;
 
 export const QUICK_ROSTER_REQUIREMENTS: Partial<RosterRequirements> = {
   C: 1,
@@ -252,6 +265,7 @@ export const QUICK_ROSTER_REQUIREMENTS: Partial<RosterRequirements> = {
   CL: 1,
   MRP: 1,
   HC: 1,
+  ST: 1,
 };
 
 // Synergy Types
@@ -276,9 +290,9 @@ export interface StatBoost {
 }
 
 // Special Player Categories
-export type PlayerCategory = 'current' | 'legend' | 'peak' | 'fictional' | 'oddity' | 'niners' | 'decade' | 'playoff' | 'busts' | 'international' | 'coach';
+export type PlayerCategory = 'current' | 'legend' | 'peak' | 'fictional' | 'oddity' | 'niners' | 'decade' | 'playoff' | 'busts' | 'international' | 'coach' | 'stadium';
 
-export type DraftRoundType = 'normal' | 'legends' | 'peak' | 'fictional' | 'niners' | 'decade_classic' | 'decade_modern' | 'playoff_heroes' | 'one_year_wonders' | 'busts' | 'mystery' | 'auction' | 'steroid_era' | 'international' | 'coach';
+export type DraftRoundType = 'normal' | 'legends' | 'peak' | 'fictional' | 'niners' | 'decade_classic' | 'decade_modern' | 'playoff_heroes' | 'one_year_wonders' | 'busts' | 'mystery' | 'auction' | 'steroid_era' | 'international' | 'coach' | 'stadium';
 
 export interface AuctionState {
   elitePlayer: Player;

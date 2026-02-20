@@ -7,8 +7,8 @@ const SCARCE_POSITIONS: Position[] = ['C', 'SS', 'CL'];
 // Safe power cards the CPU can use (disruptive ones need complex UI interactions)
 const CPU_SAFE_CARDS = ['shuffle_deck', 'upgrade_tier', 'double_pick', 'peek_ahead', 'sabotage', 'immunity'];
 
-// Cards blocked during coach round (would break 1-coach-per-team rule)
-const COACH_BLOCKED_CARDS = ['double_pick', 'skip_turn', 'upgrade_tier', 'sabotage'];
+// Cards blocked during coach/stadium round (would break 1-per-team rule)
+const SPECIAL_ROUND_BLOCKED_CARDS = ['double_pick', 'skip_turn', 'upgrade_tier', 'sabotage'];
 
 // Get positions still needed by a roster
 function getNeededPositions(roster: Player[]): Position[] {
@@ -126,9 +126,9 @@ export function shouldUsePowerCard(
   // Only consider safe cards the CPU can handle
   let usableCards = hand.filter(c => !c.used && CPU_SAFE_CARDS.includes(c.type));
 
-  // Block certain cards during coach round
-  if (roundType === 'coach') {
-    usableCards = usableCards.filter(c => !COACH_BLOCKED_CARDS.includes(c.type));
+  // Block certain cards during coach/stadium round
+  if (roundType === 'coach' || roundType === 'stadium') {
+    usableCards = usableCards.filter(c => !SPECIAL_ROUND_BLOCKED_CARDS.includes(c.type));
   }
 
   // Block double_pick when snake draft already gives back-to-back turns

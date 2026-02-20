@@ -7,7 +7,7 @@ import {
   findPinchRunner as sharedFindPinchRunner, findDefensiveSub, findBackupCatcher,
 } from '../utils/simulation';
 import { AtBatResult, GameBoxScore, ActiveSynergies, PlayLogEntry, CurrentMatchup, Player, DraftedTeam } from '../types';
-import { getActiveSynergies, calculateStatBoosts, getCoachBoosts } from '../utils/synergy';
+import { getActiveSynergies, calculateStatBoosts, getCoachBoosts, getStadiumEffect, NEUTRAL_PARK } from '../utils/synergy';
 import { getPlayType } from '../utils/gameNarrative';
 import {
   MomentumState, BatterStreakMap,
@@ -112,6 +112,10 @@ export function useSimulation() {
   // Coach effects for both teams
   const team1Coach = useMemo(() => getCoachBoosts(state.team1.roster), [state.team1.roster]);
   const team2Coach = useMemo(() => getCoachBoosts(state.team2.roster), [state.team2.roster]);
+
+  // Stadium effects for both teams
+  const team1Stadium = useMemo(() => getStadiumEffect(state.team1.roster), [state.team1.roster]);
+  const team2Stadium = useMemo(() => getStadiumEffect(state.team2.roster), [state.team2.roster]);
 
   const startSeries = useCallback(() => {
     dispatch({ type: 'START_SERIES' });
@@ -262,6 +266,10 @@ export function useSimulation() {
     const simActualHome = simIsHomeGame
       ? state.series.homeTeam
       : (state.series.homeTeam === 'player1' ? 'player2' : 'player1');
+    // Active park = home team's stadium
+    const activePark = simActualHome === 'player1'
+      ? (team1Stadium ?? NEUTRAL_PARK)
+      : (team2Stadium ?? NEUTRAL_PARK);
     const battingTeamOwner = isAwayBatting
       ? (simActualHome === 'player1' ? 'player2' : 'player1')
       : simActualHome;
@@ -345,7 +353,7 @@ export function useSimulation() {
         momentum: teamMomentum,
         clutchBoost: clutchBoostVal,
         streakModifier: streakMod,
-      }, batterCoachEffect, pitcherCoachEffect);
+      }, batterCoachEffect, pitcherCoachEffect, activePark);
       const pitchesThrown = Math.floor(Math.random() * 4) + 2;
       pitchCount += pitchesThrown;
 
@@ -634,7 +642,7 @@ export function useSimulation() {
         lineScore,
       },
     });
-  }, [state.currentGame, state.series, getTeamForHalf, getPitchingTeamForHalf, dispatch, team1Synergies, team2Synergies, team1Coach, team2Coach]);
+  }, [state.currentGame, state.series, getTeamForHalf, getPitchingTeamForHalf, dispatch, team1Synergies, team2Synergies, team1Coach, team2Coach, team1Stadium, team2Stadium]);
 
   const simulateFullGame = useCallback(() => {
     if (!state.series) return;
@@ -713,6 +721,18 @@ export function useSimulation() {
     return ids;
   }, [state.team1.roster]);
 
+  // Active stadium name for scoreboard display
+  const activeStadiumName = useMemo(() => {
+    if (!state.series) return team1Stadium?.name ?? null;
+    const gameNum = state.series.games.length + 1;
+    const isHomeGame = [1, 2, 6, 7].includes(gameNum);
+    const actualHome = isHomeGame
+      ? state.series.homeTeam
+      : (state.series.homeTeam === 'player1' ? 'player2' : 'player1');
+    const park = actualHome === 'player1' ? team1Stadium : team2Stadium;
+    return park?.name ?? null;
+  }, [state.series, team1Stadium, team2Stadium]);
+
   return {
     startSeries,
     startGame,
@@ -729,6 +749,7 @@ export function useSimulation() {
     team2Synergies,
     currentMatchup,
     userPlayerIds,
+    activeStadiumName,
     team1: state.team1,
     team2: state.team2,
   };

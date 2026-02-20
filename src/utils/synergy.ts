@@ -1,4 +1,4 @@
-import { Player, DraftedTeam, SynergyBonus, ActiveSynergies, StatBoost, CoachEffect } from '../types';
+import { Player, DraftedTeam, SynergyBonus, ActiveSynergies, StatBoost, CoachEffect, ParkEffect } from '../types';
 
 const TEAM_SYNERGY_THRESHOLD = 5;
 const TEAM_SYNERGY_BONUS = 3; // 3% bonus
@@ -92,6 +92,24 @@ export function playerHasTeamSynergy(
 export function getCoachBoosts(roster: Player[]): CoachEffect | null {
   const coach = roster.find(p => p.positions.includes('HC' as any));
   return coach?.coachEffect ?? null;
+}
+
+/** Neutral park effect (all factors = 1.0) for when no stadium is drafted. */
+export const NEUTRAL_PARK: ParkEffect = {
+  name: 'Neutral Park',
+  hrFactor: 1.0,
+  doublesFactor: 1.0,
+  triplesFactor: 1.0,
+  runFactor: 1.0,
+  errorFactor: 1.0,
+};
+
+/**
+ * Extract the stadium's park effect from a roster.
+ */
+export function getStadiumEffect(roster: Player[]): ParkEffect | null {
+  const stadium = roster.find(p => p.positions.includes('ST' as any));
+  return stadium?.parkEffect ?? null;
 }
 
 /**

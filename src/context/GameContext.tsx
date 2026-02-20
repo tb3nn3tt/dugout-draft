@@ -560,8 +560,8 @@ function gameReducer(state: AppState, action: Action): AppState {
       if (roster.length === 0) return state;
 
       const lastPlayer = roster[roster.length - 1];
-      // Block returning coaches
-      if (lastPlayer.positions.includes('HC')) return state;
+      // Block returning coaches and stadiums
+      if (lastPlayer.positions.includes('HC') || lastPlayer.positions.includes('ST')) return state;
       const newRoster = roster.slice(0, -1);
 
       return {
@@ -581,8 +581,8 @@ function gameReducer(state: AppState, action: Action): AppState {
 
       const stolenPlayer = state[fromTeam].roster.find(p => p.id === action.playerId);
       if (!stolenPlayer) return state;
-      // Block stealing coaches
-      if (stolenPlayer.positions.includes('HC')) return state;
+      // Block stealing coaches and stadiums
+      if (stolenPlayer.positions.includes('HC') || stolenPlayer.positions.includes('ST')) return state;
       // Guard: prevent roster from exceeding max size
       const maxRoster = state.gameMode === 'quick' ? QUICK_ROSTER_SIZE : TOTAL_ROSTER_SIZE;
       if (state[toTeam].roster.length >= maxRoster) return state;
@@ -668,8 +668,9 @@ function gameReducer(state: AppState, action: Action): AppState {
       const player2Player = state.team2.roster.find(p => p.id === action.player2PlayerId);
 
       if (!player1Player || !player2Player) return state;
-      // Block trading coaches
-      if (player1Player.positions.includes('HC') || player2Player.positions.includes('HC')) return state;
+      // Block trading coaches and stadiums
+      if (player1Player.positions.includes('HC') || player2Player.positions.includes('HC') ||
+          player1Player.positions.includes('ST') || player2Player.positions.includes('ST')) return state;
 
       return {
         ...state,

@@ -13,11 +13,13 @@ const POSITION_GROUPS = [
   { label: 'Lineup', positions: ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH'] as Position[] },
   { label: 'Bench', positions: ['BC', 'PH', 'PR', 'IFD', 'OFD'] as Position[] },
   { label: 'Pitching', positions: ['SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY'] as Position[] },
+  { label: 'Staff', positions: ['HC', 'ST'] as Position[] },
 ];
 
 const QUICK_POSITION_GROUPS = [
   { label: 'Lineup', positions: ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH'] as Position[] },
   { label: 'Pitching', positions: ['SP', 'CL', 'MRP'] as Position[] },
+  { label: 'Staff', positions: ['HC', 'ST'] as Position[] },
 ];
 
 function getDisplayName(name: string): string {
