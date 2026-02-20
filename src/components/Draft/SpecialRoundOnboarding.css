@@ -86,20 +86,36 @@
 }
 
 @media (max-width: 768px) {
+  .onboarding-overlay {
+    padding: 0.75rem;
+    align-items: center;
+  }
+
   .onboarding-modal {
-    padding: 1.5rem;
-    max-width: 95vw;
+    padding: 1.25rem;
+    max-width: 90vw;
   }
 
   .onboarding-icon {
     font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .onboarding-title {
     font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .onboarding-description {
     font-size: 0.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .onboarding-btn {
+    width: 100%;
+    padding: 0.875rem;
+    min-height: 48px;
+    font-size: 1rem;
   }
 }
