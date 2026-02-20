@@ -15,12 +15,12 @@ const PACK_DISPLAY: Record<PackType, { name: string; icon: string; color: string
   standard: { name: 'Standard Pack', icon: '\u{1F4E6}', color: '#3498db', image: '/pack-standard.png' },
   premium: { name: 'Premium Pack', icon: '\u2728', color: '#ffd700', image: '/pack-premium.png' },
   legends: { name: 'Legends Pack', icon: '\u{1F3C6}', color: '#ffd700', image: '/pack-legends.png' },
-  fictional: { name: 'Fictional Pack', icon: '\u{1F3AC}', color: '#9b59b6' },
-  decade: { name: 'Decade Pack', icon: '\u{1F4FB}', color: '#cd853f' },
-  international: { name: 'International Pack', icon: '\u{1F30D}', color: '#00acc1' },
-  steroid_era: { name: 'Steroid Era Pack', icon: '\u{1F4AA}', color: '#ff1744' },
-  playoff: { name: 'Playoff Pack', icon: '\u{1F3DF}\uFE0F', color: '#228b22' },
-  allstar: { name: 'All-Star Pack', icon: '\u{1F31F}', color: '#ffd700' },
+  fictional: { name: 'Fictional Pack', icon: '\u{1F3AC}', color: '#9b59b6', image: '/pack-fictional.png' },
+  decade: { name: 'Decade Pack', icon: '\u{1F4FB}', color: '#cd853f', image: '/pack-decade.png' },
+  international: { name: 'International Pack', icon: '\u{1F30D}', color: '#00acc1', image: '/pack-international.png' },
+  steroid_era: { name: 'Steroid Era Pack', icon: '\u{1F4AA}', color: '#ff1744', image: '/pack-steroid_era.png' },
+  playoff: { name: 'Playoff Pack', icon: '\u{1F3DF}\uFE0F', color: '#228b22', image: '/pack-playoff.png' },
+  allstar: { name: 'All-Star Pack', icon: '\u{1F31F}', color: '#ffd700', image: '/pack-allstar.png' },
 };
 
 const TIER_STUBS: Record<string, number> = {
