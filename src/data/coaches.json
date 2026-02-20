@@ -458,5 +458,97 @@
       "speedBonus": 2,
       "fieldingBonus": 0
     }
+  },
+  {
+    "id": "coach-21",
+    "name": "Coach Tony",
+    "team": "9RS",
+    "positions": ["HC"],
+    "bats": "R",
+    "throws": "R",
+    "stats": {},
+    "overall": 99,
+    "category": "coach",
+    "era": "The Dugout Draft Era",
+    "nickname": "The Architect",
+    "funFact": "Built Dugout Draft from the ground up. Knows every player, every stat, every synergy. The game literally runs through him.",
+    "coachEffect": {
+      "style": "The Architect",
+      "offensiveBonus": 8,
+      "pitchingBonus": 8,
+      "clutchBonus": 5,
+      "staminaBonus": 10,
+      "speedBonus": 5,
+      "fieldingBonus": 5
+    }
+  },
+  {
+    "id": "coach-22",
+    "name": "Coach Tyler",
+    "team": "9RS",
+    "positions": ["HC"],
+    "bats": "R",
+    "throws": "R",
+    "stats": {},
+    "overall": 99,
+    "category": "coach",
+    "era": "The Dugout Draft Era",
+    "nickname": "The Enforcer",
+    "funFact": "Runs the tightest clubhouse in baseball. His teams never beat themselves — no errors, no mental mistakes, no excuses.",
+    "coachEffect": {
+      "style": "Iron Discipline",
+      "offensiveBonus": 2,
+      "pitchingBonus": 3,
+      "clutchBonus": 3,
+      "staminaBonus": 0,
+      "speedBonus": 0,
+      "fieldingBonus": 5
+    }
+  },
+  {
+    "id": "coach-23",
+    "name": "Coach Jesse",
+    "team": "9RS",
+    "positions": ["HC"],
+    "bats": "L",
+    "throws": "L",
+    "stats": {},
+    "overall": 99,
+    "category": "coach",
+    "era": "The Dugout Draft Era",
+    "nickname": "The Spark",
+    "funFact": "His dugout energy is contagious. When the game's on the line, his players somehow always find another gear.",
+    "coachEffect": {
+      "style": "Rally Starter",
+      "offensiveBonus": 4,
+      "pitchingBonus": 0,
+      "clutchBonus": 5,
+      "staminaBonus": 0,
+      "speedBonus": 4,
+      "fieldingBonus": 0
+    }
+  },
+  {
+    "id": "coach-24",
+    "name": "Coach James",
+    "team": "9RS",
+    "positions": ["HC"],
+    "bats": "R",
+    "throws": "R",
+    "stats": {},
+    "overall": 99,
+    "category": "coach",
+    "era": "The Dugout Draft Era",
+    "nickname": "The Professor",
+    "funFact": "Studies every pitcher's tendencies and builds game plans that make opposing starters look lost by the 3rd inning.",
+    "coachEffect": {
+      "style": "The Mastermind",
+      "offensiveBonus": 5,
+      "pitchingBonus": 4,
+      "clutchBonus": 2,
+      "staminaBonus": 3,
+      "speedBonus": 0,
+      "fieldingBonus": 0
+    }
   }
 ]
