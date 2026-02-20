@@ -1,0 +1,45 @@
+<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1f3d"/>
+      <stop offset="50%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#071018"/>
+    </linearGradient>
+    
+    <!-- Royal blue gradient -->
+    <linearGradient id="royalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a90e8"/>
+      <stop offset="100%" stop-color="#1e5fbb"/>
+    </linearGradient>
+    
+    <!-- Glow effects -->
+    <radialGradient id="blueGlow" cx="30%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="rgba(30, 95, 187, 0.3)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    
+    <radialGradient id="orangeGlow" cx="70%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="rgba(232, 104, 42, 0.2)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#bgGradient)"/>
+  
+  <!-- Ambient glow effects -->
+  <rect width="512" height="512" fill="url(#blueGlow)"/>
+  <rect width="512" height="512" fill="url(#orangeGlow)"/>
+  
+  <!-- Diamond outline -->
+  <path d="M256 60 L452 256 L256 452 L60 256 Z" fill="none" stroke="url(#royalGrad)" stroke-width="12" opacity="0.6"/>
+  
+  <!-- Inner diamond -->
+  <path d="M256 120 L392 256 L256 392 L120 256 Z" fill="#1e5fbb" fill-opacity="0.15"/>
+  
+  <!-- DD Monogram -->
+  <text x="256" y="290" font-family="Russo One, sans-serif" font-size="160" text-anchor="middle" font-weight="bold">
+    <tspan fill="#ffffff">D</tspan><tspan fill="#e8682a">D</tspan>
+  </text>
+</svg>

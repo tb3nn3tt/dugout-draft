@@ -1,0 +1,23 @@
+<svg viewBox="0 0 320 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradientH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fcd968"/>
+      <stop offset="50%" stop-color="#f0b429"/>
+      <stop offset="100%" stop-color="#c99a1d"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon: Small diamond with DD -->
+  <g transform="translate(5, 5)">
+    <path d="M25 2.5 L47.5 25 L25 47.5 L2.5 25 Z" fill="none" stroke="#1e5fbb" stroke-width="2" opacity="0.7"/>
+    <path d="M25 10 L40 25 L25 40 L10 25 Z" fill="#1e5fbb" fill-opacity="0.15"/>
+    <text x="25" y="30" font-family="Russo One, sans-serif" font-size="14" text-anchor="middle" font-weight="bold">
+      <tspan fill="#ffffff">D</tspan><tspan fill="#e8682a">D</tspan>
+    </text>
+  </g>
+  
+  <!-- Wordmark - single line -->
+  <text x="70" y="40" font-family="Russo One, sans-serif" font-size="32" letter-spacing="1">
+    <tspan fill="#ffffff">DUGOUT </tspan><tspan fill="url(#goldGradientH)">DRAFT</tspan>
+  </text>
+</svg>

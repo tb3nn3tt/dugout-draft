@@ -1,0 +1,19 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="royalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2872db"/>
+      <stop offset="100%" stop-color="#1e5fbb"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer diamond -->
+  <path d="M50 5 L95 50 L50 95 L5 50 Z" fill="none" stroke="url(#royalGradient)" stroke-width="3"/>
+  
+  <!-- Inner diamond fill -->
+  <path d="M50 20 L80 50 L50 80 L20 50 Z" fill="#1e5fbb" fill-opacity="0.2"/>
+  
+  <!-- DD monogram -->
+  <text x="50" y="60" font-family="Russo One, sans-serif" font-size="32" text-anchor="middle" font-weight="bold">
+    <tspan fill="#ffffff">D</tspan><tspan fill="#e8682a">D</tspan>
+  </text>
+</svg>

@@ -1,0 +1,108 @@
+.matchmaking-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 2rem;
+  text-align: center;
+}
+
+.matchmaking-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.matchmaking-spinner {
+  width: 64px;
+  height: 64px;
+  border: 4px solid rgba(30, 95, 187, 0.2);
+  border-top-color: #2872db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.matchmaking-status {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #d4e8fc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.matchmaking-detail {
+  color: #7eb8f4;
+  font-size: 0.9rem;
+}
+
+.matchmaking-elo {
+  color: #f0b429;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.matchmaking-timer {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.matchmaking-cancel {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  border-radius: 8px;
+  color: #dc2626;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.matchmaking-cancel:hover {
+  background: rgba(220, 38, 38, 0.1);
+  border-color: #dc2626;
+}
+
+.match-found {
+  animation: matchPulse 0.5s ease-out;
+}
+
+.match-found .matchmaking-status {
+  color: #16a34a;
+  font-size: 2rem;
+}
+
+@keyframes matchPulse {
+  0% { transform: scale(0.9); opacity: 0; }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .matchmaking-screen {
+    min-height: 50vh;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .matchmaking-status {
+    font-size: 1.3rem;
+  }
+
+  .matchmaking-cancel {
+    min-height: 44px;
+    padding: 0.6rem 1.5rem;
+  }
+}

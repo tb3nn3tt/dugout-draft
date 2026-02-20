@@ -1,0 +1,162 @@
+.series-tracker {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.series-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.series-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.team-wins {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.team-wins.leading .wins-count {
+  color: var(--color-accent);
+}
+
+.team-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.wins-count {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.series-divider {
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+.games-list {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.game-box {
+  width: 50px;
+  padding: 0.5rem;
+  background: var(--color-background);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.game-box.played {
+  background: var(--color-primary);
+  color: white;
+}
+
+.game-box.current {
+  border: 2px solid var(--color-accent);
+  animation: pulse 2s infinite;
+}
+
+.game-number {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.game-result {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.game-result .winner {
+  color: var(--color-accent);
+}
+
+.current-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.series-status {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.winner-text {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .series-tracker {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .series-title {
+    margin-bottom: 0.375rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .series-score {
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .wins-count {
+    font-size: 2rem;
+  }
+
+  .series-divider {
+    font-size: 1.25rem;
+  }
+
+  .games-list {
+    gap: 0.375rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .game-box {
+    width: 40px;
+    padding: 0.375rem;
+    gap: 0.125rem;
+    min-height: 40px;
+  }
+
+  .game-number {
+    font-size: 0.5625rem;
+  }
+
+  .game-result {
+    font-size: var(--font-size-xs);
+  }
+
+  .series-status {
+    font-size: var(--font-size-sm);
+  }
+}

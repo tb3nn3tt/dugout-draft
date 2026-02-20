@@ -1,0 +1,111 @@
+.scouting-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 0;
+}
+
+.scouting-bars.compact {
+  gap: 3px;
+  padding: 4px 0;
+}
+
+.grade-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.compact .grade-bar {
+  font-size: 11px;
+  gap: 4px;
+}
+
+.grade-bar.elite .grade-fill {
+  animation: elite-shimmer 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes elite-shimmer {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+.grade-label {
+  min-width: 60px;
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+.compact .grade-label {
+  min-width: 32px;
+  font-size: 9px;
+}
+
+.grade-track {
+  flex: 1;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 4px;
+  overflow: hidden;
+  min-width: 60px;
+}
+
+.compact .grade-track {
+  height: 6px;
+  min-width: 40px;
+}
+
+.grade-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease-out;
+  position: relative;
+}
+
+.grade-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.grade-value {
+  min-width: 24px;
+  text-align: right;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.compact .grade-value {
+  min-width: 20px;
+  font-size: 10px;
+}
+
+.grade-letter {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.compact .grade-letter {
+  min-width: 20px;
+  font-size: 10px;
+}

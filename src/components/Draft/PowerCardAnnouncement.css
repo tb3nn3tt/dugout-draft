@@ -1,0 +1,127 @@
+.pca-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: pcaFadeIn 0.2s ease;
+  cursor: pointer;
+}
+
+@keyframes pcaFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pca-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  max-width: 320px;
+  text-align: center;
+}
+
+.pca-who {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+  animation: pcaSlideDown 0.3s ease;
+}
+
+.pca-who.player1 { color: #60a5fa; }
+.pca-who.player2 { color: #f87171; }
+
+@keyframes pcaSlideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Icon slam animation: starts at 3x, slams to 1x with overshoot */
+.pca-icon-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pcaSlam 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--card-color) 40%, transparent);
+}
+
+.pca-icon-wrap.pca-legendary {
+  animation: pcaSlam 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+             pcaGlow 1.5s ease-in-out infinite 0.5s;
+}
+
+@keyframes pcaSlam {
+  0% { transform: scale(3); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pcaGlow {
+  0%, 100% {
+    box-shadow: 0 0 40px color-mix(in srgb, var(--card-color) 40%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 60px color-mix(in srgb, var(--card-color) 60%, transparent),
+                0 0 100px color-mix(in srgb, var(--card-color) 25%, transparent);
+  }
+}
+
+.pca-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.pca-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px currentColor;
+  animation: pcaReveal 0.4s ease 0.3s both;
+}
+
+.pca-desc {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  max-width: 280px;
+  animation: pcaReveal 0.4s ease 0.4s both;
+}
+
+.pca-tap {
+  font-size: 0.7rem;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  animation: pcaReveal 0.4s ease 0.6s both;
+}
+
+@keyframes pcaReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .pca-icon-wrap {
+    width: 80px;
+    height: 80px;
+  }
+
+  .pca-icon {
+    font-size: 2.5rem;
+  }
+
+  .pca-name {
+    font-size: 1.2rem;
+  }
+}

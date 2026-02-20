@@ -1,0 +1,3235 @@
+[
+  {
+    "id": "legend-1",
+    "name": "Babe Ruth",
+    "team": "NYY",
+    "positions": [
+      "RF",
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.342,
+      "obp": 0.474,
+      "slg": 0.69,
+      "hr": 714,
+      "speed": 40,
+      "era": 2.28
+    },
+    "overall": 99,
+    "category": "legend",
+    "era": "1920s-1930s",
+    "nickname": "The Sultan of Swat",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 40,
+      "fielding": 55,
+      "arm": 65,
+      "eye": 80,
+      "fastball": 70,
+      "breaking": 65,
+      "control": 60,
+      "stamina": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Hit 714 career home runs AND had a 2.28 ERA as a pitcher. The original two-way player."
+  },
+  {
+    "id": "legend-2",
+    "name": "Willie Mays",
+    "team": "SF",
+    "positions": [
+      "CF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.302,
+      "obp": 0.384,
+      "slg": 0.557,
+      "hr": 660,
+      "speed": 95
+    },
+    "overall": 98,
+    "category": "legend",
+    "era": "1950s-1960s",
+    "nickname": "The Say Hey Kid",
+    "grades": {
+      "contact": 75,
+      "power": 75,
+      "speed": 80,
+      "fielding": 80,
+      "arm": 75,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "Made 'The Catch' in the 1954 World Series"
+  },
+  {
+    "id": "legend-3",
+    "name": "Hank Aaron",
+    "team": "ATL",
+    "positions": [
+      "RF",
+      "LF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.305,
+      "obp": 0.374,
+      "slg": 0.555,
+      "hr": 755,
+      "speed": 65
+    },
+    "overall": 97,
+    "category": "legend",
+    "era": "1950s-1970s",
+    "nickname": "Hammerin' Hank",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 65,
+      "fielding": 70,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Held the all-time HR record with 755"
+  },
+  {
+    "id": "legend-4",
+    "name": "Ted Williams",
+    "team": "BOS",
+    "positions": [
+      "LF",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.344,
+      "obp": 0.482,
+      "slg": 0.634,
+      "hr": 521,
+      "speed": 50
+    },
+    "overall": 98,
+    "category": "legend",
+    "era": "1940s-1950s",
+    "nickname": "The Splendid Splinter",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 50,
+      "fielding": 55,
+      "arm": 60,
+      "eye": 80
+    },
+    "specialty": "On-Base Machine",
+    "funFact": "Last player to hit .400 in a season (1941)"
+  },
+  {
+    "id": "legend-5",
+    "name": "Ty Cobb",
+    "team": "DET",
+    "positions": [
+      "CF",
+      "RF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.366,
+      "obp": 0.433,
+      "slg": 0.512,
+      "hr": 117,
+      "speed": 95
+    },
+    "overall": 96,
+    "category": "legend",
+    "era": "1905-1928",
+    "nickname": "The Georgia Peach",
+    "grades": {
+      "contact": 80,
+      "power": 45,
+      "speed": 80,
+      "fielding": 70,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": "Career .366 batting average, highest in MLB history"
+  },
+  {
+    "id": "legend-6",
+    "name": "Honus Wagner",
+    "team": "PIT",
+    "positions": [
+      "SS",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.328,
+      "obp": 0.391,
+      "slg": 0.466,
+      "hr": 101,
+      "speed": 70
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1897-1917",
+    "nickname": "The Flying Dutchman",
+    "grades": {
+      "contact": 75,
+      "power": 55,
+      "speed": 70,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "His baseball card sold for $6.6 million"
+  },
+  {
+    "id": "legend-7",
+    "name": "Walter Johnson",
+    "team": "WSH",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.17,
+      "whip": 1.06,
+      "k9": 5.3,
+      "bb9": 1.9
+    },
+    "overall": 96,
+    "category": "legend",
+    "era": "1907-1927",
+    "nickname": "The Big Train",
+    "grades": {
+      "fastball": 80,
+      "breaking": 50,
+      "changeup": 50,
+      "control": 70,
+      "stamina": 80
+    },
+    "specialty": "Power Arm",
+    "funFact": "Won 417 games with legendary fastball"
+  },
+  {
+    "id": "legend-8",
+    "name": "Cy Young",
+    "team": "CLE",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.63,
+      "whip": 1.13,
+      "k9": 3.4,
+      "bb9": 1.5
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1890-1911",
+    "nickname": "Cy",
+    "grades": {
+      "fastball": 70,
+      "breaking": 65,
+      "changeup": 60,
+      "control": 75,
+      "stamina": 80
+    },
+    "specialty": "Precision",
+    "funFact": "Won 511 games - still the all-time record!"
+  },
+  {
+    "id": "legend-9",
+    "name": "Christy Mathewson",
+    "team": "NYG",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.13,
+      "whip": 1.06,
+      "k9": 4.7,
+      "bb9": 1.6
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1900-1916",
+    "nickname": "Big Six",
+    "grades": {
+      "fastball": 65,
+      "breaking": 80,
+      "changeup": 70,
+      "control": 80,
+      "stamina": 75
+    },
+    "specialty": "Precision",
+    "funFact": "Pioneer of the fadeaway (screwball)"
+  },
+  {
+    "id": "legend-10",
+    "name": "Lou Gehrig",
+    "team": "NYY",
+    "positions": [
+      "1B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.34,
+      "obp": 0.447,
+      "slg": 0.632,
+      "hr": 493,
+      "speed": 45
+    },
+    "overall": 97,
+    "category": "legend",
+    "era": "1923-1939",
+    "nickname": "The Iron Horse",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 45,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Played 2,130 consecutive games"
+  },
+  {
+    "id": "legend-11",
+    "name": "Joe DiMaggio",
+    "team": "NYY",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.325,
+      "obp": 0.398,
+      "slg": 0.579,
+      "hr": 361,
+      "speed": 65
+    },
+    "overall": 94,
+    "category": "legend",
+    "era": "1936-1951",
+    "nickname": "The Yankee Clipper",
+    "grades": {
+      "contact": 75,
+      "power": 70,
+      "speed": 65,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "56-game hitting streak in 1941"
+  },
+  {
+    "id": "legend-12",
+    "name": "Jackie Robinson",
+    "team": "BRK",
+    "positions": [
+      "2B",
+      "1B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.311,
+      "obp": 0.409,
+      "slg": 0.474,
+      "hr": 137,
+      "speed": 90
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1947-1956",
+    "nickname": "Number 42",
+    "grades": {
+      "contact": 70,
+      "power": 55,
+      "speed": 75,
+      "fielding": 70,
+      "arm": 65,
+      "eye": 75
+    },
+    "specialty": "Table Setter",
+    "funFact": "Broke baseball's color barrier in 1947"
+  },
+  {
+    "id": "legend-13",
+    "name": "Stan Musial",
+    "team": "STL",
+    "positions": [
+      "LF",
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.331,
+      "obp": 0.417,
+      "slg": 0.559,
+      "hr": 475,
+      "speed": 60
+    },
+    "overall": 94,
+    "category": "legend",
+    "era": "1941-1963",
+    "nickname": "Stan the Man",
+    "grades": {
+      "contact": 80,
+      "power": 70,
+      "speed": 60,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": "3,630 career hits, never struck out 50 times in a season"
+  },
+  {
+    "id": "legend-14",
+    "name": "Mickey Mantle",
+    "team": "NYY",
+    "positions": [
+      "CF"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.298,
+      "obp": 0.421,
+      "slg": 0.557,
+      "hr": 536,
+      "speed": 80
+    },
+    "overall": 96,
+    "category": "legend",
+    "era": "1951-1968",
+    "nickname": "The Mick",
+    "grades": {
+      "contact": 65,
+      "power": 80,
+      "speed": 80,
+      "fielding": 65,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "Power-Speed",
+    "funFact": "Hit tape-measure home runs from both sides"
+  },
+  {
+    "id": "legend-15",
+    "name": "Josh Gibson",
+    "team": "HOM",
+    "positions": [
+      "C"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.359,
+      "obp": 0.44,
+      "slg": 0.718,
+      "hr": 800,
+      "speed": 45
+    },
+    "overall": 96,
+    "category": "legend",
+    "era": "Negro Leagues 1930-1946",
+    "nickname": "The Black Babe Ruth",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 45,
+      "fielding": 65,
+      "arm": 70,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Estimated 800+ career home runs in Negro Leagues"
+  },
+  {
+    "id": "legend-16",
+    "name": "Satchel Paige",
+    "team": "HOM",
+    "positions": [
+      "SP",
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.5,
+      "whip": 1.05,
+      "k9": 7.5,
+      "bb9": 2.5
+    },
+    "overall": 94,
+    "category": "legend",
+    "era": "Negro Leagues & MLB",
+    "nickname": "Satchel",
+    "grades": {
+      "fastball": 80,
+      "breaking": 70,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 70
+    },
+    "specialty": "Power Arm",
+    "funFact": "Don't look back. Something might be gaining on you."
+  },
+  {
+    "id": "legend-17",
+    "name": "Cool Papa Bell",
+    "team": "HOM",
+    "positions": [
+      "CF"
+    ],
+    "bats": "S",
+    "throws": "L",
+    "stats": {
+      "avg": 0.341,
+      "obp": 0.39,
+      "slg": 0.44,
+      "hr": 50,
+      "speed": 99
+    },
+    "overall": 88,
+    "category": "legend",
+    "era": "Negro Leagues 1922-1946",
+    "nickname": "Cool Papa",
+    "grades": {
+      "contact": 55,
+      "power": 35,
+      "speed": 80,
+      "fielding": 75,
+      "arm": 60,
+      "eye": 55
+    },
+    "specialty": "Speedster",
+    "funFact": "So fast he could flip the light switch and be in bed before the room got dark"
+  },
+  {
+    "id": "legend-18",
+    "name": "Roberto Clemente",
+    "team": "PIT",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.317,
+      "obp": 0.359,
+      "slg": 0.475,
+      "hr": 240,
+      "speed": 70
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1955-1972",
+    "nickname": "The Great One",
+    "grades": {
+      "contact": 75,
+      "power": 65,
+      "speed": 70,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 60
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Exactly 3,000 hits and a legendary throwing arm"
+  },
+  {
+    "id": "legend-19",
+    "name": "Sandy Koufax",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 2.76,
+      "whip": 1.11,
+      "k9": 9.3,
+      "bb9": 3.2
+    },
+    "overall": 95,
+    "category": "legend",
+    "era": "1955-1966",
+    "nickname": "The Left Arm of God",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 60,
+      "control": 70,
+      "stamina": 70
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "Four no-hitters including a perfect game"
+  },
+  {
+    "id": "legend-20",
+    "name": "Bob Gibson",
+    "team": "STL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.91,
+      "whip": 1.19,
+      "k9": 7.2,
+      "bb9": 2.9
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1959-1975",
+    "nickname": "Gibby",
+    "grades": {
+      "fastball": 75,
+      "breaking": 75,
+      "changeup": 65,
+      "control": 70,
+      "stamina": 75
+    },
+    "specialty": "Ace",
+    "funFact": "1.12 ERA in 1968 changed baseball rules"
+  },
+  {
+    "id": "legend-21",
+    "name": "Pete Rose",
+    "team": "CIN",
+    "positions": [
+      "LF",
+      "1B",
+      "3B"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.303,
+      "obp": 0.375,
+      "slg": 0.409,
+      "hr": 160,
+      "speed": 65
+    },
+    "overall": 88,
+    "category": "legend",
+    "era": "1963-1986",
+    "nickname": "Charlie Hustle",
+    "grades": {
+      "contact": 80,
+      "power": 45,
+      "speed": 65,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 70
+    },
+    "specialty": "Contact Master",
+    "funFact": "4,256 career hits - most in MLB history"
+  },
+  {
+    "id": "legend-22",
+    "name": "Nolan Ryan",
+    "team": "TEX",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.19,
+      "whip": 1.25,
+      "k9": 9.5,
+      "bb9": 4.7
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1966-1993",
+    "nickname": "The Ryan Express",
+    "grades": {
+      "fastball": 80,
+      "breaking": 65,
+      "changeup": 50,
+      "control": 55,
+      "stamina": 80
+    },
+    "specialty": "Power Arm",
+    "funFact": "5,714 career strikeouts and 7 no-hitters"
+  },
+  {
+    "id": "legend-23",
+    "name": "Tom Seaver",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.86,
+      "whip": 1.12,
+      "k9": 6.8,
+      "bb9": 2.2
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1967-1986",
+    "nickname": "Tom Terrific",
+    "grades": {
+      "fastball": 75,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 75,
+      "stamina": 75
+    },
+    "specialty": "Ace",
+    "funFact": "311 wins and the face of the Miracle Mets"
+  },
+  {
+    "id": "legend-24",
+    "name": "Rickey Henderson",
+    "team": "OAK",
+    "positions": [
+      "LF"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "avg": 0.279,
+      "obp": 0.401,
+      "slg": 0.419,
+      "hr": 297,
+      "speed": 95
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1979-2003",
+    "nickname": "Man of Steal",
+    "grades": {
+      "contact": 65,
+      "power": 55,
+      "speed": 80,
+      "fielding": 65,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "Speedster",
+    "funFact": "1,406 stolen bases - the all-time record"
+  },
+  {
+    "id": "legend-25",
+    "name": "Ken Griffey Jr.",
+    "team": "SEA",
+    "positions": [
+      "CF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.284,
+      "obp": 0.37,
+      "slg": 0.538,
+      "hr": 630,
+      "speed": 70
+    },
+    "overall": 95,
+    "category": "legend",
+    "era": "1989-2010",
+    "nickname": "The Kid",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 70,
+      "fielding": 80,
+      "arm": 75,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "Sweetest swing in baseball history"
+  },
+  {
+    "id": "legend-26",
+    "name": "Randy Johnson",
+    "team": "ARI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 3.29,
+      "whip": 1.17,
+      "k9": 10.6,
+      "bb9": 3.3
+    },
+    "overall": 94,
+    "category": "legend",
+    "era": "1988-2009",
+    "nickname": "The Big Unit",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 55,
+      "control": 60,
+      "stamina": 75
+    },
+    "specialty": "Strikeout Artist",
+    "funFact": "6'10\" with 4,875 career strikeouts"
+  },
+  {
+    "id": "legend-27",
+    "name": "Derek Jeter",
+    "team": "NYY",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.31,
+      "obp": 0.377,
+      "slg": 0.44,
+      "hr": 260,
+      "speed": 65
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1995-2014",
+    "nickname": "The Captain",
+    "grades": {
+      "contact": 75,
+      "power": 50,
+      "speed": 65,
+      "fielding": 60,
+      "arm": 60,
+      "eye": 70
+    },
+    "specialty": "Table Setter",
+    "funFact": "5 World Series rings and 3,465 hits"
+  },
+  {
+    "id": "legend-28",
+    "name": "Mariano Rivera",
+    "team": "NYY",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.21,
+      "whip": 1,
+      "k9": 8.2,
+      "bb9": 2
+    },
+    "overall": 94,
+    "category": "legend",
+    "era": "1995-2013",
+    "nickname": "Mo",
+    "grades": {
+      "fastball": 80,
+      "breaking": 40,
+      "changeup": 45,
+      "control": 80,
+      "stamina": 55
+    },
+    "specialty": "Precision",
+    "funFact": "652 saves with one unhittable pitch - the cutter"
+  },
+  {
+    "id": "legend-29",
+    "name": "Pedro Martinez",
+    "team": "BOS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.93,
+      "whip": 1.05,
+      "k9": 10,
+      "bb9": 2.4
+    },
+    "overall": 95,
+    "category": "legend",
+    "era": "1992-2009",
+    "nickname": "Petey",
+    "grades": {
+      "fastball": 75,
+      "breaking": 80,
+      "changeup": 80,
+      "control": 80,
+      "stamina": 65
+    },
+    "specialty": "Ace",
+    "funFact": "Dominated the steroid era like no other"
+  },
+  {
+    "id": "legend-30",
+    "name": "Greg Maddux",
+    "team": "ATL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.16,
+      "whip": 1.14,
+      "k9": 6.1,
+      "bb9": 1.8
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1986-2008",
+    "nickname": "The Professor",
+    "grades": {
+      "fastball": 55,
+      "breaking": 75,
+      "changeup": 75,
+      "control": 80,
+      "stamina": 75
+    },
+    "specialty": "Precision",
+    "funFact": "Won 4 straight Cy Youngs with pinpoint control"
+  },
+  {
+    "id": "legend-31",
+    "name": "Johnny Bench",
+    "team": "CIN",
+    "positions": [
+      "C"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.342,
+      "slg": 0.476,
+      "hr": 389,
+      "speed": 45
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1967-1983",
+    "nickname": "Little General",
+    "grades": {
+      "contact": 60,
+      "power": 75,
+      "speed": 45,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 65
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Greatest defensive catcher ever"
+  },
+  {
+    "id": "legend-36",
+    "name": "Tris Speaker",
+    "team": "CLE",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.345,
+      "obp": 0.428,
+      "slg": 0.5,
+      "hr": 117,
+      "speed": 70
+    },
+    "overall": 95,
+    "category": "legend",
+    "era": "1907-1928",
+    "nickname": "The Grey Eagle",
+    "grades": {
+      "contact": 80,
+      "power": 50,
+      "speed": 70,
+      "fielding": 80,
+      "arm": 70,
+      "eye": 80
+    },
+    "specialty": "5-Tool",
+    "funFact": "792 career doubles (still the record) — played CF so shallow he turned unassisted double plays"
+  },
+  {
+    "id": "legend-37",
+    "name": "Rogers Hornsby",
+    "team": "STL",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.358,
+      "obp": 0.434,
+      "slg": 0.577,
+      "hr": 301,
+      "speed": 50
+    },
+    "overall": 97,
+    "category": "legend",
+    "era": "1915-1937",
+    "nickname": "The Rajah",
+    "grades": {
+      "contact": 80,
+      "power": 75,
+      "speed": 50,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "Contact Master",
+    "funFact": ".358 career average — hit .424 in 1924, the highest mark of the 20th century"
+  },
+  {
+    "id": "legend-38",
+    "name": "Jimmie Foxx",
+    "team": "PHI",
+    "positions": [
+      "1B",
+      "C",
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.325,
+      "obp": 0.428,
+      "slg": 0.609,
+      "hr": 534,
+      "speed": 45
+    },
+    "overall": 96,
+    "category": "legend",
+    "era": "1925-1945",
+    "nickname": "Double X",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 45,
+      "fielding": 60,
+      "arm": 65,
+      "eye": 80
+    },
+    "specialty": "Power Hitter",
+    "funFact": "534 HR, 3 MVPs — the first to hit 500 HR after Babe Ruth. Arms like tree trunks."
+  },
+  {
+    "id": "legend-41",
+    "name": "Al Kaline",
+    "team": "DET",
+    "positions": [
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.297,
+      "obp": 0.376,
+      "slg": 0.48,
+      "hr": 399,
+      "speed": 55
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1953-1974",
+    "nickname": "Mr. Tiger",
+    "grades": {
+      "contact": 70,
+      "power": 65,
+      "speed": 55,
+      "fielding": 80,
+      "arm": 75,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "Youngest batting champion at 20 — played 22 years, all for Detroit"
+  },
+  {
+    "id": "legend-42",
+    "name": "Ernie Banks",
+    "team": "CHC",
+    "positions": [
+      "SS",
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.274,
+      "obp": 0.33,
+      "slg": 0.5,
+      "hr": 512,
+      "speed": 50
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1953-1971",
+    "nickname": "Mr. Cub",
+    "grades": {
+      "contact": 65,
+      "power": 75,
+      "speed": 50,
+      "fielding": 65,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "512 HR, back-to-back MVPs — 'Let's play two!' Never made the postseason."
+  },
+  {
+    "id": "legend-43",
+    "name": "Warren Spahn",
+    "team": "MIL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.09,
+      "whip": 1.2,
+      "k9": 4.4,
+      "bb9": 2.5
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1942-1965",
+    "nickname": "Spahnie",
+    "grades": {
+      "fastball": 65,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 75,
+      "stamina": 80
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "363 wins — most by a lefty ever. Didn't win his first game until 25 (served in WWII)."
+  },
+  {
+    "id": "legend-44",
+    "name": "Brooks Robinson",
+    "team": "BAL",
+    "positions": [
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.322,
+      "slg": 0.401,
+      "hr": 268,
+      "speed": 45
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1955-1977",
+    "nickname": "The Human Vacuum Cleaner",
+    "grades": {
+      "contact": 65,
+      "power": 55,
+      "speed": 45,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 55
+    },
+    "specialty": "Gold Glove",
+    "funFact": "16 Gold Gloves at 3B — his 1970 World Series defense was otherworldly"
+  },
+  {
+    "id": "legend-45",
+    "name": "Whitey Ford",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.75,
+      "whip": 1.22,
+      "k9": 5.6,
+      "bb9": 2.7
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1950-1967",
+    "nickname": "The Chairman of the Board",
+    "grades": {
+      "fastball": 60,
+      "breaking": 70,
+      "changeup": 70,
+      "control": 75,
+      "stamina": 70
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "Best winning % in history (.690) — 10 World Series, 33.2 consecutive scoreless WS innings"
+  },
+  {
+    "id": "legend-49",
+    "name": "Oscar Charleston",
+    "team": "Pittsburgh Crawfords",
+    "positions": [
+      "CF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.339,
+      "obp": 0.405,
+      "slg": 0.59,
+      "hr": 28,
+      "speed": 82
+    },
+    "overall": 95,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "contact": 75,
+      "power": 72,
+      "speed": 75,
+      "eye": 68,
+      "fielding": 72,
+      "arm": 62
+    },
+    "nickname": "The Hoosier Comet",
+    "funFact": "Called the Black Ty Cobb and the best player nobody in the mainstream saw.",
+    "specialty": "Five Tool"
+  },
+  {
+    "id": "legend-50",
+    "name": "Buck Leonard",
+    "team": "Homestead Grays",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.328,
+      "obp": 0.395,
+      "slg": 0.565,
+      "hr": 32,
+      "speed": 40
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "contact": 72,
+      "power": 68,
+      "speed": 35,
+      "eye": 65,
+      "fielding": 60,
+      "arm": 55
+    },
+    "nickname": "The Black Lou Gehrig",
+    "funFact": "Anchored the Homestead Grays dynasty with a sweet left-handed swing.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "legend-55",
+    "name": "Mel Ott",
+    "team": "NYG",
+    "positions": [
+      "RF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.304,
+      "obp": 0.414,
+      "slg": 0.533,
+      "hr": 36,
+      "speed": 45
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "contact": 68,
+      "power": 70,
+      "speed": 40,
+      "eye": 78,
+      "fielding": 58,
+      "arm": 55
+    },
+    "nickname": "Master Melvin",
+    "funFact": "His famous leg kick launched 511 home runs. A Giants legend forever.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "legend-57",
+    "name": "Willie McCovey",
+    "team": "SF",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.27,
+      "obp": 0.374,
+      "slg": 0.555,
+      "hr": 39,
+      "speed": 30
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1960s-70s",
+    "grades": {
+      "contact": 58,
+      "power": 78,
+      "speed": 25,
+      "eye": 68,
+      "fielding": 52,
+      "arm": 50
+    },
+    "nickname": "Stretch",
+    "funFact": "Towering first baseman with a thunderous left-handed bat. Fear incarnate.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "legend-58",
+    "name": "Eddie Mathews",
+    "team": "MIL",
+    "positions": [
+      "3B"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.271,
+      "obp": 0.376,
+      "slg": 0.509,
+      "hr": 40,
+      "speed": 50
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1950s-60s",
+    "grades": {
+      "contact": 58,
+      "power": 72,
+      "speed": 45,
+      "eye": 70,
+      "fielding": 58,
+      "arm": 62
+    },
+    "nickname": "Eddie",
+    "funFact": "512 home runs from the hot corner. Braves legend alongside Aaron.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "legend-59",
+    "name": "Yogi Berra",
+    "team": "NYY",
+    "positions": [
+      "C"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.348,
+      "slg": 0.482,
+      "hr": 28,
+      "speed": 30
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1950s-60s",
+    "grades": {
+      "contact": 68,
+      "power": 62,
+      "speed": 25,
+      "eye": 62,
+      "fielding": 68,
+      "arm": 65
+    },
+    "nickname": "Yogi",
+    "funFact": "It aint over till its over. Ten rings and a quote for every occasion.",
+    "specialty": "Clutch Performer"
+  },
+  {
+    "id": "legend-62",
+    "name": "Frank Robinson",
+    "team": "BAL",
+    "positions": [
+      "RF",
+      "LF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.294,
+      "obp": 0.389,
+      "slg": 0.537,
+      "hr": 36,
+      "speed": 55
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1960s-70s",
+    "grades": {
+      "contact": 68,
+      "power": 72,
+      "speed": 50,
+      "eye": 70,
+      "fielding": 55,
+      "arm": 58
+    },
+    "nickname": "Robby",
+    "funFact": "Only player to win MVP in both leagues. Crowded the plate and dared you to pitch inside.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "legend-63",
+    "name": "Harmon Killebrew",
+    "team": "MIN",
+    "positions": [
+      "1B",
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.256,
+      "obp": 0.376,
+      "slg": 0.509,
+      "hr": 42,
+      "speed": 30
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1960s-70s",
+    "grades": {
+      "contact": 52,
+      "power": 78,
+      "speed": 25,
+      "eye": 72,
+      "fielding": 42,
+      "arm": 48
+    },
+    "nickname": "Killer",
+    "funFact": "573 home runs of pure brute force. The friendliest slugger who ever lived.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "legend-65",
+    "name": "Grover Cleveland Alexander",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.56,
+      "whip": 1.12,
+      "k9": 5.2,
+      "bb9": 1.7
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "fastball": 62,
+      "breaking": 68,
+      "control": 78,
+      "stamina": 78,
+      "changeup": 65
+    },
+    "nickname": "Old Pete",
+    "funFact": "Won 30 games three years in a row. An iron arm from a different era.",
+    "specialty": "Pitching Maestro"
+  },
+  {
+    "id": "legend-66",
+    "name": "Lefty Grove",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.06,
+      "whip": 1.28,
+      "k9": 6.4,
+      "bb9": 3
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "fastball": 78,
+      "breaking": 58,
+      "control": 60,
+      "stamina": 72,
+      "changeup": 52
+    },
+    "nickname": "Lefty",
+    "funFact": "Blazing fastball and a fiery temper. 300 wins built on pure velocity.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "legend-67",
+    "name": "Bob Feller",
+    "team": "CLE",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.25,
+      "whip": 1.32,
+      "k9": 8.4,
+      "bb9": 4.1
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "fastball": 80,
+      "breaking": 68,
+      "control": 48,
+      "stamina": 72,
+      "changeup": 45
+    },
+    "nickname": "Rapid Robert",
+    "funFact": "Threw 107 mph by legend. Struck out the side on opening day at age 17.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "legend-72",
+    "name": "Nap Lajoie",
+    "team": "CLE",
+    "positions": [
+      "2B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.338,
+      "obp": 0.38,
+      "slg": 0.467,
+      "hr": 9,
+      "speed": 55
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "contact": 78,
+      "power": 48,
+      "speed": 50,
+      "eye": 62,
+      "fielding": 72,
+      "arm": 60
+    },
+    "nickname": "Larry",
+    "funFact": "So good they named the team after him. Silky smooth at second base.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "legend-73",
+    "name": "Pie Traynor",
+    "team": "PIT",
+    "positions": [
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.32,
+      "obp": 0.362,
+      "slg": 0.435,
+      "hr": 7,
+      "speed": 52
+    },
+    "overall": 87,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "contact": 72,
+      "power": 42,
+      "speed": 48,
+      "eye": 55,
+      "fielding": 68,
+      "arm": 62
+    },
+    "nickname": "Pie",
+    "funFact": "The gold standard at third base before Brooks Robinson came along.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "legend-74",
+    "name": "Cap Anson",
+    "team": "CHC",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.334,
+      "obp": 0.394,
+      "slg": 0.447,
+      "hr": 10,
+      "speed": 35
+    },
+    "overall": 88,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "contact": 75,
+      "power": 45,
+      "speed": 30,
+      "eye": 65,
+      "fielding": 55,
+      "arm": 48
+    },
+    "nickname": "Cap",
+    "funFact": "Over 3,000 hits in the 1800s. The original superstar of baseball.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "legend-75",
+    "name": "George Sisler",
+    "team": "STL",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.34,
+      "obp": 0.379,
+      "slg": 0.468,
+      "hr": 10,
+      "speed": 72
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "Pre-Modern Era",
+    "grades": {
+      "contact": 80,
+      "power": 45,
+      "speed": 65,
+      "eye": 58,
+      "fielding": 65,
+      "arm": 55
+    },
+    "nickname": "Gorgeous George",
+    "funFact": "Hit .420 in 1922 with 257 hits. Pure contact artistry at first base.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "legend-76",
+    "name": "Eddie Collins",
+    "team": "PHI",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.333,
+      "obp": 0.424,
+      "slg": 0.429,
+      "hr": 47,
+      "speed": 85
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1906-1930",
+    "nickname": "Cocky",
+    "grades": {
+      "contact": 78,
+      "power": 40,
+      "speed": 78,
+      "fielding": 75,
+      "arm": 62,
+      "eye": 78
+    },
+    "specialty": "Table Setter",
+    "funFact": "3,315 hits and 741 stolen bases — one of the smartest players ever to step on a diamond."
+  },
+  {
+    "id": "legend-77",
+    "name": "Dizzy Dean",
+    "team": "STL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.02,
+      "whip": 1.21,
+      "k9": 5.8,
+      "bb9": 2.7
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1930-1941",
+    "nickname": "Dizzy",
+    "grades": {
+      "fastball": 78,
+      "breaking": 65,
+      "changeup": 58,
+      "control": 65,
+      "stamina": 72
+    },
+    "specialty": "Power Arm",
+    "funFact": "Won 30 games in 1934 and predicted it before the season started. One of baseball's greatest showmen."
+  },
+  {
+    "id": "legend-78",
+    "name": "Orlando Cepeda",
+    "team": "SF",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.297,
+      "obp": 0.35,
+      "slg": 0.499,
+      "hr": 379,
+      "speed": 50
+    },
+    "overall": 89,
+    "category": "legend",
+    "era": "1958-1974",
+    "nickname": "Baby Bull",
+    "grades": {
+      "contact": 68,
+      "power": 72,
+      "speed": 48,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 58
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Unanimous NL MVP in 1967 — brought joy to every clubhouse with his incredible energy and smile."
+  },
+  {
+    "id": "legend-79",
+    "name": "Juan Marichal",
+    "team": "SF",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.89,
+      "whip": 1.1,
+      "k9": 5.9,
+      "bb9": 1.8
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1960-1975",
+    "nickname": "The Dominican Dandy",
+    "grades": {
+      "fastball": 72,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 78,
+      "stamina": 78
+    },
+    "specialty": "Precision",
+    "funFact": "His famous high leg kick was nearly impossible to hit against. Won 243 games with pinpoint command."
+  },
+  {
+    "id": "legend-80",
+    "name": "Don Drysdale",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.95,
+      "whip": 1.15,
+      "k9": 6.5,
+      "bb9": 2.2
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1956-1969",
+    "nickname": "Big D",
+    "grades": {
+      "fastball": 72,
+      "breaking": 68,
+      "changeup": 62,
+      "control": 68,
+      "stamina": 78
+    },
+    "specialty": "Power Arm",
+    "funFact": "Threw 58.2 consecutive scoreless innings in 1968 — a record that stood for 20 years. Batters feared his inside pitching."
+  },
+  {
+    "id": "legend-81",
+    "name": "Rod Carew",
+    "team": "MIN",
+    "positions": [
+      "2B",
+      "1B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.328,
+      "obp": 0.393,
+      "slg": 0.429,
+      "hr": 92,
+      "speed": 72
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1967-1985",
+    "nickname": "Sir Rodney",
+    "grades": {
+      "contact": 80,
+      "power": 40,
+      "speed": 70,
+      "fielding": 65,
+      "arm": 55,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": "Hit .388 in 1977 and won 7 batting titles. Could place the ball anywhere he wanted like a magician."
+  },
+  {
+    "id": "legend-82",
+    "name": "Steve Carlton",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.22,
+      "whip": 1.25,
+      "k9": 7.1,
+      "bb9": 3.1
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1965-1988",
+    "nickname": "Lefty",
+    "grades": {
+      "fastball": 72,
+      "breaking": 80,
+      "changeup": 60,
+      "control": 65,
+      "stamina": 80
+    },
+    "specialty": "Strikeout Artist",
+    "funFact": "Won 27 games for a last-place team in 1972 — that means he won almost half their games all by himself!"
+  },
+  {
+    "id": "legend-83",
+    "name": "Jim Palmer",
+    "team": "BAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.86,
+      "whip": 1.18,
+      "k9": 5.4,
+      "bb9": 2.9
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1965-1984",
+    "nickname": "Cakes",
+    "grades": {
+      "fastball": 70,
+      "breaking": 72,
+      "changeup": 68,
+      "control": 72,
+      "stamina": 75
+    },
+    "specialty": "Ace",
+    "funFact": "Won 3 Cy Young Awards and never gave up a grand slam in his entire career — 3,948 innings pitched!"
+  },
+  {
+    "id": "legend-84",
+    "name": "George Brett",
+    "team": "KC",
+    "positions": [
+      "3B",
+      "1B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.305,
+      "obp": 0.369,
+      "slg": 0.487,
+      "hr": 317,
+      "speed": 60
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1973-1993",
+    "nickname": "George",
+    "grades": {
+      "contact": 75,
+      "power": 68,
+      "speed": 58,
+      "fielding": 62,
+      "arm": 65,
+      "eye": 68
+    },
+    "specialty": "Contact Master",
+    "funFact": "Chased .400 in 1980 (finished at .390) and won batting titles in three different decades. A true Royal."
+  },
+  {
+    "id": "legend-85",
+    "name": "Robin Yount",
+    "team": "MIL",
+    "positions": [
+      "SS",
+      "CF",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.342,
+      "slg": 0.43,
+      "hr": 251,
+      "speed": 68
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1974-1993",
+    "nickname": "The Kid",
+    "grades": {
+      "contact": 70,
+      "power": 58,
+      "speed": 65,
+      "fielding": 72,
+      "arm": 68,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": "Won MVP as a shortstop AND as a center fielder — one of only a few players to win MVP at two positions."
+  },
+  {
+    "id": "legend-86",
+    "name": "Andre Dawson",
+    "team": "CHC",
+    "positions": [
+      "RF",
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.279,
+      "obp": 0.323,
+      "slg": 0.482,
+      "hr": 438,
+      "speed": 70
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1976-1996",
+    "nickname": "The Hawk",
+    "grades": {
+      "contact": 65,
+      "power": 72,
+      "speed": 68,
+      "fielding": 78,
+      "arm": 78,
+      "eye": 55
+    },
+    "specialty": "Power-Speed",
+    "funFact": "Won the 1987 MVP on a last-place team after signing a blank contract with the Cubs — he wanted to play there that badly!"
+  },
+  {
+    "id": "legend-87",
+    "name": "Ozzie Smith",
+    "team": "STL",
+    "positions": [
+      "SS",
+      "IFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.262,
+      "obp": 0.337,
+      "slg": 0.328,
+      "hr": 28,
+      "speed": 82
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1978-1996",
+    "nickname": "The Wizard of Oz",
+    "grades": {
+      "contact": 62,
+      "power": 25,
+      "speed": 75,
+      "fielding": 80,
+      "arm": 78,
+      "eye": 65
+    },
+    "specialty": "Gold Glove",
+    "funFact": "13 Gold Gloves and a famous backflip onto the field. Made impossible plays look easy every single night."
+  },
+  {
+    "id": "legend-88",
+    "name": "Reggie Jackson",
+    "team": "NYY",
+    "positions": [
+      "RF",
+      "DH",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.262,
+      "obp": 0.356,
+      "slg": 0.49,
+      "hr": 563,
+      "speed": 55
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1967-1987",
+    "nickname": "Mr. October",
+    "grades": {
+      "contact": 55,
+      "power": 78,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 65,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Hit 3 home runs on 3 consecutive pitches in the 1977 World Series. The ultimate big-game player."
+  },
+  {
+    "id": "legend-89",
+    "name": "Dave Winfield",
+    "team": "NYY",
+    "positions": [
+      "RF",
+      "DH",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.283,
+      "obp": 0.353,
+      "slg": 0.475,
+      "hr": 465,
+      "speed": 60
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1973-1995",
+    "nickname": "Winny",
+    "grades": {
+      "contact": 68,
+      "power": 72,
+      "speed": 58,
+      "fielding": 72,
+      "arm": 78,
+      "eye": 62
+    },
+    "specialty": "5-Tool",
+    "funFact": "Drafted by 4 pro sports teams (MLB, NFL, NBA, ABA) — chose baseball and collected 3,110 hits with a rocket arm."
+  },
+  {
+    "id": "legend-90",
+    "name": "Tony Gwynn",
+    "team": "SD",
+    "positions": [
+      "RF",
+      "LF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.338,
+      "obp": 0.388,
+      "slg": 0.459,
+      "hr": 135,
+      "speed": 60
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1982-2001",
+    "nickname": "Mr. Padre",
+    "grades": {
+      "contact": 80,
+      "power": 45,
+      "speed": 60,
+      "fielding": 68,
+      "arm": 62,
+      "eye": 78
+    },
+    "specialty": "Contact Master",
+    "funFact": "Won 8 batting titles and struck out only 434 times in 20 seasons. He studied video of his swings before it was cool."
+  },
+  {
+    "id": "legend-91",
+    "name": "Cal Ripken Jr.",
+    "team": "BAL",
+    "positions": [
+      "SS",
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.276,
+      "obp": 0.34,
+      "slg": 0.447,
+      "hr": 431,
+      "speed": 45
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1981-2001",
+    "nickname": "The Iron Man",
+    "grades": {
+      "contact": 68,
+      "power": 68,
+      "speed": 42,
+      "fielding": 72,
+      "arm": 72,
+      "eye": 62
+    },
+    "specialty": "Iron Man",
+    "funFact": "Played 2,632 consecutive games — that is every single game for over 16 years straight! Never took a day off."
+  },
+  {
+    "id": "legend-92",
+    "name": "Ryne Sandberg",
+    "team": "CHC",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.344,
+      "slg": 0.452,
+      "hr": 282,
+      "speed": 68
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1981-1997",
+    "nickname": "Ryno",
+    "grades": {
+      "contact": 68,
+      "power": 65,
+      "speed": 68,
+      "fielding": 78,
+      "arm": 72,
+      "eye": 60
+    },
+    "specialty": "Gold Glove",
+    "funFact": "9 Gold Gloves at second base and the famous 'Sandberg Game' in 1984 where he hit two clutch homers off Bruce Sutter."
+  },
+  {
+    "id": "legend-93",
+    "name": "Eddie Murray",
+    "team": "BAL",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.287,
+      "obp": 0.359,
+      "slg": 0.476,
+      "hr": 504,
+      "speed": 40
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1977-1997",
+    "nickname": "Steady Eddie",
+    "grades": {
+      "contact": 70,
+      "power": 72,
+      "speed": 38,
+      "fielding": 65,
+      "arm": 58,
+      "eye": 68
+    },
+    "specialty": "Power Hitter",
+    "funFact": "504 home runs and 3,255 hits — one of only 4 players in history with 500 HR and 3,000 hits. Consistent every single year."
+  },
+  {
+    "id": "legend-94",
+    "name": "Kirby Puckett",
+    "team": "MIN",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.318,
+      "obp": 0.36,
+      "slg": 0.477,
+      "hr": 207,
+      "speed": 65
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1984-1995",
+    "nickname": "Puck",
+    "grades": {
+      "contact": 75,
+      "power": 62,
+      "speed": 62,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 58
+    },
+    "specialty": "5-Tool",
+    "funFact": "His leaping catch and walk-off homer in Game 6 of the 1991 World Series are two of the greatest moments ever."
+  },
+  {
+    "id": "legend-95",
+    "name": "Dennis Eckersley",
+    "team": "OAK",
+    "positions": [
+      "CL",
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.5,
+      "whip": 1.16,
+      "k9": 7.0,
+      "bb9": 1.5
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1975-1998",
+    "nickname": "The Eck",
+    "grades": {
+      "fastball": 70,
+      "breaking": 72,
+      "changeup": 60,
+      "control": 80,
+      "stamina": 55
+    },
+    "specialty": "Precision",
+    "funFact": "Started as a great starter, then reinvented himself as one of the best closers ever. Won both Cy Young and MVP in 1992."
+  },
+  {
+    "id": "legend-96",
+    "name": "Tom Glavine",
+    "team": "ATL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.54,
+      "whip": 1.31,
+      "k9": 5.3,
+      "bb9": 3.1
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1987-2008",
+    "nickname": "Glavine",
+    "grades": {
+      "fastball": 55,
+      "breaking": 68,
+      "changeup": 78,
+      "control": 75,
+      "stamina": 75
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "Won 305 games by painting the corners with his legendary changeup. Batters knew it was coming and still couldn't hit it."
+  },
+  {
+    "id": "legend-97",
+    "name": "John Smoltz",
+    "team": "ATL",
+    "positions": [
+      "SP",
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.33,
+      "whip": 1.18,
+      "k9": 7.9,
+      "bb9": 2.7
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1988-2009",
+    "nickname": "Smoltzy",
+    "grades": {
+      "fastball": 75,
+      "breaking": 78,
+      "changeup": 62,
+      "control": 68,
+      "stamina": 72
+    },
+    "specialty": "Ace",
+    "funFact": "The only pitcher in history with 200 wins AND 150 saves. Dominated as both a starter and a closer."
+  },
+  {
+    "id": "legend-98",
+    "name": "Craig Biggio",
+    "team": "HOU",
+    "positions": [
+      "2B",
+      "C",
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.281,
+      "obp": 0.363,
+      "slg": 0.433,
+      "hr": 291,
+      "speed": 68
+    },
+    "overall": 89,
+    "category": "legend",
+    "era": "1988-2007",
+    "nickname": "Biggio",
+    "grades": {
+      "contact": 68,
+      "power": 58,
+      "speed": 65,
+      "fielding": 70,
+      "arm": 62,
+      "eye": 68
+    },
+    "specialty": "Table Setter",
+    "funFact": "3,060 hits and got hit by 285 pitches (second most ever). Played catcher, then became an All-Star second baseman. Total team player."
+  },
+  {
+    "id": "legend-99",
+    "name": "Jeff Bagwell",
+    "team": "HOU",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.297,
+      "obp": 0.408,
+      "slg": 0.54,
+      "hr": 449,
+      "speed": 55
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1991-2005",
+    "nickname": "Baggy",
+    "grades": {
+      "contact": 68,
+      "power": 75,
+      "speed": 55,
+      "fielding": 65,
+      "arm": 58,
+      "eye": 78
+    },
+    "specialty": "Power Hitter",
+    "funFact": "His super-wide batting stance was one of a kind. Had 449 HR, 202 SB, and won the 1994 MVP unanimously."
+  },
+  {
+    "id": "legend-100",
+    "name": "Roberto Alomar",
+    "team": "TOR",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.3,
+      "obp": 0.371,
+      "slg": 0.443,
+      "hr": 210,
+      "speed": 75
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1988-2004",
+    "nickname": "Robbie",
+    "grades": {
+      "contact": 75,
+      "power": 55,
+      "speed": 72,
+      "fielding": 78,
+      "arm": 70,
+      "eye": 68
+    },
+    "specialty": "5-Tool",
+    "funFact": "10 Gold Gloves and a switch-hitter who could do everything. His clutch homer in the 1992 ALCS helped Toronto win it all."
+  },
+  {
+    "id": "legend-101",
+    "name": "Ivan Rodriguez",
+    "team": "TEX",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.296,
+      "obp": 0.334,
+      "slg": 0.464,
+      "hr": 311,
+      "speed": 55
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1991-2011",
+    "nickname": "Pudge",
+    "grades": {
+      "contact": 72,
+      "power": 62,
+      "speed": 55,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 55
+    },
+    "specialty": "Gold Glove",
+    "funFact": "13 Gold Gloves and threw out runners like no other catcher. Base stealers were terrified of his cannon arm."
+  },
+  {
+    "id": "legend-102",
+    "name": "Vladimir Guerrero Sr.",
+    "team": "MON",
+    "positions": [
+      "RF",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.318,
+      "obp": 0.379,
+      "slg": 0.553,
+      "hr": 449,
+      "speed": 62
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1996-2011",
+    "nickname": "Vlad",
+    "grades": {
+      "contact": 75,
+      "power": 78,
+      "speed": 60,
+      "fielding": 60,
+      "arm": 80,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Could hit any pitch — even ones bouncing in the dirt! Had a rocket arm from right field and never met a pitch he didn't like."
+  },
+  {
+    "id": "legend-103",
+    "name": "Albert Pujols",
+    "team": "STL",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.296,
+      "obp": 0.374,
+      "slg": 0.544,
+      "hr": 703,
+      "speed": 40
+    },
+    "overall": 96,
+    "category": "legend",
+    "era": "2001-2022",
+    "nickname": "The Machine",
+    "grades": {
+      "contact": 78,
+      "power": 80,
+      "speed": 38,
+      "fielding": 65,
+      "arm": 62,
+      "eye": 78
+    },
+    "specialty": "Power Hitter",
+    "funFact": "703 home runs and 3 MVPs. His first 10 seasons were the greatest decade any hitter has ever had."
+  },
+  {
+    "id": "legend-104",
+    "name": "Ichiro Suzuki",
+    "team": "SEA",
+    "positions": [
+      "RF",
+      "CF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.311,
+      "obp": 0.355,
+      "slg": 0.402,
+      "hr": 117,
+      "speed": 90
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "2001-2019",
+    "nickname": "Ichiro",
+    "grades": {
+      "contact": 80,
+      "power": 35,
+      "speed": 80,
+      "fielding": 78,
+      "arm": 80,
+      "eye": 72
+    },
+    "specialty": "Contact Master",
+    "funFact": "Set the single-season hits record with 262 in 2004. Over 4,300 combined hits in Japan and MLB. A true hitting artist."
+  },
+  {
+    "id": "legend-105",
+    "name": "Miguel Cabrera",
+    "team": "DET",
+    "positions": [
+      "1B",
+      "3B",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.306,
+      "obp": 0.388,
+      "slg": 0.534,
+      "hr": 511,
+      "speed": 35
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "2003-2023",
+    "nickname": "Miggy",
+    "grades": {
+      "contact": 78,
+      "power": 78,
+      "speed": 32,
+      "fielding": 52,
+      "arm": 58,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": "Won the Triple Crown in 2012 — leading the league in average, homers, and RBIs. The first to do it in 45 years!"
+  },
+  {
+    "id": "legend-106",
+    "name": "Clayton Kershaw",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.48,
+      "whip": 1.0,
+      "k9": 9.7,
+      "bb9": 2.0
+    },
+    "overall": 94,
+    "category": "legend",
+    "era": "2008-2024",
+    "nickname": "Kersh",
+    "grades": {
+      "fastball": 68,
+      "breaking": 80,
+      "changeup": 65,
+      "control": 80,
+      "stamina": 68
+    },
+    "specialty": "Ace",
+    "funFact": "His devastating curveball is one of the best pitches ever thrown. 3 Cy Young Awards and an MVP to go with it."
+  },
+  {
+    "id": "legend-107",
+    "name": "Mike Trout",
+    "team": "LAA",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.303,
+      "obp": 0.412,
+      "slg": 0.587,
+      "hr": 378,
+      "speed": 80
+    },
+    "overall": 97,
+    "category": "legend",
+    "era": "2011-present",
+    "nickname": "The Millville Meteor",
+    "grades": {
+      "contact": 72,
+      "power": 80,
+      "speed": 78,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 80
+    },
+    "specialty": "5-Tool",
+    "funFact": "3 MVPs and finished top-2 in MVP voting 8 times. Could do literally everything on a baseball field at an elite level."
+  },
+  {
+    "id": "legend-108",
+    "name": "Carl Yastrzemski",
+    "team": "BOS",
+    "positions": [
+      "LF",
+      "1B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.379,
+      "slg": 0.462,
+      "hr": 452,
+      "speed": 55
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1961-1983",
+    "nickname": "Yaz",
+    "grades": {
+      "contact": 72,
+      "power": 70,
+      "speed": 55,
+      "fielding": 72,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "5-Tool",
+    "funFact": "Won the last Triple Crown before Miggy in 1967 and carried the Red Sox to the pennant. Played 23 seasons — all for Boston."
+  },
+  {
+    "id": "legend-109",
+    "name": "Joe Morgan",
+    "team": "CIN",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.271,
+      "obp": 0.392,
+      "slg": 0.427,
+      "hr": 268,
+      "speed": 78
+    },
+    "overall": 93,
+    "category": "legend",
+    "era": "1963-1984",
+    "nickname": "Little Joe",
+    "grades": {
+      "contact": 65,
+      "power": 60,
+      "speed": 75,
+      "fielding": 72,
+      "arm": 62,
+      "eye": 80
+    },
+    "specialty": "Table Setter",
+    "funFact": "Back-to-back MVPs with the Big Red Machine. His famous arm flap at the plate was his secret timing weapon."
+  },
+  {
+    "id": "legend-110",
+    "name": "Mike Schmidt",
+    "team": "PHI",
+    "positions": [
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.38,
+      "slg": 0.527,
+      "hr": 548,
+      "speed": 55
+    },
+    "overall": 95,
+    "category": "legend",
+    "era": "1972-1989",
+    "nickname": "Schmitty",
+    "grades": {
+      "contact": 58,
+      "power": 80,
+      "speed": 55,
+      "fielding": 78,
+      "arm": 78,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "548 homers, 10 Gold Gloves, and 3 MVPs. Many consider him the greatest third baseman in baseball history."
+  },
+  {
+    "id": "legend-111",
+    "name": "Willie Stargell",
+    "team": "PIT",
+    "positions": [
+      "LF",
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.282,
+      "obp": 0.36,
+      "slg": 0.529,
+      "hr": 475,
+      "speed": 42
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1962-1982",
+    "nickname": "Pops",
+    "grades": {
+      "contact": 62,
+      "power": 78,
+      "speed": 40,
+      "fielding": 55,
+      "arm": 58,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Led the 1979 'We Are Family' Pirates to the World Series at age 39 and won co-MVP. A beloved team leader."
+  },
+  {
+    "id": "legend-112",
+    "name": "Carlton Fisk",
+    "team": "BOS",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.269,
+      "obp": 0.341,
+      "slg": 0.457,
+      "hr": 376,
+      "speed": 38
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1969-1993",
+    "nickname": "Pudge",
+    "grades": {
+      "contact": 62,
+      "power": 68,
+      "speed": 35,
+      "fielding": 72,
+      "arm": 75,
+      "eye": 62
+    },
+    "specialty": "Power Hitter",
+    "funFact": "His iconic waving-the-ball-fair home run in the 1975 World Series is one of the most replayed moments in baseball history."
+  },
+  {
+    "id": "legend-113",
+    "name": "Roberto Alomar",
+    "team": "CLE",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.3,
+      "obp": 0.371,
+      "slg": 0.443,
+      "hr": 210,
+      "speed": 75
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1988-2004",
+    "nickname": "Robbie",
+    "grades": {
+      "contact": 75,
+      "power": 55,
+      "speed": 72,
+      "fielding": 78,
+      "arm": 70,
+      "eye": 68
+    },
+    "specialty": "5-Tool",
+    "funFact": "10 Gold Gloves and a switch-hitter who could do everything. His clutch homer in the 1992 ALCS helped Toronto win it all."
+  },
+  {
+    "id": "legend-114",
+    "name": "Robin Roberts",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.41,
+      "whip": 1.17,
+      "k9": 5.1,
+      "bb9": 1.7
+    },
+    "overall": 89,
+    "category": "legend",
+    "era": "1948-1966",
+    "nickname": "Robin",
+    "grades": {
+      "fastball": 68,
+      "breaking": 60,
+      "changeup": 65,
+      "control": 78,
+      "stamina": 80
+    },
+    "specialty": "Precision",
+    "funFact": "Led the Phillies' Whiz Kids to the 1950 World Series. Threw 28 complete games in one season — an incredible workhorse."
+  },
+  {
+    "id": "legend-115",
+    "name": "Fergie Jenkins",
+    "team": "CHC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.34,
+      "whip": 1.13,
+      "k9": 6.0,
+      "bb9": 1.8
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1965-1983",
+    "nickname": "Fergie",
+    "grades": {
+      "fastball": 70,
+      "breaking": 68,
+      "changeup": 65,
+      "control": 78,
+      "stamina": 78
+    },
+    "specialty": "Precision",
+    "funFact": "The first Canadian in the Hall of Fame. Won 284 games and walked fewer than 1,000 batters while striking out 3,192."
+  },
+  {
+    "id": "legend-116",
+    "name": "Gaylord Perry",
+    "team": "SF",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.11,
+      "whip": 1.18,
+      "k9": 5.6,
+      "bb9": 2.6
+    },
+    "overall": 90,
+    "category": "legend",
+    "era": "1962-1983",
+    "nickname": "Gaylord",
+    "grades": {
+      "fastball": 65,
+      "breaking": 72,
+      "changeup": 68,
+      "control": 72,
+      "stamina": 80
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "Won Cy Young Awards in both leagues and pitched 314 wins over 22 seasons. A true iron man on the mound."
+  },
+  {
+    "id": "legend-117",
+    "name": "Phil Niekro",
+    "team": "ATL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.35,
+      "whip": 1.27,
+      "k9": 5.0,
+      "bb9": 3.0
+    },
+    "overall": 89,
+    "category": "legend",
+    "era": "1964-1987",
+    "nickname": "Knucksie",
+    "grades": {
+      "fastball": 45,
+      "breaking": 80,
+      "changeup": 55,
+      "control": 62,
+      "stamina": 80
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "His knuckleball danced and floated so wildly that even his own catchers couldn't catch it! Won 318 games with that one amazing pitch."
+  },
+  {
+    "id": "legend-118",
+    "name": "Rollie Fingers",
+    "team": "OAK",
+    "positions": [
+      "CL",
+      "SU"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.9,
+      "whip": 1.16,
+      "k9": 6.5,
+      "bb9": 2.6
+    },
+    "overall": 88,
+    "category": "legend",
+    "era": "1968-1985",
+    "nickname": "Rollie",
+    "grades": {
+      "fastball": 65,
+      "breaking": 70,
+      "changeup": 62,
+      "control": 72,
+      "stamina": 58
+    },
+    "specialty": "Precision",
+    "funFact": "Famous for his incredible handlebar mustache and 341 saves. Won both MVP and Cy Young in 1981."
+  },
+  {
+    "id": "legend-119",
+    "name": "Goose Gossage",
+    "team": "NYY",
+    "positions": [
+      "CL",
+      "SU"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.01,
+      "whip": 1.23,
+      "k9": 8.0,
+      "bb9": 3.6
+    },
+    "overall": 89,
+    "category": "legend",
+    "era": "1972-1994",
+    "nickname": "Goose",
+    "grades": {
+      "fastball": 80,
+      "breaking": 55,
+      "changeup": 45,
+      "control": 58,
+      "stamina": 62
+    },
+    "specialty": "Power Arm",
+    "funFact": "Threw blazing fastballs and intimidated every batter he faced. 310 saves and one of the scariest closers ever."
+  },
+  {
+    "id": "legend-120",
+    "name": "Bruce Sutter",
+    "team": "STL",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.83,
+      "whip": 1.14,
+      "k9": 8.6,
+      "bb9": 2.4
+    },
+    "overall": 88,
+    "category": "legend",
+    "era": "1976-1988",
+    "nickname": "Bruce",
+    "grades": {
+      "fastball": 58,
+      "breaking": 80,
+      "changeup": 50,
+      "control": 72,
+      "stamina": 52
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "Invented the modern split-finger fastball. Batters watched it drop off the table and couldn't believe their eyes."
+  },
+  {
+    "id": "legend-121",
+    "name": "Trevor Hoffman",
+    "team": "SD",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.87,
+      "whip": 1.06,
+      "k9": 9.4,
+      "bb9": 2.3
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1993-2010",
+    "nickname": "Hoffy",
+    "grades": {
+      "fastball": 60,
+      "breaking": 68,
+      "changeup": 80,
+      "control": 78,
+      "stamina": 52
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "601 career saves — the second most in history. When 'Hells Bells' played at Petco Park, the game was over."
+  },
+  {
+    "id": "legend-122",
+    "name": "Roy Halladay",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.38,
+      "whip": 1.18,
+      "k9": 6.9,
+      "bb9": 1.7
+    },
+    "overall": 92,
+    "category": "legend",
+    "era": "1998-2013",
+    "nickname": "Doc",
+    "grades": {
+      "fastball": 72,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 78,
+      "stamina": 78
+    },
+    "specialty": "Ace",
+    "funFact": "Threw a perfect game in the regular season AND a no-hitter in the playoffs in the same year (2010). The ultimate competitor."
+  },
+  {
+    "id": "legend-123",
+    "name": "Tony Perez",
+    "team": "CIN",
+    "positions": [
+      "1B",
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.279,
+      "obp": 0.341,
+      "slg": 0.463,
+      "hr": 379,
+      "speed": 38
+    },
+    "overall": 89,
+    "category": "legend",
+    "era": "1964-1986",
+    "nickname": "Big Dog",
+    "grades": {
+      "contact": 65,
+      "power": 68,
+      "speed": 35,
+      "fielding": 58,
+      "arm": 55,
+      "eye": 58
+    },
+    "specialty": "Clutch Performer",
+    "funFact": "The heart and soul of the Big Red Machine. Always came through in the biggest moments when his team needed him most."
+  },
+  {
+    "id": "legend-124",
+    "name": "Duke Snider",
+    "team": "BRK",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.38,
+      "slg": 0.54,
+      "hr": 407,
+      "speed": 60
+    },
+    "overall": 91,
+    "category": "legend",
+    "era": "1947-1964",
+    "nickname": "The Silver Fox",
+    "grades": {
+      "contact": 68,
+      "power": 72,
+      "speed": 58,
+      "fielding": 72,
+      "arm": 68,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "The center fielder of the legendary Boys of Summer Brooklyn Dodgers. Hit 40+ homers five years in a row."
+  },
+  {
+    "id": "legend-125",
+    "name": "Larry Doby",
+    "team": "CLE",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.283,
+      "obp": 0.386,
+      "slg": 0.49,
+      "hr": 253,
+      "speed": 62
+    },
+    "overall": 89,
+    "category": "legend",
+    "era": "1947-1959",
+    "nickname": "Larry",
+    "grades": {
+      "contact": 62,
+      "power": 68,
+      "speed": 60,
+      "fielding": 68,
+      "arm": 65,
+      "eye": 72
+    },
+    "specialty": "Power Hitter",
+    "funFact": "The first Black player in the American League, just 11 weeks after Jackie Robinson. A 7-time All-Star and true pioneer."
+  }
+]

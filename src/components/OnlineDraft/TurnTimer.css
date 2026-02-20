@@ -1,0 +1,56 @@
+.turn-timer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  background: rgba(15, 31, 61, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(30, 95, 187, 0.2);
+}
+
+.timer-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(30, 95, 187, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.timer-fill {
+  height: 100%;
+  background: #2872db;
+  border-radius: 2px;
+  transition: width 1s linear;
+}
+
+.turn-timer.low .timer-fill {
+  background: #f0b429;
+}
+
+.turn-timer.critical .timer-fill {
+  background: #dc2626;
+  animation: timerPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes timerPulse {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+.timer-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #7eb8f4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.turn-timer.my-turn .timer-text {
+  color: #d4e8fc;
+}
+
+.turn-timer.critical .timer-text {
+  color: #dc2626;
+}

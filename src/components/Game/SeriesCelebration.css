@@ -1,0 +1,126 @@
+.celebration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, #0f1f3d 0%, #0a1628 100%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.celebration-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.celebration-trophy {
+  font-size: 6rem;
+  opacity: 0;
+  transform: scale(0.3) rotate(-20deg);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.5));
+}
+
+.celebration-trophy.show {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.celebration-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffd700;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  text-shadow: 0 2px 20px rgba(255, 215, 0, 0.4);
+}
+
+.celebration-title.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.celebration-score {
+  font-size: 1.25rem;
+  color: #a0aec0;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transition: all 0.5s ease 0.2s;
+}
+
+.celebration-score.show {
+  opacity: 1;
+}
+
+.celebration-action {
+  margin-top: 2rem;
+  color: #7eb8f4;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.celebration-action.show {
+  opacity: 1;
+  animation: pulse 2s infinite;
+}
+
+/* Confetti */
+.confetti-container {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+  opacity: 0.9;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .celebration-trophy {
+    font-size: 4rem;
+  }
+
+  .celebration-title {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .celebration-score {
+    font-size: 1rem;
+  }
+}

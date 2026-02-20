@@ -1,0 +1,275 @@
+.boxscore-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.boxscore-modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 700px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.boxscore-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+}
+
+.boxscore-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.boxscore-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+}
+
+.boxscore-close:hover {
+  color: var(--color-text);
+}
+
+.boxscore-close:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Line Score */
+.line-score-container {
+  padding: 1rem 1.5rem;
+  overflow-x: auto;
+}
+
+.line-score {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.line-score th,
+.line-score td {
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.line-score th {
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+.line-score .team-col {
+  width: 100px;
+  text-align: left;
+}
+
+.line-score .team-name {
+  font-weight: 600;
+  text-align: left;
+}
+
+.line-score .inning-col {
+  min-width: 30px;
+}
+
+.line-score .total-col {
+  min-width: 35px;
+  background: var(--color-primary-light);
+}
+
+.line-score .total-runs,
+.line-score .total-hits,
+.line-score .total-errors {
+  font-weight: 700;
+  background: var(--color-background);
+}
+
+/* Batting/Pitching Tables */
+.boxscore-section {
+  padding: 0.75rem 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.boxscore-section h3 {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.batting-table,
+.pitching-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.batting-table th,
+.batting-table td,
+.pitching-table th,
+.pitching-table td {
+  padding: 0.35rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.batting-table th,
+.pitching-table th {
+  background: var(--color-background);
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.batting-table .player-col,
+.pitching-table .player-col {
+  text-align: left;
+  min-width: 120px;
+}
+
+.batting-table .pos-col {
+  text-align: center;
+  width: 40px;
+}
+
+.batting-table .player-name,
+.pitching-table .player-name {
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.batting-table .pos {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.batting-table .totals-row {
+  font-weight: 700;
+  background: var(--color-background);
+}
+
+.boxscore-footer {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  position: sticky;
+  bottom: 0;
+  background: var(--color-surface);
+}
+
+@media (max-width: 600px) {
+  .boxscore-modal {
+    width: 100%;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .boxscore-header,
+  .boxscore-section,
+  .boxscore-footer {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .line-score-container {
+    padding: 0.75rem;
+  }
+
+  .line-score {
+    font-size: 0.75rem;
+  }
+
+  .line-score th,
+  .line-score td {
+    padding: 0.35rem 0.4rem;
+  }
+
+  .line-score .team-col {
+    width: 60px;
+  }
+
+  .batting-table,
+  .pitching-table {
+    font-size: 0.7rem;
+  }
+
+  .batting-table .player-col,
+  .pitching-table .player-col {
+    min-width: 90px;
+  }
+
+  .batting-table .player-name,
+  .pitching-table .player-name {
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 400px) {
+  .line-score th,
+  .line-score td {
+    padding: 0.25rem 0.25rem;
+  }
+
+  .line-score .team-col {
+    width: 40px;
+  }
+
+  .line-score .inning-col {
+    min-width: 22px;
+  }
+
+  .line-score .total-col {
+    min-width: 28px;
+  }
+
+  .line-score {
+    font-size: 0.65rem;
+  }
+
+  .batting-table .player-col,
+  .pitching-table .player-col {
+    min-width: 70px;
+  }
+
+  .batting-table .player-name,
+  .pitching-table .player-name {
+    max-width: 70px;
+  }
+}

@@ -1,0 +1,183 @@
+.profile-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.profile-card {
+  background: #0f1f3d;
+  border: 1px solid rgba(30, 95, 187, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.profile-card-header h2 {
+  font-family: 'Teko', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #d4e8fc;
+  margin: 0;
+}
+
+.profile-elo-badge {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f0b429;
+}
+
+.profile-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.profile-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.75rem;
+  background: rgba(10, 22, 40, 0.6);
+  border-radius: 8px;
+}
+
+.profile-stat-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-stat-value {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #d4e8fc;
+}
+
+.profile-section {
+  margin-bottom: 1.5rem;
+}
+
+.profile-section h3 {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #7eb8f4;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.match-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.match-history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  background: #0f1f3d;
+  border-radius: 6px;
+  border: 1px solid rgba(30, 95, 187, 0.15);
+}
+
+.match-opponent {
+  font-weight: 500;
+  color: #d4e8fc;
+}
+
+.match-result-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.match-result-tag.win {
+  background: rgba(22, 163, 74, 0.15);
+  color: #16a34a;
+}
+
+.match-result-tag.loss {
+  background: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+}
+
+.match-elo-delta {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.match-elo-delta.positive { color: #16a34a; }
+.match-elo-delta.negative { color: #dc2626; }
+
+.match-score {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.elo-chart-container {
+  background: #0f1f3d;
+  border: 1px solid rgba(30, 95, 187, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .profile-page {
+    padding: 0.5rem;
+  }
+
+  .profile-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .profile-card-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-elo-badge {
+    font-size: 1.4rem;
+  }
+
+  .profile-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .profile-stat {
+    padding: 0.5rem;
+  }
+
+  .profile-stat-value {
+    font-size: 1.2rem;
+  }
+
+  .match-history-row {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 0.5rem;
+  }
+
+  .elo-chart-container {
+    padding: 0.5rem;
+  }
+}

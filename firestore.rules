@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Profiles: public read, owner-only write
+    match /profiles/{userId} {
+      allow read: if true;
+
+      // Owner can create their profile with valid defaults
+      allow create: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.elo_rating == 1200
+        && request.resource.data.games_played == 0
+        && request.resource.data.wins == 0
+        && request.resource.data.losses == 0
+        && request.resource.data.peak_elo == 1200;
+
+      // Owner can update their own profile
+      // ELO changes capped at +-50 per update
+      allow update: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.username == resource.data.username  // username immutable
+        && (request.resource.data.elo_rating - resource.data.elo_rating).abs() <= 50
+        && request.resource.data.games_played <= resource.data.games_played + 1
+        && request.resource.data.wins <= resource.data.wins + 1
+        && request.resource.data.losses <= resource.data.losses + 1;
+    }
+
+    // Matchmaking queue: public read, owner create, any auth delete
+    match /matchmaking_queue/{userId} {
+      allow read: if true;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow delete: if request.auth != null;
+    }
+
+    // Matches: any authenticated user can read (needed for matchmaking queries),
+    // only participants can write
+    match /matches/{matchId} {
+      allow read: if request.auth != null;
+
+      allow create: if request.auth != null;
+
+      allow update: if request.auth != null
+        && (resource.data.player1_id == request.auth.uid
+            || resource.data.player2_id == request.auth.uid);
+    }
+
+    // Match history: public read, authenticated create
+    match /match_history/{docId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+    }
+  }
+}

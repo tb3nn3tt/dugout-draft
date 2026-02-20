@@ -1,0 +1,221 @@
+.game-situation-banner {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #2d3748;
+}
+
+.game-situation-banner.low {
+  border-color: rgba(72, 187, 120, 0.3);
+}
+
+.game-situation-banner.medium {
+  border-color: rgba(246, 224, 94, 0.3);
+}
+
+.game-situation-banner.high {
+  border-color: rgba(237, 137, 54, 0.5);
+  background: linear-gradient(135deg, #2d2a1f 0%, #1a1812 100%);
+}
+
+.game-situation-banner.clutch {
+  border-color: rgba(252, 129, 129, 0.5);
+  background: linear-gradient(135deg, #2d1f1f 0%, #1a1212 100%);
+  animation: clutch-pulse 2s infinite;
+}
+
+@keyframes clutch-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(252, 129, 129, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(252, 129, 129, 0.5); }
+}
+
+.clutch-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(252, 129, 129, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  animation: glow-pulse 2s infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.situation-content {
+  position: relative;
+  z-index: 1;
+}
+
+.situation-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.situation-description {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+}
+
+.runner-situation {
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+.situation-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.score-display {
+  text-align: center;
+}
+
+.score {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Mini Diamond */
+.diamond-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.diamond-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.base {
+  width: 10px;
+  height: 10px;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  transform: rotate(45deg);
+}
+
+.base.occupied {
+  background: #f6e05e;
+  border-color: #f6e05e;
+  box-shadow: 0 0 6px rgba(246, 224, 94, 0.5);
+}
+
+.home-plate {
+  width: 12px;
+  height: 12px;
+  background: #2d3748;
+  clip-path: polygon(50% 0%, 100% 30%, 100% 100%, 0% 100%, 0% 30%);
+}
+
+/* Outs Display */
+.outs-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.outs-label {
+  font-size: 0.55rem;
+  color: #718096;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.outs-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.out-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+}
+
+.out-dot.active {
+  background: #fc8181;
+  border-color: #fc8181;
+  box-shadow: 0 0 6px rgba(252, 129, 129, 0.5);
+}
+
+/* Pressure Indicator */
+.pressure-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.pressure-label {
+  font-size: 0.55rem;
+  color: #718096;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pressure-level {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.pressure-bars {
+  display: flex;
+  gap: 3px;
+}
+
+.pressure-bars .bar {
+  width: 12px;
+  height: 4px;
+  background: #2d3748;
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.pressure-indicator.low .bar.filled {
+  background: #48bb78;
+}
+
+.pressure-indicator.medium .bar.filled {
+  background: #f6e05e;
+}
+
+.pressure-indicator.high .bar.filled {
+  background: #ed8936;
+}
+
+.pressure-indicator.clutch .bar.filled {
+  background: #fc8181;
+  animation: bar-pulse 1s infinite;
+}
+
+@keyframes bar-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game-situation-banner {
+    display: none;
+  }
+}

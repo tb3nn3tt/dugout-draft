@@ -1,0 +1,227 @@
+.mystery-reveal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  animation: mrFadeIn 0.2s ease;
+}
+
+@keyframes mrFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mystery-reveal-modal {
+  width: 320px;
+  max-width: 92vw;
+  padding: 0.5rem;
+}
+
+/* Drumroll */
+.drumroll {
+  text-align: center;
+  color: #c4b5fd;
+}
+
+.drumroll-icon {
+  font-size: 4rem;
+  animation: drumrollBounce 0.4s ease infinite alternate;
+}
+
+@keyframes drumrollBounce {
+  from { transform: scale(1) rotate(-5deg); }
+  to { transform: scale(1.15) rotate(5deg); }
+}
+
+.drumroll-text {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.drumroll-dots span {
+  font-size: 2rem;
+  font-weight: 800;
+  animation: mrDotPulse 1s ease infinite;
+}
+
+.drumroll-dots span:nth-child(2) { animation-delay: 0.2s; }
+.drumroll-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes mrDotPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Reveal */
+.mr-reveal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: mrRevealPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes mrRevealPop {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.mr-tier-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px currentColor;
+}
+
+.mr-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 2px solid;
+  border-radius: 14px;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.mr-tier-diamond .mr-card { box-shadow: 0 0 30px rgba(0, 212, 255, 0.3); }
+.mr-tier-gold .mr-card { box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); }
+.mr-tier-silver .mr-card { box-shadow: 0 0 30px rgba(192, 192, 192, 0.3); }
+.mr-tier-bronze .mr-card { box-shadow: 0 0 30px rgba(205, 127, 50, 0.3); }
+
+.mr-overall {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  flex-shrink: 0;
+}
+
+.mr-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mr-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  word-wrap: break-word;
+}
+
+.mr-nickname {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: 0.125rem;
+}
+
+.mr-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.375rem;
+  flex-wrap: wrap;
+}
+
+.mr-pos {
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.mr-team {
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+.mr-era {
+  font-size: 0.65rem;
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.15);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.mr-specialty {
+  font-size: 0.7rem;
+  color: #fbbf24;
+  margin-top: 0.25rem;
+}
+
+.mr-type {
+  font-size: 0.65rem;
+  color: #64748b;
+  margin-top: 0.125rem;
+}
+
+.mr-fun-fact {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+}
+
+.mr-dismiss {
+  padding: 0.75rem 2.5rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mr-dismiss:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+@media (max-width: 768px) {
+  .mystery-reveal-modal {
+    width: 300px;
+  }
+
+  .mr-tier-badge {
+    font-size: 1.25rem;
+  }
+
+  .mr-card {
+    padding: 0.75rem 1rem;
+  }
+
+  .mr-overall {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+
+  .mr-name {
+    font-size: 0.95rem;
+  }
+}

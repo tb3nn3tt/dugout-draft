@@ -1,0 +1,2128 @@
+[
+  {
+    "id": "decade80-1",
+    "name": "Cal Ripken Jr.",
+    "team": "BAL",
+    "positions": [
+      "SS",
+      "3B",
+      "PH",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.276,
+      "obp": 0.34,
+      "slg": 0.447,
+      "hr": 431,
+      "speed": 50
+    },
+    "overall": 94,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "The Iron Man",
+    "grades": {
+      "contact": 70,
+      "power": 70,
+      "speed": 50,
+      "fielding": 75,
+      "arm": 75,
+      "eye": 65
+    },
+    "specialty": "5-Tool",
+    "funFact": "2,632 consecutive games - the ultimate Iron Man"
+  },
+  {
+    "id": "decade80-2",
+    "name": "Tony Gwynn",
+    "team": "SD",
+    "positions": [
+      "RF",
+      "LF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.338,
+      "obp": 0.388,
+      "slg": 0.459,
+      "hr": 135,
+      "speed": 65
+    },
+    "overall": 94,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "Mr. Padre",
+    "grades": {
+      "contact": 80,
+      "power": 50,
+      "speed": 65,
+      "fielding": 70,
+      "arm": 60,
+      "eye": 80
+    },
+    "specialty": "Contact Master",
+    "funFact": "8 batting titles - struck out only 434 times in 20 years"
+  },
+  {
+    "id": "decade80-3",
+    "name": "Kirby Puckett",
+    "team": "MIN",
+    "positions": [
+      "CF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.318,
+      "obp": 0.36,
+      "slg": 0.477,
+      "hr": 207,
+      "speed": 70
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "Puck",
+    "grades": {
+      "contact": 75,
+      "power": 65,
+      "speed": 70,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": "Game 6 '91 World Series catch + walk-off HR - unforgettable"
+  },
+  {
+    "id": "decade80-4",
+    "name": "Ozzie Smith",
+    "team": "STL",
+    "positions": [
+      "SS",
+      "PH",
+      "PR",
+      "IFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.262,
+      "obp": 0.337,
+      "slg": 0.328,
+      "hr": 28,
+      "speed": 80
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "The Wizard",
+    "grades": {
+      "contact": 65,
+      "power": 30,
+      "speed": 80,
+      "fielding": 80,
+      "arm": 75,
+      "eye": 65
+    },
+    "specialty": "Gold Glove",
+    "funFact": "13 Gold Gloves - did a backflip before every game"
+  },
+  {
+    "id": "decade80-5",
+    "name": "Don Mattingly",
+    "team": "NYY",
+    "positions": [
+      "1B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.307,
+      "obp": 0.358,
+      "slg": 0.471,
+      "hr": 222,
+      "speed": 45
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Donnie Baseball",
+    "grades": {
+      "contact": 80,
+      "power": 70,
+      "speed": 45,
+      "fielding": 80,
+      "arm": 60,
+      "eye": 65
+    },
+    "specialty": "Contact Master",
+    "funFact": "The perfect Yankee - sweet swing and 9 Gold Gloves at first"
+  },
+  {
+    "id": "decade80-6",
+    "name": "Barry Larkin",
+    "team": "CIN",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.371,
+      "slg": 0.444,
+      "hr": 198,
+      "speed": 75
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "The Barry",
+    "grades": {
+      "contact": 75,
+      "power": 60,
+      "speed": 75,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "MVP, 30-30 club, Gold Glover - complete shortstop"
+  },
+  {
+    "id": "decade80-7",
+    "name": "Frank Thomas",
+    "team": "CHW",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.301,
+      "obp": 0.419,
+      "slg": 0.555,
+      "hr": 521,
+      "speed": 35
+    },
+    "overall": 94,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "The Big Hurt",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 35,
+      "fielding": 45,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Back-to-back MVPs - one of the greatest right-handed hitters ever"
+  },
+  {
+    "id": "decade80-8",
+    "name": "John Smoltz",
+    "team": "ATL",
+    "positions": [
+      "SP",
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.33,
+      "whip": 1.18,
+      "k9": 8.3,
+      "bb9": 2.7
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1990s-2000s",
+    "nickname": "Smoltzy",
+    "grades": {
+      "fastball": 75,
+      "breaking": 75,
+      "changeup": 65,
+      "control": 70,
+      "stamina": 75
+    },
+    "specialty": "Ace",
+    "funFact": "Only player with 200+ wins AND 150+ saves - elite at both"
+  },
+  {
+    "id": "decade80-9",
+    "name": "Rickey Henderson",
+    "team": "OAK",
+    "positions": [
+      "LF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "avg": 0.279,
+      "obp": 0.401,
+      "slg": 0.419,
+      "hr": 297,
+      "speed": 80
+    },
+    "overall": 95,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "Man of Steal",
+    "grades": {
+      "contact": 65,
+      "power": 55,
+      "speed": 80,
+      "fielding": 65,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "Speedster",
+    "funFact": "1,406 stolen bases — greatest leadoff hitter ever, referred to himself in third person"
+  },
+  {
+    "id": "decade80-10",
+    "name": "Wade Boggs",
+    "team": "BOS",
+    "positions": [
+      "3B",
+      "PH",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.328,
+      "obp": 0.415,
+      "slg": 0.443,
+      "hr": 118,
+      "speed": 45
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "Chicken Man",
+    "grades": {
+      "contact": 80,
+      "power": 45,
+      "speed": 45,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 80
+    },
+    "specialty": "Contact Master",
+    "funFact": ".328 career avg, 5 batting titles — ate chicken before every game for 20 years"
+  },
+  {
+    "id": "decade80-11",
+    "name": "Ryne Sandberg",
+    "team": "CHC",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.344,
+      "slg": 0.452,
+      "hr": 282,
+      "speed": 65
+    },
+    "overall": 93,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Ryno",
+    "grades": {
+      "contact": 70,
+      "power": 65,
+      "speed": 65,
+      "fielding": 80,
+      "arm": 70,
+      "eye": 60
+    },
+    "specialty": "Gold Glove",
+    "funFact": "MVP in '84, 9 Gold Gloves — The Sandberg Game vs the Cardinals is legendary"
+  },
+  {
+    "id": "decade80-12",
+    "name": "Greg Maddux",
+    "team": "ATL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.16,
+      "whip": 1.14,
+      "k9": 6.1,
+      "bb9": 1.8
+    },
+    "overall": 96,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "The Professor",
+    "grades": {
+      "fastball": 55,
+      "breaking": 70,
+      "changeup": 80,
+      "control": 80,
+      "stamina": 80
+    },
+    "specialty": "Ace",
+    "funFact": "4 straight Cy Youngs, 18 Gold Gloves — beat hitters with 87 mph and genius"
+  },
+  {
+    "id": "decade80-13",
+    "name": "Randy Johnson",
+    "team": "ARI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 3.29,
+      "whip": 1.17,
+      "k9": 10.6,
+      "bb9": 3.3
+    },
+    "overall": 96,
+    "category": "decade",
+    "era": "1990s-2000s",
+    "nickname": "The Big Unit",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 55,
+      "control": 65,
+      "stamina": 75
+    },
+    "specialty": "Power Arm",
+    "funFact": "6'10\" of terror — 4,875 Ks, 5 Cy Youngs, exploded a bird with a fastball"
+  },
+  {
+    "id": "decade80-14",
+    "name": "Pedro Martinez",
+    "team": "BOS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.93,
+      "whip": 1.05,
+      "k9": 10,
+      "bb9": 2.4
+    },
+    "overall": 97,
+    "category": "decade",
+    "era": "1990s-2000s",
+    "nickname": "Petey",
+    "grades": {
+      "fastball": 75,
+      "breaking": 80,
+      "changeup": 80,
+      "control": 80,
+      "stamina": 65
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "1.74 ERA in '00 during the steroid era — the most dominant peak ever for a pitcher"
+  },
+  {
+    "id": "decade80-15",
+    "name": "Ken Griffey Jr.",
+    "team": "SEA",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.284,
+      "obp": 0.37,
+      "slg": 0.538,
+      "hr": 630,
+      "speed": 65
+    },
+    "overall": 96,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "The Kid",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 65,
+      "fielding": 80,
+      "arm": 70,
+      "eye": 65
+    },
+    "specialty": "5-Tool",
+    "funFact": "630 HR with the sweetest swing ever — backwards cap, clean record, pure talent"
+  },
+  {
+    "id": "decade80-16",
+    "name": "Edgar Martinez",
+    "team": "SEA",
+    "positions": [
+      "DH",
+      "3B",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.312,
+      "obp": 0.418,
+      "slg": 0.515,
+      "hr": 309,
+      "speed": 35
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Gar",
+    "grades": {
+      "contact": 80,
+      "power": 65,
+      "speed": 35,
+      "fielding": 45,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "Contact Master",
+    "funFact": "The Double that saved baseball in Seattle — DH award literally named after him"
+  },
+  {
+    "id": "decade80-17",
+    "name": "Dennis Eckersley",
+    "team": "OAK",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.5,
+      "whip": 1.16,
+      "k9": 7.1,
+      "bb9": 1.5
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "Eck",
+    "grades": {
+      "fastball": 70,
+      "breaking": 70,
+      "changeup": 60,
+      "control": 80,
+      "stamina": 50
+    },
+    "specialty": "Ace",
+    "funFact": "197 wins + 390 saves — reinvented himself from starter to unhittable closer"
+  },
+  {
+    "id": "decade80-18",
+    "name": "Robin Yount",
+    "team": "MIL",
+    "positions": [
+      "SS",
+      "CF",
+      "IFD",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.342,
+      "slg": 0.43,
+      "hr": 251,
+      "speed": 65
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "The Kid",
+    "grades": {
+      "contact": 70,
+      "power": 60,
+      "speed": 65,
+      "fielding": 70,
+      "arm": 65,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": "MVP at SS and CF — 3,142 hits, played his entire 20-year career for Milwaukee"
+  },
+  {
+    "id": "decade80-20",
+    "name": "Dave Winfield",
+    "team": "NYY",
+    "positions": [
+      "RF",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.283,
+      "obp": 0.353,
+      "slg": 0.475,
+      "hr": 465,
+      "speed": 55
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Daddy Long Legs",
+    "grades": {
+      "contact": 65,
+      "power": 75,
+      "speed": 55,
+      "fielding": 70,
+      "arm": 80,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": "465 HR, drafted in 3 pro sports — delivered the series-winning hit for Toronto at age 41"
+  },
+  {
+    "id": "decade80-21",
+    "name": "Paul Molitor",
+    "team": "MIL",
+    "positions": [
+      "DH",
+      "3B",
+      "PH",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.306,
+      "obp": 0.369,
+      "slg": 0.448,
+      "hr": 234,
+      "speed": 70
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "The Ignitor",
+    "grades": {
+      "contact": 75,
+      "power": 55,
+      "speed": 70,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": "Contact Master",
+    "funFact": "3,319 hits, 39-game hitting streak — WS MVP at age 37 for the Blue Jays"
+  },
+  {
+    "id": "decade80-24",
+    "name": "Roberto Alomar",
+    "team": "TOR",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.3,
+      "obp": 0.371,
+      "slg": 0.443,
+      "hr": 210,
+      "speed": 65
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Robbie",
+    "grades": {
+      "contact": 75,
+      "power": 55,
+      "speed": 65,
+      "fielding": 80,
+      "arm": 70,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "12x All-Star, 10 Gold Gloves — the smoothest second baseman of his generation"
+  },
+  {
+    "id": "decade80-25",
+    "name": "Tom Glavine",
+    "team": "ATL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.54,
+      "whip": 1.31,
+      "k9": 5.3,
+      "bb9": 2.8
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Tommy G",
+    "grades": {
+      "fastball": 55,
+      "breaking": 65,
+      "changeup": 80,
+      "control": 75,
+      "stamina": 80
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "305 wins, 2 Cy Youngs — painted the black corner better than anyone. WS MVP in '95."
+  },
+  {
+    "id": "decade80-26",
+    "name": "Dale Murphy",
+    "team": "ATL",
+    "positions": [
+      "CF",
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.265,
+      "obp": 0.346,
+      "slg": 0.469,
+      "hr": 398,
+      "speed": 60
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Murph",
+    "grades": {
+      "contact": 60,
+      "power": 75,
+      "speed": 60,
+      "fielding": 75,
+      "arm": 75,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": "Back-to-back MVPs in '82-83 — the best player in baseball who isn't in the Hall of Fame"
+  },
+  {
+    "id": "decade80-28",
+    "name": "Nolan Ryan",
+    "team": "TEX",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.19,
+      "whip": 1.25,
+      "k9": 9.5,
+      "bb9": 4.7
+    },
+    "overall": 94,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "The Ryan Express",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "changeup": 55,
+      "control": 55,
+      "stamina": 80
+    },
+    "specialty": "Power Arm",
+    "funFact": "5,714 Ks, 7 no-hitters — still throwing 98 mph at age 46. Beat up Robin Ventura at 46."
+  },
+  {
+    "id": "decade80-34",
+    "name": "Eddie Murray",
+    "team": "BAL",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.287,
+      "obp": 0.359,
+      "slg": 0.476,
+      "hr": 30,
+      "speed": 35
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1980s-90s",
+    "grades": {
+      "contact": 68,
+      "power": 65,
+      "speed": 30,
+      "eye": 62,
+      "fielding": 55,
+      "arm": 50
+    },
+    "nickname": "Steady Eddie",
+    "funFact": "504 home runs with zero fanfare. The quietest superstar in baseball history.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "decade80-35",
+    "name": "Alan Trammell",
+    "team": "DET",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.352,
+      "slg": 0.415,
+      "hr": 15,
+      "speed": 62
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1980s-90s",
+    "grades": {
+      "contact": 65,
+      "power": 42,
+      "speed": 58,
+      "eye": 60,
+      "fielding": 68,
+      "arm": 65
+    },
+    "nickname": "Tram",
+    "funFact": "World Series MVP in 1984. The complete shortstop in the Motor City.",
+    "specialty": null
+  },
+  {
+    "id": "decade80-37",
+    "name": "Lee Smith",
+    "team": "STL",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.03,
+      "whip": 1.26,
+      "k9": 8.7,
+      "bb9": 3.2
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1980s-90s",
+    "grades": {
+      "fastball": 75,
+      "breaking": 55,
+      "control": 52,
+      "stamina": 45,
+      "changeup": 42
+    },
+    "nickname": "Big Lee",
+    "funFact": "478 saves from a 6-foot-6 frame. Intimidation plus a 95 mph fastball.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "decade80-40",
+    "name": "Roger Clemens",
+    "team": "BOS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.12,
+      "whip": 1.17,
+      "k9": 8.6,
+      "bb9": 3
+    },
+    "overall": 94,
+    "category": "decade",
+    "era": "1980s-90s",
+    "grades": {
+      "fastball": 78,
+      "breaking": 72,
+      "control": 62,
+      "stamina": 72,
+      "changeup": 58
+    },
+    "nickname": "The Rocket",
+    "funFact": "354 wins and seven Cy Youngs. Twenty strikeouts in one game. Twice.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "decade80-41",
+    "name": "Dwight Gooden",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.51,
+      "whip": 1.23,
+      "k9": 8,
+      "bb9": 3.4
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1980s",
+    "grades": {
+      "fastball": 75,
+      "breaking": 72,
+      "control": 55,
+      "stamina": 62,
+      "changeup": 52
+    },
+    "nickname": "Doc",
+    "funFact": "Cy Young at 20 years old. Doctor K had the nastiest curveball in New York.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "decade80-42",
+    "name": "Darryl Strawberry",
+    "team": "NYM",
+    "positions": [
+      "RF",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.259,
+      "obp": 0.357,
+      "slg": 0.505,
+      "hr": 35,
+      "speed": 62
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1980s-90s",
+    "grades": {
+      "contact": 52,
+      "power": 72,
+      "speed": 58,
+      "eye": 62,
+      "fielding": 50,
+      "arm": 60
+    },
+    "nickname": "Straw",
+    "funFact": "Towering home runs that seemed to touch the sky. Raw power from a sweet left swing.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "decade80-43",
+    "name": "Eric Davis",
+    "team": "CIN",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.269,
+      "obp": 0.359,
+      "slg": 0.482,
+      "hr": 28,
+      "speed": 85
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1980s-90s",
+    "grades": {
+      "contact": 55,
+      "power": 62,
+      "speed": 78,
+      "eye": 60,
+      "fielding": 62,
+      "arm": 60
+    },
+    "nickname": "ED",
+    "funFact": "30-30 before it was cool. Five-tool talent that lit up Riverfront Stadium.",
+    "specialty": "Five Tool"
+  },
+  {
+    "id": "decade80-44",
+    "name": "Orel Hershiser",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.48,
+      "whip": 1.21,
+      "k9": 6.2,
+      "bb9": 2.6
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1980s",
+    "grades": {
+      "fastball": 58,
+      "breaking": 68,
+      "control": 68,
+      "stamina": 72,
+      "changeup": 62
+    },
+    "nickname": "Bulldog",
+    "funFact": "59 consecutive scoreless innings. Unbreakable record by an unbreakable competitor.",
+    "specialty": "Pitching Maestro"
+  },
+  {
+    "id": "decade80-45",
+    "name": "Bert Blyleven",
+    "team": "MIN",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.31,
+      "whip": 1.2,
+      "k9": 7,
+      "bb9": 2.4
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1980s",
+    "grades": {
+      "fastball": 62,
+      "breaking": 78,
+      "control": 62,
+      "stamina": 72,
+      "changeup": 52
+    },
+    "nickname": "Bert",
+    "funFact": "The best curveball of his generation. 3,701 strikeouts on pure spin.",
+    "specialty": null
+  },
+  {
+    "id": "decade80-46",
+    "name": "Jack Morris",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.9,
+      "whip": 1.3,
+      "k9": 5.8,
+      "bb9": 3.3
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1980s-90s",
+    "grades": {
+      "fastball": 68,
+      "breaking": 60,
+      "control": 52,
+      "stamina": 72,
+      "changeup": 55
+    },
+    "nickname": "Jackie",
+    "funFact": "Ten innings of shutout ball in Game 7. The ultimate big-game pitcher.",
+    "specialty": "Clutch Performer"
+  },
+  {
+    "id": "decade80-47",
+    "name": "Andre Dawson",
+    "team": "CHC",
+    "positions": [
+      "RF",
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.279,
+      "obp": 0.323,
+      "slg": 0.482,
+      "hr": 32,
+      "speed": 60
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1980s",
+    "grades": {
+      "contact": 62,
+      "power": 65,
+      "speed": 55,
+      "eye": 48,
+      "fielding": 65,
+      "arm": 72
+    },
+    "nickname": "The Hawk",
+    "funFact": "Won MVP on a last-place team. Raw power and a cannon arm from right field.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "decade80-48",
+    "name": "Harold Baines",
+    "team": "CHW",
+    "positions": [
+      "DH",
+      "RF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.289,
+      "obp": 0.356,
+      "slg": 0.465,
+      "hr": 25,
+      "speed": 30
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1980s-90s",
+    "grades": {
+      "contact": 68,
+      "power": 58,
+      "speed": 25,
+      "eye": 60,
+      "fielding": 40,
+      "arm": 45
+    },
+    "nickname": "Harold",
+    "funFact": "2,866 hits with a smooth, quiet approach. The ultimate professional hitter.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "decade80-49",
+    "name": "Fernando Valenzuela",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.54,
+      "whip": 1.31,
+      "k9": 6.6,
+      "bb9": 3.4
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "El Toro",
+    "grades": {
+      "fastball": 60,
+      "breaking": 72,
+      "changeup": 68,
+      "control": 58,
+      "stamina": 75
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "Fernandomania took over LA in 1981. Rookie of the Year AND Cy Young in the same season!"
+  },
+  {
+    "id": "decade80-50",
+    "name": "Dave Stewart",
+    "team": "OAK",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.95,
+      "whip": 1.33,
+      "k9": 6.1,
+      "bb9": 3.5
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "Stew",
+    "grades": {
+      "fastball": 65,
+      "breaking": 62,
+      "changeup": 58,
+      "control": 55,
+      "stamina": 72
+    },
+    "specialty": "Clutch Performer",
+    "funFact": "Four straight 20-win seasons and World Series MVP in '89. The ultimate intimidator on the mound."
+  },
+  {
+    "id": "decade80-51",
+    "name": "Bret Saberhagen",
+    "team": "KC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.34,
+      "whip": 1.12,
+      "k9": 6.7,
+      "bb9": 1.8
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Sabes",
+    "grades": {
+      "fastball": 62,
+      "breaking": 68,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 68
+    },
+    "specialty": "Ace",
+    "funFact": "Two Cy Youngs and a World Series MVP by age 23. Pinpoint control that baffled hitters."
+  },
+  {
+    "id": "decade80-52",
+    "name": "Mark McGwire",
+    "team": "OAK",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.263,
+      "obp": 0.394,
+      "slg": 0.588,
+      "hr": 49,
+      "speed": 25
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "Big Mac",
+    "grades": {
+      "contact": 50,
+      "power": 80,
+      "speed": 25,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 68
+    },
+    "specialty": "Power Hitter",
+    "funFact": "49 homers as a rookie in 1987 set the all-time record. Launched towering blasts that amazed fans everywhere."
+  },
+  {
+    "id": "decade80-53",
+    "name": "Jose Canseco",
+    "team": "OAK",
+    "positions": [
+      "RF",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.266,
+      "obp": 0.353,
+      "slg": 0.515,
+      "hr": 42,
+      "speed": 68
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "The Chemist",
+    "grades": {
+      "contact": 52,
+      "power": 78,
+      "speed": 65,
+      "fielding": 45,
+      "arm": 65,
+      "eye": 52
+    },
+    "specialty": "Power Hitter",
+    "funFact": "First ever 40 homers and 40 steals in one season. A jaw-dropping combo of speed and power in 1988."
+  },
+  {
+    "id": "decade80-54",
+    "name": "Will Clark",
+    "team": "SF",
+    "positions": [
+      "1B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.303,
+      "obp": 0.384,
+      "slg": 0.497,
+      "hr": 284,
+      "speed": 45
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1980s-90s",
+    "nickname": "Will the Thrill",
+    "grades": {
+      "contact": 75,
+      "power": 68,
+      "speed": 45,
+      "fielding": 72,
+      "arm": 60,
+      "eye": 70
+    },
+    "specialty": "Contact Master",
+    "funFact": "Grand slam off Nolan Ryan in his very first big league game. Clutch hitting was his superpower."
+  },
+  {
+    "id": "decade80-55",
+    "name": "Lou Whitaker",
+    "team": "DET",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.276,
+      "obp": 0.363,
+      "slg": 0.426,
+      "hr": 244,
+      "speed": 58
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Sweet Lou",
+    "grades": {
+      "contact": 65,
+      "power": 58,
+      "speed": 58,
+      "fielding": 72,
+      "arm": 65,
+      "eye": 65
+    },
+    "specialty": "5-Tool",
+    "funFact": "Rookie of the Year in '78, 5x All-Star. Formed the greatest double play duo ever with Alan Trammell."
+  },
+  {
+    "id": "decade80-56",
+    "name": "Tim Raines",
+    "team": "MON",
+    "positions": [
+      "LF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.294,
+      "obp": 0.385,
+      "slg": 0.425,
+      "hr": 170,
+      "speed": 80
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Rock",
+    "grades": {
+      "contact": 72,
+      "power": 50,
+      "speed": 80,
+      "fielding": 62,
+      "arm": 55,
+      "eye": 72
+    },
+    "specialty": "Speedster",
+    "funFact": "808 stolen bases with an incredible 85% success rate. One of the best leadoff hitters in history."
+  },
+  {
+    "id": "decade80-57",
+    "name": "Pedro Guerrero",
+    "team": "LAD",
+    "positions": [
+      "3B",
+      "LF",
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.3,
+      "obp": 0.37,
+      "slg": 0.48,
+      "hr": 215,
+      "speed": 48
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Pete",
+    "grades": {
+      "contact": 70,
+      "power": 65,
+      "speed": 48,
+      "fielding": 42,
+      "arm": 55,
+      "eye": 58
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Co-World Series MVP in 1981. His bat was pure lightning in every big moment for the Dodgers."
+  },
+  {
+    "id": "decade80-58",
+    "name": "Jack Clark",
+    "team": "STL",
+    "positions": [
+      "1B",
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.379,
+      "slg": 0.476,
+      "hr": 340,
+      "speed": 40
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Jack the Ripper",
+    "grades": {
+      "contact": 55,
+      "power": 72,
+      "speed": 40,
+      "fielding": 52,
+      "arm": 60,
+      "eye": 72
+    },
+    "specialty": "Power Hitter",
+    "funFact": "His NLCS homer off Tom Niedenfuer sent the Cards to the 1985 World Series. Feared power and a great eye."
+  },
+  {
+    "id": "decade80-59",
+    "name": "Dave Righetti",
+    "team": "NYY",
+    "positions": [
+      "CL",
+      "SU"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.46,
+      "whip": 1.32,
+      "k9": 7.5,
+      "bb9": 3.8
+    },
+    "overall": 83,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Rags",
+    "grades": {
+      "fastball": 68,
+      "breaking": 62,
+      "changeup": 55,
+      "control": 55,
+      "stamina": 48
+    },
+    "specialty": "Strikeout King",
+    "funFact": "No-hitter on the Fourth of July in 1983, then set the saves record with 46. A true Yankee legend."
+  },
+  {
+    "id": "decade80-60",
+    "name": "Dan Quisenberry",
+    "team": "KC",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.76,
+      "whip": 1.15,
+      "k9": 3.3,
+      "bb9": 1.4
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1980s",
+    "nickname": "Quiz",
+    "grades": {
+      "fastball": 45,
+      "breaking": 55,
+      "changeup": 62,
+      "control": 78,
+      "stamina": 52
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "Led the AL in saves five times with a funky submarine delivery. Batters couldn't figure out his sinker."
+  },
+  {
+    "id": "decade80-61",
+    "name": "Larry Walker",
+    "team": "COL",
+    "positions": [
+      "RF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.313,
+      "obp": 0.4,
+      "slg": 0.565,
+      "hr": 383,
+      "speed": 65
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Boogie",
+    "grades": {
+      "contact": 72,
+      "power": 75,
+      "speed": 62,
+      "fielding": 78,
+      "arm": 78,
+      "eye": 68
+    },
+    "specialty": "5-Tool",
+    "funFact": "MVP, batting champ, 7 Gold Gloves. A Canadian kid who became one of the most complete players ever."
+  },
+  {
+    "id": "decade80-62",
+    "name": "Moises Alou",
+    "team": "MON",
+    "positions": [
+      "LF",
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.303,
+      "obp": 0.369,
+      "slg": 0.516,
+      "hr": 332,
+      "speed": 48
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Moi",
+    "grades": {
+      "contact": 70,
+      "power": 65,
+      "speed": 48,
+      "fielding": 55,
+      "arm": 58,
+      "eye": 58
+    },
+    "specialty": "Contact Master",
+    "funFact": "Six-time All-Star from an incredible baseball family. Hit .300 like it was easy."
+  },
+  {
+    "id": "decade80-63",
+    "name": "Jim Thome",
+    "team": "CLE",
+    "positions": [
+      "1B",
+      "3B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.276,
+      "obp": 0.402,
+      "slg": 0.554,
+      "hr": 612,
+      "speed": 30
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Thomer",
+    "grades": {
+      "contact": 58,
+      "power": 80,
+      "speed": 30,
+      "fielding": 48,
+      "arm": 52,
+      "eye": 78
+    },
+    "specialty": "Power Hitter",
+    "funFact": "612 career homers with one of the sweetest left-handed swings ever. A true gentle giant beloved by teammates."
+  },
+  {
+    "id": "decade80-64",
+    "name": "Kenny Lofton",
+    "team": "CLE",
+    "positions": [
+      "CF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.299,
+      "obp": 0.372,
+      "slg": 0.423,
+      "hr": 130,
+      "speed": 80
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Kenny",
+    "grades": {
+      "contact": 70,
+      "power": 40,
+      "speed": 80,
+      "fielding": 75,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": "Speedster",
+    "funFact": "Five straight stolen base titles. A college basketball player who became one of baseball's fastest center fielders."
+  },
+  {
+    "id": "decade80-65",
+    "name": "Bernie Williams",
+    "team": "NYY",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.297,
+      "obp": 0.381,
+      "slg": 0.477,
+      "hr": 287,
+      "speed": 62
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Bernabe",
+    "grades": {
+      "contact": 72,
+      "power": 62,
+      "speed": 62,
+      "fielding": 68,
+      "arm": 58,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "Batting champ, 4 World Series rings, and a gifted classical guitarist. As smooth at bat as on guitar."
+  },
+  {
+    "id": "decade80-66",
+    "name": "John Olerud",
+    "team": "TOR",
+    "positions": [
+      "1B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.398,
+      "slg": 0.465,
+      "hr": 255,
+      "speed": 30
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Johnny O",
+    "grades": {
+      "contact": 75,
+      "power": 58,
+      "speed": 30,
+      "fielding": 68,
+      "arm": 55,
+      "eye": 78
+    },
+    "specialty": "Contact Master",
+    "funFact": "Hit .363 in 1993 and nearly won the Triple Crown. Wore a helmet in the field to stay safe and kept crushing it."
+  },
+  {
+    "id": "decade80-67",
+    "name": "Jeff Kent",
+    "team": "SF",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.29,
+      "obp": 0.356,
+      "slg": 0.5,
+      "hr": 377,
+      "speed": 35
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Kentie",
+    "grades": {
+      "contact": 68,
+      "power": 72,
+      "speed": 35,
+      "fielding": 55,
+      "arm": 58,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Most home runs ever by a second baseman with 377. Won the MVP in 2000 with a monster season."
+  },
+  {
+    "id": "decade80-68",
+    "name": "Curt Schilling",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.46,
+      "whip": 1.14,
+      "k9": 8.6,
+      "bb9": 2.0
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Schill",
+    "grades": {
+      "fastball": 72,
+      "breaking": 68,
+      "changeup": 62,
+      "control": 75,
+      "stamina": 75
+    },
+    "specialty": "Strikeout King",
+    "funFact": "Struck out 300+ batters three times. A fearless big-game pitcher who lived for October baseball."
+  },
+  {
+    "id": "decade80-69",
+    "name": "Kevin Brown",
+    "team": "FLA",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.28,
+      "whip": 1.22,
+      "k9": 7.1,
+      "bb9": 2.8
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "KB",
+    "grades": {
+      "fastball": 72,
+      "breaking": 65,
+      "changeup": 55,
+      "control": 62,
+      "stamina": 72
+    },
+    "specialty": "Power Arm",
+    "funFact": "His devastating sinker led the Marlins to a World Series title in 1997. A workhorse who dominated all decade."
+  },
+  {
+    "id": "decade80-70",
+    "name": "David Cone",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "era": 3.46,
+      "whip": 1.26,
+      "k9": 8.3,
+      "bb9": 3.6
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Coney",
+    "grades": {
+      "fastball": 68,
+      "breaking": 72,
+      "changeup": 62,
+      "control": 58,
+      "stamina": 68
+    },
+    "specialty": "Strikeout King",
+    "funFact": "Perfect game on Yogi Berra Day at Yankee Stadium. Five-time All-Star with a devastating slider."
+  },
+  {
+    "id": "decade80-71",
+    "name": "Andy Pettitte",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.85,
+      "whip": 1.35,
+      "k9": 6.6,
+      "bb9": 2.9
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Andy",
+    "grades": {
+      "fastball": 62,
+      "breaking": 65,
+      "changeup": 60,
+      "control": 65,
+      "stamina": 72
+    },
+    "specialty": "Clutch Performer",
+    "funFact": "Most wins in postseason history with 19. His cut fastball was the weapon of the Yankee dynasty."
+  },
+  {
+    "id": "decade80-72",
+    "name": "Trevor Hoffman",
+    "team": "SD",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.87,
+      "whip": 1.06,
+      "k9": 9.4,
+      "bb9": 2.7
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Hoffy",
+    "grades": {
+      "fastball": 58,
+      "breaking": 55,
+      "changeup": 80,
+      "control": 72,
+      "stamina": 48
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "601 career saves with a legendary changeup. When 'Hells Bells' played at the stadium, the game was over."
+  },
+  {
+    "id": "decade80-73",
+    "name": "John Wetteland",
+    "team": "NYY",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.93,
+      "whip": 1.12,
+      "k9": 10.1,
+      "bb9": 3.4
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Wett",
+    "grades": {
+      "fastball": 72,
+      "breaking": 62,
+      "changeup": 52,
+      "control": 58,
+      "stamina": 45
+    },
+    "specialty": "Power Arm",
+    "funFact": "World Series MVP in 1996 with four saves in four games. Locked down the biggest stage like a champion."
+  },
+  {
+    "id": "decade80-74",
+    "name": "Marquis Grissom",
+    "team": "MON",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.272,
+      "obp": 0.318,
+      "slg": 0.399,
+      "hr": 227,
+      "speed": 75
+    },
+    "overall": 83,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Marq",
+    "grades": {
+      "contact": 62,
+      "power": 48,
+      "speed": 75,
+      "fielding": 72,
+      "arm": 62,
+      "eye": 45
+    },
+    "specialty": "Speedster",
+    "funFact": "Made the final catch of the 1995 World Series for Atlanta. Electric speed and a Gold Glove center fielder."
+  },
+  {
+    "id": "decade80-75",
+    "name": "Jay Buhner",
+    "team": "SEA",
+    "positions": [
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.254,
+      "obp": 0.358,
+      "slg": 0.484,
+      "hr": 310,
+      "speed": 40
+    },
+    "overall": 83,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Bone",
+    "grades": {
+      "contact": 48,
+      "power": 72,
+      "speed": 40,
+      "fielding": 62,
+      "arm": 72,
+      "eye": 62
+    },
+    "specialty": "Power Hitter",
+    "funFact": "310 homers and a rocket arm in right field. The heart and soul of those amazing Mariners teams in the '90s."
+  },
+  {
+    "id": "decade80-76",
+    "name": "Tim Salmon",
+    "team": "LAA",
+    "positions": [
+      "RF",
+      "DH",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.282,
+      "obp": 0.385,
+      "slg": 0.498,
+      "hr": 299,
+      "speed": 42
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "King Fish",
+    "grades": {
+      "contact": 62,
+      "power": 68,
+      "speed": 42,
+      "fielding": 58,
+      "arm": 62,
+      "eye": 68
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Rookie of the Year in '93 and a beloved Angel for life. 299 homers from one of the nicest guys in baseball."
+  },
+  {
+    "id": "decade80-77",
+    "name": "Mo Vaughn",
+    "team": "BOS",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.293,
+      "obp": 0.383,
+      "slg": 0.523,
+      "hr": 328,
+      "speed": 25
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Hit Dog",
+    "grades": {
+      "contact": 65,
+      "power": 75,
+      "speed": 25,
+      "fielding": 40,
+      "arm": 50,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "AL MVP in 1995 and the most beloved Red Sox slugger of the decade. Fenway Park loved the Hit Dog."
+  },
+  {
+    "id": "decade80-78",
+    "name": "Carlos Delgado",
+    "team": "TOR",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.28,
+      "obp": 0.383,
+      "slg": 0.546,
+      "hr": 473,
+      "speed": 28
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Delgado",
+    "grades": {
+      "contact": 62,
+      "power": 78,
+      "speed": 28,
+      "fielding": 50,
+      "arm": 52,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "473 career homers including 4 in one game. A monster from Puerto Rico who crushed the ball in Toronto."
+  },
+  {
+    "id": "decade80-79",
+    "name": "Nomar Garciaparra",
+    "team": "BOS",
+    "positions": [
+      "SS",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.313,
+      "obp": 0.361,
+      "slg": 0.521,
+      "hr": 229,
+      "speed": 58
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Nomah",
+    "grades": {
+      "contact": 78,
+      "power": 65,
+      "speed": 58,
+      "fielding": 62,
+      "arm": 68,
+      "eye": 52
+    },
+    "specialty": "Contact Master",
+    "funFact": "Rookie of the Year and two batting titles. His toe-tapping ritual at the plate was the coolest routine in baseball."
+  },
+  {
+    "id": "decade80-80",
+    "name": "Scott Rolen",
+    "team": "PHI",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.281,
+      "obp": 0.364,
+      "slg": 0.49,
+      "hr": 316,
+      "speed": 50
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1990s",
+    "nickname": "Roli",
+    "grades": {
+      "contact": 65,
+      "power": 65,
+      "speed": 50,
+      "fielding": 80,
+      "arm": 78,
+      "eye": 62
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Rookie of the Year and 8 Gold Gloves. A vacuum cleaner at third base who also packed serious pop."
+  }
+]

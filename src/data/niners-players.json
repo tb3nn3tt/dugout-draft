@@ -1,0 +1,658 @@
+[
+  {
+    "id": "niner-1",
+    "name": "KB",
+    "team": "9RS",
+    "positions": [
+      "3B",
+      "PH",
+      "PR",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.345,
+      "obp": 0.445,
+      "slg": 0.56,
+      "hr": 22,
+      "speed": 72
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "KB",
+    "grades": {
+      "contact": 82,
+      "power": 72,
+      "eye": 90,
+      "speed": 72,
+      "fielding": 80,
+      "arm": 75
+    },
+    "specialty": "5-Tool Captain",
+    "funFact": "A true leader who makes everyone around him better. Studies the game like a pro and always knows the right play to make — the kind of player coaches build a team around."
+  },
+  {
+    "id": "niner-2",
+    "name": "Nate",
+    "team": "9RS",
+    "positions": [
+      "C"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.312,
+      "obp": 0.385,
+      "slg": 0.58,
+      "hr": 28,
+      "speed": 58
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Nate",
+    "grades": {
+      "contact": 75,
+      "power": 85,
+      "eye": 72,
+      "speed": 58,
+      "fielding": 78,
+      "arm": 80
+    },
+    "specialty": "Power Catcher",
+    "funFact": "The field general — calls a brilliant game behind the plate and can change the score with one swing. In baseball, the catcher is the quarterback of the defense, and Nate runs the show."
+  },
+  {
+    "id": "niner-3",
+    "name": "Luke",
+    "team": "9RS",
+    "positions": [
+      "1B",
+      "PH",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.298,
+      "obp": 0.395,
+      "slg": 0.52,
+      "hr": 18,
+      "speed": 58
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Luke",
+    "grades": {
+      "contact": 75,
+      "power": 72,
+      "eye": 78,
+      "speed": 58,
+      "fielding": 88,
+      "arm": 70
+    },
+    "specialty": "Gold Glove",
+    "funFact": "A vacuum cleaner at first base — scoops every throw out of the dirt and stretches for balls other first basemen can't reach. Gold Glove defenders save their team dozens of runs over a season."
+  },
+  {
+    "id": "niner-4",
+    "name": "James",
+    "team": "9RS",
+    "positions": [
+      "2B",
+      "PH",
+      "PR"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.335,
+      "obp": 0.435,
+      "slg": 0.51,
+      "hr": 14,
+      "speed": 70
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "James",
+    "grades": {
+      "contact": 85,
+      "power": 68,
+      "eye": 82,
+      "speed": 70,
+      "fielding": 72,
+      "arm": 65
+    },
+    "specialty": "Contact Wizard",
+    "funFact": "Has the sweetest swing on the team — sprays line drives to all fields. Great hitters like James use the whole field instead of trying to pull everything, which makes them almost impossible to pitch to."
+  },
+  {
+    "id": "niner-5",
+    "name": "Cooper",
+    "team": "9RS",
+    "positions": [
+      "SS",
+      "PH",
+      "PR",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.308,
+      "obp": 0.39,
+      "slg": 0.58,
+      "hr": 24,
+      "speed": 85
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Coop",
+    "grades": {
+      "contact": 78,
+      "power": 82,
+      "eye": 72,
+      "speed": 85,
+      "fielding": 82,
+      "arm": 80
+    },
+    "specialty": "Power-Speed",
+    "funFact": "The rare player who combines blazing speed with real power — a true five-tool talent at shortstop. In baseball history, players who can hit for power AND steal bases are the most valuable of all."
+  },
+  {
+    "id": "niner-6",
+    "name": "Al",
+    "team": "9RS",
+    "positions": [
+      "3B",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.375,
+      "slg": 0.62,
+      "hr": 35,
+      "speed": 52
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Big Al",
+    "grades": {
+      "contact": 68,
+      "power": 92,
+      "eye": 72,
+      "speed": 52,
+      "fielding": 65,
+      "arm": 68
+    },
+    "specialty": "Slugger",
+    "funFact": "When Big Al connects, the ball doesn't come back. Home run hitters change the game in an instant — one swing can erase a deficit and put the team ahead. Every lineup needs a player who can do that."
+  },
+  {
+    "id": "niner-7",
+    "name": "Brock",
+    "team": "9RS",
+    "positions": [
+      "LF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.39,
+      "slg": 0.52,
+      "hr": 18,
+      "speed": 68
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Brock",
+    "grades": {
+      "contact": 72,
+      "power": 75,
+      "eye": 75,
+      "speed": 68,
+      "fielding": 88,
+      "arm": 75
+    },
+    "specialty": "Gold Glove",
+    "funFact": "An absolute wall in left field — nothing gets past him. Great outfield defense prevents extra-base hits and keeps runners from advancing. Brock turns would-be doubles into outs."
+  },
+  {
+    "id": "niner-8",
+    "name": "Cal",
+    "team": "9RS",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.325,
+      "obp": 0.42,
+      "slg": 0.535,
+      "hr": 16,
+      "speed": 82
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Cal",
+    "grades": {
+      "contact": 82,
+      "power": 70,
+      "eye": 78,
+      "speed": 82,
+      "fielding": 85,
+      "arm": 72
+    },
+    "specialty": "5-Tool",
+    "funFact": "Does everything at an elite level — hits, runs, fields, throws, and hits for power. Center field is the most important outfield position because you cover the most ground, and Cal covers it all."
+  },
+  {
+    "id": "niner-9",
+    "name": "Hopkins",
+    "team": "9RS",
+    "positions": [
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.302,
+      "obp": 0.395,
+      "slg": 0.49,
+      "hr": 14,
+      "speed": 68
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Hop",
+    "grades": {
+      "contact": 75,
+      "power": 68,
+      "eye": 78,
+      "speed": 68,
+      "fielding": 78,
+      "arm": 75
+    },
+    "specialty": "All-Around",
+    "funFact": "Always in the right position and makes every play look easy. Smart defenders read the ball off the bat and get great jumps — Hop's baseball IQ is off the charts."
+  },
+  {
+    "id": "niner-10",
+    "name": "Ethan",
+    "team": "9RS",
+    "positions": [
+      "2B",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.315,
+      "obp": 0.455,
+      "slg": 0.445,
+      "hr": 8,
+      "speed": 58
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Ethan",
+    "grades": {
+      "contact": 78,
+      "power": 58,
+      "eye": 92,
+      "speed": 58,
+      "fielding": 68,
+      "arm": 62
+    },
+    "specialty": "On-Base Machine",
+    "funFact": "The most patient hitter in the lineup — works deep counts and draws walks like a veteran. Getting on base is the most important thing a hitter can do, and Ethan does it better than anyone."
+  },
+  {
+    "id": "niner-11",
+    "name": "Jared",
+    "team": "9RS",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.292,
+      "obp": 0.38,
+      "slg": 0.505,
+      "hr": 16,
+      "speed": 62
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Jared",
+    "grades": {
+      "contact": 72,
+      "power": 72,
+      "eye": 72,
+      "speed": 65,
+      "fielding": 72,
+      "arm": 72
+    },
+    "specialty": "Utility Star",
+    "funFact": "The ultimate team player — no weaknesses in his game. Utility players who can do everything well are incredibly valuable because they give their manager lineup flexibility every single day."
+  },
+  {
+    "id": "niner-12",
+    "name": "Winfield",
+    "team": "9RS",
+    "positions": [
+      "LF",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.308,
+      "obp": 0.385,
+      "slg": 0.57,
+      "hr": 24,
+      "speed": 60
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Win",
+    "grades": {
+      "contact": 75,
+      "power": 82,
+      "eye": 72,
+      "speed": 60,
+      "fielding": 68,
+      "arm": 68
+    },
+    "specialty": "Run Producer",
+    "funFact": "Dangerous in the middle of the lineup — drives in runs when it matters most. RBI leaders are the guys who come through in clutch situations with runners on base, and Win lives for those moments."
+  },
+  {
+    "id": "niner-13",
+    "name": "Deacon",
+    "team": "9RS",
+    "positions": [
+      "2B",
+      "PR"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.298,
+      "obp": 0.385,
+      "slg": 0.475,
+      "hr": 10,
+      "speed": 75
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Deacon",
+    "grades": {
+      "contact": 75,
+      "power": 65,
+      "eye": 72,
+      "speed": 75,
+      "fielding": 72,
+      "arm": 68
+    },
+    "specialty": "Spark Plug",
+    "funFact": "The energy of the team — gets on base and creates havoc on the basepaths. Speed changes the game because it puts pressure on the defense and forces them to rush throws."
+  },
+  {
+    "id": "niner-14",
+    "name": "Hunter",
+    "team": "9RS",
+    "positions": [
+      "RF",
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.305,
+      "obp": 0.425,
+      "slg": 0.5,
+      "hr": 12,
+      "speed": 90
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Hunter",
+    "grades": {
+      "contact": 75,
+      "power": 68,
+      "eye": 85,
+      "speed": 90,
+      "fielding": 78,
+      "arm": 70
+    },
+    "specialty": "Speedster",
+    "funFact": "The fastest player on the field with an incredible eye at the plate. Elite speed turns singles into doubles and makes routine fly balls into highlight catches. Hunter changes the game every time he steps on the field."
+  },
+  {
+    "id": "niner-15",
+    "name": "KB",
+    "team": "9RS",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 0.89,
+      "whip": 0.75,
+      "k9": 12.5,
+      "bb9": 1.5
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "KB",
+    "grades": {
+      "fastball": 85,
+      "breaking": 80,
+      "control": 88,
+      "stamina": 45,
+      "changeup": 70
+    },
+    "specialty": "Lockdown Closer",
+    "funFact": "Ice in his veins — KB shuts the door in the 9th inning. The closer is the most pressure-packed role in baseball. When the game is on the line with a 1-run lead, KB is the guy you want on the mound."
+  },
+  {
+    "id": "niner-16",
+    "name": "Brock",
+    "team": "9RS",
+    "positions": [
+      "LOOGY"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 1.45,
+      "whip": 0.85,
+      "k9": 11.0,
+      "bb9": 2.0
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Brock",
+    "grades": {
+      "fastball": 65,
+      "breaking": 88,
+      "control": 75,
+      "stamina": 40,
+      "changeup": 82
+    },
+    "specialty": "Funky Lefty",
+    "funFact": "That delivery is impossible to pick up! Left-handed pitchers have a natural advantage against left-handed batters because the ball moves away from them. Add Brock's funky arm angle and batters have no chance."
+  },
+  {
+    "id": "niner-17",
+    "name": "Al",
+    "team": "9RS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.85,
+      "whip": 0.88,
+      "k9": 10.5,
+      "bb9": 2.2
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Big Al",
+    "grades": {
+      "fastball": 90,
+      "breaking": 78,
+      "control": 72,
+      "stamina": 85,
+      "changeup": 70
+    },
+    "specialty": "Ace",
+    "funFact": "Big Al is just as dominant on the mound as he is at the plate. A true ace — the pitcher a team sends out for the biggest games. His size generates easy velocity and his fastball looks like it's coming out of a cannon."
+  },
+  {
+    "id": "niner-18",
+    "name": "Cooper",
+    "team": "9RS",
+    "positions": [
+      "SU"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.25,
+      "whip": 0.82,
+      "k9": 12.8,
+      "bb9": 1.8
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Coop",
+    "grades": {
+      "fastball": 75,
+      "breaking": 85,
+      "control": 80,
+      "stamina": 48,
+      "changeup": 85
+    },
+    "specialty": "Funky Righty",
+    "funFact": "Coop's delivery is pure deception — hitters can't figure out where the ball is coming from. The setup man pitches the 7th and 8th innings, bridging the gap to the closer. Cooper makes sure the lead stays safe."
+  },
+  {
+    "id": "niner-19",
+    "name": "Luke",
+    "team": "9RS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 1.72,
+      "whip": 0.82,
+      "k9": 9.8,
+      "bb9": 1.2
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Luke",
+    "grades": {
+      "fastball": 70,
+      "breaking": 82,
+      "control": 95,
+      "stamina": 80,
+      "changeup": 85
+    },
+    "specialty": "Precision",
+    "funFact": "Luke doesn't need to throw hard — he throws strikes. Control pitchers succeed by hitting their spots every single time. When you walk nobody and make hitters put the ball in play, your defense does the rest."
+  },
+  {
+    "id": "niner-20",
+    "name": "Jared",
+    "team": "9RS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.65,
+      "whip": 0.85,
+      "k9": 13.5,
+      "bb9": 2.5
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Jared",
+    "grades": {
+      "fastball": 95,
+      "breaking": 75,
+      "control": 68,
+      "stamina": 78,
+      "changeup": 65
+    },
+    "specialty": "Flamethrower",
+    "funFact": "Pure heat! Jared's fastball is the kind that makes batters swing and miss even when they know it's coming. Power pitchers like Jared rack up strikeouts because hitters simply can't catch up to the velocity."
+  },
+  {
+    "id": "niner-21",
+    "name": "Ethan",
+    "team": "9RS",
+    "positions": [
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.55,
+      "whip": 0.90,
+      "k9": 8.5,
+      "bb9": 1.8
+    },
+    "overall": 99,
+    "category": "niners",
+    "era": "The Niners 12U",
+    "nickname": "Ethan",
+    "grades": {
+      "fastball": 40,
+      "breaking": 90,
+      "control": 88,
+      "stamina": 50,
+      "changeup": 95
+    },
+    "specialty": "Eephus Master",
+    "funFact": "The slowest pitch in baseball — and the most embarrassing to swing at! The eephus is a super slow lob that floats up to the plate around 55 mph. After seeing 80 mph fastballs, hitters' timing is completely destroyed."
+  }
+]

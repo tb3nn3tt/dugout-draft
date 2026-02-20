@@ -1,0 +1,165 @@
+.game-summary-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease;
+}
+
+.game-summary-card {
+  background: linear-gradient(135deg, #0f1f3d, #152952);
+  border-radius: 16px;
+  padding: 2rem;
+  min-width: 320px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.summary-header {
+  margin-bottom: 1.5rem;
+}
+
+.walkoff-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.summary-game-num {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-score {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.summary-team.winner {
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 4px solid #ffd700;
+}
+
+.summary-team-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.summary-team.winner .summary-team-name {
+  color: #ffd700;
+}
+
+.summary-team-score {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #e2e8f0;
+}
+
+.summary-team.winner .summary-team-score {
+  color: #ffd700;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-bottom: 1.25rem;
+}
+
+.summary-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.summary-label {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: white;
+  background: #38a169;
+  flex-shrink: 0;
+}
+
+.summary-label.loss {
+  background: #e8682a;
+}
+
+.summary-label.save {
+  background: #805ad5;
+}
+
+.summary-label.hr {
+  background: #d69e2e;
+}
+
+.summary-value {
+  color: #cbd5e0;
+  font-weight: 500;
+}
+
+.summary-tap {
+  color: #7eb8f4;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 768px) {
+  .game-summary-overlay {
+    padding: 0.75rem;
+  }
+
+  .game-summary-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+}

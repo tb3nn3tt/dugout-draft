@@ -1,0 +1,2500 @@
+[
+  {
+    "id": "peak-1",
+    "name": "Barry Bonds '01",
+    "team": "SF",
+    "positions": [
+      "LF",
+      "PH",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.328,
+      "obp": 0.515,
+      "slg": 0.863,
+      "hr": 73,
+      "speed": 55
+    },
+    "overall": 99,
+    "category": "peak",
+    "era": "2001 Season",
+    "nickname": "73 Home Runs",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 55,
+      "fielding": 60,
+      "arm": 60,
+      "eye": 80
+    },
+    "specialty": "Power Hitter",
+    "funFact": "73 home runs in a single season - the record"
+  },
+  {
+    "id": "peak-2",
+    "name": "Barry Bonds '04",
+    "team": "SF",
+    "positions": [
+      "LF",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.362,
+      "obp": 0.609,
+      "slg": 0.812,
+      "hr": 45,
+      "speed": 45
+    },
+    "overall": 99,
+    "category": "peak",
+    "era": "2004 Season",
+    "nickname": "232 Walks",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 45,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "On-Base Machine",
+    "funFact": ".609 OBP and 232 walks - both single-season records"
+  },
+  {
+    "id": "peak-3",
+    "name": "Pedro Martinez '00",
+    "team": "BOS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.74,
+      "whip": 0.74,
+      "k9": 11.8,
+      "bb9": 1.3
+    },
+    "overall": 99,
+    "category": "peak",
+    "era": "2000 Season",
+    "nickname": "Best I've Ever Seen",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 80,
+      "control": 80,
+      "stamina": 70
+    },
+    "specialty": "Ace",
+    "funFact": "1.74 ERA in the steroid era - absolutely dominant"
+  },
+  {
+    "id": "peak-4",
+    "name": "Pedro Martinez '99",
+    "team": "BOS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.07,
+      "whip": 0.92,
+      "k9": 13.2,
+      "bb9": 1.4
+    },
+    "overall": 98,
+    "category": "peak",
+    "era": "1999 Season",
+    "nickname": "313 Strikeouts",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 80,
+      "control": 80,
+      "stamina": 70
+    },
+    "specialty": "Strikeout Artist",
+    "funFact": "23-4 with 313 Ks and 2.07 ERA"
+  },
+  {
+    "id": "peak-5",
+    "name": "Bob Gibson '68",
+    "team": "STL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.12,
+      "whip": 0.85,
+      "k9": 7.9,
+      "bb9": 2
+    },
+    "overall": 99,
+    "category": "peak",
+    "era": "1968 Season",
+    "nickname": "1.12 ERA",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 70,
+      "control": 80,
+      "stamina": 80
+    },
+    "specialty": "Ace",
+    "funFact": "1.12 ERA - the lowest in modern history"
+  },
+  {
+    "id": "peak-6",
+    "name": "Dwight Gooden '85",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.53,
+      "whip": 0.97,
+      "k9": 10.7,
+      "bb9": 2.1
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1985 Season",
+    "nickname": "Doc",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 70,
+      "stamina": 75
+    },
+    "specialty": "Power Arm",
+    "funFact": "24-4 at age 20 - Triple Crown winner"
+  },
+  {
+    "id": "peak-7",
+    "name": "Orel Hershiser '88",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.26,
+      "whip": 1.05,
+      "k9": 7.4,
+      "bb9": 2.2
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "1988 Season",
+    "nickname": "Bulldog",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 80,
+      "stamina": 75
+    },
+    "specialty": "Precision",
+    "funFact": "59 consecutive scoreless innings"
+  },
+  {
+    "id": "peak-8",
+    "name": "Roger Clemens '86",
+    "team": "BOS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.48,
+      "whip": 0.97,
+      "k9": 9.3,
+      "bb9": 2.4
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1986 Season",
+    "nickname": "The Rocket",
+    "grades": {
+      "fastball": 80,
+      "breaking": 70,
+      "changeup": 65,
+      "control": 70,
+      "stamina": 75
+    },
+    "specialty": "Power Arm",
+    "funFact": "24-4 with 238 Ks and MVP/Cy Young"
+  },
+  {
+    "id": "peak-9",
+    "name": "Rickey Henderson '82",
+    "team": "OAK",
+    "positions": [
+      "LF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.398,
+      "slg": 0.382,
+      "hr": 10,
+      "speed": 99
+    },
+    "overall": 92,
+    "category": "peak",
+    "era": "1982 Season",
+    "nickname": "130 Stolen Bases",
+    "grades": {
+      "contact": 60,
+      "power": 45,
+      "speed": 80,
+      "fielding": 65,
+      "arm": 55,
+      "eye": 75
+    },
+    "specialty": "Speedster",
+    "funFact": "130 stolen bases - the single-season record"
+  },
+  {
+    "id": "peak-10",
+    "name": "Ichiro Suzuki '01",
+    "team": "SEA",
+    "positions": [
+      "RF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.35,
+      "obp": 0.381,
+      "slg": 0.457,
+      "hr": 8,
+      "speed": 95
+    },
+    "overall": 94,
+    "category": "peak",
+    "era": "2001 Season",
+    "nickname": "242 Hits Rookie",
+    "grades": {
+      "contact": 80,
+      "power": 40,
+      "speed": 80,
+      "fielding": 75,
+      "arm": 80,
+      "eye": 65
+    },
+    "specialty": "Contact Master",
+    "funFact": "242 hits, MVP and ROY in debut season"
+  },
+  {
+    "id": "peak-11",
+    "name": "Ichiro Suzuki '04",
+    "team": "SEA",
+    "positions": [
+      "RF",
+      "PR"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.372,
+      "obp": 0.414,
+      "slg": 0.455,
+      "hr": 8,
+      "speed": 90
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "2004 Season",
+    "nickname": "262 Hits",
+    "grades": {
+      "contact": 80,
+      "power": 40,
+      "speed": 80,
+      "fielding": 75,
+      "arm": 80,
+      "eye": 70
+    },
+    "specialty": "Contact Master",
+    "funFact": "262 hits - broke the 84-year record"
+  },
+  {
+    "id": "peak-12",
+    "name": "Roger Maris '61",
+    "team": "NYY",
+    "positions": [
+      "RF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.269,
+      "obp": 0.372,
+      "slg": 0.62,
+      "hr": 61,
+      "speed": 60
+    },
+    "overall": 91,
+    "category": "peak",
+    "era": "1961 Season",
+    "nickname": "61*",
+    "grades": {
+      "contact": 60,
+      "power": 80,
+      "speed": 60,
+      "fielding": 70,
+      "arm": 70,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "61 home runs - broke Babe Ruth's record"
+  },
+  {
+    "id": "peak-13",
+    "name": "Hack Wilson '30",
+    "team": "CHC",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.356,
+      "obp": 0.454,
+      "slg": 0.723,
+      "hr": 56,
+      "speed": 40
+    },
+    "overall": 91,
+    "category": "peak",
+    "era": "1930 Season",
+    "nickname": "191 RBIs",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 40,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "191 RBIs - still the single-season record"
+  },
+  {
+    "id": "peak-14",
+    "name": "Mookie Betts '18",
+    "team": "BOS",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.346,
+      "obp": 0.438,
+      "slg": 0.64,
+      "hr": 32,
+      "speed": 80
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "2018 Season",
+    "nickname": "MVP Mookie",
+    "grades": {
+      "contact": 75,
+      "power": 70,
+      "speed": 75,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "MVP, Gold Glove, Silver Slugger, World Series Champ"
+  },
+  {
+    "id": "peak-15",
+    "name": "Mike Trout '12",
+    "team": "LAA",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.326,
+      "obp": 0.399,
+      "slg": 0.564,
+      "hr": 30,
+      "speed": 90
+    },
+    "overall": 94,
+    "category": "peak",
+    "era": "2012 Season",
+    "nickname": "Best Rookie Ever",
+    "grades": {
+      "contact": 70,
+      "power": 75,
+      "speed": 80,
+      "fielding": 70,
+      "arm": 65,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "10.8 WAR as a rookie - best ever"
+  },
+  {
+    "id": "peak-16",
+    "name": "Shohei Ohtani '21",
+    "team": "LAA",
+    "positions": [
+      "SP",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.257,
+      "obp": 0.372,
+      "slg": 0.592,
+      "hr": 46,
+      "speed": 65,
+      "era": 3.18,
+      "whip": 1.09,
+      "k9": 10.8,
+      "bb9": 3.3
+    },
+    "overall": 97,
+    "category": "peak",
+    "era": "2021 Season",
+    "nickname": "The Unicorn",
+    "grades": {
+      "contact": 65,
+      "power": 80,
+      "speed": 70,
+      "fielding": 50,
+      "eye": 70,
+      "fastball": 75,
+      "breaking": 70,
+      "control": 65,
+      "stamina": 70
+    },
+    "specialty": "Two-Way Star",
+    "funFact": "46 HRs + 9 wins as a pitcher - historic season"
+  },
+  {
+    "id": "peak-17",
+    "name": "Jacob deGrom '18",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "era": 1.7,
+      "whip": 0.91,
+      "k9": 11.2,
+      "bb9": 2
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "2018 Season",
+    "nickname": "No Run Support",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 70,
+      "control": 80,
+      "stamina": 70
+    },
+    "specialty": "Ace",
+    "funFact": "1.70 ERA with a 10-9 record - no run support"
+  },
+  {
+    "id": "peak-18",
+    "name": "Clayton Kershaw '14",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 1.77,
+      "whip": 0.86,
+      "k9": 10.8,
+      "bb9": 1.4
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "2014 Season",
+    "nickname": "MVP Pitcher",
+    "grades": {
+      "fastball": 75,
+      "breaking": 80,
+      "changeup": 75,
+      "control": 80,
+      "stamina": 75
+    },
+    "specialty": "Ace",
+    "funFact": "21-3 with 1.77 ERA - rare pitcher MVP"
+  },
+  {
+    "id": "peak-19",
+    "name": "Max Scherzer '16",
+    "team": "WSH",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.96,
+      "whip": 0.97,
+      "k9": 11.2,
+      "bb9": 2
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "2016 Season",
+    "nickname": "Mad Max",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 75,
+      "stamina": 75
+    },
+    "specialty": "Strikeout Artist",
+    "funFact": "20-7 with 284 Ks - Cy Young winner"
+  },
+  {
+    "id": "peak-20",
+    "name": "Greg Maddux '95",
+    "team": "ATL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.63,
+      "whip": 0.81,
+      "k9": 6.6,
+      "bb9": 0.9
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1995 Season",
+    "nickname": "The Professor",
+    "grades": {
+      "fastball": 55,
+      "breaking": 75,
+      "changeup": 80,
+      "control": 80,
+      "stamina": 75
+    },
+    "specialty": "Precision",
+    "funFact": "1.63 ERA and only 23 walks in 209 innings"
+  },
+  {
+    "id": "peak-21",
+    "name": "Randy Johnson '01",
+    "team": "ARI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 2.49,
+      "whip": 1.04,
+      "k9": 13.4,
+      "bb9": 2.5
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "2001 Season",
+    "nickname": "World Series Co-MVP",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 60,
+      "control": 65,
+      "stamina": 75
+    },
+    "specialty": "Strikeout Artist",
+    "funFact": "21-6 with 372 Ks - World Series Co-MVP"
+  },
+  {
+    "id": "peak-22",
+    "name": "Eric Gagne '03",
+    "team": "LAD",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.2,
+      "whip": 0.69,
+      "k9": 15,
+      "bb9": 2
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "2003 Season",
+    "nickname": "Game Over",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 75,
+      "control": 75,
+      "stamina": 50
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "55 saves, 137 Ks in 82 IP - Cy Young"
+  },
+  {
+    "id": "peak-23",
+    "name": "Albert Pujols '01",
+    "team": "STL",
+    "positions": [
+      "3B",
+      "LF",
+      "RF",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.329,
+      "obp": 0.403,
+      "slg": 0.61,
+      "hr": 37,
+      "speed": 55
+    },
+    "overall": 94,
+    "category": "peak",
+    "era": "2001 Rookie Season",
+    "nickname": "The Machine",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 55,
+      "fielding": 60,
+      "arm": 65,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": ".329/37 HR/130 RBI as a rookie - unanimous ROY"
+  },
+  {
+    "id": "peak-24",
+    "name": "Aaron Judge '17",
+    "team": "NYY",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.284,
+      "obp": 0.422,
+      "slg": 0.627,
+      "hr": 52,
+      "speed": 55
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "2017 Rookie Season",
+    "nickname": "All Rise",
+    "grades": {
+      "contact": 60,
+      "power": 80,
+      "speed": 55,
+      "fielding": 70,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "52 HRs shattered the AL rookie record"
+  },
+  {
+    "id": "peak-25",
+    "name": "Dwight Gooden '84",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.6,
+      "whip": 1.07,
+      "k9": 11.4,
+      "bb9": 2.8
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "1984 Rookie Season",
+    "nickname": "Dr. K",
+    "grades": {
+      "fastball": 80,
+      "breaking": 70,
+      "changeup": 60,
+      "control": 65,
+      "stamina": 70
+    },
+    "specialty": "Power Arm",
+    "funFact": "276 Ks at age 19 - youngest All-Star pitcher ever"
+  },
+  {
+    "id": "peak-26",
+    "name": "Fred Lynn '75",
+    "team": "BOS",
+    "positions": [
+      "CF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.331,
+      "obp": 0.401,
+      "slg": 0.566,
+      "hr": 21,
+      "speed": 75
+    },
+    "overall": 92,
+    "category": "peak",
+    "era": "1975 Rookie Season",
+    "nickname": "First Rookie MVP",
+    "grades": {
+      "contact": 75,
+      "power": 65,
+      "speed": 75,
+      "fielding": 80,
+      "arm": 65,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "First player ever to win ROY and MVP in same year"
+  },
+  {
+    "id": "peak-27",
+    "name": "Fernando Valenzuela '81",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.48,
+      "whip": 1.12,
+      "k9": 7.6,
+      "bb9": 3
+    },
+    "overall": 90,
+    "category": "peak",
+    "era": "1981 Rookie Season",
+    "nickname": "Fernandomania",
+    "grades": {
+      "fastball": 65,
+      "breaking": 80,
+      "changeup": 70,
+      "control": 65,
+      "stamina": 75
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "Won ROY and Cy Young - started Fernandomania in LA"
+  },
+  {
+    "id": "peak-28",
+    "name": "Hideo Nomo '95",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.54,
+      "whip": 1.06,
+      "k9": 11.1,
+      "bb9": 3.5
+    },
+    "overall": 92,
+    "category": "peak",
+    "era": "1995 Rookie Season",
+    "nickname": "The Tornado",
+    "grades": {
+      "fastball": 75,
+      "breaking": 80,
+      "changeup": 60,
+      "control": 60,
+      "stamina": 70
+    },
+    "specialty": "Strikeout Artist",
+    "funFact": "236 Ks and Nomomania - opened the door for Japanese players"
+  },
+  {
+    "id": "peak-29",
+    "name": "Mark McGwire '87",
+    "team": "OAK",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.289,
+      "obp": 0.37,
+      "slg": 0.618,
+      "hr": 49,
+      "speed": 30
+    },
+    "overall": 91,
+    "category": "peak",
+    "era": "1987 Rookie Season",
+    "nickname": "Big Mac",
+    "grades": {
+      "contact": 60,
+      "power": 80,
+      "speed": 30,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "49 HRs as a rookie - record that stood 30 years"
+  },
+  {
+    "id": "peak-30",
+    "name": "Kerry Wood '98",
+    "team": "CHC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.4,
+      "whip": 1.27,
+      "k9": 12.6,
+      "bb9": 4.5
+    },
+    "overall": 89,
+    "category": "peak",
+    "era": "1998 Rookie Season",
+    "nickname": "Kid K",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "changeup": 55,
+      "control": 55,
+      "stamina": 65
+    },
+    "specialty": "Power Arm",
+    "funFact": "20 strikeouts in one game - tied the MLB record"
+  },
+  {
+    "id": "peak-31",
+    "name": "Jackie Robinson '47",
+    "team": "BRK",
+    "positions": [
+      "1B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.297,
+      "obp": 0.383,
+      "slg": 0.427,
+      "hr": 12,
+      "speed": 85
+    },
+    "overall": 90,
+    "category": "peak",
+    "era": "1947 Rookie Season",
+    "nickname": "Barrier Breaker",
+    "grades": {
+      "contact": 70,
+      "power": 50,
+      "speed": 80,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 70
+    },
+    "specialty": "Speedster",
+    "funFact": "First Black MLB player in modern era - ROY and changed history"
+  },
+  {
+    "id": "peak-32",
+    "name": "Ted Williams '39",
+    "team": "BOS",
+    "positions": [
+      "RF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.327,
+      "obp": 0.436,
+      "slg": 0.609,
+      "hr": 31,
+      "speed": 55
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1939 Rookie Season",
+    "nickname": "Teddy Ballgame",
+    "grades": {
+      "contact": 75,
+      "power": 75,
+      "speed": 55,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "On-Base Machine",
+    "funFact": ".327/31 HR/145 RBI as a 20-year-old rookie"
+  },
+  {
+    "id": "peak-33",
+    "name": "Joe DiMaggio '36",
+    "team": "NYY",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.323,
+      "obp": 0.352,
+      "slg": 0.576,
+      "hr": 29,
+      "speed": 70
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "1936 Rookie Season",
+    "nickname": "Joltin' Joe",
+    "grades": {
+      "contact": 75,
+      "power": 70,
+      "speed": 70,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": ".323/29 HR/125 RBI - launched a legendary career"
+  },
+  {
+    "id": "peak-34",
+    "name": "Mark Fidrych '76",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.34,
+      "whip": 1.08,
+      "k9": 4.8,
+      "bb9": 1.8
+    },
+    "overall": 87,
+    "category": "peak",
+    "era": "1976 Rookie Season",
+    "nickname": "The Bird",
+    "grades": {
+      "fastball": 65,
+      "breaking": 70,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 70
+    },
+    "specialty": "Precision",
+    "funFact": "19-9, 2.34 ERA - talked to the ball and groomed the mound"
+  },
+  {
+    "id": "peak-35",
+    "name": "Herb Score '55",
+    "team": "CLE",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.85,
+      "whip": 1.27,
+      "k9": 9.7,
+      "bb9": 4.8
+    },
+    "overall": 86,
+    "category": "peak",
+    "era": "1955 Rookie Season",
+    "nickname": "The Left Arm of God",
+    "grades": {
+      "fastball": 80,
+      "breaking": 70,
+      "changeup": 50,
+      "control": 50,
+      "stamina": 70
+    },
+    "specialty": "Power Arm",
+    "funFact": "245 Ks as a rookie - career cut short by a line drive to the face"
+  },
+  {
+    "id": "peak-36",
+    "name": "George Brett '80",
+    "team": "KC",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.39,
+      "obp": 0.454,
+      "slg": 0.664,
+      "hr": 24,
+      "speed": 55
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1980 Season",
+    "nickname": "The .400 Chase",
+    "grades": {
+      "contact": 80,
+      "power": 70,
+      "speed": 55,
+      "fielding": 65,
+      "arm": 65,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": ".390 batting average — the closest anyone came to .400 since Ted Williams in 1941"
+  },
+  {
+    "id": "peak-39",
+    "name": "Nolan Ryan '73",
+    "team": "CAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.87,
+      "whip": 1.22,
+      "k9": 10.6,
+      "bb9": 4.3
+    },
+    "overall": 94,
+    "category": "peak",
+    "era": "1973 Season",
+    "nickname": "The Express",
+    "grades": {
+      "fastball": 80,
+      "breaking": 70,
+      "changeup": 50,
+      "control": 55,
+      "stamina": 80
+    },
+    "specialty": "Power Arm",
+    "funFact": "383 strikeouts in 326 innings — threw 2 no-hitters this season alone"
+  },
+  {
+    "id": "peak-40",
+    "name": "Cal Ripken '91",
+    "team": "BAL",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.323,
+      "obp": 0.374,
+      "slg": 0.566,
+      "hr": 34,
+      "speed": 50
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1991 Season",
+    "nickname": "The Iron Man",
+    "grades": {
+      "contact": 75,
+      "power": 70,
+      "speed": 50,
+      "fielding": 75,
+      "arm": 75,
+      "eye": 65
+    },
+    "specialty": "5-Tool",
+    "funFact": ".323/34 HR as a SS — redefined what a shortstop could be offensively. AL MVP."
+  },
+  {
+    "id": "peak-41",
+    "name": "Bryce Harper '15",
+    "team": "WSH",
+    "positions": [
+      "RF",
+      "LF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.33,
+      "obp": 0.46,
+      "slg": 0.649,
+      "hr": 42,
+      "speed": 55
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "2015 Season",
+    "nickname": "The Unanimous",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 55,
+      "fielding": 60,
+      "arm": 70,
+      "eye": 80
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Unanimous NL MVP at age 22 — .330/42 HR/10.0 WAR. The youngest unanimous MVP in history."
+  },
+  {
+    "id": "peak-42",
+    "name": "Alex Rodriguez '02",
+    "team": "TEX",
+    "positions": [
+      "SS",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.3,
+      "obp": 0.392,
+      "slg": 0.623,
+      "hr": 57,
+      "speed": 65
+    },
+    "overall": 97,
+    "category": "peak",
+    "era": "2002 Season",
+    "nickname": "A-Rod",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 65,
+      "fielding": 70,
+      "arm": 75,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "57 HR as a shortstop on the last-place Rangers — the most dominant offensive SS season ever"
+  },
+  {
+    "id": "peak-45",
+    "name": "Willie Mays '54",
+    "team": "NYG",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.345,
+      "obp": 0.411,
+      "slg": 0.667,
+      "hr": 41,
+      "speed": 75
+    },
+    "overall": 98,
+    "category": "peak",
+    "era": "1954 Season",
+    "nickname": "The Say Hey Kid",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 75,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": ".345/41 HR — MVP + The Catch in the World Series. The most complete player ever at his peak."
+  },
+  {
+    "id": "peak-46",
+    "name": "Carl Hubbell 1933",
+    "team": "NYG",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 1.66,
+      "whip": 0.98,
+      "k9": 5.5,
+      "bb9": 1.4
+    },
+    "overall": 94,
+    "category": "peak",
+    "era": "1933 Season",
+    "grades": {
+      "fastball": 55,
+      "breaking": 78,
+      "control": 78,
+      "stamina": 72,
+      "changeup": 55
+    },
+    "nickname": "The Meal Ticket",
+    "funFact": "Struck out Ruth, Gehrig, Foxx, Simmons, and Cronin consecutively in the All-Star Game.",
+    "specialty": "Pitching Maestro"
+  },
+  {
+    "id": "peak-47",
+    "name": "Joe DiMaggio 1941",
+    "team": "NYY",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.357,
+      "obp": 0.44,
+      "slg": 0.643,
+      "hr": 30,
+      "speed": 68
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1941 Season",
+    "grades": {
+      "contact": 78,
+      "power": 72,
+      "speed": 62,
+      "eye": 72,
+      "fielding": 72,
+      "arm": 65
+    },
+    "nickname": "Joltin Joe",
+    "funFact": "56-game hitting streak. A record that has stood for over 80 years and counting.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "peak-48",
+    "name": "Hack Wilson 1930",
+    "team": "CHC",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.356,
+      "obp": 0.454,
+      "slg": 0.723,
+      "hr": 56,
+      "speed": 35
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1930 Season",
+    "grades": {
+      "contact": 72,
+      "power": 80,
+      "speed": 30,
+      "eye": 68,
+      "fielding": 48,
+      "arm": 50
+    },
+    "nickname": "Hack",
+    "funFact": "191 RBI in a single season. A record that will likely never be touched.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "peak-49",
+    "name": "Sandy Koufax 1965",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 2.04,
+      "whip": 0.86,
+      "k9": 10.2,
+      "bb9": 1.8
+    },
+    "overall": 97,
+    "category": "peak",
+    "era": "1965 Season",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "control": 72,
+      "stamina": 68,
+      "changeup": 55
+    },
+    "nickname": "Left Arm of God",
+    "funFact": "382 strikeouts and a perfect game. The most dominant single season by a pitcher.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "peak-50",
+    "name": "Bob Gibson 1968",
+    "team": "STL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.12,
+      "whip": 0.85,
+      "k9": 7.9,
+      "bb9": 1.8
+    },
+    "overall": 98,
+    "category": "peak",
+    "era": "1968 Season",
+    "grades": {
+      "fastball": 78,
+      "breaking": 75,
+      "control": 72,
+      "stamina": 78,
+      "changeup": 58
+    },
+    "nickname": "Hoot",
+    "funFact": "1.12 ERA. They lowered the mound because of this season. Unhittable doesnt cover it.",
+    "specialty": "Pitching Maestro"
+  },
+  {
+    "id": "peak-51",
+    "name": "Nolan Ryan 1973",
+    "team": "CAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.87,
+      "whip": 1.23,
+      "k9": 10.6,
+      "bb9": 4.1
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "1973 Season",
+    "grades": {
+      "fastball": 80,
+      "breaking": 72,
+      "control": 48,
+      "stamina": 72,
+      "changeup": 42
+    },
+    "nickname": "The Express",
+    "funFact": "383 strikeouts and two no-hitters in one season. Pure express-train velocity.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "peak-52",
+    "name": "Mickey Mantle 1956",
+    "team": "NYY",
+    "positions": [
+      "CF"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.353,
+      "obp": 0.464,
+      "slg": 0.705,
+      "hr": 52,
+      "speed": 80
+    },
+    "overall": 98,
+    "category": "peak",
+    "era": "1956 Season",
+    "grades": {
+      "contact": 72,
+      "power": 80,
+      "speed": 75,
+      "eye": 78,
+      "fielding": 65,
+      "arm": 62
+    },
+    "nickname": "The Mick",
+    "funFact": "Triple Crown winner with the most raw talent ever seen. Switch-hitting perfection.",
+    "specialty": "Five Tool"
+  },
+  {
+    "id": "peak-53",
+    "name": "Frank Robinson 1966",
+    "team": "BAL",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.316,
+      "obp": 0.41,
+      "slg": 0.637,
+      "hr": 49,
+      "speed": 55
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1966 Season",
+    "grades": {
+      "contact": 68,
+      "power": 78,
+      "speed": 50,
+      "eye": 72,
+      "fielding": 55,
+      "arm": 58
+    },
+    "nickname": "F. Robby",
+    "funFact": "Won the Triple Crown in his first AL season. Proved the doubters dead wrong.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "peak-54",
+    "name": "Dwight Gooden 1985",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.53,
+      "whip": 0.97,
+      "k9": 8.9,
+      "bb9": 2.2
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1985 Season",
+    "grades": {
+      "fastball": 78,
+      "breaking": 78,
+      "control": 65,
+      "stamina": 72,
+      "changeup": 55
+    },
+    "nickname": "Doc K",
+    "funFact": "24-4 with a 1.53 ERA at age 20. Doctor K was untouchable before he could buy a drink.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "peak-55",
+    "name": "Mike Schmidt 1980",
+    "team": "PHI",
+    "positions": [
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.286,
+      "obp": 0.38,
+      "slg": 0.624,
+      "hr": 48,
+      "speed": 42
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1980 Season",
+    "grades": {
+      "contact": 60,
+      "power": 78,
+      "speed": 38,
+      "eye": 68,
+      "fielding": 72,
+      "arm": 68
+    },
+    "nickname": "Schmitty",
+    "funFact": "48 home runs, MVP, and World Series MVP. The greatest third baseman peaked right on time.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "peak-56",
+    "name": "Cal Ripken Jr. 1991",
+    "team": "BAL",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.323,
+      "obp": 0.374,
+      "slg": 0.566,
+      "hr": 34,
+      "speed": 42
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "1991 Season",
+    "grades": {
+      "contact": 68,
+      "power": 68,
+      "speed": 38,
+      "eye": 60,
+      "fielding": 68,
+      "arm": 72
+    },
+    "nickname": "Iron Man",
+    "funFact": "MVP season with 34 homers at shortstop. Redefined what a shortstop could do.",
+    "specialty": null
+  },
+  {
+    "id": "peak-57",
+    "name": "Jeff Bagwell 1994",
+    "team": "HOU",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.368,
+      "obp": 0.451,
+      "slg": 0.75,
+      "hr": 39,
+      "speed": 52
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1994 Season",
+    "grades": {
+      "contact": 72,
+      "power": 78,
+      "speed": 48,
+      "eye": 75,
+      "fielding": 58,
+      "arm": 55
+    },
+    "nickname": "Baggy",
+    "funFact": "Unanimous MVP in a strike-shortened season. On pace for 60 homers before the stoppage.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "peak-58",
+    "name": "Tony Gwynn 1994",
+    "team": "SD",
+    "positions": [
+      "RF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.394,
+      "obp": 0.454,
+      "slg": 0.568,
+      "hr": 12,
+      "speed": 50
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1994 Season",
+    "grades": {
+      "contact": 80,
+      "power": 42,
+      "speed": 45,
+      "eye": 72,
+      "fielding": 55,
+      "arm": 48
+    },
+    "nickname": "Mr. Padre",
+    "funFact": "Hit .394 when the strike ended the season. The last real threat to hit .400.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "peak-59",
+    "name": "Randy Johnson 2001",
+    "team": "ARI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 2.49,
+      "whip": 1.01,
+      "k9": 13.4,
+      "bb9": 2.3
+    },
+    "overall": 97,
+    "category": "peak",
+    "era": "2001 Season",
+    "grades": {
+      "fastball": 80,
+      "breaking": 78,
+      "control": 65,
+      "stamina": 72,
+      "changeup": 52
+    },
+    "nickname": "Big Unit",
+    "funFact": "372 strikeouts, World Series co-MVP. Six-foot-ten of absolute terror.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "peak-60",
+    "name": "Adrian Beltre 2004",
+    "team": "LAD",
+    "positions": [
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.334,
+      "obp": 0.388,
+      "slg": 0.629,
+      "hr": 48,
+      "speed": 48
+    },
+    "overall": 93,
+    "category": "peak",
+    "era": "2004 Season",
+    "grades": {
+      "contact": 68,
+      "power": 72,
+      "speed": 42,
+      "eye": 58,
+      "fielding": 72,
+      "arm": 68
+    },
+    "nickname": "Beltre",
+    "funFact": "48 home runs from the hot corner. Dont touch his head but admire the bat.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "peak-61",
+    "name": "Babe Ruth 1927",
+    "team": "NYY",
+    "positions": [
+      "RF",
+      "LF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.356,
+      "obp": 0.486,
+      "slg": 0.772,
+      "hr": 60,
+      "speed": 45
+    },
+    "overall": 99,
+    "category": "peak",
+    "era": "1927 Season",
+    "nickname": "The Sultan of Swat",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 45,
+      "fielding": 55,
+      "arm": 70,
+      "eye": 80
+    },
+    "specialty": "Power Hitter",
+    "funFact": "60 home runs in 1927 — the most famous season in baseball history. He hit more homers than every other AL team that year!"
+  },
+  {
+    "id": "peak-62",
+    "name": "Ted Williams 1941",
+    "team": "BOS",
+    "positions": [
+      "LF",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.406,
+      "obp": 0.553,
+      "slg": 0.735,
+      "hr": 37,
+      "speed": 55
+    },
+    "overall": 99,
+    "category": "peak",
+    "era": "1941 Season",
+    "nickname": "The Splendid Splinter",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 55,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "On-Base Machine",
+    "funFact": ".406 batting average — the last player to hit .400! He could have sat out the final doubleheader to protect his average, but he played and went 6-for-8 instead."
+  },
+  {
+    "id": "peak-63",
+    "name": "Nap Lajoie 1901",
+    "team": "PHI",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.426,
+      "obp": 0.463,
+      "slg": 0.643,
+      "hr": 14,
+      "speed": 55
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1901 Season",
+    "nickname": "King Larry",
+    "grades": {
+      "contact": 80,
+      "power": 65,
+      "speed": 55,
+      "fielding": 75,
+      "arm": 60,
+      "eye": 70
+    },
+    "specialty": "Contact Master",
+    "funFact": ".426 batting average — the highest single-season average in American League history! He also led the league in hits, doubles, home runs, and RBIs. Total domination."
+  },
+  {
+    "id": "peak-64",
+    "name": "Denny McLain 1968",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.96,
+      "whip": 0.91,
+      "k9": 5.6,
+      "bb9": 1.7
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1968 Season",
+    "nickname": "31 Wins",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 80
+    },
+    "specialty": "Workhorse",
+    "funFact": "31 wins in a single season — the last pitcher EVER to win 30 games! He started 41 games and completed 28 of them. An absolute workhorse who carried the Tigers to a World Series title."
+  },
+  {
+    "id": "peak-65",
+    "name": "Steve Carlton 1972",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 1.97,
+      "whip": 0.99,
+      "k9": 8.1,
+      "bb9": 2.1
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1972 Season",
+    "nickname": "Lefty",
+    "grades": {
+      "fastball": 75,
+      "breaking": 80,
+      "changeup": 70,
+      "control": 70,
+      "stamina": 80
+    },
+    "specialty": "Ace",
+    "funFact": "Won 27 games on a team that only won 59 total — that means he accounted for nearly HALF of all his team's wins! Won the Cy Young unanimously. One of the most incredible pitching seasons ever."
+  },
+  {
+    "id": "peak-66",
+    "name": "Albert Pujols 2003",
+    "team": "STL",
+    "positions": [
+      "LF",
+      "1B",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.359,
+      "obp": 0.439,
+      "slg": 0.667,
+      "hr": 43,
+      "speed": 45
+    },
+    "overall": 97,
+    "category": "peak",
+    "era": "2003 Season",
+    "nickname": "The Machine 2.0",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 45,
+      "fielding": 55,
+      "arm": 60,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": ".359 with 43 homers and 124 RBI at age 23. Albert Pujols hit like a video game character — he finished top 3 in MVP voting for the third straight year and he was just getting started!"
+  },
+  {
+    "id": "peak-67",
+    "name": "Miguel Cabrera 2012",
+    "team": "DET",
+    "positions": [
+      "3B",
+      "IFD",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.33,
+      "obp": 0.393,
+      "slg": 0.606,
+      "hr": 44,
+      "speed": 30
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "2012 Season",
+    "nickname": "Triple Crown Miggy",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 30,
+      "fielding": 50,
+      "arm": 60,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Won the Triple Crown — leading the league in batting average (.330), home runs (44), AND RBIs (139). The first player to do it in 45 years! Everyone thought it would never happen again."
+  },
+  {
+    "id": "peak-68",
+    "name": "Chris Davis 2013",
+    "team": "BAL",
+    "positions": [
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.286,
+      "obp": 0.37,
+      "slg": 0.634,
+      "hr": 53,
+      "speed": 30
+    },
+    "overall": 88,
+    "category": "peak",
+    "era": "2013 Season",
+    "nickname": "Crush Davis",
+    "grades": {
+      "contact": 55,
+      "power": 80,
+      "speed": 30,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 50
+    },
+    "specialty": "Power Hitter",
+    "funFact": "53 home runs — the most in the majors that season! Chris Davis crushed the ball all year long, leading the league in homers and RBIs. When Crush connected, the ball absolutely flew."
+  },
+  {
+    "id": "peak-69",
+    "name": "Aaron Judge 2022",
+    "team": "NYY",
+    "positions": [
+      "RF",
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.311,
+      "obp": 0.425,
+      "slg": 0.686,
+      "hr": 62,
+      "speed": 55
+    },
+    "overall": 98,
+    "category": "peak",
+    "era": "2022 Season",
+    "nickname": "The AL HR King",
+    "grades": {
+      "contact": 65,
+      "power": 80,
+      "speed": 55,
+      "fielding": 70,
+      "arm": 70,
+      "eye": 80
+    },
+    "specialty": "Power Hitter",
+    "funFact": "62 home runs — breaking Roger Maris' 61-year-old AL record! Aaron Judge is 6-foot-7 and launched moonshots all season long. He won the MVP unanimously and nearly won the Triple Crown too."
+  },
+  {
+    "id": "peak-70",
+    "name": "Lou Gehrig 1927",
+    "team": "NYY",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.373,
+      "obp": 0.474,
+      "slg": 0.765,
+      "hr": 47,
+      "speed": 45
+    },
+    "overall": 98,
+    "category": "peak",
+    "era": "1927 Season",
+    "nickname": "The Iron Horse",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 45,
+      "fielding": 65,
+      "arm": 55,
+      "eye": 80
+    },
+    "specialty": "Power Hitter",
+    "funFact": ".373 average with 47 homers and 175 RBI — and he STILL finished second in MVP voting to his teammate Babe Ruth! On the greatest team ever, Gehrig was absolutely incredible."
+  },
+  {
+    "id": "peak-71",
+    "name": "Ty Cobb 1911",
+    "team": "DET",
+    "positions": [
+      "CF",
+      "PR"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.42,
+      "obp": 0.467,
+      "slg": 0.621,
+      "hr": 8,
+      "speed": 90
+    },
+    "overall": 97,
+    "category": "peak",
+    "era": "1911 Season",
+    "nickname": "The Georgia Peach",
+    "grades": {
+      "contact": 80,
+      "power": 55,
+      "speed": 80,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": ".420 batting average with 83 stolen bases — Ty Cobb could hit anything and run like the wind! He won the MVP and was the most feared hitter in the deadball era."
+  },
+  {
+    "id": "peak-72",
+    "name": "Hank Aaron 1957",
+    "team": "MIL",
+    "positions": [
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.322,
+      "obp": 0.378,
+      "slg": 0.6,
+      "hr": 44,
+      "speed": 65
+    },
+    "overall": 97,
+    "category": "peak",
+    "era": "1957 Season",
+    "nickname": "Hammerin' Hank",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 65,
+      "fielding": 70,
+      "arm": 75,
+      "eye": 65
+    },
+    "specialty": "5-Tool",
+    "funFact": "44 homers, 132 RBI, and the NL MVP at age 23 — Hank Aaron led the Milwaukee Braves to a World Series championship! His quick wrists generated some of the most incredible bat speed ever seen."
+  },
+  {
+    "id": "peak-73",
+    "name": "Ken Griffey Jr. 1997",
+    "team": "SEA",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.304,
+      "obp": 0.382,
+      "slg": 0.646,
+      "hr": 56,
+      "speed": 65
+    },
+    "overall": 97,
+    "category": "peak",
+    "era": "1997 Season",
+    "nickname": "The Kid",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 65,
+      "fielding": 80,
+      "arm": 70,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "56 homers with the sweetest swing in baseball history. Ken Griffey Jr. won the MVP and made center field look effortless with his amazing catches. Every kid wanted to be Junior."
+  },
+  {
+    "id": "peak-74",
+    "name": "Sammy Sosa 1998",
+    "team": "CHC",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.308,
+      "obp": 0.377,
+      "slg": 0.647,
+      "hr": 66,
+      "speed": 55
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1998 Season",
+    "nickname": "Slammin' Sammy",
+    "grades": {
+      "contact": 65,
+      "power": 80,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "66 home runs in the legendary 1998 HR chase! Sammy and Mark McGwire captivated the entire country that summer. Sammy's hop out of the batter's box and chest-tapping celebration became iconic."
+  },
+  {
+    "id": "peak-75",
+    "name": "Mark McGwire 1998",
+    "team": "STL",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.299,
+      "obp": 0.47,
+      "slg": 0.752,
+      "hr": 70,
+      "speed": 25
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1998 Season",
+    "nickname": "Big Mac",
+    "grades": {
+      "contact": 55,
+      "power": 80,
+      "speed": 25,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "70 home runs — shattering Roger Maris' record that had stood for 37 years! The entire country watched Big Mac chase history during that magical 1998 summer."
+  },
+  {
+    "id": "peak-76",
+    "name": "Roberto Clemente 1966",
+    "team": "PIT",
+    "positions": [
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.317,
+      "obp": 0.36,
+      "slg": 0.536,
+      "hr": 29,
+      "speed": 65
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1966 Season",
+    "nickname": "The Great One",
+    "grades": {
+      "contact": 75,
+      "power": 70,
+      "speed": 65,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": "NL MVP with the greatest outfield arm in baseball history! Roberto Clemente could throw a laser from the warning track to home plate. He was a hero both on and off the field."
+  },
+  {
+    "id": "peak-77",
+    "name": "Johnny Bench 1970",
+    "team": "CIN",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.293,
+      "obp": 0.345,
+      "slg": 0.587,
+      "hr": 45,
+      "speed": 35
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1970 Season",
+    "nickname": "The Best Catcher Ever",
+    "grades": {
+      "contact": 65,
+      "power": 80,
+      "speed": 35,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 60
+    },
+    "specialty": "Power Hitter",
+    "funFact": "45 homers and 148 RBI as a CATCHER — winning the NL MVP at age 22! Johnny Bench revolutionized the catcher position and had one of the strongest arms ever behind the plate."
+  },
+  {
+    "id": "peak-78",
+    "name": "Rod Carew 1977",
+    "team": "MIN",
+    "positions": [
+      "1B",
+      "2B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.388,
+      "obp": 0.449,
+      "slg": 0.57,
+      "hr": 14,
+      "speed": 70
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1977 Season",
+    "nickname": "Sir Rodney",
+    "grades": {
+      "contact": 80,
+      "power": 50,
+      "speed": 70,
+      "fielding": 65,
+      "arm": 50,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": ".388 batting average — Rod Carew chased .400 all summer long and made the cover of TIME Magazine! He won the MVP with 239 hits and made hitting look like an art form."
+  },
+  {
+    "id": "peak-79",
+    "name": "Mariano Rivera 1999",
+    "team": "NYY",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.83,
+      "whip": 0.89,
+      "k9": 9.1,
+      "bb9": 1.3
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1999 Season",
+    "nickname": "The Sandman",
+    "grades": {
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 50,
+      "control": 80,
+      "stamina": 55
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "45 saves, 1.83 ERA, and World Series MVP — all with basically one pitch! Mariano's cut fastball was the most unhittable pitch in baseball history. Everyone knew it was coming, and nobody could touch it."
+  },
+  {
+    "id": "peak-80",
+    "name": "Dennis Eckersley 1992",
+    "team": "OAK",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.91,
+      "whip": 0.91,
+      "k9": 9.6,
+      "bb9": 0.6
+    },
+    "overall": 94,
+    "category": "peak",
+    "era": "1992 Season",
+    "nickname": "The Eck",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "changeup": 60,
+      "control": 80,
+      "stamina": 50
+    },
+    "specialty": "Precision",
+    "funFact": "51 saves with just 3 walks all season — the most incredible control by a closer ever! Dennis Eckersley won both the Cy Young AND the MVP award. Only 11 baserunners reached in 80 innings."
+  },
+  {
+    "id": "peak-81",
+    "name": "Josh Gibson 1937",
+    "team": "PIT",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.44,
+      "obp": 0.52,
+      "slg": 0.92,
+      "hr": 69,
+      "speed": 40
+    },
+    "overall": 99,
+    "category": "peak",
+    "era": "1937 Season",
+    "nickname": "The Black Babe Ruth",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 40,
+      "fielding": 70,
+      "arm": 75,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Estimated 69 home runs in the Negro Leagues — Josh Gibson was considered the greatest power hitter to ever live! He was a catcher who could hit the ball farther than anyone and was finally inducted into the Baseball Hall of Fame."
+  },
+  {
+    "id": "peak-82",
+    "name": "Satchel Paige 1946",
+    "team": "KC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.48,
+      "whip": 0.93,
+      "k9": 8.8,
+      "bb9": 1.5
+    },
+    "overall": 95,
+    "category": "peak",
+    "era": "1946 Season",
+    "nickname": "Satch",
+    "grades": {
+      "fastball": 80,
+      "breaking": 70,
+      "changeup": 75,
+      "control": 80,
+      "stamina": 75
+    },
+    "specialty": "Precision",
+    "funFact": "The legendary Satchel Paige dominated the Negro Leagues with pinpoint control and a blazing fastball. He could throw a ball over a gum wrapper for a strike and pitched until he was nearly 60 years old!"
+  },
+  {
+    "id": "peak-83",
+    "name": "Derek Jeter 1999",
+    "team": "NYY",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.349,
+      "obp": 0.438,
+      "slg": 0.552,
+      "hr": 24,
+      "speed": 70
+    },
+    "overall": 94,
+    "category": "peak",
+    "era": "1999 Season",
+    "nickname": "The Captain",
+    "grades": {
+      "contact": 75,
+      "power": 60,
+      "speed": 70,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": ".349 average with 219 hits and 102 RBI as the Yankees shortstop. Derek Jeter was Mr. Clutch — the ultimate winner who always came through in the biggest moments."
+  },
+  {
+    "id": "peak-84",
+    "name": "Mike Piazza 1997",
+    "team": "LAD",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.362,
+      "obp": 0.431,
+      "slg": 0.638,
+      "hr": 40,
+      "speed": 25
+    },
+    "overall": 96,
+    "category": "peak",
+    "era": "1997 Season",
+    "nickname": "The 62nd-Round Pick",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 25,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": ".362 with 40 homers as a catcher — the greatest offensive season by a catcher ever! Mike Piazza was drafted in the 62nd round as a favor and became one of the best hitters in baseball history."
+  },
+  {
+    "id": "peak-85",
+    "name": "Craig Biggio 1997",
+    "team": "HOU",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.309,
+      "obp": 0.415,
+      "slg": 0.501,
+      "hr": 22,
+      "speed": 75
+    },
+    "overall": 92,
+    "category": "peak",
+    "era": "1997 Season",
+    "nickname": "The Human Target",
+    "grades": {
+      "contact": 70,
+      "power": 60,
+      "speed": 75,
+      "fielding": 70,
+      "arm": 55,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": ".309 with 22 homers, 47 steals, and a league-leading 146 runs scored! Craig Biggio did everything — he even got hit by 34 pitches because he crowded the plate fearlessly."
+  }
+]

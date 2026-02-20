@@ -1,0 +1,114 @@
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #0a1628 0%, #1a2d50 50%, #0f2035 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: onb-fadein 0.4s ease;
+}
+
+@keyframes onb-fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.onboarding-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 400px;
+  animation: onb-slidein 0.3s ease;
+}
+
+@keyframes onb-slidein {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.onboarding-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.onboarding-slide h2 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.onboarding-slide p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.onboarding-dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.onboarding-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background 0.2s;
+}
+
+.onboarding-dot.active {
+  background: #3b82f6;
+}
+
+.onboarding-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 1rem;
+}
+
+.onboarding-btn {
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.15s;
+}
+
+.onboarding-btn:active {
+  transform: scale(0.97);
+}
+
+.onboarding-btn.primary {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.onboarding-btn.primary:hover {
+  background: #2563eb;
+}
+
+.onboarding-skip {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.onboarding-skip:hover {
+  color: rgba(255, 255, 255, 0.8);
+}

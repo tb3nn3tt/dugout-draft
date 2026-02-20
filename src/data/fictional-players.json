@@ -1,0 +1,2927 @@
+[
+  {
+    "id": "fiction-1",
+    "name": "Ricky 'Wild Thing' Vaughn",
+    "team": "CLE",
+    "positions": [
+      "CL",
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.45,
+      "whip": 1.2,
+      "k9": 14.5,
+      "bb9": 5
+    },
+    "overall": 87,
+    "category": "fictional",
+    "era": "Major League (1989)",
+    "nickname": "Wild Thing",
+    "grades": {
+      "fastball": 80,
+      "breaking": 50,
+      "changeup": 40,
+      "control": 75,
+      "stamina": 55
+    },
+    "specialty": "Power Arm",
+    "funFact": "Couldn't find home plate until he got glasses"
+  },
+  {
+    "id": "fiction-2",
+    "name": "Jake Taylor",
+    "team": "CLE",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.275,
+      "obp": 0.355,
+      "slg": 0.395,
+      "hr": 12,
+      "speed": 30
+    },
+    "overall": 74,
+    "category": "fictional",
+    "era": "Major League (1989)",
+    "nickname": "The Veteran",
+    "grades": {
+      "contact": 55,
+      "power": 35,
+      "speed": 30,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 65
+    },
+    "specialty": null,
+    "funFact": "Can't hit, can't run, can't throw. What does he do? Gets on base."
+  },
+  {
+    "id": "fiction-3",
+    "name": "Willie Mays Hayes",
+    "team": "CLE",
+    "positions": [
+      "CF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.268,
+      "obp": 0.32,
+      "slg": 0.355,
+      "hr": 5,
+      "speed": 99
+    },
+    "overall": 76,
+    "category": "fictional",
+    "era": "Major League (1989)",
+    "nickname": "Willie Mays Hayes",
+    "grades": {
+      "contact": 35,
+      "power": 25,
+      "speed": 80,
+      "fielding": 65,
+      "arm": 50,
+      "eye": 45
+    },
+    "specialty": "Speedster",
+    "funFact": "I hit like Mays and run like Hayes"
+  },
+  {
+    "id": "fiction-4",
+    "name": "Pedro Cerrano",
+    "team": "CLE",
+    "positions": [
+      "LF",
+      "1B",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.242,
+      "obp": 0.295,
+      "slg": 0.545,
+      "hr": 38,
+      "speed": 40
+    },
+    "overall": 80,
+    "category": "fictional",
+    "era": "Major League (1989)",
+    "nickname": "Voodoo Man",
+    "grades": {
+      "contact": 40,
+      "power": 80,
+      "speed": 40,
+      "fielding": 45,
+      "arm": 55,
+      "eye": 20
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Jobu needs a refill. Can't hit curveball."
+  },
+  {
+    "id": "fiction-5",
+    "name": "Roger Dorn",
+    "team": "CLE",
+    "positions": [
+      "3B",
+      "PH",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.258,
+      "obp": 0.315,
+      "slg": 0.41,
+      "hr": 16,
+      "speed": 45
+    },
+    "overall": 76,
+    "category": "fictional",
+    "era": "Major League (1989)",
+    "nickname": "Pretty Boy",
+    "grades": {
+      "contact": 60,
+      "power": 50,
+      "speed": 45,
+      "fielding": 70,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "Stay in front of it, Dorn!"
+  },
+  {
+    "id": "fiction-6",
+    "name": "Eddie Harris",
+    "team": "CLE",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.55,
+      "whip": 1.18,
+      "k9": 7.8,
+      "bb9": 2.5
+    },
+    "overall": 72,
+    "category": "fictional",
+    "era": "Major League (1989)",
+    "nickname": "Tricky Eddie",
+    "grades": {
+      "fastball": 50,
+      "breaking": 65,
+      "changeup": 60,
+      "control": 65,
+      "stamina": 70
+    },
+    "specialty": null,
+    "funFact": "Uses a little snot, little too-too, little Crisco on the ball"
+  },
+  {
+    "id": "fiction-7",
+    "name": "Crash Davis",
+    "team": "DUR",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.262,
+      "obp": 0.345,
+      "slg": 0.42,
+      "hr": 18,
+      "speed": 40
+    },
+    "overall": 78,
+    "category": "fictional",
+    "era": "Bull Durham (1988)",
+    "nickname": "Crash",
+    "grades": {
+      "contact": 70,
+      "power": 55,
+      "speed": 40,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 65
+    },
+    "specialty": null,
+    "funFact": "I believe in long, slow, deep, soft, wet kisses that last three days"
+  },
+  {
+    "id": "fiction-8",
+    "name": "Ebby Calvin 'Nuke' LaLoosh",
+    "team": "DUR",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.85,
+      "whip": 1.35,
+      "k9": 12.5,
+      "bb9": 5.5
+    },
+    "overall": 83,
+    "category": "fictional",
+    "era": "Bull Durham (1988)",
+    "nickname": "Nuke",
+    "grades": {
+      "fastball": 80,
+      "breaking": 55,
+      "changeup": 45,
+      "control": 30,
+      "stamina": 70
+    },
+    "specialty": "Power Arm",
+    "funFact": "Million dollar arm, five cent head"
+  },
+  {
+    "id": "fiction-9",
+    "name": "Roy Hobbs",
+    "team": "NYK",
+    "positions": [
+      "RF",
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.345,
+      "obp": 0.42,
+      "slg": 0.685,
+      "hr": 28,
+      "speed": 60,
+      "era": 1.85
+    },
+    "overall": 95,
+    "category": "fictional",
+    "era": "The Natural (1984)",
+    "nickname": "The Natural",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 60,
+      "fielding": 65,
+      "arm": 70,
+      "eye": 75,
+      "fastball": 75,
+      "breaking": 60,
+      "control": 65,
+      "stamina": 60
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Hit a towering shot that exploded the stadium lights with Wonderboy! Could pitch too."
+  },
+  {
+    "id": "fiction-10",
+    "name": "Henry Rowengartner",
+    "team": "CHC",
+    "positions": [
+      "SP",
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.15,
+      "whip": 0.98,
+      "k9": 11.8,
+      "bb9": 2.8
+    },
+    "overall": 85,
+    "category": "fictional",
+    "era": "Rookie of the Year (1993)",
+    "nickname": "Gardenhoser",
+    "grades": {
+      "fastball": 80,
+      "breaking": 40,
+      "changeup": 35,
+      "control": 70,
+      "stamina": 60
+    },
+    "specialty": "Power Arm",
+    "funFact": "Floater! Floater! Broken arm gave him a rocket launcher"
+  },
+  {
+    "id": "fiction-11",
+    "name": "Chet Steadman",
+    "team": "CHC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 4.15,
+      "whip": 1.25,
+      "k9": 6.5,
+      "bb9": 3
+    },
+    "overall": 69,
+    "category": "fictional",
+    "era": "Rookie of the Year (1993)",
+    "nickname": "Rocket",
+    "grades": {
+      "fastball": 45,
+      "breaking": 60,
+      "changeup": 55,
+      "control": 70,
+      "stamina": 65
+    },
+    "specialty": null,
+    "funFact": "Washed up but wise - mentored Henry"
+  },
+  {
+    "id": "fiction-12",
+    "name": "Benny 'The Jet' Rodriguez",
+    "team": "LAD",
+    "positions": [
+      "CF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.305,
+      "obp": 0.375,
+      "slg": 0.485,
+      "hr": 22,
+      "speed": 95
+    },
+    "overall": 87,
+    "category": "fictional",
+    "era": "The Sandlot (1993)",
+    "nickname": "The Jet",
+    "grades": {
+      "contact": 70,
+      "power": 55,
+      "speed": 80,
+      "fielding": 75,
+      "arm": 65,
+      "eye": 60
+    },
+    "specialty": "Speedster",
+    "funFact": "Heroes get remembered, but legends never die"
+  },
+  {
+    "id": "fiction-13",
+    "name": "Ham Porter",
+    "team": "SLT",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.255,
+      "obp": 0.34,
+      "slg": 0.41,
+      "hr": 15,
+      "speed": 35
+    },
+    "overall": 70,
+    "category": "fictional",
+    "era": "The Sandlot (1993)",
+    "nickname": "The Great Hambino",
+    "grades": {
+      "contact": 55,
+      "power": 60,
+      "speed": 40,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 50
+    },
+    "specialty": null,
+    "funFact": "You're killing me, Smalls!"
+  },
+  {
+    "id": "fiction-14",
+    "name": "Squints Palledorous",
+    "team": "SLT",
+    "positions": [
+      "2B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.235,
+      "obp": 0.33,
+      "slg": 0.32,
+      "hr": 3,
+      "speed": 50
+    },
+    "overall": 60,
+    "category": "fictional",
+    "era": "The Sandlot (1993)",
+    "nickname": "Squints",
+    "grades": {
+      "contact": 45,
+      "power": 35,
+      "speed": 50,
+      "fielding": 50,
+      "arm": 45,
+      "eye": 60
+    },
+    "specialty": null,
+    "funFact": "For-ev-er. FOR-EV-ER."
+  },
+  {
+    "id": "fiction-15",
+    "name": "Dottie Hinson",
+    "team": "RPB",
+    "positions": [
+      "C"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.318,
+      "obp": 0.395,
+      "slg": 0.485,
+      "hr": 15,
+      "speed": 60
+    },
+    "overall": 90,
+    "category": "fictional",
+    "era": "A League of Their Own (1992)",
+    "nickname": "The Queen of Diamonds",
+    "grades": {
+      "contact": 80,
+      "power": 55,
+      "speed": 60,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": "There's no crying in baseball!"
+  },
+  {
+    "id": "fiction-16",
+    "name": "Kit Keller",
+    "team": "RPB",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.95,
+      "whip": 1.12,
+      "k9": 9.5,
+      "bb9": 3.2
+    },
+    "overall": 82,
+    "category": "fictional",
+    "era": "A League of Their Own (1992)",
+    "nickname": "High Ones",
+    "grades": {
+      "fastball": 65,
+      "breaking": 60,
+      "changeup": 55,
+      "control": 65,
+      "stamina": 70
+    },
+    "specialty": null,
+    "funFact": "Always in her sister's shadow - finally got her moment"
+  },
+  {
+    "id": "fiction-17",
+    "name": "Mae Mordabito",
+    "team": "RPB",
+    "positions": [
+      "CF",
+      "PH",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.275,
+      "obp": 0.345,
+      "slg": 0.395,
+      "hr": 8,
+      "speed": 70
+    },
+    "overall": 74,
+    "category": "fictional",
+    "era": "A League of Their Own (1992)",
+    "nickname": "All the Way Mae",
+    "grades": {
+      "contact": 60,
+      "power": 45,
+      "speed": 55,
+      "fielding": 60,
+      "arm": 55,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "Who wants a chocolate bar? Nobody? Nobody?"
+  },
+  {
+    "id": "fiction-18",
+    "name": "Marla Hooch",
+    "team": "RPB",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.265,
+      "obp": 0.33,
+      "slg": 0.52,
+      "hr": 25,
+      "speed": 35
+    },
+    "overall": 78,
+    "category": "fictional",
+    "era": "A League of Their Own (1992)",
+    "nickname": "What a Hitter",
+    "grades": {
+      "contact": 35,
+      "power": 80,
+      "speed": 35,
+      "fielding": 55,
+      "arm": 50,
+      "eye": 45
+    },
+    "specialty": "Power Hitter",
+    "funFact": "What a hitter! Don't judge a book by its cover"
+  },
+  {
+    "id": "fiction-19",
+    "name": "Shoeless Joe Jackson",
+    "team": "CHW",
+    "positions": [
+      "LF",
+      "PR"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.356,
+      "obp": 0.423,
+      "slg": 0.517,
+      "hr": 54,
+      "speed": 75
+    },
+    "overall": 93,
+    "category": "fictional",
+    "era": "Field of Dreams (1989)",
+    "nickname": "Shoeless Joe",
+    "grades": {
+      "contact": 80,
+      "power": 70,
+      "speed": 70,
+      "fielding": 70,
+      "arm": 65,
+      "eye": 65
+    },
+    "specialty": "Contact Master",
+    "funFact": "Is this heaven? No, it's Iowa."
+  },
+  {
+    "id": "fiction-20",
+    "name": "Moonlight Graham",
+    "team": "MIN",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.25,
+      "obp": 0.31,
+      "slg": 0.34,
+      "hr": 2,
+      "speed": 50
+    },
+    "overall": 62,
+    "category": "fictional",
+    "era": "Field of Dreams (1989)",
+    "nickname": "Doc",
+    "grades": {
+      "contact": 50,
+      "power": 45,
+      "speed": 50,
+      "fielding": 55,
+      "arm": 50,
+      "eye": 50
+    },
+    "specialty": null,
+    "funFact": "One inning, never got an at-bat - but saved a life"
+  },
+  {
+    "id": "fiction-22",
+    "name": "Mel Clark",
+    "team": "CAL",
+    "positions": [
+      "CF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.35,
+      "slg": 0.445,
+      "hr": 18,
+      "speed": 65
+    },
+    "overall": 80,
+    "category": "fictional",
+    "era": "Angels in the Outfield (1994)",
+    "nickname": "Angel Blessed",
+    "grades": {
+      "contact": 55,
+      "power": 55,
+      "speed": 50,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 60
+    },
+    "specialty": null,
+    "funFact": "A little heavenly help goes a long way"
+  },
+  {
+    "id": "fiction-23",
+    "name": "Chad Bradford",
+    "team": "OAK",
+    "positions": [
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.85,
+      "whip": 1.1,
+      "k9": 6.5,
+      "bb9": 2
+    },
+    "overall": 74,
+    "category": "fictional",
+    "era": "Moneyball (2011)",
+    "nickname": "Submarine",
+    "grades": {
+      "fastball": 50,
+      "breaking": 65,
+      "changeup": 60,
+      "control": 75,
+      "stamina": 55
+    },
+    "specialty": "Precision",
+    "funFact": "Throws from the basement - undervalued submarine pitcher"
+  },
+  {
+    "id": "fiction-24",
+    "name": "Scott Hatteberg",
+    "team": "OAK",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.28,
+      "obp": 0.375,
+      "slg": 0.425,
+      "hr": 15,
+      "speed": 30
+    },
+    "overall": 76,
+    "category": "fictional",
+    "era": "Moneyball (2011)",
+    "nickname": "Hatty",
+    "grades": {
+      "contact": 65,
+      "power": 50,
+      "speed": 30,
+      "fielding": 45,
+      "arm": 40,
+      "eye": 70
+    },
+    "specialty": "On-Base Machine",
+    "funFact": "Can't catch, can't throw, but he gets on base"
+  },
+  {
+    "id": "fiction-25",
+    "name": "Eddie Gaedel",
+    "team": "STL",
+    "positions": [
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0,
+      "obp": 1,
+      "slg": 0,
+      "hr": 0,
+      "speed": 40
+    },
+    "overall": 50,
+    "category": "oddity",
+    "era": "1951 (Real!)",
+    "nickname": "1/8",
+    "grades": {
+      "contact": 20,
+      "power": 20,
+      "speed": 40,
+      "fielding": 30,
+      "arm": 20,
+      "eye": 80
+    },
+    "specialty": "On-Base Machine",
+    "funFact": "3'7\" tall - walked in only plate appearance. Real player!"
+  },
+  {
+    "id": "fiction-26",
+    "name": "Sidd Finch",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 0,
+      "whip": 0.5,
+      "k9": 27,
+      "bb9": 9
+    },
+    "overall": 92,
+    "category": "oddity",
+    "era": "April Fools 1985",
+    "nickname": "The Yogi",
+    "grades": {
+      "fastball": 80,
+      "breaking": 30,
+      "changeup": 30,
+      "control": 20,
+      "stamina": 40
+    },
+    "specialty": "Power Arm",
+    "funFact": "168 mph fastball! Sports Illustrated April Fools legend"
+  },
+  {
+    "id": "fiction-27",
+    "name": "Dock Ellis (LSD)",
+    "team": "PIT",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.25,
+      "whip": 1.2,
+      "k9": 7.5,
+      "bb9": 4.5
+    },
+    "overall": 78,
+    "category": "oddity",
+    "era": "June 12, 1970",
+    "nickname": "Tripping",
+    "grades": {
+      "fastball": 70,
+      "breaking": 65,
+      "changeup": 55,
+      "control": 45,
+      "stamina": 65
+    },
+    "specialty": null,
+    "funFact": "Threw a no-hitter while tripping on LSD. Real story!"
+  },
+  {
+    "id": "fiction-28",
+    "name": "Mark 'The Bird' Fidrych",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.34,
+      "whip": 1.08,
+      "k9": 5.5,
+      "bb9": 2
+    },
+    "overall": 82,
+    "category": "oddity",
+    "era": "1976 Season",
+    "nickname": "The Bird",
+    "grades": {
+      "fastball": 70,
+      "breaking": 65,
+      "changeup": 60,
+      "control": 70,
+      "stamina": 70
+    },
+    "specialty": null,
+    "funFact": "Talked to the baseball. Manicured the mound. Real character!"
+  },
+  {
+    "id": "fiction-29",
+    "name": "Rachel Phelps",
+    "team": "CLE",
+    "positions": [
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.05,
+      "obp": 0.05,
+      "slg": 0.05,
+      "hr": 0,
+      "speed": 20
+    },
+    "overall": 30,
+    "category": "fictional",
+    "era": "Major League (1989)",
+    "nickname": "The Owner",
+    "grades": {
+      "contact": 20,
+      "power": 20,
+      "speed": 20,
+      "fielding": 20,
+      "arm": 20,
+      "eye": 20
+    },
+    "specialty": null,
+    "funFact": "Wanted the team to lose... but they won anyway"
+  },
+  {
+    "id": "fiction-30",
+    "name": "Kenny Powers",
+    "team": "ATL",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.75,
+      "whip": 1.3,
+      "k9": 10.5,
+      "bb9": 4
+    },
+    "overall": 80,
+    "category": "fictional",
+    "era": "Eastbound & Down",
+    "nickname": "La Flama Blanca",
+    "grades": {
+      "fastball": 75,
+      "breaking": 55,
+      "changeup": 45,
+      "control": 50,
+      "stamina": 50
+    },
+    "specialty": "Power Arm",
+    "funFact": "I'm the man who has the ball. I'm the man who can throw it faster than you."
+  },
+  {
+    "id": "fiction-31",
+    "name": "Scotty Smalls",
+    "team": "SLT",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.22,
+      "obp": 0.31,
+      "slg": 0.29,
+      "hr": 1,
+      "speed": 45
+    },
+    "overall": 58,
+    "category": "fictional",
+    "era": "The Sandlot (1993)",
+    "nickname": "Smalls",
+    "grades": {
+      "contact": 40,
+      "power": 30,
+      "speed": 45,
+      "fielding": 40,
+      "arm": 35,
+      "eye": 50
+    },
+    "specialty": null,
+    "funFact": "You're killing me, Smalls! Started as a total newbie but earned his spot"
+  },
+  {
+    "id": "fiction-32",
+    "name": "Alan 'Yeah-Yeah' McClennan",
+    "team": "SLT",
+    "positions": [
+      "2B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.248,
+      "obp": 0.32,
+      "slg": 0.345,
+      "hr": 4,
+      "speed": 65
+    },
+    "overall": 64,
+    "category": "fictional",
+    "era": "The Sandlot (1993)",
+    "nickname": "Yeah-Yeah",
+    "grades": {
+      "contact": 50,
+      "power": 40,
+      "speed": 65,
+      "fielding": 55,
+      "arm": 50,
+      "eye": 50
+    },
+    "specialty": null,
+    "funFact": "Yeah yeah yeah, I know, I know, I already know!"
+  },
+  {
+    "id": "fiction-33",
+    "name": "Kenny DeNunez",
+    "team": "SLT",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.45,
+      "whip": 1.2,
+      "k9": 7.5,
+      "bb9": 3
+    },
+    "overall": 68,
+    "category": "fictional",
+    "era": "The Sandlot (1993)",
+    "nickname": "DeNunez",
+    "grades": {
+      "fastball": 60,
+      "breaking": 55,
+      "changeup": 50,
+      "control": 60,
+      "stamina": 60
+    },
+    "specialty": null,
+    "funFact": "The Sandlot's ace pitcher - threw heat for the neighborhood crew"
+  },
+  {
+    "id": "fiction-34",
+    "name": "Timmy Timmons",
+    "team": "SLT",
+    "positions": [
+      "LF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.24,
+      "obp": 0.3,
+      "slg": 0.335,
+      "hr": 3,
+      "speed": 55
+    },
+    "overall": 61,
+    "category": "fictional",
+    "era": "The Sandlot (1993)",
+    "nickname": "Timmy",
+    "grades": {
+      "contact": 48,
+      "power": 38,
+      "speed": 55,
+      "fielding": 50,
+      "arm": 45,
+      "eye": 45
+    },
+    "specialty": null,
+    "funFact": "Timmy and Tommy - always together, always getting into trouble"
+  },
+  {
+    "id": "fiction-35",
+    "name": "Bertram Grover Weeks",
+    "team": "SLT",
+    "positions": [
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.245,
+      "obp": 0.315,
+      "slg": 0.36,
+      "hr": 5,
+      "speed": 50
+    },
+    "overall": 63,
+    "category": "fictional",
+    "era": "The Sandlot (1993)",
+    "nickname": "Bertram",
+    "grades": {
+      "contact": 50,
+      "power": 45,
+      "speed": 50,
+      "fielding": 50,
+      "arm": 50,
+      "eye": 50
+    },
+    "specialty": null,
+    "funFact": "Went into the '60s and no one ever saw him again"
+  },
+  {
+    "id": "fiction-36",
+    "name": "Elgin Woodell",
+    "team": "CHC",
+    "positions": [
+      "SS",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.34,
+      "obp": 0.42,
+      "slg": 0.58,
+      "hr": 30,
+      "speed": 80
+    },
+    "overall": 90,
+    "category": "fictional",
+    "era": "The Rookie (book)",
+    "nickname": "The Kid from Doyle City",
+    "grades": {
+      "contact": 75,
+      "power": 75,
+      "speed": 75,
+      "fielding": 75,
+      "arm": 75,
+      "eye": 75
+    },
+    "specialty": "5-Tool",
+    "funFact": "A high school kid who walked onto the Cubs and could do absolutely everything"
+  },
+  {
+    "id": "fiction-37",
+    "name": "Amanda Whurlitzer",
+    "team": "BNB",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.65,
+      "whip": 1.08,
+      "k9": 10.5,
+      "bb9": 2.8
+    },
+    "overall": 84,
+    "category": "fictional",
+    "era": "The Bad News Bears (1976)",
+    "nickname": "Pigtails",
+    "grades": {
+      "fastball": 65,
+      "breaking": 75,
+      "changeup": 60,
+      "control": 70,
+      "stamina": 55
+    },
+    "specialty": "Breaking Ball Artist",
+    "funFact": "Don't let the pigtails fool you - she throws gas and has a nasty curve"
+  },
+  {
+    "id": "fiction-38",
+    "name": "Kelly Leak",
+    "team": "BNB",
+    "positions": [
+      "CF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.315,
+      "obp": 0.38,
+      "slg": 0.535,
+      "hr": 20,
+      "speed": 80
+    },
+    "overall": 82,
+    "category": "fictional",
+    "era": "The Bad News Bears (1976)",
+    "nickname": "The Rebel",
+    "grades": {
+      "contact": 65,
+      "power": 70,
+      "speed": 75,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 55
+    },
+    "specialty": "Five-Tool Threat",
+    "funFact": "Rode in on a motorcycle, hit bombs, and stole every base in sight"
+  },
+  {
+    "id": "fiction-39",
+    "name": "Tanner Boyle",
+    "team": "BNB",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.248,
+      "obp": 0.325,
+      "slg": 0.355,
+      "hr": 5,
+      "speed": 60
+    },
+    "overall": 68,
+    "category": "fictional",
+    "era": "The Bad News Bears (1976)",
+    "nickname": "The Mouth",
+    "grades": {
+      "contact": 50,
+      "power": 40,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 50
+    },
+    "specialty": null,
+    "funFact": "All guts, no quit - the smallest kid with the biggest mouth on the field"
+  },
+  {
+    "id": "fiction-40",
+    "name": "Ahmad Abdul-Rahim",
+    "team": "BNB",
+    "positions": [
+      "CF",
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.24,
+      "obp": 0.3,
+      "slg": 0.33,
+      "hr": 2,
+      "speed": 80
+    },
+    "overall": 65,
+    "category": "fictional",
+    "era": "The Bad News Bears (1976)",
+    "nickname": "Smooth",
+    "grades": {
+      "contact": 45,
+      "power": 30,
+      "speed": 70,
+      "fielding": 35,
+      "arm": 45,
+      "eye": 40
+    },
+    "specialty": "Speedster",
+    "funFact": "Blazing speed and silky smooth... just don't hit it to him"
+  },
+  {
+    "id": "fiction-41",
+    "name": "Engelberg",
+    "team": "BNB",
+    "positions": [
+      "C"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.255,
+      "obp": 0.32,
+      "slg": 0.385,
+      "hr": 8,
+      "speed": 25
+    },
+    "overall": 62,
+    "category": "fictional",
+    "era": "The Bad News Bears (1976)",
+    "nickname": "Tank",
+    "grades": {
+      "contact": 55,
+      "power": 50,
+      "speed": 20,
+      "fielding": 55,
+      "arm": 50,
+      "eye": 45
+    },
+    "specialty": null,
+    "funFact": "Ate a whole pizza behind the plate once. Best hands on the team though."
+  },
+  {
+    "id": "fiction-42",
+    "name": "Timmy Lupus",
+    "team": "BNB",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.145,
+      "obp": 0.22,
+      "slg": 0.17,
+      "hr": 0,
+      "speed": 40
+    },
+    "overall": 45,
+    "category": "fictional",
+    "era": "The Bad News Bears (1976)",
+    "nickname": "Loofus",
+    "grades": {
+      "contact": 25,
+      "power": 20,
+      "speed": 40,
+      "fielding": 30,
+      "arm": 25,
+      "eye": 35
+    },
+    "specialty": null,
+    "funFact": "Lupus? You mean Loofus? The kid just wants one at-bat."
+  },
+  {
+    "id": "fiction-43",
+    "name": "Ogilvie",
+    "team": "BNB",
+    "positions": [
+      "3B",
+      "2B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.225,
+      "obp": 0.31,
+      "slg": 0.305,
+      "hr": 2,
+      "speed": 45
+    },
+    "overall": 58,
+    "category": "fictional",
+    "era": "The Bad News Bears (1976)",
+    "nickname": "The Professor",
+    "grades": {
+      "contact": 45,
+      "power": 30,
+      "speed": 40,
+      "fielding": 45,
+      "arm": 40,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "Would rather read a book than field a grounder - but he's out there trying"
+  },
+  {
+    "id": "fiction-44",
+    "name": "Morris Buttermaker",
+    "team": "BNB",
+    "positions": [
+      "SP",
+      "LRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.85,
+      "whip": 1.28,
+      "k9": 6.8,
+      "bb9": 3.5
+    },
+    "overall": 72,
+    "category": "fictional",
+    "era": "The Bad News Bears (1976)",
+    "nickname": "Buttermaker",
+    "grades": {
+      "fastball": 50,
+      "breaking": 60,
+      "changeup": 55,
+      "control": 60,
+      "stamina": 50
+    },
+    "specialty": null,
+    "funFact": "Former minor leaguer turned pool cleaner. Drinks beer in the dugout. Somehow made it work."
+  },
+  {
+    "id": "fiction-45",
+    "name": "Steve Nebraska",
+    "team": "NYY",
+    "positions": [
+      "SP",
+      "CF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 0,
+      "whip": 0,
+      "k9": 27,
+      "bb9": 0,
+      "avg": 0.5,
+      "obp": 0.6,
+      "slg": 1.5,
+      "hr": 50,
+      "speed": 85
+    },
+    "overall": 99,
+    "category": "fictional",
+    "era": "Major League: Back to the Minors (1998)",
+    "nickname": "The Scout",
+    "grades": {
+      "contact": 80,
+      "power": 80,
+      "speed": 80,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 80,
+      "fastball": 80,
+      "breaking": 80,
+      "changeup": 80,
+      "control": 80,
+      "stamina": 80
+    },
+    "specialty": "5-Tool",
+    "funFact": "Struck out every batter AND hit a homer in his MLB debut. Perfect pitcher, perfect hitter. The ultimate prospect."
+  },
+  {
+    "id": "fiction-48",
+    "name": "Nuke LaLoosh",
+    "team": "Durham Bulls",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.85,
+      "whip": 1.35,
+      "k9": 12,
+      "bb9": 5.5
+    },
+    "overall": 83,
+    "category": "fictional",
+    "era": "Movies",
+    "grades": {
+      "fastball": 80,
+      "breaking": 52,
+      "control": 35,
+      "stamina": 55,
+      "changeup": 40
+    },
+    "nickname": "Nuke",
+    "funFact": "Million-dollar arm and a five-cent head. Untamed velocity with zero precision.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "fiction-50",
+    "name": "Rick Vaughn",
+    "team": "Cleveland Indians",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.88,
+      "whip": 1.3,
+      "k9": 13.5,
+      "bb9": 6
+    },
+    "overall": 86,
+    "category": "fictional",
+    "era": "Movies",
+    "grades": {
+      "fastball": 80,
+      "breaking": 48,
+      "control": 30,
+      "stamina": 40,
+      "changeup": 35
+    },
+    "nickname": "Wild Thing",
+    "funFact": "Wild Thing. You make my heart sing. Just duck when he winds up.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "fiction-54",
+    "name": "Billy Chapel",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.55,
+      "whip": 1.05,
+      "k9": 8,
+      "bb9": 2
+    },
+    "overall": 90,
+    "category": "fictional",
+    "era": "Movies",
+    "grades": {
+      "fastball": 68,
+      "breaking": 65,
+      "control": 72,
+      "stamina": 70,
+      "changeup": 65
+    },
+    "nickname": "Chapel",
+    "funFact": "Threw a perfect game in his last start. Clear the mechanism.",
+    "specialty": "Pitching Maestro"
+  },
+  {
+    "id": "fiction-57",
+    "name": "Benny Rodriguez",
+    "team": "Sandlot Legends",
+    "positions": [
+      "CF",
+      "PR"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.31,
+      "obp": 0.375,
+      "slg": 0.488,
+      "hr": 15,
+      "speed": 92
+    },
+    "overall": 86,
+    "category": "fictional",
+    "era": "Movies",
+    "grades": {
+      "contact": 68,
+      "power": 48,
+      "speed": 80,
+      "eye": 58,
+      "fielding": 68,
+      "arm": 58
+    },
+    "nickname": "The Jet",
+    "funFact": "Pickled the Beast and jumped the fence. The greatest sandlot player of all time.",
+    "specialty": "Speedster"
+  },
+  {
+    "id": "fiction-62",
+    "name": "Jack Elliot",
+    "team": "Chunichi Dragons",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.29,
+      "obp": 0.355,
+      "slg": 0.51,
+      "hr": 30,
+      "speed": 35
+    },
+    "overall": 84,
+    "category": "fictional",
+    "era": "Movies",
+    "grades": {
+      "contact": 62,
+      "power": 65,
+      "speed": 30,
+      "eye": 55,
+      "fielding": 45,
+      "arm": 48
+    },
+    "nickname": "Mr. Baseball",
+    "funFact": "American slugger meets Japanese discipline. Learned to bow and then hit dingers.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "fiction-64",
+    "name": "Goro Shigeno",
+    "team": "Yokohama",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.85,
+      "whip": 0.9,
+      "k9": 12.5,
+      "bb9": 2
+    },
+    "overall": 92,
+    "category": "fictional",
+    "era": "Anime",
+    "grades": {
+      "fastball": 80,
+      "breaking": 72,
+      "control": 65,
+      "stamina": 62,
+      "changeup": 55
+    },
+    "nickname": "Goro",
+    "funFact": "Gyroball and guts. The hot-blooded lefty who conquered Japan and America.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "fiction-65",
+    "name": "Eijun Sawamura",
+    "team": "Seidou",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.35,
+      "whip": 1.1,
+      "k9": 9.5,
+      "bb9": 3
+    },
+    "overall": 85,
+    "category": "fictional",
+    "era": "Anime",
+    "grades": {
+      "fastball": 68,
+      "breaking": 62,
+      "control": 58,
+      "stamina": 65,
+      "changeup": 68
+    },
+    "nickname": "Sawamura",
+    "funFact": "Natural born movement on every pitch. Loud, fearless, and impossible to hit straight.",
+    "specialty": null
+  },
+  {
+    "id": "fiction-66",
+    "name": "Joe Hardy",
+    "team": "Washington Senators",
+    "positions": [
+      "CF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.352,
+      "obp": 0.418,
+      "slg": 0.645,
+      "hr": 40,
+      "speed": 78
+    },
+    "overall": 94,
+    "category": "fictional",
+    "era": "Movies",
+    "grades": {
+      "contact": 72,
+      "power": 72,
+      "speed": 72,
+      "eye": 68,
+      "fielding": 65,
+      "arm": 60
+    },
+    "nickname": "Hardy",
+    "funFact": "Sold his soul for a pennant. Whatever Lola wants, Lola gets.",
+    "specialty": "Five Tool"
+  },
+  {
+    "id": "fiction-67",
+    "name": "Ricky Vaughn",
+    "team": "Milwaukee Beers",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.1,
+      "whip": 1.18,
+      "k9": 10,
+      "bb9": 3.2
+    },
+    "overall": 84,
+    "category": "fictional",
+    "era": "Movies",
+    "grades": {
+      "fastball": 72,
+      "breaking": 60,
+      "control": 50,
+      "stamina": 58,
+      "changeup": 48
+    },
+    "nickname": "Downtown",
+    "funFact": "Started in the beer leagues and threw his way to the show. Heart of a champion.",
+    "specialty": null
+  },
+  {
+    "id": "fiction-68",
+    "name": "Ebby Calvin LaLoosh",
+    "team": "Carolina Mudcats",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 4.5,
+      "whip": 1.45,
+      "k9": 11,
+      "bb9": 5
+    },
+    "overall": 78,
+    "category": "fictional",
+    "era": "Movies",
+    "grades": {
+      "fastball": 78,
+      "breaking": 48,
+      "control": 28,
+      "stamina": 52,
+      "changeup": 38
+    },
+    "nickname": "Meat",
+    "funFact": "The arm of a god and the brain of a rookie. Announce his presence with authority!",
+    "specialty": null
+  },
+  {
+    "id": "fiction-69",
+    "name": "Pablo Sanchez",
+    "team": "BYB",
+    "positions": [
+      "SS",
+      "2B",
+      "IFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.365,
+      "obp": 0.44,
+      "slg": 0.62,
+      "hr": 35,
+      "speed": 90
+    },
+    "overall": 97,
+    "category": "fictional",
+    "era": "Backyard Baseball (1997)",
+    "nickname": "The Secret Weapon",
+    "grades": {
+      "contact": 80,
+      "power": 75,
+      "speed": 80,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "5-Tool",
+    "funFact": "The undisputed GOAT of Backyard Baseball. Always the first pick. Always."
+  },
+  {
+    "id": "fiction-70",
+    "name": "Pete Wheeler",
+    "team": "BYB",
+    "positions": [
+      "CF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.255,
+      "obp": 0.31,
+      "slg": 0.36,
+      "hr": 5,
+      "speed": 99
+    },
+    "overall": 78,
+    "category": "fictional",
+    "era": "Backyard Baseball (1997)",
+    "nickname": "Wheels",
+    "grades": {
+      "contact": 45,
+      "power": 35,
+      "speed": 80,
+      "fielding": 60,
+      "arm": 45,
+      "eye": 40
+    },
+    "specialty": "Speedster",
+    "funFact": "The fastest kid in the neighborhood! Runs so fast he forgets where he's going."
+  },
+  {
+    "id": "fiction-71",
+    "name": "Keisha Phillips",
+    "team": "BYB",
+    "positions": [
+      "SP",
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.25,
+      "whip": 1.0,
+      "k9": 11.0,
+      "bb9": 2.5
+    },
+    "overall": 85,
+    "category": "fictional",
+    "era": "Backyard Baseball (1997)",
+    "nickname": "K-Phillips",
+    "grades": {
+      "fastball": 72,
+      "breaking": 68,
+      "changeup": 62,
+      "control": 70,
+      "stamina": 65
+    },
+    "specialty": "Strikeout Artist",
+    "funFact": "Dominates the mound with a wicked fastball and an even nastier attitude toward batters."
+  },
+  {
+    "id": "fiction-72",
+    "name": "Homer Simpson",
+    "team": "SPR",
+    "positions": [
+      "RF",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.198,
+      "obp": 0.26,
+      "slg": 0.38,
+      "hr": 12,
+      "speed": 20
+    },
+    "overall": 65,
+    "category": "fictional",
+    "era": "The Simpsons - Homer at the Bat (1992)",
+    "nickname": "The Chosen One",
+    "grades": {
+      "contact": 30,
+      "power": 55,
+      "speed": 20,
+      "fielding": 25,
+      "arm": 30,
+      "eye": 25
+    },
+    "specialty": null,
+    "funFact": "Won the company softball championship by getting hit by a pitch with the bases loaded. D'oh!"
+  },
+  {
+    "id": "fiction-73",
+    "name": "Mr. Burns",
+    "team": "SPR",
+    "positions": [
+      "LRP",
+      "LOOGY"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 5.85,
+      "whip": 1.65,
+      "k9": 3.5,
+      "bb9": 5.5
+    },
+    "overall": 40,
+    "category": "fictional",
+    "era": "The Simpsons - Homer at the Bat (1992)",
+    "nickname": "Monty",
+    "grades": {
+      "fastball": 20,
+      "breaking": 30,
+      "changeup": 35,
+      "control": 25,
+      "stamina": 20
+    },
+    "specialty": null,
+    "funFact": "Sent the pinch hitter signal and gave the team a shot at glory. Excellent!"
+  },
+  {
+    "id": "fiction-74",
+    "name": "Charlie Brown",
+    "team": "PNT",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 5.45,
+      "whip": 1.55,
+      "k9": 4.5,
+      "bb9": 4.0
+    },
+    "overall": 55,
+    "category": "fictional",
+    "era": "Peanuts (1950)",
+    "nickname": "Good Ol' Charlie Brown",
+    "grades": {
+      "fastball": 35,
+      "breaking": 40,
+      "changeup": 45,
+      "control": 40,
+      "stamina": 70
+    },
+    "specialty": null,
+    "funFact": "His team loses almost every game, but he never stops showing up on that mound. True heart of a champion."
+  },
+  {
+    "id": "fiction-75",
+    "name": "Casey",
+    "team": "MUD",
+    "positions": [
+      "DH",
+      "1B",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.335,
+      "obp": 0.41,
+      "slg": 0.62,
+      "hr": 38,
+      "speed": 35
+    },
+    "overall": 88,
+    "category": "fictional",
+    "era": "Casey at the Bat (1888)",
+    "nickname": "Mighty Casey",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 35,
+      "fielding": 40,
+      "arm": 45,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "There is no joy in Mudville... but when Casey connects, the ball leaves the county!"
+  },
+  {
+    "id": "fiction-76",
+    "name": "George Costanza",
+    "team": "NYY",
+    "positions": [
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.195,
+      "obp": 0.28,
+      "slg": 0.27,
+      "hr": 2,
+      "speed": 30
+    },
+    "overall": 50,
+    "category": "fictional",
+    "era": "Seinfeld (1989)",
+    "nickname": "The Yankee",
+    "grades": {
+      "contact": 35,
+      "power": 25,
+      "speed": 30,
+      "fielding": 30,
+      "arm": 25,
+      "eye": 40
+    },
+    "specialty": null,
+    "funFact": "Assistant to the Traveling Secretary turned surprise ballplayer. The opposite of every instinct he has is the right play."
+  },
+  {
+    "id": "fiction-77",
+    "name": "Satoru Furuya",
+    "team": "Seidou",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.1,
+      "whip": 0.95,
+      "k9": 13.0,
+      "bb9": 2.5
+    },
+    "overall": 88,
+    "category": "fictional",
+    "era": "Ace of Diamond (2006)",
+    "nickname": "The Monster Rookie",
+    "grades": {
+      "fastball": 80,
+      "breaking": 55,
+      "changeup": 45,
+      "control": 55,
+      "stamina": 50
+    },
+    "specialty": "Power Arm",
+    "funFact": "Throws absolute lightning bolts. When Furuya is locked in, nobody can touch his fastball."
+  },
+  {
+    "id": "fiction-78",
+    "name": "Ren Mihashi",
+    "team": "Nishiura",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.55,
+      "whip": 1.05,
+      "k9": 8.5,
+      "bb9": 1.8
+    },
+    "overall": 82,
+    "category": "fictional",
+    "era": "Big Windup! (2003)",
+    "nickname": "The Nervous Ace",
+    "grades": {
+      "fastball": 50,
+      "breaking": 70,
+      "changeup": 72,
+      "control": 78,
+      "stamina": 55
+    },
+    "specialty": "Precision",
+    "funFact": "Shy and nervous, but pinpoints every pitch to the exact spot his catcher calls. A control wizard!"
+  },
+  {
+    "id": "fiction-79",
+    "name": "Ko Kitamura",
+    "team": "Seishuu",
+    "positions": [
+      "SP",
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.36,
+      "slg": 0.47,
+      "hr": 15,
+      "speed": 70,
+      "era": 1.95,
+      "whip": 0.92,
+      "k9": 11.5,
+      "bb9": 2.2
+    },
+    "overall": 91,
+    "category": "fictional",
+    "era": "Cross Game (2005)",
+    "nickname": "The Natural Talent",
+    "grades": {
+      "contact": 65,
+      "power": 55,
+      "speed": 65,
+      "fielding": 65,
+      "arm": 70,
+      "eye": 60,
+      "fastball": 75,
+      "breaking": 65,
+      "changeup": 60,
+      "control": 70,
+      "stamina": 65
+    },
+    "specialty": "Two-Way Star",
+    "funFact": "Dedicated to fulfilling a promise. An incredible pitcher and hitter who plays for something bigger than himself."
+  },
+  {
+    "id": "fiction-80",
+    "name": "Henry Skrimshander",
+    "team": "WES",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.31,
+      "obp": 0.37,
+      "slg": 0.44,
+      "hr": 10,
+      "speed": 65
+    },
+    "overall": 85,
+    "category": "fictional",
+    "era": "The Art of Fielding (2011)",
+    "nickname": "The Fielder",
+    "grades": {
+      "contact": 70,
+      "power": 45,
+      "speed": 60,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 65
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Plays shortstop like a ballet dancer. Zero errors in over 50 games. The most gifted defensive player you'll ever see."
+  },
+  {
+    "id": "fiction-81",
+    "name": "Turk Wendell",
+    "team": "CAL",
+    "positions": [
+      "SU",
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.15,
+      "whip": 1.18,
+      "k9": 8.5,
+      "bb9": 3.0
+    },
+    "overall": 76,
+    "category": "fictional",
+    "era": "Angels in the Outfield (1994)",
+    "nickname": "Ranch",
+    "grades": {
+      "fastball": 60,
+      "breaking": 62,
+      "changeup": 55,
+      "control": 60,
+      "stamina": 55
+    },
+    "specialty": null,
+    "funFact": "When the angels start flapping their wings, even average pitchers become untouchable!"
+  },
+  {
+    "id": "fiction-82",
+    "name": "J.P. Ryan",
+    "team": "CAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 4.25,
+      "whip": 1.32,
+      "k9": 7.0,
+      "bb9": 3.5
+    },
+    "overall": 72,
+    "category": "fictional",
+    "era": "Angels in the Outfield (1994)",
+    "nickname": "The Announcer's Nightmare",
+    "grades": {
+      "fastball": 55,
+      "breaking": 58,
+      "changeup": 52,
+      "control": 55,
+      "stamina": 65
+    },
+    "specialty": null,
+    "funFact": "A struggling pitcher who got a miracle from above. Proof that believing can change everything."
+  },
+  {
+    "id": "fiction-83",
+    "name": "Bart Simpson",
+    "team": "SPR",
+    "positions": [
+      "2B",
+      "PR"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.24,
+      "obp": 0.33,
+      "slg": 0.34,
+      "hr": 3,
+      "speed": 75
+    },
+    "overall": 62,
+    "category": "fictional",
+    "era": "The Simpsons - Homer at the Bat (1992)",
+    "nickname": "El Barto",
+    "grades": {
+      "contact": 45,
+      "power": 30,
+      "speed": 70,
+      "fielding": 50,
+      "arm": 45,
+      "eye": 45
+    },
+    "specialty": "Speedster",
+    "funFact": "Eat my dust! Quick feet and a troublemaker's instinct on the basepaths."
+  },
+  {
+    "id": "fiction-84",
+    "name": "Hank Hill",
+    "team": "ARL",
+    "positions": [
+      "1B",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.272,
+      "obp": 0.34,
+      "slg": 0.42,
+      "hr": 14,
+      "speed": 35
+    },
+    "overall": 70,
+    "category": "fictional",
+    "era": "King of the Hill (1997)",
+    "nickname": "Propane Man",
+    "grades": {
+      "contact": 60,
+      "power": 50,
+      "speed": 35,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 60
+    },
+    "specialty": null,
+    "funFact": "Played high school ball in Arlen, Texas. Solid fundamentals and a clean swing, I tell you what."
+  },
+  {
+    "id": "fiction-85",
+    "name": "Philip J. Fry",
+    "team": "NNY",
+    "positions": [
+      "LF",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.21,
+      "obp": 0.28,
+      "slg": 0.32,
+      "hr": 6,
+      "speed": 45
+    },
+    "overall": 55,
+    "category": "fictional",
+    "era": "Futurama - A Leela of Her Own (2002)",
+    "nickname": "The Delivery Boy",
+    "grades": {
+      "contact": 35,
+      "power": 40,
+      "speed": 45,
+      "fielding": 30,
+      "arm": 35,
+      "eye": 30
+    },
+    "specialty": null,
+    "funFact": "Blernsball champion from the year 3000! Turns out the sport is just baseball with explosions and giant spiders."
+  },
+  {
+    "id": "fiction-86",
+    "name": "Turanga Leela",
+    "team": "NNY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.65,
+      "whip": 1.22,
+      "k9": 9.0,
+      "bb9": 3.5
+    },
+    "overall": 75,
+    "category": "fictional",
+    "era": "Futurama - A Leela of Her Own (2002)",
+    "nickname": "The Beanball Queen",
+    "grades": {
+      "fastball": 68,
+      "breaking": 55,
+      "changeup": 50,
+      "control": 48,
+      "stamina": 60
+    },
+    "specialty": null,
+    "funFact": "First female Blernsball pitcher in history. One eye, one dream, one incredible arm!"
+  },
+  {
+    "id": "fiction-87",
+    "name": "Arnold Shortman",
+    "team": "HIL",
+    "positions": [
+      "SS",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.275,
+      "obp": 0.36,
+      "slg": 0.39,
+      "hr": 7,
+      "speed": 60
+    },
+    "overall": 72,
+    "category": "fictional",
+    "era": "Hey Arnold! (1996)",
+    "nickname": "Football Head",
+    "grades": {
+      "contact": 60,
+      "power": 40,
+      "speed": 55,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 60
+    },
+    "specialty": null,
+    "funFact": "The kid from Hillwood always comes through in the clutch. Natural leader who makes everyone around him better."
+  },
+  {
+    "id": "fiction-88",
+    "name": "Gerald Johanssen",
+    "team": "HIL",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.345,
+      "slg": 0.435,
+      "hr": 12,
+      "speed": 72
+    },
+    "overall": 76,
+    "category": "fictional",
+    "era": "Hey Arnold! (1996)",
+    "nickname": "Tall Hair Boy",
+    "grades": {
+      "contact": 58,
+      "power": 48,
+      "speed": 68,
+      "fielding": 62,
+      "arm": 58,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "Arnold's best friend and the coolest kid on the block. Smooth in center field and smooth at the plate."
+  },
+  {
+    "id": "fiction-89",
+    "name": "Jim Morris",
+    "team": "TBR",
+    "positions": [
+      "CL",
+      "SU"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.55,
+      "whip": 1.08,
+      "k9": 12.0,
+      "bb9": 2.8
+    },
+    "overall": 84,
+    "category": "fictional",
+    "era": "The Rookie (2002)",
+    "nickname": "The Oldest Rookie",
+    "grades": {
+      "fastball": 78,
+      "breaking": 50,
+      "changeup": 45,
+      "control": 65,
+      "stamina": 45
+    },
+    "specialty": "Power Arm",
+    "funFact": "A 35-year-old high school teacher who kept a promise to his students and made it to the bigs. Dreams have no expiration date!"
+  },
+  {
+    "id": "fiction-90",
+    "name": "Evelyn Gardner",
+    "team": "RPB",
+    "positions": [
+      "RF",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.26,
+      "obp": 0.325,
+      "slg": 0.37,
+      "hr": 6,
+      "speed": 50
+    },
+    "overall": 70,
+    "category": "fictional",
+    "era": "A League of Their Own (1992)",
+    "nickname": "The Trooper",
+    "grades": {
+      "contact": 55,
+      "power": 40,
+      "speed": 48,
+      "fielding": 52,
+      "arm": 50,
+      "eye": 60
+    },
+    "specialty": null,
+    "funFact": "Couldn't read or write when she joined, but she sure could hit a curveball. Learned to read between innings!"
+  },
+  {
+    "id": "fiction-91",
+    "name": "Doris Murphy",
+    "team": "RPB",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.27,
+      "obp": 0.34,
+      "slg": 0.41,
+      "hr": 10,
+      "speed": 45
+    },
+    "overall": 73,
+    "category": "fictional",
+    "era": "A League of Their Own (1992)",
+    "nickname": "The Tough One",
+    "grades": {
+      "contact": 58,
+      "power": 52,
+      "speed": 42,
+      "fielding": 58,
+      "arm": 55,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "Tough as nails and twice as sharp. Nobody runs on Doris at the hot corner."
+  },
+  {
+    "id": "fiction-92",
+    "name": "Miles Pennfield II",
+    "team": "BYB",
+    "positions": [
+      "3B",
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.38,
+      "slg": 0.52,
+      "hr": 22,
+      "speed": 45
+    },
+    "overall": 80,
+    "category": "fictional",
+    "era": "Backyard Baseball (1997)",
+    "nickname": "MVP",
+    "grades": {
+      "contact": 65,
+      "power": 65,
+      "speed": 40,
+      "fielding": 60,
+      "arm": 58,
+      "eye": 62
+    },
+    "specialty": "Power Hitter",
+    "funFact": "A backyard legend who crushes the ball over every fence in the neighborhood. Huge bat, huge heart."
+  },
+  {
+    "id": "fiction-93",
+    "name": "Angela Delvecchio",
+    "team": "BYB",
+    "positions": [
+      "SP",
+      "SU"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.65,
+      "whip": 1.08,
+      "k9": 10.0,
+      "bb9": 2.5
+    },
+    "overall": 82,
+    "category": "fictional",
+    "era": "Backyard Baseball (1997)",
+    "nickname": "Ice Queen",
+    "grades": {
+      "fastball": 65,
+      "breaking": 68,
+      "changeup": 62,
+      "control": 68,
+      "stamina": 60
+    },
+    "specialty": "Precision",
+    "funFact": "Cool under pressure, deadly accurate. The backyard kids know when Angela's pitching, it's going to be a long day at the plate."
+  },
+  {
+    "id": "fiction-94",
+    "name": "Achilles Bolder",
+    "team": "BYB",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.28,
+      "obp": 0.35,
+      "slg": 0.46,
+      "hr": 18,
+      "speed": 30
+    },
+    "overall": 77,
+    "category": "fictional",
+    "era": "Backyard Baseball (1997)",
+    "nickname": "The Wall",
+    "grades": {
+      "contact": 60,
+      "power": 58,
+      "speed": 30,
+      "fielding": 65,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "Built like a brick wall behind the plate. Nothing gets past Achilles, and runners don't dare try to steal."
+  },
+  {
+    "id": "fiction-95",
+    "name": "Bobby Jack Thompson",
+    "team": "SUM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.15,
+      "whip": 1.12,
+      "k9": 9.5,
+      "bb9": 2.8
+    },
+    "overall": 79,
+    "category": "fictional",
+    "era": "Summer Catch (2001)",
+    "nickname": "Cape Cod Kid",
+    "grades": {
+      "fastball": 70,
+      "breaking": 60,
+      "changeup": 55,
+      "control": 62,
+      "stamina": 60
+    },
+    "specialty": null,
+    "funFact": "A Cape Cod League phenom who proved that small-town kids can throw big-league heat!"
+  },
+  {
+    "id": "fiction-96",
+    "name": "Ben Wrightman",
+    "team": "BOS",
+    "positions": [
+      "RF",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.248,
+      "obp": 0.325,
+      "slg": 0.38,
+      "hr": 9,
+      "speed": 50
+    },
+    "overall": 68,
+    "category": "fictional",
+    "era": "Fever Pitch (2005)",
+    "nickname": "The Superfan",
+    "grades": {
+      "contact": 52,
+      "power": 45,
+      "speed": 48,
+      "fielding": 50,
+      "arm": 48,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "The biggest Red Sox fan alive finally got to play. Lives and breathes baseball from April to October."
+  },
+  {
+    "id": "fiction-97",
+    "name": "Bump Bailey",
+    "team": "NYK",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.302,
+      "obp": 0.35,
+      "slg": 0.52,
+      "hr": 25,
+      "speed": 55
+    },
+    "overall": 80,
+    "category": "fictional",
+    "era": "The Natural (1984)",
+    "nickname": "Bump",
+    "grades": {
+      "contact": 62,
+      "power": 65,
+      "speed": 50,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 50
+    },
+    "specialty": "Power Hitter",
+    "funFact": "A slugging star who gave everything he had chasing a fly ball into the wall. Played the game full throttle."
+  },
+  {
+    "id": "fiction-98",
+    "name": "Pop Fisher",
+    "team": "NYK",
+    "positions": [
+      "2B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.265,
+      "obp": 0.345,
+      "slg": 0.38,
+      "hr": 8,
+      "speed": 35
+    },
+    "overall": 71,
+    "category": "fictional",
+    "era": "The Natural (1984)",
+    "nickname": "Pop",
+    "grades": {
+      "contact": 60,
+      "power": 40,
+      "speed": 35,
+      "fielding": 60,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": null,
+    "funFact": "A wise old manager who waited his whole life for a pennant. When Roy Hobbs showed up, his dream finally came alive."
+  },
+  {
+    "id": "fiction-99",
+    "name": "Ray Kinsella",
+    "team": "IOW",
+    "positions": [
+      "LF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.245,
+      "obp": 0.33,
+      "slg": 0.36,
+      "hr": 6,
+      "speed": 50
+    },
+    "overall": 66,
+    "category": "fictional",
+    "era": "Field of Dreams (1989)",
+    "nickname": "The Dreamer",
+    "grades": {
+      "contact": 52,
+      "power": 42,
+      "speed": 48,
+      "fielding": 50,
+      "arm": 48,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "If you build it, he will come. Built a diamond in his cornfield and brought the magic of baseball back to life."
+  },
+  {
+    "id": "fiction-100",
+    "name": "Buck Weaver",
+    "team": "CHW",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.324,
+      "obp": 0.36,
+      "slg": 0.44,
+      "hr": 8,
+      "speed": 60
+    },
+    "overall": 82,
+    "category": "fictional",
+    "era": "Eight Men Out (1988)",
+    "nickname": "The Honest One",
+    "grades": {
+      "contact": 72,
+      "power": 45,
+      "speed": 58,
+      "fielding": 72,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Played his heart out in the 1919 World Series even though others didn't. Hit .324 and played flawless defense. A true hero."
+  },
+  {
+    "id": "fiction-101",
+    "name": "Eddie Cicotte",
+    "team": "CHW",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.45,
+      "whip": 1.08,
+      "k9": 7.5,
+      "bb9": 2.2
+    },
+    "overall": 86,
+    "category": "fictional",
+    "era": "Eight Men Out (1988)",
+    "nickname": "Knuckles",
+    "grades": {
+      "fastball": 62,
+      "breaking": 72,
+      "changeup": 68,
+      "control": 72,
+      "stamina": 70
+    },
+    "specialty": "Breaking Ball Artist",
+    "funFact": "One of the best pitchers of his era with a devastating knuckle curve. His arm was pure magic on the mound."
+  },
+  {
+    "id": "fiction-102",
+    "name": "Taiga Fujimura",
+    "team": "Koshien",
+    "positions": [
+      "RF",
+      "LF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.31,
+      "obp": 0.38,
+      "slg": 0.5,
+      "hr": 18,
+      "speed": 68
+    },
+    "overall": 83,
+    "category": "fictional",
+    "era": "Major 2nd (2015)",
+    "nickname": "Junior",
+    "grades": {
+      "contact": 65,
+      "power": 58,
+      "speed": 62,
+      "fielding": 60,
+      "arm": 55,
+      "eye": 60
+    },
+    "specialty": null,
+    "funFact": "Following in his legendary father's footsteps. Carries the pride of the Shigeno family and blazes his own trail to glory."
+  },
+  {
+    "id": "fiction-103",
+    "name": "Gordie Lachance",
+    "team": "CSR",
+    "positions": [
+      "2B",
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.258,
+      "obp": 0.35,
+      "slg": 0.37,
+      "hr": 5,
+      "speed": 55
+    },
+    "overall": 67,
+    "category": "fictional",
+    "era": "Stand by Me (1986)",
+    "nickname": "The Writer",
+    "grades": {
+      "contact": 55,
+      "power": 38,
+      "speed": 52,
+      "fielding": 55,
+      "arm": 50,
+      "eye": 60
+    },
+    "specialty": null,
+    "funFact": "The kid who told stories about everything, including baseball. Smart, scrappy, and always finding a way on base."
+  },
+  {
+    "id": "fiction-104",
+    "name": "Miles Finch",
+    "team": "BYB",
+    "positions": [
+      "LF",
+      "RF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.268,
+      "obp": 0.34,
+      "slg": 0.41,
+      "hr": 10,
+      "speed": 65
+    },
+    "overall": 74,
+    "category": "fictional",
+    "era": "Backyard Baseball (1997)",
+    "nickname": "Finchy",
+    "grades": {
+      "contact": 58,
+      "power": 48,
+      "speed": 60,
+      "fielding": 58,
+      "arm": 52,
+      "eye": 55
+    },
+    "specialty": null,
+    "funFact": "A backyard all-star who can play any outfield position. Always showing up ready to play no matter the weather."
+  },
+  {
+    "id": "fiction-105",
+    "name": "Takumi Fujiwara",
+    "team": "TOK",
+    "positions": [
+      "SP",
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.75,
+      "whip": 1.08,
+      "k9": 10.0,
+      "bb9": 2.5
+    },
+    "overall": 83,
+    "category": "fictional",
+    "era": "Ace of Diamond (2006)",
+    "nickname": "The Samurai",
+    "grades": {
+      "fastball": 65,
+      "breaking": 72,
+      "changeup": 65,
+      "control": 70,
+      "stamina": 60
+    },
+    "specialty": "Breaking Ball Artist",
+    "funFact": "A crafty pitcher with pinpoint breaking balls who outsmarts batters with pure pitching IQ."
+  },
+  {
+    "id": "fiction-106",
+    "name": "Kazuya Miyuki",
+    "team": "Seidou",
+    "positions": [
+      "C"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.305,
+      "obp": 0.38,
+      "slg": 0.48,
+      "hr": 16,
+      "speed": 50
+    },
+    "overall": 87,
+    "category": "fictional",
+    "era": "Ace of Diamond (2006)",
+    "nickname": "The Mastermind",
+    "grades": {
+      "contact": 68,
+      "power": 55,
+      "speed": 48,
+      "fielding": 78,
+      "arm": 72,
+      "eye": 70
+    },
+    "specialty": "Field General",
+    "funFact": "The smartest catcher in all of high school baseball. Calls a game like a chess grandmaster and hits clutch homers."
+  },
+  {
+    "id": "fiction-107",
+    "name": "Toji Fudo",
+    "team": "RKN",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.355,
+      "slg": 0.56,
+      "hr": 32,
+      "speed": 40
+    },
+    "overall": 82,
+    "category": "fictional",
+    "era": "MLB Power Pros (2007)",
+    "nickname": "Thunder Bat",
+    "grades": {
+      "contact": 55,
+      "power": 75,
+      "speed": 38,
+      "fielding": 50,
+      "arm": 45,
+      "eye": 52
+    },
+    "specialty": "Power Hitter",
+    "funFact": "A video game slugger who crushes moonshots with his oversized bat. When the power meter fills up, watch out!"
+  },
+  {
+    "id": "fiction-108",
+    "name": "Juan 'Diesel' Delgado",
+    "team": "BIG",
+    "positions": [
+      "RF",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.298,
+      "obp": 0.365,
+      "slg": 0.58,
+      "hr": 35,
+      "speed": 55
+    },
+    "overall": 86,
+    "category": "fictional",
+    "era": "The Bigs (2007)",
+    "nickname": "Diesel",
+    "grades": {
+      "contact": 62,
+      "power": 75,
+      "speed": 52,
+      "fielding": 55,
+      "arm": 60,
+      "eye": 58
+    },
+    "specialty": "Power Hitter",
+    "funFact": "When Big Play mode kicks in, Diesel launches balls into orbit. The crowd goes absolutely wild every time he steps up!"
+  }
+]

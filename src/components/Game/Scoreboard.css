@@ -1,0 +1,196 @@
+.scoreboard {
+  background: linear-gradient(135deg, #0f1f3d 0%, #152952 100%);
+  border: 1px solid rgba(30, 95, 187, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.scoreboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.team-row.away {
+  border-left: 4px solid #2872db;
+}
+
+.team-row.home {
+  border-left: 4px solid #e8682a;
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.team-score {
+  font-family: var(--font-display, 'Russo One', sans-serif);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.scoreboard-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inning-display {
+  text-align: center;
+}
+
+.half-indicator {
+  display: block;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.inning-number {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.diamond {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.base {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: all 0.3s;
+}
+
+.base.occupied {
+  background: #fbbf24;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.base.first {
+  right: 5px;
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.base.second {
+  top: 5px;
+  left: 50%;
+  transform: rotate(45deg) translateX(-50%);
+}
+
+.base.third {
+  left: 5px;
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.home-plate {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: white;
+  clip-path: polygon(50% 0%, 100% 30%, 100% 100%, 0% 100%, 0% 30%);
+}
+
+.outs-display {
+  text-align: center;
+}
+
+.outs-label {
+  display: block;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.outs-dots {
+  display: flex;
+  gap: 0.375rem;
+  justify-content: center;
+}
+
+.out-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+.out-dot.active {
+  background: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+@media (max-width: 768px) {
+  .scoreboard {
+    padding: 0.75rem;
+  }
+
+  .scoreboard-main {
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-row {
+    padding: 0.375rem 0.75rem;
+  }
+
+  .team-name {
+    font-size: var(--font-size-base);
+  }
+
+  .team-score {
+    font-size: 1.75rem;
+  }
+
+  .inning-number {
+    font-size: 1.75rem;
+  }
+
+  .half-indicator {
+    font-size: var(--font-size-sm);
+  }
+
+  .diamond {
+    width: 48px;
+    height: 48px;
+  }
+
+  .base {
+    width: 14px;
+    height: 14px;
+  }
+
+  .home-plate {
+    width: 11px;
+    height: 11px;
+  }
+
+  .out-dot {
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,114 @@
+.at-bat {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.at-bat-waiting {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 2rem;
+}
+
+.matchup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .matchup {
+    flex-direction: column;
+  }
+}
+
+.matchup-player {
+  flex: 1;
+  max-width: 200px;
+}
+
+.player-label {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.matchup-player.batter .player-label {
+  color: #3182ce;
+}
+
+.matchup-player.pitcher .player-label {
+  color: #e53e3e;
+}
+
+.player-card-mini {
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+}
+
+.matchup-player.batter .player-card-mini {
+  border: 2px solid #3182ce;
+}
+
+.matchup-player.pitcher .player-card-mini {
+  border: 2px solid #e53e3e;
+}
+
+.player-card-mini .player-overall {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.matchup-player.batter .player-overall {
+  color: #3182ce;
+}
+
+.matchup-player.pitcher .player-overall {
+  color: #e53e3e;
+}
+
+.player-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.player-details .player-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.player-details .player-pos {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.player-stats-mini {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.vs-badge {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.75rem;
+}

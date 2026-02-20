@@ -1,0 +1,166 @@
+.roster-progress {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.roster-header {
+  padding: 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.roster-header.player1 {
+  background: linear-gradient(135deg, #2872db 0%, #1e5fbb 100%);
+}
+
+.roster-header.player2 {
+  background: linear-gradient(135deg, #e8682a 0%, #c75a1c 100%);
+}
+
+.roster-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.roster-count {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.roster-sections {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .roster-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roster-section {
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.roster-position {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.roster-position.filled {
+  opacity: 1;
+}
+
+.position-badge {
+  width: 32px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.position-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+}
+
+.position-name {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.position-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.position-progress {
+  width: 40px;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.position-progress-bar {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.recent-picks {
+  padding: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.recent-picks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recent-pick {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--color-background);
+  border-radius: var(--radius-sm);
+}
+
+.recent-pick-pos {
+  font-size: 0.625rem;
+  font-weight: 700;
+  background: var(--color-primary);
+  color: white;
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+}
+
+.recent-pick-name {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.recent-pick-overall {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.no-picks {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  padding: 1rem 0;
+}

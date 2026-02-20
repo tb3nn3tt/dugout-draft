@@ -1,0 +1,1289 @@
+[
+  {
+    "id": "bust-1",
+    "name": "Rick Ankiel",
+    "team": "STL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.5,
+      "wins": 11,
+      "so": 194,
+      "whip": 1.29,
+      "ip": 175
+    },
+    "overall": 82,
+    "category": "busts",
+    "era": "The Yips Era",
+    "nickname": "The Comeback Kid",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "control": 35,
+      "stamina": 65
+    },
+    "specialty": "Flamethrower",
+    "funFact": "Threw 5 wild pitches in one playoff inning. Later reinvented himself as a power-hitting outfielder. Baseball's wildest second act."
+  },
+  {
+    "id": "bust-2",
+    "name": "Ruben Mateo",
+    "team": "TEX",
+    "positions": [
+      "CF",
+      "RF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.262,
+      "obp": 0.297,
+      "slg": 0.404,
+      "hr": 8,
+      "speed": 70
+    },
+    "overall": 76,
+    "category": "busts",
+    "era": "The Hype Train",
+    "nickname": "The Dominican Dream",
+    "grades": {
+      "contact": 55,
+      "power": 55,
+      "eye": 40,
+      "speed": 70,
+      "fielding": 65,
+      "arm": 70
+    },
+    "specialty": "5-Tool Tease",
+    "funFact": "Baseball America's #1 prospect in 1999. Injuries and inconsistency derailed what was supposed to be a Hall of Fame career."
+  },
+  {
+    "id": "bust-3",
+    "name": "Steve Balboni",
+    "team": "KC",
+    "positions": [
+      "1B",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.229,
+      "obp": 0.293,
+      "slg": 0.446,
+      "hr": 36,
+      "speed": 20
+    },
+    "overall": 79,
+    "category": "busts",
+    "era": "Bye Bye Era",
+    "nickname": "Bye Bye Balboni",
+    "grades": {
+      "contact": 35,
+      "power": 85,
+      "eye": 45,
+      "speed": 20,
+      "fielding": 45,
+      "arm": 50
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Hit 36 bombs in 1985, struck out 166 times. The original three true outcomes guy before it was cool."
+  },
+  {
+    "id": "bust-4",
+    "name": "Jim Abbott",
+    "team": "CAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.92,
+      "wins": 87,
+      "so": 888,
+      "whip": 1.36,
+      "ip": 1674
+    },
+    "overall": 84,
+    "category": "busts",
+    "era": "Inspiration Era",
+    "nickname": "One Hand, All Heart",
+    "grades": {
+      "fastball": 60,
+      "breaking": 65,
+      "control": 62,
+      "stamina": 70
+    },
+    "specialty": "Gutsy",
+    "funFact": "Born without a right hand. Threw a no-hitter for the Yankees in 1993. Not a bust—just a legend who deserves to be here."
+  },
+  {
+    "id": "bust-5",
+    "name": "Brien Taylor",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 5.23,
+      "wins": 0,
+      "so": 150,
+      "whip": 1.55,
+      "ip": 187
+    },
+    "overall": 78,
+    "category": "busts",
+    "era": "The Lost Arm",
+    "nickname": "The Million Dollar Arm",
+    "grades": {
+      "fastball": 80,
+      "breaking": 70,
+      "control": 45,
+      "stamina": 55
+    },
+    "specialty": "Flamethrower",
+    "funFact": "#1 overall pick in 1991. A bar fight destroyed his shoulder before he ever reached the majors. The ultimate 'what if.'"
+  },
+  {
+    "id": "bust-6",
+    "name": "Mark Prior",
+    "team": "CHC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.51,
+      "wins": 42,
+      "so": 757,
+      "whip": 1.15,
+      "ip": 657
+    },
+    "overall": 88,
+    "category": "busts",
+    "era": "Glass Cannon Era",
+    "nickname": "The Prototype",
+    "grades": {
+      "fastball": 75,
+      "breaking": 80,
+      "control": 72,
+      "stamina": 40
+    },
+    "specialty": "Ace",
+    "funFact": "Perfect mechanics. 245 Ks in 2003. Shoulder gave out at 25. Cubs fans still whisper his name with reverence and regret."
+  },
+  {
+    "id": "bust-7",
+    "name": "Kerry Wood",
+    "team": "CHC",
+    "positions": [
+      "SP",
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.67,
+      "wins": 86,
+      "so": 1582,
+      "whip": 1.31,
+      "ip": 1283
+    },
+    "overall": 86,
+    "category": "busts",
+    "era": "20K Legend",
+    "nickname": "Kid K",
+    "grades": {
+      "fastball": 80,
+      "breaking": 85,
+      "control": 55,
+      "stamina": 45
+    },
+    "specialty": "Strikeout King",
+    "funFact": "20 strikeouts in a game at age 20. Injuries robbed us of a first-ballot Hall of Famer. That curveball was unhittable."
+  },
+  {
+    "id": "bust-8",
+    "name": "Todd Van Poppel",
+    "team": "OAK",
+    "positions": [
+      "SP",
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 5.58,
+      "wins": 40,
+      "so": 534,
+      "whip": 1.56,
+      "ip": 749
+    },
+    "overall": 72,
+    "category": "busts",
+    "era": "The Signability Era",
+    "nickname": "TVP",
+    "grades": {
+      "fastball": 70,
+      "breaking": 55,
+      "control": 40,
+      "stamina": 55
+    },
+    "specialty": "Flamethrower",
+    "funFact": "Fell to the A's at #14 because he said he'd only sign with them. 6.09 ERA as a starter. The original signability slide."
+  },
+  {
+    "id": "bust-9",
+    "name": "Matt Bush",
+    "team": "SD",
+    "positions": [
+      "SS",
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.03,
+      "wins": 8,
+      "so": 167,
+      "whip": 1.08,
+      "ip": 151
+    },
+    "overall": 75,
+    "category": "busts",
+    "era": "Redemption Arc",
+    "nickname": "The Comeback",
+    "grades": {
+      "fastball": 75,
+      "breaking": 60,
+      "control": 55,
+      "stamina": 50
+    },
+    "specialty": "Flamethrower",
+    "funFact": "#1 overall pick in 2004 as a shortstop. Finally made the majors in 2016... as a reliever. The long way around."
+  },
+  {
+    "id": "bust-10",
+    "name": "Ben McDonald",
+    "team": "BAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.91,
+      "wins": 78,
+      "so": 855,
+      "whip": 1.31,
+      "ip": 1189
+    },
+    "overall": 80,
+    "category": "busts",
+    "era": "Golden Arm Era",
+    "nickname": "Big Ben",
+    "grades": {
+      "fastball": 70,
+      "breaking": 65,
+      "control": 60,
+      "stamina": 55
+    },
+    "specialty": "Workhorse",
+    "funFact": "#1 pick in 1989. Olympic hero. Good but never great. The poster boy for 'solid career, unmet expectations.'"
+  },
+  {
+    "id": "bust-11",
+    "name": "Gregg Jefferies",
+    "team": "NYM",
+    "positions": [
+      "2B",
+      "3B",
+      "PH"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.289,
+      "obp": 0.344,
+      "slg": 0.418,
+      "hr": 126,
+      "speed": 55
+    },
+    "overall": 81,
+    "category": "busts",
+    "era": "Switch-Hit Wonder",
+    "nickname": "The Natural",
+    "grades": {
+      "contact": 72,
+      "power": 55,
+      "eye": 55,
+      "speed": 55,
+      "fielding": 45,
+      "arm": 50
+    },
+    "specialty": "Pure Hitter",
+    "funFact": "Hit .321 in his first MLB month at age 21. Teammates literally hated him. Good career, but 'next Ted Williams' he was not."
+  },
+  {
+    "id": "bust-12",
+    "name": "David Clyde",
+    "team": "TEX",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 4.63,
+      "wins": 18,
+      "so": 245,
+      "whip": 1.5,
+      "ip": 335
+    },
+    "overall": 74,
+    "category": "busts",
+    "era": "Too Soon Era",
+    "nickname": "The Kid",
+    "grades": {
+      "fastball": 72,
+      "breaking": 65,
+      "control": 45,
+      "stamina": 40
+    },
+    "specialty": "Phenom",
+    "funFact": "Went straight from high school to the majors in 1973. Rangers sold tickets, destroyed an arm. Out of baseball by 26."
+  },
+  {
+    "id": "bust-13",
+    "name": "Billy Beane",
+    "team": "OAK",
+    "positions": [
+      "LF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.219,
+      "obp": 0.246,
+      "slg": 0.296,
+      "hr": 3,
+      "speed": 70
+    },
+    "overall": 68,
+    "category": "busts",
+    "era": "Moneyball Origin",
+    "nickname": "The Scout's Dream",
+    "grades": {
+      "contact": 40,
+      "power": 45,
+      "eye": 35,
+      "speed": 70,
+      "fielding": 60,
+      "arm": 65
+    },
+    "specialty": "5-Tool Tease",
+    "funFact": "Every scout drooled over his tools. Hit .219 in 148 career games. Became an executive and changed baseball forever."
+  },
+  {
+    "id": "bust-14",
+    "name": "Lastings Milledge",
+    "team": "NYM",
+    "positions": [
+      "CF",
+      "LF",
+      "PR"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.269,
+      "obp": 0.318,
+      "slg": 0.39,
+      "hr": 18,
+      "speed": 65
+    },
+    "overall": 73,
+    "category": "busts",
+    "era": "The Attitude Era",
+    "nickname": "L-Train",
+    "grades": {
+      "contact": 55,
+      "power": 50,
+      "eye": 45,
+      "speed": 65,
+      "fielding": 55,
+      "arm": 60
+    },
+    "specialty": "Toolsy",
+    "funFact": "Made a rap song about himself. High-fived fans after a home run. Mets traded him fast. Tools don't matter without the head."
+  },
+  {
+    "id": "bust-15",
+    "name": "Josh Hamilton",
+    "team": "CIN",
+    "positions": [
+      "CF",
+      "LF",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.29,
+      "obp": 0.346,
+      "slg": 0.516,
+      "hr": 200,
+      "speed": 55
+    },
+    "overall": 89,
+    "category": "busts",
+    "era": "Fallen Angel",
+    "nickname": "The Natural",
+    "grades": {
+      "contact": 70,
+      "power": 85,
+      "eye": 55,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 60
+    },
+    "specialty": "Power Hitter",
+    "funFact": "#1 pick in 1999. Addiction nearly ended him. MVP in 2010. 4-HR game. His story is heartbreak and triumph in one."
+  },
+  {
+    "id": "bust-16",
+    "name": "Dwight Gooden",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.51,
+      "wins": 194,
+      "so": 2293,
+      "whip": 1.23,
+      "ip": 2800
+    },
+    "overall": 91,
+    "category": "busts",
+    "era": "Doc Era",
+    "nickname": "Doc",
+    "grades": {
+      "fastball": 80,
+      "breaking": 85,
+      "control": 70,
+      "stamina": 70
+    },
+    "specialty": "Ace",
+    "funFact": "Cy Young at 20. Best pitcher alive at 21. Drugs and injuries took the rest. Still threw a no-hitter at 31. What if?"
+  },
+  {
+    "id": "bust-17",
+    "name": "Darryl Strawberry",
+    "team": "NYM",
+    "positions": [
+      "RF",
+      "LF",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.259,
+      "obp": 0.357,
+      "slg": 0.505,
+      "hr": 335,
+      "speed": 60
+    },
+    "overall": 88,
+    "category": "busts",
+    "era": "Straw Era",
+    "nickname": "Straw",
+    "grades": {
+      "contact": 55,
+      "power": 90,
+      "eye": 70,
+      "speed": 60,
+      "fielding": 55,
+      "arm": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "335 homers with all that chaos. The sweetest swing of the '80s. Imagine if he'd stayed healthy and clean. 500 easy."
+  },
+  {
+    "id": "bust-18",
+    "name": "Mark Fidrych",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.1,
+      "wins": 29,
+      "so": 170,
+      "whip": 1.16,
+      "ip": 412
+    },
+    "overall": 83,
+    "category": "busts",
+    "era": "The Bird Era",
+    "nickname": "The Bird",
+    "grades": {
+      "fastball": 65,
+      "breaking": 70,
+      "control": 72,
+      "stamina": 65
+    },
+    "specialty": "Entertainer",
+    "funFact": "Talked to the ball. Manicured the mound. 19-9 with a 2.34 ERA as a rookie in 1976. Arm blew out. Gone by 29. Pure magic."
+  },
+  {
+    "id": "bust-19",
+    "name": "Jose Rijo",
+    "team": "CIN",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.24,
+      "wins": 116,
+      "so": 1606,
+      "whip": 1.2,
+      "ip": 1791
+    },
+    "overall": 85,
+    "category": "busts",
+    "era": "Big Red Machine II",
+    "nickname": "The Dominican Dandy",
+    "grades": {
+      "fastball": 75,
+      "breaking": 75,
+      "control": 68,
+      "stamina": 55
+    },
+    "specialty": "Ace",
+    "funFact": "World Series MVP in 1990. Five elbow surgeries. Came back at 36 and pitched well. The arm just wouldn't stay attached."
+  },
+  {
+    "id": "bust-20",
+    "name": "Eric Davis",
+    "team": "CIN",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.269,
+      "obp": 0.359,
+      "slg": 0.482,
+      "hr": 282,
+      "speed": 80
+    },
+    "overall": 87,
+    "category": "busts",
+    "era": "Eric the Red",
+    "nickname": "Eric the Red",
+    "grades": {
+      "contact": 55,
+      "power": 75,
+      "eye": 65,
+      "speed": 80,
+      "fielding": 75,
+      "arm": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "30-30 club. Gold Glove. Tore his kidney diving in the World Series. Beat colon cancer. His body betrayed his talent."
+  },
+  {
+    "id": "bust-21",
+    "name": "Todd Van Poppel",
+    "team": "OAK",
+    "positions": [
+      "SP",
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 5.58,
+      "whip": 1.56,
+      "k9": 7.5,
+      "bb9": 5.1
+    },
+    "overall": 70,
+    "category": "busts",
+    "era": "The Arm Era",
+    "nickname": "TVP",
+    "grades": {
+      "fastball": 70,
+      "breaking": 55,
+      "control": 35,
+      "stamina": 50
+    },
+    "specialty": "Power Arm",
+    "funFact": "14th pick in 1990, $1.2M bonus — was 'the next Nolan Ryan.' Went 40-52 with a 5.58 ERA. The arm was real, the command never came."
+  },
+  {
+    "id": "bust-22",
+    "name": "Matt Bush",
+    "team": "SD",
+    "positions": [
+      "SS",
+      "CL",
+      "SU"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.45,
+      "whip": 1.23,
+      "k9": 8.2,
+      "bb9": 3
+    },
+    "overall": 75,
+    "category": "busts",
+    "era": "The Lost Decade",
+    "nickname": "The Comeback",
+    "grades": {
+      "fastball": 70,
+      "breaking": 60,
+      "control": 50,
+      "stamina": 45
+    },
+    "specialty": "Power Arm",
+    "funFact": "#1 overall pick in 2004. DUI, assault, prison. Converted to pitching and actually made it back to MLB 12 years later."
+  },
+  {
+    "id": "bust-23",
+    "name": "Delmon Young",
+    "team": "TB",
+    "positions": [
+      "LF",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.282,
+      "obp": 0.317,
+      "slg": 0.412,
+      "hr": 86,
+      "speed": 40
+    },
+    "overall": 76,
+    "category": "busts",
+    "era": "Bad Attitude Era",
+    "nickname": "The Bat Thrower",
+    "grades": {
+      "contact": 65,
+      "power": 55,
+      "speed": 40,
+      "fielding": 35,
+      "arm": 55,
+      "eye": 30
+    },
+    "specialty": "Contact Master",
+    "funFact": "#1 pick in 2003 — threw a bat at an umpire in the minors. Could hit but couldn't field, walk, or stay out of trouble."
+  },
+  {
+    "id": "bust-24",
+    "name": "Mark Appel",
+    "team": "HOU",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 7.71,
+      "whip": 1.86,
+      "k9": 5,
+      "bb9": 4
+    },
+    "overall": 65,
+    "category": "busts",
+    "era": "The Long Road",
+    "nickname": "The Lost Pick",
+    "grades": {
+      "fastball": 65,
+      "breaking": 55,
+      "control": 40,
+      "stamina": 50
+    },
+    "specialty": "Power Arm",
+    "funFact": "#1 pick in 2013 over Kris Bryant. Finally debuted in 2022 with a 7.71 ERA, nearly a decade after being drafted."
+  },
+  {
+    "id": "bust-25",
+    "name": "Andy Marte",
+    "team": "CLE",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.21,
+      "obp": 0.259,
+      "slg": 0.362,
+      "hr": 18,
+      "speed": 35
+    },
+    "overall": 67,
+    "category": "busts",
+    "era": "The Next Era",
+    "nickname": "The Dominican Hope",
+    "grades": {
+      "contact": 45,
+      "power": 60,
+      "speed": 35,
+      "fielding": 55,
+      "arm": 65,
+      "eye": 35
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Top prospect traded for multiple good players — hit .210 in 4 MLB seasons. Tragically died in a car accident at 33."
+  },
+  {
+    "id": "bust-26",
+    "name": "Bobby Bonilla",
+    "team": "NYM",
+    "positions": [
+      "RF",
+      "3B",
+      "PH"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.279,
+      "obp": 0.358,
+      "slg": 0.472,
+      "hr": 287,
+      "speed": 50
+    },
+    "overall": 86,
+    "category": "busts",
+    "era": "The Contract Era",
+    "nickname": "Bobby Bo",
+    "grades": {
+      "contact": 65,
+      "power": 70,
+      "speed": 50,
+      "fielding": 45,
+      "arm": 65,
+      "eye": 60
+    },
+    "specialty": "Power Hitter",
+    "funFact": "The Mets are STILL paying him $1.19M every July 1 until 2035 — the most famous bad contract in sports"
+  },
+  {
+    "id": "bust-27",
+    "name": "Kerry Wood",
+    "team": "CHC",
+    "positions": [
+      "SP",
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.67,
+      "whip": 1.31,
+      "k9": 10.3,
+      "bb9": 4
+    },
+    "overall": 84,
+    "category": "busts",
+    "era": "The Arm Era",
+    "nickname": "Kid K",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "control": 50,
+      "stamina": 45
+    },
+    "specialty": "Power Arm",
+    "funFact": "20 Ks in his 5th career start. Injuries turned an ace into a reliever. His potential was otherworldly."
+  },
+  {
+    "id": "bust-28",
+    "name": "Jeff Francoeur",
+    "team": "ATL",
+    "positions": [
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.261,
+      "obp": 0.3,
+      "slg": 0.42,
+      "hr": 160,
+      "speed": 50
+    },
+    "overall": 77,
+    "category": "busts",
+    "era": "The Free Swinger",
+    "nickname": "Frenchy",
+    "grades": {
+      "contact": 55,
+      "power": 60,
+      "speed": 50,
+      "fielding": 70,
+      "arm": 80,
+      "eye": 25
+    },
+    "specialty": "Gold Glove",
+    "funFact": "On the cover of SI as 'The Natural' at 21. Cannon arm, zero plate discipline. Career .300 OBP."
+  },
+  {
+    "id": "bust-29",
+    "name": "Ruben Rivera",
+    "team": "NYY",
+    "positions": [
+      "CF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.216,
+      "obp": 0.289,
+      "slg": 0.392,
+      "hr": 48,
+      "speed": 70
+    },
+    "overall": 69,
+    "category": "busts",
+    "era": "The Cousin Era",
+    "nickname": "The Other Rivera",
+    "grades": {
+      "contact": 35,
+      "power": 60,
+      "speed": 70,
+      "fielding": 65,
+      "arm": 70,
+      "eye": 30
+    },
+    "specialty": "Toolsy",
+    "funFact": "Mariano Rivera's cousin. 5-tool prospect who hit .216. Stole Derek Jeter's glove and got released."
+  },
+  {
+    "id": "bust-30",
+    "name": "Tim Lincecum",
+    "team": "SF",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "era": 3.74,
+      "whip": 1.27,
+      "k9": 9.5,
+      "bb9": 3.4
+    },
+    "overall": 86,
+    "category": "busts",
+    "era": "The Freak Show",
+    "nickname": "The Freak",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 55,
+      "stamina": 50
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "Back-to-back Cy Youngs, 2 rings, then lost his velocity overnight. 5'11\" body couldn't sustain the violence of his delivery."
+  },
+  {
+    "id": "bust-31",
+    "name": "Billy Beane",
+    "team": "OAK",
+    "positions": [
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.219,
+      "obp": 0.246,
+      "slg": 0.296,
+      "hr": 3,
+      "speed": 62
+    },
+    "overall": 65,
+    "category": "busts",
+    "era": "1980s",
+    "grades": {
+      "contact": 38,
+      "power": 28,
+      "speed": 55,
+      "eye": 32,
+      "fielding": 48,
+      "arm": 48
+    },
+    "nickname": "Billy",
+    "funFact": "First-round pick who flopped as a player. Revolutionized the game as a GM instead.",
+    "specialty": null
+  },
+  {
+    "id": "bust-32",
+    "name": "Lastings Milledge",
+    "team": "NYM",
+    "positions": [
+      "CF",
+      "LF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.268,
+      "obp": 0.316,
+      "slg": 0.394,
+      "hr": 8,
+      "speed": 72
+    },
+    "overall": 69,
+    "category": "busts",
+    "era": "2000s",
+    "grades": {
+      "contact": 52,
+      "power": 38,
+      "speed": 65,
+      "eye": 38,
+      "fielding": 42,
+      "arm": 48
+    },
+    "nickname": "L-Millz",
+    "funFact": "Five-tool prospect who high-fived fans after a homer. The attitude outran the talent.",
+    "specialty": null
+  },
+  {
+    "id": "bust-33",
+    "name": "Ben McDonald",
+    "team": "BAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.91,
+      "whip": 1.25,
+      "k9": 6.5,
+      "bb9": 2.8
+    },
+    "overall": 72,
+    "category": "busts",
+    "era": "1990s",
+    "grades": {
+      "fastball": 62,
+      "breaking": 55,
+      "control": 50,
+      "stamina": 48,
+      "changeup": 45
+    },
+    "nickname": "Big Ben",
+    "funFact": "Number one overall pick with a golden arm. Injuries turned gold into dust.",
+    "specialty": null
+  },
+  {
+    "id": "bust-34",
+    "name": "Drew Henson",
+    "team": "NYY",
+    "positions": [
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.156,
+      "obp": 0.234,
+      "slg": 0.156,
+      "hr": 0,
+      "speed": 55
+    },
+    "overall": 62,
+    "category": "busts",
+    "era": "2000s",
+    "grades": {
+      "contact": 28,
+      "power": 45,
+      "speed": 50,
+      "eye": 25,
+      "fielding": 40,
+      "arm": 52
+    },
+    "nickname": "Henson",
+    "funFact": "Football or baseball? Chose both and mastered neither. Worlds collided.",
+    "specialty": null
+  },
+  {
+    "id": "bust-35",
+    "name": "Jeff Allison",
+    "team": "FLA",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 0,
+      "whip": 0,
+      "k9": 0,
+      "bb9": 0
+    },
+    "overall": 60,
+    "category": "busts",
+    "era": "2000s",
+    "grades": {
+      "fastball": 58,
+      "breaking": 52,
+      "control": 35,
+      "stamina": 42,
+      "changeup": 38
+    },
+    "nickname": "Allison",
+    "funFact": "First-round talent that never threw a major league pitch. Some stories have no ending.",
+    "specialty": null
+  },
+  {
+    "id": "bust-36",
+    "name": "Bubba Starling",
+    "team": "KC",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.215,
+      "obp": 0.252,
+      "slg": 0.349,
+      "hr": 4,
+      "speed": 68
+    },
+    "overall": 64,
+    "category": "busts",
+    "era": "2010s",
+    "grades": {
+      "contact": 35,
+      "power": 38,
+      "speed": 62,
+      "eye": 28,
+      "fielding": 52,
+      "arm": 55
+    },
+    "nickname": "Bubba",
+    "funFact": "Fifth overall pick. All-American in two sports. The big leagues had other plans.",
+    "specialty": null
+  },
+  {
+    "id": "bust-37",
+    "name": "Homer Bailey",
+    "team": "CIN",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 4.56,
+      "whip": 1.35,
+      "k9": 7.2,
+      "bb9": 3.2
+    },
+    "overall": 73,
+    "category": "busts",
+    "era": "2010s",
+    "grades": {
+      "fastball": 65,
+      "breaking": 55,
+      "control": 45,
+      "stamina": 52,
+      "changeup": 48
+    },
+    "nickname": "Homer",
+    "funFact": "Threw two no-hitters then became known for injuries and big contracts.",
+    "specialty": null
+  },
+  {
+    "id": "bust-38",
+    "name": "Jered Weaver",
+    "team": "LAA",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.63,
+      "whip": 1.17,
+      "k9": 8,
+      "bb9": 2.2
+    },
+    "overall": 79,
+    "category": "busts",
+    "era": "2010s",
+    "grades": {
+      "fastball": 55,
+      "breaking": 62,
+      "control": 65,
+      "stamina": 55,
+      "changeup": 52
+    },
+    "nickname": "Weave",
+    "funFact": "Lost his velocity but not his moxie. Went from 95 mph to 82 and kept competing.",
+    "specialty": null
+  },
+  {
+    "id": "bust-39",
+    "name": "Travis Lee",
+    "team": "ARI",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.26,
+      "obp": 0.336,
+      "slg": 0.405,
+      "hr": 14,
+      "speed": 38
+    },
+    "overall": 72,
+    "category": "busts",
+    "era": "2000s",
+    "grades": {
+      "contact": 55,
+      "power": 42,
+      "speed": 32,
+      "eye": 52,
+      "fielding": 58,
+      "arm": 48
+    },
+    "nickname": "T-Lee",
+    "funFact": "Olympic gold and a massive signing bonus. The ceiling was sky-high, the results average.",
+    "specialty": null
+  },
+  {
+    "id": "bust-40",
+    "name": "Clint Barmes",
+    "team": "COL",
+    "positions": [
+      "SS",
+      "2B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.245,
+      "obp": 0.282,
+      "slg": 0.377,
+      "hr": 12,
+      "speed": 48
+    },
+    "overall": 70,
+    "category": "busts",
+    "era": "2000s",
+    "grades": {
+      "contact": 50,
+      "power": 40,
+      "speed": 42,
+      "eye": 35,
+      "fielding": 58,
+      "arm": 58
+    },
+    "nickname": "Clint",
+    "funFact": "Hot start ended by a deer meat accident. The most bizarre injury in baseball lore.",
+    "specialty": null
+  },
+  {
+    "id": "bust-41",
+    "name": "Michael Pineda",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 4.14,
+      "whip": 1.18,
+      "k9": 9.2,
+      "bb9": 2
+    },
+    "overall": 76,
+    "category": "busts",
+    "era": "2010s",
+    "grades": {
+      "fastball": 68,
+      "breaking": 62,
+      "control": 55,
+      "stamina": 48,
+      "changeup": 48
+    },
+    "nickname": "Big Mike",
+    "funFact": "Electric stuff that injuries kept bottled up. Also that pine tar on the neck thing.",
+    "specialty": null
+  },
+  {
+    "id": "bust-42",
+    "name": "Alex Gordon",
+    "team": "KC",
+    "positions": [
+      "LF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.257,
+      "obp": 0.343,
+      "slg": 0.423,
+      "hr": 18,
+      "speed": 52
+    },
+    "overall": 78,
+    "category": "busts",
+    "era": "2010s",
+    "grades": {
+      "contact": 55,
+      "power": 50,
+      "speed": 48,
+      "eye": 58,
+      "fielding": 72,
+      "arm": 68
+    },
+    "nickname": "Gordo",
+    "funFact": "Second overall pick expected to be the next George Brett. Became a Gold Glove outfielder instead.",
+    "specialty": "Defensive Wizard"
+  }
+]

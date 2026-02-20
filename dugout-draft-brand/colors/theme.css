@@ -1,0 +1,277 @@
+/**
+ * DUGOUT DRAFT - Brand Color System
+ * Primary: Navy, Royal Blue, Powder Blue
+ * Accent: Orange (primary accent), Yellow (rare highlights)
+ */
+
+:root {
+  /* ========================================
+     PRIMARY PALETTE - "Stadium Nights"
+     ======================================== */
+  
+  /* Navy - Primary backgrounds, headers */
+  --dd-navy-900: #0a1628;      /* Darkest - main app background */
+  --dd-navy-800: #0f1f3d;      /* Card backgrounds, modals */
+  --dd-navy-700: #152952;      /* Elevated surfaces */
+  --dd-navy-600: #1c3568;      /* Hover states on dark */
+  
+  /* Royal Blue - Interactive elements, highlights */
+  --dd-royal-500: #1e5fbb;     /* Primary buttons, links */
+  --dd-royal-400: #2872db;     /* Button hover */
+  --dd-royal-300: #4a90e8;     /* Active states */
+  
+  /* Powder Blue - Light accents, text highlights */
+  --dd-powder-300: #7eb8f4;    /* Secondary text on dark */
+  --dd-powder-200: #a8d1f8;    /* Subtle highlights */
+  --dd-powder-100: #d4e8fc;    /* Very light accents */
+  
+  
+  /* ========================================
+     ACCENT COLORS
+     ======================================== */
+  
+  /* Orange - Primary accent, CTAs, energy */
+  --dd-orange-600: #c75a1c;    /* Darker orange for text on light */
+  --dd-orange-500: #e8682a;    /* Primary accent */
+  --dd-orange-400: #f4813f;    /* Hover/glow states */
+  --dd-orange-300: #f99d5c;    /* Light accent */
+  
+  /* Yellow - Rare highlights, gold tier, special moments */
+  --dd-yellow-500: #f0b429;    /* Championship gold */
+  --dd-yellow-400: #f9c846;    /* Bright highlight */
+  --dd-yellow-300: #fcd968;    /* Glow effects */
+  
+  
+  /* ========================================
+     TIER SYSTEM
+     ======================================== */
+  
+  --dd-tier-diamond: #a78bfa;        /* Purple - rarest */
+  --dd-tier-diamond-glow: rgba(167, 139, 250, 0.4);
+  
+  --dd-tier-gold: #f0b429;           /* Yellow/Gold */
+  --dd-tier-gold-glow: rgba(240, 180, 41, 0.4);
+  
+  --dd-tier-silver: #94a3b8;         /* Cool gray */
+  --dd-tier-silver-glow: rgba(148, 163, 184, 0.3);
+  
+  --dd-tier-bronze: #e8682a;         /* Orange */
+  --dd-tier-bronze-glow: rgba(232, 104, 42, 0.4);
+  
+  
+  /* ========================================
+     PLAYER COLORS
+     ======================================== */
+  
+  --dd-player1: #2872db;             /* Royal blue - Away */
+  --dd-player1-bg: rgba(40, 114, 219, 0.15);
+  
+  --dd-player2: #e8682a;             /* Orange - Home */
+  --dd-player2-bg: rgba(232, 104, 42, 0.15);
+  
+  
+  /* ========================================
+     POSITION COLORS
+     ======================================== */
+  
+  --dd-pos-pitcher: #1e5fbb;         /* Royal blue */
+  --dd-pos-catcher: #7c3aed;         /* Purple */
+  --dd-pos-infield: #dc2626;         /* Red */
+  --dd-pos-outfield: #16a34a;        /* Green */
+  --dd-pos-dh: #f0b429;              /* Gold */
+  
+  
+  /* ========================================
+     NEUTRALS
+     ======================================== */
+  
+  --dd-white: #ffffff;
+  --dd-gray-100: #f1f5f9;            /* Light backgrounds */
+  --dd-gray-200: #e2e8f0;            /* Borders on light */
+  --dd-gray-300: #cbd5e1;            /* Disabled text light */
+  --dd-gray-400: #94a3b8;            /* Secondary text */
+  --dd-gray-500: #64748b;            /* Muted text */
+  --dd-gray-600: #475569;            /* Body text on light */
+  --dd-gray-700: #334155;            /* Headings on light */
+  --dd-gray-800: #1e293b;            /* Near black */
+  --dd-gray-900: #0f172a;            /* True dark */
+  
+  
+  /* ========================================
+     SEMANTIC COLORS
+     ======================================== */
+  
+  --dd-success: #16a34a;
+  --dd-success-bg: rgba(22, 163, 74, 0.15);
+  
+  --dd-warning: #f0b429;
+  --dd-warning-bg: rgba(240, 180, 41, 0.15);
+  
+  --dd-error: #dc2626;
+  --dd-error-bg: rgba(220, 38, 38, 0.15);
+  
+  --dd-info: #2872db;
+  --dd-info-bg: rgba(40, 114, 219, 0.15);
+  
+  
+  /* ========================================
+     GRADIENTS
+     ======================================== */
+  
+  /* Logo gradient - "DRAFT" text */
+  --dd-gradient-gold: linear-gradient(
+    180deg,
+    #fcd968 0%,
+    #f0b429 50%,
+    #c99a1d 100%
+  );
+  
+  /* Card backgrounds by tier */
+  --dd-gradient-diamond: linear-gradient(
+    135deg,
+    rgba(167, 139, 250, 0.15) 0%,
+    transparent 50%
+  ), linear-gradient(
+    45deg,
+    #0f1535 0%,
+    #1a1f4a 50%,
+    #0f1535 100%
+  );
+  
+  --dd-gradient-gold-card: linear-gradient(
+    135deg,
+    rgba(240, 180, 41, 0.15) 0%,
+    transparent 50%
+  ), linear-gradient(
+    45deg,
+    #1a1608 0%,
+    #2a2010 50%,
+    #1a1608 100%
+  );
+  
+  --dd-gradient-silver-card: linear-gradient(
+    135deg,
+    rgba(148, 163, 184, 0.12) 0%,
+    transparent 50%
+  ), linear-gradient(
+    45deg,
+    #121620 0%,
+    #1e2433 50%,
+    #121620 100%
+  );
+  
+  --dd-gradient-bronze-card: linear-gradient(
+    135deg,
+    rgba(232, 104, 42, 0.15) 0%,
+    transparent 50%
+  ), linear-gradient(
+    45deg,
+    #1a1008 0%,
+    #2a1a10 50%,
+    #1a1008 100%
+  );
+  
+  /* App background */
+  --dd-gradient-bg: radial-gradient(
+    ellipse at 20% 20%,
+    rgba(30, 95, 187, 0.08) 0%,
+    transparent 50%
+  ), radial-gradient(
+    ellipse at 80% 80%,
+    rgba(232, 104, 42, 0.06) 0%,
+    transparent 50%
+  ), var(--dd-navy-900);
+  
+  /* Button gradient */
+  --dd-gradient-button: linear-gradient(
+    135deg,
+    var(--dd-orange-500) 0%,
+    var(--dd-orange-600) 100%
+  );
+  
+  
+  /* ========================================
+     SHADOWS
+     ======================================== */
+  
+  --dd-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --dd-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --dd-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --dd-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.6);
+  
+  /* Glow shadows for tiers */
+  --dd-glow-diamond: 0 0 30px var(--dd-tier-diamond-glow);
+  --dd-glow-gold: 0 0 30px var(--dd-tier-gold-glow);
+  --dd-glow-silver: 0 0 25px var(--dd-tier-silver-glow);
+  --dd-glow-bronze: 0 0 25px var(--dd-tier-bronze-glow);
+  
+  
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+  
+  --dd-font-display: 'Russo One', sans-serif;
+  --dd-font-headline: 'Teko', sans-serif;
+  --dd-font-subhead: 'Barlow Condensed', sans-serif;
+  --dd-font-body: 'Barlow', sans-serif;
+  
+  
+  /* ========================================
+     SPACING & SIZING
+     ======================================== */
+  
+  --dd-radius-sm: 4px;
+  --dd-radius-md: 8px;
+  --dd-radius-lg: 12px;
+  --dd-radius-xl: 16px;
+  --dd-radius-2xl: 20px;
+  --dd-radius-full: 9999px;
+  
+  /* Card dimensions */
+  --dd-card-width: 240px;
+  --dd-card-height: 340px;
+  --dd-card-ratio: 0.706;
+}
+
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Tier badge backgrounds */
+.tier-diamond { 
+  background: rgba(167, 139, 250, 0.2); 
+  color: var(--dd-tier-diamond);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.tier-gold { 
+  background: rgba(240, 180, 41, 0.2); 
+  color: var(--dd-tier-gold);
+  border: 1px solid rgba(240, 180, 41, 0.4);
+}
+
+.tier-silver { 
+  background: rgba(148, 163, 184, 0.2); 
+  color: var(--dd-tier-silver);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.tier-bronze { 
+  background: rgba(232, 104, 42, 0.2); 
+  color: var(--dd-tier-bronze);
+  border: 1px solid rgba(232, 104, 42, 0.4);
+}
+
+/* Position badges */
+.pos-pitcher { background: var(--dd-pos-pitcher); color: white; }
+.pos-catcher { background: var(--dd-pos-catcher); color: white; }
+.pos-infield { background: var(--dd-pos-infield); color: white; }
+.pos-outfield { background: var(--dd-pos-outfield); color: white; }
+.pos-dh { background: var(--dd-pos-dh); color: var(--dd-navy-900); }
+
+/* Player colors */
+.player-1 { color: var(--dd-player1); }
+.player-1-bg { background: var(--dd-player1-bg); }
+.player-2 { color: var(--dd-player2); }
+.player-2-bg { background: var(--dd-player2-bg); }

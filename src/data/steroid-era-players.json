@@ -1,0 +1,1189 @@
+[
+  {
+    "id": "steroid-1",
+    "name": "Barry Bonds",
+    "team": "SF",
+    "positions": [
+      "LF",
+      "PH",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.298,
+      "obp": 0.444,
+      "slg": 0.607,
+      "hr": 762,
+      "speed": 55
+    },
+    "overall": 98,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Untouchable",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 60,
+      "eye": 80
+    },
+    "specialty": "Power Hitter",
+    "funFact": "762 HR, 7 MVPs, .609 OBP in '04 — the most feared hitter in baseball history. Nobody could pitch to him."
+  },
+  {
+    "id": "steroid-2",
+    "name": "Mark McGwire",
+    "team": "STL",
+    "positions": [
+      "1B",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.263,
+      "obp": 0.394,
+      "slg": 0.588,
+      "hr": 583,
+      "speed": 30
+    },
+    "overall": 93,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Big Mac",
+    "grades": {
+      "contact": 55,
+      "power": 80,
+      "speed": 30,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "70 HR in '98 — the home run chase that saved baseball and brought fans back to the ballpark."
+  },
+  {
+    "id": "steroid-3",
+    "name": "Sammy Sosa",
+    "team": "CHC",
+    "positions": [
+      "RF",
+      "DH",
+      "PH",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.273,
+      "obp": 0.344,
+      "slg": 0.534,
+      "hr": 609,
+      "speed": 55
+    },
+    "overall": 92,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Slammin' Sammy",
+    "grades": {
+      "contact": 60,
+      "power": 80,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 70,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "609 career HR, 60+ homers THREE times — still beloved in Chicago. The hop out of the batter's box was legendary."
+  },
+  {
+    "id": "steroid-4",
+    "name": "Alex Rodriguez",
+    "team": "NYY",
+    "positions": [
+      "SS",
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.38,
+      "slg": 0.55,
+      "hr": 696,
+      "speed": 60
+    },
+    "overall": 96,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "A-Rod",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 60,
+      "fielding": 70,
+      "arm": 75,
+      "eye": 70
+    },
+    "specialty": "5-Tool",
+    "funFact": "696 HR, 3 MVPs, 14x All-Star — one of the most talented players to ever pick up a bat. Could do absolutely everything."
+  },
+  {
+    "id": "steroid-5",
+    "name": "Manny Ramirez",
+    "team": "BOS",
+    "positions": [
+      "LF",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.312,
+      "obp": 0.411,
+      "slg": 0.585,
+      "hr": 555,
+      "speed": 40
+    },
+    "overall": 94,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Manny Being Manny",
+    "grades": {
+      "contact": 75,
+      "power": 80,
+      "speed": 40,
+      "fielding": 35,
+      "arm": 55,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "555 HR, .312 career avg — one of the best right-handed hitters ever. Pure hitting genius with an incredible eye for the ball."
+  },
+  {
+    "id": "steroid-6",
+    "name": "Roger Clemens",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.12,
+      "whip": 1.17,
+      "k9": 8.6,
+      "bb9": 2.8
+    },
+    "overall": 96,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Rocket",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 80
+    },
+    "specialty": "Power Arm",
+    "funFact": "7 Cy Youngs, 354 wins, 4,672 strikeouts — dominated for over two decades. One of the most intense competitors ever on the mound."
+  },
+  {
+    "id": "steroid-7",
+    "name": "Jose Canseco",
+    "team": "OAK",
+    "positions": [
+      "RF",
+      "DH",
+      "PH",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.266,
+      "obp": 0.353,
+      "slg": 0.515,
+      "hr": 462,
+      "speed": 65
+    },
+    "overall": 90,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Godfather",
+    "grades": {
+      "contact": 55,
+      "power": 80,
+      "speed": 65,
+      "fielding": 45,
+      "arm": 70,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "First 40-40 man in history — 40 homers AND 40 stolen bases in 1988. An absolute athletic marvel with blazing speed and monster power."
+  },
+  {
+    "id": "steroid-8",
+    "name": "Rafael Palmeiro",
+    "team": "BAL",
+    "positions": [
+      "1B",
+      "DH",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.288,
+      "obp": 0.371,
+      "slg": 0.515,
+      "hr": 569,
+      "speed": 40
+    },
+    "overall": 90,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Raffy",
+    "grades": {
+      "contact": 70,
+      "power": 75,
+      "speed": 40,
+      "fielding": 65,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "One of only 6 players with 500 HR AND 3,000 hits — a silky-smooth left-handed swing and incredible consistency year after year."
+  },
+  {
+    "id": "steroid-9",
+    "name": "Jason Giambi",
+    "team": "NYY",
+    "positions": [
+      "1B",
+      "DH",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.277,
+      "obp": 0.399,
+      "slg": 0.516,
+      "hr": 440,
+      "speed": 30
+    },
+    "overall": 89,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Giambino",
+    "grades": {
+      "contact": 65,
+      "power": 75,
+      "speed": 30,
+      "fielding": 40,
+      "arm": 50,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "2000 AL MVP with a .476 OBP season — 440 career HR with an incredible batting eye. One of the most patient power hitters ever."
+  },
+  {
+    "id": "steroid-10",
+    "name": "Gary Sheffield",
+    "team": "ATL",
+    "positions": [
+      "RF",
+      "LF",
+      "DH",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.292,
+      "obp": 0.393,
+      "slg": 0.514,
+      "hr": 509,
+      "speed": 55
+    },
+    "overall": 92,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Sheff",
+    "grades": {
+      "contact": 70,
+      "power": 75,
+      "speed": 55,
+      "fielding": 50,
+      "arm": 70,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "509 HR with the most intimidating bat waggle in history — fastest bat speed anyone had ever seen. A 9x All-Star who terrified pitchers."
+  },
+  {
+    "id": "steroid-11",
+    "name": "Miguel Tejada",
+    "team": "OAK",
+    "positions": [
+      "SS",
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.336,
+      "slg": 0.456,
+      "hr": 307,
+      "speed": 50
+    },
+    "overall": 88,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Miggy",
+    "grades": {
+      "contact": 70,
+      "power": 65,
+      "speed": 50,
+      "fielding": 65,
+      "arm": 70,
+      "eye": 50
+    },
+    "specialty": "5-Tool",
+    "funFact": "2002 AL MVP with a 1,152 consecutive games played streak — an iron man shortstop with serious pop who never wanted a day off."
+  },
+  {
+    "id": "steroid-12",
+    "name": "Andy Pettitte",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.85,
+      "whip": 1.28,
+      "k9": 6.6,
+      "bb9": 2.7
+    },
+    "overall": 88,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Warrior",
+    "grades": {
+      "fastball": 65,
+      "breaking": 70,
+      "changeup": 70,
+      "control": 70,
+      "stamina": 75
+    },
+    "specialty": "Ace",
+    "funFact": "256 career wins and the all-time postseason wins leader with 19 — a big-game pitcher who always rose to the occasion in October."
+  },
+  {
+    "id": "steroid-13",
+    "name": "Eric Gagne",
+    "team": "LAD",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.28,
+      "whip": 1.13,
+      "k9": 10.2,
+      "bb9": 2.8
+    },
+    "overall": 89,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Game Over",
+    "grades": {
+      "fastball": 75,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 65,
+      "stamina": 45
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "84 consecutive saves — the longest streak in MLB history! Won the Cy Young in 2003. When he entered the game, it was GAME OVER."
+  },
+  {
+    "id": "steroid-14",
+    "name": "Brady Anderson",
+    "team": "BAL",
+    "positions": [
+      "CF",
+      "LF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.256,
+      "obp": 0.362,
+      "slg": 0.425,
+      "hr": 210,
+      "speed": 70
+    },
+    "overall": 85,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Anomaly",
+    "grades": {
+      "contact": 55,
+      "power": 60,
+      "speed": 70,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 65
+    },
+    "specialty": "Speedster",
+    "funFact": "Hit 50 HR in 1996 — one of the most incredible single-season power explosions ever. A speedster who suddenly became a slugger!"
+  },
+  {
+    "id": "steroid-15",
+    "name": "Ryan Braun",
+    "team": "MIL",
+    "positions": [
+      "LF",
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.296,
+      "obp": 0.358,
+      "slg": 0.532,
+      "hr": 352,
+      "speed": 60
+    },
+    "overall": 90,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Hebrew Hammer",
+    "grades": {
+      "contact": 70,
+      "power": 75,
+      "speed": 60,
+      "fielding": 55,
+      "arm": 60,
+      "eye": 60
+    },
+    "specialty": "Power Hitter",
+    "funFact": "2007 Rookie of the Year, 2011 NL MVP — 352 career HR with a blend of power and speed that made him electric to watch."
+  },
+  {
+    "id": "steroid-16",
+    "name": "Bartolo Colon",
+    "team": "CLE",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 4.12,
+      "whip": 1.27,
+      "k9": 6.3,
+      "bb9": 2.1
+    },
+    "overall": 86,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Big Sexy",
+    "grades": {
+      "fastball": 70,
+      "breaking": 55,
+      "changeup": 60,
+      "control": 75,
+      "stamina": 70
+    },
+    "specialty": "Ace",
+    "funFact": "Cy Young winner in 2005, pitched until age 45 — the most beloved pitcher of his generation. Even hit a home run at age 42!"
+  },
+  {
+    "id": "steroid-17",
+    "name": "Nelson Cruz",
+    "team": "TEX",
+    "positions": [
+      "RF",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.275,
+      "obp": 0.342,
+      "slg": 0.498,
+      "hr": 464,
+      "speed": 45
+    },
+    "overall": 88,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Boomstick",
+    "grades": {
+      "contact": 65,
+      "power": 75,
+      "speed": 45,
+      "fielding": 45,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "464 career HR — amazingly got even BETTER after turning 33. Led the AL in homers at age 34. The ultimate late bloomer."
+  },
+  {
+    "id": "steroid-18",
+    "name": "Robinson Cano",
+    "team": "NYY",
+    "positions": [
+      "2B",
+      "DH",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.302,
+      "obp": 0.352,
+      "slg": 0.494,
+      "hr": 335,
+      "speed": 50
+    },
+    "overall": 91,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Robbie",
+    "grades": {
+      "contact": 75,
+      "power": 70,
+      "speed": 50,
+      "fielding": 75,
+      "arm": 65,
+      "eye": 60
+    },
+    "specialty": "Contact Master",
+    "funFact": "8x All-Star with the smoothest, most effortless swing in baseball — made everything look easy. A pure artist at the plate."
+  },
+  {
+    "id": "steroid-19",
+    "name": "Jhonny Peralta",
+    "team": "DET",
+    "positions": [
+      "SS",
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.33,
+      "slg": 0.426,
+      "hr": 202,
+      "speed": 40
+    },
+    "overall": 83,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "J-Per",
+    "grades": {
+      "contact": 60,
+      "power": 60,
+      "speed": 40,
+      "fielding": 60,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": "5-Tool",
+    "funFact": "202 career HR as a shortstop — a rare power-hitting middle infielder who earned a big contract with his reliable bat."
+  },
+  {
+    "id": "steroid-20",
+    "name": "Melky Cabrera",
+    "team": "SF",
+    "positions": [
+      "CF",
+      "LF",
+      "OFD"
+    ],
+    "bats": "S",
+    "throws": "L",
+    "stats": {
+      "avg": 0.28,
+      "obp": 0.322,
+      "slg": 0.405,
+      "hr": 103,
+      "speed": 55
+    },
+    "overall": 82,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Melkman",
+    "grades": {
+      "contact": 65,
+      "power": 50,
+      "speed": 55,
+      "fielding": 60,
+      "arm": 55,
+      "eye": 45
+    },
+    "specialty": "Contact Master",
+    "funFact": "2012 All-Star Game MVP — a switch-hitter with a knack for getting big hits. Had one of the hottest first halves ever that year."
+  },
+  {
+    "id": "steroid-22",
+    "name": "Kevin Brown",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.28,
+      "whip": 1.22,
+      "k9": 7.3,
+      "bb9": 2.7
+    },
+    "overall": 88,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The $105M Man",
+    "grades": {
+      "fastball": 75,
+      "breaking": 70,
+      "changeup": 55,
+      "control": 65,
+      "stamina": 75
+    },
+    "specialty": "Power Arm",
+    "funFact": "First $100M contract in baseball history — threw one of the nastiest sinkers ever. His two-seamer had unreal movement."
+  },
+  {
+    "id": "steroid-23",
+    "name": "Ivan Rodriguez",
+    "team": "TEX",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.296,
+      "obp": 0.334,
+      "slg": 0.464,
+      "hr": 311,
+      "speed": 55
+    },
+    "overall": 93,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Pudge",
+    "grades": {
+      "contact": 70,
+      "power": 65,
+      "speed": 55,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 50
+    },
+    "specialty": "Gold Glove",
+    "funFact": "13 Gold Gloves, cannon arm, 2003 NLCS MVP — the greatest defensive catcher ever. Threw out runners like nobody else. Hall of Famer."
+  },
+  {
+    "id": "steroid-28",
+    "name": "David Ortiz",
+    "team": "BOS",
+    "positions": [
+      "DH",
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.286,
+      "obp": 0.38,
+      "slg": 0.552,
+      "hr": 541,
+      "speed": 30
+    },
+    "overall": 93,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Big Papi",
+    "grades": {
+      "contact": 65,
+      "power": 80,
+      "speed": 30,
+      "fielding": 40,
+      "arm": 50,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "541 HR, 3 World Series rings — the most clutch hitter of his generation. Big Papi was beloved by all of Boston and all of baseball. Hall of Famer."
+  },
+  {
+    "id": "steroid-32",
+    "name": "Luis Gonzalez",
+    "team": "ARI",
+    "positions": [
+      "LF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.325,
+      "obp": 0.429,
+      "slg": 0.688,
+      "hr": 57,
+      "speed": 35
+    },
+    "overall": 89,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 68,
+      "power": 72,
+      "speed": 30,
+      "eye": 68,
+      "fielding": 45,
+      "arm": 42
+    },
+    "nickname": "Gonzo",
+    "funFact": "57 home runs in 2001 and a walk-off bloop single off Mariano Rivera to win Game 7 of the World Series. Unforgettable!",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "steroid-33",
+    "name": "Bret Boone",
+    "team": "SEA",
+    "positions": [
+      "2B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.331,
+      "obp": 0.372,
+      "slg": 0.578,
+      "hr": 37,
+      "speed": 42
+    },
+    "overall": 85,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 65,
+      "power": 65,
+      "speed": 38,
+      "eye": 52,
+      "fielding": 62,
+      "arm": 55
+    },
+    "nickname": "BB",
+    "funFact": "Had a monster 2001 season with 37 HR and 141 RBI — helped carry the 116-win Mariners, the winningest team in AL history.",
+    "specialty": null
+  },
+  {
+    "id": "steroid-34",
+    "name": "Todd Helton",
+    "team": "COL",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.316,
+      "obp": 0.414,
+      "slg": 0.539,
+      "hr": 30,
+      "speed": 30
+    },
+    "overall": 90,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 75,
+      "power": 62,
+      "speed": 25,
+      "eye": 75,
+      "fielding": 68,
+      "arm": 55
+    },
+    "nickname": "The Toddfather",
+    "funFact": "Hit .372 in a season. Coors Field king with a gorgeous left-handed swing. Hall of Famer.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "steroid-35",
+    "name": "Shawn Green",
+    "team": "LAD",
+    "positions": [
+      "RF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.28,
+      "obp": 0.352,
+      "slg": 0.51,
+      "hr": 35,
+      "speed": 50
+    },
+    "overall": 85,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 62,
+      "power": 65,
+      "speed": 45,
+      "eye": 58,
+      "fielding": 52,
+      "arm": 50
+    },
+    "nickname": "Green",
+    "funFact": "Four home runs in one game. 49 total bases on one unforgettable May afternoon.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "steroid-36",
+    "name": "Troy Glaus",
+    "team": "ANA",
+    "positions": [
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.253,
+      "obp": 0.352,
+      "slg": 0.481,
+      "hr": 30,
+      "speed": 35
+    },
+    "overall": 84,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 48,
+      "power": 68,
+      "speed": 30,
+      "eye": 58,
+      "fielding": 52,
+      "arm": 58
+    },
+    "nickname": "Troy",
+    "funFact": "2002 World Series MVP — launched 3 homers to lead the Angels to their first-ever championship. A towering power display on the biggest stage.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "steroid-37",
+    "name": "Mo Vaughn",
+    "team": "BOS",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.293,
+      "obp": 0.378,
+      "slg": 0.525,
+      "hr": 35,
+      "speed": 25
+    },
+    "overall": 87,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 62,
+      "power": 72,
+      "speed": 20,
+      "eye": 62,
+      "fielding": 38,
+      "arm": 42
+    },
+    "nickname": "The Hit Dog",
+    "funFact": "1995 AL MVP with 39 homers — a fan favorite in Boston with thunderous power. When Mo stepped up, the crowd went wild.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "steroid-38",
+    "name": "Andres Galarraga",
+    "team": "COL",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.305,
+      "obp": 0.352,
+      "slg": 0.511,
+      "hr": 31,
+      "speed": 35
+    },
+    "overall": 86,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 62,
+      "power": 68,
+      "speed": 30,
+      "eye": 48,
+      "fielding": 62,
+      "arm": 55
+    },
+    "nickname": "The Big Cat",
+    "funFact": "Venezuelan slugger who conquered Coors Field. Graceful at first despite his massive frame. Beat cancer and came back to play!",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "steroid-39",
+    "name": "Mike Piazza",
+    "team": "NYM",
+    "positions": [
+      "C",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.308,
+      "obp": 0.377,
+      "slg": 0.545,
+      "hr": 36,
+      "speed": 20
+    },
+    "overall": 92,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 72,
+      "power": 72,
+      "speed": 18,
+      "eye": 65,
+      "fielding": 42,
+      "arm": 48
+    },
+    "nickname": "Pizza",
+    "funFact": "62nd-round pick turned greatest hitting catcher ever. Pure bat-to-ball magic. Hall of Famer.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "steroid-40",
+    "name": "Nomar Garciaparra",
+    "team": "BOS",
+    "positions": [
+      "SS"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.323,
+      "obp": 0.37,
+      "slg": 0.553,
+      "hr": 30,
+      "speed": 55
+    },
+    "overall": 90,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "grades": {
+      "contact": 75,
+      "power": 62,
+      "speed": 50,
+      "eye": 52,
+      "fielding": 55,
+      "arm": 62
+    },
+    "nickname": "Nomah",
+    "funFact": "Two batting titles and the most beloved shortstop in Red Sox history. Wicked line drives.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "steroid-41",
+    "name": "Albert Belle",
+    "team": "CLE",
+    "positions": [
+      "LF",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.369,
+      "slg": 0.564,
+      "hr": 381,
+      "speed": 40
+    },
+    "overall": 93,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Joey Belle",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 40,
+      "fielding": 45,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "First player ever with 50 HR and 50 doubles in the same season — an absolute wrecking ball at the plate. One of the most feared hitters of the '90s."
+  },
+  {
+    "id": "steroid-42",
+    "name": "Jim Thome",
+    "team": "CLE",
+    "positions": [
+      "1B",
+      "DH",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.276,
+      "obp": 0.402,
+      "slg": 0.554,
+      "hr": 612,
+      "speed": 30
+    },
+    "overall": 94,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Gentle Giant",
+    "grades": {
+      "contact": 60,
+      "power": 80,
+      "speed": 30,
+      "fielding": 45,
+      "arm": 50,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "612 career HR — one of the most beloved sluggers ever. Fans adored his pointing-the-bat stance. A true gentleman and Hall of Famer."
+  },
+  {
+    "id": "steroid-43",
+    "name": "Ken Caminiti",
+    "team": "SD",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.326,
+      "obp": 0.408,
+      "slg": 0.621,
+      "hr": 40,
+      "speed": 45
+    },
+    "overall": 90,
+    "category": "oddity",
+    "era": "1996",
+    "nickname": "Cammy",
+    "grades": {
+      "contact": 70,
+      "power": 72,
+      "speed": 45,
+      "fielding": 70,
+      "arm": 70,
+      "eye": 65
+    },
+    "specialty": "5-Tool",
+    "funFact": "1996 NL MVP — hit .326 with 40 HR and played Gold Glove defense at third base. His 1996 season was absolutely incredible."
+  },
+  {
+    "id": "steroid-44",
+    "name": "Juan Gonzalez",
+    "team": "TEX",
+    "positions": [
+      "RF",
+      "LF",
+      "DH",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.295,
+      "obp": 0.343,
+      "slg": 0.561,
+      "hr": 434,
+      "speed": 45
+    },
+    "overall": 93,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "Juan Gone",
+    "grades": {
+      "contact": 68,
+      "power": 80,
+      "speed": 45,
+      "fielding": 50,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Two-time AL MVP with 434 career HR — hit 40+ homers five times before turning 30. One of the most explosive power bats of the '90s."
+  },
+  {
+    "id": "steroid-45",
+    "name": "Vinny Castilla",
+    "team": "COL",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.294,
+      "obp": 0.331,
+      "slg": 0.547,
+      "hr": 40,
+      "speed": 35
+    },
+    "overall": 85,
+    "category": "oddity",
+    "era": "Steroid Era",
+    "nickname": "The Blake Street Bomber",
+    "grades": {
+      "contact": 62,
+      "power": 70,
+      "speed": 35,
+      "fielding": 65,
+      "arm": 68,
+      "eye": 40
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Three straight 40-HR seasons as a Blake Street Bomber — a Mexican-born star who launched rockets at Coors Field. 3x All-Star."
+  }
+]

@@ -1,0 +1,506 @@
+id,name,team,category,capColor,accentColor,isPitcher
+bust-10,"Ben McDonald",BAL,busts,#DF4601,#000000,true
+bust-13,"Billy Beane",OAK,busts,#003831,#EFB21E,false
+bust-5,"Brien Taylor",NYY,busts,#0C2340,#FFFFFF,true
+bust-17,"Darryl Strawberry",NYM,busts,#002D72,#FF5910,false
+bust-12,"David Clyde",TEX,busts,#003278,#C0111F,true
+bust-16,"Dwight Gooden",NYM,busts,#002D72,#FF5910,true
+bust-20,"Eric Davis",CIN,busts,#C6011F,#000000,false
+bust-11,"Gregg Jefferies",NYM,busts,#002D72,#FF5910,false
+bust-4,"Jim Abbott",CAL,busts,#BA0021,#003263,true
+bust-19,"Jose Rijo",CIN,busts,#C6011F,#000000,true
+bust-15,"Josh Hamilton",CIN,busts,#C6011F,#000000,false
+bust-7,"Kerry Wood",CHC,busts,#0E3386,#CC3433,true
+bust-14,"Lastings Milledge",NYM,busts,#002D72,#FF5910,false
+bust-18,"Mark Fidrych",DET,busts,#0C2340,#FA4616,true
+bust-6,"Mark Prior",CHC,busts,#0E3386,#CC3433,true
+bust-9,"Matt Bush",SD,busts,#2F241D,#FFC425,true
+bust-1,"Rick Ankiel",STL,busts,#C41E3A,#0C2340,true
+bust-2,"Ruben Mateo",TEX,busts,#003278,#C0111F,false
+bust-3,"Steve Balboni",KC,busts,#004687,#BD9B60,false
+bust-8,"Todd Van Poppel",OAK,busts,#003831,#EFB21E,true
+103,"A.J. Minter",ATL,current,#CE1141,#13274F,true
+4,"Aaron Judge",NYY,current,#0C2340,#FFFFFF,false
+91,"Aaron Nola",PHI,current,#E81828,#002D72,true
+147,"Adam Duvall",ATL,current,#CE1141,#13274F,false
+218,"Adam Frazier",BAL,current,#DF4601,#000000,false
+43,"Adley Rutschman",BAL,current,#DF4601,#000000,false
+292,"Adolis Garcia",TEX,current,#003278,#C0111F,false
+151,"Alejandro Kirk",TOR,current,#134A8E,#1D2D5C,false
+148,"Alek Thomas",ARI,current,#A71930,#E3D4AD,false
+52,"Alex Bregman",HOU,current,#002D62,#EB6E1F,false
+207,"Alex Lange",DET,current,#0C2340,#FA4616,true
+135,"Alex Verdugo",BOS,current,#BD3039,#0C2340,false
+37,"Alexis Diaz",CIN,current,#C6011F,#000000,true
+240,"Amed Rosario",LAD,current,#005A9C,#FFFFFF,false
+64,"Andres Gimenez",CLE,current,#00385D,#E50022,false
+181,"Andres Munoz",SEA,current,#0C2C56,#005C5C,true
+297,"Andrew Abbott",CIN,current,#C6011F,#000000,true
+134,"Andrew Benintendi",CHW,current,#27251F,#C4CED4,false
+289,"Andrew Chafin",ARI,current,#A71930,#E3D4AD,true
+266,"Andrew Heaney",TEX,current,#003278,#C0111F,true
+222,"Andrew McCutchen",PIT,current,#27251F,#FDB827,false
+243,"Anthony Rizzo",NYY,current,#0C2340,#FFFFFF,false
+223,"Anthony Santander",BAL,current,#DF4601,#000000,false
+116,"Anthony Volpe",NYY,current,#0C2340,#FFFFFF,false
+205,"Aroldis Chapman",TEX,current,#003278,#C0111F,true
+224,"Austin Hays",BAL,current,#DF4601,#000000,false
+155,"Austin Nola",SD,current,#2F241D,#FFC425,false
+50,"Austin Riley",ATL,current,#CE1141,#13274F,false
+82,"Blake Snell",SF,current,#FD5A1E,#27251F,true
+14,"Bo Bichette",TOR,current,#134A8E,#1D2D5C,false
+259,"Bo Naylor",CLE,current,#00385D,#E50022,false
+56,"Bobby Witt Jr.",KC,current,#004687,#BD9B60,false
+250,"Brandon Drury",LAA,current,#BA0021,#003263,false
+217,"Brandon Lowe",TB,current,#092C5C,#8FBCE6,false
+99,"Brandon Woodruff",MIL,current,#FFC52F,#12284B,true
+161,"Brayan Bello",BOS,current,#BD3039,#0C2340,true
+219,"Brendan Rodgers",COL,current,#33006F,#C4CED4,false
+194,"Brent Suter",COL,current,#33006F,#C4CED4,true
+277,"Brusdar Graterol",LAD,current,#005A9C,#FFFFFF,true
+182,"Bryan Abreu",HOU,current,#002D62,#EB6E1F,true
+78,"Bryan Reynolds",PIT,current,#27251F,#FDB827,false
+10,"Bryce Harper",PHI,current,#E81828,#002D72,false
+69,"Byron Buxton",MIN,current,#002B5C,#D31145,false
+227,"C.J. Cron",COL,current,#33006F,#C4CED4,false
+299,"Cade Cavalli",WAS,current,#AB0003,#14225A,true
+48,"Cal Raleigh",SEA,current,#0C2C56,#005C5C,false
+38,"Camilo Doval",SF,current,#FD5A1E,#27251F,true
+60,"Carlos Correa",MIN,current,#002B5C,#D31145,false
+184,"Carlos Estevez",LAA,current,#BA0021,#003263,true
+247,"Carlos Santana",MIL,current,#FFC52F,#12284B,false
+70,"Cedric Mullins",BAL,current,#DF4601,#000000,false
+96,"Charlie Morton",ATL,current,#CE1141,#13274F,true
+210,"Chris Martin",BOS,current,#BD3039,#0C2340,true
+170,"Chris Sale",BOS,current,#BD3039,#0C2340,true
+120,"Christian Walker",ARI,current,#A71930,#E3D4AD,false
+79,"Christian Yelich",MIL,current,#FFC52F,#12284B,false
+105,"Clay Holmes",NYY,current,#0C2340,#FFFFFF,true
+26,"Clayton Kershaw",LAD,current,#005A9C,#FFFFFF,true
+71,"Cody Bellinger",CHC,current,#0E3386,#CC3433,false
+193,"Collin McHugh",ATL,current,#CE1141,#13274F,true
+24,"Corbin Burnes",BAL,current,#DF4601,#000000,true
+67,"Corbin Carroll",ARI,current,#A71930,#E3D4AD,false
+7,"Corey Seager",TEX,current,#003278,#C0111F,false
+102,"Craig Kimbrel",PHI,current,#E81828,#002D72,true
+167,"Cristian Javier",HOU,current,#002D62,#EB6E1F,true
+200,"Daniel Bard",COL,current,#33006F,#C4CED4,true
+156,"Danny Jansen",TOR,current,#134A8E,#1D2D5C,false
+58,"Dansby Swanson",CHC,current,#0E3386,#CC3433,false
+136,"Daulton Varsho",TOR,current,#134A8E,#1D2D5C,false
+39,"David Bednar",PIT,current,#27251F,#FDB827,true
+282,"David Robertson",PHI,current,#E81828,#002D72,true
+173,"Dean Kremer",BAL,current,#DF4601,#000000,true
+34,"Devin Williams",MIL,current,#FFC52F,#12284B,true
+215,"DJ LeMahieu",NYY,current,#0C2340,#FFFFFF,false
+83,"Dylan Cease",SD,current,#2F241D,#FFC425,true
+272,"Dylan Floro",MIA,current,#000000,#00A3E0,true
+175,"Eduardo Rodriguez",DET,current,#0C2340,#FA4616,true
+32,"Edwin Diaz",NYM,current,#002D72,#FF5910,true
+293,"Elly De La Cruz",CIN,current,#C6011F,#000000,false
+133,"Eloy Jimenez",CHW,current,#27251F,#C4CED4,false
+238,"Elvis Andrus",CHW,current,#27251F,#C4CED4,false
+33,"Emmanuel Clase",CLE,current,#00385D,#E50022,true
+290,"Erik Swanson",TOR,current,#134A8E,#1D2D5C,true
+230,"Eugenio Suarez",ARI,current,#A71930,#E3D4AD,false
+298,"Eury Perez",MIA,current,#000000,#00A3E0,true
+229,"Evan Longoria",ARI,current,#A71930,#E3D4AD,false
+107,"Evan Phillips",LAD,current,#005A9C,#FFFFFF,true
+36,"Felix Bautista",BAL,current,#DF4601,#000000,true
+73,"Fernando Tatis Jr.",SD,current,#2F241D,#FFC425,false
+29,"Framber Valdez",HOU,current,#002D62,#EB6E1F,true
+157,"Francisco Alvarez",NYM,current,#002D72,#FF5910,false
+55,"Francisco Lindor",NYM,current,#002D72,#FF5910,false
+6,"Freddie Freeman",LAD,current,#005A9C,#FFFFFF,false
+154,"Gabriel Moreno",ARI,current,#A71930,#E3D4AD,false
+258,"Gabriel Moreno",ARI,current,#A71930,#E3D4AD,false
+273,"Garrett Whitlock",BOS,current,#BD3039,#0C2340,true
+88,"George Kirby",SEA,current,#0C2C56,#005C5C,true
+72,"George Springer",TOR,current,#134A8E,#1D2D5C,false
+21,"Gerrit Cole",NYY,current,#0C2340,#FFFFFF,true
+63,"Gleyber Torres",NYY,current,#0C2340,#FFFFFF,false
+163,"Grayson Rodriguez",BAL,current,#DF4601,#000000,true
+183,"Gregory Soto",PHI,current,#E81828,#002D72,true
+115,"Gunnar Henderson",BAL,current,#DF4601,#000000,false
+112,"Ha-Seong Kim",SD,current,#2F241D,#FFC425,false
+145,"Harrison Bader",NYY,current,#0C2340,#FFFFFF,false
+159,"Henry Davis",PIT,current,#27251F,#FDB827,false
+195,"Hoby Milner",MIL,current,#FFC52F,#12284B,true
+165,"Hunter Brown",HOU,current,#002D62,#EB6E1F,true
+280,"Hunter Harvey",WAS,current,#AB0003,#14225A,true
+130,"Hunter Renfroe",CIN,current,#C6011F,#000000,false
+137,"Ian Happ",CHC,current,#0E3386,#CC3433,false
+126,"Isaac Paredes",TB,current,#092C5C,#8FBCE6,false
+232,"Isiah Kiner-Falefa",TOR,current,#134A8E,#1D2D5C,false
+236,"J.P. Crawford",SEA,current,#0C2C56,#005C5C,false
+41,"J.T. Realmuto",PHI,current,#E81828,#002D72,false
+27,"Jacob deGrom",TEX,current,#003278,#C0111F,true
+249,"Jake Cronenworth",SD,current,#2F241D,#FFC425,false
+141,"Jake McCarthy",ARI,current,#A71930,#E3D4AD,false
+295,"James Outman",LAD,current,#005A9C,#FFFFFF,false
+262,"Jameson Taillon",CHC,current,#0E3386,#CC3433,true
+138,"Jarred Kelenic",SEA,current,#0C2C56,#005C5C,false
+187,"Jason Adam",TB,current,#092C5C,#8FBCE6,true
+239,"Javier Baez",DET,current,#0C2340,#FA4616,false
+62,"Jazz Chisholm Jr.",MIA,current,#000000,#00A3E0,false
+189,"Jeff Hoffman",PHI,current,#E81828,#002D72,true
+213,"Jeff McNeil",NYM,current,#002D72,#FF5910,false
+178,"Jeffrey Springs",TB,current,#092C5C,#8FBCE6,true
+123,"Jeimer Candelario",CHC,current,#0E3386,#CC3433,false
+113,"Jeremy Pena",HOU,current,#002D62,#EB6E1F,false
+110,"Jhoan Duran",MIN,current,#002B5C,#D31145,true
+150,"Joc Pederson",SF,current,#FD5A1E,#27251F,false
+186,"Joe Jimenez",ATL,current,#CE1141,#13274F,true
+204,"Joe Kelly",CHW,current,#27251F,#C4CED4,true
+93,"Joe Musgrove",SD,current,#2F241D,#FFC425,true
+257,"Joey Meneses",WAS,current,#AB0003,#14225A,false
+242,"Joey Votto",CIN,current,#C6011F,#000000,false
+206,"John Brebbia",SF,current,#FD5A1E,#27251F,true
+269,"Johnny Cueto",MIA,current,#000000,#00A3E0,true
+152,"Jonah Heim",TEX,current,#003278,#C0111F,false
+214,"Jonathan India",CIN,current,#C6011F,#000000,false
+191,"Jonathan Loaisiga",NYY,current,#0C2340,#FFFFFF,true
+265,"Jordan Montgomery",TEX,current,#003278,#C0111F,true
+40,"Jordan Romano",TOR,current,#134A8E,#1D2D5C,true
+300,"Jordan Walker",STL,current,#C41E3A,#0C2340,false
+201,"Jorge Lopez",MIA,current,#000000,#00A3E0,true
+225,"Jorge Soler",MIA,current,#000000,#00A3E0,false
+246,"Jose Abreu",HOU,current,#002D62,#EB6E1F,false
+287,"Jose Alvarado",PHI,current,#E81828,#002D72,true
+168,"Jose Berrios",TOR,current,#134A8E,#1D2D5C,true
+275,"Jose Leclerc",TEX,current,#003278,#C0111F,true
+13,"Jose Ramirez",CLE,current,#00385D,#E50022,false
+121,"Josh Bell",MIA,current,#000000,#00A3E0,false
+31,"Josh Hader",HOU,current,#002D62,#EB6E1F,true
+124,"Josh Jung",TEX,current,#003278,#C0111F,false
+296,"Josh Lowe",TB,current,#092C5C,#8FBCE6,false
+281,"Josh Sborz",TEX,current,#003278,#C0111F,true
+9,"Juan Soto",NYY,current,#0C2340,#FFFFFF,false
+20,"Julio Rodriguez",SEA,current,#0C2C56,#005C5C,false
+53,"Ke'Bryan Hayes",PIT,current,#27251F,#FDB827,false
+158,"Keibert Ruiz",WAS,current,#AB0003,#14225A,false
+101,"Kenley Jansen",BOS,current,#BD3039,#0C2340,true
+65,"Ketel Marte",ARI,current,#A71930,#E3D4AD,false
+28,"Kevin Gausman",TOR,current,#134A8E,#1D2D5C,true
+279,"Kevin Ginkel",ARI,current,#A71930,#E3D4AD,true
+94,"Kodai Senga",NYM,current,#002D72,#FF5910,true
+220,"Kolten Wong",SEA,current,#0C2C56,#005C5C,false
+143,"Kris Bryant",COL,current,#33006F,#C4CED4,false
+171,"Kyle Bradish",BAL,current,#DF4601,#000000,true
+261,"Kyle Hendricks",CHC,current,#0E3386,#CC3433,true
+19,"Kyle Tucker",HOU,current,#002D62,#EB6E1F,false
+245,"LaMonte Wade Jr.",SF,current,#FD5A1E,#27251F,false
+268,"Lance Lynn",CHW,current,#27251F,#C4CED4,true
+128,"Lane Thomas",WAS,current,#AB0003,#14225A,false
+74,"Lars Nootbaar",STL,current,#C41E3A,#0C2340,false
+172,"Logan Gilbert",SEA,current,#0C2C56,#005C5C,true
+30,"Logan Webb",SF,current,#FD5A1E,#27251F,true
+286,"Lou Trivino",NYY,current,#0C2340,#FFFFFF,true
+80,"Lourdes Gurriel Jr.",ARI,current,#A71930,#E3D4AD,false
+97,"Lucas Giolito",CLE,current,#00385D,#E50022,true
+66,"Luis Arraez",MIA,current,#000000,#00A3E0,false
+86,"Luis Castillo",SEA,current,#0C2C56,#005C5C,true
+283,"Luis Garcia",SD,current,#2F241D,#FFC425,true
+291,"Luis Robert Jr.",CHW,current,#27251F,#C4CED4,false
+166,"MacKenzie Gore",WAS,current,#AB0003,#14225A,true
+49,"Manny Machado",SD,current,#2F241D,#FFC425,false
+12,"Marcus Semien",TEX,current,#003278,#C0111F,false
+98,"Marcus Stroman",CHC,current,#0E3386,#CC3433,true
+140,"Mark Canha",MIL,current,#FFC52F,#12284B,false
+251,"Masataka Yoshida",BOS,current,#BD3039,#0C2340,false
+190,"Matt Brash",SEA,current,#0C2C56,#005C5C,true
+125,"Matt Chapman",TOR,current,#134A8E,#1D2D5C,false
+294,"Matt McLain",CIN,current,#C6011F,#000000,false
+209,"Matt Moore",CLE,current,#00385D,#E50022,true
+11,"Matt Olson",ATL,current,#CE1141,#13274F,false
+288,"Matt Strahm",PHI,current,#E81828,#002D72,true
+211,"Mauricio Dubon",HOU,current,#002D62,#EB6E1F,false
+95,"Max Fried",ATL,current,#CE1141,#13274F,true
+54,"Max Muncy",LAD,current,#005A9C,#FFFFFF,false
+25,"Max Scherzer",TEX,current,#003278,#C0111F,true
+169,"Merrill Kelly",ARI,current,#A71930,#E3D4AD,true
+198,"Michael Fulmer",CHC,current,#0E3386,#CC3433,true
+68,"Michael Harris II",ATL,current,#CE1141,#13274F,false
+164,"Michael King",NYY,current,#0C2340,#FFFFFF,true
+203,"Michael Kopech",CHW,current,#27251F,#C4CED4,true
+264,"Michael Wacha",SD,current,#2F241D,#FFC425,true
+241,"Miguel Cabrera",DET,current,#0C2340,#FA4616,false
+237,"Miguel Rojas",LAD,current,#005A9C,#FFFFFF,false
+2,"Mike Trout",LAA,current,#BA0021,#003263,false
+253,"Mike Yastrzemski",SF,current,#FD5A1E,#27251F,false
+267,"Miles Mikolas",STL,current,#C41E3A,#0C2340,true
+142,"MJ Melendez",KC,current,#004687,#BD9B60,false
+3,"Mookie Betts",LAD,current,#005A9C,#FFFFFF,false
+180,"Nathan Eovaldi",TEX,current,#003278,#C0111F,true
+119,"Nathaniel Lowe",TEX,current,#003278,#C0111F,false
+100,"Nestor Cortes",NYY,current,#0C2340,#FFFFFF,true
+254,"Nick Castellanos",PHI,current,#E81828,#002D72,false
+196,"Nick Martinez",CIN,current,#C6011F,#000000,true
+179,"Nick Pivetta",BOS,current,#BD3039,#0C2340,true
+216,"Nicky Lopez",KC,current,#004687,#BD9B60,false
+114,"Nico Hoerner",CHC,current,#0E3386,#CC3433,false
+51,"Nolan Arenado",STL,current,#C41E3A,#0C2340,false
+235,"Oneil Cruz",PIT,current,#27251F,#FDB827,false
+131,"Oscar Gonzalez",CLE,current,#00385D,#E50022,false
+61,"Ozzie Albies",ATL,current,#CE1141,#13274F,false
+84,"Pablo Lopez",MIN,current,#002B5C,#D31145,true
+263,"Patrick Corbin",WAS,current,#AB0003,#14225A,true
+231,"Paul DeJong",CHW,current,#27251F,#C4CED4,false
+244,"Paul Goldschmidt",STL,current,#C41E3A,#0C2340,false
+109,"Paul Sewald",ARI,current,#A71930,#E3D4AD,true
+17,"Pete Alonso",NYM,current,#002D72,#FF5910,false
+106,"Pete Fairbanks",TB,current,#092C5C,#8FBCE6,true
+285,"Pierce Johnson",COL,current,#33006F,#C4CED4,true
+16,"Rafael Devers",BOS,current,#BD3039,#0C2340,false
+104,"Raisel Iglesias",ATL,current,#CE1141,#13274F,true
+146,"Ramon Laureano",OAK,current,#003831,#EFB21E,false
+77,"Randy Arozarena",TB,current,#092C5C,#8FBCE6,false
+176,"Reid Detmers",LAA,current,#BA0021,#003263,true
+276,"Reynaldo Lopez",CHW,current,#27251F,#C4CED4,true
+226,"Rhys Hoskins",MIL,current,#FFC52F,#12284B,false
+270,"Rich Hill",SD,current,#2F241D,#FFC425,true
+185,"Robert Suarez",SD,current,#2F241D,#FFC425,true
+5,"Ronald Acuna Jr.",ATL,current,#CE1141,#13274F,false
+248,"Rowdy Tellez",MIL,current,#FFC52F,#12284B,false
+35,"Ryan Helsley",STL,current,#C41E3A,#0C2340,true
+127,"Ryan McMahon",COL,current,#33006F,#C4CED4,false
+122,"Ryan Mountcastle",BAL,current,#DF4601,#000000,false
+274,"Ryan Pressly",HOU,current,#002D62,#EB6E1F,true
+45,"Salvador Perez",KC,current,#004687,#BD9B60,false
+89,"Sandy Alcantara",MIA,current,#000000,#00A3E0,true
+108,"Scott Barlow",KC,current,#004687,#BD9B60,true
+278,"Scott McGough",ARI,current,#A71930,#E3D4AD,true
+44,"Sean Murphy",ATL,current,#CE1141,#13274F,false
+132,"Seiya Suzuki",CHC,current,#0E3386,#CC3433,false
+87,"Shane McClanahan",TB,current,#092C5C,#8FBCE6,true
+271,"Shintaro Fujinami",OAK,current,#003831,#EFB21E,true
+1,"Shohei Ohtani",LAD,current,#005A9C,#FFFFFF,true
+92,"Sonny Gray",STL,current,#C41E3A,#0C2340,true
+256,"Spencer Steer",CIN,current,#C6011F,#000000,false
+22,"Spencer Strider",ATL,current,#CE1141,#13274F,true
+118,"Spencer Torkelson",DET,current,#0C2340,#FA4616,false
+76,"Starling Marte",NYM,current,#002D72,#FF5910,false
+139,"Steven Kwan",CLE,current,#00385D,#E50022,false
+162,"Tanner Houck",BOS,current,#BD3039,#0C2340,true
+202,"Tanner Scott",MIA,current,#000000,#00A3E0,true
+174,"Tarik Skubal",DET,current,#0C2340,#FA4616,true
+208,"Taylor Rogers",SF,current,#FD5A1E,#27251F,true
+129,"Taylor Ward",LAA,current,#BA0021,#003263,false
+75,"Teoscar Hernandez",SEA,current,#0C2C56,#005C5C,false
+234,"Tim Anderson",MIA,current,#000000,#00A3E0,false
+284,"Tim Hill",SD,current,#2F241D,#FFC425,true
+111,"Tommy Edman",STL,current,#C41E3A,#0C2340,false
+255,"Tommy Edman",STL,current,#C41E3A,#0C2340,false
+197,"Tommy Kahnle",NYY,current,#0C2340,#FFFFFF,true
+252,"Tommy Pham",ARI,current,#A71930,#E3D4AD,false
+160,"Travis d'Arnaud",ATL,current,#CE1141,#13274F,false
+8,"Trea Turner",PHI,current,#E81828,#002D72,false
+144,"Trent Grisham",SD,current,#2F241D,#FFC425,false
+199,"Trevor May",OAK,current,#003831,#EFB21E,true
+177,"Triston McKenzie",CLE,current,#00385D,#E50022,true
+228,"Ty France",SEA,current,#0C2C56,#005C5C,false
+85,"Tyler Glasnow",LAD,current,#005A9C,#FFFFFF,true
+149,"Tyler O'Neill",STL,current,#C41E3A,#0C2340,false
+260,"Tyler Stephenson",CIN,current,#C6011F,#000000,false
+15,"Vladimir Guerrero Jr.",TOR,current,#134A8E,#1D2D5C,false
+59,"Wander Franco",TB,current,#092C5C,#8FBCE6,false
+212,"Whit Merrifield",PHI,current,#E81828,#002D72,false
+42,"Will Smith",LAD,current,#005A9C,#FFFFFF,false
+47,"William Contreras",MIL,current,#FFC52F,#12284B,false
+46,"Willson Contreras",STL,current,#C41E3A,#0C2340,false
+233,"Willy Adames",MIL,current,#FFC52F,#12284B,false
+221,"Wilmer Flores",SF,current,#FD5A1E,#27251F,false
+57,"Xander Bogaerts",SD,current,#2F241D,#FFC425,false
+117,"Yandy Diaz",TB,current,#092C5C,#8FBCE6,false
+153,"Yasmani Grandal",CHW,current,#27251F,#C4CED4,false
+188,"Yennier Cano",BAL,current,#DF4601,#000000,true
+18,"Yordan Alvarez",HOU,current,#002D62,#EB6E1F,false
+90,"Yu Darvish",SD,current,#2F241D,#FFC425,true
+192,"Yuki Matsui",SD,current,#2F241D,#FFC425,true
+81,"Zac Gallen",ARI,current,#A71930,#E3D4AD,true
+23,"Zack Wheeler",PHI,current,#E81828,#002D72,true
+decade80-6,"Barry Larkin",CIN,decade,#C6011F,#000000,false
+decade80-1,"Cal Ripken Jr.",BAL,decade,#DF4601,#000000,false
+decade60-2,"Carl Yastrzemski",BOS,decade,#BD3039,#0C2340,false
+decade80-5,"Don Mattingly",NYY,decade,#0C2340,#FFFFFF,false
+decade60-1,"Frank Robinson",BAL,decade,#DF4601,#000000,false
+decade80-7,"Frank Thomas",CHW,decade,#27251F,#C4CED4,false
+decade60-6,"George Brett",KC,decade,#004687,#BD9B60,false
+decade60-8,"Jim Palmer",BAL,decade,#DF4601,#000000,true
+decade80-8,"John Smoltz",ATL,decade,#CE1141,#13274F,true
+decade80-3,"Kirby Puckett",MIN,decade,#002B5C,#D31145,false
+decade60-5,"Mike Schmidt",PHI,decade,#E81828,#002D72,false
+decade80-4,"Ozzie Smith",STL,decade,#C41E3A,#0C2340,false
+decade60-3,"Reggie Jackson",OAK,decade,#003831,#EFB21E,false
+decade60-4,"Rod Carew",MIN,decade,#002B5C,#D31145,false
+decade60-7,"Steve Carlton",PHI,decade,#E81828,#002D72,true
+decade80-2,"Tony Gwynn",SD,decade,#2F241D,#FFC425,false
+fiction-40,"Ahmad Abdul-Rahim",BNB,fictional,#27251F,#FDB827,false
+fiction-32,"Alan 'Yeah-Yeah' McClennan",SLT,fictional,#C41E3A,#0C2340,false
+fiction-37,"Amanda Whurlitzer",BNB,fictional,#27251F,#FDB827,true
+fiction-12,"Benny 'The Jet' Rodriguez",LAD,fictional,#005A9C,#FFFFFF,false
+fiction-35,"Bertram Grover Weeks",SLT,fictional,#C41E3A,#0C2340,false
+fiction-21,"Billy Heywood",MIN,fictional,#002B5C,#D31145,false
+fiction-23,"Chad Bradford",OAK,fictional,#003831,#EFB21E,true
+fiction-11,"Chet Steadman",CHC,fictional,#0E3386,#CC3433,true
+fiction-7,"Crash Davis",DUR,fictional,#00385D,#E50022,false
+fiction-15,"Dottie Hinson",RPB,fictional,#C41E3A,#FFFFFF,false
+fiction-8,"Ebby Calvin 'Nuke' LaLoosh",DUR,fictional,#00385D,#E50022,true
+fiction-6,"Eddie Harris",CLE,fictional,#00385D,#E50022,true
+fiction-36,"Elgin Woodell",CHC,fictional,#0E3386,#CC3433,false
+fiction-41,"Engelberg",BNB,fictional,#27251F,#FDB827,false
+fiction-13,"Ham Porter",SLT,fictional,#C41E3A,#0C2340,false
+fiction-10,"Henry Rowengartner",CHC,fictional,#0E3386,#CC3433,true
+fiction-2,"Jake Taylor",CLE,fictional,#00385D,#E50022,false
+fiction-38,"Kelly Leak",BNB,fictional,#27251F,#FDB827,false
+fiction-33,"Kenny DeNunez",SLT,fictional,#C41E3A,#0C2340,true
+fiction-30,"Kenny Powers",ATL,fictional,#CE1141,#13274F,true
+fiction-16,"Kit Keller",RPB,fictional,#C41E3A,#FFFFFF,true
+fiction-17,"Mae Mordabito",RPB,fictional,#C41E3A,#FFFFFF,false
+fiction-18,"Marla Hooch",RPB,fictional,#C41E3A,#FFFFFF,false
+fiction-22,"Mel Clark",CAL,fictional,#BA0021,#003263,false
+fiction-20,"Moonlight Graham",MIN,fictional,#002B5C,#D31145,false
+fiction-44,"Morris Buttermaker",BNB,fictional,#27251F,#FDB827,true
+fiction-43,"Ogilvie",BNB,fictional,#27251F,#FDB827,false
+fiction-4,"Pedro Cerrano",CLE,fictional,#00385D,#E50022,false
+fiction-29,"Rachel Phelps",CLE,fictional,#00385D,#E50022,false
+fiction-1,"Ricky 'Wild Thing' Vaughn",CLE,fictional,#00385D,#E50022,true
+fiction-5,"Roger Dorn",CLE,fictional,#00385D,#E50022,false
+fiction-9,"Roy Hobbs",NYK,fictional,#003087,#E4002B,true
+fiction-24,"Scott Hatteberg",OAK,fictional,#003831,#EFB21E,false
+fiction-31,"Scotty Smalls",SLT,fictional,#C41E3A,#0C2340,false
+fiction-19,"Shoeless Joe Jackson",CHW,fictional,#27251F,#C4CED4,false
+fiction-14,"Squints Palledorous",SLT,fictional,#C41E3A,#0C2340,false
+fiction-45,"Steve Nebraska",NYY,fictional,#0C2340,#FFFFFF,true
+fiction-39,"Tanner Boyle",BNB,fictional,#27251F,#FDB827,false
+fiction-42,"Timmy Lupus",BNB,fictional,#27251F,#FDB827,false
+fiction-34,"Timmy Timmons",SLT,fictional,#C41E3A,#0C2340,false
+fiction-3,"Willie Mays Hayes",CLE,fictional,#00385D,#E50022,false
+legend-1,"Babe Ruth",NYY,legend,#0C2340,#FFFFFF,true
+legend-20,"Bob Gibson",STL,legend,#C41E3A,#0C2340,true
+legend-9,"Christy Mathewson",NYG,legend,#FD5A1E,#27251F,true
+legend-17,"Cool Papa Bell",HOM,legend,#FFD700,#8B4513,false
+legend-8,"Cy Young",CLE,legend,#00385D,#E50022,true
+legend-27,"Derek Jeter",NYY,legend,#0C2340,#FFFFFF,false
+legend-30,"Greg Maddux",ATL,legend,#CE1141,#13274F,true
+legend-3,"Hank Aaron",ATL,legend,#CE1141,#13274F,false
+legend-6,"Honus Wagner",PIT,legend,#27251F,#FDB827,false
+legend-12,"Jackie Robinson",BRK,legend,#005A9C,#FFFFFF,false
+legend-11,"Joe DiMaggio",NYY,legend,#0C2340,#FFFFFF,false
+legend-31,"Johnny Bench",CIN,legend,#C6011F,#000000,false
+legend-15,"Josh Gibson",HOM,legend,#FFD700,#8B4513,false
+legend-25,"Ken Griffey Jr.",SEA,legend,#0C2C56,#005C5C,false
+legend-10,"Lou Gehrig",NYY,legend,#0C2340,#FFFFFF,false
+legend-28,"Mariano Rivera",NYY,legend,#0C2340,#FFFFFF,true
+legend-14,"Mickey Mantle",NYY,legend,#0C2340,#FFFFFF,false
+legend-22,"Nolan Ryan",TEX,legend,#003278,#C0111F,true
+legend-29,"Pedro Martinez",BOS,legend,#BD3039,#0C2340,true
+legend-21,"Pete Rose",CIN,legend,#C6011F,#000000,false
+legend-26,"Randy Johnson",ARI,legend,#A71930,#E3D4AD,true
+legend-24,"Rickey Henderson",OAK,legend,#003831,#EFB21E,false
+legend-18,"Roberto Clemente",PIT,legend,#27251F,#FDB827,false
+legend-19,"Sandy Koufax",LAD,legend,#005A9C,#FFFFFF,true
+legend-16,"Satchel Paige",HOM,legend,#FFD700,#8B4513,true
+legend-13,"Stan Musial",STL,legend,#C41E3A,#0C2340,false
+legend-4,"Ted Williams",BOS,legend,#BD3039,#0C2340,false
+legend-23,"Tom Seaver",NYM,legend,#002D72,#FF5910,true
+legend-5,"Ty Cobb",DET,legend,#0C2340,#FA4616,false
+legend-7,"Walter Johnson",WSH,legend,#AB0003,#14225A,true
+legend-2,"Willie Mays",SF,legend,#FD5A1E,#27251F,false
+niner-6,"Al",9RS,niners,#333333,#FFD700,false
+niner-7,"Brock",9RS,niners,#333333,#FFD700,false
+niner-8,"Cal",9RS,niners,#333333,#FFD700,false
+niner-5,"Cooper",9RS,niners,#333333,#FFD700,false
+niner-13,"Deacon",9RS,niners,#333333,#FFD700,false
+niner-10,"Ethan",9RS,niners,#333333,#FFD700,false
+niner-9,"Hopkins",9RS,niners,#333333,#FFD700,false
+niner-14,"Hunter",9RS,niners,#333333,#FFD700,false
+niner-4,"James",9RS,niners,#333333,#FFD700,false
+niner-11,"Jared",9RS,niners,#333333,#FFD700,false
+niner-1,"KB",9RS,niners,#333333,#FFD700,false
+niner-3,"Luke",9RS,niners,#333333,#FFD700,false
+niner-2,"Nate",9RS,niners,#333333,#FFD700,false
+niner-12,"Winfield",9RS,niners,#333333,#FFD700,false
+fiction-27,"Dock Ellis (LSD)",PIT,oddity,#27251F,#FDB827,true
+fiction-25,"Eddie Gaedel",STL,oddity,#C41E3A,#0C2340,false
+fiction-28,"Mark 'The Bird' Fidrych",DET,oddity,#0C2340,#FA4616,true
+fiction-26,"Sidd Finch",NYM,oddity,#002D72,#FF5910,true
+peak-24,"Aaron Judge '17",NYY,peak,#0C2340,#FFFFFF,false
+wonder-12,"Aaron Small '05",NYY,peak,#0C2340,#FFFFFF,true
+peak-23,"Albert Pujols '01",STL,peak,#C41E3A,#0C2340,false
+peak-1,"Barry Bonds '01",SF,peak,#FD5A1E,#27251F,false
+peak-2,"Barry Bonds '04",SF,peak,#FD5A1E,#27251F,false
+peak-5,"Bob Gibson '68",STL,peak,#C41E3A,#0C2340,true
+wonder-1,"Brady Anderson '96",BAL,peak,#DF4601,#000000,false
+wonder-6,"Bret Saberhagen '89",KC,peak,#004687,#BD9B60,true
+wonder-2,"Chris Davis '13",BAL,peak,#DF4601,#000000,false
+peak-18,"Clayton Kershaw '14",LAD,peak,#005A9C,#FFFFFF,true
+wonder-10,"Dontrelle Willis '03",FLA,peak,#000000,#00A3E0,true
+peak-25,"Dwight Gooden '84",NYM,peak,#002D72,#FF5910,true
+peak-6,"Dwight Gooden '85",NYM,peak,#002D72,#FF5910,true
+peak-22,"Eric Gagne '03",LAD,peak,#005A9C,#FFFFFF,true
+peak-27,"Fernando Valenzuela '81",LAD,peak,#005A9C,#FFFFFF,true
+peak-26,"Fred Lynn '75",BOS,peak,#BD3039,#0C2340,false
+peak-20,"Greg Maddux '95",ATL,peak,#CE1141,#13274F,true
+peak-13,"Hack Wilson '30",CHC,peak,#0E3386,#CC3433,false
+peak-35,"Herb Score '55",CLE,peak,#00385D,#E50022,true
+peak-28,"Hideo Nomo '95",LAD,peak,#005A9C,#FFFFFF,true
+wonder-7,"Hideo Nomo '95",LAD,peak,#005A9C,#FFFFFF,true
+peak-10,"Ichiro Suzuki '01",SEA,peak,#0C2C56,#005C5C,false
+peak-11,"Ichiro Suzuki '04",SEA,peak,#0C2C56,#005C5C,false
+peak-31,"Jackie Robinson '47",BRK,peak,#005A9C,#FFFFFF,false
+peak-17,"Jacob deGrom '18",NYM,peak,#002D72,#FF5910,true
+wonder-4,"Joe Charboneau '80",CLE,peak,#00385D,#E50022,false
+peak-33,"Joe DiMaggio '36",NYY,peak,#0C2340,#FFFFFF,false
+peak-30,"Kerry Wood '98",CHC,peak,#0E3386,#CC3433,true
+wonder-9,"Kerry Wood '98",CHC,peak,#0E3386,#CC3433,true
+wonder-16,"Kevin Maas '90",NYY,peak,#0C2340,#FFFFFF,false
+peak-34,"Mark Fidrych '76",DET,peak,#0C2340,#FA4616,true
+wonder-5,"Mark Fidrych '76",DET,peak,#0C2340,#FA4616,true
+peak-29,"Mark McGwire '87",OAK,peak,#003831,#EFB21E,false
+wonder-8,"Mark Prior '03",CHC,peak,#0E3386,#CC3433,true
+peak-19,"Max Scherzer '16",WSH,peak,#AB0003,#14225A,true
+peak-15,"Mike Trout '12",LAA,peak,#BA0021,#003263,false
+peak-14,"Mookie Betts '18",BOS,peak,#BD3039,#0C2340,false
+wonder-3,"Norm Cash '61",DET,peak,#0C2340,#FA4616,false
+peak-7,"Orel Hershiser '88",LAD,peak,#005A9C,#FFFFFF,true
+wonder-17,"Pat Listach '92",MIL,peak,#FFC52F,#12284B,false
+peak-3,"Pedro Martinez '00",BOS,peak,#BD3039,#0C2340,true
+peak-4,"Pedro Martinez '99",BOS,peak,#BD3039,#0C2340,true
+peak-21,"Randy Johnson '01",ARI,peak,#A71930,#E3D4AD,true
+wonder-15,"Raul Mondesi '94",LAD,peak,#005A9C,#FFFFFF,false
+wonder-11,"Rick Ankiel '07",STL,peak,#C41E3A,#0C2340,false
+peak-9,"Rickey Henderson '82",OAK,peak,#003831,#EFB21E,false
+peak-8,"Roger Clemens '86",BOS,peak,#BD3039,#0C2340,true
+peak-12,"Roger Maris '61",NYY,peak,#0C2340,#FFFFFF,false
+wonder-13,"Shelby Miller '13",STL,peak,#C41E3A,#0C2340,true
+peak-16,"Shohei Ohtani '21",LAA,peak,#BA0021,#003263,true
+wonder-14,"Steve Balboni '85",KC,peak,#004687,#BD9B60,false
+peak-32,"Ted Williams '39",BOS,peak,#BD3039,#0C2340,false
+playoff-19,"Aaron Boone '03 ALCS",NYY,playoff,#0C2340,#FFFFFF,false
+playoff-16,"Al Weis '69 WS",NYM,playoff,#002D72,#FF5910,false
+playoff-6,"Bill Mazeroski '60 WS",PIT,playoff,#27251F,#FDB827,false
+playoff-25,"Brian Doyle '78 WS",NYY,playoff,#0C2340,#FFFFFF,false
+playoff-17,"Bucky Dent '78 Playoff",NYY,playoff,#0C2340,#FFFFFF,false
+playoff-11,"Chad Curtis '99 WS",NYY,playoff,#0C2340,#FFFFFF,false
+playoff-5,"Curt Schilling '04 ALCS",BOS,playoff,#BD3039,#0C2340,true
+playoff-7,"David Freese '11 WS",STL,playoff,#C41E3A,#0C2340,false
+playoff-3,"David Ortiz '04 ALCS",BOS,playoff,#BD3039,#0C2340,false
+playoff-21,"Devon White '92 WS",TOR,playoff,#134A8E,#1D2D5C,false
+playoff-8,"Edgar Renteria '97 WS",FLA,playoff,#000000,#00A3E0,false
+playoff-26,"Gene Tenace '72 WS",OAK,playoff,#003831,#EFB21E,false
+playoff-13,"Jeff Blauser '95 Braves",ATL,playoff,#CE1141,#13274F,false
+playoff-24,"John Wetteland '96 WS",NYY,playoff,#0C2340,#FFFFFF,true
+playoff-2,"Kirk Gibson '88 WS",LAD,playoff,#005A9C,#FFFFFF,false
+playoff-23,"Lonnie Smith '91 WS",ATL,playoff,#CE1141,#13274F,false
+playoff-18,"Luis Gonzalez '01 WS",ARI,playoff,#A71930,#E3D4AD,false
+playoff-10,"Luis Sojo '00 WS",NYY,playoff,#0C2340,#FFFFFF,false
+playoff-4,"Madison Bumgarner '14 WS",SF,playoff,#FD5A1E,#27251F,true
+playoff-22,"Marco Scutaro '12 NLCS",SF,playoff,#FD5A1E,#27251F,false
+playoff-9,"Mark Lemke '91 WS",ATL,playoff,#CE1141,#13274F,false
+playoff-27,"Mark Wohlers '95 WS",ATL,playoff,#CE1141,#13274F,true
+playoff-12,"Otis Nixon '92 NLCS",ATL,playoff,#CE1141,#13274F,false
+playoff-15,"Pat Borders '92 WS",TOR,playoff,#134A8E,#1D2D5C,false
+playoff-1,"Reggie Jackson '77 WS",NYY,playoff,#0C2340,#FFFFFF,false
+playoff-14,"Scott Brosius '98 WS",NYY,playoff,#0C2340,#FFFFFF,false
+playoff-20,"Tony Womack '01 WS",ARI,playoff,#A71930,#E3D4AD,false

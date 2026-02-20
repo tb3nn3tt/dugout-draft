@@ -1,0 +1,321 @@
+.enhanced-play-log {
+  background: linear-gradient(180deg, #0f1f3d 0%, #152952 100%);
+  border-radius: 12px;
+  border: 1px solid #2d3748;
+  display: flex;
+  flex-direction: column;
+  max-height: min(400px, 50vh);
+  position: relative;
+}
+
+.play-log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #2d3748;
+}
+
+.log-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.play-total {
+  font-size: 0.7rem;
+  color: #718096;
+}
+
+.play-log-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+.play-log-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.play-log-content::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+.play-log-content::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 3px;
+}
+
+.no-plays {
+  text-align: center;
+  padding: 2rem;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Inning Sections */
+.inning-section {
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.inning-section.latest {
+  background: rgba(74, 144, 217, 0.1);
+  border: 1px solid rgba(74, 144, 217, 0.3);
+}
+
+.inning-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 0.75rem;
+  transition: background 0.2s ease;
+}
+
+.inning-header:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.inning-label {
+  font-weight: 700;
+  color: #a0aec0;
+}
+
+.play-count {
+  color: #718096;
+  font-size: 0.65rem;
+}
+
+.expand-icon {
+  margin-left: auto;
+  font-size: 0.6rem;
+  color: #718096;
+  transition: transform 0.2s ease;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.inning-plays {
+  padding: 0.25rem;
+}
+
+/* Play Entries */
+.play-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--play-color, #4a5568);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.play-entry:last-child {
+  margin-bottom: 0;
+}
+
+.play-entry.new {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Dramatic plays (HR, Triple) */
+.play-entry.dramatic {
+  background: linear-gradient(90deg, rgba(246, 224, 94, 0.15) 0%, transparent 100%);
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  border-left-width: 4px;
+}
+
+.play-entry.dramatic .play-text {
+  font-weight: 700;
+}
+
+.play-entry.homerun {
+  background: linear-gradient(90deg, rgba(246, 224, 94, 0.2) 0%, rgba(246, 224, 94, 0.05) 50%, transparent 100%);
+  animation: homerunGlow 2s infinite;
+}
+
+@keyframes homerunGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(246, 224, 94, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(246, 224, 94, 0.5); }
+}
+
+.play-entry.homerun.new {
+  animation: slideIn 0.3s ease-out, homerunGlow 2s infinite;
+}
+
+/* User player callouts */
+.play-entry.user-player {
+  background: linear-gradient(90deg, rgba(72, 187, 120, 0.15) 0%, transparent 100%);
+  border-left-color: #48bb78 !important;
+}
+
+.play-entry.user-player.dramatic {
+  background: linear-gradient(90deg, rgba(72, 187, 120, 0.25) 0%, rgba(246, 224, 94, 0.15) 50%, transparent 100%);
+}
+
+.user-pick-badge {
+  position: absolute;
+  top: -0.25rem;
+  right: 0.5rem;
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #48bb78;
+  background: rgba(72, 187, 120, 0.2);
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.play-emoji {
+  font-size: 0.9rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.play-text {
+  color: #e2e8f0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Play type specific colors */
+.play-entry.strikeout .play-text {
+  color: #fc8181;
+}
+
+.play-entry.walk .play-text {
+  color: #63b3ed;
+}
+
+.play-entry.run .play-text {
+  color: #b794f4;
+  font-weight: 600;
+}
+
+/* Run-scoring plays */
+.play-entry.run-scoring {
+  border-left: 4px solid #f6ad55;
+}
+
+.play-entry.run-scoring .play-text {
+  font-weight: 700;
+  color: #f6ad55;
+}
+
+/* Clutch plays */
+.play-entry.clutch {
+  background: linear-gradient(90deg, rgba(252, 129, 129, 0.2) 0%, transparent 100%);
+  border-left-color: #fc8181 !important;
+}
+
+.clutch-badge {
+  position: absolute;
+  top: -0.25rem;
+  right: 0.5rem;
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #fc8181;
+  background: rgba(252, 129, 129, 0.2);
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.play-entry.user-player .clutch-badge {
+  right: 4rem;
+}
+
+/* Momentum events */
+.play-entry.momentum-event {
+  background: linear-gradient(90deg, rgba(246, 135, 179, 0.15) 0%, transparent 100%);
+  border-left-color: #f687b3 !important;
+}
+
+.play-entry.momentum-event .play-text {
+  color: #f687b3;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Scroll to bottom button */
+.scroll-to-bottom {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4a90d9;
+  color: white;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(74, 144, 217, 0.4);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-3px); }
+}
+
+.scroll-to-bottom:hover {
+  background: #2872db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .enhanced-play-log {
+    max-height: min(350px, 40vh);
+    border-radius: var(--radius-md);
+  }
+
+  .log-title {
+    font-size: var(--font-size-sm);
+  }
+
+  .play-total {
+    font-size: var(--font-size-xs);
+  }
+
+  .play-entry.dramatic {
+    font-size: var(--font-size-sm);
+  }
+
+  .scroll-to-bottom {
+    min-height: var(--tap-min);
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+  }
+}

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#0a1628"/>
+  
+  <!-- Diamond outline (simplified) -->
+  <path d="M16 4 L28 16 L16 28 L4 16 Z" fill="none" stroke="#1e5fbb" stroke-width="2" opacity="0.5"/>
+  
+  <!-- DD text (simplified for small size) -->
+  <text x="16" y="20" font-family="Arial Black, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">
+    <tspan fill="#ffffff">D</tspan><tspan fill="#e8682a">D</tspan>
+  </text>
+</svg>

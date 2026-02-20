@@ -1,0 +1,1018 @@
+[
+  {
+    "id": "wonder-1",
+    "name": "Brady Anderson '96",
+    "team": "BAL",
+    "positions": [
+      "CF",
+      "RF",
+      "PH",
+      "PR",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.297,
+      "obp": 0.396,
+      "slg": 0.637,
+      "hr": 50,
+      "speed": 70
+    },
+    "overall": 88,
+    "category": "peak",
+    "era": "1996 Season - One-Year Wonder",
+    "nickname": "50 Out of Nowhere",
+    "grades": {
+      "contact": 65,
+      "power": 80,
+      "speed": 70,
+      "fielding": 60,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Hit 50 HR in 1996 after never topping 21 in any other season. His previous career high was 21, and he'd never hit more than 16 again. The poster child for one-year wonders."
+  },
+  {
+    "id": "wonder-2",
+    "name": "Chris Davis '13",
+    "team": "BAL",
+    "positions": [
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.286,
+      "obp": 0.37,
+      "slg": 0.634,
+      "hr": 53,
+      "speed": 30
+    },
+    "overall": 87,
+    "category": "peak",
+    "era": "2013 Season - One-Year Wonder",
+    "nickname": "Crush Davis",
+    "grades": {
+      "contact": 55,
+      "power": 80,
+      "speed": 30,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 50
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Slugged 53 HR with a .286 avg in 2013, but was a .230 hitter most other years. Baltimore gave him a 7-year, $161M deal. He hit .168 in 2018 with an 0-for-54 streak, the worst in MLB history."
+  },
+  {
+    "id": "wonder-3",
+    "name": "Norm Cash '61",
+    "team": "DET",
+    "positions": [
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.361,
+      "obp": 0.487,
+      "slg": 0.662,
+      "hr": 41,
+      "speed": 40
+    },
+    "overall": 86,
+    "category": "peak",
+    "era": "1961 Season - One-Year Wonder",
+    "nickname": "Stormin' Norman",
+    "grades": {
+      "contact": 80,
+      "power": 75,
+      "speed": 40,
+      "fielding": 55,
+      "arm": 50,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Hit .361 in 1961, the highest AL average that year, but was completely overshadowed by Maris and Mantle's HR chase. His career average was .271 -- he never hit above .283 in any other season. Later admitted to corking his bat."
+  },
+  {
+    "id": "wonder-4",
+    "name": "Joe Charboneau '80",
+    "team": "CLE",
+    "positions": [
+      "LF",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.289,
+      "obp": 0.358,
+      "slg": 0.488,
+      "hr": 23,
+      "speed": 40
+    },
+    "overall": 72,
+    "category": "peak",
+    "era": "1980 Season - One-Year Wonder",
+    "nickname": "Super Joe",
+    "grades": {
+      "contact": 55,
+      "power": 60,
+      "speed": 40,
+      "fielding": 40,
+      "arm": 50,
+      "eye": 45
+    },
+    "specialty": null,
+    "funFact": "Won AL Rookie of the Year in 1980 and became a folk hero in Cleveland. Legends say he opened beer bottles with his eye socket and fixed his broken nose with pliers. Back injuries destroyed his career -- he played only 70 more MLB games."
+  },
+  {
+    "id": "wonder-5",
+    "name": "Mark Fidrych '76",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.34,
+      "whip": 1.08,
+      "k9": 4.6,
+      "bb9": 2
+    },
+    "overall": 84,
+    "category": "peak",
+    "era": "1976 Season - One-Year Wonder",
+    "nickname": "The Bird",
+    "grades": {
+      "fastball": 60,
+      "breaking": 65,
+      "changeup": 55,
+      "control": 75,
+      "stamina": 70
+    },
+    "specialty": "Ace",
+    "funFact": "Went 19-9 with a 2.34 ERA as a rookie, talking to baseballs, manicuring the mound, and selling out stadiums everywhere he pitched. Knee and shoulder injuries limited him to only 10 more starts in his entire career. Gone far too soon."
+  },
+  {
+    "id": "wonder-6",
+    "name": "Bret Saberhagen '89",
+    "team": "KC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.16,
+      "whip": 0.96,
+      "k9": 7.5,
+      "bb9": 1
+    },
+    "overall": 90,
+    "category": "peak",
+    "era": "1989 Season - One-Year Wonder",
+    "nickname": "The Odd-Year Ace",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 80,
+      "stamina": 75
+    },
+    "specialty": "Ace",
+    "funFact": "Went 23-6 with a 2.16 ERA and won the Cy Young in 1989. Famous for his bizarre odd-year/even-year splits: dominant in odd years (1985 WS MVP, 1989 Cy Young), mediocre in even years. One of the best control pitchers of his era."
+  },
+  {
+    "id": "wonder-7",
+    "name": "Hideo Nomo '95",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.54,
+      "whip": 1.06,
+      "k9": 11.1,
+      "bb9": 3.5
+    },
+    "overall": 86,
+    "category": "peak",
+    "era": "1995 Season - One-Year Wonder",
+    "nickname": "The Tornado",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "changeup": 55,
+      "control": 55,
+      "stamina": 70
+    },
+    "specialty": "Strikeout Artist",
+    "funFact": "Sparked 'Nomomania' when he defected from Japan and dominated the NL with his unique tornado windup. Won NL ROY with a 2.54 ERA and led the league in strikeouts. He paved the way for every Japanese player who followed. Had good years later but never matched this magic."
+  },
+  {
+    "id": "wonder-8",
+    "name": "Mark Prior '03",
+    "team": "CHC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.43,
+      "whip": 1.1,
+      "k9": 10.4,
+      "bb9": 2.4
+    },
+    "overall": 88,
+    "category": "peak",
+    "era": "2003 Season - One-Year Wonder",
+    "nickname": "The Prodigy",
+    "grades": {
+      "fastball": 75,
+      "breaking": 75,
+      "changeup": 65,
+      "control": 70,
+      "stamina": 60
+    },
+    "specialty": "Ace",
+    "funFact": "Went 18-6 with a 2.43 ERA and was supposed to be the next Roger Clemens. The Cubs rode him hard down the stretch and into the Bartman-cursed 2003 NLCS. Injuries ravaged his arm afterward -- he threw only 43.2 more MLB innings and was out of baseball by 27."
+  },
+  {
+    "id": "wonder-9",
+    "name": "Kerry Wood '98",
+    "team": "CHC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.4,
+      "whip": 1.26,
+      "k9": 12.6,
+      "bb9": 4.7
+    },
+    "overall": 87,
+    "category": "peak",
+    "era": "1998 Season - One-Year Wonder",
+    "nickname": "Kid K",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "changeup": 55,
+      "control": 50,
+      "stamina": 60
+    },
+    "specialty": "Power Arm",
+    "funFact": "Struck out 20 batters in just his 5th career start, tying the MLB record. Won NL ROY going 13-6 as a 20-year-old. Injuries turned him into a reliever, and he never came close to replicating his rookie dominance. That 20K game remains one of the greatest pitching performances ever."
+  },
+  {
+    "id": "wonder-10",
+    "name": "Dontrelle Willis '03",
+    "team": "FLA",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.3,
+      "whip": 1.29,
+      "k9": 6.4,
+      "bb9": 3.3
+    },
+    "overall": 84,
+    "category": "peak",
+    "era": "2003 Season - One-Year Wonder",
+    "nickname": "D-Train",
+    "grades": {
+      "fastball": 65,
+      "breaking": 60,
+      "changeup": 65,
+      "control": 55,
+      "stamina": 70
+    },
+    "specialty": null,
+    "funFact": "His sky-high leg kick and infectious smile made him the most exciting pitcher in baseball. Won NL ROY going 14-6 and helped the Marlins win the 2003 World Series. Had a strong 2005 (22-10) but anxiety and control issues derailed his career shortly after."
+  },
+  {
+    "id": "wonder-11",
+    "name": "Rick Ankiel '07",
+    "team": "STL",
+    "positions": [
+      "CF",
+      "LF"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.328,
+      "slg": 0.535,
+      "hr": 11,
+      "speed": 55
+    },
+    "overall": 76,
+    "category": "peak",
+    "era": "2007 Season - One-Year Wonder",
+    "nickname": "The Reinvention",
+    "grades": {
+      "contact": 50,
+      "power": 60,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 75,
+      "eye": 35
+    },
+    "specialty": null,
+    "funFact": "Was a can't-miss pitching prospect who suddenly lost the ability to throw strikes in the 2000 NLDS, throwing 5 wild pitches in one inning. Spent years in the minors reinventing himself as an outfielder and hit 11 HR in just 47 games upon his return. One of the wildest career arcs in baseball history."
+  },
+  {
+    "id": "wonder-12",
+    "name": "Aaron Small '05",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.2,
+      "whip": 1.2,
+      "k9": 4.9,
+      "bb9": 2.4
+    },
+    "overall": 74,
+    "category": "peak",
+    "era": "2005 Season - One-Year Wonder",
+    "nickname": "Mr. Perfect Record",
+    "grades": {
+      "fastball": 50,
+      "breaking": 50,
+      "changeup": 55,
+      "control": 60,
+      "stamina": 55
+    },
+    "specialty": null,
+    "funFact": "Went 10-0 with a 3.20 ERA for the Yankees at age 33 after bouncing around the minors for over a decade. He had a career 0-4 MLB record before that magical run. The Yankees needed every one of those wins to clinch the AL East. He was gone from the majors within a year."
+  },
+  {
+    "id": "wonder-13",
+    "name": "Shelby Miller '13",
+    "team": "STL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.06,
+      "whip": 1.21,
+      "k9": 8.3,
+      "bb9": 2.7
+    },
+    "overall": 80,
+    "category": "peak",
+    "era": "2013 Season - One-Year Wonder",
+    "nickname": "The Mirage",
+    "grades": {
+      "fastball": 65,
+      "breaking": 60,
+      "changeup": 55,
+      "control": 55,
+      "stamina": 65
+    },
+    "specialty": null,
+    "funFact": "Went 15-9 with a 3.06 ERA as a Cardinals rookie and looked like a future star. Arizona traded their top prospect (Dansby Swanson) to get him before the 2016 season. He went 3-12 with a 6.15 ERA for the D-backs in one of the worst trades in modern history."
+  },
+  {
+    "id": "wonder-14",
+    "name": "Steve Balboni '85",
+    "team": "KC",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.243,
+      "obp": 0.31,
+      "slg": 0.477,
+      "hr": 36,
+      "speed": 20
+    },
+    "overall": 78,
+    "category": "peak",
+    "era": "1985 Season - One-Year Wonder",
+    "nickname": "Bye-Bye Balboni",
+    "grades": {
+      "contact": 35,
+      "power": 75,
+      "speed": 20,
+      "fielding": 40,
+      "arm": 50,
+      "eye": 40
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Clubbed 36 HR for the 1985 World Series champion Royals while hitting just .243. A career .229 hitter who struck out a ton, but when he connected, the ball was gone. The original 'three true outcomes' player before it was cool."
+  },
+  {
+    "id": "wonder-15",
+    "name": "Raul Mondesi '94",
+    "team": "LAD",
+    "positions": [
+      "RF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.306,
+      "obp": 0.333,
+      "slg": 0.516,
+      "hr": 16,
+      "speed": 65
+    },
+    "overall": 84,
+    "category": "peak",
+    "era": "1994 Season - One-Year Wonder",
+    "nickname": "The Cannon",
+    "grades": {
+      "contact": 60,
+      "power": 65,
+      "speed": 65,
+      "fielding": 65,
+      "arm": 80,
+      "eye": 35
+    },
+    "specialty": null,
+    "funFact": "Won NL ROY in the strike-shortened 1994 season with a cannon arm, blazing speed, and raw power -- the total package. Became the only player to win ROY without being on the opening day roster. Had decent years after but never recaptured that complete-player magic."
+  },
+  {
+    "id": "wonder-16",
+    "name": "Kevin Maas '90",
+    "team": "NYY",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.252,
+      "obp": 0.367,
+      "slg": 0.535,
+      "hr": 21,
+      "speed": 30
+    },
+    "overall": 74,
+    "category": "peak",
+    "era": "1990 Season - One-Year Wonder",
+    "nickname": "The Flash",
+    "grades": {
+      "contact": 45,
+      "power": 70,
+      "speed": 30,
+      "fielding": 40,
+      "arm": 45,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Reached 10 HR faster than any player in MLB history (just 77 at-bats) and had Yankees fans dreaming of the next Mattingly. Hit 21 HR in only 79 games as a rookie. Pitchers adjusted, Maas didn't, and he was out of baseball by 1995."
+  },
+  {
+    "id": "wonder-17",
+    "name": "Pat Listach '92",
+    "team": "MIL",
+    "positions": [
+      "SS",
+      "PR"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.29,
+      "obp": 0.352,
+      "slg": 0.349,
+      "hr": 1,
+      "speed": 80
+    },
+    "overall": 75,
+    "category": "peak",
+    "era": "1992 Season - One-Year Wonder",
+    "nickname": "The Blur",
+    "grades": {
+      "contact": 60,
+      "power": 20,
+      "speed": 80,
+      "fielding": 55,
+      "arm": 50,
+      "eye": 50
+    },
+    "specialty": "Speedster",
+    "funFact": "Won AL Rookie of the Year hitting .290 with 54 stolen bases in 1992, beating out a kid named Kenny Lofton. Knee injuries robbed him of his speed, which was his entire game. He hit .244 the next year, then .171, and was done as an everyday player within two seasons."
+  },
+  {
+    "id": "wonder-19",
+    "name": "Wally Joyner '86",
+    "team": "CAL",
+    "positions": [
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.29,
+      "obp": 0.351,
+      "slg": 0.457,
+      "hr": 22,
+      "speed": 40
+    },
+    "overall": 80,
+    "category": "peak",
+    "era": "1986 Season - One-Year Wonder",
+    "nickname": "Wally World",
+    "grades": {
+      "contact": 65,
+      "power": 60,
+      "speed": 40,
+      "fielding": 65,
+      "arm": 55,
+      "eye": 55
+    },
+    "specialty": "Contact Master",
+    "funFact": "Fans threw Snickers bars on the field in tribute. Nearly won ROY over Jose Canseco. Never recaptured the magic."
+  },
+  {
+    "id": "wonder-21",
+    "name": "Benito Santiago '87",
+    "team": "SD",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.3,
+      "obp": 0.324,
+      "slg": 0.467,
+      "hr": 18,
+      "speed": 55
+    },
+    "overall": 82,
+    "category": "peak",
+    "era": "1987 Season - One-Year Wonder",
+    "nickname": "El Nino",
+    "grades": {
+      "contact": 65,
+      "power": 55,
+      "speed": 55,
+      "fielding": 70,
+      "arm": 80,
+      "eye": 35
+    },
+    "specialty": "Gold Glove",
+    "funFact": "34-game hitting streak as a rookie catcher — ROY with a cannon arm. Free-swinging ways caught up to him."
+  },
+  {
+    "id": "wonder-22",
+    "name": "Kevin Appier '93",
+    "team": "KC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.56,
+      "whip": 1.09,
+      "k9": 8.4,
+      "bb9": 2.5
+    },
+    "overall": 86,
+    "category": "peak",
+    "era": "1993 Season - One-Year Wonder",
+    "nickname": "Ape",
+    "grades": {
+      "fastball": 70,
+      "breaking": 70,
+      "changeup": 65,
+      "control": 65,
+      "stamina": 70
+    },
+    "specialty": "Power Arm",
+    "funFact": "2.56 ERA on a bad Royals team — quietly one of the best pitchers in the AL. Nobody remembers."
+  },
+  {
+    "id": "wonder-23",
+    "name": "Denny McLain '68",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 1.96,
+      "whip": 0.91,
+      "k9": 5.6,
+      "bb9": 1.7
+    },
+    "overall": 94,
+    "category": "peak",
+    "era": "1968 Season - One-Year Wonder",
+    "nickname": "The Last 30-Game Winner",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 80
+    },
+    "specialty": "Ace",
+    "funFact": "31-6 in 1968 — last pitcher to win 30 games. Suspended for gambling, bookmaking, dumping water on reporters. Wild ride."
+  },
+  {
+    "id": "wonder-24",
+    "name": "Hank Blalock '03",
+    "team": "TEX",
+    "positions": [
+      "3B",
+      "DH",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.3,
+      "obp": 0.35,
+      "slg": 0.522,
+      "hr": 29,
+      "speed": 45
+    },
+    "overall": 83,
+    "category": "peak",
+    "era": "2003 Season - One-Year Wonder",
+    "nickname": "Blank Check",
+    "grades": {
+      "contact": 65,
+      "power": 65,
+      "speed": 45,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 50
+    },
+    "specialty": "Power Hitter",
+    "funFact": "All-Star at 22 with a go-ahead HR in the ASG. Texas thought they had their franchise 3B. Thoracic outlet syndrome ended it."
+  },
+  {
+    "id": "wonder-25",
+    "name": "Bob Hamelin '94",
+    "team": "KC",
+    "positions": [
+      "DH",
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.282,
+      "obp": 0.388,
+      "slg": 0.599,
+      "hr": 24,
+      "speed": 20
+    },
+    "overall": 79,
+    "category": "peak",
+    "era": "1994 Season - One-Year Wonder",
+    "nickname": "The Hammer",
+    "grades": {
+      "contact": 55,
+      "power": 70,
+      "speed": 20,
+      "fielding": 30,
+      "arm": 40,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Won AL ROY as a DH — .282/24 HR in the strike-shortened year. Hit .168 the next season. Gone within 2 years."
+  },
+  {
+    "id": "wonder-26",
+    "name": "Aaron Small",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.2,
+      "whip": 1.12,
+      "k9": 5.2,
+      "bb9": 2
+    },
+    "overall": 76,
+    "category": "oddity",
+    "era": "2005 Season",
+    "grades": {
+      "fastball": 52,
+      "breaking": 55,
+      "control": 62,
+      "stamina": 58,
+      "changeup": 48
+    },
+    "nickname": "Small Ball",
+    "funFact": "Went 10-0 out of nowhere to save the Yankees season. Then vanished like a ghost.",
+    "specialty": null
+  },
+  {
+    "id": "wonder-27",
+    "name": "Shelby Miller",
+    "team": "ATL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.02,
+      "whip": 1.2,
+      "k9": 7,
+      "bb9": 2.8
+    },
+    "overall": 80,
+    "category": "oddity",
+    "era": "2015 Season",
+    "grades": {
+      "fastball": 65,
+      "breaking": 58,
+      "control": 55,
+      "stamina": 60,
+      "changeup": 50
+    },
+    "nickname": "Shelby",
+    "funFact": "17-win All-Star season then traded and never the same. Lightning in a bottle.",
+    "specialty": null
+  },
+  {
+    "id": "wonder-28",
+    "name": "Steve Blass",
+    "team": "PIT",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.49,
+      "whip": 1.08,
+      "k9": 5.8,
+      "bb9": 2.5
+    },
+    "overall": 82,
+    "category": "oddity",
+    "era": "1972 Season",
+    "grades": {
+      "fastball": 58,
+      "breaking": 62,
+      "control": 68,
+      "stamina": 65,
+      "changeup": 55
+    },
+    "nickname": "Blass",
+    "funFact": "World Series hero who mysteriously lost the ability to throw strikes. Steve Blass Disease.",
+    "specialty": null
+  },
+  {
+    "id": "wonder-29",
+    "name": "Kevin Maas",
+    "team": "NYY",
+    "positions": [
+      "1B",
+      "DH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.252,
+      "obp": 0.364,
+      "slg": 0.535,
+      "hr": 21,
+      "speed": 25
+    },
+    "overall": 78,
+    "category": "oddity",
+    "era": "1990 Season",
+    "grades": {
+      "contact": 48,
+      "power": 65,
+      "speed": 20,
+      "eye": 60,
+      "fielding": 38,
+      "arm": 38
+    },
+    "nickname": "Maas",
+    "funFact": "Fastest to 10 home runs in history. The next big thing who wasnt.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "wonder-30",
+    "name": "Allen Craig",
+    "team": "STL",
+    "positions": [
+      "1B",
+      "RF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.315,
+      "obp": 0.373,
+      "slg": 0.457,
+      "hr": 13,
+      "speed": 30
+    },
+    "overall": 81,
+    "category": "oddity",
+    "era": "2012-2013",
+    "grades": {
+      "contact": 68,
+      "power": 48,
+      "speed": 25,
+      "eye": 55,
+      "fielding": 42,
+      "arm": 45
+    },
+    "nickname": "AC",
+    "funFact": "Clutch machine for two magical seasons. Then injuries stole it all away.",
+    "specialty": "Clutch Performer"
+  },
+  {
+    "id": "wonder-31",
+    "name": "Dontrelle Willis",
+    "team": "FLA",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.3,
+      "whip": 1.28,
+      "k9": 6,
+      "bb9": 3.5
+    },
+    "overall": 83,
+    "category": "oddity",
+    "era": "2003-2005",
+    "grades": {
+      "fastball": 65,
+      "breaking": 58,
+      "control": 48,
+      "stamina": 62,
+      "changeup": 52
+    },
+    "nickname": "D-Train",
+    "funFact": "High leg kick, bigger smile. Took the world by storm then the wheels came off.",
+    "specialty": null
+  },
+  {
+    "id": "wonder-32",
+    "name": "Jerome Walton",
+    "team": "CHC",
+    "positions": [
+      "CF"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.293,
+      "obp": 0.335,
+      "slg": 0.385,
+      "hr": 5,
+      "speed": 78
+    },
+    "overall": 76,
+    "category": "oddity",
+    "era": "1989 Season",
+    "grades": {
+      "contact": 62,
+      "power": 32,
+      "speed": 72,
+      "eye": 48,
+      "fielding": 55,
+      "arm": 48
+    },
+    "nickname": "Jerome",
+    "funFact": "Rookie of the Year with a 30-game hitting streak. Never came close again.",
+    "specialty": "Speedster"
+  },
+  {
+    "id": "wonder-33",
+    "name": "Pat Listach",
+    "team": "MIL",
+    "positions": [
+      "SS",
+      "PR"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.29,
+      "obp": 0.352,
+      "slg": 0.349,
+      "hr": 1,
+      "speed": 85
+    },
+    "overall": 74,
+    "category": "oddity",
+    "era": "1992 Season",
+    "grades": {
+      "contact": 62,
+      "power": 22,
+      "speed": 78,
+      "eye": 52,
+      "fielding": 52,
+      "arm": 50
+    },
+    "nickname": "Pat",
+    "funFact": "Stole 54 bases as Rookie of the Year. Injuries turned a star into a memory.",
+    "specialty": "Speedster"
+  },
+  {
+    "id": "wonder-34",
+    "name": "Chris Shelton",
+    "team": "DET",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.299,
+      "obp": 0.36,
+      "slg": 0.51,
+      "hr": 10,
+      "speed": 22
+    },
+    "overall": 75,
+    "category": "oddity",
+    "era": "2006 Season",
+    "grades": {
+      "contact": 58,
+      "power": 55,
+      "speed": 18,
+      "eye": 50,
+      "fielding": 40,
+      "arm": 40
+    },
+    "nickname": "Shelton",
+    "funFact": "Hit 10 home runs in April. Forgot how to hit in May. Pure April magic.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "wonder-35",
+    "name": "Wally Joyner",
+    "team": "CAL",
+    "positions": [
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.29,
+      "obp": 0.352,
+      "slg": 0.457,
+      "hr": 22,
+      "speed": 38
+    },
+    "overall": 82,
+    "category": "oddity",
+    "era": "1986 Season",
+    "grades": {
+      "contact": 65,
+      "power": 55,
+      "speed": 32,
+      "eye": 58,
+      "fielding": 58,
+      "arm": 52
+    },
+    "nickname": "Wally World",
+    "funFact": "Wally World took Anaheim by storm as a rookie. Sweet swing that faded too soon.",
+    "specialty": null
+  }
+]

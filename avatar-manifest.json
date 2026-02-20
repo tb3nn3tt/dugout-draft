@@ -1,0 +1,8016 @@
+{
+  "_meta": {
+    "totalPlayers": 505,
+    "generatedAt": "2026-02-08T03:50:48.333Z",
+    "imageSpec": {
+      "size": "384x384",
+      "format": "PNG",
+      "background": "transparent or light neutral",
+      "style": "Simple cartoon headshot, baseball cap, minimal facial detail, flat/lightly shaded, no logos/trademarks",
+      "naming": "{id}.png (e.g., 1.png, legend-1.png, fiction-1.png)"
+    },
+    "categories": [
+      "busts",
+      "current",
+      "decade",
+      "fictional",
+      "legend",
+      "niners",
+      "oddity",
+      "peak",
+      "playoff"
+    ],
+    "teamColorReference": {
+      "ARI": {
+        "primary": "#A71930",
+        "secondary": "#E3D4AD",
+        "name": "Arizona Diamondbacks"
+      },
+      "ATL": {
+        "primary": "#CE1141",
+        "secondary": "#13274F",
+        "name": "Atlanta Braves"
+      },
+      "BAL": {
+        "primary": "#DF4601",
+        "secondary": "#000000",
+        "name": "Baltimore Orioles"
+      },
+      "BOS": {
+        "primary": "#BD3039",
+        "secondary": "#0C2340",
+        "name": "Boston Red Sox"
+      },
+      "CHC": {
+        "primary": "#0E3386",
+        "secondary": "#CC3433",
+        "name": "Chicago Cubs"
+      },
+      "CHW": {
+        "primary": "#27251F",
+        "secondary": "#C4CED4",
+        "name": "Chicago White Sox"
+      },
+      "CIN": {
+        "primary": "#C6011F",
+        "secondary": "#000000",
+        "name": "Cincinnati Reds"
+      },
+      "CLE": {
+        "primary": "#00385D",
+        "secondary": "#E50022",
+        "name": "Cleveland Guardians"
+      },
+      "COL": {
+        "primary": "#33006F",
+        "secondary": "#C4CED4",
+        "name": "Colorado Rockies"
+      },
+      "DET": {
+        "primary": "#0C2340",
+        "secondary": "#FA4616",
+        "name": "Detroit Tigers"
+      },
+      "HOU": {
+        "primary": "#002D62",
+        "secondary": "#EB6E1F",
+        "name": "Houston Astros"
+      },
+      "KC": {
+        "primary": "#004687",
+        "secondary": "#BD9B60",
+        "name": "Kansas City Royals"
+      },
+      "LAA": {
+        "primary": "#BA0021",
+        "secondary": "#003263",
+        "name": "Los Angeles Angels"
+      },
+      "LAD": {
+        "primary": "#005A9C",
+        "secondary": "#FFFFFF",
+        "name": "Los Angeles Dodgers"
+      },
+      "MIA": {
+        "primary": "#000000",
+        "secondary": "#00A3E0",
+        "name": "Miami Marlins"
+      },
+      "MIL": {
+        "primary": "#FFC52F",
+        "secondary": "#12284B",
+        "name": "Milwaukee Brewers"
+      },
+      "MIN": {
+        "primary": "#002B5C",
+        "secondary": "#D31145",
+        "name": "Minnesota Twins"
+      },
+      "NYM": {
+        "primary": "#002D72",
+        "secondary": "#FF5910",
+        "name": "New York Mets"
+      },
+      "NYY": {
+        "primary": "#0C2340",
+        "secondary": "#FFFFFF",
+        "name": "New York Yankees"
+      },
+      "OAK": {
+        "primary": "#003831",
+        "secondary": "#EFB21E",
+        "name": "Oakland Athletics"
+      },
+      "PHI": {
+        "primary": "#E81828",
+        "secondary": "#002D72",
+        "name": "Philadelphia Phillies"
+      },
+      "PIT": {
+        "primary": "#27251F",
+        "secondary": "#FDB827",
+        "name": "Pittsburgh Pirates"
+      },
+      "SD": {
+        "primary": "#2F241D",
+        "secondary": "#FFC425",
+        "name": "San Diego Padres"
+      },
+      "SEA": {
+        "primary": "#0C2C56",
+        "secondary": "#005C5C",
+        "name": "Seattle Mariners"
+      },
+      "SF": {
+        "primary": "#FD5A1E",
+        "secondary": "#27251F",
+        "name": "San Francisco Giants"
+      },
+      "STL": {
+        "primary": "#C41E3A",
+        "secondary": "#0C2340",
+        "name": "St. Louis Cardinals"
+      },
+      "TB": {
+        "primary": "#092C5C",
+        "secondary": "#8FBCE6",
+        "name": "Tampa Bay Rays"
+      },
+      "TEX": {
+        "primary": "#003278",
+        "secondary": "#C0111F",
+        "name": "Texas Rangers"
+      },
+      "TOR": {
+        "primary": "#134A8E",
+        "secondary": "#1D2D5C",
+        "name": "Toronto Blue Jays"
+      },
+      "WAS": {
+        "primary": "#AB0003",
+        "secondary": "#14225A",
+        "name": "Washington Nationals"
+      },
+      "MON": {
+        "primary": "#003087",
+        "secondary": "#E4002B",
+        "name": "Montreal Expos"
+      },
+      "BRK": {
+        "primary": "#005A9C",
+        "secondary": "#FFFFFF",
+        "name": "Brooklyn Dodgers"
+      },
+      "PHM": {
+        "primary": "#003831",
+        "secondary": "#EFB21E",
+        "name": "Philadelphia Athletics"
+      },
+      "WSH": {
+        "primary": "#AB0003",
+        "secondary": "#14225A",
+        "name": "Washington Nationals"
+      },
+      "NYG": {
+        "primary": "#FD5A1E",
+        "secondary": "#27251F",
+        "name": "New York Giants"
+      },
+      "CAL": {
+        "primary": "#BA0021",
+        "secondary": "#003263",
+        "name": "California Angels"
+      },
+      "FLA": {
+        "primary": "#000000",
+        "secondary": "#00A3E0",
+        "name": "Florida Marlins"
+      },
+      "SLT": {
+        "primary": "#C41E3A",
+        "secondary": "#0C2340",
+        "name": "St. Louis (historical)"
+      },
+      "HOM": {
+        "primary": "#FFD700",
+        "secondary": "#8B4513",
+        "name": "Homer's Team (Simpsons)"
+      },
+      "DUR": {
+        "primary": "#00385D",
+        "secondary": "#E50022",
+        "name": "Durham Bulls"
+      },
+      "NYK": {
+        "primary": "#003087",
+        "secondary": "#E4002B",
+        "name": "New York Knights"
+      },
+      "RPB": {
+        "primary": "#C41E3A",
+        "secondary": "#FFFFFF",
+        "name": "Rockford Peaches"
+      },
+      "BNB": {
+        "primary": "#27251F",
+        "secondary": "#FDB827",
+        "name": "Bad News Bears"
+      },
+      "9RS": {
+        "primary": "#333333",
+        "secondary": "#FFD700",
+        "name": "Niners"
+      }
+    }
+  },
+  "players": [
+    {
+      "id": "bust-10",
+      "name": "Ben McDonald",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "busts",
+      "era": "Golden Arm Era",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-13",
+      "name": "Billy Beane",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "busts",
+      "era": "Moneyball Origin",
+      "positions": [
+        "OF"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "bust-5",
+      "name": "Brien Taylor",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "busts",
+      "era": "The Lost Arm",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-17",
+      "name": "Darryl Strawberry",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "busts",
+      "era": "Straw Era",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "bust-12",
+      "name": "David Clyde",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "busts",
+      "era": "Too Soon Era",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-16",
+      "name": "Dwight Gooden",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "busts",
+      "era": "Doc Era",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-20",
+      "name": "Eric Davis",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "busts",
+      "era": "Eric the Red",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "bust-11",
+      "name": "Gregg Jefferies",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "busts",
+      "era": "Switch-Hit Wonder",
+      "positions": [
+        "2B",
+        "3B"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "bust-4",
+      "name": "Jim Abbott",
+      "team": "CAL",
+      "teamName": "California Angels",
+      "category": "busts",
+      "era": "Inspiration Era",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-19",
+      "name": "Jose Rijo",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "busts",
+      "era": "Big Red Machine II",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-15",
+      "name": "Josh Hamilton",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "busts",
+      "era": "Fallen Angel",
+      "positions": [
+        "CF",
+        "LF"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "bust-7",
+      "name": "Kerry Wood",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "busts",
+      "era": "20K Legend",
+      "positions": [
+        "SP",
+        "CL"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-14",
+      "name": "Lastings Milledge",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "busts",
+      "era": "The Attitude Era",
+      "positions": [
+        "CF",
+        "LF"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "bust-18",
+      "name": "Mark Fidrych",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "busts",
+      "era": "The Bird Era",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-6",
+      "name": "Mark Prior",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "busts",
+      "era": "Glass Cannon Era",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-9",
+      "name": "Matt Bush",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "busts",
+      "era": "Redemption Arc",
+      "positions": [
+        "SS",
+        "RP"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-1",
+      "name": "Rick Ankiel",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "busts",
+      "era": "The Yips Era",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "bust-2",
+      "name": "Ruben Mateo",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "busts",
+      "era": "The Hype Train",
+      "positions": [
+        "CF",
+        "RF"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "bust-3",
+      "name": "Steve Balboni",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "busts",
+      "era": "Bye Bye Era",
+      "positions": [
+        "1B",
+        "DH"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "bust-8",
+      "name": "Todd Van Poppel",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "busts",
+      "era": "The Signability Era",
+      "positions": [
+        "SP",
+        "RP"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "103",
+      "name": "A.J. Minter",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "4",
+      "name": "Aaron Judge",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "CF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "91",
+      "name": "Aaron Nola",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "147",
+      "name": "Adam Duvall",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "218",
+      "name": "Adam Frazier",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "43",
+      "name": "Adley Rutschman",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "292",
+      "name": "Adolis Garcia",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "CF"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "151",
+      "name": "Alejandro Kirk",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "148",
+      "name": "Alek Thomas",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "52",
+      "name": "Alex Bregman",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "207",
+      "name": "Alex Lange",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "SU"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "135",
+      "name": "Alex Verdugo",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "RF"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "37",
+      "name": "Alexis Diaz",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "240",
+      "name": "Amed Rosario",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS",
+        "2B"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "64",
+      "name": "Andres Gimenez",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "SS"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "181",
+      "name": "Andres Munoz",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "297",
+      "name": "Andrew Abbott",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "134",
+      "name": "Andrew Benintendi",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "289",
+      "name": "Andrew Chafin",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "266",
+      "name": "Andrew Heaney",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "222",
+      "name": "Andrew McCutchen",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "RF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "243",
+      "name": "Anthony Rizzo",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "223",
+      "name": "Anthony Santander",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "116",
+      "name": "Anthony Volpe",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "205",
+      "name": "Aroldis Chapman",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL",
+        "SU"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "224",
+      "name": "Austin Hays",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "RF",
+        "CF"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "155",
+      "name": "Austin Nola",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "50",
+      "name": "Austin Riley",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "82",
+      "name": "Blake Snell",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "14",
+      "name": "Bo Bichette",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "259",
+      "name": "Bo Naylor",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "56",
+      "name": "Bobby Witt Jr.",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "250",
+      "name": "Brandon Drury",
+      "team": "LAA",
+      "teamName": "Los Angeles Angels",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B",
+        "2B"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "217",
+      "name": "Brandon Lowe",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "99",
+      "name": "Brandon Woodruff",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "161",
+      "name": "Brayan Bello",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "219",
+      "name": "Brendan Rodgers",
+      "team": "COL",
+      "teamName": "Colorado Rockies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#33006F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "194",
+      "name": "Brent Suter",
+      "team": "COL",
+      "teamName": "Colorado Rockies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP"
+      ],
+      "capColor": "#33006F",
+      "accentColor": "#C4CED4",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "277",
+      "name": "Brusdar Graterol",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "SU"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "182",
+      "name": "Bryan Abreu",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "78",
+      "name": "Bryan Reynolds",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "CF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "10",
+      "name": "Bryce Harper",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B",
+        "RF"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "69",
+      "name": "Byron Buxton",
+      "team": "MIN",
+      "teamName": "Minnesota Twins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#002B5C",
+      "accentColor": "#D31145",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "227",
+      "name": "C.J. Cron",
+      "team": "COL",
+      "teamName": "Colorado Rockies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#33006F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "299",
+      "name": "Cade Cavalli",
+      "team": "WAS",
+      "teamName": "Washington Nationals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "48",
+      "name": "Cal Raleigh",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "38",
+      "name": "Camilo Doval",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "60",
+      "name": "Carlos Correa",
+      "team": "MIN",
+      "teamName": "Minnesota Twins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#002B5C",
+      "accentColor": "#D31145",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "184",
+      "name": "Carlos Estevez",
+      "team": "LAA",
+      "teamName": "Los Angeles Angels",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "247",
+      "name": "Carlos Santana",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "70",
+      "name": "Cedric Mullins",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "96",
+      "name": "Charlie Morton",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "210",
+      "name": "Chris Martin",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "SU"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "170",
+      "name": "Chris Sale",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "120",
+      "name": "Christian Walker",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "79",
+      "name": "Christian Yelich",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "105",
+      "name": "Clay Holmes",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "26",
+      "name": "Clayton Kershaw",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "71",
+      "name": "Cody Bellinger",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF",
+        "1B"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "193",
+      "name": "Collin McHugh",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "24",
+      "name": "Corbin Burnes",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "67",
+      "name": "Corbin Carroll",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF",
+        "LF"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "7",
+      "name": "Corey Seager",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "102",
+      "name": "Craig Kimbrel",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL",
+        "SU"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "167",
+      "name": "Cristian Javier",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "200",
+      "name": "Daniel Bard",
+      "team": "COL",
+      "teamName": "Colorado Rockies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP",
+        "RP"
+      ],
+      "capColor": "#33006F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "156",
+      "name": "Danny Jansen",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "58",
+      "name": "Dansby Swanson",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "136",
+      "name": "Daulton Varsho",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "CF",
+        "C"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "39",
+      "name": "David Bednar",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL",
+        "SU"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "282",
+      "name": "David Robertson",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "173",
+      "name": "Dean Kremer",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "34",
+      "name": "Devin Williams",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL",
+        "SU"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "215",
+      "name": "DJ LeMahieu",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "1B",
+        "3B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "83",
+      "name": "Dylan Cease",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "272",
+      "name": "Dylan Floro",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "175",
+      "name": "Eduardo Rodriguez",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "32",
+      "name": "Edwin Diaz",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "293",
+      "name": "Elly De La Cruz",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "133",
+      "name": "Eloy Jimenez",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "238",
+      "name": "Elvis Andrus",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "33",
+      "name": "Emmanuel Clase",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "290",
+      "name": "Erik Swanson",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "230",
+      "name": "Eugenio Suarez",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "298",
+      "name": "Eury Perez",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "229",
+      "name": "Evan Longoria",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "107",
+      "name": "Evan Phillips",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "36",
+      "name": "Felix Bautista",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL",
+        "SU"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "73",
+      "name": "Fernando Tatis Jr.",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "SS"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "29",
+      "name": "Framber Valdez",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "157",
+      "name": "Francisco Alvarez",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "55",
+      "name": "Francisco Lindor",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "6",
+      "name": "Freddie Freeman",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "154",
+      "name": "Gabriel Moreno",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "258",
+      "name": "Gabriel Moreno",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "273",
+      "name": "Garrett Whitlock",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "88",
+      "name": "George Kirby",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "72",
+      "name": "George Springer",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF",
+        "RF"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "21",
+      "name": "Gerrit Cole",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "63",
+      "name": "Gleyber Torres",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "163",
+      "name": "Grayson Rodriguez",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "183",
+      "name": "Gregory Soto",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "115",
+      "name": "Gunnar Henderson",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS",
+        "3B"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "112",
+      "name": "Ha-Seong Kim",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS",
+        "2B",
+        "3B"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "145",
+      "name": "Harrison Bader",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "159",
+      "name": "Henry Davis",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "195",
+      "name": "Hoby Milner",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP",
+        "RP"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "165",
+      "name": "Hunter Brown",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "280",
+      "name": "Hunter Harvey",
+      "team": "WAS",
+      "teamName": "Washington Nationals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "130",
+      "name": "Hunter Renfroe",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "137",
+      "name": "Ian Happ",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "CF"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "126",
+      "name": "Isaac Paredes",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B",
+        "2B"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "232",
+      "name": "Isiah Kiner-Falefa",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS",
+        "3B"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "236",
+      "name": "J.P. Crawford",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "41",
+      "name": "J.T. Realmuto",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "27",
+      "name": "Jacob deGrom",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "249",
+      "name": "Jake Cronenworth",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "1B"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "141",
+      "name": "Jake McCarthy",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "CF"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "295",
+      "name": "James Outman",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF",
+        "LF"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "262",
+      "name": "Jameson Taillon",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "138",
+      "name": "Jarred Kelenic",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "CF"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "187",
+      "name": "Jason Adam",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "239",
+      "name": "Javier Baez",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "62",
+      "name": "Jazz Chisholm Jr.",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "CF"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "189",
+      "name": "Jeff Hoffman",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "213",
+      "name": "Jeff McNeil",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "LF"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "178",
+      "name": "Jeffrey Springs",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "123",
+      "name": "Jeimer Candelario",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B",
+        "1B"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "113",
+      "name": "Jeremy Pena",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "110",
+      "name": "Jhoan Duran",
+      "team": "MIN",
+      "teamName": "Minnesota Twins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#002B5C",
+      "accentColor": "#D31145",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "150",
+      "name": "Joc Pederson",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "186",
+      "name": "Joe Jimenez",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "204",
+      "name": "Joe Kelly",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "93",
+      "name": "Joe Musgrove",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "257",
+      "name": "Joey Meneses",
+      "team": "WAS",
+      "teamName": "Washington Nationals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B",
+        "RF"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "242",
+      "name": "Joey Votto",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "206",
+      "name": "John Brebbia",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "269",
+      "name": "Johnny Cueto",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "152",
+      "name": "Jonah Heim",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "214",
+      "name": "Jonathan India",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "191",
+      "name": "Jonathan Loaisiga",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "SU"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "265",
+      "name": "Jordan Montgomery",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "40",
+      "name": "Jordan Romano",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL",
+        "SU"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "300",
+      "name": "Jordan Walker",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "201",
+      "name": "Jorge Lopez",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "225",
+      "name": "Jorge Soler",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "246",
+      "name": "Jose Abreu",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "287",
+      "name": "Jose Alvarado",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "168",
+      "name": "Jose Berrios",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "275",
+      "name": "Jose Leclerc",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "13",
+      "name": "Jose Ramirez",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "121",
+      "name": "Josh Bell",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "31",
+      "name": "Josh Hader",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "124",
+      "name": "Josh Jung",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "296",
+      "name": "Josh Lowe",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "CF"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "281",
+      "name": "Josh Sborz",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "9",
+      "name": "Juan Soto",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "20",
+      "name": "Julio Rodriguez",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "53",
+      "name": "Ke'Bryan Hayes",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "158",
+      "name": "Keibert Ruiz",
+      "team": "WAS",
+      "teamName": "Washington Nationals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "101",
+      "name": "Kenley Jansen",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL",
+        "SU"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "S",
+      "isPitcher": true
+    },
+    {
+      "id": "65",
+      "name": "Ketel Marte",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "28",
+      "name": "Kevin Gausman",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "279",
+      "name": "Kevin Ginkel",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "94",
+      "name": "Kodai Senga",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "220",
+      "name": "Kolten Wong",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "143",
+      "name": "Kris Bryant",
+      "team": "COL",
+      "teamName": "Colorado Rockies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "LF",
+        "3B"
+      ],
+      "capColor": "#33006F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "171",
+      "name": "Kyle Bradish",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "261",
+      "name": "Kyle Hendricks",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "19",
+      "name": "Kyle Tucker",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "245",
+      "name": "LaMonte Wade Jr.",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B",
+        "LF"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "268",
+      "name": "Lance Lynn",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "S",
+      "isPitcher": true
+    },
+    {
+      "id": "128",
+      "name": "Lane Thomas",
+      "team": "WAS",
+      "teamName": "Washington Nationals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "CF"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "74",
+      "name": "Lars Nootbaar",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "CF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "172",
+      "name": "Logan Gilbert",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "30",
+      "name": "Logan Webb",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "286",
+      "name": "Lou Trivino",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP",
+        "RP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "80",
+      "name": "Lourdes Gurriel Jr.",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "97",
+      "name": "Lucas Giolito",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "66",
+      "name": "Luis Arraez",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "1B"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "86",
+      "name": "Luis Castillo",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "283",
+      "name": "Luis Garcia",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "291",
+      "name": "Luis Robert Jr.",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "166",
+      "name": "MacKenzie Gore",
+      "team": "WAS",
+      "teamName": "Washington Nationals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "49",
+      "name": "Manny Machado",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "12",
+      "name": "Marcus Semien",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "98",
+      "name": "Marcus Stroman",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "140",
+      "name": "Mark Canha",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "RF"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "251",
+      "name": "Masataka Yoshida",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "190",
+      "name": "Matt Brash",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "125",
+      "name": "Matt Chapman",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "294",
+      "name": "Matt McLain",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS",
+        "2B"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "209",
+      "name": "Matt Moore",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "11",
+      "name": "Matt Olson",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "288",
+      "name": "Matt Strahm",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "211",
+      "name": "Mauricio Dubon",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF",
+        "SS",
+        "2B"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "95",
+      "name": "Max Fried",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "54",
+      "name": "Max Muncy",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B",
+        "1B",
+        "2B"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "25",
+      "name": "Max Scherzer",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "169",
+      "name": "Merrill Kelly",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "198",
+      "name": "Michael Fulmer",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP",
+        "RP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "68",
+      "name": "Michael Harris II",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "164",
+      "name": "Michael King",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP",
+        "RP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "203",
+      "name": "Michael Kopech",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP",
+        "RP"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "264",
+      "name": "Michael Wacha",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "241",
+      "name": "Miguel Cabrera",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "237",
+      "name": "Miguel Rojas",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "2",
+      "name": "Mike Trout",
+      "team": "LAA",
+      "teamName": "Los Angeles Angels",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "253",
+      "name": "Mike Yastrzemski",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "CF"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "267",
+      "name": "Miles Mikolas",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "142",
+      "name": "MJ Melendez",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "C"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "3",
+      "name": "Mookie Betts",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "2B"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "180",
+      "name": "Nathan Eovaldi",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "119",
+      "name": "Nathaniel Lowe",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "100",
+      "name": "Nestor Cortes",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "254",
+      "name": "Nick Castellanos",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "196",
+      "name": "Nick Martinez",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "SP"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "179",
+      "name": "Nick Pivetta",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "216",
+      "name": "Nicky Lopez",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "SS"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "114",
+      "name": "Nico Hoerner",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS",
+        "2B"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "51",
+      "name": "Nolan Arenado",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "235",
+      "name": "Oneil Cruz",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "131",
+      "name": "Oscar Gonzalez",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "61",
+      "name": "Ozzie Albies",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "84",
+      "name": "Pablo Lopez",
+      "team": "MIN",
+      "teamName": "Minnesota Twins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002B5C",
+      "accentColor": "#D31145",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "263",
+      "name": "Patrick Corbin",
+      "team": "WAS",
+      "teamName": "Washington Nationals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "231",
+      "name": "Paul DeJong",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "244",
+      "name": "Paul Goldschmidt",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "109",
+      "name": "Paul Sewald",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "17",
+      "name": "Pete Alonso",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "106",
+      "name": "Pete Fairbanks",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "285",
+      "name": "Pierce Johnson",
+      "team": "COL",
+      "teamName": "Colorado Rockies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP",
+        "RP"
+      ],
+      "capColor": "#33006F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "16",
+      "name": "Rafael Devers",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "104",
+      "name": "Raisel Iglesias",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "146",
+      "name": "Ramon Laureano",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF",
+        "RF"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "77",
+      "name": "Randy Arozarena",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "RF"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "176",
+      "name": "Reid Detmers",
+      "team": "LAA",
+      "teamName": "Los Angeles Angels",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "276",
+      "name": "Reynaldo Lopez",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "SU"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "226",
+      "name": "Rhys Hoskins",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "270",
+      "name": "Rich Hill",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "185",
+      "name": "Robert Suarez",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "5",
+      "name": "Ronald Acuna Jr.",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "CF"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "248",
+      "name": "Rowdy Tellez",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "35",
+      "name": "Ryan Helsley",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CL"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "127",
+      "name": "Ryan McMahon",
+      "team": "COL",
+      "teamName": "Colorado Rockies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B",
+        "2B"
+      ],
+      "capColor": "#33006F",
+      "accentColor": "#C4CED4",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "122",
+      "name": "Ryan Mountcastle",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "274",
+      "name": "Ryan Pressly",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "45",
+      "name": "Salvador Perez",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "89",
+      "name": "Sandy Alcantara",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "108",
+      "name": "Scott Barlow",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "278",
+      "name": "Scott McGough",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "44",
+      "name": "Sean Murphy",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "132",
+      "name": "Seiya Suzuki",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "87",
+      "name": "Shane McClanahan",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "271",
+      "name": "Shintaro Fujinami",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "1",
+      "name": "Shohei Ohtani",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "DH",
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "92",
+      "name": "Sonny Gray",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "256",
+      "name": "Spencer Steer",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "3B",
+        "1B",
+        "2B"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "22",
+      "name": "Spencer Strider",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "118",
+      "name": "Spencer Torkelson",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "76",
+      "name": "Starling Marte",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "CF"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "139",
+      "name": "Steven Kwan",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "162",
+      "name": "Tanner Houck",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "202",
+      "name": "Tanner Scott",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "CL"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "174",
+      "name": "Tarik Skubal",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "208",
+      "name": "Taylor Rogers",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "129",
+      "name": "Taylor Ward",
+      "team": "LAA",
+      "teamName": "Los Angeles Angels",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "75",
+      "name": "Teoscar Hernandez",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "234",
+      "name": "Tim Anderson",
+      "team": "MIA",
+      "teamName": "Miami Marlins",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "284",
+      "name": "Tim Hill",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "LRP"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "111",
+      "name": "Tommy Edman",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "SS",
+        "OF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "255",
+      "name": "Tommy Edman",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "SS",
+        "OF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "197",
+      "name": "Tommy Kahnle",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "252",
+      "name": "Tommy Pham",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "RF"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "160",
+      "name": "Travis d'Arnaud",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "8",
+      "name": "Trea Turner",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "144",
+      "name": "Trent Grisham",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "199",
+      "name": "Trevor May",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LRP",
+        "RP"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "177",
+      "name": "Triston McKenzie",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "228",
+      "name": "Ty France",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B",
+        "3B"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "85",
+      "name": "Tyler Glasnow",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "149",
+      "name": "Tyler O'Neill",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "RF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "260",
+      "name": "Tyler Stephenson",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "15",
+      "name": "Vladimir Guerrero Jr.",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "59",
+      "name": "Wander Franco",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "212",
+      "name": "Whit Merrifield",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "2B",
+        "RF"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "42",
+      "name": "Will Smith",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "47",
+      "name": "William Contreras",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "46",
+      "name": "Willson Contreras",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "233",
+      "name": "Willy Adames",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "221",
+      "name": "Wilmer Flores",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B",
+        "2B",
+        "3B"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "57",
+      "name": "Xander Bogaerts",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "117",
+      "name": "Yandy Diaz",
+      "team": "TB",
+      "teamName": "Tampa Bay Rays",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "1B",
+        "3B"
+      ],
+      "capColor": "#092C5C",
+      "accentColor": "#8FBCE6",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "153",
+      "name": "Yasmani Grandal",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "188",
+      "name": "Yennier Cano",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SU",
+        "RP"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "18",
+      "name": "Yordan Alvarez",
+      "team": "HOU",
+      "teamName": "Houston Astros",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "LF",
+        "1B"
+      ],
+      "capColor": "#002D62",
+      "accentColor": "#EB6E1F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "90",
+      "name": "Yu Darvish",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "192",
+      "name": "Yuki Matsui",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "RP",
+        "SU"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "81",
+      "name": "Zac Gallen",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "23",
+      "name": "Zack Wheeler",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "current",
+      "era": "Current Stars",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "decade80-6",
+      "name": "Barry Larkin",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "decade",
+      "era": "1990s",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "decade80-1",
+      "name": "Cal Ripken Jr.",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "decade",
+      "era": "1980s-90s",
+      "positions": [
+        "SS",
+        "3B"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "decade60-2",
+      "name": "Carl Yastrzemski",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "decade",
+      "era": "1960s-70s",
+      "positions": [
+        "LF",
+        "1B"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "decade80-5",
+      "name": "Don Mattingly",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "decade",
+      "era": "1980s",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "decade60-1",
+      "name": "Frank Robinson",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "decade",
+      "era": "1960s",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "decade80-7",
+      "name": "Frank Thomas",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "decade",
+      "era": "1990s",
+      "positions": [
+        "1B",
+        "DH"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "decade60-6",
+      "name": "George Brett",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "decade",
+      "era": "1970s-80s",
+      "positions": [
+        "3B",
+        "1B"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "decade60-8",
+      "name": "Jim Palmer",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "decade",
+      "era": "1960s-70s",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "decade80-8",
+      "name": "John Smoltz",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "decade",
+      "era": "1990s-2000s",
+      "positions": [
+        "SP",
+        "CL"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "decade80-3",
+      "name": "Kirby Puckett",
+      "team": "MIN",
+      "teamName": "Minnesota Twins",
+      "category": "decade",
+      "era": "1980s-90s",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#002B5C",
+      "accentColor": "#D31145",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "decade60-5",
+      "name": "Mike Schmidt",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "decade",
+      "era": "1970s-80s",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "decade80-4",
+      "name": "Ozzie Smith",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "decade",
+      "era": "1980s-90s",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "decade60-3",
+      "name": "Reggie Jackson",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "decade",
+      "era": "1970s",
+      "positions": [
+        "RF",
+        "DH"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "decade60-4",
+      "name": "Rod Carew",
+      "team": "MIN",
+      "teamName": "Minnesota Twins",
+      "category": "decade",
+      "era": "1970s",
+      "positions": [
+        "2B",
+        "1B"
+      ],
+      "capColor": "#002B5C",
+      "accentColor": "#D31145",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "decade60-7",
+      "name": "Steve Carlton",
+      "team": "PHI",
+      "teamName": "Philadelphia Phillies",
+      "category": "decade",
+      "era": "1970s-80s",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#E81828",
+      "accentColor": "#002D72",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "decade80-2",
+      "name": "Tony Gwynn",
+      "team": "SD",
+      "teamName": "San Diego Padres",
+      "category": "decade",
+      "era": "1980s-90s",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#2F241D",
+      "accentColor": "#FFC425",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-40",
+      "name": "Ahmad Abdul-Rahim",
+      "team": "BNB",
+      "teamName": "Bad News Bears",
+      "category": "fictional",
+      "era": "The Bad News Bears (1976)",
+      "positions": [
+        "CF",
+        "RF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-32",
+      "name": "Alan 'Yeah-Yeah' McClennan",
+      "team": "SLT",
+      "teamName": "St. Louis (historical)",
+      "category": "fictional",
+      "era": "The Sandlot (1993)",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-37",
+      "name": "Amanda Whurlitzer",
+      "team": "BNB",
+      "teamName": "Bad News Bears",
+      "category": "fictional",
+      "era": "The Bad News Bears (1976)",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-12",
+      "name": "Benny 'The Jet' Rodriguez",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "fictional",
+      "era": "The Sandlot (1993)",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-35",
+      "name": "Bertram Grover Weeks",
+      "team": "SLT",
+      "teamName": "St. Louis (historical)",
+      "category": "fictional",
+      "era": "The Sandlot (1993)",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-21",
+      "name": "Billy Heywood",
+      "team": "MIN",
+      "teamName": "Minnesota Twins",
+      "category": "fictional",
+      "era": "Little Big League (1994)",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#002B5C",
+      "accentColor": "#D31145",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-23",
+      "name": "Chad Bradford",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "fictional",
+      "era": "Moneyball (2011)",
+      "positions": [
+        "RP"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-11",
+      "name": "Chet Steadman",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "fictional",
+      "era": "Rookie of the Year (1993)",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-7",
+      "name": "Crash Davis",
+      "team": "DUR",
+      "teamName": "Durham Bulls",
+      "category": "fictional",
+      "era": "Bull Durham (1988)",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-15",
+      "name": "Dottie Hinson",
+      "team": "RPB",
+      "teamName": "Rockford Peaches",
+      "category": "fictional",
+      "era": "A League of Their Own (1992)",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-8",
+      "name": "Ebby Calvin 'Nuke' LaLoosh",
+      "team": "DUR",
+      "teamName": "Durham Bulls",
+      "category": "fictional",
+      "era": "Bull Durham (1988)",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-6",
+      "name": "Eddie Harris",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "fictional",
+      "era": "Major League (1989)",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-36",
+      "name": "Elgin Woodell",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "fictional",
+      "era": "The Rookie (book)",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-41",
+      "name": "Engelberg",
+      "team": "BNB",
+      "teamName": "Bad News Bears",
+      "category": "fictional",
+      "era": "The Bad News Bears (1976)",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-13",
+      "name": "Ham Porter",
+      "team": "SLT",
+      "teamName": "St. Louis (historical)",
+      "category": "fictional",
+      "era": "The Sandlot (1993)",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-10",
+      "name": "Henry Rowengartner",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "fictional",
+      "era": "Rookie of the Year (1993)",
+      "positions": [
+        "SP",
+        "CL"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-2",
+      "name": "Jake Taylor",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "fictional",
+      "era": "Major League (1989)",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-38",
+      "name": "Kelly Leak",
+      "team": "BNB",
+      "teamName": "Bad News Bears",
+      "category": "fictional",
+      "era": "The Bad News Bears (1976)",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-33",
+      "name": "Kenny DeNunez",
+      "team": "SLT",
+      "teamName": "St. Louis (historical)",
+      "category": "fictional",
+      "era": "The Sandlot (1993)",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-30",
+      "name": "Kenny Powers",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "fictional",
+      "era": "Eastbound & Down",
+      "positions": [
+        "CL"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-16",
+      "name": "Kit Keller",
+      "team": "RPB",
+      "teamName": "Rockford Peaches",
+      "category": "fictional",
+      "era": "A League of Their Own (1992)",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-17",
+      "name": "Mae Mordabito",
+      "team": "RPB",
+      "teamName": "Rockford Peaches",
+      "category": "fictional",
+      "era": "A League of Their Own (1992)",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-18",
+      "name": "Marla Hooch",
+      "team": "RPB",
+      "teamName": "Rockford Peaches",
+      "category": "fictional",
+      "era": "A League of Their Own (1992)",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-22",
+      "name": "Mel Clark",
+      "team": "CAL",
+      "teamName": "California Angels",
+      "category": "fictional",
+      "era": "Angels in the Outfield (1994)",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-20",
+      "name": "Moonlight Graham",
+      "team": "MIN",
+      "teamName": "Minnesota Twins",
+      "category": "fictional",
+      "era": "Field of Dreams (1989)",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#002B5C",
+      "accentColor": "#D31145",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-44",
+      "name": "Morris Buttermaker",
+      "team": "BNB",
+      "teamName": "Bad News Bears",
+      "category": "fictional",
+      "era": "The Bad News Bears (1976)",
+      "positions": [
+        "SP",
+        "LRP"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-43",
+      "name": "Ogilvie",
+      "team": "BNB",
+      "teamName": "Bad News Bears",
+      "category": "fictional",
+      "era": "The Bad News Bears (1976)",
+      "positions": [
+        "3B",
+        "2B"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-4",
+      "name": "Pedro Cerrano",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "fictional",
+      "era": "Major League (1989)",
+      "positions": [
+        "LF",
+        "1B",
+        "DH"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-29",
+      "name": "Rachel Phelps",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "fictional",
+      "era": "Major League (1989)",
+      "positions": [
+        "DH"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-1",
+      "name": "Ricky 'Wild Thing' Vaughn",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "fictional",
+      "era": "Major League (1989)",
+      "positions": [
+        "CL",
+        "RP"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-5",
+      "name": "Roger Dorn",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "fictional",
+      "era": "Major League (1989)",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-9",
+      "name": "Roy Hobbs",
+      "team": "NYK",
+      "teamName": "New York Knights",
+      "category": "fictional",
+      "era": "The Natural (1984)",
+      "positions": [
+        "RF",
+        "SP"
+      ],
+      "capColor": "#003087",
+      "accentColor": "#E4002B",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-24",
+      "name": "Scott Hatteberg",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "fictional",
+      "era": "Moneyball (2011)",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-31",
+      "name": "Scotty Smalls",
+      "team": "SLT",
+      "teamName": "St. Louis (historical)",
+      "category": "fictional",
+      "era": "The Sandlot (1993)",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-19",
+      "name": "Shoeless Joe Jackson",
+      "team": "CHW",
+      "teamName": "Chicago White Sox",
+      "category": "fictional",
+      "era": "Field of Dreams (1989)",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#C4CED4",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-14",
+      "name": "Squints Palledorous",
+      "team": "SLT",
+      "teamName": "St. Louis (historical)",
+      "category": "fictional",
+      "era": "The Sandlot (1993)",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-45",
+      "name": "Steve Nebraska",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "fictional",
+      "era": "Major League: Back to the Minors (1998)",
+      "positions": [
+        "SP",
+        "CF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-39",
+      "name": "Tanner Boyle",
+      "team": "BNB",
+      "teamName": "Bad News Bears",
+      "category": "fictional",
+      "era": "The Bad News Bears (1976)",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-42",
+      "name": "Timmy Lupus",
+      "team": "BNB",
+      "teamName": "Bad News Bears",
+      "category": "fictional",
+      "era": "The Bad News Bears (1976)",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-34",
+      "name": "Timmy Timmons",
+      "team": "SLT",
+      "teamName": "St. Louis (historical)",
+      "category": "fictional",
+      "era": "The Sandlot (1993)",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-3",
+      "name": "Willie Mays Hayes",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "fictional",
+      "era": "Major League (1989)",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-1",
+      "name": "Babe Ruth",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "legend",
+      "era": "1920s-1930s",
+      "positions": [
+        "RF",
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-20",
+      "name": "Bob Gibson",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "legend",
+      "era": "1959-1975",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-9",
+      "name": "Christy Mathewson",
+      "team": "NYG",
+      "teamName": "New York Giants",
+      "category": "legend",
+      "era": "1900-1916",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-17",
+      "name": "Cool Papa Bell",
+      "team": "HOM",
+      "teamName": "Homer's Team (Simpsons)",
+      "category": "legend",
+      "era": "Negro Leagues 1922-1946",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#FFD700",
+      "accentColor": "#8B4513",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-8",
+      "name": "Cy Young",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "legend",
+      "era": "1890-1911",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-27",
+      "name": "Derek Jeter",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "legend",
+      "era": "1995-2014",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-30",
+      "name": "Greg Maddux",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "legend",
+      "era": "1986-2008",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-3",
+      "name": "Hank Aaron",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "legend",
+      "era": "1950s-1970s",
+      "positions": [
+        "RF",
+        "LF"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-6",
+      "name": "Honus Wagner",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "legend",
+      "era": "1897-1917",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-12",
+      "name": "Jackie Robinson",
+      "team": "BRK",
+      "teamName": "Brooklyn Dodgers",
+      "category": "legend",
+      "era": "1947-1956",
+      "positions": [
+        "2B",
+        "1B"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-11",
+      "name": "Joe DiMaggio",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "legend",
+      "era": "1936-1951",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-31",
+      "name": "Johnny Bench",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "legend",
+      "era": "1967-1983",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-15",
+      "name": "Josh Gibson",
+      "team": "HOM",
+      "teamName": "Homer's Team (Simpsons)",
+      "category": "legend",
+      "era": "Negro Leagues 1930-1946",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#FFD700",
+      "accentColor": "#8B4513",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-25",
+      "name": "Ken Griffey Jr.",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "legend",
+      "era": "1989-2010",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-10",
+      "name": "Lou Gehrig",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "legend",
+      "era": "1923-1939",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-28",
+      "name": "Mariano Rivera",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "legend",
+      "era": "1995-2013",
+      "positions": [
+        "CL"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-14",
+      "name": "Mickey Mantle",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "legend",
+      "era": "1951-1968",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-22",
+      "name": "Nolan Ryan",
+      "team": "TEX",
+      "teamName": "Texas Rangers",
+      "category": "legend",
+      "era": "1966-1993",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#003278",
+      "accentColor": "#C0111F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-29",
+      "name": "Pedro Martinez",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "legend",
+      "era": "1992-2009",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-21",
+      "name": "Pete Rose",
+      "team": "CIN",
+      "teamName": "Cincinnati Reds",
+      "category": "legend",
+      "era": "1963-1986",
+      "positions": [
+        "LF",
+        "1B",
+        "3B"
+      ],
+      "capColor": "#C6011F",
+      "accentColor": "#000000",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-26",
+      "name": "Randy Johnson",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "legend",
+      "era": "1988-2009",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-24",
+      "name": "Rickey Henderson",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "legend",
+      "era": "1979-2003",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-18",
+      "name": "Roberto Clemente",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "legend",
+      "era": "1955-1972",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-19",
+      "name": "Sandy Koufax",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "legend",
+      "era": "1955-1966",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-16",
+      "name": "Satchel Paige",
+      "team": "HOM",
+      "teamName": "Homer's Team (Simpsons)",
+      "category": "legend",
+      "era": "Negro Leagues & MLB",
+      "positions": [
+        "SP",
+        "RP"
+      ],
+      "capColor": "#FFD700",
+      "accentColor": "#8B4513",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-13",
+      "name": "Stan Musial",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "legend",
+      "era": "1941-1963",
+      "positions": [
+        "LF",
+        "1B"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-4",
+      "name": "Ted Williams",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "legend",
+      "era": "1940s-1950s",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-23",
+      "name": "Tom Seaver",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "legend",
+      "era": "1967-1986",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-5",
+      "name": "Ty Cobb",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "legend",
+      "era": "1905-1928",
+      "positions": [
+        "CF",
+        "RF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "legend-7",
+      "name": "Walter Johnson",
+      "team": "WSH",
+      "teamName": "Washington Nationals",
+      "category": "legend",
+      "era": "1907-1927",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "legend-2",
+      "name": "Willie Mays",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "legend",
+      "era": "1950s-1960s",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-6",
+      "name": "Al",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "3B",
+        "DH"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-7",
+      "name": "Brock",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-8",
+      "name": "Cal",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-5",
+      "name": "Cooper",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-13",
+      "name": "Deacon",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "2B",
+        "IF"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-10",
+      "name": "Ethan",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "2B",
+        "DH"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-9",
+      "name": "Hopkins",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-14",
+      "name": "Hunter",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "RF",
+        "CF"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-4",
+      "name": "James",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-11",
+      "name": "Jared",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "3B",
+        "IF"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-1",
+      "name": "KB",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-3",
+      "name": "Luke",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-2",
+      "name": "Nate",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "niner-12",
+      "name": "Winfield",
+      "team": "9RS",
+      "teamName": "Niners",
+      "category": "niners",
+      "era": "The Niners 12U",
+      "positions": [
+        "LF",
+        "DH"
+      ],
+      "capColor": "#333333",
+      "accentColor": "#FFD700",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-27",
+      "name": "Dock Ellis (LSD)",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "oddity",
+      "era": "June 12, 1970",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-25",
+      "name": "Eddie Gaedel",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "oddity",
+      "era": "1951 (Real!)",
+      "positions": [
+        "DH"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "fiction-28",
+      "name": "Mark 'The Bird' Fidrych",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "oddity",
+      "era": "1976 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "fiction-26",
+      "name": "Sidd Finch",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "oddity",
+      "era": "April Fools 1985",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-24",
+      "name": "Aaron Judge '17",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "peak",
+      "era": "2017 Rookie Season",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "wonder-12",
+      "name": "Aaron Small '05",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "peak",
+      "era": "2005 Season - One-Year Wonder",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-23",
+      "name": "Albert Pujols '01",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "peak",
+      "era": "2001 Rookie Season",
+      "positions": [
+        "3B",
+        "LF",
+        "RF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-1",
+      "name": "Barry Bonds '01",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "peak",
+      "era": "2001 Season",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-2",
+      "name": "Barry Bonds '04",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "peak",
+      "era": "2004 Season",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-5",
+      "name": "Bob Gibson '68",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "peak",
+      "era": "1968 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-1",
+      "name": "Brady Anderson '96",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "peak",
+      "era": "1996 Season - One-Year Wonder",
+      "positions": [
+        "CF",
+        "RF"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "wonder-6",
+      "name": "Bret Saberhagen '89",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "peak",
+      "era": "1989 Season - One-Year Wonder",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-2",
+      "name": "Chris Davis '13",
+      "team": "BAL",
+      "teamName": "Baltimore Orioles",
+      "category": "peak",
+      "era": "2013 Season - One-Year Wonder",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#DF4601",
+      "accentColor": "#000000",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-18",
+      "name": "Clayton Kershaw '14",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "peak",
+      "era": "2014 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-10",
+      "name": "Dontrelle Willis '03",
+      "team": "FLA",
+      "teamName": "Florida Marlins",
+      "category": "peak",
+      "era": "2003 Season - One-Year Wonder",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-25",
+      "name": "Dwight Gooden '84",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "peak",
+      "era": "1984 Rookie Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-6",
+      "name": "Dwight Gooden '85",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "peak",
+      "era": "1985 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-22",
+      "name": "Eric Gagne '03",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "peak",
+      "era": "2003 Season",
+      "positions": [
+        "CL"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-27",
+      "name": "Fernando Valenzuela '81",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "peak",
+      "era": "1981 Rookie Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-26",
+      "name": "Fred Lynn '75",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "peak",
+      "era": "1975 Rookie Season",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-20",
+      "name": "Greg Maddux '95",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "peak",
+      "era": "1995 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-13",
+      "name": "Hack Wilson '30",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "peak",
+      "era": "1930 Season",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-35",
+      "name": "Herb Score '55",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "peak",
+      "era": "1955 Rookie Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-28",
+      "name": "Hideo Nomo '95",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "peak",
+      "era": "1995 Rookie Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-7",
+      "name": "Hideo Nomo '95",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "peak",
+      "era": "1995 Season - One-Year Wonder",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-10",
+      "name": "Ichiro Suzuki '01",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "peak",
+      "era": "2001 Season",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-11",
+      "name": "Ichiro Suzuki '04",
+      "team": "SEA",
+      "teamName": "Seattle Mariners",
+      "category": "peak",
+      "era": "2004 Season",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#0C2C56",
+      "accentColor": "#005C5C",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-31",
+      "name": "Jackie Robinson '47",
+      "team": "BRK",
+      "teamName": "Brooklyn Dodgers",
+      "category": "peak",
+      "era": "1947 Rookie Season",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-17",
+      "name": "Jacob deGrom '18",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "peak",
+      "era": "2018 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-4",
+      "name": "Joe Charboneau '80",
+      "team": "CLE",
+      "teamName": "Cleveland Guardians",
+      "category": "peak",
+      "era": "1980 Season - One-Year Wonder",
+      "positions": [
+        "LF",
+        "DH"
+      ],
+      "capColor": "#00385D",
+      "accentColor": "#E50022",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-33",
+      "name": "Joe DiMaggio '36",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "peak",
+      "era": "1936 Rookie Season",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-30",
+      "name": "Kerry Wood '98",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "peak",
+      "era": "1998 Rookie Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-9",
+      "name": "Kerry Wood '98",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "peak",
+      "era": "1998 Season - One-Year Wonder",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-16",
+      "name": "Kevin Maas '90",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "peak",
+      "era": "1990 Season - One-Year Wonder",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-34",
+      "name": "Mark Fidrych '76",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "peak",
+      "era": "1976 Rookie Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-5",
+      "name": "Mark Fidrych '76",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "peak",
+      "era": "1976 Season - One-Year Wonder",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-29",
+      "name": "Mark McGwire '87",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "peak",
+      "era": "1987 Rookie Season",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "wonder-8",
+      "name": "Mark Prior '03",
+      "team": "CHC",
+      "teamName": "Chicago Cubs",
+      "category": "peak",
+      "era": "2003 Season - One-Year Wonder",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#0E3386",
+      "accentColor": "#CC3433",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-19",
+      "name": "Max Scherzer '16",
+      "team": "WSH",
+      "teamName": "Washington Nationals",
+      "category": "peak",
+      "era": "2016 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#AB0003",
+      "accentColor": "#14225A",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-15",
+      "name": "Mike Trout '12",
+      "team": "LAA",
+      "teamName": "Los Angeles Angels",
+      "category": "peak",
+      "era": "2012 Season",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-14",
+      "name": "Mookie Betts '18",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "peak",
+      "era": "2018 Season",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "wonder-3",
+      "name": "Norm Cash '61",
+      "team": "DET",
+      "teamName": "Detroit Tigers",
+      "category": "peak",
+      "era": "1961 Season - One-Year Wonder",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FA4616",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-7",
+      "name": "Orel Hershiser '88",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "peak",
+      "era": "1988 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-17",
+      "name": "Pat Listach '92",
+      "team": "MIL",
+      "teamName": "Milwaukee Brewers",
+      "category": "peak",
+      "era": "1992 Season - One-Year Wonder",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#FFC52F",
+      "accentColor": "#12284B",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-3",
+      "name": "Pedro Martinez '00",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "peak",
+      "era": "2000 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-4",
+      "name": "Pedro Martinez '99",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "peak",
+      "era": "1999 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-21",
+      "name": "Randy Johnson '01",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "peak",
+      "era": "2001 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-15",
+      "name": "Raul Mondesi '94",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "peak",
+      "era": "1994 Season - One-Year Wonder",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "wonder-11",
+      "name": "Rick Ankiel '07",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "peak",
+      "era": "2007 Season - One-Year Wonder",
+      "positions": [
+        "CF",
+        "LF"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-9",
+      "name": "Rickey Henderson '82",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "peak",
+      "era": "1982 Season",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-8",
+      "name": "Roger Clemens '86",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "peak",
+      "era": "1986 Season",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-12",
+      "name": "Roger Maris '61",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "peak",
+      "era": "1961 Season",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "wonder-13",
+      "name": "Shelby Miller '13",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "peak",
+      "era": "2013 Season - One-Year Wonder",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "peak-16",
+      "name": "Shohei Ohtani '21",
+      "team": "LAA",
+      "teamName": "Los Angeles Angels",
+      "category": "peak",
+      "era": "2021 Season",
+      "positions": [
+        "SP",
+        "DH"
+      ],
+      "capColor": "#BA0021",
+      "accentColor": "#003263",
+      "bats": "L",
+      "isPitcher": true
+    },
+    {
+      "id": "wonder-14",
+      "name": "Steve Balboni '85",
+      "team": "KC",
+      "teamName": "Kansas City Royals",
+      "category": "peak",
+      "era": "1985 Season - One-Year Wonder",
+      "positions": [
+        "1B"
+      ],
+      "capColor": "#004687",
+      "accentColor": "#BD9B60",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "peak-32",
+      "name": "Ted Williams '39",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "peak",
+      "era": "1939 Rookie Season",
+      "positions": [
+        "RF"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-19",
+      "name": "Aaron Boone '03 ALCS",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "playoff",
+      "era": "2003 ALCS",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-16",
+      "name": "Al Weis '69 WS",
+      "team": "NYM",
+      "teamName": "New York Mets",
+      "category": "playoff",
+      "era": "1969 World Series",
+      "positions": [
+        "2B",
+        "SS"
+      ],
+      "capColor": "#002D72",
+      "accentColor": "#FF5910",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-6",
+      "name": "Bill Mazeroski '60 WS",
+      "team": "PIT",
+      "teamName": "Pittsburgh Pirates",
+      "category": "playoff",
+      "era": "1960 World Series",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#27251F",
+      "accentColor": "#FDB827",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-25",
+      "name": "Brian Doyle '78 WS",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "playoff",
+      "era": "1978 World Series",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-17",
+      "name": "Bucky Dent '78 Playoff",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "playoff",
+      "era": "1978 Tiebreaker",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-11",
+      "name": "Chad Curtis '99 WS",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "playoff",
+      "era": "1999 World Series",
+      "positions": [
+        "LF",
+        "CF"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-5",
+      "name": "Curt Schilling '04 ALCS",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "playoff",
+      "era": "2004 ALCS",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "playoff-7",
+      "name": "David Freese '11 WS",
+      "team": "STL",
+      "teamName": "St. Louis Cardinals",
+      "category": "playoff",
+      "era": "2011 World Series",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#C41E3A",
+      "accentColor": "#0C2340",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-3",
+      "name": "David Ortiz '04 ALCS",
+      "team": "BOS",
+      "teamName": "Boston Red Sox",
+      "category": "playoff",
+      "era": "2004 ALCS",
+      "positions": [
+        "DH",
+        "1B"
+      ],
+      "capColor": "#BD3039",
+      "accentColor": "#0C2340",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-21",
+      "name": "Devon White '92 WS",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "playoff",
+      "era": "1992 World Series",
+      "positions": [
+        "CF"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-8",
+      "name": "Edgar Renteria '97 WS",
+      "team": "FLA",
+      "teamName": "Florida Marlins",
+      "category": "playoff",
+      "era": "1997 World Series",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#000000",
+      "accentColor": "#00A3E0",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-26",
+      "name": "Gene Tenace '72 WS",
+      "team": "OAK",
+      "teamName": "Oakland Athletics",
+      "category": "playoff",
+      "era": "1972 World Series",
+      "positions": [
+        "C",
+        "1B"
+      ],
+      "capColor": "#003831",
+      "accentColor": "#EFB21E",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-13",
+      "name": "Jeff Blauser '95 Braves",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "playoff",
+      "era": "1995 Postseason",
+      "positions": [
+        "SS"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-24",
+      "name": "John Wetteland '96 WS",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "playoff",
+      "era": "1996 World Series",
+      "positions": [
+        "CL"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "playoff-2",
+      "name": "Kirk Gibson '88 WS",
+      "team": "LAD",
+      "teamName": "Los Angeles Dodgers",
+      "category": "playoff",
+      "era": "1988 World Series",
+      "positions": [
+        "LF",
+        "DH"
+      ],
+      "capColor": "#005A9C",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-23",
+      "name": "Lonnie Smith '91 WS",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "playoff",
+      "era": "4 World Series",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-18",
+      "name": "Luis Gonzalez '01 WS",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "playoff",
+      "era": "2001 World Series",
+      "positions": [
+        "LF"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-10",
+      "name": "Luis Sojo '00 WS",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "playoff",
+      "era": "2000 World Series",
+      "positions": [
+        "2B",
+        "SS"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-4",
+      "name": "Madison Bumgarner '14 WS",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "playoff",
+      "era": "2014 World Series",
+      "positions": [
+        "SP"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "playoff-22",
+      "name": "Marco Scutaro '12 NLCS",
+      "team": "SF",
+      "teamName": "San Francisco Giants",
+      "category": "playoff",
+      "era": "2012 NLCS",
+      "positions": [
+        "2B",
+        "SS"
+      ],
+      "capColor": "#FD5A1E",
+      "accentColor": "#27251F",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-9",
+      "name": "Mark Lemke '91 WS",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "playoff",
+      "era": "1991 World Series",
+      "positions": [
+        "2B"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-27",
+      "name": "Mark Wohlers '95 WS",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "playoff",
+      "era": "1995 World Series",
+      "positions": [
+        "CL",
+        "SU"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "R",
+      "isPitcher": true
+    },
+    {
+      "id": "playoff-12",
+      "name": "Otis Nixon '92 NLCS",
+      "team": "ATL",
+      "teamName": "Atlanta Braves",
+      "category": "playoff",
+      "era": "1992 NLCS",
+      "positions": [
+        "CF",
+        "LF"
+      ],
+      "capColor": "#CE1141",
+      "accentColor": "#13274F",
+      "bats": "S",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-15",
+      "name": "Pat Borders '92 WS",
+      "team": "TOR",
+      "teamName": "Toronto Blue Jays",
+      "category": "playoff",
+      "era": "1992 World Series",
+      "positions": [
+        "C"
+      ],
+      "capColor": "#134A8E",
+      "accentColor": "#1D2D5C",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-1",
+      "name": "Reggie Jackson '77 WS",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "playoff",
+      "era": "1977 World Series",
+      "positions": [
+        "RF",
+        "DH"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "L",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-14",
+      "name": "Scott Brosius '98 WS",
+      "team": "NYY",
+      "teamName": "New York Yankees",
+      "category": "playoff",
+      "era": "1998 World Series",
+      "positions": [
+        "3B"
+      ],
+      "capColor": "#0C2340",
+      "accentColor": "#FFFFFF",
+      "bats": "R",
+      "isPitcher": false
+    },
+    {
+      "id": "playoff-20",
+      "name": "Tony Womack '01 WS",
+      "team": "ARI",
+      "teamName": "Arizona Diamondbacks",
+      "category": "playoff",
+      "era": "2001 World Series",
+      "positions": [
+        "SS",
+        "2B"
+      ],
+      "capColor": "#A71930",
+      "accentColor": "#E3D4AD",
+      "bats": "L",
+      "isPitcher": false
+    }
+  ]
+}

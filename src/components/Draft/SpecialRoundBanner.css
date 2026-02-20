@@ -1,0 +1,155 @@
+.special-round-banner {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 2px solid transparent;
+  animation: pulse-border 2s infinite;
+}
+
+.special-round-banner.legends-round {
+  border-color: #ffd700;
+  background: linear-gradient(135deg, #2d2a1f 0%, #1a1812 100%);
+}
+
+.special-round-banner.peak-round {
+  border-color: #ff6b6b;
+  background: linear-gradient(135deg, #2d1f1f 0%, #1a1212 100%);
+}
+
+.special-round-banner.fictional-round {
+  border-color: #9b59b6;
+  background: linear-gradient(135deg, #261f2d 0%, #16121a 100%);
+}
+
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 10px var(--glow-color, #ffd700); }
+  50% { box-shadow: 0 0 25px var(--glow-color, #ffd700); }
+}
+
+.banner-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, var(--glow-color, #ffd700) 0%, transparent 70%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.banner-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.banner-icon {
+  font-size: 2.5rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.banner-text {
+  flex: 1;
+}
+
+.banner-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #fff, var(--glow-color, #ffd700), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.banner-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.banner-round {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.banner-decoration {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.banner-decoration .star {
+  color: var(--glow-color, #ffd700);
+  font-size: 0.75rem;
+  opacity: 0.5;
+  animation: twinkle 1.5s infinite;
+}
+
+.banner-decoration .star:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.banner-decoration .star:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Card styling for special players */
+.player-card.legend-card {
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.player-card.peak-card {
+  border: 2px solid #ff6b6b;
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+.player-card.fictional-card {
+  border: 2px solid #9b59b6;
+  box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
+}
+
+.special-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.era-tag {
+  font-size: 0.65rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 0.25rem;
+}

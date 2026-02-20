@@ -1,0 +1,111 @@
+.install-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1a365d 0%, #0a1628 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  z-index: 9999;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.3s ease;
+  border-top: 2px solid #2872db;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.install-content {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.install-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.install-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.install-text strong {
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.install-text span {
+  font-size: 0.7rem;
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.install-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.install-btn {
+  background: #e8682a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.install-btn:active {
+  transform: scale(0.96);
+}
+
+.install-dismiss {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.install-dismiss:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 400px) {
+  .install-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .install-actions {
+    justify-content: stretch;
+  }
+
+  .install-btn,
+  .install-dismiss {
+    flex: 1;
+    text-align: center;
+  }
+}

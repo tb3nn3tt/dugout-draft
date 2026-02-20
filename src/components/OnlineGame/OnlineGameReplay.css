@@ -1,0 +1,67 @@
+.online-game-replay {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.replay-game-header {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  padding: 8px 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.replay-content {
+  display: flex;
+  gap: 16px;
+  min-height: 0;
+  flex: 1;
+}
+
+.replay-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+  width: 280px;
+}
+
+.replay-right {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.replay-right .enhanced-play-log {
+  height: 420px;
+  max-height: 420px;
+}
+
+/* Series score in watch mode */
+.series-score-display.watch-mode {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 700px) {
+  .replay-content {
+    flex-direction: column;
+  }
+
+  .replay-left {
+    width: 100%;
+  }
+
+  .replay-right .enhanced-play-log {
+    height: 300px;
+    max-height: 300px;
+  }
+}
