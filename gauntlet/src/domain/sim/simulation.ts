@@ -186,14 +186,14 @@ export function simulateAtBat(
   const kProb = oddsRatio(bK, pK, LEAGUE.K);
 
   // Walks (+ HBP folded in): batter earns with eye; pitcher prevents with control.
-  const bBB = LEAGUE.BB * rateFactor(eye, 1.30, 1) * offensiveMultiplier;
-  const pBB = LEAGUE.BB * rateFactor(control, 1.30, -1) / pitchingMultiplier;
+  const bBB = LEAGUE.BB * rateFactor(eye, 1.24, 1) * offensiveMultiplier;
+  const pBB = LEAGUE.BB * rateFactor(control, 1.24, -1) / pitchingMultiplier;
   const bbProb = oddsRatio(bBB, pBB, LEAGUE.BB) + LEAGUE.HBP;
 
   // Home runs: batter drives with power; pitcher suppresses with control+breaking.
   const parkHR = parkEffect?.hrFactor ?? 1.0;
-  const bHR = LEAGUE.HR * rateFactor(power, 1.42, 1) * offensiveMultiplier;
-  const pHR = LEAGUE.HR * rateFactor(control * 0.5 + breaking * 0.5, 1.30, -1) / pitchingMultiplier;
+  const bHR = LEAGUE.HR * rateFactor(power, 1.34, 1) * offensiveMultiplier;
+  const pHR = LEAGUE.HR * rateFactor(control * 0.5 + breaking * 0.5, 1.32, -1) / pitchingMultiplier;
   const hrProb = oddsRatio(bHR, pHR, LEAGUE.HR) * parkHR;
 
   // Guard a floor so at least ~8% of PAs are balls in play. If the three
@@ -209,7 +209,7 @@ export function simulateAtBat(
   // BABIP matchup: batter (contact+speed) vs pitcher stuff, park + defense applied.
   const parkRun = parkEffect?.runFactor ?? 1.0;
   const fieldingReduction = 1 + coachFielding * 0.004; // better D → fewer hits on balls in play
-  const bBABIP = LEAGUE.BABIP * rateFactor(contact * 0.7 + speed * 0.3, 1.12, 1) * offensiveMultiplier;
+  const bBABIP = LEAGUE.BABIP * rateFactor(contact * 0.7 + speed * 0.3, 1.09, 1) * offensiveMultiplier;
   const pBABIP = LEAGUE.BABIP * rateFactor(stuff, 1.10, -1) / pitchingMultiplier;
   const babip = Math.min(0.420, Math.max(0.220, oddsRatio(bBABIP, pBABIP, LEAGUE.BABIP) * parkRun / fieldingReduction));
 
