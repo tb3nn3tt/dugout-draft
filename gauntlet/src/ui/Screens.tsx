@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { DRAFT_SLOTS, TOTAL_PICKS } from '../domain/draftFlow';
 import { loadHof, rankHof } from '../domain/hallOfFame';
+import { computeAwards, fmtAvg } from '../domain/seriesAwards';
 import { CardTile } from './CardTile';
 
 type G = ReturnType<typeof useGauntlet>;
@@ -11,6 +12,7 @@ type G = ReturnType<typeof useGauntlet>;
 // ---------------------------------------------------------------------------
 export function MenuScreen({ g }: { g: G }) {
   const [name, setName] = useState(localStorage.getItem('dugout-gauntlet-name') ?? '');
+  const [view, setView] = useState<'menu' | 'hof'>('menu');
   const top = rankHof(loadHof()).slice(0, 3);
 
   const start = () => {
@@ -18,6 +20,8 @@ export function MenuScreen({ g }: { g: G }) {
     localStorage.setItem('dugout-gauntlet-name', teamName);
     g.startRun(teamName);
   };
+
+  if (view === 'hof') return <HallOfFameScreen onBack={() => setView('menu')} />;
 
   return (
     <div className="stack" style={{ marginTop: 24, gap: 20 }}>
@@ -50,8 +54,42 @@ export function MenuScreen({ g }: { g: G }) {
               <span className="dim">{e.streak}-0 · {e.runDiff >= 0 ? '+' : ''}{e.runDiff}</span>
             </div>
           ))}
+          <button className="btn btn--ghost" onClick={() => setView('hof')}>View full Hall of Fame</button>
         </div>
       )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Hall of Fame (full board)
+// ---------------------------------------------------------------------------
+export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
+  const entries = rankHof(loadHof());
+  return (
+    <div className="stack" style={{ marginTop: 16, gap: 14 }}>
+      <div className="row" style={{ justifyContent: 'space-between' }}>
+        <h1 style={{ fontSize: 26 }}>🏆 Hall of Fame</h1>
+        <button className="btn btn--ghost" style={{ width: 'auto', minHeight: 40, padding: '0 14px' }} onClick={onBack}>Back</button>
+      </div>
+      {entries.length === 0 && <p className="dim center" style={{ marginTop: 30 }}>No teams yet. Go make history.</p>}
+      <div className="stack" style={{ gap: 8 }}>
+        {entries.map((e, i) => (
+          <div key={i} className="card row" style={{ justifyContent: 'space-between', padding: '12px 14px' }}>
+            <div>
+              <div><strong>#{i + 1}</strong> &nbsp;{e.teamName}</div>
+              <div className="dim" style={{ fontSize: 12 }}>
+                {e.managerName ? `mgr ${e.managerName.split(' ').slice(-1)}` : ''}
+                {e.stadiumName ? ` · ${e.stadiumName}` : ''}
+              </div>
+            </div>
+            <div className="center">
+              <div style={{ fontWeight: 900, color: 'var(--accent)' }}>{e.streak}-0</div>
+              <div className="dim" style={{ fontSize: 12 }}>{e.runDiff >= 0 ? '+' : ''}{e.runDiff}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -155,11 +193,16 @@ export function MatchupScreen({ g }: { g: G }) {
 export function SeriesResultScreen({ g }: { g: G }) {
   const r = g.state.lastResult;
   const last = g.state.history[g.state.history.length - 1];
+  const yourIds = useMemo(
+    () => new Set((g.state.team?.roster ?? []).map(p => p.id)),
+    [g.state.team]
+  );
+  const awards = useMemo(() => (r ? computeAwards(r, yourIds) : null), [r, yourIds]);
   if (!r || !last) return null;
   const won = r.winner === 'you';
 
   return (
-    <div className="stack center" style={{ marginTop: 40, gap: 18 }}>
+    <div className="stack center" style={{ marginTop: 32, gap: 16 }}>
       <h1 style={{ fontSize: 44, color: won ? 'var(--win)' : 'var(--loss)' }}>
         {won ? 'SERIES WON' : 'ELIMINATED'}
       </h1>
@@ -172,6 +215,24 @@ export function SeriesResultScreen({ g }: { g: G }) {
           <span><strong>{r.oppRuns}</strong></span>
         </div>
       </div>
+
+      {awards && (awards.mvp || awards.ace) && (
+        <div className="card stack" style={{ width: '100%', gap: 10 }}>
+          <h2 style={{ fontSize: 16 }}>⭐ Series Standouts</h2>
+          {awards.mvp && (
+            <div className="row" style={{ justifyContent: 'space-between' }}>
+              <span>🏅 <strong>{awards.mvp.name}</strong> <span className="dim">MVP</span></span>
+              <span className="dim">{fmtAvg(awards.mvp.avg)}, {awards.mvp.hr} HR, {awards.mvp.rbi} RBI</span>
+            </div>
+          )}
+          {awards.ace && (
+            <div className="row" style={{ justifyContent: 'space-between' }}>
+              <span>🔥 <strong>{awards.ace.name}</strong> <span className="dim">Ace</span></span>
+              <span className="dim">{awards.ace.era.toFixed(2)} ERA, {awards.ace.so} K</span>
+            </div>
+          )}
+        </div>
+      )}
 
       {won ? (
         <>
