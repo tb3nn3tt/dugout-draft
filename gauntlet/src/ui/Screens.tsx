@@ -1,15 +1,14 @@
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound } from '../domain/draftRounds';
 import { TIER_COLORS } from '../domain/players';
 import { Player } from '../domain/types';
 import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
-import { computeAwards, runAwards, fmtAvg } from '../domain/seriesAwards';
-import { overallToGrade } from '../domain/sim/helpers';
+import { runAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { BUDGET } from '../domain/salary';
 import { ACHIEVEMENTS, loadUnlocked } from '../domain/achievements';
-import { isSoundOn, setSoundOn, sfxPick, sfxLock, sfxWin, sfxLoss } from '../domain/sound';
+import { isSoundOn, setSoundOn, sfxPick, sfxLock } from '../domain/sound';
 import { CardTile } from './CardTile';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
@@ -306,172 +305,37 @@ function RoundBanner({ round, color }: { round: DraftRound; color: string }) {
 }
 
 // ---------------------------------------------------------------------------
-// Matchup / simulating
+// The Gauntlet — auto-runs the whole run; the "This Run" list fills in live
 // ---------------------------------------------------------------------------
-export function MatchupScreen({ g }: { g: G }) {
-  const { opponent, streak, team } = g.state;
-
-  if (!opponent) {
-    return (
-      <div className="stack center" style={{ marginTop: 80, gap: 16 }}>
-        <div className="spinner" />
-        <h2>Scouting your next opponent…</h2>
-        <p className="dim">Streak: {streak}-0</p>
-      </div>
-    );
-  }
-
-  if (g.simulating) {
-    return (
-      <div className="stack center" style={{ marginTop: 80, gap: 16 }}>
-        <div className="spinner" />
-        <h2>Simulating the series…</h2>
-        <p className="dim">{team?.name} vs {opponent.displayName}</p>
-      </div>
-    );
-  }
-
+export function GauntletRunScreen({ g }: { g: G }) {
+  const { history, streak, team } = g.state;
+  const foe = g.currentFoe;
   return (
-    <div className="stack" style={{ marginTop: 24, gap: 18 }}>
+    <div className="stack" style={{ marginTop: 18, gap: 14 }}>
       <div className="center stack" style={{ gap: 2 }}>
-        <span className="dim" style={{ letterSpacing: 1, fontSize: 13 }}>SERIES {streak + 1} · BEST OF 7</span>
-        <h2>Your Next Challenger</h2>
+        <span className="dim" style={{ letterSpacing: 2.5, fontSize: 11 }}>THE GAUNTLET</span>
+        <h1 style={{ fontSize: 58, color: 'var(--amber)' }}>{streak}-0</h1>
+        <strong style={{ fontSize: 18 }}>{team?.name}</strong>
       </div>
 
-      <div className="card stack center" style={{ gap: 6 }}>
-        <div className="row" style={{ justifyContent: 'center', gap: 8 }}>
-          <span className={`badge ${opponent.kind === 'ghost' ? 'badge--ghost' : opponent.kind === 'famous' ? 'badge--ghost' : 'badge--cpu'}`}>
-            {opponent.kind === 'ghost' ? '👤 REAL TEAM' : opponent.kind === 'famous' ? '🏆 LEGENDARY' : '🤖 CHALLENGER'}
-          </span>
-          {opponent.era && <span className="badge">{opponent.era}</span>}
-          {opponent.streak > 0 && opponent.kind === 'ghost' && <span className="badge">🔥 {opponent.streak}-0</span>}
-        </div>
-        <h1 style={{ fontSize: 28 }}>{opponent.emoji ? `${opponent.emoji} ` : ''}{opponent.displayName}</h1>
-        {opponent.blurb
-          ? <p className="dim" style={{ fontSize: 13, fontStyle: 'italic' }}>{opponent.blurb}</p>
-          : <p className="dim">drafted by {opponent.ownerName}</p>}
-      </div>
-
-      <div className="row center" style={{ justifyContent: 'center', gap: 12, fontWeight: 800 }}>
-        <span>{team?.name}</span>
-        <span className="dim">vs</span>
-        <span>{opponent.displayName}</span>
-      </div>
-
-      {(() => {
-        const pwr = (t?: { roster: { overall: number }[] }) => {
-          if (!t) return 0;
-          const top = [...t.roster].sort((a, b) => b.overall - a.overall).slice(0, 13);
-          return top.length ? Math.round(top.reduce((a, p) => a + p.overall, 0) / top.length) : 0;
-        };
-        const me = pwr(team ?? undefined), foe = pwr(opponent.team);
-        return (
-          <div className="scout">
-            <div className="scout__side"><div className="scout__lbl">YOUR POWER</div><div className="scout__grade">{overallToGrade(me)}</div></div>
-            <div className="scout__vs">VS</div>
-            <div className="scout__side"><div className="scout__lbl">THEIR POWER</div><div className="scout__grade" style={{ color: foe > me ? 'var(--loss)' : 'var(--win)' }}>{overallToGrade(foe)}</div></div>
+      <div className="runlist">
+        {history.map((h, i) => (
+          <div key={i} className={`runrow ${h.won ? 'runrow--w' : 'runrow--l'}`}>
+            <span className="runrow__n">{i + 1}</span>
+            <span className="runrow__foe">{h.won ? '✓' : '✕'} {h.opponentName}</span>
+            <span className="runrow__score">{h.wins}–{h.losses}</span>
           </div>
-        );
-      })()}
-
-      <button className="btn" onClick={g.playCurrentSeries}>Play the Series ▶</button>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Series result
-// ---------------------------------------------------------------------------
-export function SeriesResultScreen({ g }: { g: G }) {
-  const r = g.state.lastResult;
-  const last = g.state.history[g.state.history.length - 1];
-  const yourIds = useMemo(
-    () => new Set((g.state.team?.roster ?? []).map(p => p.id)),
-    [g.state.team]
-  );
-  const awards = useMemo(() => (r ? computeAwards(r, yourIds) : null), [r, yourIds]);
-  const total = r?.gameLines.length ?? 0;
-  const [revealed, setRevealed] = useState(0);
-
-  // Reveal games one at a time for tension; settle a beat after the clincher.
-  useEffect(() => {
-    if (revealed >= total) return;
-    const t = setTimeout(() => setRevealed(v => v + 1), revealed === total - 1 ? 500 : 720);
-    return () => clearTimeout(t);
-  }, [revealed, total]);
-
-  const sfxFired = useRef(false);
-  useEffect(() => {
-    if (r && revealed >= total && total > 0 && !sfxFired.current) {
-      sfxFired.current = true;
-      (r.winner === 'you' ? sfxWin : sfxLoss)();
-    }
-  }, [revealed, total, r]);
-
-  if (!r || !last) return null;
-  const won = r.winner === 'you';
-  const done = revealed >= total;
-  const shown = r.gameLines.slice(0, revealed);
-  const yW = shown.filter(x => x.won).length;
-  const oW = shown.filter(x => !x.won).length;
-
-  return (
-    <div className="stack center" style={{ marginTop: 32, gap: 16 }}>
-      <h1 style={{ fontSize: 44, color: !done ? 'var(--text)' : won ? 'var(--win)' : 'var(--loss)' }}>
-        {!done ? `${yW}–${oW}` : won ? 'SERIES WON' : 'ELIMINATED'}
-      </h1>
-      <div className="card stack center" style={{ gap: 8, width: '100%' }}>
-        {done && <div style={{ fontSize: 40, fontWeight: 900 }}>{r.youWins}–{r.oppWins}</div>}
-        <p className="dim">{done ? `vs ${last.opponentName}` : `vs ${last.opponentName} · best of 7`}</p>
-        <div className="gamelines">
-          {shown.map((gl, i) => (
-            <div key={i} className={`gameline gameline--in ${gl.won ? 'gameline--w' : 'gameline--l'}`}>
-              <div className="gameline__g">G{i + 1}</div>
-              <div className="gameline__s">{gl.you}-{gl.opp}</div>
-              <div className="gameline__r">{gl.won ? 'W' : 'L'}</div>
-            </div>
-          ))}
-          {Array.from({ length: total - revealed }).map((_, i) => (
-            <div key={`p${i}`} className="gameline gameline--pending"><div className="gameline__g">G{revealed + i + 1}</div><div className="gameline__s">·</div></div>
-          ))}
-        </div>
-        {done && (
-          <div className="row" style={{ justifyContent: 'center', gap: 16 }}>
-            <span>Runs: <strong>{r.youRuns}</strong></span>
-            <span className="dim">–</span>
-            <span><strong>{r.oppRuns}</strong></span>
+        ))}
+        {foe && (
+          <div className="runrow runrow--live">
+            <span className="runrow__n">{history.length + 1}</span>
+            <span className="runrow__foe">{foe.emoji ? `${foe.emoji} ` : ''}{foe.displayName}</span>
+            <span className="runrow__score"><span className="livedot" /> live</span>
           </div>
         )}
       </div>
 
-      {!done && <button className="btn btn--ghost" onClick={() => setRevealed(total)}>Skip ⏩</button>}
-
-      {done && awards && (awards.mvp || awards.ace) && (
-        <div className="card stack" style={{ width: '100%', gap: 10 }}>
-          <h2 style={{ fontSize: 16 }}>⭐ Series Standouts</h2>
-          {awards.mvp && (
-            <div className="row" style={{ justifyContent: 'space-between' }}>
-              <span>🏅 <strong>{awards.mvp.name}</strong> <span className="dim">MVP</span></span>
-              <span className="dim">{fmtAvg(awards.mvp.avg)}, {awards.mvp.hr} HR, {awards.mvp.rbi} RBI</span>
-            </div>
-          )}
-          {awards.ace && (
-            <div className="row" style={{ justifyContent: 'space-between' }}>
-              <span>🔥 <strong>{awards.ace.name}</strong> <span className="dim">Ace</span></span>
-              <span className="dim">{awards.ace.era.toFixed(2)} ERA, {awards.ace.so} K</span>
-            </div>
-          )}
-        </div>
-      )}
-
-      {won ? (
-        <>
-          <p className="center">🔥 Streak: <strong>{g.state.streak}-0</strong></p>
-          <button className="btn" onClick={g.nextOpponent}>Next Opponent ▶</button>
-        </>
-      ) : (
-        <button className="btn" onClick={g.nextOpponent}>See Run Summary</button>
-      )}
+      {foe?.blurb && <p className="dim center" style={{ fontSize: 12, fontStyle: 'italic' }}>{foe.blurb}</p>}
     </div>
   );
 }

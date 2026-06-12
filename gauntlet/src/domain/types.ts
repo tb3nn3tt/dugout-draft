@@ -491,9 +491,7 @@ export interface GhostTeam {
 export type RunPhase =
   | 'menu'
   | 'drafting'
-  | 'matchmaking'
-  | 'series'
-  | 'series_result'
+  | 'gauntlet'      // auto-playing the run; the series list fills in live
   | 'run_over';
 
 export interface SeriesOutcome {

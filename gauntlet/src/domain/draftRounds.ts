@@ -11,14 +11,26 @@ import { capTier, affordable, cardCost } from './salary';
 // tier) cell has a full slate.
 // ============================================================================
 
-// How many of each role a full roster needs (28 total incl. manager + stadium).
+// Full 28-man roster the sim needs.
 export const ROLE_REQUIREMENTS: Record<string, number> = {
   C: 1, '1B': 1, '2B': 1, '3B': 1, SS: 1, LF: 1, CF: 1, RF: 1, DH: 1,
   SP: 4, CL: 1, SU: 2, MRP: 2, LRP: 1, LOOGY: 1,
   BC: 1, PH: 2, PR: 1, IFD: 1, OFD: 1,
   HC: 1, ST: 1,
 };
-export const TOTAL_PICKS = Object.values(ROLE_REQUIREMENTS).reduce((a, b) => a + b, 0);
+
+// You only INTERACTIVELY draft the marquee 14 — the players who define a team —
+// so a run is quick to click through. The depth (extra arms + bench) auto-fills.
+export const MARQUEE_REQUIREMENTS: Record<string, number> = {
+  C: 1, '1B': 1, '2B': 1, '3B': 1, SS: 1, LF: 1, CF: 1, RF: 1, DH: 1, // 9 lineup
+  SP: 2, CL: 1,                                                       // ace + #2 + closer
+  HC: 1, ST: 1,                                                       // manager + ballpark
+};
+export const DEPTH_REQUIREMENTS: Record<string, number> = {
+  SP: 2, SU: 2, MRP: 2, LRP: 1, LOOGY: 1,   // rotation depth + bullpen
+  BC: 1, PH: 2, PR: 1, IFD: 1, OFD: 1,      // bench
+};
+export const TOTAL_PICKS = Object.values(MARQUEE_REQUIREMENTS).reduce((a, b) => a + b, 0);
 
 export interface DraftRound {
   role: Position;

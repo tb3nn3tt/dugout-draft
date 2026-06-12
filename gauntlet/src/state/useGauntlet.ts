@@ -1,7 +1,7 @@
 import { useReducer, useEffect, useRef, useCallback, useState } from 'react';
 import { gauntletReducer, initialState } from './gauntletReducer';
 import { Player, GhostTeam } from '../domain/types';
-import { findOpponent } from '../domain/matchmaking';
+import { findOpponent, MatchedOpponent } from '../domain/matchmaking';
 import { buildSimTeam } from '../domain/sim/buildTeam';
 import { playSeries } from '../domain/sim/series';
 import { seedRng } from '../domain/sim/rng';
@@ -9,17 +9,20 @@ import { recordRun, HofEntry } from '../domain/hallOfFame';
 import { getMutator } from '../domain/mutators';
 import { getMyTeamIds } from '../firebase/ladder';
 import { checkAchievements, Achievement } from '../domain/achievements';
+import { sfxWin, sfxLoss } from '../domain/sound';
+
+const delay = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
 
 /**
- * Drives a gauntlet run. Pure domain logic lives in the reducer + sim; this hook
- * owns the side effects: seeding the RNG, finding the next opponent, running the
- * (synchronous) series with a brief "simulating" beat for UX, and banking the
- * run into the hall of fame exactly once when it ends.
+ * Drives a gauntlet run. The draft is interactive; once it's done the run
+ * AUTO-PLAYS — this hook simulates each best-of-7 in sequence, dispatching the
+ * result so the screen's "This Run" list fills in, until a loss ends it.
  */
 export function useGauntlet(ghostPool: GhostTeam[] = []) {
   const [state, dispatch] = useReducer(gauntletReducer, initialState);
-  const [simulating, setSimulating] = useState(false);
+  const [currentFoe, setCurrentFoe] = useState<MatchedOpponent | null>(null);
   const recordedRef = useRef(false);
+  const runningRef = useRef(false);
   const hofResultRef = useRef<{ entry: HofEntry; rank: number } | null>(null);
   const freshAchievementsRef = useRef<Achievement[]>([]);
 
@@ -27,39 +30,46 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
     const seed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
     seedRng(seed);
     recordedRef.current = false;
+    runningRef.current = false;
     hofResultRef.current = null;
+    setCurrentFoe(null);
     dispatch({ type: 'START_RUN', teamName, seed, mutatorId });
   }, []);
 
   const pick = useCallback((player: Player) => dispatch({ type: 'PICK', player }), []);
   const autofill = useCallback(() => dispatch({ type: 'AUTOFILL_REST' }), []);
-  const nextOpponent = useCallback(() => dispatch({ type: 'NEXT_OPPONENT' }), []);
   const backToMenu = useCallback(() => dispatch({ type: 'BACK_TO_MENU' }), []);
 
-  // Matchmaking: as soon as we enter the phase, find the next foe.
+  // Auto-run the gauntlet: face opponent after opponent until a loss.
   useEffect(() => {
-    if (state.phase !== 'matchmaking') return;
-    const excluded = new Set([...state.facedGhostIds, ...getMyTeamIds()]); // no rematches, no facing yourself
+    if (state.phase !== 'gauntlet' || runningRef.current || !state.team) return;
+    runningRef.current = true;
+    const you = buildSimTeam(state.team, 'player1');
+    const env = getMutator(state.mutatorId).env;
     const filter = getMutator(state.mutatorId).poolFilter;
-    const opponent = findOpponent(state.streak, ghostPool, excluded, filter);
-    const t = setTimeout(() => dispatch({ type: 'SET_OPPONENT', opponent }), 600);
-    return () => clearTimeout(t);
-  }, [state.phase, state.streak, state.facedGhostIds, state.mutatorId, ghostPool]);
+    const excluded = new Set<string>([...state.facedGhostIds, ...getMyTeamIds()]);
+    let streak = 0;
+    let cancelled = false;
 
-  // Play the current series (called from the matchup screen).
-  const playCurrentSeries = useCallback(() => {
-    if (!state.team || !state.opponent) return;
-    setSimulating(true);
-    // Defer so the UI can paint the "simulating" state before the sync sim runs.
-    setTimeout(() => {
-      const you = buildSimTeam(state.team!, 'player1');
-      const opp = buildSimTeam(state.opponent!.team, 'player2');
-      const env = getMutator(state.mutatorId).env;
-      const result = playSeries(you, opp, env);
-      setSimulating(false);
-      dispatch({ type: 'RESOLVE_SERIES', result });
-    }, 50);
-  }, [state.team, state.opponent, state.mutatorId]);
+    (async () => {
+      while (!cancelled) {
+        const opp = findOpponent(streak, ghostPool, excluded, filter);
+        if (opp.id) excluded.add(opp.id);
+        setCurrentFoe(opp);
+        await delay(700);                 // "now facing X"
+        if (cancelled) return;
+        const result = playSeries(you, buildSimTeam(opp.team, 'player2'), env);
+        if (cancelled) return;
+        dispatch({ type: 'APPEND_SERIES', opponent: opp, result });
+        if (result.winner === 'you') { sfxWin(); streak++; await delay(600); }
+        else { sfxLoss(); await delay(550); if (!cancelled) { setCurrentFoe(null); dispatch({ type: 'END_RUN' }); } break; }
+      }
+      runningRef.current = false;
+    })();
+
+    return () => { cancelled = true; runningRef.current = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.phase]);
 
   // Bank the run into the hall of fame once, when it's over; unlock achievements.
   useEffect(() => {
@@ -83,14 +93,12 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
 
   return {
     state,
-    simulating,
+    currentFoe,
     hofResult: hofResultRef.current,
     newAchievements: freshAchievementsRef.current,
     startRun,
     pick,
     autofill,
-    playCurrentSeries,
-    nextOpponent,
     backToMenu,
   };
 }

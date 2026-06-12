@@ -1,5 +1,5 @@
 import { GauntletTeam, Player, Position, RunPhase, SeriesOutcome } from '../domain/types';
-import { ROLE_REQUIREMENTS, spinRound, offerForRound, DraftRound } from '../domain/draftRounds';
+import { MARQUEE_REQUIREMENTS, DEPTH_REQUIREMENTS, spinRound, offerForRound, DraftRound } from '../domain/draftRounds';
 import { MatchedOpponent } from '../domain/matchmaking';
 import { SeriesResult } from '../domain/sim/series';
 import { getMutator } from '../domain/mutators';
@@ -15,7 +15,7 @@ export interface GauntletState {
   seed: number;
 
   // --- draft (spin model) ---
-  remaining: Record<string, number>;  // roles still needed
+  remaining: Record<string, number>;  // marquee roles still needed
   currentRound: DraftRound | null;     // the spun round being drafted
   offered: Player[];                   // candidates for the current round
   picks: Player[];                     // every drafted card
@@ -25,22 +25,21 @@ export interface GauntletState {
   // --- run ---
   team: GauntletTeam | null;
   streak: number;
-  opponent: MatchedOpponent | null;
+  opponent: MatchedOpponent | null;    // current foe (during auto-run)
   lastResult: SeriesResult | null;
   history: SeriesOutcome[];
   totalRunsFor: number;
   totalRunsAgainst: number;
   facedGhostIds: string[];
-  runStats: RunTally;            // accumulated box scores across the whole run
+  runStats: RunTally;                  // accumulated box scores across the run
 }
 
 export type GauntletAction =
   | { type: 'START_RUN'; teamName: string; seed: number; mutatorId: string }
   | { type: 'PICK'; player: Player }
   | { type: 'AUTOFILL_REST' }
-  | { type: 'SET_OPPONENT'; opponent: MatchedOpponent }
-  | { type: 'RESOLVE_SERIES'; result: SeriesResult }
-  | { type: 'NEXT_OPPONENT' }
+  | { type: 'APPEND_SERIES'; opponent: MatchedOpponent; result: SeriesResult }
+  | { type: 'END_RUN' }
   | { type: 'BACK_TO_MENU' };
 
 export const initialState: GauntletState = {
@@ -76,7 +75,7 @@ function buildTeamFromPicks(name: string, picks: Player[]): GauntletTeam {
   return { name, roster, manager, stadium };
 }
 
-/** Spin the next round + build its offer, or return null if the draft is done. */
+/** Spin the next marquee round + build its offer, or null when marquee is done. */
 function nextRound(
   remaining: Record<string, number>,
   picks: Player[],
@@ -90,11 +89,48 @@ function nextRound(
   return { round, offered };
 }
 
+/** Auto-draft the depth roles (extra arms + bench) so the user only picks marquee. */
+function fillDepth(
+  picks: Player[],
+  draftLog: DraftEntry[],
+  budget: number,
+  filter: ((p: Player) => boolean) | undefined
+): void {
+  const taken = pickedIds(picks);
+  let b = budget;
+  for (const [role, count] of Object.entries(DEPTH_REQUIREMENTS)) {
+    for (let i = 0; i < count; i++) {
+      const offer = offerForRound(role as Position, 'diamond', taken, undefined, 5, filter, b);
+      const pick = offer[0];
+      if (pick) {
+        picks.push(pick);
+        draftLog.push({ role: role as Position, player: pick });
+        taken.add(pick.id);
+        b -= cardCost(pick);
+      }
+    }
+  }
+}
+
+/** Marquee draft complete → fill depth, freeze the team, start the auto-run. */
+function finishDraft(state: GauntletState, picks: Player[], draftLog: DraftEntry[], budget: number, filter: ((p: Player) => boolean) | undefined): GauntletState {
+  fillDepth(picks, draftLog, budget, filter);
+  return {
+    ...state,
+    picks, draftLog,
+    remaining: {},
+    team: buildTeamFromPicks(state.teamName, picks),
+    phase: 'gauntlet',
+    currentRound: null,
+    offered: [],
+  };
+}
+
 export function gauntletReducer(state: GauntletState, action: GauntletAction): GauntletState {
   switch (action.type) {
     case 'START_RUN': {
       const filter = getMutator(action.mutatorId).poolFilter;
-      const remaining = { ...ROLE_REQUIREMENTS };
+      const remaining = { ...MARQUEE_REQUIREMENTS };
       const next = nextRound(remaining, [], filter, BUDGET);
       return {
         ...initialState,
@@ -119,22 +155,8 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       const filter = getMutator(state.mutatorId).poolFilter;
       const next = nextRound(remaining, picks, filter, budget);
 
-      if (!next) {
-        return {
-          ...state,
-          picks, draftLog, remaining, budget,
-          team: buildTeamFromPicks(state.teamName, picks),
-          phase: 'matchmaking',
-          currentRound: null,
-          offered: [],
-        };
-      }
-      return {
-        ...state,
-        picks, draftLog, remaining, budget,
-        currentRound: next.round,
-        offered: next.offered,
-      };
+      if (!next) return finishDraft({ ...state, budget }, picks, draftLog, budget, filter);
+      return { ...state, picks, draftLog, remaining, budget, currentRound: next.round, offered: next.offered };
     }
 
     case 'AUTOFILL_REST': {
@@ -143,11 +165,10 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       const draftLog = [...state.draftLog];
       const remaining = { ...state.remaining };
       let budget = state.budget;
-      // Honor the current spun round first, then keep spinning until full.
       let round: DraftRound | null = state.currentRound;
       let offered = state.offered;
       let guard = 0;
-      while (round && Object.values(remaining).some(n => n > 0) && guard++ < 60) {
+      while (round && Object.values(remaining).some(n => n > 0) && guard++ < 30) {
         const choice = offered[0];
         if (choice) {
           picks.push(choice);
@@ -159,25 +180,14 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
         round = next?.round ?? null;
         offered = next?.offered ?? [];
       }
-      return {
-        ...state,
-        picks, draftLog, remaining, budget,
-        team: buildTeamFromPicks(state.teamName, picks),
-        phase: 'matchmaking',
-        currentRound: null,
-        offered: [],
-      };
+      return finishDraft({ ...state, budget }, picks, draftLog, budget, filter);
     }
 
-    case 'SET_OPPONENT':
-      return { ...state, opponent: action.opponent, phase: 'series' };
-
-    case 'RESOLVE_SERIES': {
-      const { result } = action;
-      const opp = state.opponent;
+    case 'APPEND_SERIES': {
+      const { result, opponent } = action;
       const outcome: SeriesOutcome = {
-        opponentName: opp?.displayName ?? 'Unknown',
-        opponentStreak: opp?.streak ?? 0,
+        opponentName: opponent.displayName,
+        opponentStreak: opponent.streak,
         won: result.winner === 'you',
         wins: result.youWins,
         losses: result.oppWins,
@@ -188,22 +198,19 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       const yourIds = new Set((state.team?.roster ?? []).map(p => p.id));
       return {
         ...state,
-        phase: 'series_result',
+        opponent,
         lastResult: result,
         runStats: accumulateSeries(state.runStats, result, yourIds),
         history: [...state.history, outcome],
         streak: won ? state.streak + 1 : state.streak,
         totalRunsFor: state.totalRunsFor + result.youRuns,
         totalRunsAgainst: state.totalRunsAgainst + result.oppRuns,
-        facedGhostIds: opp?.isGhost && opp.id ? [...state.facedGhostIds, opp.id] : state.facedGhostIds,
+        facedGhostIds: opponent.isGhost && opponent.id ? [...state.facedGhostIds, opponent.id] : state.facedGhostIds,
       };
     }
 
-    case 'NEXT_OPPONENT': {
-      const lostLast = state.history[state.history.length - 1]?.won === false;
-      if (lostLast) return { ...state, phase: 'run_over', opponent: null };
-      return { ...state, phase: 'matchmaking', opponent: null, lastResult: null };
-    }
+    case 'END_RUN':
+      return { ...state, phase: 'run_over', opponent: null };
 
     case 'BACK_TO_MENU':
       return { ...initialState };
