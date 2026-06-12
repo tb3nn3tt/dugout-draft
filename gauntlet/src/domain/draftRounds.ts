@@ -154,6 +154,27 @@ export function offerForRound(
   return shuffled.slice(0, count).sort((a, b) => b.overall - a.overall);
 }
 
+// Highest tier each role's PRIMARY pool can actually supply. Inherently low-tier
+// specialists (pinch runners, pinch hitters) have no diamond/gold cards, so a
+// round must not promise "Diamond" and then show bronze — clamp the rolled tier
+// to what the role can really field. Computed once from the pool.
+const TIER_RANK: Record<Tier, number> = { common: 0, bronze: 1, silver: 2, gold: 3, diamond: 4 };
+const RANK_TIER: Tier[] = ['common', 'bronze', 'silver', 'gold', 'diamond'];
+const ROLE_MAX_TIER: Partial<Record<Position, Tier>> = (() => {
+  const roles: Position[] = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH', 'SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY', 'PH', 'PR', 'BC', 'IFD', 'OFD'];
+  const m: Partial<Record<Position, Tier>> = {};
+  for (const role of roles) {
+    let max = 0;
+    for (const p of eligibleForRole(role)) { const r = TIER_RANK[getTier(p.overall)]; if (r > max) max = r; }
+    m[role] = RANK_TIER[max];
+  }
+  return m;
+})();
+function clampTierToRole(role: Position, tier: Tier): Tier {
+  const max = ROLE_MAX_TIER[role];
+  return max && TIER_RANK[tier] > TIER_RANK[max] ? max : tier;
+}
+
 /** Spin the next round given which roles are still needed + the budget left. */
 export function spinRound(
   remaining: Record<string, number>,
@@ -172,8 +193,9 @@ export function spinRound(
     return { role, roleLabel: 'Ballpark', tier: 'gold', name: 'Claim Your Cathedral', emoji: '🏟️', flavor: 'Pick the field you\'ll call home — it shapes every game.' };
   }
 
-  // Budget caps how rich a tier you can roll — broke teams draw lower tiers.
-  const tier = capTier(spinTier(), budgetRemaining, slotsLeft);
+  // Budget caps how rich a tier you can roll; the role clamp keeps the banner
+  // honest (no "Diamond" round for a role with no diamond cards).
+  const tier = clampTierToRole(role, capTier(spinTier(), budgetRemaining, slotsLeft));
   // ~38% of player rounds get a history/fiction theme.
   const themed = rand() < 0.38;
   if (themed) {
