@@ -356,6 +356,21 @@ export function MatchupScreen({ g }: { g: G }) {
         <span>{opponent.displayName}</span>
       </div>
 
+      {(() => {
+        const pwr = (t?: { roster: { overall: number }[] }) => {
+          if (!t) return 0;
+          const top = [...t.roster].sort((a, b) => b.overall - a.overall).slice(0, 13);
+          return top.length ? Math.round(top.reduce((a, p) => a + p.overall, 0) / top.length) : 0;
+        };
+        const me = pwr(team ?? undefined), foe = pwr(opponent.team);
+        return (
+          <div className="row" style={{ justifyContent: 'center', gap: 18, fontSize: 13 }}>
+            <span className="dim">Your power <strong style={{ color: 'var(--text)' }}>{me}</strong></span>
+            <span className="dim">Their power <strong style={{ color: foe > me ? 'var(--loss)' : 'var(--win)' }}>{foe}</strong></span>
+          </div>
+        );
+      })()}
+
       <button className="btn" onClick={g.playCurrentSeries}>Play the Series ▶</button>
     </div>
   );
