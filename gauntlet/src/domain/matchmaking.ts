@@ -2,6 +2,7 @@ import { GauntletTeam, GhostTeam, Player } from './types';
 import { hydrateIds, getCard } from './players';
 import { autoDraftTeam } from './autoDraft';
 import { famousForStreak, buildFamousTeam } from './famousTeams';
+import { rand } from './sim/rng';
 
 // ============================================================================
 // Hybrid matchmaking: face a real player's stored "ghost" team when the pool
@@ -17,6 +18,7 @@ export interface MatchedOpponent {
   streak: number;         // the opponent's banked streak
   isGhost: boolean;       // true = real player's team
   kind: OpponentKind;
+  id?: string;            // ladder doc id (ghosts) — to avoid rematches
   emoji?: string;         // famous-team identity
   era?: string;
   blurb?: string;
@@ -77,27 +79,28 @@ export function findOpponent(
   excludeIds: Set<string> = new Set(),
   poolFilter?: (p: Player) => boolean
 ): MatchedOpponent {
-  // Prefer a real ghost whose own streak is close to the player's current one.
-  const eligible = ghostPool.filter(g => !excludeIds.has(g.id));
-  const bucket = eligible
-    .filter(g => Math.abs(g.streak - streak) <= 1)
-    .sort(() => Math.random() - 0.5);
-
+  // A real submitted team whose own ladder wins are close to the player's streak
+  // (comparable accomplishment; both are salary-capped so it's a fair fight).
+  const bucket = ghostPool
+    .filter(g => !excludeIds.has(g.id) && g.playerIds.length >= 20 && Math.abs(g.streak - streak) <= 1)
+    .sort(() => rand() - 0.5);
   const ghost = bucket[0] ?? null;
-
-  if (ghost) {
-    return {
-      team: hydrateGhost(ghost),
-      displayName: ghost.teamName,
-      ownerName: ghost.ownerName,
-      streak: ghost.streak,
-      isGhost: true,
-      kind: 'ghost',
-    };
-  }
-
-  // The famous-team ladder: climb iconic real + fictional clubs, easiest first.
   const famous = famousForStreak(streak);
+
+  const asGhost = (): MatchedOpponent => ({
+    id: ghost!.id,
+    team: hydrateGhost(ghost!),
+    displayName: ghost!.teamName,
+    ownerName: ghost!.ownerName,
+    streak: ghost!.streak,
+    isGhost: true,
+    kind: 'ghost',
+  });
+
+  // Mix real teams into the famous-team ladder: from streak 2+, ~50% of the time
+  // when a matching real team exists, you face it instead of the famous club.
+  if (ghost && streak >= 2 && (!famous || rand() < 0.5)) return asGhost();
+
   if (famous) {
     return {
       team: buildFamousTeam(famous),
@@ -112,15 +115,9 @@ export function findOpponent(
     };
   }
 
-  // Past the ladder: CPU team scaled to the streak.
+  // Past the famous ladder: real teams first, then a streak-scaled CPU.
+  if (ghost) return asGhost();
   const target = targetOverallForStreak(streak);
   const team = autoDraftTeam(target, cpuName(streak), poolFilter);
-  return {
-    team,
-    displayName: team.name,
-    ownerName: 'CPU',
-    streak,
-    isGhost: false,
-    kind: 'cpu',
-  };
+  return { team, displayName: team.name, ownerName: 'CPU', streak, isGhost: false, kind: 'cpu' };
 }

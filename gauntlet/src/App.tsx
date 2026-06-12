@@ -1,26 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useGauntlet } from './state/useGauntlet';
 import { GhostTeam } from './domain/types';
 import { ensureAuth } from './firebase/firebase';
-import { tickLadder } from './firebase/ladder';
+import { tickLadder, getGhostPool } from './firebase/ladder';
 import {
   MenuScreen, DraftScreen, MatchupScreen, SeriesResultScreen, RunOverScreen,
 } from './ui/Screens';
 
-// Phase 1: no ghost pool yet → matchmaking uses CPU fallback (cold-start).
-// Stable reference so the matchmaking effect doesn't re-fire every render.
-const EMPTY_POOL: GhostTeam[] = [];
-
 export default function App() {
-  const g = useGauntlet(EMPTY_POOL);
+  // Real submitted teams from the global ladder become mid-gauntlet opponents.
+  const [ghostPool, setGhostPool] = useState<GhostTeam[]>([]);
+  const g = useGauntlet(ghostPool);
   const { phase } = g.state;
 
-  // Clients-as-workers: on load, sign in anonymously and advance a few ladder
-  // matches so the global ladder keeps climbing whenever anyone is online.
+  // On load: sign in, advance a few ladder matches (clients-as-workers), and pull
+  // the ghost pool so the gauntlet can throw real teams at you.
   useEffect(() => {
     let alive = true;
     (async () => {
-      try { await ensureAuth(); if (alive) await tickLadder(3); } catch { /* offline is fine */ }
+      try {
+        await ensureAuth();
+        await tickLadder(3);
+        const pool = await getGhostPool(50);
+        if (alive) setGhostPool(pool);
+      } catch { /* offline is fine — gauntlet falls back to famous/CPU teams */ }
     })();
     return () => { alive = false; };
   }, []);

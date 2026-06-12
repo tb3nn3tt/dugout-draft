@@ -7,6 +7,7 @@ import { playSeries } from '../domain/sim/series';
 import { seedRng } from '../domain/sim/rng';
 import { recordRun, HofEntry } from '../domain/hallOfFame';
 import { getMutator } from '../domain/mutators';
+import { getMyTeamIds } from '../firebase/ladder';
 import { checkAchievements, Achievement } from '../domain/achievements';
 
 /**
@@ -38,7 +39,7 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
   // Matchmaking: as soon as we enter the phase, find the next foe.
   useEffect(() => {
     if (state.phase !== 'matchmaking') return;
-    const excluded = new Set(state.facedGhostIds);
+    const excluded = new Set([...state.facedGhostIds, ...getMyTeamIds()]); // no rematches, no facing yourself
     const filter = getMutator(state.mutatorId).poolFilter;
     const opponent = findOpponent(state.streak, ghostPool, excluded, filter);
     const t = setTimeout(() => dispatch({ type: 'SET_OPPONENT', opponent }), 600);

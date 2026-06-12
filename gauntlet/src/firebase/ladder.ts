@@ -3,7 +3,7 @@ import {
   doc, runTransaction,
 } from 'firebase/firestore';
 import { db, ensureAuth } from './firebase';
-import { GauntletTeam } from '../domain/types';
+import { GauntletTeam, GhostTeam } from '../domain/types';
 import { hydrateIds, getCard } from '../domain/players';
 import { autoDraftTeam } from '../domain/autoDraft';
 import { buildSimTeam } from '../domain/sim/buildTeam';
@@ -106,6 +106,22 @@ export async function seedLadderIfEmpty(): Promise<void> {
 export async function getLadder(n = 50): Promise<LadderTeam[]> {
   const qs = await getDocs(query(collection(db, COL), orderBy('wins', 'desc'), limit(n)));
   return qs.docs.map(d => ({ id: d.id, ...(d.data() as Omit<LadderTeam, 'id'>) }));
+}
+
+/** Fetch the ladder pool as gauntlet-ready ghost teams (for mid-gauntlet foes). */
+export async function getGhostPool(n = 50): Promise<GhostTeam[]> {
+  const teams = await getLadder(n);
+  return teams.map(t => ({
+    id: t.id,
+    teamName: t.teamName,
+    ownerName: t.ownerName,
+    playerIds: t.playerIds,
+    managerId: t.managerId,
+    stadiumId: t.stadiumId,
+    streak: t.wins,
+    createdAt: t.createdAt,
+    source: 'player' as const,
+  }));
 }
 
 /** The reigning champ: the still-alive team with the most wins. */

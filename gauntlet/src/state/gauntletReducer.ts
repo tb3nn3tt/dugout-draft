@@ -195,7 +195,7 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
         streak: won ? state.streak + 1 : state.streak,
         totalRunsFor: state.totalRunsFor + result.youRuns,
         totalRunsAgainst: state.totalRunsAgainst + result.oppRuns,
-        facedGhostIds: opp?.isGhost ? [...state.facedGhostIds, opp.displayName] : state.facedGhostIds,
+        facedGhostIds: opp?.isGhost && opp.id ? [...state.facedGhostIds, opp.id] : state.facedGhostIds,
       };
     }
 
