@@ -12,6 +12,8 @@ const MAX_ENTRIES = 50;
 export interface HofEntry {
   teamName: string;
   streak: number;          // series won this run
+  gameWins: number;        // total games won across the run
+  gameLosses: number;      // total games lost
   runDiff: number;         // total run differential across the run
   runsFor: number;
   runsAgainst: number;
@@ -19,6 +21,17 @@ export interface HofEntry {
   stadiumName: string | null;
   playerIds: string[];     // to rehydrate the roster for display / re-runs
   date: number;            // epoch ms
+}
+
+/** Derived per-game rate stats for the leaderboard (RS/G, RA/G, RD). */
+export function entryRates(e: HofEntry) {
+  const g = Math.max(1, e.gameWins + e.gameLosses);
+  return {
+    games: e.gameWins + e.gameLosses,
+    rsg: e.runsFor / g,
+    rag: e.runsAgainst / g,
+    rd: e.runsFor - e.runsAgainst,
+  };
 }
 
 export function loadHof(): HofEntry[] {
@@ -43,11 +56,15 @@ export function recordRun(
   team: GauntletTeam,
   streak: number,
   runsFor: number,
-  runsAgainst: number
+  runsAgainst: number,
+  gameWins: number,
+  gameLosses: number
 ): { entry: HofEntry; rank: number } {
   const entry: HofEntry = {
     teamName: team.name,
     streak,
+    gameWins,
+    gameLosses,
     runDiff: runsFor - runsAgainst,
     runsFor,
     runsAgainst,

@@ -41,13 +41,11 @@ export function autoDraftTeam(
   const roster: Player[] = [];
 
   for (const pos of SLOT_ORDER) {
-    let eligible = playersPool.filter(p => canPlayPosition(p, pos));
-    if (poolFilter) {
-      const filtered = eligible.filter(poolFilter);
-      // Fall back to the full pool if a filter leaves a slot unfillable.
-      if (filtered.length >= 3) eligible = filtered;
-    }
-    const pick = pickNear(eligible, targetOverall, used);
+    const eligible = playersPool.filter(p => canPlayPosition(p, pos));
+    // Prefer a themed (unused) candidate; fall back to the full pool the moment
+    // the themed sub-pool can't fill this slot, so thin themes still complete.
+    let pick = poolFilter ? pickNear(eligible.filter(poolFilter), targetOverall, used) : null;
+    if (!pick) pick = pickNear(eligible, targetOverall, used);
     if (pick) {
       used.add(pick.id);
       roster.push(pick);

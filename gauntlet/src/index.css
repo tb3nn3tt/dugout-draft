@@ -315,3 +315,56 @@ h1 { letter-spacing: -0.5px; }
 .tile__meta { font-size: 10px; }
 .rg__l, .splitrow, .splitrow__tag, .chipg__l, .fc__pos, .board__title { letter-spacing: 0; }
 .dim { letter-spacing: 0; }
+
+/* --- Leaderboard table --- */
+.lb { display: flex; flex-direction: column; border: 1px solid var(--line); }
+.lb__row {
+  display: grid; grid-template-columns: 24px 1fr 42px 40px 40px 40px;
+  align-items: center; gap: 4px; padding: 8px 10px;
+  border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 700;
+}
+.lb__row:last-child { border-bottom: none; }
+.lb__row--head { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.5px; background: var(--bg); text-transform: uppercase; }
+.lb__rank { color: var(--text-dim); font-weight: 800; }
+.lb__team { display: flex; flex-direction: column; min-width: 0; }
+.lb__name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 800; }
+.lb__streak { font-size: 10px; }
+
+/* ===========================================================================
+   Fit-on-screen draft: compact header, two-column body (offers + depth chart),
+   pinned auto-fill. Only the offers list scrolls; depth chart stays visible.
+   =========================================================================== */
+.draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
+.draft__head { display: flex; flex-direction: column; gap: 6px; }
+.draft__body { flex: 1; min-height: 0; display: flex; gap: 8px; }
+.draft__offers { flex: 1; min-width: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 7px; padding-right: 2px; }
+.draft__depth { width: 150px; flex: 0 0 auto; overflow-y: auto; }
+.draft__autofill { min-height: 44px; font-size: 14px; }
+.round-banner__name { font-size: 16px; }
+.round-banner { padding: 8px 10px; }
+.round-banner__role { margin-top: 4px; font-size: 13px; }
+
+/* --- A-F split rating: small vL · big TOTAL · small vR --- */
+.ratings { display: flex; flex-direction: column; gap: 3px; margin-top: 2px; }
+.ratings__head { display: grid; grid-template-columns: 62px 1fr 1fr 1fr; font-size: 8px; font-weight: 800; color: var(--text-dim); }
+.ratings__hl { text-align: center; } .ratings__hr { text-align: center; }
+.sg { display: grid; grid-template-columns: 62px 1fr 1fr 1fr; align-items: center; }
+.sg__lbl { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.2px; }
+.sg__side { text-align: center; font-size: 12px; font-weight: 700; color: var(--text-dim); }
+.sg__total { text-align: center; font-size: 17px; font-weight: 900; }
+.powgrp { display: flex; align-items: stretch; gap: 6px; border-left: 2px solid var(--line); padding-left: 6px; }
+.powgrp__lbl { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 8px; font-weight: 900; color: var(--text-dim); letter-spacing: 1px; }
+.powgrp__rows { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.g1row { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 2px; }
+.g1 { display: inline-flex; align-items: baseline; gap: 4px; font-size: 12px; }
+.g1__l { font-size: 9px; font-weight: 800; color: var(--text-dim); }
+.g1 b { font-weight: 900; font-size: 13px; }
+
+/* --- Depth sidebar (always visible) --- */
+.depth { display: flex; flex-direction: column; gap: 5px; }
+.depth__title { font-size: 9px; font-weight: 900; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 1px; }
+.depth__row { display: grid; grid-template-columns: 26px 1fr 22px; align-items: center; gap: 3px; font-size: 11px; line-height: 1.25; padding: 1px 3px; border: 1px solid transparent; }
+.depth__row--next { border-color: var(--accent); background: rgba(245,166,35,0.08); }
+.depth__pos { font-size: 9px; font-weight: 800; color: var(--text-dim); }
+.depth__nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.depth__ovr { text-align: right; font-weight: 900; }

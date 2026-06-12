@@ -1,8 +1,7 @@
 import { Player } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
-import { getGradeColor } from '../domain/sim/helpers';
+import { getGradeColor, gradeToLetter } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
-import { RatingRadar, axesFor } from './RatingRadar';
 
 const POS_LABEL: Record<string, string> = {
   C: 'C', '1B': '1B', '2B': '2B', '3B': '3B', SS: 'SS', LF: 'LF', CF: 'CF', RF: 'RF', DH: 'DH',
@@ -12,64 +11,91 @@ const POS_LABEL: Record<string, string> = {
 const TIER_LABEL: Record<string, string> = {
   diamond: 'DIAMOND', gold: 'GOLD', silver: 'SILVER', bronze: 'BRONZE', common: 'COMMON',
 };
+const avg = (a: number, b: number) => Math.round((a + b) / 2);
+const cleanName = (n: string) => n.replace(/\s*\([^)]*\)\s*$/, '').trim() || n;
 
-function cleanName(name: string): string {
-  return name.replace(/\s*\([^)]*\)\s*$/, '').trim() || name;
-}
-
-const V = ({ n }: { n: number }) => <b style={{ color: getGradeColor(n) }}>{n}</b>;
-
-function Rating({ l, v }: { l: string; v: number }) {
-  return <span className="rg__cell"><span className="rg__l">{l}</span><span className="rg__v" style={{ color: getGradeColor(v) }}>{v}</span></span>;
-}
-
-function Body({ player, color }: { player: Player; color: string }) {
-  const r = getRatings(player);
+/** A split rating shown as A-F: small vL · big TOTAL · small vR. */
+function Split({ label, vL, total, vR }: { label: string; vL: number; total: number; vR: number }) {
   return (
-    <div className="tile__detail">
-      <div className="tile__radar"><RatingRadar axes={axesFor(player)} color={color} size={86} showLabels={false} /></div>
-      <div className="tile__info-col">
-        {r.kind === 'hitter' ? (
-          <>
-            <div className="rg">
-              <Rating l="CON" v={Math.round((r.conVL + r.conVR) / 2)} />
-              <Rating l="HR" v={Math.round((r.hrVL + r.hrVR) / 2)} />
-              <Rating l="GAP" v={Math.round((r.gapVL + r.gapVR) / 2)} />
-              <Rating l="EYE" v={r.eye} />
-              <Rating l="RUN" v={r.run} />
-              <Rating l="FLD" v={r.field} />
-            </div>
-            <div className="splitrow">
-              <span className="splitrow__tag">vs LHP</span> CON <V n={r.conVL} /> · HR <V n={r.hrVL} /> · GAP <V n={r.gapVL} />
-            </div>
-            <div className="splitrow">
-              <span className="splitrow__tag">vs RHP</span> CON <V n={r.conVR} /> · HR <V n={r.hrVR} /> · GAP <V n={r.gapVR} />
-            </div>
-            <div className="splitrow dim">BNT {r.bunt}</div>
-          </>
-        ) : (
-          <>
-            <div className="rg">
-              <Rating l="STUFF" v={Math.round((r.stuffVL + r.stuffVR) / 2)} />
-              <Rating l="CTL" v={r.control} />
-              <Rating l="CMD" v={Math.round((r.cmdVL + r.cmdVR) / 2)} />
-              <Rating l="GB%" v={r.gb} />
-            </div>
-            <div className="splitrow">
-              <span className="splitrow__tag">vs LHB</span> STUFF <V n={r.stuffVL} /> · CMD <V n={r.cmdVL} />
-            </div>
-            <div className="splitrow">
-              <span className="splitrow__tag">vs RHB</span> STUFF <V n={r.stuffVR} /> · CMD <V n={r.cmdVR} />
-            </div>
-            <div className="splitrow dim">IP/G {r.ipg.toFixed(1)}</div>
-          </>
-        )}
+    <div className="sg">
+      <span className="sg__lbl">{label}</span>
+      <span className="sg__side">{gradeToLetter(vL)}</span>
+      <span className="sg__total" style={{ color: getGradeColor(total) }}>{gradeToLetter(total)}</span>
+      <span className="sg__side">{gradeToLetter(vR)}</span>
+    </div>
+  );
+}
+
+/** A single (non-split) rating as A-F. */
+function G({ label, v }: { label: string; v: number }) {
+  return <span className="g1"><span className="g1__l">{label}</span><b style={{ color: getGradeColor(v) }}>{gradeToLetter(v)}</b></span>;
+}
+
+function Body({ player }: { player: Player }) {
+  const r = getRatings(player);
+  if (r.kind === 'hitter') {
+    return (
+      <div className="ratings">
+        <div className="ratings__head"><span /><span className="ratings__hl">vL</span><span /><span className="ratings__hr">vR</span></div>
+        <Split label="CONTACT" vL={r.conVL} total={avg(r.conVL, r.conVR)} vR={r.conVR} />
+        <div className="powgrp">
+          <span className="powgrp__lbl">POWER</span>
+          <div className="powgrp__rows">
+            <Split label="HR" vL={r.hrVL} total={avg(r.hrVL, r.hrVR)} vR={r.hrVR} />
+            <Split label="GAP" vL={r.gapVL} total={avg(r.gapVL, r.gapVR)} vR={r.gapVR} />
+          </div>
+        </div>
+        <div className="g1row">
+          <G label="EYE" v={r.eye} /><G label="RUN" v={r.run} /><G label="FLD" v={r.field} /><G label="BUNT" v={r.bunt} />
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="ratings">
+      <div className="ratings__head"><span /><span className="ratings__hl">vL</span><span /><span className="ratings__hr">vR</span></div>
+      <Split label="STUFF" vL={r.stuffVL} total={avg(r.stuffVL, r.stuffVR)} vR={r.stuffVR} />
+      <Split label="COMMAND" vL={r.cmdVL} total={avg(r.cmdVL, r.cmdVR)} vR={r.cmdVR} />
+      <div className="g1row">
+        <G label="CTL" v={r.control} /><G label="STAM" v={r.stamina} />
+        <span className="g1"><span className="g1__l">GB</span><b>{r.gb}%</b></span>
+        <span className="g1"><span className="g1__l">IP/G</span><b>{r.ipg.toFixed(1)}</b></span>
       </div>
     </div>
   );
 }
 
-/** Detailed, draftable card: mini radar + ratings + vL/vR splits + stats. */
+function StaffBody({ player }: { player: Player }) {
+  const c = player.coachEffect, p = player.parkEffect;
+  if (c) return (
+    <div className="ratings">
+      <div className="tile__stats" style={{ color: 'var(--accent)' }}>{c.style}</div>
+      <div className="g1row">
+        <span className="g1"><span className="g1__l">OFF</span><b>+{c.offensiveBonus}%</b></span>
+        <span className="g1"><span className="g1__l">PIT</span><b>+{c.pitchingBonus}%</b></span>
+        <span className="g1"><span className="g1__l">CLT</span><b>+{c.clutchBonus}</b></span>
+        <span className="g1"><span className="g1__l">STA</span><b>+{c.staminaBonus}</b></span>
+        <span className="g1"><span className="g1__l">SPD</span><b>+{c.speedBonus}</b></span>
+        <span className="g1"><span className="g1__l">FLD</span><b>+{c.fieldingBonus}</b></span>
+      </div>
+    </div>
+  );
+  if (p) return (
+    <div className="ratings">
+      <div className="tile__stats" style={{ color: 'var(--accent)' }}>{p.name}</div>
+      <div className="g1row">
+        <span className="g1"><span className="g1__l">HR</span><b>×{p.hrFactor}</b></span>
+        <span className="g1"><span className="g1__l">2B</span><b>×{p.doublesFactor}</b></span>
+        <span className="g1"><span className="g1__l">3B</span><b>×{p.triplesFactor}</b></span>
+        <span className="g1"><span className="g1__l">RUN</span><b>×{p.runFactor}</b></span>
+        <span className="g1"><span className="g1__l">ERR</span><b>×{p.errorFactor}</b></span>
+      </div>
+    </div>
+  );
+  return null;
+}
+
+/** Draftable card: A-F ratings (vL · TOTAL · vR), grouped power; ℹ for full. */
 export function CardTile({ player, onPick, onInfo }: {
   player: Player;
   onPick?: (p: Player) => void;
@@ -96,15 +122,7 @@ export function CardTile({ player, onPick, onInfo }: {
             <div className="tile__tier" style={{ color: tierColor }}>{TIER_LABEL[tier]}</div>
           </div>
         </div>
-
-        {isStaff ? (
-          <div className="tile__stats">
-            {player.coachEffect && `${player.coachEffect.style} · +${player.coachEffect.offensiveBonus}% OFF · +${player.coachEffect.pitchingBonus}% PIT · +${player.coachEffect.clutchBonus} CLT`}
-            {player.parkEffect && `${player.parkEffect.name} · HR ×${player.parkEffect.hrFactor} · 2B ×${player.parkEffect.doublesFactor} · runs ×${player.parkEffect.runFactor}`}
-          </div>
-        ) : (
-          <Body player={player} color={tierColor} />
-        )}
+        {isStaff ? <StaffBody player={player} /> : <Body player={player} />}
       </button>
       {onInfo && <button className="tile__info" onClick={() => onInfo(player)} aria-label="Player details">ℹ</button>}
     </div>

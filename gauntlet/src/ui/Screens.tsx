@@ -3,12 +3,11 @@ import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS } from '../domain/draftRounds';
 import { TIER_COLORS } from '../domain/players';
 import { Player } from '../domain/types';
-import { loadHof, rankHof } from '../domain/hallOfFame';
+import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
 import { computeAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
-import { projectTeam, ratingColor } from '../domain/teamRating';
 import { CardTile } from './CardTile';
-import { FieldChart } from './FieldChart';
+import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
 
 type G = ReturnType<typeof useGauntlet>;
@@ -37,6 +36,19 @@ export function MenuScreen({ g }: { g: G }) {
         <h1>Dugout<br />Gauntlet</h1>
         <p className="dim">Draft a team. Run the gauntlet.<br />See how far you go.</p>
       </div>
+
+      {top[0] && (
+        <div className="card row" style={{ justifyContent: 'space-between', borderColor: 'var(--accent)', alignItems: 'center' }}>
+          <div>
+            <div className="dim" style={{ fontSize: 11, letterSpacing: 1 }}>👑 CURRENT CHAMP</div>
+            <strong style={{ fontSize: 17 }}>{top[0].teamName}</strong>
+          </div>
+          <div className="center">
+            <div style={{ fontWeight: 900, color: 'var(--accent)', fontSize: 20 }}>{top[0].streak}</div>
+            <div className="dim" style={{ fontSize: 10 }}>SERIES WON</div>
+          </div>
+        </div>
+      )}
 
       <div className="card stack">
         <label className="dim" style={{ fontSize: 13, fontWeight: 700 }}>TEAM NAME</label>
@@ -90,30 +102,51 @@ export function MenuScreen({ g }: { g: G }) {
 // ---------------------------------------------------------------------------
 export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
   const entries = rankHof(loadHof());
+  const champ = entries[0];
   return (
     <div className="stack" style={{ marginTop: 16, gap: 14 }}>
       <div className="row" style={{ justifyContent: 'space-between' }}>
-        <h1 style={{ fontSize: 26 }}>🏆 Hall of Fame</h1>
+        <h1 style={{ fontSize: 26 }}>🏆 Leaderboard</h1>
         <button className="btn btn--ghost" style={{ width: 'auto', minHeight: 40, padding: '0 14px' }} onClick={onBack}>Back</button>
       </div>
-      {entries.length === 0 && <p className="dim center" style={{ marginTop: 30 }}>No teams yet. Go make history.</p>}
-      <div className="stack" style={{ gap: 8 }}>
-        {entries.map((e, i) => (
-          <div key={i} className="card row" style={{ justifyContent: 'space-between', padding: '12px 14px' }}>
-            <div>
-              <div><strong>#{i + 1}</strong> &nbsp;{e.teamName}</div>
-              <div className="dim" style={{ fontSize: 12 }}>
-                {e.managerName ? `mgr ${e.managerName.split(' ').slice(-1)}` : ''}
-                {e.stadiumName ? ` · ${e.stadiumName}` : ''}
-              </div>
-            </div>
-            <div className="center">
-              <div style={{ fontWeight: 900, color: 'var(--accent)' }}>{e.streak}-0</div>
-              <div className="dim" style={{ fontSize: 12 }}>{e.runDiff >= 0 ? '+' : ''}{e.runDiff}</div>
-            </div>
+
+      {champ && (
+        <div className="card stack" style={{ gap: 4, borderColor: 'var(--accent)' }}>
+          <span className="dim" style={{ fontSize: 12, letterSpacing: 1 }}>👑 CURRENT CHAMP</span>
+          <div className="row" style={{ justifyContent: 'space-between' }}>
+            <strong style={{ fontSize: 18 }}>{champ.teamName}</strong>
+            <strong style={{ color: 'var(--accent)' }}>{champ.streak} series</strong>
           </div>
-        ))}
-      </div>
+        </div>
+      )}
+
+      {entries.length === 0 && <p className="dim center" style={{ marginTop: 30 }}>No teams yet. Go make history.</p>}
+
+      {entries.length > 0 && (
+        <div className="lb">
+          <div className="lb__row lb__row--head">
+            <span className="lb__rank">#</span>
+            <span className="lb__team">Team</span>
+            <span>W-L</span><span>RS/G</span><span>RA/G</span><span>RD</span>
+          </div>
+          {entries.map((e, i) => {
+            const r = entryRates(e);
+            return (
+              <div key={i} className="lb__row">
+                <span className="lb__rank">{i + 1}</span>
+                <span className="lb__team">
+                  <span className="lb__name">{e.teamName}</span>
+                  <span className="lb__streak dim">{e.streak} series</span>
+                </span>
+                <span><b>{e.gameWins}-{e.gameLosses}</b></span>
+                <span>{r.rsg.toFixed(1)}</span>
+                <span>{r.rag.toFixed(1)}</span>
+                <span style={{ color: r.rd >= 0 ? 'var(--win)' : 'var(--loss)' }}>{r.rd >= 0 ? '+' : ''}{r.rd}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -124,54 +157,39 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
 export function DraftScreen({ g }: { g: G }) {
   const { offered, picks, currentRound, draftLog } = g.state;
   const [detail, setDetail] = useState<Player | null>(null);
-  const [showBoard, setShowBoard] = useState(false);
-  const proj = projectTeam(picks);
   const pickNum = picks.length + 1;
   const progress = Math.round((picks.length / TOTAL_PICKS) * 100);
   const tierColor = currentRound ? TIER_COLORS[currentRound.tier] : 'var(--accent)';
 
   return (
-    <div className="stack" style={{ marginTop: 8, gap: 12 }}>
-      <div className="stack" style={{ gap: 8 }}>
+    <div className="draft">
+      <div className="draft__head">
         <div className="row" style={{ justifyContent: 'space-between' }}>
           <strong>{g.state.teamName}</strong>
           <span className="dim">Pick {pickNum} / {TOTAL_PICKS}</span>
         </div>
         <div className="progress"><div className="progress__fill" style={{ width: `${progress}%` }} /></div>
-      </div>
-
-      {picks.length > 0 && (
-        <div className="row" style={{ gap: 10 }}>
-          <RatingBar label="OFF" value={proj.offense} />
-          <RatingBar label="PIT" value={proj.pitching} />
-          <RatingBar label="OVR" value={proj.overall} />
-        </div>
-      )}
-
-      {/* Named, themed round banner */}
-      {currentRound && (
-        <div className="round-banner" style={{ borderColor: tierColor }}>
-          <div className="round-banner__name">{currentRound.emoji} {currentRound.name}</div>
-          <div className="round-banner__flavor dim">{currentRound.flavor}</div>
-          <div className="round-banner__role">
-            <span className="badge" style={{ borderColor: tierColor, color: tierColor }}>
-              {currentRound.tier.toUpperCase()}
-            </span>
-            <span>Drafting: <strong>{currentRound.roleLabel}</strong></span>
+        {currentRound && (
+          <div className="round-banner" style={{ borderColor: tierColor }}>
+            <div className="round-banner__name">{currentRound.emoji} {currentRound.name}</div>
+            <div className="round-banner__role">
+              <span className="badge" style={{ borderColor: tierColor, color: tierColor }}>{currentRound.tier.toUpperCase()}</span>
+              <span>Drafting: <strong>{currentRound.roleLabel}</strong></span>
+            </div>
           </div>
-        </div>
-      )}
-
-      <div className="stack" style={{ gap: 10 }}>
-        {offered.map(p => <CardTile key={p.id} player={p} onPick={g.pick} onInfo={setDetail} />)}
+        )}
       </div>
 
-      <button className="btn btn--ghost" onClick={() => setShowBoard(s => !s)}>
-        {showBoard ? '▲ Hide depth chart' : `▼ Depth chart (${picks.length}/${TOTAL_PICKS})`}
-      </button>
-      {showBoard && <FieldChart draftLog={draftLog} activeRole={currentRound?.role} />}
+      <div className="draft__body">
+        <div className="draft__offers">
+          {offered.map(p => <CardTile key={p.id} player={p} onPick={g.pick} onInfo={setDetail} />)}
+        </div>
+        <aside className="draft__depth">
+          <DepthSidebar draftLog={draftLog} activeRole={currentRound?.role} />
+        </aside>
+      </div>
 
-      <button className="btn btn--ghost" onClick={g.autofill}>⚡ Auto-fill the rest</button>
+      <button className="btn btn--ghost draft__autofill" onClick={g.autofill}>⚡ Auto-fill the rest</button>
 
       {detail && (
         <PlayerDetail
@@ -219,13 +237,16 @@ export function MatchupScreen({ g }: { g: G }) {
 
       <div className="card stack center" style={{ gap: 6 }}>
         <div className="row" style={{ justifyContent: 'center', gap: 8 }}>
-          <span className={`badge ${opponent.isGhost ? 'badge--ghost' : 'badge--cpu'}`}>
-            {opponent.isGhost ? '👤 REAL TEAM' : '🤖 CPU'}
+          <span className={`badge ${opponent.kind === 'ghost' ? 'badge--ghost' : opponent.kind === 'famous' ? 'badge--ghost' : 'badge--cpu'}`}>
+            {opponent.kind === 'ghost' ? '👤 REAL TEAM' : opponent.kind === 'famous' ? '🏆 LEGENDARY' : '🤖 CHALLENGER'}
           </span>
-          {opponent.streak > 0 && <span className="badge">🔥 {opponent.streak}-0</span>}
+          {opponent.era && <span className="badge">{opponent.era}</span>}
+          {opponent.streak > 0 && opponent.kind === 'ghost' && <span className="badge">🔥 {opponent.streak}-0</span>}
         </div>
-        <h1 style={{ fontSize: 26 }}>{opponent.displayName}</h1>
-        <p className="dim">drafted by {opponent.ownerName}</p>
+        <h1 style={{ fontSize: 28 }}>{opponent.emoji ? `${opponent.emoji} ` : ''}{opponent.displayName}</h1>
+        {opponent.blurb
+          ? <p className="dim" style={{ fontSize: 13, fontStyle: 'italic' }}>{opponent.blurb}</p>
+          : <p className="dim">drafted by {opponent.ownerName}</p>}
       </div>
 
       <div className="row center" style={{ justifyContent: 'center', gap: 12, fontWeight: 800 }}>
@@ -373,21 +394,6 @@ export function RunOverScreen({ g }: { g: G }) {
           ))}
         </div>
       )}
-    </div>
-  );
-}
-
-function RatingBar({ label, value }: { label: string; value: number }) {
-  const color = ratingColor(value);
-  return (
-    <div className="stack" style={{ flex: 1, gap: 4 }}>
-      <div className="row" style={{ justifyContent: 'space-between' }}>
-        <span className="dim" style={{ fontSize: 11, fontWeight: 800 }}>{label}</span>
-        <span style={{ fontSize: 14, fontWeight: 900, color }}>{value || '—'}</span>
-      </div>
-      <div className="progress" style={{ height: 6 }}>
-        <div className="progress__fill" style={{ width: `${value}%`, background: color }} />
-      </div>
     </div>
   );
 }

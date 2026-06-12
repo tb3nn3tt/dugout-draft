@@ -1,18 +1,25 @@
 import { GauntletTeam, GhostTeam, Player } from './types';
 import { hydrateIds, getCard } from './players';
 import { autoDraftTeam } from './autoDraft';
+import { famousForStreak, buildFamousTeam } from './famousTeams';
 
 // ============================================================================
 // Hybrid matchmaking: face a real player's stored "ghost" team when the pool
 // has one near your streak; otherwise face a CPU team scaled to your streak.
 // ============================================================================
 
+export type OpponentKind = 'ghost' | 'famous' | 'cpu';
+
 export interface MatchedOpponent {
   team: GauntletTeam;     // hydrated, sim-ready
   displayName: string;    // team name shown to the player
-  ownerName: string;      // who drafted it (or "CPU")
+  ownerName: string;      // who drafted it (or "CPU"/"Legendary")
   streak: number;         // the opponent's banked streak
-  isGhost: boolean;       // true = real player's team, false = CPU fallback
+  isGhost: boolean;       // true = real player's team
+  kind: OpponentKind;
+  emoji?: string;         // famous-team identity
+  era?: string;
+  blurb?: string;
 }
 
 const CPU_TEAM_NAMES = [
@@ -85,10 +92,27 @@ export function findOpponent(
       ownerName: ghost.ownerName,
       streak: ghost.streak,
       isGhost: true,
+      kind: 'ghost',
     };
   }
 
-  // Cold-start / thin-pool fallback: CPU team scaled to the streak.
+  // The famous-team ladder: climb iconic real + fictional clubs, easiest first.
+  const famous = famousForStreak(streak);
+  if (famous) {
+    return {
+      team: buildFamousTeam(famous),
+      displayName: famous.name,
+      ownerName: 'Legendary',
+      streak,
+      isGhost: false,
+      kind: 'famous',
+      emoji: famous.emoji,
+      era: famous.era,
+      blurb: famous.blurb,
+    };
+  }
+
+  // Past the ladder: CPU team scaled to the streak.
   const target = targetOverallForStreak(streak);
   const team = autoDraftTeam(target, cpuName(streak), poolFilter);
   return {
@@ -97,5 +121,6 @@ export function findOpponent(
     ownerName: 'CPU',
     streak,
     isGhost: false,
+    kind: 'cpu',
   };
 }
