@@ -47,6 +47,19 @@ function hydrate(t: { teamName: string; playerIds: string[]; managerId: string |
   };
 }
 
+const MY_KEY = 'dugout-gauntlet-my-ladder';
+/** Doc ids of teams this device has submitted (for highlighting on the ladder). */
+export function getMyTeamIds(): Set<string> {
+  try { return new Set(JSON.parse(localStorage.getItem(MY_KEY) || '[]') as string[]); }
+  catch { return new Set(); }
+}
+function recordMyTeam(id: string): void {
+  try {
+    const a = JSON.parse(localStorage.getItem(MY_KEY) || '[]') as string[];
+    if (!a.includes(id)) { a.push(id); localStorage.setItem(MY_KEY, JSON.stringify(a)); }
+  } catch { /* ignore */ }
+}
+
 /** Submit a finished gauntlet team into the ladder at 0 wins. Returns the doc id. */
 export async function submitTeam(team: GauntletTeam, gauntletStreak: number, ownerName: string): Promise<string> {
   const uid = await ensureAuth();
@@ -65,6 +78,7 @@ export async function submitTeam(team: GauntletTeam, gauntletStreak: number, own
     createdAt: Date.now(),
     updatedAt: Date.now(),
   });
+  recordMyTeam(ref.id);
   return ref.id;
 }
 

@@ -1,12 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ensureAuth } from '../firebase/firebase';
-import { getLadder, getChamp, tickLadder, LadderTeam } from '../firebase/ladder';
+import { getLadder, getChamp, tickLadder, getMyTeamIds, LadderTeam } from '../firebase/ladder';
 
 export function LadderScreen({ onBack }: { onBack: () => void }) {
   const [teams, setTeams] = useState<LadderTeam[]>([]);
   const [champ, setChamp] = useState<LadderTeam | null>(null);
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [syncing, setSyncing] = useState(false);
+  const mine = getMyTeamIds();
 
   const refresh = useCallback(async () => {
     const [c, t] = await Promise.all([getChamp(), getLadder(50)]);
@@ -60,6 +61,18 @@ export function LadderScreen({ onBack }: { onBack: () => void }) {
             <p className="dim center">No teams on the ladder yet. Be the first to send one up.</p>
           )}
 
+          {teams.some(t => mine.has(t.id)) && (
+            <div className="card stack" style={{ gap: 4, borderColor: 'var(--accent-2)' }}>
+              <span className="dim" style={{ fontSize: 12, letterSpacing: 1 }}>⭐ YOUR TEAMS</span>
+              {teams.map((t, i) => mine.has(t.id) ? (
+                <div key={t.id} className="row" style={{ justifyContent: 'space-between' }}>
+                  <span>#{i + 1} <strong>{t.teamName}</strong></span>
+                  <span className="dim">{t.wins} wins · {t.status === 'queued' ? 'ALIVE' : 'OUT'}</span>
+                </div>
+              ) : null)}
+            </div>
+          )}
+
           {teams.length > 0 && (
             <div className="lb">
               <div className="lb__row lb__row--head">
@@ -68,10 +81,10 @@ export function LadderScreen({ onBack }: { onBack: () => void }) {
                 <span>W</span><span>RD</span><span>ST</span>
               </div>
               {teams.map((t, i) => (
-                <div key={t.id} className="lb__row">
+                <div key={t.id} className="lb__row" style={mine.has(t.id) ? { background: 'rgba(56,189,248,0.10)' } : undefined}>
                   <span className="lb__rank">{i + 1}</span>
                   <span className="lb__team">
-                    <span className="lb__name">{t.teamName}</span>
+                    <span className="lb__name">{mine.has(t.id) ? '⭐ ' : ''}{t.teamName}</span>
                     <span className="lb__streak dim">{t.ownerName}</span>
                   </span>
                   <span><b>{t.wins}</b></span>
