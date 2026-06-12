@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS } from '../domain/draftRounds';
 import { TIER_COLORS } from '../domain/players';
@@ -279,34 +279,55 @@ export function SeriesResultScreen({ g }: { g: G }) {
     [g.state.team]
   );
   const awards = useMemo(() => (r ? computeAwards(r, yourIds) : null), [r, yourIds]);
+  const total = r?.gameLines.length ?? 0;
+  const [revealed, setRevealed] = useState(0);
+
+  // Reveal games one at a time for tension; settle a beat after the clincher.
+  useEffect(() => {
+    if (revealed >= total) return;
+    const t = setTimeout(() => setRevealed(v => v + 1), revealed === total - 1 ? 500 : 720);
+    return () => clearTimeout(t);
+  }, [revealed, total]);
+
   if (!r || !last) return null;
   const won = r.winner === 'you';
+  const done = revealed >= total;
+  const shown = r.gameLines.slice(0, revealed);
+  const yW = shown.filter(x => x.won).length;
+  const oW = shown.filter(x => !x.won).length;
 
   return (
     <div className="stack center" style={{ marginTop: 32, gap: 16 }}>
-      <h1 style={{ fontSize: 44, color: won ? 'var(--win)' : 'var(--loss)' }}>
-        {won ? 'SERIES WON' : 'ELIMINATED'}
+      <h1 style={{ fontSize: 44, color: !done ? 'var(--text)' : won ? 'var(--win)' : 'var(--loss)' }}>
+        {!done ? `${yW}–${oW}` : won ? 'SERIES WON' : 'ELIMINATED'}
       </h1>
       <div className="card stack center" style={{ gap: 8, width: '100%' }}>
-        <div style={{ fontSize: 40, fontWeight: 900 }}>{r.youWins}–{r.oppWins}</div>
-        <p className="dim">vs {last.opponentName}</p>
-        <div className="row" style={{ justifyContent: 'center', gap: 16 }}>
-          <span>Runs: <strong>{r.youRuns}</strong></span>
-          <span className="dim">–</span>
-          <span><strong>{r.oppRuns}</strong></span>
-        </div>
+        {done && <div style={{ fontSize: 40, fontWeight: 900 }}>{r.youWins}–{r.oppWins}</div>}
+        <p className="dim">{done ? `vs ${last.opponentName}` : `vs ${last.opponentName} · best of 7`}</p>
         <div className="gamelines">
-          {r.gameLines.map((gl, i) => (
-            <div key={i} className={`gameline ${gl.won ? 'gameline--w' : 'gameline--l'}`}>
+          {shown.map((gl, i) => (
+            <div key={i} className={`gameline gameline--in ${gl.won ? 'gameline--w' : 'gameline--l'}`}>
               <div className="gameline__g">G{i + 1}</div>
               <div className="gameline__s">{gl.you}-{gl.opp}</div>
               <div className="gameline__r">{gl.won ? 'W' : 'L'}</div>
             </div>
           ))}
+          {Array.from({ length: total - revealed }).map((_, i) => (
+            <div key={`p${i}`} className="gameline gameline--pending"><div className="gameline__g">G{revealed + i + 1}</div><div className="gameline__s">·</div></div>
+          ))}
         </div>
+        {done && (
+          <div className="row" style={{ justifyContent: 'center', gap: 16 }}>
+            <span>Runs: <strong>{r.youRuns}</strong></span>
+            <span className="dim">–</span>
+            <span><strong>{r.oppRuns}</strong></span>
+          </div>
+        )}
       </div>
 
-      {awards && (awards.mvp || awards.ace) && (
+      {!done && <button className="btn btn--ghost" onClick={() => setRevealed(total)}>Skip ⏩</button>}
+
+      {done && awards && (awards.mvp || awards.ace) && (
         <div className="card stack" style={{ width: '100%', gap: 10 }}>
           <h2 style={{ fontSize: 16 }}>⭐ Series Standouts</h2>
           {awards.mvp && (

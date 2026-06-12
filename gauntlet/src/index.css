@@ -371,3 +371,9 @@ h1 { letter-spacing: -0.5px; }
 
 /* --- Card salary cost --- */
 .tile__cost { font-size: 11px; font-weight: 900; color: var(--accent); }
+
+/* --- Series reveal animation --- */
+@keyframes glIn { from { opacity: 0; transform: translateY(8px) scale(0.85); } to { opacity: 1; transform: none; } }
+.gameline--in { animation: glIn 0.26s ease; }
+.gameline--pending { opacity: 0.28; border-style: dashed; }
+.gameline--pending .gameline__s { color: var(--text-dim); }
