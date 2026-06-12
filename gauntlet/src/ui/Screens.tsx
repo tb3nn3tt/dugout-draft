@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound } from '../domain/draftRounds';
 import { TIER_COLORS } from '../domain/players';
@@ -8,6 +8,7 @@ import { computeAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { BUDGET } from '../domain/salary';
 import { ACHIEVEMENTS, loadUnlocked } from '../domain/achievements';
+import { isSoundOn, setSoundOn, sfxPick, sfxLock, sfxWin, sfxLoss } from '../domain/sound';
 import { CardTile } from './CardTile';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
@@ -25,6 +26,7 @@ export function MenuScreen({ g }: { g: G }) {
     () => (localStorage.getItem('dugout-gauntlet-seen-intro') ? 'menu' : 'help')
   );
   const [mutatorId, setMutatorId] = useState('standard');
+  const [sound, setSound] = useState(isSoundOn());
   const top = rankHof(loadHof()).slice(0, 3);
   const mutator = getMutator(mutatorId);
 
@@ -72,6 +74,9 @@ export function MenuScreen({ g }: { g: G }) {
         <button className="btn btn--secondary" onClick={() => setView('ladder')}>🌐 Global Ladder</button>
         <button className="btn btn--ghost" onClick={() => setView('achievements')}>🎖️ Achievements</button>
         <button className="btn btn--ghost" onClick={() => setView('help')}>❔ How to play</button>
+        <button className="btn btn--ghost" onClick={() => { const n = !sound; setSoundOn(n); setSound(n); }}>
+          {sound ? '🔊 Sound: On' : '🔇 Sound: Off'}
+        </button>
       </div>
 
       <div className="card stack" style={{ gap: 10 }}>
@@ -248,7 +253,7 @@ export function DraftScreen({ g }: { g: G }) {
 
       <div className="draft__body">
         <div className="draft__offers">
-          {offered.map(p => <CardTile key={p.id} player={p} onPick={g.pick} onInfo={setDetail} />)}
+          {offered.map(p => <CardTile key={p.id} player={p} onPick={(pl) => { sfxPick(); g.pick(pl); }} onInfo={setDetail} />)}
         </div>
         <aside className="draft__depth">
           <DepthSidebar draftLog={draftLog} activeRole={currentRound?.role} />
@@ -280,7 +285,7 @@ function RoundBanner({ round, color }: { round: DraftRound; color: string }) {
   useEffect(() => {
     setSpin(true); setT(0);
     let n = 0;
-    const iv = setInterval(() => { setT(x => x + 1); if (++n >= 9) { clearInterval(iv); setSpin(false); } }, 60);
+    const iv = setInterval(() => { setT(x => x + 1); if (++n >= 9) { clearInterval(iv); setSpin(false); sfxLock(); } }, 60);
     return () => clearInterval(iv);
   }, [round]);
   const tier = spin ? SPIN_TIERS[t % SPIN_TIERS.length] : round.tier.toUpperCase();
@@ -376,6 +381,14 @@ export function SeriesResultScreen({ g }: { g: G }) {
     const t = setTimeout(() => setRevealed(v => v + 1), revealed === total - 1 ? 500 : 720);
     return () => clearTimeout(t);
   }, [revealed, total]);
+
+  const sfxFired = useRef(false);
+  useEffect(() => {
+    if (r && revealed >= total && total > 0 && !sfxFired.current) {
+      sfxFired.current = true;
+      (r.winner === 'you' ? sfxWin : sfxLoss)();
+    }
+  }, [revealed, total, r]);
 
   if (!r || !last) return null;
   const won = r.winner === 'you';
