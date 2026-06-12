@@ -1,430 +1,324 @@
 /* ===========================================================================
-   Dugout Gauntlet — mobile-first design tokens.
-   Built for a phone in portrait; scales up to a centered column on desktop.
+   DUGOUT GAUNTLET — "Night Game" design system.
+   A baseball card-battler shot like a primetime night game crossed with an
+   esports HUD: angular panels, stadium-light glows, infield-amber hero accent
+   against electric cyan, Anton display over a Saira scoreboard sans.
+   Mobile-first, sharp/angular by design.
    =========================================================================== */
 
 :root {
-  /* Palette — "ballpark at night" */
-  --bg: #0b1220;
-  --bg-elev: #131c2e;
-  --bg-card: #1a2438;
-  --line: #26344f;
-  --text: #e8eef7;
-  --text-dim: #9aa7bd;
-  --accent: #f5a623;     /* infield-dirt gold */
-  --accent-2: #38bdf8;   /* sky */
-  --win: #34d399;
-  --loss: #f87171;
+  /* Field & panels — deep night blues */
+  --field: #050b16;
+  --bg: #0a1322;
+  --panel: #0f1c31;
+  --panel-2: #15263f;
+  --line: #20344f;
+  --line-bright: #34527a;
 
-  /* Tier colors */
-  --diamond: #b9f2ff;
-  --gold: #ffd55a;
-  --silver: #d7dde6;
-  --bronze: #cd8b56;
-  --common: #8a98ad;
+  /* Ink */
+  --ink: #ecf3ff;
+  --ink-dim: #8194b3;
+  --ink-faint: #56678a;
 
-  --radius: 0px;     /* sharp corners everywhere */
-  --radius-sm: 0px;
+  /* Hero accents — infield dirt under the lights + electric stadium cyan */
+  --amber: #ffb224;
+  --amber-2: #ff8a1e;
+  --amber-deep: #b5710a;
+  --cyan: #2fe3ff;
+  --cyan-deep: #0a8fb0;
+
+  --win: #2fe39a;
+  --loss: #ff5566;
+
+  /* Tier identity */
+  --diamond: #79f0ff;
+  --gold: #ffce4a;
+  --silver: #cdd9ea;
+  --bronze: #e3914f;
+  --common: #7286a3;
+
   --gap: 10px;
-
-  /* Safe areas for notched phones */
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* Esports notch — two cut corners */
+  --notch: 9px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html, body, #root { height: 100%; }
 
 body {
-  background: radial-gradient(1200px 600px at 50% -10%, #16233c 0%, var(--bg) 60%);
-  color: var(--text);
-  /* Condensed type stack for a tight, broadcast-graphics feel. */
-  font-family: 'Roboto Condensed', 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
-  font-stretch: 90%;
-  letter-spacing: -0.1px;
+  background:
+    radial-gradient(120% 80% at 50% -20%, rgba(47,227,255,0.10), transparent 55%),
+    radial-gradient(90% 60% at 50% -8%, rgba(255,178,36,0.10), transparent 50%),
+    linear-gradient(180deg, #0c1830 0%, var(--bg) 30%, var(--field) 100%);
+  color: var(--ink);
+  font-family: 'Saira', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1px;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior: none;
 }
+/* Faint stadium grain + chalk-grid atmosphere over everything */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(110% 90% at 50% 0%, #000 30%, transparent 80%);
+}
 
-/* The whole app lives in a phone-width column, centered on big screens. */
 .app-shell {
-  max-width: 480px;
-  margin: 0 auto;
-  min-height: 100%;
-  padding:
-    calc(var(--safe-top) + 12px)
-    16px
-    calc(var(--safe-bottom) + 16px);
-  display: flex;
-  flex-direction: column;
+  position: relative; z-index: 1;
+  max-width: 480px; margin: 0 auto; min-height: 100%;
+  padding: calc(var(--safe-top) + 14px) 14px calc(var(--safe-bottom) + 18px);
+  display: flex; flex-direction: column;
 }
 
-/* Big, thumb-friendly touch targets — nothing below 48px tall. */
-.btn {
-  appearance: none;
-  border: none;
-  border-radius: var(--radius);
-  background: var(--accent);
-  color: #1a1206;
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  min-height: 54px;
-  padding: 0 20px;
-  width: 100%;
-  cursor: pointer;
-  transition: transform 0.08s ease, filter 0.15s ease;
+/* ---- Typography ---- */
+h1 {
+  font-family: 'Anton', sans-serif; font-weight: 400;
+  font-size: 34px; line-height: 0.96; letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
-.btn:active { transform: scale(0.97); }
-.btn:disabled { filter: grayscale(0.6) brightness(0.7); cursor: not-allowed; }
-
-.btn--ghost {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--line);
-}
-.btn--secondary { background: var(--accent-2); color: #05202e; }
-
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 16px;
-}
-
-h1 { font-size: 30px; font-weight: 900; letter-spacing: -0.5px; }
-h2 { font-size: 20px; font-weight: 800; }
-.dim { color: var(--text-dim); }
+h2 { font-family: 'Anton', sans-serif; font-weight: 400; font-size: 20px; letter-spacing: 0.4px; text-transform: uppercase; }
+strong, b { font-weight: 700; }
+.dim { color: var(--ink-dim); }
 .center { text-align: center; }
 .stack { display: flex; flex-direction: column; gap: var(--gap); }
 .row { display: flex; align-items: center; gap: var(--gap); }
 
-/* --- Form + progress + spinner --- */
+/* ---- Buttons — juicy HUD slabs ---- */
+.btn {
+  appearance: none; border: none; cursor: pointer; width: 100%;
+  position: relative; min-height: 56px; padding: 0 22px;
+  font-family: 'Saira', sans-serif; font-size: 16px; font-weight: 800;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  color: #1a1206;
+  background: linear-gradient(180deg, var(--amber) 0%, var(--amber-2) 100%);
+  clip-path: polygon(var(--notch) 0, 100% 0, 100% calc(100% - var(--notch)), calc(100% - var(--notch)) 100%, 0 100%, 0 var(--notch));
+  box-shadow: 0 6px 0 rgba(181,113,10,0.55), 0 10px 22px rgba(255,138,30,0.30), inset 0 1px 0 rgba(255,255,255,0.45);
+  transition: transform 0.08s ease, box-shadow 0.12s ease, filter 0.15s ease;
+}
+.btn::after { /* sheen */
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.45) 50%, transparent 65%);
+  transform: translateX(-120%); transition: transform 0.5s ease;
+  clip-path: inherit; pointer-events: none;
+}
+.btn:hover::after { transform: translateX(120%); }
+.btn:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(181,113,10,0.55), 0 4px 12px rgba(255,138,30,0.25), inset 0 1px 0 rgba(255,255,255,0.4); }
+.btn:disabled { filter: grayscale(0.7) brightness(0.6); cursor: not-allowed; box-shadow: none; transform: none; }
+
+.btn--secondary { color: #03222b; background: linear-gradient(180deg, var(--cyan) 0%, var(--cyan-deep) 100%); box-shadow: 0 6px 0 rgba(10,143,176,0.55), 0 10px 22px rgba(47,227,255,0.25), inset 0 1px 0 rgba(255,255,255,0.4); }
+.btn--secondary:active { box-shadow: 0 2px 0 rgba(10,143,176,0.55), inset 0 1px 0 rgba(255,255,255,0.35); }
+.btn--ghost {
+  background: rgba(255,255,255,0.03); color: var(--ink); font-weight: 700;
+  border: 1.5px solid var(--line-bright);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.btn--ghost:active { transform: translateY(2px); box-shadow: none; }
+.btn--ghost::after { display: none; }
+
+/* ---- Panels ---- */
+.card {
+  position: relative;
+  background: linear-gradient(180deg, var(--panel-2) 0%, var(--panel) 100%);
+  border: 1px solid var(--line); border-left: 3px solid var(--line-bright);
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* ---- Inputs ---- */
 .input {
-  width: 100%;
-  background: var(--bg);
-  border: 1.5px solid var(--line);
-  border-radius: var(--radius-sm);
-  color: var(--text);
-  font-size: 17px;
-  padding: 14px 16px;
-  outline: none;
+  width: 100%; background: rgba(0,0,0,0.30); border: 1.5px solid var(--line-bright);
+  color: var(--ink); font-family: 'Saira', sans-serif; font-size: 17px; font-weight: 600;
+  padding: 14px 16px; outline: none; letter-spacing: 0.3px;
 }
-.input:focus { border-color: var(--accent); }
+.input:focus { border-color: var(--amber); box-shadow: 0 0 0 3px rgba(255,178,36,0.18); }
+.input::placeholder { color: var(--ink-faint); }
 
-.progress { height: 8px; background: var(--bg); border-radius: 99px; overflow: hidden; }
-.progress__fill { height: 100%; background: var(--accent); transition: width 0.3s ease; }
-
-.spinner {
-  width: 44px; height: 44px; border-radius: 50%;
-  border: 4px solid var(--line); border-top-color: var(--accent);
-  animation: spin 0.8s linear infinite;
-}
+/* ---- Progress / spinner ---- */
+.progress { height: 7px; background: rgba(0,0,0,0.4); overflow: hidden; border: 1px solid var(--line); }
+.progress__fill { height: 100%; background: linear-gradient(90deg, var(--amber-2), var(--amber)); box-shadow: 0 0 12px rgba(255,178,36,0.6); transition: width 0.3s ease; }
+.spinner { width: 46px; height: 46px; border-radius: 50%; border: 4px solid rgba(47,227,255,0.18); border-top-color: var(--cyan); box-shadow: 0 0 20px rgba(47,227,255,0.3); animation: spin 0.8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* --- Badges --- */
+/* ---- Badges & chips ---- */
 .badge {
-  font-size: 12px; font-weight: 800; letter-spacing: 0.3px;
-  padding: 4px 10px; border-radius: 99px;
-  background: var(--bg); border: 1px solid var(--line); color: var(--text-dim);
+  font-family: 'Saira', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.8px;
+  text-transform: uppercase; padding: 4px 9px;
+  background: rgba(0,0,0,0.35); border: 1px solid var(--line-bright); color: var(--ink-dim);
 }
-.badge--ghost { color: var(--accent-2); border-color: var(--accent-2); }
-.badge--cpu { color: var(--text-dim); }
+.badge--ghost { color: var(--cyan); border-color: var(--cyan-deep); box-shadow: 0 0 12px rgba(47,227,255,0.18); }
+.badge--cpu { color: var(--ink-dim); }
 
-/* --- Player card tile --- */
-.tile {
-  display: flex; align-items: center; gap: 12px;
-  width: 100%; text-align: left;
-  background: var(--bg-card);
-  border: 2px solid var(--line);
-  border-radius: var(--radius);
-  padding: 12px 14px;
-  min-height: 66px;
-  cursor: pointer;
-  transition: transform 0.08s ease, background 0.15s ease;
-}
-.tile:active { transform: scale(0.98); }
-.tile:disabled { cursor: default; }
-.tile--selected { background: #20304a; }
-.tile--compact { min-height: 52px; padding: 8px 12px; }
-
-.tile__ovr {
-  flex: 0 0 auto;
-  min-width: 40px; height: 40px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 10px;
-  font-weight: 900; font-size: 18px; color: #0b1220;
-}
-.tile__body { flex: 1 1 auto; min-width: 0; }
-.tile__name { font-weight: 800; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tile__sub { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tile__pos { flex: 0 0 auto; font-weight: 900; font-size: 13px; letter-spacing: 0.5px; }
-
-/* --- Mutator chips --- */
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .chip {
-  appearance: none; cursor: pointer;
-  background: var(--bg); color: var(--text-dim);
-  border: 1.5px solid var(--line); border-radius: 99px;
-  padding: 9px 14px; font-size: 14px; font-weight: 700;
-  transition: all 0.12s ease;
+  appearance: none; cursor: pointer; font-family: 'Saira', sans-serif;
+  background: rgba(0,0,0,0.30); color: var(--ink-dim);
+  border: 1.5px solid var(--line); padding: 8px 13px; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.3px; transition: all 0.12s ease;
 }
-.chip--on { background: var(--accent); color: #1a1206; border-color: var(--accent); }
+.chip--on { background: linear-gradient(180deg, var(--amber), var(--amber-2)); color: #1a1206; border-color: var(--amber); box-shadow: 0 0 16px rgba(255,178,36,0.35); }
 .chip:active { transform: scale(0.96); }
 
-/* --- Per-game series breakdown --- */
+/* ===========================================================================
+   PLAYER CARD — the collectible centerpiece.
+   =========================================================================== */
+.tile {
+  position: relative; display: block;
+  background: linear-gradient(180deg, var(--panel-2) 0%, var(--panel) 100%);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: transform 0.1s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+/* tier rail + glow set inline via style borderColor; reinforce with a left bar */
+.tile::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: var(--tile-tier, var(--line-bright));
+  box-shadow: 0 0 16px var(--tile-tier, transparent);
+}
+.tile:active { transform: scale(0.985); }
+.tile__main {
+  display: flex; flex-direction: column; align-items: stretch; gap: 7px;
+  width: 100%; text-align: left; background: transparent; border: none;
+  color: var(--ink); cursor: pointer; padding: 10px 38px 11px 14px;
+}
+.tile__main:disabled { cursor: default; }
+.tile__top { display: flex; align-items: center; gap: 10px; }
+.tile__ovr {
+  flex: 0 0 auto; min-width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Anton', sans-serif; font-size: 19px; color: #0a1322;
+  background: var(--tile-tier, #fff);
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+  box-shadow: 0 0 14px var(--tile-tier, transparent);
+}
+.tile__id { flex: 1; min-width: 0; }
+.tile__name { font-family: 'Saira', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile__meta { font-size: 9.5px; color: var(--ink-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.2px; }
+.tile__right { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.tile__pos { font-family: 'Anton', sans-serif; font-size: 13px; letter-spacing: 0.5px; }
+.tile__tier { font-size: 8px; font-weight: 800; letter-spacing: 1px; }
+.tile__cost { font-family: 'Saira', sans-serif; font-size: 10px; font-weight: 800; color: var(--amber); }
+.tile__info {
+  position: absolute; top: 8px; right: 8px; width: 24px; height: 24px;
+  border: 1.5px solid var(--line-bright); background: rgba(0,0,0,0.4);
+  color: var(--ink-dim); font-size: 12px; font-weight: 900; cursor: pointer;
+}
+
+/* Rating table — scoreboard alignment */
+.rt { display: flex; flex-direction: column; gap: 1px; margin-top: 4px; }
+.rt__head { display: grid; grid-template-columns: 66px 1fr 1fr 1fr; font-size: 8px; font-weight: 800; color: var(--ink-faint); letter-spacing: 0.8px; text-align: center; }
+.rt__head span:first-child { text-align: left; }
+.rt__row { display: grid; grid-template-columns: 66px 1fr 1fr 1fr; align-items: center; }
+.rt__lbl { font-size: 9px; font-weight: 800; color: var(--ink-dim); letter-spacing: 0.4px; }
+.rt__side { text-align: center; font-size: 11px; font-weight: 700; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.rt__tot { text-align: center; font-family: 'Saira', sans-serif; font-size: 15px; font-weight: 800; line-height: 1.1; }
+.rt__singles { display: flex; flex-wrap: wrap; gap: 3px 12px; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+.rt__single { font-size: 10px; font-weight: 700; color: var(--ink-dim); display: inline-flex; gap: 4px; align-items: baseline; }
+.rt__single b { font-weight: 800; font-size: 11px; color: var(--ink); }
+.rt__style { font-family: 'Anton', sans-serif; font-size: 13px; color: var(--amber); margin-top: 5px; letter-spacing: 0.4px; }
+
+/* ===========================================================================
+   THEMED ROUND BANNER — slot-machine marquee
+   =========================================================================== */
+.round-banner {
+  position: relative; overflow: hidden;
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1.5px solid var(--line-bright); padding: 9px 12px;
+  box-shadow: inset 0 0 30px rgba(47,227,255,0.05), 0 8px 22px rgba(0,0,0,0.35);
+}
+.round-banner__name { font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 0.5px; text-transform: uppercase; }
+.round-banner__flavor { font-size: 12px; color: var(--ink-dim); margin-top: 2px; }
+.round-banner__role { display: flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 13px; }
+.round-banner--spin .round-banner__name { animation: rollBlur 0.06s linear infinite; }
+@keyframes rollBlur { 0%,100% { filter: blur(0.5px); opacity: 0.85; } 50% { filter: blur(1.2px); opacity: 0.7; } }
+.round-banner--lock { animation: lockPop 0.34s cubic-bezier(.2,1.6,.4,1); }
+@keyframes lockPop { 0% { transform: scale(1.06); } 100% { transform: none; } }
+
+/* ===========================================================================
+   DRAFT — fit-on-screen, two-column
+   =========================================================================== */
+.draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
+.draft__head { display: flex; flex-direction: column; gap: 6px; }
+.draft__body { flex: 1; min-height: 0; display: flex; gap: 8px; }
+.draft__offers { flex: 1; min-width: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding-right: 2px; }
+.draft__depth { width: 142px; flex: 0 0 auto; overflow-y: auto; }
+.draft__autofill { min-height: 46px; font-size: 13px; }
+
+/* Depth sidebar — HUD roster */
+.depth { display: flex; flex-direction: column; gap: 6px; }
+.depth__group { background: rgba(0,0,0,0.22); border: 1px solid var(--line); padding: 5px 6px; }
+.depth__title { font-family: 'Anton', sans-serif; font-size: 9px; color: var(--cyan); letter-spacing: 1px; margin-bottom: 3px; }
+.depth__row { display: grid; grid-template-columns: 24px 1fr 22px; align-items: center; gap: 3px; font-size: 10px; line-height: 1.3; padding: 1px 2px; border: 1px solid transparent; font-variant-numeric: tabular-nums; }
+.depth__row--next { border-color: var(--amber); background: rgba(255,178,36,0.10); }
+.depth__pos { font-size: 8px; font-weight: 800; color: var(--ink-faint); }
+.depth__nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.depth__ovr { text-align: right; font-weight: 800; }
+
+/* ===========================================================================
+   SCOREBOARD — per-game series reveal
+   =========================================================================== */
 .gamelines { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 4px; }
 .gameline {
-  display: flex; flex-direction: column; align-items: center;
-  min-width: 46px; padding: 6px 4px; border-radius: 8px;
-  border: 1.5px solid var(--line); background: var(--bg);
+  display: flex; flex-direction: column; align-items: center; min-width: 48px; padding: 6px 6px;
+  background: #060d18; border: 1.5px solid var(--line);
+  box-shadow: inset 0 0 14px rgba(0,0,0,0.6);
 }
-.gameline--w { border-color: var(--win); }
-.gameline--l { border-color: var(--loss); opacity: 0.75; }
-.gameline__g { font-size: 10px; font-weight: 800; color: var(--text-dim); }
-.gameline__s { font-size: 15px; font-weight: 900; }
-.gameline__r { font-size: 11px; font-weight: 900; }
+.gameline--w { border-color: var(--win); box-shadow: inset 0 0 14px rgba(47,227,154,0.18); }
+.gameline--l { border-color: var(--loss); opacity: 0.8; }
+.gameline--pending { border-style: dashed; opacity: 0.3; }
+.gameline__g { font-size: 9px; font-weight: 800; color: var(--ink-faint); letter-spacing: 0.5px; }
+.gameline__s { font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 1px; color: var(--ink); }
+.gameline__r { font-family: 'Anton', sans-serif; font-size: 12px; }
 .gameline--w .gameline__r { color: var(--win); }
 .gameline--l .gameline__r { color: var(--loss); }
+.gameline--in { animation: glIn 0.3s cubic-bezier(.2,1.4,.4,1); }
+@keyframes glIn { 0% { opacity: 0; transform: translateY(10px) scale(0.8) rotateX(40deg); } 100% { opacity: 1; transform: none; } }
 
-/* --- Restructured card tile (body + info button) --- */
-.tile { display: block; position: relative; padding: 0; }
-.tile__main {
-  display: flex; align-items: center; gap: 12px;
-  width: 100%; text-align: left; background: transparent;
-  border: none; color: var(--text); cursor: pointer;
-  padding: 12px 42px 12px 14px; min-height: 66px;
-}
-.tile__main:active { transform: scale(0.98); }
-.tile__grades { font-size: 11px; font-weight: 800; color: var(--accent-2); margin-top: 3px; letter-spacing: 0.3px; }
-.tile__info {
-  position: absolute; top: 9px; right: 9px;
-  width: 28px; height: 28px; border-radius: 50%;
-  border: 1.5px solid var(--line); background: var(--bg);
-  color: var(--text-dim); font-size: 13px; font-weight: 900; cursor: pointer;
-}
-
-/* --- Themed round banner --- */
-.round-banner { background: var(--bg-card); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 14px; }
-.round-banner__name { font-size: 19px; font-weight: 900; }
-.round-banner__flavor { font-size: 13px; margin-top: 2px; }
-.round-banner__role { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; }
-
-/* --- Roster board --- */
-.board { display: flex; flex-direction: column; gap: 10px; }
-.board__title { font-size: 11px; font-weight: 800; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 4px; }
-.board__cells { display: flex; flex-wrap: wrap; gap: 5px; }
-.cell {
-  width: 60px; height: 44px; border: 1.5px solid var(--line); border-radius: 8px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: var(--bg); overflow: hidden;
-}
-.cell--on { background: var(--bg-card); }
-.cell--next { box-shadow: 0 0 0 2px var(--accent); }
-.cell__ovr { font-size: 14px; font-weight: 900; line-height: 1; }
-.cell__nm { font-size: 9px; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 56px; }
-.cell__lbl { font-size: 11px; font-weight: 800; color: var(--text-dim); }
-
-/* --- Player detail modal --- */
-.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.72); display: flex; align-items: flex-end; justify-content: center; z-index: 50; }
+/* ===========================================================================
+   MODAL — player detail
+   =========================================================================== */
+.modal { position: fixed; inset: 0; background: rgba(3,7,14,0.78); backdrop-filter: blur(4px); display: flex; align-items: flex-end; justify-content: center; z-index: 50; animation: fadeIn 0.18s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .modal__card {
-  background: var(--bg-elev); border-radius: 20px 20px 0 0;
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border-top: 3px solid var(--amber);
   padding: 20px 16px calc(var(--safe-bottom) + 20px);
   width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto;
   display: flex; flex-direction: column; gap: 12px;
+  box-shadow: 0 -20px 60px rgba(0,0,0,0.6);
+  animation: sheetUp 0.28s cubic-bezier(.2,1,.3,1);
 }
-.statline { display: flex; gap: 8px; }
-.stat { flex: 1; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 8px; text-align: center; }
-.stat__k { font-size: 10px; font-weight: 800; color: var(--text-dim); }
-.stat__v { font-size: 18px; font-weight: 900; }
-
-/* --- Detailed card face (override the simple row layout) --- */
-.tile__main {
-  display: flex; flex-direction: column; align-items: stretch; gap: 8px;
-  padding: 12px 42px 12px 14px;
-}
-.tile__top { display: flex; align-items: center; gap: 12px; }
-.tile__id { flex: 1; min-width: 0; }
-.tile__name { font-weight: 800; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tile__meta { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tile__right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
-.tile__pos { font-weight: 900; font-size: 13px; }
-.tile__tier { font-size: 9px; font-weight: 800; letter-spacing: 0.5px; }
-.tile__chips { display: flex; gap: 6px; }
-.chipg {
-  flex: 1; display: flex; flex-direction: column; align-items: center;
-  background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 4px 2px;
-}
-.chipg__l { font-size: 9px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.3px; }
-.chipg__v { font-size: 16px; font-weight: 900; line-height: 1.1; }
-.tile__stats { font-size: 12px; font-weight: 700; color: var(--text); letter-spacing: 0.2px; }
-
-/* --- Field depth chart --- */
-.fc { display: flex; flex-direction: column; gap: 12px; }
-.fc__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.fc__cell {
-  background: var(--bg-card); border: 1.5px solid var(--line); border-radius: 10px;
-  min-height: 60px; padding: 6px 4px; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; text-align: center; overflow: hidden;
-}
-.fc__cell--next { box-shadow: 0 0 0 2px var(--accent); }
-.fc__pos { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.5px; }
-.fc__ovr { font-size: 18px; font-weight: 900; line-height: 1.05; }
-.fc__nm { font-size: 10px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-.fc__sub { font-size: 9px; color: var(--text-dim); }
-.fc__empty { font-size: 18px; color: var(--line); font-weight: 900; }
-.fc__lines { display: flex; flex-direction: column; gap: 6px; }
-.fc__line { display: flex; gap: 8px; align-items: baseline; }
-.fc__line-lbl { width: 64px; flex: 0 0 auto; font-size: 11px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.5px; }
-.fc__line-vals { display: flex; flex-wrap: wrap; gap: 4px; }
-.fc__pill { font-size: 11px; font-weight: 700; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 2px 7px; }
-.fc__pill--empty { color: var(--text-dim); opacity: 0.6; }
-
-/* --- Card rating split line --- */
-.tile__split { font-size: 11px; font-weight: 700; color: var(--text-dim); letter-spacing: 0.2px; }
-.tile__split b { color: var(--text); font-weight: 900; }
-
-/* --- Detailed card body: mini radar + ratings grid + vL/vR splits --- */
-.tile__detail { display: flex; gap: 10px; align-items: center; }
-.tile__radar { flex: 0 0 auto; }
-.tile__info-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
-.rg { display: flex; flex-wrap: wrap; gap: 3px 12px; }
-.rg__cell { display: inline-flex; align-items: baseline; gap: 4px; }
-.rg__l { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.2px; }
-.rg__v { font-size: 15px; font-weight: 900; }
-.splitrow { font-size: 11px; font-weight: 700; color: var(--text-dim); white-space: nowrap; }
-.splitrow b { font-weight: 900; }
-.splitrow__tag { display: inline-block; min-width: 42px; font-size: 9px; font-weight: 800; color: var(--accent-2); letter-spacing: 0.4px; }
+@keyframes sheetUp { from { transform: translateY(40px); opacity: 0.6; } to { transform: none; opacity: 1; } }
 
 /* ===========================================================================
-   Sharp-corner + condensed pass — square off every pill/card/chip, keep only
-   the loading spinner round.
+   LEADERBOARD
    =========================================================================== */
-.btn, .card, .tile, .input, .badge, .chip, .progress, .progress__fill,
-.tile__ovr, .tile__info, .cell, .fc__cell, .fc__pill, .chipg, .gameline,
-.stat, .modal__card, .round-banner, .splitrow__tag {
-  border-radius: 0 !important;
-}
-
-/* Tighter, denser type. */
-h1 { letter-spacing: -0.5px; }
-.btn { letter-spacing: 0.2px; }
-.tile__name { font-size: 15px; letter-spacing: -0.2px; }
-.tile__meta { font-size: 10px; }
-.rg__l, .splitrow, .splitrow__tag, .chipg__l, .fc__pos, .board__title { letter-spacing: 0; }
-.dim { letter-spacing: 0; }
-
-/* --- Leaderboard table --- */
-.lb { display: flex; flex-direction: column; border: 1px solid var(--line); }
-.lb__row {
-  display: grid; grid-template-columns: 24px 1fr 42px 40px 40px 40px;
-  align-items: center; gap: 4px; padding: 8px 10px;
-  border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 700;
-}
+.lb { display: flex; flex-direction: column; border: 1px solid var(--line); background: rgba(0,0,0,0.2); }
+.lb__row { display: grid; grid-template-columns: 24px 1fr 42px 42px 42px 42px; align-items: center; gap: 4px; padding: 9px 10px; border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .lb__row:last-child { border-bottom: none; }
-.lb__row--head { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.5px; background: var(--bg); text-transform: uppercase; }
-.lb__rank { color: var(--text-dim); font-weight: 800; }
+.lb__row--head { font-family: 'Anton', sans-serif; font-size: 10px; font-weight: 400; color: var(--cyan); letter-spacing: 0.6px; background: rgba(0,0,0,0.35); }
+.lb__rank { font-family: 'Anton', sans-serif; color: var(--ink-dim); }
 .lb__team { display: flex; flex-direction: column; min-width: 0; }
 .lb__name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 800; }
 .lb__streak { font-size: 10px; }
 
 /* ===========================================================================
-   Fit-on-screen draft: compact header, two-column body (offers + depth chart),
-   pinned auto-fill. Only the offers list scrolls; depth chart stays visible.
+   ACHIEVEMENTS
    =========================================================================== */
-.draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
-.draft__head { display: flex; flex-direction: column; gap: 6px; }
-.draft__body { flex: 1; min-height: 0; display: flex; gap: 8px; }
-.draft__offers { flex: 1; min-width: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 7px; padding-right: 2px; }
-.draft__depth { width: 150px; flex: 0 0 auto; overflow-y: auto; }
-.draft__autofill { min-height: 44px; font-size: 14px; }
-.round-banner__name { font-size: 16px; }
-.round-banner { padding: 8px 10px; }
-.round-banner__role { margin-top: 4px; font-size: 13px; }
-
-/* --- A-F split rating: small vL · big TOTAL · small vR --- */
-.ratings { display: flex; flex-direction: column; gap: 3px; margin-top: 2px; }
-.ratings__head { display: grid; grid-template-columns: 62px 1fr 1fr 1fr; font-size: 8px; font-weight: 800; color: var(--text-dim); }
-.ratings__hl { text-align: center; } .ratings__hr { text-align: center; }
-.sg { display: grid; grid-template-columns: 62px 1fr 1fr 1fr; align-items: center; }
-.sg__lbl { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.2px; }
-.sg__side { text-align: center; font-size: 12px; font-weight: 700; color: var(--text-dim); }
-.sg__total { text-align: center; font-size: 17px; font-weight: 900; }
-.powgrp { display: flex; align-items: stretch; gap: 6px; border-left: 2px solid var(--line); padding-left: 6px; }
-.powgrp__lbl { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 8px; font-weight: 900; color: var(--text-dim); letter-spacing: 1px; }
-.powgrp__rows { flex: 1; display: flex; flex-direction: column; gap: 3px; }
-.g1row { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 2px; }
-.g1 { display: inline-flex; align-items: baseline; gap: 4px; font-size: 12px; }
-.g1__l { font-size: 9px; font-weight: 800; color: var(--text-dim); }
-.g1 b { font-weight: 900; font-size: 13px; }
-
-/* --- Depth sidebar (always visible) --- */
-.depth { display: flex; flex-direction: column; gap: 5px; }
-.depth__title { font-size: 9px; font-weight: 900; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 1px; }
-.depth__row { display: grid; grid-template-columns: 26px 1fr 22px; align-items: center; gap: 3px; font-size: 11px; line-height: 1.25; padding: 1px 3px; border: 1px solid transparent; }
-.depth__row--next { border-color: var(--accent); background: rgba(245,166,35,0.08); }
-.depth__pos { font-size: 9px; font-weight: 800; color: var(--text-dim); }
-.depth__nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
-.depth__ovr { text-align: right; font-weight: 900; }
-
-/* --- Card salary cost --- */
-.tile__cost { font-size: 11px; font-weight: 900; color: var(--accent); }
-
-/* --- Series reveal animation --- */
-@keyframes glIn { from { opacity: 0; transform: translateY(8px) scale(0.85); } to { opacity: 1; transform: none; } }
-.gameline--in { animation: glIn 0.26s ease; }
-.gameline--pending { opacity: 0.28; border-style: dashed; }
-.gameline--pending .gameline__s { color: var(--text-dim); }
-
-/* --- Round spin reveal --- */
-.round-banner--spin .round-banner__name { opacity: 0.85; filter: blur(0.3px); }
-.round-banner--lock { animation: lockPop 0.3s ease; }
-@keyframes lockPop { 0% { transform: scale(1.04); } 60% { transform: scale(0.99); } 100% { transform: none; } }
-
-/* --- Achievements list --- */
-.ach { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--bg-card); border: 1px solid var(--line); opacity: 0.55; }
-.ach--on { opacity: 1; border-color: var(--accent); }
+.ach { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); opacity: 0.5; }
+.ach--on { opacity: 1; border-left: 3px solid var(--amber); box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
 .ach__emoji { font-size: 26px; flex: 0 0 auto; }
 .ach__body { min-width: 0; }
+.ach__body strong { font-family: 'Saira', sans-serif; font-weight: 800; }
 
-/* --- Clean rating table on cards (aligned columns, muted splits) --- */
-.rt { display: flex; flex-direction: column; gap: 1px; margin-top: 6px; }
-.rt__head { display: grid; grid-template-columns: 78px 1fr 1fr 1fr; font-size: 9px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.5px; text-align: center; }
-.rt__head span:first-child { text-align: left; }
-.rt__row { display: grid; grid-template-columns: 78px 1fr 1fr 1fr; align-items: center; }
-.rt__lbl { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.3px; }
-.rt__side { text-align: center; font-size: 12px; font-weight: 700; color: var(--text-dim); }
-.rt__tot { text-align: center; font-size: 17px; font-weight: 900; line-height: 1.1; }
-.rt__singles { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
-.rt__single { font-size: 11px; font-weight: 700; color: var(--text-dim); display: inline-flex; gap: 4px; align-items: baseline; }
-.rt__single b { font-weight: 900; font-size: 13px; }
-.rt__style { font-size: 13px; font-weight: 800; color: var(--accent); margin-top: 5px; }
-
-/* ===========================================================================
-   Denser draft cards — smaller type, tighter spacing, fewer truncations.
-   =========================================================================== */
-.tile__main { padding: 9px 38px 9px 11px; gap: 9px; min-height: 0; }
-.tile__ovr { min-width: 34px; height: 34px; font-size: 16px; border-radius: 0; }
-.tile__name { font-size: 13px; }
-.tile__meta { font-size: 9px; }
-.tile__pos { font-size: 12px; }
-.tile__tier { font-size: 8px; }
-.tile__cost { font-size: 10px; }
-.tile__info { width: 24px; height: 24px; font-size: 12px; top: 7px; right: 7px; }
-
-.rt { margin-top: 5px; }
-.rt__head { font-size: 8px; grid-template-columns: 68px 1fr 1fr 1fr; }
-.rt__row { grid-template-columns: 68px 1fr 1fr 1fr; }
-.rt__lbl { font-size: 9px; }
-.rt__side { font-size: 11px; }
-.rt__tot { font-size: 14px; }
-.rt__singles { gap: 3px 13px; margin-top: 5px; padding-top: 5px; }
-.rt__single { font-size: 10px; }
-.rt__single b { font-size: 11px; }
-.rt__style { font-size: 12px; }
-
-/* Depth sidebar a touch tighter too. */
-.depth__row { font-size: 10px; }
-.depth__title { font-size: 8px; }
+/* ---- Staggered page-load reveal helper ---- */
+.app-shell > * > * { animation: riseIn 0.4s ease backwards; }
+@keyframes riseIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }

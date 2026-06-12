@@ -98,7 +98,7 @@ export function CardTile({ player, onPick, onInfo }: {
   const isStaff = pos === 'HC' || pos === 'ST';
 
   return (
-    <div className="tile" style={{ borderColor: tierColor }}>
+    <div className="tile" style={{ borderColor: tierColor, ['--tile-tier' as any]: tierColor }}>
       <button className="tile__main" onClick={onPick ? () => onPick(player) : undefined} disabled={!onPick}>
         <div className="tile__top">
           <div className="tile__ovr" style={{ background: tierColor }}>{player.overall}</div>
