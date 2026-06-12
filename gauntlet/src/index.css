@@ -371,3 +371,6 @@ strong, b { font-weight: 700; }
 .runrow--live .runrow__score { color: var(--amber); display: flex; align-items: center; gap: 6px; font-size: 12px; }
 .livedot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 10px var(--amber); animation: pulse 0.9s ease-in-out infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.7); } }
+
+/* ---- Card archetype tag ---- */
+.tile__arch { font-family: 'Anton', sans-serif; font-size: 13px; letter-spacing: 0.5px; margin-top: 2px; }

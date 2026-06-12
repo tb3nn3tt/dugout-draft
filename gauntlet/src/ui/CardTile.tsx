@@ -14,6 +14,33 @@ const TIER_LABEL: Record<string, string> = {
 const avg = (a: number, b: number) => Math.round((a + b) / 2);
 const cleanName = (n: string) => n.replace(/\s*\([^)]*\)\s*$/, '').trim() || n;
 
+/** A one-glance "what is this player" tag, derived from the ratings. */
+function archetype(player: Player): { emoji: string; label: string } {
+  const r = getRatings(player);
+  if (r.kind === 'pitcher') {
+    if (player.positions.includes('LOOGY')) return { emoji: '🥷', label: 'LEFTY SPECIALIST' };
+    const stuff = avg(r.stuffVL, r.stuffVR), cmd = avg(r.cmdVL, r.cmdVR);
+    if (player.positions.includes('CL')) return { emoji: '🔒', label: 'SHUTDOWN CLOSER' };
+    if (stuff >= 66) return { emoji: '🔥', label: 'POWER ARM' };
+    if (r.control >= 66) return { emoji: '🎯', label: 'CONTROL ARTIST' };
+    if (r.gb >= 50) return { emoji: '⬇️', label: 'GROUND-BALLER' };
+    if (cmd >= 64) return { emoji: '🧠', label: 'CRAFTY' };
+    if (r.stamina >= 68) return { emoji: '🐴', label: 'WORKHORSE' };
+    return { emoji: '⚾', label: 'INNINGS ARM' };
+  }
+  const con = avg(r.conVL, r.conVR), hr = avg(r.hrVL, r.hrVR), gap = avg(r.gapVL, r.gapVR);
+  const tools = [hr >= 62, con >= 62, r.run >= 62, r.field >= 62, r.eye >= 62].filter(Boolean).length;
+  if (tools >= 4) return { emoji: '⭐', label: '5-TOOL' };
+  if (hr >= 66) return { emoji: '💪', label: 'SLUGGER' };
+  if (con >= 66) return { emoji: '🎯', label: 'CONTACT HITTER' };
+  if (gap >= 62 && con >= 58) return { emoji: '↔️', label: 'GAP HITTER' };
+  if (r.run >= 66) return { emoji: '⚡', label: 'SPEEDSTER' };
+  if (r.eye >= 66) return { emoji: '👁️', label: 'ON-BASE MACHINE' };
+  if (r.field >= 66) return { emoji: '🧤', label: 'GLOVE FIRST' };
+  if (r.bunt >= 60) return { emoji: '🎽', label: 'SMALL BALL' };
+  return { emoji: '⚾', label: 'BALANCED' };
+}
+
 /** One rating row: label · muted vL · bold colored OVR · muted vR, all aligned. */
 function Row({ label, vL, total, vR }: { label: string; vL: number; total: number; vR: number }) {
   return (
@@ -95,6 +122,7 @@ export function CardTile({ player, onPick, onInfo }: {
   const tierColor = TIER_COLORS[tier];
   const pos = player.positions[0];
   const isStaff = pos === 'HC' || pos === 'ST';
+  const arch = !isStaff ? archetype(player) : null;
 
   return (
     <div className={`tile tile--${tier}`} style={{ borderColor: tierColor, ['--tile-tier' as any]: tierColor }}>
@@ -104,7 +132,7 @@ export function CardTile({ player, onPick, onInfo }: {
           <div className="tile__id">
             <div className="tile__name">{cleanName(player.name)}</div>
             <div className="tile__meta dim">
-              {player.nickname ? `“${player.nickname}” · ` : ''}{player.team}{player.era ? ` · ${player.era}` : ''}
+              {player.team}{player.era ? ` · ${player.era}` : ''} · bats {player.bats}/throws {player.throws}
             </div>
           </div>
           <div className="tile__right">
@@ -112,6 +140,7 @@ export function CardTile({ player, onPick, onInfo }: {
             <div className="tile__tier" style={{ color: tierColor }}>{TIER_LABEL[tier]}</div>
           </div>
         </div>
+        {arch && <div className="tile__arch" style={{ color: tierColor }}>{arch.emoji} {arch.label}</div>}
         {isStaff ? <StaffBody player={player} /> : <Body player={player} />}
       </button>
       {onInfo && <button className="tile__info" onClick={() => onInfo(player)} aria-label="Player details">ℹ</button>}
