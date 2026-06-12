@@ -282,3 +282,15 @@ h2 { font-size: 20px; font-weight: 800; }
 /* --- Card rating split line --- */
 .tile__split { font-size: 11px; font-weight: 700; color: var(--text-dim); letter-spacing: 0.2px; }
 .tile__split b { color: var(--text); font-weight: 900; }
+
+/* --- Detailed card body: mini radar + ratings grid + vL/vR splits --- */
+.tile__detail { display: flex; gap: 10px; align-items: center; }
+.tile__radar { flex: 0 0 auto; }
+.tile__info-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.rg { display: flex; flex-wrap: wrap; gap: 3px 12px; }
+.rg__cell { display: inline-flex; align-items: baseline; gap: 4px; }
+.rg__l { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.2px; }
+.rg__v { font-size: 15px; font-weight: 900; }
+.splitrow { font-size: 11px; font-weight: 700; color: var(--text-dim); white-space: nowrap; }
+.splitrow b { font-weight: 900; }
+.splitrow__tag { display: inline-block; min-width: 42px; font-size: 9px; font-weight: 800; color: var(--accent-2); letter-spacing: 0.4px; }

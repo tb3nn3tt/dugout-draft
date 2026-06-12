@@ -1,8 +1,8 @@
 import { Player } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
-import { getGradeColor, formatBattingAvg, formatERA } from '../domain/sim/helpers';
+import { getGradeColor, formatBattingAvg, formatERA, isPitcher } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
-import { isPitcher } from '../domain/sim/helpers';
+import { RatingRadar, axesFor } from './RatingRadar';
 
 const POS_LABEL: Record<string, string> = {
   C: 'C', '1B': '1B', '2B': '2B', '3B': '3B', SS: 'SS', LF: 'LF', CF: 'CF', RF: 'RF', DH: 'DH',
@@ -17,40 +17,52 @@ function cleanName(name: string): string {
   return name.replace(/\s*\([^)]*\)\s*$/, '').trim() || name;
 }
 
-function Chip({ l, v }: { l: string; v: number }) {
-  return (
-    <span className="chipg">
-      <span className="chipg__l">{l}</span>
-      <span className="chipg__v" style={{ color: getGradeColor(v) }}>{v}</span>
-    </span>
-  );
+const V = ({ n }: { n: number }) => <b style={{ color: getGradeColor(n) }}>{n}</b>;
+
+function Rating({ l, v }: { l: string; v: number }) {
+  return <span className="rg__cell"><span className="rg__l">{l}</span><span className="rg__v" style={{ color: getGradeColor(v) }}>{v}</span></span>;
 }
 
-function RatingChips({ player }: { player: Player }) {
+function Body({ player, color }: { player: Player; color: string }) {
   const r = getRatings(player);
-  if (r.kind === 'pitcher') {
-    return (
-      <>
-        <div className="tile__chips">
-          <Chip l="STUFF" v={r.stuff} /><Chip l="CTL" v={r.control} />
-          <Chip l="CMD" v={r.command} /><Chip l="STAM" v={r.stamina} />
-        </div>
-        <div className="tile__split">vs L <b style={{ color: getGradeColor(r.vsL) }}>{r.vsL}</b> · vs R <b style={{ color: getGradeColor(r.vsR) }}>{r.vsR}</b></div>
-      </>
-    );
-  }
-  const con = Math.round((r.conVL + r.conVR) / 2);
-  const hr = Math.round((r.hrVL + r.hrVR) / 2);
-  const gap = Math.round((r.gapVL + r.gapVR) / 2);
   return (
-    <>
-      <div className="tile__chips">
-        <Chip l="CON" v={con} /><Chip l="HR" v={hr} /><Chip l="GAP" v={gap} /><Chip l="EYE" v={r.eye} /><Chip l="RUN" v={r.run} />
+    <div className="tile__detail">
+      <div className="tile__radar"><RatingRadar axes={axesFor(player)} color={color} size={86} showLabels={false} /></div>
+      <div className="tile__info-col">
+        {r.kind === 'hitter' ? (
+          <>
+            <div className="rg">
+              <Rating l="CON" v={Math.round((r.conVL + r.conVR) / 2)} />
+              <Rating l="HR" v={Math.round((r.hrVL + r.hrVR) / 2)} />
+              <Rating l="GAP" v={Math.round((r.gapVL + r.gapVR) / 2)} />
+              <Rating l="EYE" v={r.eye} />
+              <Rating l="RUN" v={r.run} />
+              <Rating l="FLD" v={r.field} />
+            </div>
+            <div className="splitrow">
+              <span className="splitrow__tag">vs LHP</span> CON <V n={r.conVL} /> · HR <V n={r.hrVL} /> · GAP <V n={r.gapVL} />
+            </div>
+            <div className="splitrow">
+              <span className="splitrow__tag">vs RHP</span> CON <V n={r.conVR} /> · HR <V n={r.hrVR} /> · GAP <V n={r.gapVR} />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="rg">
+              <Rating l="STUFF" v={r.stuff} />
+              <Rating l="CTL" v={r.control} />
+              <Rating l="CMD" v={r.command} />
+              <Rating l="STAM" v={r.stamina} />
+            </div>
+            <div className="splitrow">
+              <span className="splitrow__tag">vs LHB</span> <V n={r.vsL} /> &nbsp;&nbsp;
+              <span className="splitrow__tag">vs RHB</span> <V n={r.vsR} />
+            </div>
+          </>
+        )}
+        <StatRow player={player} />
       </div>
-      <div className="tile__split">
-        CON vL/vR <b>{r.conVL}/{r.conVR}</b> · HR <b>{r.hrVL}/{r.hrVR}</b> · FLD {r.field} · BNT {r.bunt}
-      </div>
-    </>
+    </div>
   );
 }
 
@@ -63,7 +75,7 @@ function StatRow({ player }: { player: Player }) {
   return text ? <div className="tile__stats">{text}</div> : null;
 }
 
-/** Detailed, draftable card: ratings + splits + stats on the face; ℹ for full. */
+/** Detailed, draftable card: mini radar + ratings + vL/vR splits + stats. */
 export function CardTile({ player, onPick, onInfo }: {
   player: Player;
   onPick?: (p: Player) => void;
@@ -93,14 +105,11 @@ export function CardTile({ player, onPick, onInfo }: {
 
         {isStaff ? (
           <div className="tile__stats">
-            {player.coachEffect && `${player.coachEffect.style} · +${player.coachEffect.offensiveBonus}% OFF · +${player.coachEffect.pitchingBonus}% PIT`}
-            {player.parkEffect && `${player.parkEffect.name} · HR ×${player.parkEffect.hrFactor} · runs ×${player.parkEffect.runFactor}`}
+            {player.coachEffect && `${player.coachEffect.style} · +${player.coachEffect.offensiveBonus}% OFF · +${player.coachEffect.pitchingBonus}% PIT · +${player.coachEffect.clutchBonus} CLT`}
+            {player.parkEffect && `${player.parkEffect.name} · HR ×${player.parkEffect.hrFactor} · 2B ×${player.parkEffect.doublesFactor} · runs ×${player.parkEffect.runFactor}`}
           </div>
         ) : (
-          <>
-            <RatingChips player={player} />
-            <StatRow player={player} />
-          </>
+          <Body player={player} color={tierColor} />
         )}
       </button>
       {onInfo && <button className="tile__info" onClick={() => onInfo(player)} aria-label="Player details">ℹ</button>}
