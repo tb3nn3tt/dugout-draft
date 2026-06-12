@@ -3,10 +3,12 @@ import { DRAFT_SLOTS, offerForSlot } from '../domain/draftFlow';
 import { autoDraftTeam } from '../domain/autoDraft';
 import { MatchedOpponent } from '../domain/matchmaking';
 import { SeriesResult } from '../domain/sim/series';
+import { getMutator } from '../domain/mutators';
 
 export interface GauntletState {
   phase: RunPhase;
   teamName: string;
+  mutatorId: string;
   seed: number;
 
   // --- draft ---
@@ -26,7 +28,7 @@ export interface GauntletState {
 }
 
 export type GauntletAction =
-  | { type: 'START_RUN'; teamName: string; seed: number }
+  | { type: 'START_RUN'; teamName: string; seed: number; mutatorId: string }
   | { type: 'PICK'; player: Player }
   | { type: 'AUTOFILL_REST' }
   | { type: 'SET_OPPONENT'; opponent: MatchedOpponent }
@@ -37,6 +39,7 @@ export type GauntletAction =
 export const initialState: GauntletState = {
   phase: 'menu',
   teamName: '',
+  mutatorId: 'standard',
   seed: 0,
   picks: [],
   offered: [],
@@ -66,11 +69,13 @@ function buildTeamFromPicks(name: string, picks: Player[]): GauntletTeam {
 export function gauntletReducer(state: GauntletState, action: GauntletAction): GauntletState {
   switch (action.type) {
     case 'START_RUN': {
-      const firstOffers = offerForSlot(DRAFT_SLOTS[0].fills, new Set());
+      const filter = getMutator(action.mutatorId).poolFilter;
+      const firstOffers = offerForSlot(DRAFT_SLOTS[0].fills, new Set(), 5, filter);
       return {
         ...initialState,
         phase: 'drafting',
         teamName: action.teamName,
+        mutatorId: action.mutatorId,
         seed: action.seed,
         offered: firstOffers,
         currentSlot: 0,
@@ -81,6 +86,7 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
     case 'PICK': {
       const picks = [...state.picks, action.player];
       const nextSlot = state.currentSlot + 1;
+      const filter = getMutator(state.mutatorId).poolFilter;
 
       // Draft complete → freeze team, go find first opponent.
       if (nextSlot >= DRAFT_SLOTS.length) {
@@ -97,16 +103,17 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
         ...state,
         picks,
         currentSlot: nextSlot,
-        offered: offerForSlot(DRAFT_SLOTS[nextSlot].fills, pickedIds(picks)),
+        offered: offerForSlot(DRAFT_SLOTS[nextSlot].fills, pickedIds(picks), 5, filter),
       };
     }
 
     case 'AUTOFILL_REST': {
       // Fill every remaining slot with the top offered-style pick, fast.
+      const filter = getMutator(state.mutatorId).poolFilter;
       const picks = [...state.picks];
       const taken = pickedIds(picks);
       for (let i = state.currentSlot; i < DRAFT_SLOTS.length; i++) {
-        const offers = offerForSlot(DRAFT_SLOTS[i].fills, taken);
+        const offers = offerForSlot(DRAFT_SLOTS[i].fills, taken, 5, filter);
         const choice = offers[0];
         if (choice) { picks.push(choice); taken.add(choice.id); }
       }

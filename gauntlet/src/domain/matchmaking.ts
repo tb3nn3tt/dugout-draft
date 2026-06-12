@@ -1,4 +1,4 @@
-import { GauntletTeam, GhostTeam } from './types';
+import { GauntletTeam, GhostTeam, Player } from './types';
 import { hydrateIds, getCard } from './players';
 import { autoDraftTeam } from './autoDraft';
 
@@ -67,7 +67,8 @@ export function targetOverallForStreak(streak: number): number {
 export function findOpponent(
   streak: number,
   ghostPool: GhostTeam[],
-  excludeIds: Set<string> = new Set()
+  excludeIds: Set<string> = new Set(),
+  poolFilter?: (p: Player) => boolean
 ): MatchedOpponent {
   // Prefer a real ghost whose own streak is close to the player's current one.
   const eligible = ghostPool.filter(g => !excludeIds.has(g.id));
@@ -89,7 +90,7 @@ export function findOpponent(
 
   // Cold-start / thin-pool fallback: CPU team scaled to the streak.
   const target = targetOverallForStreak(streak);
-  const team = autoDraftTeam(target, cpuName(streak));
+  const team = autoDraftTeam(target, cpuName(streak), poolFilter);
   return {
     team,
     displayName: team.name,

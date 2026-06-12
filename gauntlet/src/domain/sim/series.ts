@@ -8,6 +8,8 @@ import {
   getActiveSynergies, calculateStatBoosts, getCoachBoosts,
   getStadiumEffect, NEUTRAL_PARK,
 } from './synergy';
+import { ParkEffect } from '../types';
+import { combinePark } from '../mutators';
 import {
   MomentumState, BatterStreakMap,
   createInitialMomentum, updateMomentum, resetHalfInningMomentum,
@@ -25,7 +27,8 @@ export function playGame(
   gameNumber: number,
   team1: DraftedTeam,
   team2: DraftedTeam,
-  homeTeam: 'player1' | 'player2'
+  homeTeam: 'player1' | 'player2',
+  envPark?: Partial<ParkEffect>
 ): GameResult {
   // Home/away alternates by game (1,2,6,7 = original home team hosts).
   const isHomeGame = [1, 2, 6, 7].includes(gameNumber);
@@ -88,7 +91,7 @@ export function playGame(
   const homeCoach = getCoachBoosts(homeTeamData.roster);
 
   const homeStadiumEffect = getStadiumEffect(homeTeamData.roster);
-  const activePark = homeStadiumEffect ?? NEUTRAL_PARK;
+  const activePark = combinePark(homeStadiumEffect ?? NEUTRAL_PARK, envPark);
 
   const simulateHalfInning = (
     battingTeam: DraftedTeam,
@@ -305,7 +308,11 @@ export interface SeriesResult {
  * Simulate a best-of-7 series. team1 is always the human; team2 the opponent.
  * Home field for the series is decided by a coin flip (matches the original).
  */
-export function playSeries(team1: DraftedTeam, team2: DraftedTeam): SeriesResult {
+export function playSeries(
+  team1: DraftedTeam,
+  team2: DraftedTeam,
+  envPark?: Partial<ParkEffect>
+): SeriesResult {
   const winsNeeded = 4;
   const maxGames = 7;
   const homeTeam: 'player1' | 'player2' = rand() < 0.5 ? 'player1' : 'player2';
@@ -318,7 +325,7 @@ export function playSeries(team1: DraftedTeam, team2: DraftedTeam): SeriesResult
   let gameNumber = 1;
 
   while (p1Wins < winsNeeded && p2Wins < winsNeeded && gameNumber <= maxGames) {
-    const result = playGame(gameNumber, team1, team2, homeTeam);
+    const result = playGame(gameNumber, team1, team2, homeTeam, envPark);
     games.push(result);
 
     // Map away/home score back to team1 (you) vs team2 (opp) for this game.

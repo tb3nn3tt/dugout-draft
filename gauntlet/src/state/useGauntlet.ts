@@ -6,6 +6,7 @@ import { buildSimTeam } from '../domain/sim/buildTeam';
 import { playSeries } from '../domain/sim/series';
 import { seedRng } from '../domain/sim/rng';
 import { recordRun, HofEntry } from '../domain/hallOfFame';
+import { getMutator } from '../domain/mutators';
 
 /**
  * Drives a gauntlet run. Pure domain logic lives in the reducer + sim; this hook
@@ -19,12 +20,12 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
   const recordedRef = useRef(false);
   const hofResultRef = useRef<{ entry: HofEntry; rank: number } | null>(null);
 
-  const startRun = useCallback((teamName: string) => {
+  const startRun = useCallback((teamName: string, mutatorId = 'standard') => {
     const seed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
     seedRng(seed);
     recordedRef.current = false;
     hofResultRef.current = null;
-    dispatch({ type: 'START_RUN', teamName, seed });
+    dispatch({ type: 'START_RUN', teamName, seed, mutatorId });
   }, []);
 
   const pick = useCallback((player: Player) => dispatch({ type: 'PICK', player }), []);
@@ -36,10 +37,11 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
   useEffect(() => {
     if (state.phase !== 'matchmaking') return;
     const excluded = new Set(state.facedGhostIds);
-    const opponent = findOpponent(state.streak, ghostPool, excluded);
+    const filter = getMutator(state.mutatorId).poolFilter;
+    const opponent = findOpponent(state.streak, ghostPool, excluded, filter);
     const t = setTimeout(() => dispatch({ type: 'SET_OPPONENT', opponent }), 600);
     return () => clearTimeout(t);
-  }, [state.phase, state.streak, state.facedGhostIds, ghostPool]);
+  }, [state.phase, state.streak, state.facedGhostIds, state.mutatorId, ghostPool]);
 
   // Play the current series (called from the matchup screen).
   const playCurrentSeries = useCallback(() => {
@@ -49,11 +51,12 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
     setTimeout(() => {
       const you = buildSimTeam(state.team!, 'player1');
       const opp = buildSimTeam(state.opponent!.team, 'player2');
-      const result = playSeries(you, opp);
+      const env = getMutator(state.mutatorId).env;
+      const result = playSeries(you, opp, env);
       setSimulating(false);
       dispatch({ type: 'RESOLVE_SERIES', result });
     }, 50);
-  }, [state.team, state.opponent]);
+  }, [state.team, state.opponent, state.mutatorId]);
 
   // Bank the run into the hall of fame once, when it's over.
   useEffect(() => {

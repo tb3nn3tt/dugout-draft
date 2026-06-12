@@ -3,6 +3,7 @@ import { useGauntlet } from '../state/useGauntlet';
 import { DRAFT_SLOTS, TOTAL_PICKS } from '../domain/draftFlow';
 import { loadHof, rankHof } from '../domain/hallOfFame';
 import { computeAwards, fmtAvg } from '../domain/seriesAwards';
+import { MUTATORS, getMutator } from '../domain/mutators';
 import { CardTile } from './CardTile';
 
 type G = ReturnType<typeof useGauntlet>;
@@ -13,12 +14,14 @@ type G = ReturnType<typeof useGauntlet>;
 export function MenuScreen({ g }: { g: G }) {
   const [name, setName] = useState(localStorage.getItem('dugout-gauntlet-name') ?? '');
   const [view, setView] = useState<'menu' | 'hof'>('menu');
+  const [mutatorId, setMutatorId] = useState('standard');
   const top = rankHof(loadHof()).slice(0, 3);
+  const mutator = getMutator(mutatorId);
 
   const start = () => {
     const teamName = name.trim() || 'My Squad';
     localStorage.setItem('dugout-gauntlet-name', teamName);
-    g.startRun(teamName);
+    g.startRun(teamName, mutatorId);
   };
 
   if (view === 'hof') return <HallOfFameScreen onBack={() => setView('menu')} />;
@@ -40,6 +43,22 @@ export function MenuScreen({ g }: { g: G }) {
           maxLength={22}
         />
         <button className="btn" onClick={start}>Start a Run ⚾</button>
+      </div>
+
+      <div className="card stack" style={{ gap: 10 }}>
+        <label className="dim" style={{ fontSize: 13, fontWeight: 700 }}>RUN MODE</label>
+        <div className="chips">
+          {MUTATORS.map(m => (
+            <button
+              key={m.id}
+              className={`chip ${m.id === mutatorId ? 'chip--on' : ''}`}
+              onClick={() => setMutatorId(m.id)}
+            >
+              {m.emoji} {m.name}
+            </button>
+          ))}
+        </div>
+        <p className="dim" style={{ fontSize: 13 }}>{mutator.description}</p>
       </div>
 
       {top.length > 0 && (
@@ -250,13 +269,15 @@ export function SeriesResultScreen({ g }: { g: G }) {
 // Run over (summary + share)
 // ---------------------------------------------------------------------------
 export function RunOverScreen({ g }: { g: G }) {
-  const { streak, totalRunsFor, totalRunsAgainst, team, history } = g.state;
+  const { streak, totalRunsFor, totalRunsAgainst, team, history, mutatorId } = g.state;
   const runDiff = totalRunsFor - totalRunsAgainst;
   const hof = g.hofResult;
+  const mut = getMutator(mutatorId);
   const [shared, setShared] = useState(false);
 
+  const modeTag = mut.id === 'standard' ? '' : ` [${mut.emoji} ${mut.name}]`;
   const shareText =
-    `⚾ Dugout Gauntlet\n${team?.name} went ${streak}-0 before falling!\n` +
+    `⚾ Dugout Gauntlet${modeTag}\n${team?.name} went ${streak}-0 before falling!\n` +
     `Run diff: ${runDiff >= 0 ? '+' : ''}${runDiff}` +
     (hof ? ` · #${hof.rank} all-time` : '') +
     `\nHow far can you go?`;
@@ -270,7 +291,7 @@ export function RunOverScreen({ g }: { g: G }) {
 
   return (
     <div className="stack center" style={{ marginTop: 28, gap: 16 }}>
-      <span className="dim" style={{ letterSpacing: 1 }}>RUN COMPLETE</span>
+      <span className="dim" style={{ letterSpacing: 1 }}>RUN COMPLETE{mut.id !== 'standard' ? ` · ${mut.emoji} ${mut.name}` : ''}</span>
       <h1 style={{ fontSize: 64, lineHeight: 1 }}>{streak}-0</h1>
       <strong style={{ fontSize: 20 }}>{team?.name}</strong>
 
@@ -284,7 +305,7 @@ export function RunOverScreen({ g }: { g: G }) {
       <button className="btn btn--secondary" onClick={share}>
         {shared ? '✓ Copied!' : '📲 Share result'}
       </button>
-      <button className="btn" onClick={g.startRun.bind(null, team?.name ?? 'My Squad')}>Run it back ⚾</button>
+      <button className="btn" onClick={() => g.startRun(team?.name ?? 'My Squad', mutatorId)}>Run it back ⚾</button>
       <button className="btn btn--ghost" onClick={g.backToMenu}>Main menu</button>
 
       {history.length > 0 && (

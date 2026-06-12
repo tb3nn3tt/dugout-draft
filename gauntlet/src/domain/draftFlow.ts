@@ -54,9 +54,16 @@ function poolForPosition(pos: Position): Player[] {
  * real choice (stud vs. fit vs. upside), not just "take the highest number".
  * Uses the seeded RNG so a run's draft is reproducible.
  */
-export function offerForSlot(pos: Position, pickedIds: Set<string>, count = 5): Player[] {
+export function offerForSlot(
+  pos: Position,
+  pickedIds: Set<string>,
+  count = 5,
+  poolFilter?: (p: Player) => boolean
+): Player[] {
+  // Mutator pool filters restrict athletes only — managers/stadiums always full.
+  const restrict = poolFilter && pos !== 'HC' && pos !== 'ST' ? poolFilter : undefined;
   const eligible = poolForPosition(pos)
-    .filter(p => !pickedIds.has(p.id))
+    .filter(p => !pickedIds.has(p.id) && (!restrict || restrict(p)))
     .sort((a, b) => b.overall - a.overall);
   if (eligible.length <= count) return eligible;
 

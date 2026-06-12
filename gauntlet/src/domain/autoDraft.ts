@@ -32,12 +32,21 @@ function pickNear(
  * (roughly a 0-99 rating). Higher target -> tougher opponent. Used for the
  * gauntlet's CPU-fallback opponents and for seeding the ghost pool.
  */
-export function autoDraftTeam(targetOverall: number, name: string): GauntletTeam {
+export function autoDraftTeam(
+  targetOverall: number,
+  name: string,
+  poolFilter?: (p: Player) => boolean
+): GauntletTeam {
   const used = new Set<string>();
   const roster: Player[] = [];
 
   for (const pos of SLOT_ORDER) {
-    const eligible = playersPool.filter(p => canPlayPosition(p, pos));
+    let eligible = playersPool.filter(p => canPlayPosition(p, pos));
+    if (poolFilter) {
+      const filtered = eligible.filter(poolFilter);
+      // Fall back to the full pool if a filter leaves a slot unfillable.
+      if (filtered.length >= 3) eligible = filtered;
+    }
     const pick = pickNear(eligible, targetOverall, used);
     if (pick) {
       used.add(pick.id);

@@ -158,3 +158,15 @@ h2 { font-size: 20px; font-weight: 800; }
 .tile__name { font-weight: 800; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tile__sub { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tile__pos { flex: 0 0 auto; font-weight: 900; font-size: 13px; letter-spacing: 0.5px; }
+
+/* --- Mutator chips --- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  appearance: none; cursor: pointer;
+  background: var(--bg); color: var(--text-dim);
+  border: 1.5px solid var(--line); border-radius: 99px;
+  padding: 9px 14px; font-size: 14px; font-weight: 700;
+  transition: all 0.12s ease;
+}
+.chip--on { background: var(--accent); color: #1a1206; border-color: var(--accent); }
+.chip:active { transform: scale(0.96); }
