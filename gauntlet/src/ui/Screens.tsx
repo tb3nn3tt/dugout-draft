@@ -21,7 +21,9 @@ type G = ReturnType<typeof useGauntlet>;
 // ---------------------------------------------------------------------------
 export function MenuScreen({ g }: { g: G }) {
   const [name, setName] = useState(localStorage.getItem('dugout-gauntlet-name') ?? '');
-  const [view, setView] = useState<'menu' | 'hof' | 'ladder' | 'achievements'>('menu');
+  const [view, setView] = useState<'menu' | 'hof' | 'ladder' | 'achievements' | 'help'>(
+    () => (localStorage.getItem('dugout-gauntlet-seen-intro') ? 'menu' : 'help')
+  );
   const [mutatorId, setMutatorId] = useState('standard');
   const top = rankHof(loadHof()).slice(0, 3);
   const mutator = getMutator(mutatorId);
@@ -35,6 +37,7 @@ export function MenuScreen({ g }: { g: G }) {
   if (view === 'hof') return <HallOfFameScreen onBack={() => setView('menu')} />;
   if (view === 'ladder') return <LadderScreen onBack={() => setView('menu')} />;
   if (view === 'achievements') return <AchievementsScreen onBack={() => setView('menu')} />;
+  if (view === 'help') return <HelpScreen onBack={() => { localStorage.setItem('dugout-gauntlet-seen-intro', '1'); setView('menu'); }} />;
 
   return (
     <div className="stack" style={{ marginTop: 24, gap: 20 }}>
@@ -68,6 +71,7 @@ export function MenuScreen({ g }: { g: G }) {
         <button className="btn" onClick={start}>Start a Run ⚾</button>
         <button className="btn btn--secondary" onClick={() => setView('ladder')}>🌐 Global Ladder</button>
         <button className="btn btn--ghost" onClick={() => setView('achievements')}>🎖️ Achievements</button>
+        <button className="btn btn--ghost" onClick={() => setView('help')}>❔ How to play</button>
       </div>
 
       <div className="card stack" style={{ gap: 10 }}>
@@ -155,6 +159,35 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
           })}
         </div>
       )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// How to play
+// ---------------------------------------------------------------------------
+const HELP_STEPS: { emoji: string; title: string; body: string }[] = [
+  { emoji: '💰', title: 'Draft under a cap', body: 'You have 600 cap points. Stars cost a fortune — splurge on a few, or spread it around, but you can\'t have studs everywhere. Spin a tier × role each pick.' },
+  { emoji: '🏆', title: 'Run the gauntlet', body: 'Your team faces a ladder of legendary clubs — the Sandlot, the Bronx Bombers, Cooperstown Immortals — best-of-7 each, getting tougher as you climb.' },
+  { emoji: '🔥', title: 'Build a streak', body: 'Win a series, move on. Lose one, your run ends and your team is logged forever. How far can you go?' },
+  { emoji: '🌐', title: 'Climb the world', body: 'Send your team to the Global Ladder — it keeps battling other real players\' teams over time. Survive the most series and you\'re the world champ.' },
+];
+export function HelpScreen({ onBack }: { onBack: () => void }) {
+  return (
+    <div className="stack" style={{ marginTop: 20, gap: 16 }}>
+      <h1 className="center">How to Play</h1>
+      <div className="stack" style={{ gap: 10 }}>
+        {HELP_STEPS.map((s, i) => (
+          <div key={i} className="card row" style={{ gap: 12, alignItems: 'flex-start' }}>
+            <span style={{ fontSize: 30, flex: '0 0 auto' }}>{s.emoji}</span>
+            <div>
+              <strong>{s.title}</strong>
+              <div className="dim" style={{ fontSize: 13, marginTop: 2 }}>{s.body}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button className="btn" onClick={onBack}>Let's play ⚾</button>
     </div>
   );
 }
