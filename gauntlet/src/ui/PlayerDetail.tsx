@@ -1,69 +1,59 @@
-import { Player, ScoutingGrades } from '../domain/types';
+import { Player } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
-import { isPitcher, getPositionLabel, gradeToLetter, getGradeColor, formatBattingAvg, formatERA } from '../domain/sim/helpers';
-import { inferGradesFromStats } from '../domain/sim/simulation';
+import { getPositionLabel, gradeToLetter, getGradeColor, formatBattingAvg, formatERA } from '../domain/sim/helpers';
+import { getRatings } from '../domain/ratings';
 
-// Which grades to chart for each player type.
-const HITTER_AXES: { key: keyof ScoutingGrades; label: string }[] = [
-  { key: 'contact', label: 'CON' }, { key: 'power', label: 'POW' }, { key: 'speed', label: 'SPD' },
-  { key: 'fielding', label: 'FLD' }, { key: 'arm', label: 'ARM' }, { key: 'eye', label: 'EYE' },
-];
-const PITCHER_AXES: { key: keyof ScoutingGrades; label: string }[] = [
-  { key: 'fastball', label: 'VELO' }, { key: 'breaking', label: 'BRK' }, { key: 'changeup', label: 'CHG' },
-  { key: 'control', label: 'CTL' }, { key: 'stamina', label: 'STA' },
-];
+interface Axis { label: string; value: number; }
 
 function norm(g: number) { return Math.max(0, Math.min(1, (g - 20) / 60)); }
 
-function Radar({ grades, axes, color }: { grades: ScoutingGrades; axes: typeof HITTER_AXES; color: string }) {
-  const size = 220, cx = size / 2, cy = size / 2, R = 84;
+function Radar({ axes, color }: { axes: Axis[]; color: string }) {
+  const size = 220, cx = size / 2, cy = size / 2, R = 82;
   const n = axes.length;
   const pt = (i: number, r: number) => {
     const a = -Math.PI / 2 + (i * 2 * Math.PI) / n;
     return [cx + Math.cos(a) * r, cy + Math.sin(a) * r];
   };
-  const rings = [0.25, 0.5, 0.75, 1].map(f =>
-    axes.map((_, i) => pt(i, R * f).join(',')).join(' ')
-  );
-  const valuePts = axes.map((ax, i) => pt(i, R * norm(grades[ax.key] ?? 50)).join(',')).join(' ');
-
+  const rings = [0.25, 0.5, 0.75, 1].map(f => axes.map((_, i) => pt(i, R * f).join(',')).join(' '));
+  const valuePts = axes.map((ax, i) => pt(i, R * norm(ax.value)).join(',')).join(' ');
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      {rings.map((r, i) => (
-        <polygon key={i} points={r} fill="none" stroke="var(--line)" strokeWidth="1" />
-      ))}
-      {axes.map((_, i) => {
-        const [x, y] = pt(i, R);
-        return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="var(--line)" strokeWidth="1" />;
-      })}
+      {rings.map((r, i) => <polygon key={i} points={r} fill="none" stroke="var(--line)" strokeWidth="1" />)}
+      {axes.map((_, i) => { const [x, y] = pt(i, R); return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="var(--line)" strokeWidth="1" />; })}
       <polygon points={valuePts} fill={color} fillOpacity="0.35" stroke={color} strokeWidth="2" />
-      {axes.map((ax, i) => {
-        const [x, y] = pt(i, R + 16);
-        return (
-          <text key={i} x={x} y={y} fill="var(--text-dim)" fontSize="11" fontWeight="800"
-            textAnchor="middle" dominantBaseline="middle">{ax.label}</text>
-        );
-      })}
+      {axes.map((ax, i) => { const [x, y] = pt(i, R + 16); return (
+        <text key={i} x={x} y={y} fill="var(--text-dim)" fontSize="11" fontWeight="800" textAnchor="middle" dominantBaseline="middle">{ax.label}</text>
+      ); })}
     </svg>
   );
 }
 
-function GradeBars({ grades, axes }: { grades: ScoutingGrades; axes: typeof HITTER_AXES }) {
+function Bars({ axes }: { axes: Axis[] }) {
   return (
     <div className="stack" style={{ gap: 6 }}>
       {axes.map(ax => {
-        const v = grades[ax.key] ?? 50;
-        const c = getGradeColor(v);
+        const c = getGradeColor(ax.value);
         return (
-          <div key={ax.key} className="row" style={{ gap: 8 }}>
-            <span className="dim" style={{ width: 38, fontSize: 12, fontWeight: 800 }}>{ax.label}</span>
+          <div key={ax.label} className="row" style={{ gap: 8 }}>
+            <span className="dim" style={{ width: 44, fontSize: 12, fontWeight: 800 }}>{ax.label}</span>
             <div className="progress" style={{ flex: 1, height: 8 }}>
-              <div className="progress__fill" style={{ width: `${norm(v) * 100}%`, background: c }} />
+              <div className="progress__fill" style={{ width: `${norm(ax.value) * 100}%`, background: c }} />
             </div>
-            <span style={{ width: 26, textAlign: 'right', fontSize: 12, fontWeight: 900, color: c }}>{gradeToLetter(v)}</span>
+            <span style={{ width: 40, textAlign: 'right', fontSize: 12, fontWeight: 900, color: c }}>{ax.value} {gradeToLetter(ax.value)}</span>
           </div>
         );
       })}
+    </div>
+  );
+}
+
+function Split({ label, l, r }: { label: string; l: number; r: number }) {
+  return (
+    <div className="row" style={{ justifyContent: 'space-between' }}>
+      <span className="dim" style={{ fontSize: 12 }}>{label}</span>
+      <span style={{ fontWeight: 800 }}>
+        vs L <span style={{ color: getGradeColor(l) }}>{l}</span> &nbsp;·&nbsp; vs R <span style={{ color: getGradeColor(r) }}>{r}</span>
+      </span>
     </div>
   );
 }
@@ -75,21 +65,34 @@ export function PlayerDetail({ player, onDraft, onClose }: {
 }) {
   const tier = getTier(player.overall);
   const color = TIER_COLORS[tier];
-  const pitcher = isPitcher(player);
+  const r = getRatings(player);
   const isStaff = player.positions.includes('HC') || player.positions.includes('ST');
-  const grades = player.grades ?? inferGradesFromStats(player);
-  const axes = pitcher ? PITCHER_AXES : HITTER_AXES;
   const s = player.stats;
+
+  const axes: Axis[] = !isStaff && r.kind === 'hitter'
+    ? [
+        { label: 'CON', value: Math.round((r.conVL + r.conVR) / 2) },
+        { label: 'POW', value: Math.round((r.powVL + r.powVR) / 2) },
+        { label: 'EYE', value: r.eye }, { label: 'RUN', value: r.run },
+        { label: 'FLD', value: r.field }, { label: 'BNT', value: r.bunt },
+      ]
+    : !isStaff && r.kind === 'pitcher'
+    ? [
+        { label: 'STUFF', value: r.stuff }, { label: 'CTL', value: r.control },
+        { label: 'CMD', value: r.command }, { label: 'STAM', value: r.stamina },
+        { label: 'vsL', value: r.vsL }, { label: 'vsR', value: r.vsR },
+      ]
+    : [];
 
   return (
     <div className="modal" onClick={onClose}>
       <div className="modal__card" onClick={e => e.stopPropagation()}>
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <div>
-            <div style={{ fontSize: 22, fontWeight: 900 }}>{player.name}</div>
+            <div style={{ fontSize: 22, fontWeight: 900 }}>{player.name.replace(/\s*\([^)]*\)\s*$/, '')}</div>
             {player.nickname && <div style={{ color, fontWeight: 700, fontSize: 13 }}>“{player.nickname}”</div>}
             <div className="dim" style={{ fontSize: 12 }}>
-              {player.positions.map(getPositionLabel).join(' / ')} · {player.team} · {player.era ?? ''}
+              {player.positions.map(getPositionLabel).join(' / ')} · bats {player.bats}/throws {player.throws} · {player.team}
             </div>
           </div>
           <div className="tile__ovr" style={{ background: color, minWidth: 48, height: 48, fontSize: 22 }}>{player.overall}</div>
@@ -97,11 +100,17 @@ export function PlayerDetail({ player, onDraft, onClose }: {
 
         {!isStaff && (
           <>
-            <div className="center"><Radar grades={grades} axes={axes} color={color} /></div>
-            <GradeBars grades={grades} axes={axes} />
-
+            <div className="center"><Radar axes={axes} color={color} /></div>
+            <Bars axes={axes} />
+            {r.kind === 'hitter' && (
+              <div className="card stack" style={{ gap: 6 }}>
+                <strong style={{ fontSize: 13 }}>Platoon Splits</strong>
+                <Split label="Contact" l={r.conVL} r={r.conVR} />
+                <Split label="Power" l={r.powVL} r={r.powVR} />
+              </div>
+            )}
             <div className="statline">
-              {pitcher ? (
+              {r.kind === 'pitcher' ? (
                 <>
                   <Stat k="ERA" v={s.era != null ? formatERA(s.era) : '—'} />
                   <Stat k="WHIP" v={s.whip != null ? s.whip.toFixed(2) : '—'} />
@@ -149,10 +158,5 @@ export function PlayerDetail({ player, onDraft, onClose }: {
 }
 
 function Stat({ k, v }: { k: string; v: string }) {
-  return (
-    <div className="stat">
-      <div className="stat__k">{k}</div>
-      <div className="stat__v">{v}</div>
-    </div>
-  );
+  return <div className="stat"><div className="stat__k">{k}</div><div className="stat__v">{v}</div></div>;
 }

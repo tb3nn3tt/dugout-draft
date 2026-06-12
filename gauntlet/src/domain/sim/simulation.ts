@@ -1,5 +1,6 @@
 import { Player, AtBatResult, StatBoost, ScoutingGrades, CoachEffect, ParkEffect } from '../types';
 import { rand } from './rng';
+import { getRatings } from '../ratings';
 
 // ============================================================================
 // KILLER SIM — Odds Ratio (Log5) matchup engine, anchored to MLB league rates.
@@ -51,11 +52,6 @@ export interface SimulationModifiers {
   momentum?: number;       // 0-100, batter's team momentum
   clutchBoost?: number;    // grade points to add (roughly -5 to +5)
   streakModifier?: number; // +3 for hot, -3 for cold, 0 for neutral
-}
-
-// Helper to get scouting grade or default to 50 (average)
-function getGrade(grades: ScoutingGrades | undefined, key: keyof ScoutingGrades, fallback = 50): number {
-  return grades?.[key] ?? fallback;
 }
 
 // Convert legacy stats to approximate scouting grades for backwards compatibility
@@ -112,28 +108,6 @@ export function inferGradesFromStats(player: Player): ScoutingGrades {
   }
 }
 
-/**
- * Calculate platoon advantage based on batter/pitcher handedness.
- * Returns a grade-point modifier (roughly -3 to +3).
- */
-function getPlatoonModifier(batter: Player, pitcher: Player): number {
-  const bats = batter.bats;
-  const throws = pitcher.throws;
-
-  // Switch hitters: no platoon penalty or bonus
-  if (bats === 'S') return 0;
-
-  // Same-handed matchup = disadvantage for batter
-  if (bats === 'L' && throws === 'L') return -3;  // LHB vs LHP
-  if (bats === 'R' && throws === 'R') return -2;  // RHB vs RHP (less pronounced)
-
-  // Opposite-handed matchup = advantage for batter
-  if (bats === 'L' && throws === 'R') return 2;   // LHB vs RHP
-  if (bats === 'R' && throws === 'L') return 3;   // RHB vs LHP
-
-  return 0;
-}
-
 export function simulateAtBat(
   batter: Player,
   pitcher: Player,
@@ -143,39 +117,43 @@ export function simulateAtBat(
   pitcherCoach?: CoachEffect | null,
   parkEffect?: ParkEffect | null
 ): AtBatResult {
-  // Get scouting grades (use explicit grades or infer from stats)
-  const batterGrades = batter.grades ?? inferGradesFromStats(batter);
-  const pitcherGrades = pitcher.grades ?? inferGradesFromStats(pitcher);
-
-  // Apply synergy boosts
+  // Synergy boosts
   const offensiveMultiplier = statBoost?.offensiveBonus ?? 1.0;
   const pitchingMultiplier = statBoost?.pitchingBonus ?? 1.0;
 
-  // --- Situational grade adjustments (momentum / clutch / streak / platoon /
-  //     coach) are applied as grade POINTS to the batter, preserving the
-  //     intuitive semantics of the original modifiers. ---
+  // Situational adjustments (platoon is now modeled by split ratings, not a flat mod).
   const momentumBoost = modifiers?.momentum ? (modifiers.momentum / 100) * 5 : 0;
   const clutchBoost = modifiers?.clutchBoost ?? 0;
   const streakMod = modifiers?.streakModifier ?? 0;
-  const platoonMod = getPlatoonModifier(batter, pitcher);
   const coachClutch = batterCoach?.clutchBonus ?? 0;
   const coachSpeed = batterCoach?.speedBonus ?? 0;
   const coachFielding = pitcherCoach?.fieldingBonus ?? 0; // pitching team's defense
+  const hitterBoost = momentumBoost + clutchBoost + streakMod + coachClutch;
 
-  const hitterBoost = momentumBoost + clutchBoost + streakMod + platoonMod + coachClutch;
+  // --- Platoon-aware ratings (vL/vR splits) ---
+  const br = getRatings(batter);
+  const pr = getRatings(pitcher);
+  const pHand = pitcher.throws;                                              // 'L' | 'R'
+  const bHand = batter.bats === 'S' ? (pHand === 'L' ? 'R' : 'L') : batter.bats; // switch takes the edge
 
-  // Effective batter grades (clamped to the 20-80 scouting band).
   const clampG = (g: number) => Math.min(80, Math.max(20, g));
-  const contact = clampG(getGrade(batterGrades, 'contact') + hitterBoost);
-  const power   = clampG(getGrade(batterGrades, 'power') + momentumBoost + clutchBoost + platoonMod);
-  const speed   = clampG(getGrade(batterGrades, 'speed') + coachSpeed);
-  const eye     = clampG(getGrade(batterGrades, 'eye') + momentumBoost + clutchBoost);
+  const isHit = br.kind === 'hitter';
+  const conSplit = isHit ? (pHand === 'L' ? br.conVL : br.conVR) : 45;
+  const powSplit = isHit ? (pHand === 'L' ? br.powVL : br.powVR) : 40;
+  const contact = clampG(conSplit + hitterBoost);
+  const power   = clampG(powSplit + momentumBoost + clutchBoost);
+  const speed   = clampG((isHit ? br.run : 45) + coachSpeed);
+  const eye     = clampG((isHit ? br.eye : 40) + momentumBoost + clutchBoost);
 
-  // Pitcher grades.
-  const fastball = getGrade(pitcherGrades, 'fastball');
-  const breaking = getGrade(pitcherGrades, 'breaking');
-  const control  = getGrade(pitcherGrades, 'control');
-  const stuff    = fastball * 0.4 + breaking * 0.4 + control * 0.2; // composite "stuff"
+  // Pitcher: stuff (K), control (BB), command (limit contact) + a vs-hand swing
+  // that's ~0 for balanced arms but large for specialists (e.g. LOOGY vs LHB).
+  const isPit = pr.kind === 'pitcher';
+  const vsL = isPit ? pr.vsL : 50, vsR = isPit ? pr.vsR : 50;
+  const vsHand = bHand === 'L' ? vsL : vsR;
+  const handAdj = (vsHand - (vsL + vsR) / 2) * 0.6;
+  const stuff   = clampG((isPit ? pr.stuff : 45) + handAdj);
+  const control = isPit ? pr.control : 45;
+  const command = clampG((isPit ? pr.command : 45) + handAdj);
 
   // === Per-PA true rates for batter and pitcher, then combine via Odds Ratio ===
   // Synergy multipliers nudge a side's whole profile (offense up / pitching up).
@@ -193,7 +171,7 @@ export function simulateAtBat(
   // Home runs: batter drives with power; pitcher suppresses with control+breaking.
   const parkHR = parkEffect?.hrFactor ?? 1.0;
   const bHR = LEAGUE.HR * rateFactor(power, 1.34, 1) * offensiveMultiplier;
-  const pHR = LEAGUE.HR * rateFactor(control * 0.5 + breaking * 0.5, 1.32, -1) / pitchingMultiplier;
+  const pHR = LEAGUE.HR * rateFactor(command, 1.32, -1) / pitchingMultiplier;
   const hrProb = oddsRatio(bHR, pHR, LEAGUE.HR) * parkHR;
 
   // Guard a floor so at least ~8% of PAs are balls in play. If the three
@@ -210,7 +188,7 @@ export function simulateAtBat(
   const parkRun = parkEffect?.runFactor ?? 1.0;
   const fieldingReduction = 1 + coachFielding * 0.004; // better D → fewer hits on balls in play
   const bBABIP = LEAGUE.BABIP * rateFactor(contact * 0.7 + speed * 0.3, 1.09, 1) * offensiveMultiplier;
-  const pBABIP = LEAGUE.BABIP * rateFactor(stuff, 1.10, -1) / pitchingMultiplier;
+  const pBABIP = LEAGUE.BABIP * rateFactor(command, 1.10, -1) / pitchingMultiplier;
   const babip = Math.min(0.420, Math.max(0.220, oddsRatio(bBABIP, pBABIP, LEAGUE.BABIP) * parkRun / fieldingReduction));
 
   // === OUTCOME DRAW (seeded) ===
