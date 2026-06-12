@@ -40,14 +40,15 @@ function RatingChips({ player }: { player: Player }) {
     );
   }
   const con = Math.round((r.conVL + r.conVR) / 2);
-  const pow = Math.round((r.powVL + r.powVR) / 2);
+  const hr = Math.round((r.hrVL + r.hrVR) / 2);
+  const gap = Math.round((r.gapVL + r.gapVR) / 2);
   return (
     <>
       <div className="tile__chips">
-        <Chip l="CON" v={con} /><Chip l="POW" v={pow} /><Chip l="EYE" v={r.eye} /><Chip l="RUN" v={r.run} />
+        <Chip l="CON" v={con} /><Chip l="HR" v={hr} /><Chip l="GAP" v={gap} /><Chip l="EYE" v={r.eye} /><Chip l="RUN" v={r.run} />
       </div>
       <div className="tile__split">
-        vL <b>{r.conVL}/{r.powVL}</b> · vR <b>{r.conVR}/{r.powVR}</b> · FLD {r.field} · BNT {r.bunt}
+        CON vL/vR <b>{r.conVL}/{r.conVR}</b> · HR <b>{r.hrVL}/{r.hrVR}</b> · FLD {r.field} · BNT {r.bunt}
       </div>
     </>
   );

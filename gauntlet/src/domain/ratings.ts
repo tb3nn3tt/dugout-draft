@@ -14,7 +14,8 @@ import { inferGradesFromStats } from './sim/simulation';
 export interface HitterRatings {
   kind: 'hitter';
   conVL: number; conVR: number;   // contact vs LHP / RHP
-  powVL: number; powVR: number;   // power vs LHP / RHP
+  hrVL: number; hrVR: number;     // home-run power vs LHP / RHP
+  gapVL: number; gapVR: number;   // gap/extra-base power vs LHP / RHP
   eye: number;
   run: number;
   field: number;
@@ -41,21 +42,27 @@ const cache = new Map<string, Ratings>();
 function deriveHitter(p: Player): HitterRatings {
   const g = p.grades ?? inferGradesFromStats(p);
   const c = g.contact ?? 50, pw = g.power ?? 50, sp = g.speed ?? 50;
+  // HR power = raw power. Gap power blends raw power with line-drive contact +
+  // a little speed (doubles/triples), so a slugger and a gap hitter diverge.
+  const hr = pw;
+  const gap = pw * 0.5 + c * 0.4 + sp * 0.1;
   const bats = p.bats;
   // Generic platoon: batters hit opposite-handed pitchers better.
   const cAdv = 4, cDis = 3, pAdv = 5, pDis = 4;
-  let conVL: number, conVR: number, powVL: number, powVR: number;
-  if (bats === 'R') {            // RHB: better vs LHP
-    conVL = c + cAdv; conVR = c - cDis; powVL = pw + pAdv; powVR = pw - pDis;
-  } else if (bats === 'L') {     // LHB: better vs RHP
-    conVL = c - cDis; conVR = c + cAdv; powVL = pw - pDis; powVR = pw + pAdv;
-  } else {                       // switch: neutral, slight edge
-    conVL = c + 1; conVR = c + 1; powVL = pw; powVR = pw;
-  }
+  const sign = bats === 'R' ? 1 : bats === 'L' ? -1 : 0; // +1 → bonus vL, -1 → bonus vR
+  const split = (base: number, adv: number, dis: number) => sign === 0
+    ? [base + 1, base + 1] as const
+    : sign === 1
+      ? [base + adv, base - dis] as const   // RHB: vL bonus, vR penalty
+      : [base - dis, base + adv] as const;  // LHB: vR bonus, vL penalty
+  const [conVL, conVR] = split(c, cAdv, cDis);
+  const [hrVL, hrVR] = split(hr, pAdv, pDis);
+  const [gapVL, gapVR] = split(gap, pAdv - 1, pDis - 1);
   const bunt = 42 + (c - 50) * 0.35 + (sp - 50) * 0.35 - (pw - 50) * 0.25;
   return {
     kind: 'hitter',
-    conVL: clamp(conVL), conVR: clamp(conVR), powVL: clamp(powVL), powVR: clamp(powVR),
+    conVL: clamp(conVL), conVR: clamp(conVR),
+    hrVL: clamp(hrVL), hrVR: clamp(hrVR), gapVL: clamp(gapVL), gapVR: clamp(gapVR),
     eye: clamp(g.eye ?? 50), run: clamp(sp), field: clamp(g.fielding ?? 50), bunt: clamp(bunt),
   };
 }

@@ -72,7 +72,8 @@ export function PlayerDetail({ player, onDraft, onClose }: {
   const axes: Axis[] = !isStaff && r.kind === 'hitter'
     ? [
         { label: 'CON', value: Math.round((r.conVL + r.conVR) / 2) },
-        { label: 'POW', value: Math.round((r.powVL + r.powVR) / 2) },
+        { label: 'HR', value: Math.round((r.hrVL + r.hrVR) / 2) },
+        { label: 'GAP', value: Math.round((r.gapVL + r.gapVR) / 2) },
         { label: 'EYE', value: r.eye }, { label: 'RUN', value: r.run },
         { label: 'FLD', value: r.field }, { label: 'BNT', value: r.bunt },
       ]
@@ -106,7 +107,8 @@ export function PlayerDetail({ player, onDraft, onClose }: {
               <div className="card stack" style={{ gap: 6 }}>
                 <strong style={{ fontSize: 13 }}>Platoon Splits</strong>
                 <Split label="Contact" l={r.conVL} r={r.conVR} />
-                <Split label="Power" l={r.powVL} r={r.powVR} />
+                <Split label="HR Power" l={r.hrVL} r={r.hrVR} />
+                <Split label="Gap Power" l={r.gapVL} r={r.gapVR} />
               </div>
             )}
             <div className="statline">

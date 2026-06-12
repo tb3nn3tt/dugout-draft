@@ -139,9 +139,11 @@ export function simulateAtBat(
   const clampG = (g: number) => Math.min(80, Math.max(20, g));
   const isHit = br.kind === 'hitter';
   const conSplit = isHit ? (pHand === 'L' ? br.conVL : br.conVR) : 45;
-  const powSplit = isHit ? (pHand === 'L' ? br.powVL : br.powVR) : 40;
+  const hrSplit  = isHit ? (pHand === 'L' ? br.hrVL : br.hrVR) : 40;
+  const gapSplit = isHit ? (pHand === 'L' ? br.gapVL : br.gapVR) : 40;
   const contact = clampG(conSplit + hitterBoost);
-  const power   = clampG(powSplit + momentumBoost + clutchBoost);
+  const hrPow   = clampG(hrSplit + momentumBoost + clutchBoost);
+  const gapPow  = clampG(gapSplit + momentumBoost + clutchBoost);
   const speed   = clampG((isHit ? br.run : 45) + coachSpeed);
   const eye     = clampG((isHit ? br.eye : 40) + momentumBoost + clutchBoost);
 
@@ -170,7 +172,7 @@ export function simulateAtBat(
 
   // Home runs: batter drives with power; pitcher suppresses with control+breaking.
   const parkHR = parkEffect?.hrFactor ?? 1.0;
-  const bHR = LEAGUE.HR * rateFactor(power, 1.34, 1) * offensiveMultiplier;
+  const bHR = LEAGUE.HR * rateFactor(hrPow, 1.34, 1) * offensiveMultiplier;
   const pHR = LEAGUE.HR * rateFactor(command, 1.32, -1) / pitchingMultiplier;
   const hrProb = oddsRatio(bHR, pHR, LEAGUE.HR) * parkHR;
 
@@ -202,8 +204,8 @@ export function simulateAtBat(
     // Hit type among non-HR hits. Power lifts doubles; speed lifts triples.
     const parkDouble = parkEffect?.doublesFactor ?? 1.0;
     const parkTriple = parkEffect?.triplesFactor ?? 1.0;
-    let p3 = HIT_SPLIT.triple * rateFactor(speed, 1.30, 1) * parkTriple;
-    let p2 = HIT_SPLIT.double * rateFactor(power * 0.6 + speed * 0.4, 1.18, 1) * parkDouble;
+    let p3 = HIT_SPLIT.triple * rateFactor(gapPow * 0.4 + speed * 0.6, 1.30, 1) * parkTriple;
+    let p2 = HIT_SPLIT.double * rateFactor(gapPow * 0.7 + speed * 0.3, 1.18, 1) * parkDouble;
     p3 = Math.min(0.10, p3);
     p2 = Math.min(0.40, p2);
     const t = rand();
