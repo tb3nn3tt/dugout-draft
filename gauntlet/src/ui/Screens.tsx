@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
-import { TOTAL_PICKS } from '../domain/draftRounds';
+import { TOTAL_PICKS, DraftRound } from '../domain/draftRounds';
 import { TIER_COLORS } from '../domain/players';
 import { Player } from '../domain/types';
 import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
@@ -177,15 +177,7 @@ export function DraftScreen({ g }: { g: G }) {
           <strong style={{ color: g.state.budget < 50 ? 'var(--loss)' : 'var(--accent)' }}>{g.state.budget} / {BUDGET}</strong>
         </div>
         <div className="progress"><div className="progress__fill" style={{ width: `${(g.state.budget / BUDGET) * 100}%` }} /></div>
-        {currentRound && (
-          <div className="round-banner" style={{ borderColor: tierColor }}>
-            <div className="round-banner__name">{currentRound.emoji} {currentRound.name}</div>
-            <div className="round-banner__role">
-              <span className="badge" style={{ borderColor: tierColor, color: tierColor }}>{currentRound.tier.toUpperCase()}</span>
-              <span>Drafting: <strong>{currentRound.roleLabel}</strong></span>
-            </div>
-          </div>
-        )}
+        {currentRound && <RoundBanner round={currentRound} color={tierColor} />}
       </div>
 
       <div className="draft__body">
@@ -206,6 +198,36 @@ export function DraftScreen({ g }: { g: G }) {
           onClose={() => setDetail(null)}
         />
       )}
+    </div>
+  );
+}
+
+// Slot-machine reveal for the spun round — tier/name/role roll, then lock.
+const SPIN_TIERS = ['DIAMOND', 'GOLD', 'SILVER', 'BRONZE', 'COMMON'];
+const SPIN_NAMES = ['💎 The Diamond Mine', '🏆 Cooperstown Calls', '🎬 Hollywood Heaters', '🐻 The Sandlot',
+  '⚪ Silver Sluggers Row', '🟫 Grinders\' Alley', '🎲 Bust or Boom', '🌎 Around the World', '🍂 October Legends'];
+const SPIN_ROLES = ['Catcher', 'Shortstop', 'Ace Starter', 'Closer', 'Center Field', 'Pinch Hitter', 'Setup Man', 'Third Base'];
+
+function RoundBanner({ round, color }: { round: DraftRound; color: string }) {
+  const [spin, setSpin] = useState(true);
+  const [t, setT] = useState(0);
+  useEffect(() => {
+    setSpin(true); setT(0);
+    let n = 0;
+    const iv = setInterval(() => { setT(x => x + 1); if (++n >= 9) { clearInterval(iv); setSpin(false); } }, 60);
+    return () => clearInterval(iv);
+  }, [round]);
+  const tier = spin ? SPIN_TIERS[t % SPIN_TIERS.length] : round.tier.toUpperCase();
+  const name = spin ? SPIN_NAMES[t % SPIN_NAMES.length] : `${round.emoji} ${round.name}`;
+  const role = spin ? SPIN_ROLES[t % SPIN_ROLES.length] : round.roleLabel;
+  const c = spin ? 'var(--accent-2)' : color;
+  return (
+    <div className={`round-banner ${spin ? 'round-banner--spin' : 'round-banner--lock'}`} style={{ borderColor: c }}>
+      <div className="round-banner__name">{name}</div>
+      <div className="round-banner__role">
+        <span className="badge" style={{ borderColor: c, color: c }}>{tier}</span>
+        <span>Drafting: <strong>{role}</strong></span>
+      </div>
     </div>
   );
 }

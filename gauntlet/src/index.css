@@ -377,3 +377,8 @@ h1 { letter-spacing: -0.5px; }
 .gameline--in { animation: glIn 0.26s ease; }
 .gameline--pending { opacity: 0.28; border-style: dashed; }
 .gameline--pending .gameline__s { color: var(--text-dim); }
+
+/* --- Round spin reveal --- */
+.round-banner--spin .round-banner__name { opacity: 0.85; filter: blur(0.3px); }
+.round-banner--lock { animation: lockPop 0.3s ease; }
+@keyframes lockPop { 0% { transform: scale(1.04); } 60% { transform: scale(0.99); } 100% { transform: none; } }
