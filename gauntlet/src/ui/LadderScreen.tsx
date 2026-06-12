@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ensureAuth } from '../firebase/firebase';
-import { getLadder, getChamp, tickLadder, getMyTeamIds, LadderTeam } from '../firebase/ladder';
+import { getLadder, getChamp, tickLadder, getMyTeamIds, seedLadderIfEmpty, LadderTeam } from '../firebase/ladder';
 
 export function LadderScreen({ onBack }: { onBack: () => void }) {
   const [teams, setTeams] = useState<LadderTeam[]>([]);
@@ -25,6 +25,7 @@ export function LadderScreen({ onBack }: { onBack: () => void }) {
     (async () => {
       try {
         await ensureAuth();
+        await seedLadderIfEmpty();     // bootstrap a fresh board with CPU teams
         await tickLadder(5);          // pitch in as a worker on open
         if (!alive) return;
         await refresh();

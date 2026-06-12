@@ -5,6 +5,7 @@ import {
 import { db, ensureAuth } from './firebase';
 import { GauntletTeam } from '../domain/types';
 import { hydrateIds, getCard } from '../domain/players';
+import { autoDraftTeam } from '../domain/autoDraft';
 import { buildSimTeam } from '../domain/sim/buildTeam';
 import { playSeries } from '../domain/sim/series';
 import { resetRng } from '../domain/sim/rng';
@@ -61,7 +62,7 @@ function recordMyTeam(id: string): void {
 }
 
 /** Submit a finished gauntlet team into the ladder at 0 wins. Returns the doc id. */
-export async function submitTeam(team: GauntletTeam, gauntletStreak: number, ownerName: string): Promise<string> {
+export async function submitTeam(team: GauntletTeam, gauntletStreak: number, ownerName: string, markMine = true): Promise<string> {
   const uid = await ensureAuth();
   const ref = await addDoc(collection(db, COL), {
     teamName: team.name,
@@ -78,8 +79,27 @@ export async function submitTeam(team: GauntletTeam, gauntletStreak: number, own
     createdAt: Date.now(),
     updatedAt: Date.now(),
   });
-  recordMyTeam(ref.id);
+  if (markMine) recordMyTeam(ref.id);
   return ref.id;
+}
+
+// Names for bootstrap CPU teams so a fresh ladder isn't empty.
+const SEED_NAMES = ['River Rats', 'Yard Goats', 'Mud Hens', 'Trash Pandas', 'Sea Wolves', 'Steel Hounds', 'Rumble Ponies', 'Jumbo Shrimp'];
+
+/**
+ * Seed a fresh/empty ladder with a handful of CPU teams (varied budgets) so the
+ * board feels alive before real players have submitted. No-op once populated.
+ */
+export async function seedLadderIfEmpty(): Promise<void> {
+  try {
+    const existing = await getLadder(4);
+    if (existing.length >= 4) return;
+    const budgets = [500, 560, 600, 640, 680, 720];
+    for (let i = 0; i < SEED_NAMES.length && i < 6; i++) {
+      const team = autoDraftTeam(99, SEED_NAMES[i], undefined, budgets[i % budgets.length]);
+      await submitTeam(team, 0, 'CPU', false).catch(() => {});
+    }
+  } catch { /* offline / rules — fine */ }
 }
 
 /** Top teams by wins (queued + retired) for the global leaderboard. */
