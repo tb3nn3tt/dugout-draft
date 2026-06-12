@@ -321,6 +321,18 @@ export function RunOverScreen({ g }: { g: G }) {
         {hof && <Row label="Hall of Fame" value={`#${hof.rank} all-time`} highlight />}
       </div>
 
+      {g.newAchievements.length > 0 && (
+        <div className="card stack" style={{ width: '100%', gap: 8 }}>
+          <h2 style={{ fontSize: 16 }}>🎖️ Achievements Unlocked</h2>
+          {g.newAchievements.map(a => (
+            <div key={a.id} className="row" style={{ justifyContent: 'space-between' }}>
+              <span>{a.emoji} <strong>{a.name}</strong></span>
+              <span className="dim" style={{ fontSize: 12 }}>{a.description}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
       <button className="btn btn--secondary" onClick={share}>
         {shared ? '✓ Copied!' : '📲 Share result'}
       </button>

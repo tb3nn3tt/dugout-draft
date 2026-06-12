@@ -7,6 +7,7 @@ import { playSeries } from '../domain/sim/series';
 import { seedRng } from '../domain/sim/rng';
 import { recordRun, HofEntry } from '../domain/hallOfFame';
 import { getMutator } from '../domain/mutators';
+import { checkAchievements, Achievement } from '../domain/achievements';
 
 /**
  * Drives a gauntlet run. Pure domain logic lives in the reducer + sim; this hook
@@ -19,6 +20,7 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
   const [simulating, setSimulating] = useState(false);
   const recordedRef = useRef(false);
   const hofResultRef = useRef<{ entry: HofEntry; rank: number } | null>(null);
+  const freshAchievementsRef = useRef<Achievement[]>([]);
 
   const startRun = useCallback((teamName: string, mutatorId = 'standard') => {
     const seed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
@@ -58,20 +60,29 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
     }, 50);
   }, [state.team, state.opponent, state.mutatorId]);
 
-  // Bank the run into the hall of fame once, when it's over.
+  // Bank the run into the hall of fame once, when it's over; unlock achievements.
   useEffect(() => {
     if (state.phase === 'run_over' && state.team && !recordedRef.current) {
       recordedRef.current = true;
       hofResultRef.current = recordRun(
         state.team, state.streak, state.totalRunsFor, state.totalRunsAgainst
       );
+      freshAchievementsRef.current = checkAchievements({
+        streak: state.streak,
+        runDiff: state.totalRunsFor - state.totalRunsAgainst,
+        totalRunsFor: state.totalRunsFor,
+        totalRunsAgainst: state.totalRunsAgainst,
+        history: state.history,
+        mutatorId: state.mutatorId,
+      });
     }
-  }, [state.phase, state.team, state.streak, state.totalRunsFor, state.totalRunsAgainst]);
+  }, [state.phase, state.team, state.streak, state.totalRunsFor, state.totalRunsAgainst, state.history, state.mutatorId]);
 
   return {
     state,
     simulating,
     hofResult: hofResultRef.current,
+    newAchievements: freshAchievementsRef.current,
     startRun,
     pick,
     autofill,
