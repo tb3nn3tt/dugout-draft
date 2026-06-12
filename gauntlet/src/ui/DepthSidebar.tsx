@@ -1,6 +1,7 @@
 import { DraftEntry } from '../state/gauntletReducer';
 import { Position } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
+import { overallToGrade } from '../domain/sim/helpers';
 
 // All 28 slots, grouped, shown compactly: POS · F.Last · OVR.
 const GROUPS: { title: string; slots: { role: Position; label: string }[] }[] = [
@@ -57,7 +58,7 @@ export function DepthSidebar({ draftLog, activeRole }: { draftLog: DraftEntry[];
               <div key={i} className={`depth__row ${isNext ? 'depth__row--next' : ''}`}>
                 <span className="depth__pos">{slot.label}</span>
                 <span className="depth__nm">{filled ? initialLast(entry!.player.name) : '—'}</span>
-                <span className="depth__ovr" style={{ color }}>{filled ? entry!.player.overall : ''}</span>
+                <span className="depth__ovr" style={{ color }}>{filled ? overallToGrade(entry!.player.overall) : ''}</span>
               </div>
             );
           })}

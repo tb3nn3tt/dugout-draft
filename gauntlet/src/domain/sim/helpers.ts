@@ -205,6 +205,22 @@ export function validateRotation(rotation: Player[]): string[] {
   return errors;
 }
 
+// Convert a 0-99 OVERALL rating to an A-F letter grade (card-facing).
+export function overallToGrade(o: number): string {
+  if (o >= 95) return 'A+';
+  if (o >= 90) return 'A';
+  if (o >= 85) return 'A-';
+  if (o >= 80) return 'B+';
+  if (o >= 75) return 'B';
+  if (o >= 70) return 'B-';
+  if (o >= 64) return 'C+';
+  if (o >= 58) return 'C';
+  if (o >= 52) return 'C-';
+  if (o >= 46) return 'D+';
+  if (o >= 40) return 'D';
+  return 'F';
+}
+
 // Convert 20-80 grade to letter grade
 export function gradeToLetter(grade: number): string {
   if (grade >= 80) return 'A+';

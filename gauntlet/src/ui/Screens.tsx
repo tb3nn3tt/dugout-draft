@@ -5,6 +5,7 @@ import { TIER_COLORS } from '../domain/players';
 import { Player } from '../domain/types';
 import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
 import { computeAwards, runAwards, fmtAvg } from '../domain/seriesAwards';
+import { overallToGrade } from '../domain/sim/helpers';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { BUDGET } from '../domain/salary';
 import { ACHIEVEMENTS, loadUnlocked } from '../domain/achievements';
@@ -43,9 +44,10 @@ export function MenuScreen({ g }: { g: G }) {
 
   return (
     <div className="stack" style={{ marginTop: 24, gap: 20 }}>
-      <div className="center stack" style={{ gap: 6 }}>
-        <h1>Dugout<br />Gauntlet</h1>
-        <p className="dim">Draft a team. Run the gauntlet.<br />See how far you go.</p>
+      <div className="hero">
+        <div className="hero__kicker">⚾ WORLD GAUNTLET · EST. 2026</div>
+        <h1 className="hero__title">DUGOUT<span>GAUNTLET</span></h1>
+        <p className="hero__sub">Draft a team. Run the gauntlet.<br />See how far you go.</p>
       </div>
 
       {top[0] && (
@@ -275,8 +277,8 @@ export function DraftScreen({ g }: { g: G }) {
 
 // Slot-machine reveal for the spun round — tier/name/role roll, then lock.
 const SPIN_TIERS = ['DIAMOND', 'GOLD', 'SILVER', 'BRONZE', 'COMMON'];
-const SPIN_NAMES = ['💎 The Diamond Mine', '🏆 Cooperstown Calls', '🎬 Hollywood Heaters', '🐻 The Sandlot',
-  '⚪ Silver Sluggers Row', '🟫 Grinders\' Alley', '🎲 Bust or Boom', '🌎 Around the World', '🍂 October Legends'];
+const SPIN_NAMES = ['💎 The Diamond Vault', '🏆 Cooperstown Calls', '🎬 Hollywood Heaters', '🐻 The Sandlot',
+  '⚪ The Silver Circuit', '🟫 The Bronze League', '🎲 Bust or Boom', '🌎 Around the World', '🍂 October Legends'];
 const SPIN_ROLES = ['Catcher', 'Shortstop', 'Ace Starter', 'Closer', 'Center Field', 'Pinch Hitter', 'Setup Man', 'Third Base'];
 
 function RoundBanner({ round, color }: { round: DraftRound; color: string }) {
@@ -364,9 +366,10 @@ export function MatchupScreen({ g }: { g: G }) {
         };
         const me = pwr(team ?? undefined), foe = pwr(opponent.team);
         return (
-          <div className="row" style={{ justifyContent: 'center', gap: 18, fontSize: 13 }}>
-            <span className="dim">Your power <strong style={{ color: 'var(--text)' }}>{me}</strong></span>
-            <span className="dim">Their power <strong style={{ color: foe > me ? 'var(--loss)' : 'var(--win)' }}>{foe}</strong></span>
+          <div className="scout">
+            <div className="scout__side"><div className="scout__lbl">YOUR POWER</div><div className="scout__grade">{overallToGrade(me)}</div></div>
+            <div className="scout__vs">VS</div>
+            <div className="scout__side"><div className="scout__lbl">THEIR POWER</div><div className="scout__grade" style={{ color: foe > me ? 'var(--loss)' : 'var(--win)' }}>{overallToGrade(foe)}</div></div>
           </div>
         );
       })()}

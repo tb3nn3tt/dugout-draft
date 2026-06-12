@@ -67,12 +67,14 @@ const THEMES: Theme[] = [
 ];
 
 // Some named "pure tier" rounds for flavor when no theme is rolled.
+// Named by QUALITY TIER (not player archetype) so a slick-fielding silver hitter
+// in a silver round doesn't read as a contradiction.
 const TIER_ROUND_NAMES: Record<Tier, { name: string; flavor: string }> = {
-  diamond: { name: 'The Diamond Mine', flavor: 'Only the rarest, brightest gems in the game.' },
-  gold: { name: 'The Gold Standard', flavor: 'Bona fide stars — the backbone of a contender.' },
-  silver: { name: 'Silver Sluggers Row', flavor: 'Steady pros who win you ballgames.' },
-  bronze: { name: 'Grinders\' Alley', flavor: 'Blue-collar ballplayers with a little something extra.' },
-  common: { name: 'The Open Tryout', flavor: 'Diamonds in the rough and lovable scrubs.' },
+  diamond: { name: 'The Diamond Vault', flavor: 'The rarest, highest-rated players in the game.' },
+  gold: { name: 'The Gold Standard', flavor: 'Bona fide A-list talent — the backbone of a contender.' },
+  silver: { name: 'The Silver Circuit', flavor: 'Solid, reliable pros who quietly win you ballgames.' },
+  bronze: { name: 'The Bronze League', flavor: 'Affordable role players and blue-collar depth.' },
+  common: { name: 'The Open Tryout', flavor: 'Bargain-bin fliers and diamonds in the rough.' },
 };
 
 function poolFor(role: Position): Player[] {

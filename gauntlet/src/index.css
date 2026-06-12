@@ -322,3 +322,36 @@ strong, b { font-weight: 700; }
 /* ---- Staggered page-load reveal helper ---- */
 .app-shell > * > * { animation: riseIn 0.4s ease backwards; }
 @keyframes riseIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ---- Menu hero ---- */
+.hero { text-align: center; padding: 20px 0 8px; }
+.hero__kicker { font-family: 'Saira', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2.6px; color: var(--cyan); text-transform: uppercase; margin-bottom: 10px; }
+.hero__title { font-family: 'Anton', sans-serif; font-size: 62px; line-height: 0.82; letter-spacing: 1px; text-transform: uppercase; display: flex; flex-direction: column; text-shadow: 0 4px 30px rgba(0,0,0,0.5); }
+.hero__title span { background: linear-gradient(180deg, var(--amber) 10%, var(--amber-2) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 22px rgba(255,178,36,0.4)); }
+.hero__sub { font-size: 13px; color: var(--ink-dim); margin-top: 12px; letter-spacing: 0.4px; }
+
+/* staggered load delays for a real cascade */
+.app-shell > * > *:nth-child(1) { animation-delay: 0.00s; }
+.app-shell > * > *:nth-child(2) { animation-delay: 0.05s; }
+.app-shell > * > *:nth-child(3) { animation-delay: 0.10s; }
+.app-shell > * > *:nth-child(4) { animation-delay: 0.15s; }
+.app-shell > * > *:nth-child(5) { animation-delay: 0.20s; }
+.app-shell > * > *:nth-child(n+6) { animation-delay: 0.25s; }
+
+/* ---- Premium card foil sheen (diamond/gold sweep) ---- */
+.tile--diamond, .tile--gold { overflow: hidden; }
+.tile--diamond::after, .tile--gold::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(120deg, transparent 42%, rgba(255,255,255,0.10) 50%, transparent 58%);
+  background-size: 280% 100%; animation: foil 4.5s linear infinite;
+}
+@keyframes foil { from { background-position: 230% 0; } to { background-position: -60% 0; } }
+.tile--diamond { box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 22px rgba(121,240,255,0.10); }
+.tile--gold { box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 20px rgba(255,206,74,0.10); }
+
+/* ---- Matchup scouting VS ---- */
+.scout { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.scout__side { text-align: center; flex: 1; }
+.scout__lbl { font-size: 9px; font-weight: 800; letter-spacing: 1.2px; color: var(--ink-faint); }
+.scout__grade { font-family: 'Anton', sans-serif; font-size: 40px; line-height: 1; margin-top: 2px; }
+.scout__vs { font-family: 'Anton', sans-serif; font-size: 18px; color: var(--ink-faint); }
