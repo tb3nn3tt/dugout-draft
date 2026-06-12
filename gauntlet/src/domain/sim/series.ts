@@ -294,6 +294,12 @@ export function playGame(
   };
 }
 
+export interface GameLine {
+  you: number;   // your runs that game
+  opp: number;   // opponent runs that game
+  won: boolean;  // did you win it
+}
+
 export interface SeriesResult {
   /** 'you' = team1 (the human), 'opp' = team2 (the opponent ghost). */
   winner: 'you' | 'opp';
@@ -302,6 +308,7 @@ export interface SeriesResult {
   youRuns: number;
   oppRuns: number;
   games: GameResult[];
+  gameLines: GameLine[]; // per-game you/opp scores in order
 }
 
 /**
@@ -318,6 +325,7 @@ export function playSeries(
   const homeTeam: 'player1' | 'player2' = rand() < 0.5 ? 'player1' : 'player2';
 
   const games: GameResult[] = [];
+  const gameLines: GameLine[] = [];
   let p1Wins = 0;
   let p2Wins = 0;
   let youRuns = 0;
@@ -332,10 +340,13 @@ export function playSeries(
     const isHomeGame = [1, 2, 6, 7].includes(gameNumber);
     const actualHome = isHomeGame ? homeTeam : (homeTeam === 'player1' ? 'player2' : 'player1');
     const [awayScore, homeScore] = result.score;
-    if (actualHome === 'player1') { youRuns += homeScore; oppRuns += awayScore; }
-    else { youRuns += awayScore; oppRuns += homeScore; }
+    const you = actualHome === 'player1' ? homeScore : awayScore;
+    const opp = actualHome === 'player1' ? awayScore : homeScore;
+    youRuns += you; oppRuns += opp;
+    const won = result.winner === 'player1';
+    gameLines.push({ you, opp, won });
 
-    if (result.winner === 'player1') p1Wins++;
+    if (won) p1Wins++;
     else p2Wins++;
     gameNumber++;
   }
@@ -347,5 +358,6 @@ export function playSeries(
     youRuns,
     oppRuns,
     games,
+    gameLines,
   };
 }

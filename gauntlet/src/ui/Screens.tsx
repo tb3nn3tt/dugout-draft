@@ -243,6 +243,15 @@ export function SeriesResultScreen({ g }: { g: G }) {
           <span className="dim">–</span>
           <span><strong>{r.oppRuns}</strong></span>
         </div>
+        <div className="gamelines">
+          {r.gameLines.map((gl, i) => (
+            <div key={i} className={`gameline ${gl.won ? 'gameline--w' : 'gameline--l'}`}>
+              <div className="gameline__g">G{i + 1}</div>
+              <div className="gameline__s">{gl.you}-{gl.opp}</div>
+              <div className="gameline__r">{gl.won ? 'W' : 'L'}</div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {awards && (awards.mvp || awards.ace) && (

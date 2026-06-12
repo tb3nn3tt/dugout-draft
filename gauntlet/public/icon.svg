@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="32%" r="80%">
+      <stop offset="0%" stop-color="#16233c"/>
+      <stop offset="60%" stop-color="#0b1220"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- baseball -->
+  <circle cx="256" cy="248" r="132" fill="#f5f7fa"/>
+  <path d="M168 168 q44 80 0 160" fill="none" stroke="#e74c3c" stroke-width="9" stroke-linecap="round"/>
+  <path d="M344 168 q-44 80 0 160" fill="none" stroke="#e74c3c" stroke-width="9" stroke-linecap="round"/>
+  <g stroke="#e74c3c" stroke-width="6" stroke-linecap="round">
+    <path d="M150 188 l16 8 M150 214 l18 5 M150 240 l19 2 M150 266 l19 -2 M150 292 l18 -5 M150 318 l16 -8"/>
+    <path d="M362 188 l-16 8 M362 214 l-18 5 M362 240 l-19 2 M362 266 l-19 -2 M362 292 l-18 -5 M362 318 l-16 -8"/>
+  </g>
+  <!-- gold gauntlet streak bar -->
+  <rect x="116" y="404" width="280" height="26" rx="13" fill="#f5a623"/>
+  <text x="256" y="424" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#1a1206" text-anchor="middle">GAUNTLET</text>
+</svg>
