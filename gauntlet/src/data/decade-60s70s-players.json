@@ -1,0 +1,2351 @@
+[
+  {
+    "id": "decade60-1",
+    "name": "Frank Robinson",
+    "team": "BAL",
+    "positions": [
+      "RF",
+      "LF",
+      "PH",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.294,
+      "obp": 0.389,
+      "slg": 0.537,
+      "hr": 586,
+      "speed": 60
+    },
+    "overall": 95,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "The Judge",
+    "grades": {
+      "contact": 70,
+      "power": 80,
+      "speed": 60,
+      "fielding": 65,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Only player to win MVP in both leagues - Triple Crown in '66"
+  },
+  {
+    "id": "decade60-2",
+    "name": "Carl Yastrzemski",
+    "team": "BOS",
+    "positions": [
+      "LF",
+      "1B",
+      "PH",
+      "IFD",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.379,
+      "slg": 0.462,
+      "hr": 452,
+      "speed": 55
+    },
+    "overall": 93,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Yaz",
+    "grades": {
+      "contact": 75,
+      "power": 70,
+      "speed": 55,
+      "fielding": 75,
+      "arm": 70,
+      "eye": 75
+    },
+    "specialty": "5-Tool",
+    "funFact": "Won the last Triple Crown in '67 - carried the Sox on his back"
+  },
+  {
+    "id": "decade60-3",
+    "name": "Reggie Jackson",
+    "team": "OAK",
+    "positions": [
+      "RF",
+      "DH",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.262,
+      "obp": 0.356,
+      "slg": 0.49,
+      "hr": 563,
+      "speed": 60
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Mr. October",
+    "grades": {
+      "contact": 55,
+      "power": 80,
+      "speed": 60,
+      "fielding": 55,
+      "arm": 65,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "563 HRs and the straw that stirs the drink"
+  },
+  {
+    "id": "decade60-4",
+    "name": "Rod Carew",
+    "team": "MIN",
+    "positions": [
+      "2B",
+      "1B",
+      "PH",
+      "PR",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.328,
+      "obp": 0.393,
+      "slg": 0.429,
+      "hr": 92,
+      "speed": 75
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Sir Rodney",
+    "grades": {
+      "contact": 80,
+      "power": 45,
+      "speed": 75,
+      "fielding": 65,
+      "arm": 55,
+      "eye": 75
+    },
+    "specialty": "Contact Master",
+    "funFact": "7 batting titles - could put the bat on anything"
+  },
+  {
+    "id": "decade60-5",
+    "name": "Mike Schmidt",
+    "team": "PHI",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.38,
+      "slg": 0.527,
+      "hr": 548,
+      "speed": 55
+    },
+    "overall": 95,
+    "category": "decade",
+    "era": "1970s-80s",
+    "nickname": "Schmidty",
+    "grades": {
+      "contact": 60,
+      "power": 80,
+      "speed": 55,
+      "fielding": 80,
+      "arm": 75,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Greatest third baseman ever - 548 HRs + 10 Gold Gloves"
+  },
+  {
+    "id": "decade60-6",
+    "name": "George Brett",
+    "team": "KC",
+    "positions": [
+      "3B",
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.305,
+      "obp": 0.369,
+      "slg": 0.487,
+      "hr": 317,
+      "speed": 60
+    },
+    "overall": 93,
+    "category": "decade",
+    "era": "1970s-80s",
+    "nickname": "Mullet Man",
+    "grades": {
+      "contact": 80,
+      "power": 70,
+      "speed": 60,
+      "fielding": 65,
+      "arm": 65,
+      "eye": 65
+    },
+    "specialty": "Contact Master",
+    "funFact": "Flirted with .400 in 1980 - hit .390"
+  },
+  {
+    "id": "decade60-7",
+    "name": "Steve Carlton",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.22,
+      "whip": 1.25,
+      "k9": 7.1,
+      "bb9": 2.8
+    },
+    "overall": 94,
+    "category": "decade",
+    "era": "1970s-80s",
+    "nickname": "Lefty",
+    "grades": {
+      "fastball": 75,
+      "breaking": 80,
+      "changeup": 65,
+      "control": 70,
+      "stamina": 80
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "Won 27 games for a last-place team in '72 - insane slider"
+  },
+  {
+    "id": "decade60-8",
+    "name": "Jim Palmer",
+    "team": "BAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.86,
+      "whip": 1.18,
+      "k9": 5.5,
+      "bb9": 2.7
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Cakes",
+    "grades": {
+      "fastball": 70,
+      "breaking": 70,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 75
+    },
+    "specialty": "Ace",
+    "funFact": "3 Cy Youngs and never gave up a grand slam in 19 years"
+  },
+  {
+    "id": "decade60-9",
+    "name": "Johnny Bench",
+    "team": "CIN",
+    "positions": [
+      "C",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.342,
+      "slg": 0.476,
+      "hr": 389,
+      "speed": 40
+    },
+    "overall": 95,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "The Little General",
+    "grades": {
+      "contact": 65,
+      "power": 75,
+      "speed": 40,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 65
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Greatest catcher ever — 2 MVPs, 10 Gold Gloves, changed how catchers throw"
+  },
+  {
+    "id": "decade60-10",
+    "name": "Tom Seaver",
+    "team": "NYM",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.86,
+      "whip": 1.12,
+      "k9": 7.7,
+      "bb9": 2.3
+    },
+    "overall": 95,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Tom Terrific",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 80
+    },
+    "specialty": "Power Arm",
+    "funFact": "311 wins, 3 Cy Youngs — the franchise that saved the Mets from irrelevance"
+  },
+  {
+    "id": "decade60-11",
+    "name": "Bob Gibson",
+    "team": "STL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.91,
+      "whip": 1.19,
+      "k9": 7.2,
+      "bb9": 2.7
+    },
+    "overall": 95,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "Gibby",
+    "grades": {
+      "fastball": 80,
+      "breaking": 75,
+      "changeup": 60,
+      "control": 65,
+      "stamina": 80
+    },
+    "specialty": "Power Arm",
+    "funFact": "1.12 ERA in 1968 — so dominant they literally lowered the mound because of him"
+  },
+  {
+    "id": "decade60-12",
+    "name": "Roberto Clemente",
+    "team": "PIT",
+    "positions": [
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.317,
+      "obp": 0.359,
+      "slg": 0.475,
+      "hr": 240,
+      "speed": 70
+    },
+    "overall": 95,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "The Great One",
+    "grades": {
+      "contact": 80,
+      "power": 65,
+      "speed": 70,
+      "fielding": 80,
+      "arm": 80,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": "Exactly 3000 hits, 12 Gold Gloves — died delivering earthquake relief supplies"
+  },
+  {
+    "id": "decade60-13",
+    "name": "Willie McCovey",
+    "team": "SF",
+    "positions": [
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.27,
+      "obp": 0.374,
+      "slg": 0.515,
+      "hr": 521,
+      "speed": 35
+    },
+    "overall": 92,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Stretch",
+    "grades": {
+      "contact": 60,
+      "power": 80,
+      "speed": 35,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 70
+    },
+    "specialty": "Power Hitter",
+    "funFact": "521 HR — MVP in '69, McCovey Cove named after him before it was cool"
+  },
+  {
+    "id": "decade60-14",
+    "name": "Lou Brock",
+    "team": "STL",
+    "positions": [
+      "LF",
+      "PR",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.293,
+      "obp": 0.343,
+      "slg": 0.41,
+      "hr": 149,
+      "speed": 80
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "The Base Burglar",
+    "grades": {
+      "contact": 70,
+      "power": 50,
+      "speed": 80,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 55
+    },
+    "specialty": "Speedster",
+    "funFact": "938 stolen bases — stole 118 in a single season at age 35"
+  },
+  {
+    "id": "decade60-15",
+    "name": "Joe Morgan",
+    "team": "CIN",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.271,
+      "obp": 0.392,
+      "slg": 0.427,
+      "hr": 268,
+      "speed": 70
+    },
+    "overall": 94,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Little Joe",
+    "grades": {
+      "contact": 65,
+      "power": 60,
+      "speed": 70,
+      "fielding": 75,
+      "arm": 65,
+      "eye": 80
+    },
+    "specialty": "5-Tool",
+    "funFact": "Back-to-back MVPs on the Big Red Machine — best 2B ever by WAR"
+  },
+  {
+    "id": "decade60-16",
+    "name": "Rollie Fingers",
+    "team": "OAK",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.9,
+      "whip": 1.16,
+      "k9": 6.1,
+      "bb9": 2.3
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "The Handlebar",
+    "grades": {
+      "fastball": 65,
+      "breaking": 70,
+      "changeup": 65,
+      "control": 75,
+      "stamina": 55
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "341 saves, MVP + Cy Young in '81 — greatest mustache in sports history"
+  },
+  {
+    "id": "decade60-17",
+    "name": "Catfish Hunter",
+    "team": "OAK",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.26,
+      "whip": 1.13,
+      "k9": 5.5,
+      "bb9": 2.1
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Catfish",
+    "grades": {
+      "fastball": 65,
+      "breaking": 70,
+      "changeup": 70,
+      "control": 80,
+      "stamina": 80
+    },
+    "specialty": "Ace",
+    "funFact": "Perfect game at 22, 5 straight World Series — first big-money free agent ever"
+  },
+  {
+    "id": "decade60-18",
+    "name": "Vida Blue",
+    "team": "OAK",
+    "positions": [
+      "SP"
+    ],
+    "bats": "S",
+    "throws": "L",
+    "stats": {
+      "era": 3.27,
+      "whip": 1.21,
+      "k9": 7,
+      "bb9": 3.3
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Blue Moon",
+    "grades": {
+      "fastball": 80,
+      "breaking": 65,
+      "changeup": 60,
+      "control": 60,
+      "stamina": 75
+    },
+    "specialty": "Power Arm",
+    "funFact": "MVP + Cy Young at 22 — blazing fastball and the coolest name in baseball"
+  },
+  {
+    "id": "decade60-19",
+    "name": "Harmon Killebrew",
+    "team": "MIN",
+    "positions": [
+      "1B",
+      "3B",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.256,
+      "obp": 0.376,
+      "slg": 0.509,
+      "hr": 573,
+      "speed": 30
+    },
+    "overall": 93,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "The Killer",
+    "grades": {
+      "contact": 55,
+      "power": 80,
+      "speed": 30,
+      "fielding": 45,
+      "arm": 55,
+      "eye": 75
+    },
+    "specialty": "Power Hitter",
+    "funFact": "573 HR — led the AL in homers 6 times. The nicest slugger who ever lived."
+  },
+  {
+    "id": "decade60-20",
+    "name": "Fergie Jenkins",
+    "team": "CHC",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.34,
+      "whip": 1.14,
+      "k9": 6.2,
+      "bb9": 1.7
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Fly",
+    "grades": {
+      "fastball": 70,
+      "breaking": 65,
+      "changeup": 65,
+      "control": 80,
+      "stamina": 80
+    },
+    "specialty": "Control Artist",
+    "funFact": "6 straight 20-win seasons with the Cubs — only Canadian in Cooperstown"
+  },
+  {
+    "id": "decade60-23",
+    "name": "Billy Williams",
+    "team": "CHC",
+    "positions": [
+      "LF",
+      "DH",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.29,
+      "obp": 0.361,
+      "slg": 0.492,
+      "hr": 426,
+      "speed": 50
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Sweet Swingin'",
+    "grades": {
+      "contact": 70,
+      "power": 70,
+      "speed": 50,
+      "fielding": 55,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "426 HR, played 1,117 consecutive games — the quiet superstar overshadowed by Ernie Banks"
+  },
+  {
+    "id": "decade60-24",
+    "name": "Juan Marichal",
+    "team": "SF",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.89,
+      "whip": 1.1,
+      "k9": 5.9,
+      "bb9": 1.8
+    },
+    "overall": 93,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "The Dominican Dandy",
+    "grades": {
+      "fastball": 70,
+      "breaking": 75,
+      "changeup": 70,
+      "control": 80,
+      "stamina": 80
+    },
+    "specialty": "Ace",
+    "funFact": "243-142 career — the most dominant pitcher in the NL during the '60s, overshadowed by Koufax"
+  },
+  {
+    "id": "decade60-25",
+    "name": "Orlando Cepeda",
+    "team": "SF",
+    "positions": [
+      "1B",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.297,
+      "obp": 0.35,
+      "slg": 0.499,
+      "hr": 379,
+      "speed": 50
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "The Baby Bull",
+    "grades": {
+      "contact": 70,
+      "power": 70,
+      "speed": 50,
+      "fielding": 55,
+      "arm": 60,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Unanimous NL MVP in 1967 — Puerto Rico's first superstar, father was 'The Bull'"
+  },
+  {
+    "id": "decade60-26",
+    "name": "Gaylord Perry",
+    "team": "SF",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.11,
+      "whip": 1.18,
+      "k9": 5.7,
+      "bb9": 2.5
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "The Spitballer",
+    "grades": {
+      "fastball": 65,
+      "breaking": 70,
+      "changeup": 70,
+      "control": 70,
+      "stamina": 80
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "314 wins, Cy Young in both leagues — literally titled his autobiography 'Me and the Spitter'"
+  },
+  {
+    "id": "decade60-28",
+    "name": "Luis Tiant",
+    "team": "BOS",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.3,
+      "whip": 1.22,
+      "k9": 6.5,
+      "bb9": 2.8
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "El Tiante",
+    "grades": {
+      "fastball": 70,
+      "breaking": 70,
+      "changeup": 70,
+      "control": 60,
+      "stamina": 75
+    },
+    "specialty": "Entertainer",
+    "funFact": "Most entertaining delivery in baseball history — turned his back completely to the batter"
+  },
+  {
+    "id": "decade60-29",
+    "name": "Pete Rose",
+    "team": "CIN",
+    "positions": [
+      "LF",
+      "1B"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.325,
+      "obp": 0.392,
+      "slg": 0.448,
+      "hr": 10,
+      "speed": 68
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1970s",
+    "grades": {
+      "contact": 80,
+      "power": 40,
+      "speed": 62,
+      "eye": 68,
+      "fielding": 52,
+      "arm": 50
+    },
+    "nickname": "Charlie Hustle",
+    "funFact": "4,256 hits. Nobody ever wanted it more than Pete Rose.",
+    "specialty": "Contact Hitter"
+  },
+  {
+    "id": "decade60-34",
+    "name": "Thurman Munson",
+    "team": "NYY",
+    "positions": [
+      "C"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.292,
+      "obp": 0.346,
+      "slg": 0.41,
+      "hr": 15,
+      "speed": 40
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1970s",
+    "grades": {
+      "contact": 68,
+      "power": 45,
+      "speed": 35,
+      "eye": 58,
+      "fielding": 68,
+      "arm": 65
+    },
+    "nickname": "Tugboat",
+    "funFact": "Gritty Yankee captain who led with toughness. A true warrior behind the plate.",
+    "specialty": null
+  },
+  {
+    "id": "decade60-35",
+    "name": "Tony Perez",
+    "team": "CIN",
+    "positions": [
+      "1B",
+      "3B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.279,
+      "obp": 0.341,
+      "slg": 0.463,
+      "hr": 27,
+      "speed": 35
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1970s",
+    "grades": {
+      "contact": 62,
+      "power": 62,
+      "speed": 30,
+      "eye": 55,
+      "fielding": 52,
+      "arm": 52
+    },
+    "nickname": "Big Dog",
+    "funFact": "The Big Red Machine cleanup hitter. Quiet power that drove in over 1,600 runs.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "decade60-37",
+    "name": "Don Drysdale",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.95,
+      "whip": 1.15,
+      "k9": 7.2,
+      "bb9": 2.5
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1960s",
+    "grades": {
+      "fastball": 72,
+      "breaking": 62,
+      "control": 60,
+      "stamina": 70,
+      "changeup": 52
+    },
+    "nickname": "Big D",
+    "funFact": "Six straight shutouts in 1968. Threw inside with zero apologies.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "decade60-40",
+    "name": "Jim Rice",
+    "team": "BOS",
+    "positions": [
+      "LF",
+      "DH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.298,
+      "obp": 0.352,
+      "slg": 0.502,
+      "hr": 32,
+      "speed": 48
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1970s-80s",
+    "grades": {
+      "contact": 65,
+      "power": 72,
+      "speed": 42,
+      "eye": 55,
+      "fielding": 48,
+      "arm": 55
+    },
+    "nickname": "Jim Ed",
+    "funFact": "Broke bats with checked swings. Absolute brute force at Fenway.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "decade60-41",
+    "name": "Willie Stargell",
+    "team": "PIT",
+    "positions": [
+      "LF",
+      "1B"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.282,
+      "obp": 0.36,
+      "slg": 0.529,
+      "hr": 35,
+      "speed": 38
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1970s",
+    "grades": {
+      "contact": 60,
+      "power": 75,
+      "speed": 32,
+      "eye": 62,
+      "fielding": 48,
+      "arm": 50
+    },
+    "nickname": "Pops",
+    "funFact": "Led the We Are Family Pirates to a championship. Launched balls out of stadiums.",
+    "specialty": "Power Hitter"
+  },
+  {
+    "id": "decade60-42",
+    "name": "Carlton Fisk",
+    "team": "BOS",
+    "positions": [
+      "C"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.269,
+      "obp": 0.341,
+      "slg": 0.457,
+      "hr": 26,
+      "speed": 38
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1970s-80s",
+    "grades": {
+      "contact": 60,
+      "power": 62,
+      "speed": 32,
+      "eye": 58,
+      "fielding": 68,
+      "arm": 68
+    },
+    "nickname": "Pudge",
+    "funFact": "Waved that ball fair in 1975. One of the most iconic moments in baseball history.",
+    "specialty": "Clutch Performer"
+  },
+  {
+    "id": "decade60-45",
+    "name": "Goose Gossage",
+    "team": "NYY",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.01,
+      "whip": 1.23,
+      "k9": 8.7,
+      "bb9": 3.5
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1970s-80s",
+    "grades": {
+      "fastball": 78,
+      "breaking": 55,
+      "control": 50,
+      "stamina": 48,
+      "changeup": 40
+    },
+    "nickname": "Goose",
+    "funFact": "Threw pure heat with menacing intensity. Batters heard the fastball before they saw it.",
+    "specialty": "Strikeout King"
+  },
+  {
+    "id": "decade60-47",
+    "name": "Dave Parker",
+    "team": "PIT",
+    "positions": [
+      "RF"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.305,
+      "obp": 0.352,
+      "slg": 0.49,
+      "hr": 25,
+      "speed": 60
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1970s-80s",
+    "grades": {
+      "contact": 68,
+      "power": 62,
+      "speed": 55,
+      "eye": 52,
+      "fielding": 55,
+      "arm": 72
+    },
+    "nickname": "The Cobra",
+    "funFact": "Built like a linebacker with a cannon arm. The Cobra struck fear from right field.",
+    "specialty": null
+  },
+  {
+    "id": "decade60-48",
+    "name": "Steve Garvey",
+    "team": "LAD",
+    "positions": [
+      "1B"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.294,
+      "obp": 0.329,
+      "slg": 0.446,
+      "hr": 21,
+      "speed": 42
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1970s-80s",
+    "grades": {
+      "contact": 68,
+      "power": 52,
+      "speed": 38,
+      "eye": 48,
+      "fielding": 62,
+      "arm": 55
+    },
+    "nickname": "Mr. Clean",
+    "funFact": "1,207 consecutive games played. Iron man of the National League.",
+    "specialty": null
+  },
+  {
+    "id": "decade60-49",
+    "name": "Maury Wills",
+    "team": "LAD",
+    "positions": [
+      "SS",
+      "PR",
+      "IFD"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.281,
+      "obp": 0.33,
+      "slg": 0.331,
+      "hr": 20,
+      "speed": 85
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "The Mouse",
+    "grades": {
+      "contact": 65,
+      "power": 25,
+      "speed": 85,
+      "fielding": 65,
+      "arm": 60,
+      "eye": 55
+    },
+    "specialty": "Speedster",
+    "funFact": "Stole 104 bases in 1962, shattering Ty Cobb's record! Changed the way teams thought about speed."
+  },
+  {
+    "id": "decade60-50",
+    "name": "Jim Bunning",
+    "team": "PHI",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.27,
+      "whip": 1.18,
+      "k9": 6.9,
+      "bb9": 2.4
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "Gentleman Jim",
+    "grades": {
+      "fastball": 68,
+      "breaking": 70,
+      "changeup": 62,
+      "control": 70,
+      "stamina": 78
+    },
+    "specialty": "Ace",
+    "funFact": "Pitched a perfect game on Father's Day 1964 — with his daughter watching from the stands!"
+  },
+  {
+    "id": "decade60-51",
+    "name": "Tony Oliva",
+    "team": "MIN",
+    "positions": [
+      "RF",
+      "DH",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.304,
+      "obp": 0.353,
+      "slg": 0.476,
+      "hr": 220,
+      "speed": 55
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Tony O",
+    "grades": {
+      "contact": 75,
+      "power": 65,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 60,
+      "eye": 60
+    },
+    "specialty": "Contact Master",
+    "funFact": "Won the batting title in each of his first two seasons — one of the purest hitters from Cuba!"
+  },
+  {
+    "id": "decade60-52",
+    "name": "Luis Aparicio",
+    "team": "CWS",
+    "positions": [
+      "SS",
+      "IFD",
+      "PR"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.262,
+      "obp": 0.311,
+      "slg": 0.343,
+      "hr": 83,
+      "speed": 80
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "Little Louie",
+    "grades": {
+      "contact": 60,
+      "power": 30,
+      "speed": 80,
+      "fielding": 80,
+      "arm": 70,
+      "eye": 50
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Led the AL in stolen bases 9 straight years! The flashiest shortstop of the '60s from Venezuela."
+  },
+  {
+    "id": "decade60-53",
+    "name": "Curt Flood",
+    "team": "STL",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.293,
+      "obp": 0.342,
+      "slg": 0.389,
+      "hr": 85,
+      "speed": 70
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "The Pioneer",
+    "grades": {
+      "contact": 70,
+      "power": 40,
+      "speed": 70,
+      "fielding": 78,
+      "arm": 65,
+      "eye": 58
+    },
+    "specialty": "Gold Glove",
+    "funFact": "7 Gold Gloves in center field and a courageous champion for players' rights in baseball!"
+  },
+  {
+    "id": "decade60-54",
+    "name": "Bill Mazeroski",
+    "team": "PIT",
+    "positions": [
+      "2B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.26,
+      "obp": 0.299,
+      "slg": 0.367,
+      "hr": 138,
+      "speed": 45
+    },
+    "overall": 82,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "Maz",
+    "grades": {
+      "contact": 55,
+      "power": 40,
+      "speed": 45,
+      "fielding": 80,
+      "arm": 72,
+      "eye": 45
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Hit the most famous home run in World Series history — a walk-off in Game 7 of the 1960 Series!"
+  },
+  {
+    "id": "decade60-55",
+    "name": "Ron Santo",
+    "team": "CHC",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.277,
+      "obp": 0.362,
+      "slg": 0.464,
+      "hr": 342,
+      "speed": 45
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "Ronnie",
+    "grades": {
+      "contact": 65,
+      "power": 65,
+      "speed": 45,
+      "fielding": 72,
+      "arm": 68,
+      "eye": 68
+    },
+    "specialty": "Power Hitter",
+    "funFact": "342 HRs and 5 Gold Gloves — clicked his heels after every Cubs win! A beloved Chicago legend."
+  },
+  {
+    "id": "decade60-56",
+    "name": "Denny McLain",
+    "team": "DET",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.39,
+      "whip": 1.13,
+      "k9": 5.5,
+      "bb9": 2.2
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "Sky King",
+    "grades": {
+      "fastball": 72,
+      "breaking": 65,
+      "changeup": 62,
+      "control": 72,
+      "stamina": 80
+    },
+    "specialty": "Ace",
+    "funFact": "Won an incredible 31 games in 1968 — the last pitcher ever to win 30! An amazing season for the ages."
+  },
+  {
+    "id": "decade60-57",
+    "name": "Vada Pinson",
+    "team": "CIN",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.286,
+      "obp": 0.327,
+      "slg": 0.442,
+      "hr": 256,
+      "speed": 72
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "The Quiet Superstar",
+    "grades": {
+      "contact": 68,
+      "power": 58,
+      "speed": 72,
+      "fielding": 65,
+      "arm": 62,
+      "eye": 52
+    },
+    "specialty": "5-Tool",
+    "funFact": "2,757 hits and 305 stolen bases — an incredible all-around talent who could do everything on a ballfield!"
+  },
+  {
+    "id": "decade60-58",
+    "name": "Ken Boyer",
+    "team": "STL",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.287,
+      "obp": 0.349,
+      "slg": 0.462,
+      "hr": 282,
+      "speed": 50
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "Captain",
+    "grades": {
+      "contact": 65,
+      "power": 62,
+      "speed": 50,
+      "fielding": 70,
+      "arm": 68,
+      "eye": 58
+    },
+    "specialty": "Power Hitter",
+    "funFact": "MVP in 1964 with a grand slam in the World Series! Captain of the Cardinals championship team."
+  },
+  {
+    "id": "decade60-59",
+    "name": "Dick Allen",
+    "team": "PHI",
+    "positions": [
+      "1B",
+      "3B",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.292,
+      "obp": 0.378,
+      "slg": 0.534,
+      "hr": 351,
+      "speed": 62
+    },
+    "overall": 91,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Wampum",
+    "grades": {
+      "contact": 65,
+      "power": 78,
+      "speed": 62,
+      "fielding": 45,
+      "arm": 55,
+      "eye": 68
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Hit towering home runs with a 42-ounce bat! AL MVP in 1972 with incredible raw power."
+  },
+  {
+    "id": "decade60-60",
+    "name": "Boog Powell",
+    "team": "BAL",
+    "positions": [
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.266,
+      "obp": 0.361,
+      "slg": 0.462,
+      "hr": 339,
+      "speed": 30
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Boog",
+    "grades": {
+      "contact": 58,
+      "power": 68,
+      "speed": 30,
+      "fielding": 55,
+      "arm": 52,
+      "eye": 62
+    },
+    "specialty": "Power Hitter",
+    "funFact": "AL MVP in 1970 — a 6'4\" 240-lb slugger who helped Baltimore win three straight pennants!"
+  },
+  {
+    "id": "decade60-61",
+    "name": "Rico Petrocelli",
+    "team": "BOS",
+    "positions": [
+      "SS",
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.251,
+      "obp": 0.332,
+      "slg": 0.42,
+      "hr": 210,
+      "speed": 42
+    },
+    "overall": 82,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Rico",
+    "grades": {
+      "contact": 52,
+      "power": 58,
+      "speed": 42,
+      "fielding": 65,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Hit 40 home runs as a shortstop in 1969 — set the AL record for power at the position!"
+  },
+  {
+    "id": "decade60-62",
+    "name": "Don Sutton",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.26,
+      "whip": 1.14,
+      "k9": 6.5,
+      "bb9": 2.3
+    },
+    "overall": 89,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Black & Decker",
+    "grades": {
+      "fastball": 62,
+      "breaking": 72,
+      "changeup": 68,
+      "control": 75,
+      "stamina": 80
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "324 wins and never missed a start for 23 years — the definition of consistency and durability!"
+  },
+  {
+    "id": "decade60-63",
+    "name": "Phil Niekro",
+    "team": "ATL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.35,
+      "whip": 1.27,
+      "k9": 5.3,
+      "bb9": 3.1
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Knucksie",
+    "grades": {
+      "fastball": 45,
+      "breaking": 80,
+      "changeup": 60,
+      "control": 58,
+      "stamina": 80
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "318 wins with a dancing knuckleball that drove batters crazy — pitched until he was 48 years old!"
+  },
+  {
+    "id": "decade60-64",
+    "name": "Fred Lynn",
+    "team": "BOS",
+    "positions": [
+      "CF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.283,
+      "obp": 0.36,
+      "slg": 0.484,
+      "hr": 306,
+      "speed": 65
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Freddie",
+    "grades": {
+      "contact": 65,
+      "power": 65,
+      "speed": 65,
+      "fielding": 72,
+      "arm": 62,
+      "eye": 62
+    },
+    "specialty": "5-Tool",
+    "funFact": "First player ever to win Rookie of the Year AND MVP in the same season — 1975 was magical!"
+  },
+  {
+    "id": "decade60-65",
+    "name": "Bert Blyleven",
+    "team": "MIN",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.31,
+      "whip": 1.2,
+      "k9": 7.0,
+      "bb9": 2.4
+    },
+    "overall": 90,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "The Frying Dutchman",
+    "grades": {
+      "fastball": 65,
+      "breaking": 80,
+      "changeup": 60,
+      "control": 68,
+      "stamina": 78
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "3,701 strikeouts with one of the nastiest curveballs in history — it fell off a table!"
+  },
+  {
+    "id": "decade60-66",
+    "name": "Ron Guidry",
+    "team": "NYY",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.29,
+      "whip": 1.18,
+      "k9": 7.6,
+      "bb9": 2.6
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Louisiana Lightning",
+    "grades": {
+      "fastball": 78,
+      "breaking": 72,
+      "changeup": 55,
+      "control": 68,
+      "stamina": 72
+    },
+    "specialty": "Power Arm",
+    "funFact": "Went 25-3 with a 1.74 ERA in 1978 — one of the greatest single seasons any pitcher has ever had!"
+  },
+  {
+    "id": "decade60-67",
+    "name": "Bruce Sutter",
+    "team": "CHC",
+    "positions": [
+      "CL"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 2.83,
+      "whip": 1.14,
+      "k9": 8.2,
+      "bb9": 2.5
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "The Split Man",
+    "grades": {
+      "fastball": 60,
+      "breaking": 78,
+      "changeup": 55,
+      "control": 68,
+      "stamina": 48
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "Pioneered the split-finger fastball — batters knew it was coming and still couldn't hit it!"
+  },
+  {
+    "id": "decade60-68",
+    "name": "Keith Hernandez",
+    "team": "STL",
+    "positions": [
+      "1B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.296,
+      "obp": 0.384,
+      "slg": 0.436,
+      "hr": 162,
+      "speed": 50
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Mex",
+    "grades": {
+      "contact": 72,
+      "power": 50,
+      "speed": 50,
+      "fielding": 80,
+      "arm": 65,
+      "eye": 72
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Co-MVP in 1979 and 11 Gold Gloves at first base — revolutionized how the position is played!"
+  },
+  {
+    "id": "decade60-69",
+    "name": "Cecil Cooper",
+    "team": "MIL",
+    "positions": [
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.298,
+      "obp": 0.339,
+      "slg": 0.47,
+      "hr": 241,
+      "speed": 45
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Coop",
+    "grades": {
+      "contact": 72,
+      "power": 60,
+      "speed": 45,
+      "fielding": 62,
+      "arm": 55,
+      "eye": 52
+    },
+    "specialty": "Contact Master",
+    "funFact": "Five straight seasons hitting .300 or better — a smooth left-handed stroke that was pure poetry!"
+  },
+  {
+    "id": "decade60-70",
+    "name": "Ted Simmons",
+    "team": "STL",
+    "positions": [
+      "C",
+      "BC",
+      "PH"
+    ],
+    "bats": "S",
+    "throws": "R",
+    "stats": {
+      "avg": 0.285,
+      "obp": 0.348,
+      "slg": 0.437,
+      "hr": 248,
+      "speed": 35
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Simba",
+    "grades": {
+      "contact": 68,
+      "power": 58,
+      "speed": 35,
+      "fielding": 58,
+      "arm": 62,
+      "eye": 60
+    },
+    "specialty": "Contact Master",
+    "funFact": "Hit .300 seven times as a switch-hitting catcher — one of the best-hitting backstops ever!"
+  },
+  {
+    "id": "decade60-71",
+    "name": "Rusty Staub",
+    "team": "NYM",
+    "positions": [
+      "RF",
+      "DH",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.279,
+      "obp": 0.362,
+      "slg": 0.431,
+      "hr": 292,
+      "speed": 38
+    },
+    "overall": 83,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Le Grand Orange",
+    "grades": {
+      "contact": 68,
+      "power": 58,
+      "speed": 38,
+      "fielding": 50,
+      "arm": 55,
+      "eye": 65
+    },
+    "specialty": "Contact Master",
+    "funFact": "Beloved in both Montreal AND New York — only player to have 500+ hits for four different teams!"
+  },
+  {
+    "id": "decade60-72",
+    "name": "Bobby Bonds",
+    "team": "SF",
+    "positions": [
+      "RF",
+      "CF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.268,
+      "obp": 0.353,
+      "slg": 0.471,
+      "hr": 332,
+      "speed": 78
+    },
+    "overall": 87,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Bobby B",
+    "grades": {
+      "contact": 55,
+      "power": 68,
+      "speed": 78,
+      "fielding": 65,
+      "arm": 68,
+      "eye": 58
+    },
+    "specialty": "5-Tool",
+    "funFact": "First player ever with 30 homers and 30 steals in the same season — a true power-speed pioneer!"
+  },
+  {
+    "id": "decade60-73",
+    "name": "Al Oliver",
+    "team": "PIT",
+    "positions": [
+      "CF",
+      "1B",
+      "PH"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "avg": 0.303,
+      "obp": 0.344,
+      "slg": 0.451,
+      "hr": 219,
+      "speed": 55
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Scoop",
+    "grades": {
+      "contact": 72,
+      "power": 55,
+      "speed": 55,
+      "fielding": 55,
+      "arm": 52,
+      "eye": 52
+    },
+    "specialty": "Contact Master",
+    "funFact": "Lifetime .303 hitter who led the NL in batting in 1982 — line drives flew off his bat like rockets!"
+  },
+  {
+    "id": "decade60-74",
+    "name": "Don Baylor",
+    "team": "BAL",
+    "positions": [
+      "LF",
+      "DH",
+      "PH"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.26,
+      "obp": 0.342,
+      "slg": 0.436,
+      "hr": 338,
+      "speed": 60
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Groove",
+    "grades": {
+      "contact": 55,
+      "power": 65,
+      "speed": 60,
+      "fielding": 48,
+      "arm": 52,
+      "eye": 58
+    },
+    "specialty": "Power Hitter",
+    "funFact": "AL MVP in 1979 with 139 RBI — a fearless leader who crowded the plate and never backed down!"
+  },
+  {
+    "id": "decade60-75",
+    "name": "Jim Fregosi",
+    "team": "LAA",
+    "positions": [
+      "SS",
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.265,
+      "obp": 0.338,
+      "slg": 0.398,
+      "hr": 151,
+      "speed": 52
+    },
+    "overall": 82,
+    "category": "decade",
+    "era": "1960s",
+    "nickname": "Mr. Angel",
+    "grades": {
+      "contact": 60,
+      "power": 50,
+      "speed": 52,
+      "fielding": 65,
+      "arm": 65,
+      "eye": 55
+    },
+    "specialty": "Contact Master",
+    "funFact": "Six-time All-Star and the first true superstar in Angels history — a franchise icon!"
+  },
+  {
+    "id": "decade60-76",
+    "name": "Dale Murphy",
+    "team": "ATL",
+    "positions": [
+      "CF",
+      "RF",
+      "OFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.265,
+      "obp": 0.346,
+      "slg": 0.469,
+      "hr": 398,
+      "speed": 62
+    },
+    "overall": 88,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Murph",
+    "grades": {
+      "contact": 58,
+      "power": 70,
+      "speed": 62,
+      "fielding": 70,
+      "arm": 72,
+      "eye": 60
+    },
+    "specialty": "5-Tool",
+    "funFact": "Back-to-back MVP at 26 and 27 — a 5-tool center fielder and one of the nicest guys in the game!"
+  },
+  {
+    "id": "decade60-77",
+    "name": "Jim Kaat",
+    "team": "MIN",
+    "positions": [
+      "SP"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 3.45,
+      "whip": 1.25,
+      "k9": 5.0,
+      "bb9": 2.2
+    },
+    "overall": 83,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Kitty",
+    "grades": {
+      "fastball": 60,
+      "breaking": 58,
+      "changeup": 65,
+      "control": 72,
+      "stamina": 78
+    },
+    "specialty": "Control Artist",
+    "funFact": "Won 16 Gold Gloves as a pitcher — the best fielding pitcher ever and a 25-year big leaguer!"
+  },
+  {
+    "id": "decade60-78",
+    "name": "Nolan Ryan",
+    "team": "LAA",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "era": 3.19,
+      "whip": 1.25,
+      "k9": 9.5,
+      "bb9": 4.7
+    },
+    "overall": 93,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "The Ryan Express",
+    "grades": {
+      "fastball": 80,
+      "breaking": 70,
+      "changeup": 50,
+      "control": 50,
+      "stamina": 80
+    },
+    "specialty": "Power Arm",
+    "funFact": "5,714 career strikeouts and 7 no-hitters — threw over 100 mph and nobody could touch it!"
+  },
+  {
+    "id": "decade60-79",
+    "name": "Dave Concepcion",
+    "team": "CIN",
+    "positions": [
+      "SS",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.267,
+      "obp": 0.322,
+      "slg": 0.357,
+      "hr": 101,
+      "speed": 70
+    },
+    "overall": 82,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Davey",
+    "grades": {
+      "contact": 60,
+      "power": 35,
+      "speed": 70,
+      "fielding": 78,
+      "arm": 72,
+      "eye": 50
+    },
+    "specialty": "Gold Glove",
+    "funFact": "Anchor of the Big Red Machine infield — invented the one-bounce throw from deep short on AstroTurf!"
+  },
+  {
+    "id": "decade60-80",
+    "name": "Graig Nettles",
+    "team": "NYY",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.248,
+      "obp": 0.329,
+      "slg": 0.421,
+      "hr": 390,
+      "speed": 42
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Puff",
+    "grades": {
+      "contact": 50,
+      "power": 65,
+      "speed": 42,
+      "fielding": 78,
+      "arm": 72,
+      "eye": 55
+    },
+    "specialty": "Gold Glove",
+    "funFact": "390 HRs with dazzling defense at third base — his 1978 World Series glove work was unbelievable!"
+  },
+  {
+    "id": "decade60-81",
+    "name": "Tommy John",
+    "team": "LAD",
+    "positions": [
+      "SP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 3.34,
+      "whip": 1.25,
+      "k9": 4.3,
+      "bb9": 2.5
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "TJ",
+    "grades": {
+      "fastball": 55,
+      "breaking": 62,
+      "changeup": 70,
+      "control": 72,
+      "stamina": 78
+    },
+    "specialty": "Control Artist",
+    "funFact": "288 career wins and the surgery named after him helped hundreds of pitchers keep playing!"
+  },
+  {
+    "id": "decade60-82",
+    "name": "Sal Bando",
+    "team": "OAK",
+    "positions": [
+      "3B",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.254,
+      "obp": 0.355,
+      "slg": 0.408,
+      "hr": 242,
+      "speed": 40
+    },
+    "overall": 83,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "Captain Sal",
+    "grades": {
+      "contact": 52,
+      "power": 58,
+      "speed": 40,
+      "fielding": 62,
+      "arm": 65,
+      "eye": 65
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Captain of the Oakland dynasty that won three straight World Series — a true clutch leader!"
+  },
+  {
+    "id": "decade60-83",
+    "name": "Bert Campaneris",
+    "team": "OAK",
+    "positions": [
+      "SS",
+      "PR",
+      "IFD"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.259,
+      "obp": 0.311,
+      "slg": 0.342,
+      "hr": 79,
+      "speed": 82
+    },
+    "overall": 82,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Campy",
+    "grades": {
+      "contact": 58,
+      "power": 25,
+      "speed": 82,
+      "fielding": 68,
+      "arm": 62,
+      "eye": 48
+    },
+    "specialty": "Speedster",
+    "funFact": "Led the AL in steals 6 times — once played all 9 positions in a single game just to show he could!"
+  },
+  {
+    "id": "decade60-84",
+    "name": "Tug McGraw",
+    "team": "NYM",
+    "positions": [
+      "SU",
+      "MRP"
+    ],
+    "bats": "R",
+    "throws": "L",
+    "stats": {
+      "era": 3.14,
+      "whip": 1.28,
+      "k9": 7.5,
+      "bb9": 3.8
+    },
+    "overall": 83,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Tugger",
+    "grades": {
+      "fastball": 68,
+      "breaking": 65,
+      "changeup": 62,
+      "control": 55,
+      "stamina": 52
+    },
+    "specialty": "Clutch Performer",
+    "funFact": "His battle cry 'Ya Gotta Believe!' inspired the 1973 Miracle Mets all the way to the World Series!"
+  },
+  {
+    "id": "decade60-85",
+    "name": "Sparky Lyle",
+    "team": "NYY",
+    "positions": [
+      "CL",
+      "SU"
+    ],
+    "bats": "L",
+    "throws": "L",
+    "stats": {
+      "era": 2.88,
+      "whip": 1.19,
+      "k9": 5.9,
+      "bb9": 3.0
+    },
+    "overall": 85,
+    "category": "decade",
+    "era": "1970s",
+    "nickname": "The Count",
+    "grades": {
+      "fastball": 60,
+      "breaking": 72,
+      "changeup": 58,
+      "control": 62,
+      "stamina": 55
+    },
+    "specialty": "Wipeout Stuff",
+    "funFact": "First AL reliever to win the Cy Young Award in 1977 — his wicked slider made hitters look silly!"
+  },
+  {
+    "id": "decade60-86",
+    "name": "Mike Cuellar",
+    "team": "BAL",
+    "positions": [
+      "SP"
+    ],
+    "bats": "S",
+    "throws": "L",
+    "stats": {
+      "era": 3.14,
+      "whip": 1.2,
+      "k9": 5.8,
+      "bb9": 3.0
+    },
+    "overall": 84,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Crazy Horse",
+    "grades": {
+      "fastball": 58,
+      "breaking": 68,
+      "changeup": 70,
+      "control": 62,
+      "stamina": 72
+    },
+    "specialty": "Crafty Vet",
+    "funFact": "Won 20+ games four times with a baffling screwball — key piece of Baltimore's dominant pitching staff!"
+  },
+  {
+    "id": "decade60-87",
+    "name": "Bobby Murcer",
+    "team": "NYY",
+    "positions": [
+      "CF",
+      "RF",
+      "OFD"
+    ],
+    "bats": "L",
+    "throws": "R",
+    "stats": {
+      "avg": 0.277,
+      "obp": 0.357,
+      "slg": 0.445,
+      "hr": 252,
+      "speed": 55
+    },
+    "overall": 83,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "Bobby",
+    "grades": {
+      "contact": 62,
+      "power": 60,
+      "speed": 55,
+      "fielding": 60,
+      "arm": 62,
+      "eye": 60
+    },
+    "specialty": "Power Hitter",
+    "funFact": "Homered four straight at-bats in a 1970 doubleheader — the next great Yankee center fielder!"
+  },
+  {
+    "id": "decade60-88",
+    "name": "Joe Torre",
+    "team": "STL",
+    "positions": [
+      "C",
+      "1B",
+      "3B",
+      "BC"
+    ],
+    "bats": "R",
+    "throws": "R",
+    "stats": {
+      "avg": 0.297,
+      "obp": 0.365,
+      "slg": 0.452,
+      "hr": 252,
+      "speed": 35
+    },
+    "overall": 86,
+    "category": "decade",
+    "era": "1960s-70s",
+    "nickname": "The Godfather",
+    "grades": {
+      "contact": 72,
+      "power": 60,
+      "speed": 35,
+      "fielding": 58,
+      "arm": 60,
+      "eye": 62
+    },
+    "specialty": "Contact Master",
+    "funFact": "NL MVP in 1971 hitting .363 with 230 hits — later became a legendary World Series-winning manager!"
+  }
+]
