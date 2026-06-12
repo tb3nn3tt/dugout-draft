@@ -1,12 +1,13 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound } from '../domain/draftRounds';
-import { TIER_COLORS } from '../domain/players';
-import { Player } from '../domain/types';
+import { TIER_COLORS, getTier } from '../domain/players';
+import { overallToGrade } from '../domain/sim/helpers';
+import { Player, Position } from '../domain/types';
+import { DraftEntry } from '../state/gauntletReducer';
 import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
 import { runAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
-import { BUDGET } from '../domain/salary';
 import { ACHIEVEMENTS, loadUnlocked } from '../domain/achievements';
 import { isSoundOn, setSoundOn, sfxPick, sfxLock } from '../domain/sound';
 import { CardTile } from './CardTile';
@@ -173,7 +174,7 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
 // How to play
 // ---------------------------------------------------------------------------
 const HELP_STEPS: { emoji: string; title: string; body: string }[] = [
-  { emoji: '💰', title: 'Draft under a cap', body: 'You have 600 cap points. Stars cost a fortune — splurge on a few, or spread it around, but you can\'t have studs everywhere. Spin a tier × role each pick.' },
+  { emoji: '🎰', title: 'Spin your team', body: 'Each pick spins a tier × position — a Diamond shortstop, a Bronze closer, a themed throwback round. You\'ll get a real mix of stars and grinders, just like a big-league roster.' },
   { emoji: '🏆', title: 'Run the gauntlet', body: 'Your team faces a ladder of legendary clubs — the Sandlot, the Bronx Bombers, Cooperstown Immortals — best-of-7 each, getting tougher as you climb.' },
   { emoji: '🔥', title: 'Build a streak', body: 'Win a series, move on. Lose one, your run ends and your team is logged forever. How far can you go?' },
   { emoji: '🌐', title: 'Climb the world', body: 'Send your team to the Global Ladder — it keeps battling other real players\' teams over time. Survive the most series and you\'re the world champ.' },
@@ -244,11 +245,6 @@ export function DraftScreen({ g }: { g: G }) {
           <strong>{g.state.teamName}</strong>
           <span className="dim">Pick {pickNum} / {TOTAL_PICKS}</span>
         </div>
-        <div className="row" style={{ justifyContent: 'space-between', fontSize: 13 }}>
-          <span className="dim">💰 Cap space</span>
-          <strong style={{ color: g.state.budget < 50 ? 'var(--loss)' : 'var(--accent)' }}>{g.state.budget} / {BUDGET}</strong>
-        </div>
-        <div className="progress"><div className="progress__fill" style={{ width: `${(g.state.budget / BUDGET) * 100}%` }} /></div>
         {currentRound && <RoundBanner round={currentRound} color={tierColor} />}
       </div>
 
@@ -341,6 +337,45 @@ export function GauntletRunScreen({ g }: { g: G }) {
 }
 
 // ---------------------------------------------------------------------------
+// Team sheet — the drafted marquee, laid out for a screenshot/share
+// ---------------------------------------------------------------------------
+const SHEET_SLOTS: { role: Position; label: string }[] = [
+  { role: 'C', label: 'C' }, { role: '1B', label: '1B' }, { role: '2B', label: '2B' },
+  { role: '3B', label: '3B' }, { role: 'SS', label: 'SS' }, { role: 'LF', label: 'LF' },
+  { role: 'CF', label: 'CF' }, { role: 'RF', label: 'RF' }, { role: 'DH', label: 'DH' },
+  { role: 'SP', label: 'SP1' }, { role: 'SP', label: 'SP2' }, { role: 'CL', label: 'CL' },
+  { role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PARK' },
+];
+function sheetName(name: string): string {
+  const clean = name.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  const parts = clean.split(' ');
+  return parts.length === 1 ? parts[0] : `${parts[0][0]}. ${parts[parts.length - 1]}`;
+}
+function TeamSheet({ draftLog, teamName }: { draftLog: DraftEntry[]; teamName: string }) {
+  const cursor = new Map<string, number>();
+  return (
+    <div className="sheet">
+      <div className="sheet__title">{teamName} · STARTING NINE</div>
+      <div className="sheet__grid">
+        {SHEET_SLOTS.map((slot, i) => {
+          const idx = cursor.get(slot.role) ?? 0;
+          cursor.set(slot.role, idx + 1);
+          const entry = draftLog.filter(e => e.role === slot.role)[idx];
+          const color = entry ? TIER_COLORS[getTier(entry.player.overall)] : 'var(--text-dim)';
+          return (
+            <div key={i} className="sheet__cell">
+              <span className="sheet__pos">{slot.label}</span>
+              <span className="sheet__nm">{entry ? sheetName(entry.player.name) : '—'}</span>
+              <span className="sheet__gr" style={{ color }}>{entry ? overallToGrade(entry.player.overall) : ''}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Run over (summary + share)
 // ---------------------------------------------------------------------------
 export function RunOverScreen({ g }: { g: G }) {
@@ -382,6 +417,8 @@ export function RunOverScreen({ g }: { g: G }) {
       <h1 style={{ fontSize: 64, lineHeight: 1 }}>{streak}-0</h1>
       <strong style={{ fontSize: 20 }}>{team?.name}</strong>
       {finalFoe && <p className="dim" style={{ fontSize: 13 }}>fell to the {finalFoe}</p>}
+
+      <TeamSheet draftLog={g.state.draftLog} teamName={team?.name ?? 'My Squad'} />
 
       <div className="card stack" style={{ width: '100%', gap: 8 }}>
         <Row label="Series won" value={`${streak}`} />

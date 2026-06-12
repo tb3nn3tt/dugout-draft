@@ -15,6 +15,7 @@ import fictional from '../data/fictional-players.json';
 import niners from '../data/niners-players.json';
 import lore from '../data/lore-players.json';
 import marquee from '../data/marquee-cards.json';
+import extraRegulars from '../data/extra-regulars.json';
 import coachesData from '../data/coaches.json';
 import stadiumsData from '../data/stadiums.json';
 
@@ -34,6 +35,7 @@ export const playersPool: Player[] = [
   ...(niners as Player[]),
   ...(lore as Player[]),
   ...(marquee as Player[]),
+  ...(extraRegulars as Player[]),
 ];
 
 export const managersPool: Player[] = coachesData as Player[];

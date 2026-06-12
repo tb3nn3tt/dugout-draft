@@ -1,8 +1,11 @@
 import { Player, Position, Tier, PlayerCategory } from './types';
 import { playersPool, managersPool, stadiumsPool, getTier } from './players';
-import { canPlayPosition, getPositionLabel } from './sim/helpers';
+import { getPositionLabel } from './sim/helpers';
 import { rand } from './sim/rng';
 import { capTier, affordable, cardCost } from './salary';
+
+const PITCHING_ROLES = ['SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY'];
+const isHitterCard = (p: Player) => !PITCHING_ROLES.includes(p.positions[0]) && p.positions[0] !== 'HC' && p.positions[0] !== 'ST';
 
 // ============================================================================
 // Spin-draft rounds. Each pick "spins" a quality (tier) and a role you still
@@ -89,10 +92,17 @@ const TIER_ROUND_NAMES: Record<Tier, { name: string; flavor: string }> = {
   common: { name: 'The Open Tryout', flavor: 'Bargain-bin fliers and diamonds in the rough.' },
 };
 
-function poolFor(role: Position): Player[] {
+/**
+ * Who's eligible when a round rolls `role`. The DRAFT is stricter than the SIM:
+ * a "Third Base" round offers players whose PRIMARY position is 3B — actual
+ * third basemen — not every infielder who could merely cover the bag. The lone
+ * exception is DH, which (being a hitting-only slot) draws from every hitter.
+ */
+function eligibleForRole(role: Position): Player[] {
   if (role === 'HC') return managersPool;
   if (role === 'ST') return stadiumsPool;
-  return playersPool.filter(p => canPlayPosition(p, role));
+  if (role === 'DH') return playersPool.filter(isHitterCard);
+  return playersPool.filter(p => p.positions[0] === role);
 }
 
 /** Build a tiered, optionally-themed offer for a role, widening if a cell is thin. */
@@ -105,7 +115,7 @@ export function offerForRound(
   poolFilter?: (p: Player) => boolean,
   budgetRemaining = Infinity
 ): Player[] {
-  const all = poolFor(role).filter(p => !pickedIds.has(p.id));
+  const all = eligibleForRole(role).filter(p => !pickedIds.has(p.id));
   let base = all.filter(p => affordable(p, budgetRemaining));
   // Safety net: if nothing's affordable for this slot, offer the cheapest cards
   // anyway so the draft always completes (a forced cheap fill).

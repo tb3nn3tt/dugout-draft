@@ -433,3 +433,17 @@ strong, b { font-weight: 700; }
 }
 
 .depth__note { font-size: 9px; color: var(--ink-faint); text-align: center; padding: 4px 0; font-style: italic; }
+
+/* ---- Pin the draft to the viewport: the offers list scrolls inside, the
+       page itself never does (other screens keep their natural scroll). ---- */
+.app-shell:has(.draft) { height: 100dvh; min-height: 0; overflow: hidden; }
+
+/* ---- Team sheet — the drafted marquee, built to screenshot/share ---- */
+.sheet { width: 100%; border: 1px solid var(--line); background: rgba(0,0,0,0.28); }
+.sheet__title { font-family: 'Russo One', sans-serif; font-size: 12px; letter-spacing: 1px; text-align: center; padding: 8px; background: rgba(255,255,255,0.05); border-bottom: 1px solid var(--line); text-transform: uppercase; }
+.sheet__grid { display: grid; grid-template-columns: 1fr 1fr; }
+.sheet__cell { display: flex; align-items: center; gap: 6px; padding: 6px 9px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12.5px; min-width: 0; }
+.sheet__cell:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.06); }
+.sheet__pos { font-weight: 800; color: var(--ink-dim); width: 32px; flex: 0 0 auto; font-size: 10px; letter-spacing: 0.3px; }
+.sheet__nm { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; min-width: 0; }
+.sheet__gr { font-family: 'Russo One', sans-serif; font-weight: 400; font-size: 13px; flex: 0 0 auto; }
