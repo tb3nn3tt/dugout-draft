@@ -4,7 +4,7 @@ import { TOTAL_PICKS, DraftRound } from '../domain/draftRounds';
 import { TIER_COLORS } from '../domain/players';
 import { Player } from '../domain/types';
 import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
-import { computeAwards, fmtAvg } from '../domain/seriesAwards';
+import { computeAwards, runAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { BUDGET } from '../domain/salary';
 import { ACHIEVEMENTS, loadUnlocked } from '../domain/achievements';
@@ -466,6 +466,7 @@ export function RunOverScreen({ g }: { g: G }) {
   const runDiff = totalRunsFor - totalRunsAgainst;
   const hof = g.hofResult;
   const mut = getMutator(mutatorId);
+  const award = useMemo(() => runAwards(g.state.runStats), [g.state.runStats]);
   const [shared, setShared] = useState(false);
   const [ladderState, setLadderState] = useState<'idle' | 'sending' | 'sent'>('idle');
 
@@ -483,6 +484,7 @@ export function RunOverScreen({ g }: { g: G }) {
     (finalFoe ? `, falling to the ${finalFoe}!\n` : ' before falling!\n') +
     `Run diff: ${runDiff >= 0 ? '+' : ''}${runDiff}` +
     (hof ? ` · #${hof.rank} all-time` : '') +
+    (award.mvp ? `\nRun MVP: ${award.mvp.name} — ${award.mvp.hr} HR` : '') +
     `\nHow far can you go?`;
 
   const share = async () => {
@@ -505,6 +507,24 @@ export function RunOverScreen({ g }: { g: G }) {
         <Row label="Runs for / against" value={`${totalRunsFor} / ${totalRunsAgainst}`} />
         {hof && <Row label="Hall of Fame" value={`#${hof.rank} all-time`} highlight />}
       </div>
+
+      {(award.mvp || award.ace) && (
+        <div className="card stack" style={{ width: '100%', gap: 8 }}>
+          <h2 style={{ fontSize: 16 }}>🏆 Run Awards</h2>
+          {award.mvp && (
+            <div className="row" style={{ justifyContent: 'space-between' }}>
+              <span>🏅 <strong>{award.mvp.name}</strong> <span className="dim">MVP</span></span>
+              <span className="dim">{fmtAvg(award.mvp.avg)}, {award.mvp.hr} HR, {award.mvp.rbi} RBI</span>
+            </div>
+          )}
+          {award.ace && (
+            <div className="row" style={{ justifyContent: 'space-between' }}>
+              <span>🔥 <strong>{award.ace.name}</strong> <span className="dim">Ace</span></span>
+              <span className="dim">{award.ace.era.toFixed(2)} ERA, {award.ace.so} K</span>
+            </div>
+          )}
+        </div>
+      )}
 
       {g.newAchievements.length > 0 && (
         <div className="card stack" style={{ width: '100%', gap: 8 }}>

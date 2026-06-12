@@ -45,14 +45,12 @@ function aggregate(games: GameResult[], yourIds: Set<string>) {
   return { bat: [...bat.values()], pit: [...pit.values()] };
 }
 
-export function computeAwards(result: SeriesResult, yourIds: Set<string>): SeriesAwards {
-  const { bat, pit } = aggregate(result.games, yourIds);
-
-  // MVP: weight total bases-ish production. Require a few ABs to qualify.
+/** Choose the MVP hitter + ace pitcher from aggregated lines. */
+function pickAwards(bat: BatterLine[], pit: PitcherLine[], minAb: number, minIp: number): SeriesAwards {
   let mvp: SeriesAwards['mvp'] = null;
   let bestScore = -1;
   for (const b of bat) {
-    if (b.ab < 4) continue;
+    if (b.ab < minAb) continue;
     const score = b.hr * 4 + b.rbi * 1.5 + b.h + b.r * 0.5 + b.bb * 0.5;
     if (score > bestScore) {
       bestScore = score;
@@ -61,18 +59,49 @@ export function computeAwards(result: SeriesResult, yourIds: Set<string>): Serie
       mvp = { ...b, name: getDisplayName(b.name), avg, ops };
     }
   }
-
-  // Ace: most dominant arm (innings + Ks, low ERA).
   let ace: SeriesAwards['ace'] = null;
   let bestArm = -1;
   for (const p of pit) {
-    if (p.ip < 3) continue;
+    if (p.ip < minIp) continue;
     const era = p.ip > 0 ? (p.er * 9) / p.ip : 99;
     const score = p.so * 1.2 + p.ip - era * 1.5 + p.w * 3 + p.s * 2;
     if (score > bestArm) { bestArm = score; ace = { ...p, name: getDisplayName(p.name), era }; }
   }
-
   return { mvp, ace };
+}
+
+export function computeAwards(result: SeriesResult, yourIds: Set<string>): SeriesAwards {
+  const { bat, pit } = aggregate(result.games, yourIds);
+  return pickAwards(bat, pit, 4, 3);
+}
+
+// --- Run-wide tally (accumulated across every series of a run) ---
+export interface RunTally { bat: Record<string, BatterLine>; pit: Record<string, PitcherLine>; }
+export function emptyRunTally(): RunTally { return { bat: {}, pit: {} }; }
+
+export function accumulateSeries(t: RunTally, result: SeriesResult, yourIds: Set<string>): RunTally {
+  const bat = { ...t.bat }, pit = { ...t.pit };
+  for (const g of result.games) {
+    if (!g.boxScore) continue;
+    for (const side of [g.boxScore.away, g.boxScore.home]) {
+      for (const b of side.batters) {
+        if (!yourIds.has(b.playerId)) continue;
+        const c = bat[b.playerId] ?? { name: b.name, ab: 0, h: 0, hr: 0, rbi: 0, bb: 0, r: 0 };
+        bat[b.playerId] = { name: c.name, ab: c.ab + b.ab, h: c.h + b.h, hr: c.hr + b.hr, rbi: c.rbi + b.rbi, bb: c.bb + b.bb, r: c.r + b.r };
+      }
+      for (const p of side.pitchers) {
+        if (!yourIds.has(p.playerId)) continue;
+        const c = pit[p.playerId] ?? { name: p.name, ip: 0, so: 0, er: 0, h: 0, w: 0, s: 0 };
+        pit[p.playerId] = { name: c.name, ip: Math.round((c.ip + p.ip) * 10) / 10, so: c.so + p.so, er: c.er + p.er, h: c.h + p.h, w: c.w + (p.decision === 'W' ? 1 : 0), s: c.s + (p.decision === 'S' ? 1 : 0) };
+      }
+    }
+  }
+  return { bat, pit };
+}
+
+/** The run's overall MVP + ace, from the accumulated tally (higher thresholds). */
+export function runAwards(t: RunTally): SeriesAwards {
+  return pickAwards(Object.values(t.bat), Object.values(t.pit), 10, 6);
 }
 
 export function fmtAvg(avg: number): string {

@@ -1,9 +1,11 @@
 import { Player, Position, ROSTER_REQUIREMENTS } from '../types';
 
-// Get a display-friendly short name (last name, handling Jr./Sr./II/III suffixes)
+// Get a display-friendly short name (last name, handling Jr./Sr./II/III suffixes).
+// Strips a trailing parenthetical tag first, e.g. "Aroldis Chapman (Cuba)".
 export function getDisplayName(name: string): string {
-  const parts = name.split(' ');
-  if (parts.length === 1) return name; // Single word name like "KB" or "Nate"
+  const clean = name.replace(/\s*\([^)]*\)\s*$/, '').trim() || name;
+  const parts = clean.split(' ');
+  if (parts.length === 1) return parts[0]; // Single word name like "KB" or "Nate"
 
   const suffixes = ['Jr.', 'Jr', 'Sr.', 'Sr', 'II', 'III', 'IV', 'V'];
   const lastPart = parts[parts.length - 1];

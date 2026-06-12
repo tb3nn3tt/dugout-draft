@@ -4,6 +4,7 @@ import { MatchedOpponent } from '../domain/matchmaking';
 import { SeriesResult } from '../domain/sim/series';
 import { getMutator } from '../domain/mutators';
 import { BUDGET, cardCost } from '../domain/salary';
+import { RunTally, emptyRunTally, accumulateSeries } from '../domain/seriesAwards';
 
 export interface DraftEntry { role: Position; player: Player; }
 
@@ -30,6 +31,7 @@ export interface GauntletState {
   totalRunsFor: number;
   totalRunsAgainst: number;
   facedGhostIds: string[];
+  runStats: RunTally;            // accumulated box scores across the whole run
 }
 
 export type GauntletAction =
@@ -60,6 +62,7 @@ export const initialState: GauntletState = {
   totalRunsFor: 0,
   totalRunsAgainst: 0,
   facedGhostIds: [],
+  runStats: emptyRunTally(),
 };
 
 function pickedIds(picks: Player[]): Set<string> {
@@ -182,10 +185,12 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
         runsAgainst: result.oppRuns,
       };
       const won = result.winner === 'you';
+      const yourIds = new Set((state.team?.roster ?? []).map(p => p.id));
       return {
         ...state,
         phase: 'series_result',
         lastResult: result,
+        runStats: accumulateSeries(state.runStats, result, yourIds),
         history: [...state.history, outcome],
         streak: won ? state.streak + 1 : state.streak,
         totalRunsFor: state.totalRunsFor + result.youRuns,
