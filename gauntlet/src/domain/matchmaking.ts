@@ -80,7 +80,8 @@ export function findOpponent(
   poolFilter?: (p: Player) => boolean
 ): MatchedOpponent {
   // A real submitted team whose own ladder wins are close to the player's streak
-  // (comparable accomplishment; both are salary-capped so it's a fair fight).
+  // — a comparable accomplishment, so it's a fair fight (a team that itself only
+  // reached streak N is bounded by the same difficulty curve you're climbing).
   const bucket = ghostPool
     .filter(g => !excludeIds.has(g.id) && g.playerIds.length >= 20 && Math.abs(g.streak - streak) <= 1)
     .sort(() => rand() - 0.5);

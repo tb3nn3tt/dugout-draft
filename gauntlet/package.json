@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "balance": "esbuild scripts/balance-check.ts --bundle --platform=node --format=esm --loader:.json=json --log-level=error | node --input-type=module -"
   },
   "dependencies": {
     "firebase": "^12.9.0",
