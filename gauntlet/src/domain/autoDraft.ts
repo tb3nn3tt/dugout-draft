@@ -4,11 +4,14 @@ import { canPlayPosition } from './sim/helpers';
 import { cardCost } from './salary';
 
 // Draft order for the position-player + pitching slots. Scarce defensive spots
-// (C, SS) come first so the pool isn't drained by flexible bats. Manager and
+// (C, SS) come first, but lineup and pitching are INTERLEAVED so that in budget
+// mode the cap is spread across both — otherwise the 9 hitters drain the budget
+// up front and the team fields punching-bag pitching (a real bug that made the
+// famous-team ladder far too easy). Bench filler stays last (cheap). Manager and
 // stadium are handled separately at the end.
 const SLOT_ORDER: Position[] = [
-  'C', 'SS', '2B', '3B', 'CF', 'RF', 'LF', '1B', 'DH',
-  'SP', 'SP', 'SP', 'SP', 'CL', 'SU', 'SU', 'MRP', 'MRP', 'LRP', 'LOOGY',
+  'C', 'SP', 'SS', 'SP', '2B', 'CL', '3B', 'SP', 'CF', 'SU',
+  'RF', 'SP', '1B', 'SU', 'LF', 'MRP', 'DH', 'MRP', 'LRP', 'LOOGY',
   'BC', 'PH', 'PH', 'PR', 'IFD', 'OFD',
 ];
 

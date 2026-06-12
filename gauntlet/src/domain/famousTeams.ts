@@ -14,11 +14,12 @@ export interface FamousTeam {
   emoji: string;
   era: string;
   blurb: string;
-  budget: number;                     // salary-cap budget (also gauntlet order).
-                                      // Player has 600; teams below that are
-                                      // beatable, above it get progressively
-                                      // stacked. The whole ladder is capped, so
-                                      // it's a fair, escalating climb.
+  budget: number;                     // build budget (also the gauntlet order) —
+                                      // the difficulty dial. Calibrated against
+                                      // an uncapped drafted team (~83 marquee):
+                                      // early rungs are a beatable warm-up, the
+                                      // back half are genuinely stacked. Spend is
+                                      // spread across lineup AND pitching.
   filter: (p: Player) => boolean;     // themed sub-pool
 }
 
@@ -30,40 +31,40 @@ const teamIs = (...codes: string[]) => (p: Player) => codes.includes(p.team);
 export const FAMOUS_TEAMS: FamousTeam[] = [
   { id: 'bears', name: 'The Bush League Bears', emoji: '🐻', era: 'Sandlot Saturday',
     blurb: 'Lovable misfits who somehow keep it close. Every dynasty starts here.',
-    budget: 360, filter: catIs('busts', 'oddity') },
+    budget: 470, filter: catIs('busts', 'oddity') },
   { id: 'niners', name: 'The Niners 12U', emoji: '⚾', era: 'The Sandlot',
     blurb: 'Pure heart and grass stains. Do not underestimate the kids.',
-    budget: 410, filter: catIs('niners') },
+    budget: 530, filter: catIs('niners') },
   { id: 'sandlot', name: 'The Sandlot Legends', emoji: '🌳', era: 'The Sandlot',
     blurb: 'The Beast guards the fence. Benny rounds third. Forever.',
-    budget: 470, filter: eraIs('The Sandlot') },
+    budget: 610, filter: eraIs('The Sandlot') },
   { id: 'hollywood', name: 'The Hollywood Heaters', emoji: '🎬', era: 'Cinematic Classic',
     blurb: 'Wild Thing on the bump, Crash behind the dish, Roy Hobbs at the plate.',
-    budget: 540, filter: catIs('fictional') },
+    budget: 700, filter: catIs('fictional') },
   { id: 'intl', name: 'The International XI', emoji: '🌎', era: 'World Baseball',
     blurb: 'Stars from every corner of the globe, here to silence your bats.',
-    budget: 600, filter: catIs('international') },
+    budget: 780, filter: catIs('international') },
   { id: 'nineties', name: 'The 1990s All-Stars', emoji: '📼', era: '1990s',
     blurb: 'Throwback threads, throwback thunder. The decade that defined a generation.',
-    budget: 660, filter: eraIs('1990s', '1980s-90s', '1980s') },
+    budget: 860, filter: eraIs('1990s', '1980s-90s', '1980s') },
   { id: 'steroid', name: 'The Steroid-Era Mashers', emoji: '💉', era: 'Steroid Era',
     blurb: 'Forearms like oak. The ball has never traveled farther.',
-    budget: 720, filter: eraIs('Steroid Era') },
+    budget: 940, filter: eraIs('Steroid Era') },
   { id: 'deadball', name: 'The Dead-Ball Legends', emoji: '🪨', era: 'Dead Ball Days',
     blurb: 'Spitballs, small ball, and spikes up. Baseball as a knife fight.',
-    budget: 780, filter: eraIs('Dead Ball Days') },
+    budget: 1010, filter: eraIs('Dead Ball Days') },
   { id: 'bronx', name: 'The Bronx Bombers', emoji: '🗽', era: 'Pinstripe Dynasty',
     blurb: 'Pinstripes and October ghosts. The most feared lineup ever assembled.',
-    budget: 850, filter: teamIs('NYY') },
+    budget: 1110, filter: teamIs('NYY') },
   { id: 'cooperstown', name: 'Cooperstown Immortals', emoji: '🏛️', era: 'Hall of Fame',
     blurb: 'Bronze plaques come to life. There is no weakness in this lineup.',
-    budget: 930, filter: catIs('legend') },
+    budget: 1210, filter: catIs('legend') },
   { id: 'mvps', name: 'The Modern MVPs', emoji: '⭐', era: 'Current Stars',
     blurb: "Today's very best, in their primes, all on one impossible roster.",
-    budget: 1020, filter: catIs('current') },
+    budget: 1330, filter: catIs('current') },
   { id: 'peak', name: 'Lightning in a Bottle', emoji: '⚡', era: 'Peak Seasons',
     blurb: 'Every player at the absolute apex of their career. Final boss.',
-    budget: 1130, filter: catIs('peak', 'legend') },
+    budget: 1470, filter: catIs('peak', 'legend') },
 ];
 
 /** Build a famous team's full roster (themed sub-pool near its difficulty). */
