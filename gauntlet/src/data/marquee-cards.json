@@ -1,0 +1,848 @@
+[
+ {
+  "id": "marquee-1",
+  "name": "Cyclone McGraw",
+  "team": "LOR",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.17,
+   "whip": 1.32,
+   "k9": 9.2,
+   "bb9": 1.6
+  },
+  "overall": 96,
+  "category": "fictional",
+  "era": "Dead Ball Days",
+  "nickname": "The Cyclone",
+  "funFact": "They say his fastball whistled. Hitters swung at the sound and missed.",
+  "grades": {
+   "fastball": 79,
+   "breaking": 78,
+   "changeup": 80,
+   "control": 76,
+   "stamina": 62,
+   "clutch": 75
+  }
+ },
+ {
+  "id": "marquee-2",
+  "name": "Mordecai \"Three Finger\" Vance",
+  "team": "MYT",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.51,
+   "whip": 1.31,
+   "k9": 8.1,
+   "bb9": 1.4
+  },
+  "overall": 90,
+  "category": "fictional",
+  "era": "Dead Ball Days",
+  "nickname": "Three Finger",
+  "funFact": "Lost two fingers in a thresher; gained the nastiest curve the leagues ever saw.",
+  "grades": {
+   "fastball": 69,
+   "breaking": 70,
+   "changeup": 71,
+   "control": 78,
+   "stamina": 74,
+   "clutch": 72
+  }
+ },
+ {
+  "id": "marquee-3",
+  "name": "Sliding Billy Calloway",
+  "team": "LEG",
+  "positions": [
+   "CF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {
+   "avg": 0.253,
+   "obp": 0.324,
+   "slg": 0.421,
+   "hr": 35,
+   "speed": 96
+  },
+  "overall": 91,
+  "category": "fictional",
+  "era": "Lore & Legend",
+  "nickname": "The Comet",
+  "funFact": "Stole second, third, and home on a single walk. Twice.",
+  "grades": {
+   "contact": 64,
+   "power": 67,
+   "speed": 77,
+   "fielding": 75,
+   "arm": 70,
+   "eye": 72,
+   "clutch": 64
+  }
+ },
+ {
+  "id": "marquee-4",
+  "name": "Big Ed Stoneman",
+  "team": "DUG",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.261,
+   "obp": 0.337,
+   "slg": 0.465,
+   "hr": 40,
+   "speed": 89
+  },
+  "overall": 93,
+  "category": "fictional",
+  "era": "Lore & Legend",
+  "nickname": "The Mountain",
+  "funFact": "Hit one so far they renamed the street it landed on.",
+  "grades": {
+   "contact": 68,
+   "power": 76,
+   "speed": 71,
+   "fielding": 71,
+   "arm": 75,
+   "eye": 76,
+   "clutch": 74
+  }
+ },
+ {
+  "id": "marquee-5",
+  "name": "Rosie \"Rocket\" Delgado",
+  "team": "VAL",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.261,
+   "obp": 0.322,
+   "slg": 0.457,
+   "hr": 39,
+   "speed": 84
+  },
+  "overall": 89,
+  "category": "fictional",
+  "era": "Winter Ball Myth",
+  "nickname": "The Rocket",
+  "funFact": "A cannon in right. Runners simply stopped testing her.",
+  "grades": {
+   "contact": 68,
+   "power": 74,
+   "speed": 67,
+   "fielding": 72,
+   "arm": 73,
+   "eye": 65,
+   "clutch": 74
+  }
+ },
+ {
+  "id": "marquee-6",
+  "name": "Gabby \"The Wall\" Pruett",
+  "team": "SLT",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.257,
+   "obp": 0.326,
+   "slg": 0.409,
+   "hr": 33,
+   "speed": 75
+  },
+  "overall": 90,
+  "category": "fictional",
+  "era": "Lore & Legend",
+  "nickname": "The Wall",
+  "funFact": "Caught a doubleheader in a hailstorm and never dropped a pitch.",
+  "grades": {
+   "contact": 66,
+   "power": 63,
+   "speed": 60,
+   "fielding": 75,
+   "arm": 80,
+   "eye": 71,
+   "clutch": 74
+  }
+ },
+ {
+  "id": "marquee-7",
+  "name": "Pee Wee Ferris",
+  "team": "HVN",
+  "positions": [
+   "SS"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {
+   "avg": 0.269,
+   "obp": 0.337,
+   "slg": 0.417,
+   "hr": 33,
+   "speed": 89
+  },
+  "overall": 88,
+  "category": "fictional",
+  "era": "The Sandlot",
+  "nickname": "Pee Wee",
+  "funFact": "Five-foot-four of pure leather. Vacuumed up everything in the hole.",
+  "grades": {
+   "contact": 72,
+   "power": 62,
+   "speed": 71,
+   "fielding": 76,
+   "arm": 66,
+   "eye": 70,
+   "clutch": 70
+  }
+ },
+ {
+  "id": "marquee-8",
+  "name": "Wahoo Sam Tully",
+  "team": "PEN",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "avg": 0.267,
+   "obp": 0.329,
+   "slg": 0.447,
+   "hr": 37,
+   "speed": 85
+  },
+  "overall": 87,
+  "category": "fictional",
+  "era": "1990s",
+  "nickname": "Wahoo",
+  "funFact": "Played every inning like the house was on fire. Usually was.",
+  "grades": {
+   "contact": 71,
+   "power": 70,
+   "speed": 68,
+   "fielding": 71,
+   "arm": 63,
+   "eye": 66,
+   "clutch": 69
+  }
+ },
+ {
+  "id": "marquee-9",
+  "name": "Dizzy Lou Marchetti",
+  "team": "LOR",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "era": 2.63,
+   "whip": 1.35,
+   "k9": 8.1,
+   "bb9": 2.4
+  },
+  "overall": 88,
+  "category": "fictional",
+  "era": "Cinematic Classic",
+  "nickname": "Dizzy Lou",
+  "funFact": "Talked through his whole no-hitter. Never stopped grinning.",
+  "grades": {
+   "fastball": 69,
+   "breaking": 65,
+   "changeup": 67,
+   "control": 69,
+   "stamina": 61,
+   "clutch": 68
+  }
+ },
+ {
+  "id": "marquee-10",
+  "name": "Schoolboy Kane",
+  "team": "MYT",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.8,
+   "whip": 1.35,
+   "k9": 7.7,
+   "bb9": 2.4
+  },
+  "overall": 85,
+  "category": "fictional",
+  "era": "Backlot Heroes",
+  "nickname": "Schoolboy",
+  "funFact": "Came straight off the sandlot and struck out the side in his debut.",
+  "grades": {
+   "fastball": 65,
+   "breaking": 58,
+   "changeup": 75,
+   "control": 69,
+   "stamina": 62,
+   "clutch": 63
+  }
+ },
+ {
+  "id": "marquee-11",
+  "name": "Hammerin' Hank Osei",
+  "team": "LEG",
+  "positions": [
+   "DH"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.265,
+   "obp": 0.339,
+   "slg": 0.485,
+   "hr": 42,
+   "speed": 95
+  },
+  "overall": 92,
+  "category": "fictional",
+  "era": "Steroid Era",
+  "nickname": "Hammer",
+  "funFact": "Forearms like fence posts. The cheap seats feared him.",
+  "grades": {
+   "contact": 70,
+   "power": 80,
+   "speed": 76,
+   "fielding": 63,
+   "arm": 76,
+   "eye": 74,
+   "clutch": 74
+  }
+ },
+ {
+  "id": "marquee-12",
+  "name": "Vinegar Bend Whitlow",
+  "team": "DUG",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.57,
+   "whip": 1.38,
+   "k9": 9.3,
+   "bb9": 2.8
+  },
+  "overall": 89,
+  "category": "fictional",
+  "era": "Lore & Legend",
+  "nickname": "Vinegar",
+  "funFact": "Entered to dead silence, left to it too. Ice in the ninth.",
+  "grades": {
+   "fastball": 80,
+   "breaking": 80,
+   "changeup": 63,
+   "control": 65,
+   "stamina": 45,
+   "clutch": 67
+  }
+ },
+ {
+  "id": "marquee-13",
+  "name": "Cool Breeze Okafor",
+  "team": "VAL",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.46,
+   "whip": 1.32,
+   "k9": 9.3,
+   "bb9": 1.6
+  },
+  "overall": 91,
+  "category": "fictional",
+  "era": "Modern Legends",
+  "nickname": "Cool Breeze",
+  "funFact": "Never broke a sweat, never blew a save. Slammed the door.",
+  "grades": {
+   "fastball": 80,
+   "breaking": 77,
+   "changeup": 75,
+   "control": 76,
+   "stamina": 44,
+   "clutch": 66
+  }
+ },
+ {
+  "id": "marquee-14",
+  "name": "Tug Halloran",
+  "team": "SLT",
+  "positions": [
+   "SU"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "era": 2.86,
+   "whip": 1.36,
+   "k9": 8.9,
+   "bb9": 2.6
+  },
+  "overall": 84,
+  "category": "fictional",
+  "era": "1980s",
+  "nickname": "Tug",
+  "funFact": "The bridge to the ninth. Eighth inning belonged to him.",
+  "grades": {
+   "fastball": 76,
+   "breaking": 65,
+   "changeup": 60,
+   "control": 67,
+   "stamina": 45,
+   "clutch": 66
+  }
+ },
+ {
+  "id": "marquee-15",
+  "name": "Skeeter Boudreau",
+  "team": "HVN",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {
+   "avg": 0.241,
+   "obp": 0.291,
+   "slg": 0.389,
+   "hr": 33,
+   "speed": 81
+  },
+  "overall": 84,
+  "category": "fictional",
+  "era": "1970s",
+  "nickname": "Skeeter",
+  "funFact": "Turned two in his sleep. Pesky bat, peskier glove.",
+  "grades": {
+   "contact": 58,
+   "power": 62,
+   "speed": 65,
+   "fielding": 78,
+   "arm": 66,
+   "eye": 57,
+   "clutch": 69
+  }
+ },
+ {
+  "id": "marquee-16",
+  "name": "Doc Holloway",
+  "team": "PEN",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.263,
+   "obp": 0.327,
+   "slg": 0.467,
+   "hr": 40,
+   "speed": 85
+  },
+  "overall": 86,
+  "category": "fictional",
+  "era": "Cooperstown Dreams",
+  "nickname": "Doc",
+  "funFact": "Bare-handed the slow roller every single time. Surgeon at the hot corner.",
+  "grades": {
+   "contact": 69,
+   "power": 76,
+   "speed": 68,
+   "fielding": 65,
+   "arm": 69,
+   "eye": 67,
+   "clutch": 68
+  }
+ },
+ {
+  "id": "marquee-17",
+  "name": "Moonlight Graves",
+  "team": "LOR",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "avg": 0.243,
+   "obp": 0.291,
+   "slg": 0.435,
+   "hr": 38,
+   "speed": 68
+  },
+  "overall": 80,
+  "category": "fictional",
+  "era": "Cup of Coffee",
+  "nickname": "Moonlight",
+  "funFact": "One game in the bigs. Went 4-for-4 and walked into legend.",
+  "grades": {
+   "contact": 59,
+   "power": 73,
+   "speed": 54,
+   "fielding": 64,
+   "arm": 64,
+   "eye": 56,
+   "clutch": 59
+  }
+ },
+ {
+  "id": "marquee-18",
+  "name": "Crash Mulligan",
+  "team": "MYT",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.253,
+   "obp": 0.317,
+   "slg": 0.401,
+   "hr": 33,
+   "speed": 68
+  },
+  "overall": 82,
+  "category": "fictional",
+  "era": "Beer League Saga",
+  "nickname": "Crash",
+  "funFact": "Veteran backstop who could still steal a strike and a beer.",
+  "grades": {
+   "contact": 64,
+   "power": 62,
+   "speed": 54,
+   "fielding": 71,
+   "arm": 75,
+   "eye": 67,
+   "clutch": 58
+  }
+ },
+ {
+  "id": "marquee-19",
+  "name": "Slim Pickens Jr.",
+  "team": "LEG",
+  "positions": [
+   "LRP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 3.2,
+   "whip": 1.4,
+   "k9": 6.3,
+   "bb9": 3.4
+  },
+  "overall": 78,
+  "category": "fictional",
+  "era": "Bush League Tale",
+  "nickname": "Slim",
+  "funFact": "Could give you five quiet innings on a Tuesday with nothing left in the pen.",
+  "grades": {
+   "fastball": 53,
+   "breaking": 52,
+   "changeup": 65,
+   "control": 60,
+   "stamina": 55,
+   "clutch": 52
+  }
+ },
+ {
+  "id": "marquee-20",
+  "name": "Lefty Lazlo",
+  "team": "DUG",
+  "positions": [
+   "LOOGY"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "era": 2.91,
+   "whip": 1.37,
+   "k9": 7,
+   "bb9": 2.7
+  },
+  "overall": 83,
+  "category": "fictional",
+  "era": "Roadside Legend",
+  "nickname": "Lefty",
+  "funFact": "One job: that big lefty bat in the ninth. Frisbee slider, lights out.",
+  "grades": {
+   "fastball": 59,
+   "breaking": 74,
+   "changeup": 49,
+   "control": 66,
+   "stamina": 45,
+   "clutch": 60
+  }
+ },
+ {
+  "id": "marquee-21",
+  "name": "Bo \"Wheels\" Ferreira",
+  "team": "VAL",
+  "positions": [
+   "PR"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {
+   "avg": 0.255,
+   "obp": 0.308,
+   "slg": 0.371,
+   "hr": 28,
+   "speed": 100
+  },
+  "overall": 82,
+  "category": "fictional",
+  "era": "Forgotten Phenom",
+  "nickname": "Wheels",
+  "funFact": "Ninety feet of pure terror. Pinch-ran his way into folklore.",
+  "grades": {
+   "contact": 65,
+   "power": 54,
+   "speed": 80,
+   "fielding": 61,
+   "arm": 63,
+   "eye": 59,
+   "clutch": 61
+  }
+ },
+ {
+  "id": "marquee-22",
+  "name": "Tank Brubaker",
+  "team": "SLT",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.257,
+   "obp": 0.322,
+   "slg": 0.445,
+   "hr": 38,
+   "speed": 73
+  },
+  "overall": 85,
+  "category": "fictional",
+  "era": "Steroid Era",
+  "nickname": "Tank",
+  "funFact": "A gentle giant until there were ducks on the pond.",
+  "grades": {
+   "contact": 66,
+   "power": 72,
+   "speed": 58,
+   "fielding": 69,
+   "arm": 66,
+   "eye": 68,
+   "clutch": 64
+  }
+ },
+ {
+  "id": "marquee-23",
+  "name": "Whitey Sandoval",
+  "team": "HVN",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.249,
+   "obp": 0.316,
+   "slg": 0.437,
+   "hr": 38,
+   "speed": 90
+  },
+  "overall": 89,
+  "category": "fictional",
+  "era": "World Baseball",
+  "nickname": "Whitey",
+  "funFact": "Slick from both sides of the bag, sneaky pop to all fields.",
+  "grades": {
+   "contact": 62,
+   "power": 72,
+   "speed": 72,
+   "fielding": 74,
+   "arm": 74,
+   "eye": 69,
+   "clutch": 69
+  }
+ },
+ {
+  "id": "marquee-24",
+  "name": "Catfish Boone",
+  "team": "PEN",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.46,
+   "whip": 1.31,
+   "k9": 8.5,
+   "bb9": 1.4
+  },
+  "overall": 91,
+  "category": "fictional",
+  "era": "Cooperstown Dreams",
+  "nickname": "Catfish",
+  "funFact": "A bulldog who finished what he started. Complete games by the dozen.",
+  "grades": {
+   "fastball": 73,
+   "breaking": 68,
+   "changeup": 71,
+   "control": 78,
+   "stamina": 69,
+   "clutch": 66
+  }
+ },
+ {
+  "id": "marquee-25",
+  "name": "Boomer Yablonski",
+  "team": "LOR",
+  "positions": [
+   "PH"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {
+   "avg": 0.269,
+   "obp": 0.32,
+   "slg": 0.473,
+   "hr": 40,
+   "speed": 84
+  },
+  "overall": 84,
+  "category": "fictional",
+  "era": "Cinematic Classic",
+  "nickname": "Boomer",
+  "funFact": "Best bat on the bench. Lived for the ninth-inning pinch swing.",
+  "grades": {
+   "contact": 72,
+   "power": 76,
+   "speed": 67,
+   "fielding": 69,
+   "arm": 68,
+   "eye": 58,
+   "clutch": 59
+  }
+ },
+ {
+  "id": "marquee-26",
+  "name": "Ziggy Marsh",
+  "team": "MYT",
+  "positions": [
+   "OFD"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.249,
+   "obp": 0.309,
+   "slg": 0.341,
+   "hr": 25,
+   "speed": 83
+  },
+  "overall": 80,
+  "category": "fictional",
+  "era": "Fan Favorites",
+  "nickname": "Ziggy",
+  "funFact": "Late-game outfield insurance who robbed three would-be homers in a week.",
+  "grades": {
+   "contact": 62,
+   "power": 48,
+   "speed": 66,
+   "fielding": 76,
+   "arm": 78,
+   "eye": 64,
+   "clutch": 62
+  }
+ },
+ {
+  "id": "marquee-27",
+  "name": "Iron Mike Cassidy",
+  "team": "LEG",
+  "positions": [
+   "IFD"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.233,
+   "obp": 0.288,
+   "slg": 0.337,
+   "hr": 27,
+   "speed": 73
+  },
+  "overall": 81,
+  "category": "fictional",
+  "era": "1980s",
+  "nickname": "Iron Mike",
+  "funFact": "Defensive wizard. Protected a lead with nothing but his leather.",
+  "grades": {
+   "contact": 54,
+   "power": 51,
+   "speed": 58,
+   "fielding": 80,
+   "arm": 71,
+   "eye": 61,
+   "clutch": 63
+  }
+ },
+ {
+  "id": "marquee-28",
+  "name": "Spaceman Dupree",
+  "team": "DUG",
+  "positions": [
+   "MRP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.91,
+   "whip": 1.36,
+   "k9": 6.7,
+   "bb9": 2.6
+  },
+  "overall": 83,
+  "category": "fictional",
+  "era": "Beer League Saga",
+  "nickname": "Spaceman",
+  "funFact": "A fireman with a rubber arm and a thousand-yard stare.",
+  "grades": {
+   "fastball": 56,
+   "breaking": 63,
+   "changeup": 57,
+   "control": 67,
+   "stamina": 48,
+   "clutch": 67
+  }
+ }
+]
