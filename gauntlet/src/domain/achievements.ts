@@ -30,8 +30,8 @@ const sevenGamer = (s: RunSummary) => s.history.some(h => h.won && h.wins === 4 
 export const ACHIEVEMENTS: Achievement[] = [
   { id: 'first_win', name: 'On the Board', emoji: '✅', description: 'Win your first series.', test: s => s.streak >= 1 },
   { id: 'streak_5', name: 'Hot Streak', emoji: '🔥', description: 'Reach a 5-series streak.', test: s => s.streak >= 5 },
-  { id: 'streak_10', name: 'Juggernaut', emoji: '💪', description: 'Reach a 10-series streak.', test: s => s.streak >= 10 },
-  { id: 'streak_15', name: 'Immortal', emoji: '👑', description: 'Reach a 15-series streak.', test: s => s.streak >= 15 },
+  { id: 'streak_10', name: 'Juggernaut', emoji: '💪', description: 'Reach an 8-series streak.', test: s => s.streak >= 8 },
+  { id: 'streak_15', name: 'Immortal', emoji: '👑', description: 'Reach a 12-series streak.', test: s => s.streak >= 12 },
   { id: 'sweep', name: 'Broom Closet', emoji: '🧹', description: 'Sweep a series 4-0.', test: sweptASeries },
   { id: 'seven', name: 'Survivor', emoji: '🎢', description: 'Win a series in all 7 games.', test: sevenGamer },
   { id: 'shutout', name: 'Lights Out', emoji: '🚫', description: 'Win a series allowing zero runs.', test: shutoutSeries },
