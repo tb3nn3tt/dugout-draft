@@ -1,6 +1,7 @@
 import { GauntletTeam, Player, Position } from './types';
 import { playersPool, managersPool, stadiumsPool } from './players';
 import { canPlayPosition } from './sim/helpers';
+import { cardCost } from './salary';
 
 // Draft order for the position-player + pitching slots. Scarce defensive spots
 // (C, SS) come first so the pool isn't drained by flexible bats. Manager and
@@ -35,20 +36,42 @@ function pickNear(
 export function autoDraftTeam(
   targetOverall: number,
   name: string,
-  poolFilter?: (p: Player) => boolean
+  poolFilter?: (p: Player) => boolean,
+  budget = Infinity
 ): GauntletTeam {
   const used = new Set<string>();
   const roster: Player[] = [];
+  let remaining = budget;
+  const MIN_RESERVE = 2;
 
-  for (const pos of SLOT_ORDER) {
-    const eligible = playersPool.filter(p => canPlayPosition(p, pos));
-    // Prefer a themed (unused) candidate; fall back to the full pool the moment
-    // the themed sub-pool can't fill this slot, so thin themes still complete.
-    let pick = poolFilter ? pickNear(eligible.filter(poolFilter), targetOverall, used) : null;
-    if (!pick) pick = pickNear(eligible, targetOverall, used);
+  for (let i = 0; i < SLOT_ORDER.length; i++) {
+    const pos = SLOT_ORDER[i];
+    const slotsLeft = SLOT_ORDER.length - i;
+    const eligibleAll = playersPool.filter(p => canPlayPosition(p, pos) && !used.has(p.id));
+    const themed = poolFilter ? eligibleAll.filter(poolFilter) : eligibleAll;
+    const pool = themed.length >= 1 ? themed : eligibleAll;
+
+    let pick: Player | null;
+    if (budget === Infinity) {
+      // Strength mode: pick near the target overall.
+      pick = pickNear(pool, targetOverall, used);
+      if (!pick) pick = pickNear(eligibleAll, targetOverall, used);
+    } else {
+      // Budget mode: best card affordable while reserving cheap fill for the rest.
+      const reserve = (slotsLeft - 1) * MIN_RESERVE;
+      const affordable = pool.filter(p => cardCost(p) <= remaining - reserve);
+      if (affordable.length) {
+        pick = affordable.sort((a, b) => b.overall - a.overall)[0];
+      } else {
+        // Over budget → cheapest from the FULL pool (themes can be uniformly
+        // expensive, e.g. the high-rated Niners), so the roster stays under cap.
+        pick = [...eligibleAll].sort((a, b) => cardCost(a) - cardCost(b))[0] ?? null;
+      }
+    }
     if (pick) {
       used.add(pick.id);
       roster.push(pick);
+      remaining -= cardCost(pick);
     }
   }
 

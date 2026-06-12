@@ -6,6 +6,7 @@ import { Player } from '../domain/types';
 import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
 import { computeAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
+import { BUDGET } from '../domain/salary';
 import { CardTile } from './CardTile';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
@@ -162,7 +163,6 @@ export function DraftScreen({ g }: { g: G }) {
   const { offered, picks, currentRound, draftLog } = g.state;
   const [detail, setDetail] = useState<Player | null>(null);
   const pickNum = picks.length + 1;
-  const progress = Math.round((picks.length / TOTAL_PICKS) * 100);
   const tierColor = currentRound ? TIER_COLORS[currentRound.tier] : 'var(--accent)';
 
   return (
@@ -172,7 +172,11 @@ export function DraftScreen({ g }: { g: G }) {
           <strong>{g.state.teamName}</strong>
           <span className="dim">Pick {pickNum} / {TOTAL_PICKS}</span>
         </div>
-        <div className="progress"><div className="progress__fill" style={{ width: `${progress}%` }} /></div>
+        <div className="row" style={{ justifyContent: 'space-between', fontSize: 13 }}>
+          <span className="dim">💰 Cap space</span>
+          <strong style={{ color: g.state.budget < 50 ? 'var(--loss)' : 'var(--accent)' }}>{g.state.budget} / {BUDGET}</strong>
+        </div>
+        <div className="progress"><div className="progress__fill" style={{ width: `${(g.state.budget / BUDGET) * 100}%` }} /></div>
         {currentRound && (
           <div className="round-banner" style={{ borderColor: tierColor }}>
             <div className="round-banner__name">{currentRound.emoji} {currentRound.name}</div>

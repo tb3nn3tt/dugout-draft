@@ -3,6 +3,7 @@ import { ROLE_REQUIREMENTS, spinRound, offerForRound, DraftRound } from '../doma
 import { MatchedOpponent } from '../domain/matchmaking';
 import { SeriesResult } from '../domain/sim/series';
 import { getMutator } from '../domain/mutators';
+import { BUDGET, cardCost } from '../domain/salary';
 
 export interface DraftEntry { role: Position; player: Player; }
 
@@ -18,6 +19,7 @@ export interface GauntletState {
   offered: Player[];                   // candidates for the current round
   picks: Player[];                     // every drafted card
   draftLog: DraftEntry[];              // which role each pick filled (for the board)
+  budget: number;                      // salary-cap points remaining
 
   // --- run ---
   team: GauntletTeam | null;
@@ -49,6 +51,7 @@ export const initialState: GauntletState = {
   offered: [],
   picks: [],
   draftLog: [],
+  budget: BUDGET,
   team: null,
   streak: 0,
   opponent: null,
@@ -74,12 +77,13 @@ function buildTeamFromPicks(name: string, picks: Player[]): GauntletTeam {
 function nextRound(
   remaining: Record<string, number>,
   picks: Player[],
-  filter?: (p: Player) => boolean
+  filter: ((p: Player) => boolean) | undefined,
+  budget: number
 ): { round: DraftRound; offered: Player[] } | null {
-  const anyLeft = Object.values(remaining).some(n => n > 0);
-  if (!anyLeft) return null;
-  const round = spinRound(remaining);
-  const offered = offerForRound(round.role, round.tier, pickedIds(picks), round.category, 5, filter);
+  const slotsLeft = Object.values(remaining).reduce((a, n) => a + n, 0);
+  if (slotsLeft <= 0) return null;
+  const round = spinRound(remaining, budget, slotsLeft);
+  const offered = offerForRound(round.role, round.tier, pickedIds(picks), round.category, 5, filter, budget);
   return { round, offered };
 }
 
@@ -88,7 +92,7 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
     case 'START_RUN': {
       const filter = getMutator(action.mutatorId).poolFilter;
       const remaining = { ...ROLE_REQUIREMENTS };
-      const next = nextRound(remaining, [], filter);
+      const next = nextRound(remaining, [], filter, BUDGET);
       return {
         ...initialState,
         phase: 'drafting',
@@ -96,6 +100,7 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
         mutatorId: action.mutatorId,
         seed: action.seed,
         remaining,
+        budget: BUDGET,
         currentRound: next?.round ?? null,
         offered: next?.offered ?? [],
       };
@@ -107,13 +112,14 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       const picks = [...state.picks, action.player];
       const draftLog = [...state.draftLog, { role, player: action.player }];
       const remaining = { ...state.remaining, [role]: (state.remaining[role] ?? 0) - 1 };
+      const budget = state.budget - cardCost(action.player);
       const filter = getMutator(state.mutatorId).poolFilter;
-      const next = nextRound(remaining, picks, filter);
+      const next = nextRound(remaining, picks, filter, budget);
 
       if (!next) {
         return {
           ...state,
-          picks, draftLog, remaining,
+          picks, draftLog, remaining, budget,
           team: buildTeamFromPicks(state.teamName, picks),
           phase: 'matchmaking',
           currentRound: null,
@@ -122,7 +128,7 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       }
       return {
         ...state,
-        picks, draftLog, remaining,
+        picks, draftLog, remaining, budget,
         currentRound: next.round,
         offered: next.offered,
       };
@@ -133,6 +139,7 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       const picks = [...state.picks];
       const draftLog = [...state.draftLog];
       const remaining = { ...state.remaining };
+      let budget = state.budget;
       // Honor the current spun round first, then keep spinning until full.
       let round: DraftRound | null = state.currentRound;
       let offered = state.offered;
@@ -143,14 +150,15 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
           picks.push(choice);
           draftLog.push({ role: round.role, player: choice });
           remaining[round.role] = (remaining[round.role] ?? 0) - 1;
+          budget -= cardCost(choice);
         }
-        const next = nextRound(remaining, picks, filter);
+        const next = nextRound(remaining, picks, filter, budget);
         round = next?.round ?? null;
         offered = next?.offered ?? [];
       }
       return {
         ...state,
-        picks, draftLog, remaining,
+        picks, draftLog, remaining, budget,
         team: buildTeamFromPicks(state.teamName, picks),
         phase: 'matchmaking',
         currentRound: null,

@@ -2,6 +2,7 @@ import { Player, Position, Tier, PlayerCategory } from './types';
 import { playersPool, managersPool, stadiumsPool, getTier } from './players';
 import { canPlayPosition, getPositionLabel } from './sim/helpers';
 import { rand } from './sim/rng';
+import { capTier, affordable, cardCost } from './salary';
 
 // ============================================================================
 // Spin-draft rounds. Each pick "spins" a quality (tier) and a role you still
@@ -87,9 +88,16 @@ export function offerForRound(
   pickedIds: Set<string>,
   category?: PlayerCategory,
   count = 5,
-  poolFilter?: (p: Player) => boolean
+  poolFilter?: (p: Player) => boolean,
+  budgetRemaining = Infinity
 ): Player[] {
-  const base = poolFor(role).filter(p => !pickedIds.has(p.id));
+  const all = poolFor(role).filter(p => !pickedIds.has(p.id));
+  let base = all.filter(p => affordable(p, budgetRemaining));
+  // Safety net: if nothing's affordable for this slot, offer the cheapest cards
+  // anyway so the draft always completes (a forced cheap fill).
+  if (base.length === 0) {
+    return [...all].sort((a, b) => cardCost(a) - cardCost(b)).slice(0, count);
+  }
   const restrict = poolFilter && role !== 'HC' && role !== 'ST' ? poolFilter : undefined;
   const usable = restrict ? base.filter(restrict) : base;
 
@@ -114,13 +122,17 @@ export function offerForRound(
   return shuffled.slice(0, count).sort((a, b) => b.overall - a.overall);
 }
 
-/** Spin the next round given which roles are still needed. */
-export function spinRound(remaining: Record<string, number>): DraftRound {
+/** Spin the next round given which roles are still needed + the budget left. */
+export function spinRound(
+  remaining: Record<string, number>,
+  budgetRemaining = Infinity,
+  slotsLeft = 1
+): DraftRound {
   const needed = Object.keys(remaining).filter(r => remaining[r] > 0) as Position[];
   const role = needed[Math.floor(rand() * needed.length)];
   const roleLabel = getPositionLabel(role);
 
-  // Manager + stadium get their own bespoke rounds.
+  // Manager + stadium get their own bespoke rounds (free — no budget impact).
   if (role === 'HC') {
     return { role, roleLabel: 'Manager', tier: 'gold', name: 'Hire a Skipper', emoji: '🎩', flavor: 'Every great club needs a great mind in the dugout.' };
   }
@@ -128,7 +140,8 @@ export function spinRound(remaining: Record<string, number>): DraftRound {
     return { role, roleLabel: 'Ballpark', tier: 'gold', name: 'Claim Your Cathedral', emoji: '🏟️', flavor: 'Pick the field you\'ll call home — it shapes every game.' };
   }
 
-  const tier = spinTier();
+  // Budget caps how rich a tier you can roll — broke teams draw lower tiers.
+  const tier = capTier(spinTier(), budgetRemaining, slotsLeft);
   // ~38% of player rounds get a history/fiction theme.
   const themed = rand() < 0.38;
   if (themed) {

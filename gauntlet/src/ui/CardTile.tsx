@@ -2,6 +2,7 @@ import { Player } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
 import { getGradeColor, gradeToLetter } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
+import { cardCost } from '../domain/salary';
 
 const POS_LABEL: Record<string, string> = {
   C: 'C', '1B': '1B', '2B': '2B', '3B': '3B', SS: 'SS', LF: 'LF', CF: 'CF', RF: 'RF', DH: 'DH',
@@ -120,6 +121,7 @@ export function CardTile({ player, onPick, onInfo }: {
           <div className="tile__right">
             <div className="tile__pos" style={{ color: tierColor }}>{POS_LABEL[pos] ?? pos}</div>
             <div className="tile__tier" style={{ color: tierColor }}>{TIER_LABEL[tier]}</div>
+            {!isStaff && <div className="tile__cost">💰{cardCost(player)}</div>}
           </div>
         </div>
         {isStaff ? <StaffBody player={player} /> : <Body player={player} />}
