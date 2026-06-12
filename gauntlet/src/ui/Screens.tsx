@@ -477,8 +477,10 @@ export function RunOverScreen({ g }: { g: G }) {
   };
 
   const modeTag = mut.id === 'standard' ? '' : ` [${mut.emoji} ${mut.name}]`;
+  const finalFoe = history[history.length - 1]?.won === false ? history[history.length - 1].opponentName : null;
   const shareText =
-    `⚾ Dugout Gauntlet${modeTag}\n${team?.name} went ${streak}-0 before falling!\n` +
+    `⚾ Dugout Gauntlet${modeTag}\n${team?.name} went ${streak}-0` +
+    (finalFoe ? `, falling to the ${finalFoe}!\n` : ' before falling!\n') +
     `Run diff: ${runDiff >= 0 ? '+' : ''}${runDiff}` +
     (hof ? ` · #${hof.rank} all-time` : '') +
     `\nHow far can you go?`;
@@ -495,6 +497,7 @@ export function RunOverScreen({ g }: { g: G }) {
       <span className="dim" style={{ letterSpacing: 1 }}>RUN COMPLETE{mut.id !== 'standard' ? ` · ${mut.emoji} ${mut.name}` : ''}</span>
       <h1 style={{ fontSize: 64, lineHeight: 1 }}>{streak}-0</h1>
       <strong style={{ fontSize: 20 }}>{team?.name}</strong>
+      {finalFoe && <p className="dim" style={{ fontSize: 13 }}>fell to the {finalFoe}</p>}
 
       <div className="card stack" style={{ width: '100%', gap: 8 }}>
         <Row label="Series won" value={`${streak}`} />
