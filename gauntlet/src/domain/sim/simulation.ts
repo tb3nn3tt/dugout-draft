@@ -21,9 +21,9 @@ const LEAGUE = {
   BABIP: 0.300,  // hits per ball-in-play (excludes K/BB/HBP/HR)
 } as const;
 
-// In-play hit-type shares (of non-HR hits) and out-type shares — league anchors.
+// In-play hit-type shares (of non-HR hits) — league anchors. Out-type shares
+// (ground/fly/line) are derived per-pitcher from ground-ball %.
 const HIT_SPLIT = { single: 0.78, double: 0.195, triple: 0.025 };
-const OUT_SPLIT = { ground: 0.46, fly: 0.34, line: 0.20 };
 
 /**
  * Odds Ratio Method. b, p, lg are the batter's, pitcher's, and league's true
@@ -147,15 +147,13 @@ export function simulateAtBat(
   const speed   = clampG((isHit ? br.run : 45) + coachSpeed);
   const eye     = clampG((isHit ? br.eye : 40) + momentumBoost + clutchBoost);
 
-  // Pitcher: stuff (K), control (BB), command (limit contact) + a vs-hand swing
-  // that's ~0 for balanced arms but large for specialists (e.g. LOOGY vs LHB).
+  // Pitcher: stuff (K) and command (contact suppression) carry their own vL/vR
+  // splits; control (BB) is flat; gb% reshapes batted balls.
   const isPit = pr.kind === 'pitcher';
-  const vsL = isPit ? pr.vsL : 50, vsR = isPit ? pr.vsR : 50;
-  const vsHand = bHand === 'L' ? vsL : vsR;
-  const handAdj = (vsHand - (vsL + vsR) / 2) * 0.6;
-  const stuff   = clampG((isPit ? pr.stuff : 45) + handAdj);
+  const stuff   = isPit ? (bHand === 'L' ? pr.stuffVL : pr.stuffVR) : 45;
   const control = isPit ? pr.control : 45;
-  const command = clampG((isPit ? pr.command : 45) + handAdj);
+  const command = isPit ? (bHand === 'L' ? pr.cmdVL : pr.cmdVR) : 45;
+  const gbRate  = isPit ? pr.gb : 44;
 
   // === Per-PA true rates for batter and pitcher, then combine via Odds Ratio ===
   // Synergy multipliers nudge a side's whole profile (offense up / pitching up).
@@ -174,7 +172,9 @@ export function simulateAtBat(
   const parkHR = parkEffect?.hrFactor ?? 1.0;
   const bHR = LEAGUE.HR * rateFactor(hrPow, 1.34, 1) * offensiveMultiplier;
   const pHR = LEAGUE.HR * rateFactor(command, 1.32, -1) / pitchingMultiplier;
-  const hrProb = oddsRatio(bHR, pHR, LEAGUE.HR) * parkHR;
+  // Ground-ball pitchers keep the ball in the yard; fly-ballers give up more.
+  const gbHrFactor = 1 - (gbRate - 44) / 100 * 0.8;
+  const hrProb = oddsRatio(bHR, pHR, LEAGUE.HR) * parkHR * gbHrFactor;
 
   // Guard a floor so at least ~8% of PAs are balls in play. If the three
   // terminal events (K/BB/HR) sum too high, scale them down together so the
@@ -219,15 +219,17 @@ export function simulateAtBat(
   const errorChance = Math.max(0, (parkError - 1.0) * 0.5);
   if (errorChance > 0 && rand() < errorChance) return 'single';
 
-  // Double play more likely behind slow batters (advanceRunners gates on base state).
-  const dpChance = Math.min(0.14, Math.max(0.02, 0.09 * rateFactor(speed, 1.25, -1)));
+  // Double play more likely behind slow batters AND ground-ball pitchers.
+  const dpChance = Math.min(0.20, Math.max(0.02, 0.09 * rateFactor(speed, 1.25, -1) * (gbRate / 44)));
   const outRoll = rand();
   if (outRoll < dpChance) return 'double_play';
 
-  // Remaining outs split ground / fly / line.
+  // Remaining outs split ground / fly / line, weighted by the pitcher's gb%.
   const rest = (outRoll - dpChance) / (1 - dpChance);
-  if (rest < OUT_SPLIT.ground) return 'groundout';
-  if (rest < OUT_SPLIT.ground + OUT_SPLIT.fly) return 'flyout';
+  const groundShare = gbRate / 100;                 // ~0.30-0.58
+  const flyShare = (1 - groundShare) * 0.64;        // of the rest, more fly than line
+  if (rest < groundShare) return 'groundout';
+  if (rest < groundShare + flyShare) return 'flyout';
   return 'lineout';
 }
 

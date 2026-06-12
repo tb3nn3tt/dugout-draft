@@ -24,12 +24,12 @@ export interface HitterRatings {
 
 export interface PitcherRatings {
   kind: 'pitcher';
-  stamina: number;
-  stuff: number;     // strikeout stuff
-  control: number;   // walk avoidance
-  command: number;   // limit hard contact / quality of contact
-  vsL: number;       // effectiveness vs LH batters
-  vsR: number;       // effectiveness vs RH batters
+  stuffVL: number; stuffVR: number;   // strikeout stuff vs LH / RH batters
+  control: number;                     // walk (+HBP) avoidance
+  cmdVL: number; cmdVR: number;        // contact suppression vs LH / RH batters
+  stamina: number;                     // grade behind IP/G
+  ipg: number;                         // innings per appearance (display)
+  gb: number;                          // ground-ball %
 }
 
 export type Ratings = HitterRatings | PitcherRatings;
@@ -72,17 +72,35 @@ function derivePitcher(p: Player): PitcherRatings {
   const fb = g.fastball ?? 50, br = g.breaking ?? 50, ch = g.changeup ?? 50, ct = g.control ?? 50;
   const stuff = fb * 0.55 + br * 0.45;
   const command = ch * 0.35 + ct * 0.30 + br * 0.35;
-  const q = (stuff + command + ct) / 3;
+  const stamina = g.stamina ?? (p.positions.includes('SP') ? 70 : 45);
+
+  // Same-handed pitchers are tougher; LOOGYs extreme on LHB, exposed to RHB.
   const isLoogy = p.positions.includes('LOOGY');
-  let vsL: number, vsR: number;
-  if (isLoogy) { vsL = q + 13; vsR = q - 12; }       // specialist lefty: death on LHB
-  else if (p.throws === 'L') { vsL = q + 4; vsR = q - 4; }
-  else { vsR = q + 4; vsL = q - 4; }
+  const sS = isLoogy ? 12 : 4;     // stuff swing
+  const sC = isLoogy ? 10 : 3;     // command swing
+  const lefty = p.throws === 'L';
+  // sign +1 means "tougher vs LHB" (lefty arms); -1 means tougher vs RHB.
+  const sign = lefty ? 1 : -1;
+  const stuffVL = stuff + sign * sS, stuffVR = stuff - sign * sS;
+  const cmdVL = command + sign * sC, cmdVR = command - sign * sC;
+
+  // IP per appearance from stamina + role.
+  const isSP = p.positions.includes('SP');
+  const ipg = isSP
+    ? Math.round((4.6 + (stamina - 60) / 20 * 2.3) * 10) / 10   // ~4.5-6.9
+    : p.positions.includes('LRP') ? 2.4
+    : isLoogy ? 0.7
+    : Math.round((1.0 + (stamina - 45) / 20 * 0.6) * 10) / 10;  // ~0.9-1.6
+
+  // Ground-ball %: movement/command produce grounders; pure velo → flyballs.
+  const gb = Math.max(30, Math.min(58, Math.round(44 + (br - 50) * 0.35 + (ct - 50) * 0.12 - (fb - 50) * 0.12)));
+
   return {
     kind: 'pitcher',
-    stamina: clamp(g.stamina ?? (p.positions.includes('SP') ? 70 : 45)),
-    stuff: clamp(stuff), control: clamp(ct), command: clamp(command),
-    vsL: clamp(vsL), vsR: clamp(vsR),
+    stuffVL: clamp(stuffVL), stuffVR: clamp(stuffVR),
+    control: clamp(ct),
+    cmdVL: clamp(cmdVL), cmdVR: clamp(cmdVR),
+    stamina: clamp(stamina), ipg, gb,
   };
 }
 

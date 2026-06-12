@@ -1,6 +1,6 @@
 import { Player } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
-import { getGradeColor, formatBattingAvg, formatERA, isPitcher } from '../domain/sim/helpers';
+import { getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
 import { RatingRadar, axesFor } from './RatingRadar';
 
@@ -45,34 +45,28 @@ function Body({ player, color }: { player: Player; color: string }) {
             <div className="splitrow">
               <span className="splitrow__tag">vs RHP</span> CON <V n={r.conVR} /> · HR <V n={r.hrVR} /> · GAP <V n={r.gapVR} />
             </div>
+            <div className="splitrow dim">BNT {r.bunt}</div>
           </>
         ) : (
           <>
             <div className="rg">
-              <Rating l="STUFF" v={r.stuff} />
+              <Rating l="STUFF" v={Math.round((r.stuffVL + r.stuffVR) / 2)} />
               <Rating l="CTL" v={r.control} />
-              <Rating l="CMD" v={r.command} />
-              <Rating l="STAM" v={r.stamina} />
+              <Rating l="CMD" v={Math.round((r.cmdVL + r.cmdVR) / 2)} />
+              <Rating l="GB%" v={r.gb} />
             </div>
             <div className="splitrow">
-              <span className="splitrow__tag">vs LHB</span> <V n={r.vsL} /> &nbsp;&nbsp;
-              <span className="splitrow__tag">vs RHB</span> <V n={r.vsR} />
+              <span className="splitrow__tag">vs LHB</span> STUFF <V n={r.stuffVL} /> · CMD <V n={r.cmdVL} />
             </div>
+            <div className="splitrow">
+              <span className="splitrow__tag">vs RHB</span> STUFF <V n={r.stuffVR} /> · CMD <V n={r.cmdVR} />
+            </div>
+            <div className="splitrow dim">IP/G {r.ipg.toFixed(1)}</div>
           </>
         )}
-        <StatRow player={player} />
       </div>
     </div>
   );
-}
-
-function StatRow({ player }: { player: Player }) {
-  const s = player.stats;
-  const parts = isPitcher(player)
-    ? [s.era != null ? `${formatERA(s.era)} ERA` : null, s.k9 != null ? `${s.k9.toFixed(1)} K/9` : null, s.whip != null ? `${s.whip.toFixed(2)} WHIP` : null]
-    : [s.avg != null ? `${formatBattingAvg(s.avg)} AVG` : null, s.hr != null ? `${s.hr} HR` : null, s.obp != null ? `${formatBattingAvg(s.obp)} OBP` : null];
-  const text = parts.filter(Boolean).join('  ·  ');
-  return text ? <div className="tile__stats">{text}</div> : null;
 }
 
 /** Detailed, draftable card: mini radar + ratings + vL/vR splits + stats. */

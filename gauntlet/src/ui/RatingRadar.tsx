@@ -18,12 +18,11 @@ export function axesFor(player: Player): Axis[] {
     ];
   }
   return [
-    { label: 'STUFF', value: r.stuff },
+    { label: 'STUFF', value: Math.round((r.stuffVL + r.stuffVR) / 2) },
     { label: 'CTL', value: r.control },
-    { label: 'CMD', value: r.command },
+    { label: 'CMD', value: Math.round((r.cmdVL + r.cmdVR) / 2) },
     { label: 'STAM', value: r.stamina },
-    { label: 'vsL', value: r.vsL },
-    { label: 'vsR', value: r.vsR },
+    { label: 'GB', value: r.gb },
   ];
 }
 

@@ -1,6 +1,6 @@
 import { Player } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
-import { getPositionLabel, gradeToLetter, getGradeColor, formatBattingAvg, formatERA } from '../domain/sim/helpers';
+import { getPositionLabel, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
 
 interface Axis { label: string; value: number; }
@@ -67,7 +67,6 @@ export function PlayerDetail({ player, onDraft, onClose }: {
   const color = TIER_COLORS[tier];
   const r = getRatings(player);
   const isStaff = player.positions.includes('HC') || player.positions.includes('ST');
-  const s = player.stats;
 
   const axes: Axis[] = !isStaff && r.kind === 'hitter'
     ? [
@@ -79,9 +78,11 @@ export function PlayerDetail({ player, onDraft, onClose }: {
       ]
     : !isStaff && r.kind === 'pitcher'
     ? [
-        { label: 'STUFF', value: r.stuff }, { label: 'CTL', value: r.control },
-        { label: 'CMD', value: r.command }, { label: 'STAM', value: r.stamina },
-        { label: 'vsL', value: r.vsL }, { label: 'vsR', value: r.vsR },
+        { label: 'STUFF', value: Math.round((r.stuffVL + r.stuffVR) / 2) },
+        { label: 'CTL', value: r.control },
+        { label: 'CMD', value: Math.round((r.cmdVL + r.cmdVR) / 2) },
+        { label: 'STAM', value: r.stamina },
+        { label: 'GB', value: r.gb },
       ]
     : [];
 
@@ -103,31 +104,28 @@ export function PlayerDetail({ player, onDraft, onClose }: {
           <>
             <div className="center"><Radar axes={axes} color={color} /></div>
             <Bars axes={axes} />
-            {r.kind === 'hitter' && (
+            {r.kind === 'hitter' ? (
               <div className="card stack" style={{ gap: 6 }}>
                 <strong style={{ fontSize: 13 }}>Platoon Splits</strong>
                 <Split label="Contact" l={r.conVL} r={r.conVR} />
                 <Split label="HR Power" l={r.hrVL} r={r.hrVR} />
                 <Split label="Gap Power" l={r.gapVL} r={r.gapVR} />
+                <div className="row" style={{ justifyContent: 'space-between' }}>
+                  <span className="dim" style={{ fontSize: 12 }}>Bunting</span>
+                  <span style={{ fontWeight: 800 }}>{r.bunt}</span>
+                </div>
+              </div>
+            ) : (
+              <div className="card stack" style={{ gap: 6 }}>
+                <strong style={{ fontSize: 13 }}>Pitcher Splits</strong>
+                <Split label="Stuff (K)" l={r.stuffVL} r={r.stuffVR} />
+                <Split label="Command" l={r.cmdVL} r={r.cmdVR} />
+                <div className="row" style={{ justifyContent: 'space-between' }}>
+                  <span className="dim" style={{ fontSize: 12 }}>Control · GB% · IP/G</span>
+                  <span style={{ fontWeight: 800 }}>{r.control} · {r.gb}% · {r.ipg.toFixed(1)}</span>
+                </div>
               </div>
             )}
-            <div className="statline">
-              {r.kind === 'pitcher' ? (
-                <>
-                  <Stat k="ERA" v={s.era != null ? formatERA(s.era) : '—'} />
-                  <Stat k="WHIP" v={s.whip != null ? s.whip.toFixed(2) : '—'} />
-                  <Stat k="K/9" v={s.k9 != null ? s.k9.toFixed(1) : '—'} />
-                  <Stat k="BB/9" v={s.bb9 != null ? s.bb9.toFixed(1) : '—'} />
-                </>
-              ) : (
-                <>
-                  <Stat k="AVG" v={s.avg != null ? formatBattingAvg(s.avg) : '—'} />
-                  <Stat k="OBP" v={s.obp != null ? formatBattingAvg(s.obp) : '—'} />
-                  <Stat k="SLG" v={s.slg != null ? formatBattingAvg(s.slg) : '—'} />
-                  <Stat k="HR" v={s.hr != null ? `${s.hr}` : '—'} />
-                </>
-              )}
-            </div>
           </>
         )}
 
@@ -159,6 +157,3 @@ export function PlayerDetail({ player, onDraft, onClose }: {
   );
 }
 
-function Stat({ k, v }: { k: string; v: string }) {
-  return <div className="stat"><div className="stat__k">{k}</div><div className="stat__v">{v}</div></div>;
-}
