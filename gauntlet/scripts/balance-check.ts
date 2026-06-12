@@ -23,6 +23,8 @@ import { findOpponent } from '../src/domain/matchmaking';
 import { FAMOUS_TEAMS, buildFamousTeam } from '../src/domain/famousTeams';
 import { gauntletReducer, initialState, GauntletState } from '../src/state/gauntletReducer';
 import { MUTATORS, getMutator } from '../src/domain/mutators';
+import { playersPool, managersPool, stadiumsPool } from '../src/domain/players';
+import { getRatings } from '../src/domain/ratings';
 import { seedRng } from '../src/domain/sim/rng';
 
 (globalThis as any).localStorage ??= {
@@ -119,8 +121,31 @@ function smoke() {
   console.log(`   ${fail === 0 ? 'ok ' : '⚠  '}${ok}/${MUTATORS.length} run modes pass`);
 }
 
+// ---- 5. Data integrity ----------------------------------------------------
+function integrity() {
+  const VALID_POS = new Set(['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH', 'SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY', 'BC', 'PH', 'PR', 'IFD', 'OFD', 'HC', 'ST']);
+  let issues = 0; const ex: string[] = [];
+  const flag = (id: string, m: string) => { issues++; if (ex.length < 8) ex.push(`${id}: ${m}`); };
+  const seen = new Map<string, number>();
+  for (const p of [...playersPool, ...managersPool, ...stadiumsPool]) seen.set(p.id, (seen.get(p.id) || 0) + 1);
+  for (const [id, c] of seen) if (c > 1) flag(id, `duplicate id (${c}x)`);
+  for (const p of playersPool) {
+    if (!Array.isArray(p.positions) || !p.positions.length) flag(p.id, 'no positions');
+    else for (const pos of p.positions) if (!VALID_POS.has(pos)) flag(p.id, `bad position '${pos}'`);
+    if (!['L', 'R', 'S'].includes(p.bats as string)) flag(p.id, `bad bats '${p.bats}'`);
+    if (!['L', 'R'].includes(p.throws as string)) flag(p.id, `bad throws '${p.throws}'`);
+    if (typeof p.overall !== 'number' || p.overall < 0 || p.overall > 99) flag(p.id, `overall ${p.overall}`);
+    try { const r: Record<string, unknown> = getRatings(p) as never; for (const v of Object.values(r)) if (typeof v === 'number' && !isFinite(v)) flag(p.id, 'NaN rating'); }
+    catch (e) { flag(p.id, `getRatings threw: ${(e as Error).message}`); }
+  }
+  console.log('\n5) DATA INTEGRITY:');
+  console.log(`   ${issues === 0 ? 'ok ' : '⚠  '}${issues === 0 ? 'clean' : issues + ' issue(s)'} across ${playersPool.length} players (bats must be L/R/S, positions/overall valid, ratings finite)`);
+  for (const e of ex) console.log(`      ${e}`);
+}
+
 calibration();
 runEnvironment();
 difficultyCurve();
 smoke();
+integrity();
 console.log('\nDone. ⚠ = out of target band (see header for targets).');
