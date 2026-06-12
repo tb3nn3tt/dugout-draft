@@ -388,3 +388,16 @@ h1 { letter-spacing: -0.5px; }
 .ach--on { opacity: 1; border-color: var(--accent); }
 .ach__emoji { font-size: 26px; flex: 0 0 auto; }
 .ach__body { min-width: 0; }
+
+/* --- Clean rating table on cards (aligned columns, muted splits) --- */
+.rt { display: flex; flex-direction: column; gap: 1px; margin-top: 6px; }
+.rt__head { display: grid; grid-template-columns: 78px 1fr 1fr 1fr; font-size: 9px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.5px; text-align: center; }
+.rt__head span:first-child { text-align: left; }
+.rt__row { display: grid; grid-template-columns: 78px 1fr 1fr 1fr; align-items: center; }
+.rt__lbl { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.3px; }
+.rt__side { text-align: center; font-size: 12px; font-weight: 700; color: var(--text-dim); }
+.rt__tot { text-align: center; font-size: 17px; font-weight: 900; line-height: 1.1; }
+.rt__singles { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+.rt__single { font-size: 11px; font-weight: 700; color: var(--text-dim); display: inline-flex; gap: 4px; align-items: baseline; }
+.rt__single b { font-weight: 900; font-size: 13px; }
+.rt__style { font-size: 13px; font-weight: 800; color: var(--accent); margin-top: 5px; }

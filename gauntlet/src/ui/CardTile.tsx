@@ -15,52 +15,46 @@ const TIER_LABEL: Record<string, string> = {
 const avg = (a: number, b: number) => Math.round((a + b) / 2);
 const cleanName = (n: string) => n.replace(/\s*\([^)]*\)\s*$/, '').trim() || n;
 
-/** A split rating shown as A-F: small vL · big TOTAL · small vR. */
-function Split({ label, vL, total, vR }: { label: string; vL: number; total: number; vR: number }) {
+/** One rating row: label · muted vL · bold colored OVR · muted vR, all aligned. */
+function Row({ label, vL, total, vR }: { label: string; vL: number; total: number; vR: number }) {
   return (
-    <div className="sg">
-      <span className="sg__lbl">{label}</span>
-      <span className="sg__side">{gradeToLetter(vL)}</span>
-      <span className="sg__total" style={{ color: getGradeColor(total) }}>{gradeToLetter(total)}</span>
-      <span className="sg__side">{gradeToLetter(vR)}</span>
+    <div className="rt__row">
+      <span className="rt__lbl">{label}</span>
+      <span className="rt__side">{gradeToLetter(vL)}</span>
+      <span className="rt__tot" style={{ color: getGradeColor(total) }}>{gradeToLetter(total)}</span>
+      <span className="rt__side">{gradeToLetter(vR)}</span>
     </div>
   );
 }
 
-/** A single (non-split) rating as A-F. */
-function G({ label, v }: { label: string; v: number }) {
-  return <span className="g1"><span className="g1__l">{label}</span><b style={{ color: getGradeColor(v) }}>{gradeToLetter(v)}</b></span>;
+function Single({ label, v }: { label: string; v: number }) {
+  return <span className="rt__single">{label}<b style={{ color: getGradeColor(v) }}>{gradeToLetter(v)}</b></span>;
 }
 
 function Body({ player }: { player: Player }) {
   const r = getRatings(player);
   if (r.kind === 'hitter') {
     return (
-      <div className="ratings">
-        <div className="ratings__head"><span /><span className="ratings__hl">vL</span><span /><span className="ratings__hr">vR</span></div>
-        <Split label="CONTACT" vL={r.conVL} total={avg(r.conVL, r.conVR)} vR={r.conVR} />
-        <div className="powgrp">
-          <span className="powgrp__lbl">POWER</span>
-          <div className="powgrp__rows">
-            <Split label="HR" vL={r.hrVL} total={avg(r.hrVL, r.hrVR)} vR={r.hrVR} />
-            <Split label="GAP" vL={r.gapVL} total={avg(r.gapVL, r.gapVR)} vR={r.gapVR} />
-          </div>
-        </div>
-        <div className="g1row">
-          <G label="EYE" v={r.eye} /><G label="RUN" v={r.run} /><G label="FLD" v={r.field} /><G label="BUNT" v={r.bunt} />
+      <div className="rt">
+        <div className="rt__head"><span /><span>vL</span><span>OVR</span><span>vR</span></div>
+        <Row label="CONTACT" vL={r.conVL} total={avg(r.conVL, r.conVR)} vR={r.conVR} />
+        <Row label="HR PWR" vL={r.hrVL} total={avg(r.hrVL, r.hrVR)} vR={r.hrVR} />
+        <Row label="GAP PWR" vL={r.gapVL} total={avg(r.gapVL, r.gapVR)} vR={r.gapVR} />
+        <div className="rt__singles">
+          <Single label="EYE" v={r.eye} /><Single label="RUN" v={r.run} /><Single label="FLD" v={r.field} /><Single label="BUNT" v={r.bunt} />
         </div>
       </div>
     );
   }
   return (
-    <div className="ratings">
-      <div className="ratings__head"><span /><span className="ratings__hl">vL</span><span /><span className="ratings__hr">vR</span></div>
-      <Split label="STUFF" vL={r.stuffVL} total={avg(r.stuffVL, r.stuffVR)} vR={r.stuffVR} />
-      <Split label="COMMAND" vL={r.cmdVL} total={avg(r.cmdVL, r.cmdVR)} vR={r.cmdVR} />
-      <div className="g1row">
-        <G label="CTL" v={r.control} /><G label="STAM" v={r.stamina} />
-        <span className="g1"><span className="g1__l">GB</span><b>{r.gb}%</b></span>
-        <span className="g1"><span className="g1__l">IP/G</span><b>{r.ipg.toFixed(1)}</b></span>
+    <div className="rt">
+      <div className="rt__head"><span /><span>vL</span><span>OVR</span><span>vR</span></div>
+      <Row label="STUFF" vL={r.stuffVL} total={avg(r.stuffVL, r.stuffVR)} vR={r.stuffVR} />
+      <Row label="COMMAND" vL={r.cmdVL} total={avg(r.cmdVL, r.cmdVR)} vR={r.cmdVR} />
+      <div className="rt__singles">
+        <Single label="CTL" v={r.control} /><Single label="STAM" v={r.stamina} />
+        <span className="rt__single">GB<b>{r.gb}%</b></span>
+        <span className="rt__single">IP/G<b>{r.ipg.toFixed(1)}</b></span>
       </div>
     </div>
   );
@@ -68,32 +62,28 @@ function Body({ player }: { player: Player }) {
 
 function StaffBody({ player }: { player: Player }) {
   const c = player.coachEffect, p = player.parkEffect;
-  if (c) return (
-    <div className="ratings">
-      <div className="tile__stats" style={{ color: 'var(--accent)' }}>{c.style}</div>
-      <div className="g1row">
-        <span className="g1"><span className="g1__l">OFF</span><b>+{c.offensiveBonus}%</b></span>
-        <span className="g1"><span className="g1__l">PIT</span><b>+{c.pitchingBonus}%</b></span>
-        <span className="g1"><span className="g1__l">CLT</span><b>+{c.clutchBonus}</b></span>
-        <span className="g1"><span className="g1__l">STA</span><b>+{c.staminaBonus}</b></span>
-        <span className="g1"><span className="g1__l">SPD</span><b>+{c.speedBonus}</b></span>
-        <span className="g1"><span className="g1__l">FLD</span><b>+{c.fieldingBonus}</b></span>
+  return (
+    <div className="rt">
+      <div className="rt__style">{c?.style ?? p?.name}</div>
+      <div className="rt__singles">
+        {c && <>
+          <span className="rt__single">OFF<b>+{c.offensiveBonus}%</b></span>
+          <span className="rt__single">PIT<b>+{c.pitchingBonus}%</b></span>
+          <span className="rt__single">CLT<b>+{c.clutchBonus}</b></span>
+          <span className="rt__single">STA<b>+{c.staminaBonus}</b></span>
+          <span className="rt__single">SPD<b>+{c.speedBonus}</b></span>
+          <span className="rt__single">FLD<b>+{c.fieldingBonus}</b></span>
+        </>}
+        {p && <>
+          <span className="rt__single">HR<b>×{p.hrFactor}</b></span>
+          <span className="rt__single">2B<b>×{p.doublesFactor}</b></span>
+          <span className="rt__single">3B<b>×{p.triplesFactor}</b></span>
+          <span className="rt__single">RUN<b>×{p.runFactor}</b></span>
+          <span className="rt__single">ERR<b>×{p.errorFactor}</b></span>
+        </>}
       </div>
     </div>
   );
-  if (p) return (
-    <div className="ratings">
-      <div className="tile__stats" style={{ color: 'var(--accent)' }}>{p.name}</div>
-      <div className="g1row">
-        <span className="g1"><span className="g1__l">HR</span><b>×{p.hrFactor}</b></span>
-        <span className="g1"><span className="g1__l">2B</span><b>×{p.doublesFactor}</b></span>
-        <span className="g1"><span className="g1__l">3B</span><b>×{p.triplesFactor}</b></span>
-        <span className="g1"><span className="g1__l">RUN</span><b>×{p.runFactor}</b></span>
-        <span className="g1"><span className="g1__l">ERR</span><b>×{p.errorFactor}</b></span>
-      </div>
-    </div>
-  );
-  return null;
 }
 
 /** Draftable card: A-F ratings (vL · TOTAL · vR), grouped power; ℹ for full. */
