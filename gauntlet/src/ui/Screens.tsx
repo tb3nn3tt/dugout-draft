@@ -337,40 +337,65 @@ export function GauntletRunScreen({ g }: { g: G }) {
 }
 
 // ---------------------------------------------------------------------------
-// Team sheet — the drafted marquee, laid out for a screenshot/share
+// Team card — the drafted nine laid out ON A DIAMOND, built to screenshot/share
 // ---------------------------------------------------------------------------
-const SHEET_SLOTS: { role: Position; label: string }[] = [
-  { role: 'C', label: 'C' }, { role: '1B', label: '1B' }, { role: '2B', label: '2B' },
-  { role: '3B', label: '3B' }, { role: 'SS', label: 'SS' }, { role: 'LF', label: 'LF' },
-  { role: 'CF', label: 'CF' }, { role: 'RF', label: 'RF' }, { role: 'DH', label: 'DH' },
-  { role: 'SP', label: 'SP1' }, { role: 'SP', label: 'SP2' }, { role: 'CL', label: 'CL' },
-  { role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PARK' },
-];
 function sheetName(name: string): string {
   const clean = name.replace(/\s*\([^)]*\)\s*$/, '').trim();
   const parts = clean.split(' ');
   return parts.length === 1 ? parts[0] : `${parts[0][0]}. ${parts[parts.length - 1]}`;
 }
-function TeamSheet({ draftLog, teamName }: { draftLog: DraftEntry[]; teamName: string }) {
-  const cursor = new Map<string, number>();
+// Where each fielder sits on the diamond (left% / top%). Ace goes on the mound.
+const FIELD_SPOTS: { role: Position; idx?: number; label: string; l: number; t: number }[] = [
+  { role: 'CF', label: 'CF', l: 50, t: 8 },
+  { role: 'LF', label: 'LF', l: 18, t: 21 },
+  { role: 'RF', label: 'RF', l: 82, t: 21 },
+  { role: 'SS', label: 'SS', l: 33, t: 44 },
+  { role: '2B', label: '2B', l: 67, t: 44 },
+  { role: '3B', label: '3B', l: 14, t: 64 },
+  { role: '1B', label: '1B', l: 86, t: 64 },
+  { role: 'SP', idx: 0, label: 'P', l: 50, t: 60 },
+  { role: 'C', label: 'C', l: 50, t: 90 },
+];
+const STRIP_SPOTS: { role: Position; idx?: number; label: string }[] = [
+  { role: 'DH', label: 'DH' }, { role: 'SP', idx: 1, label: 'SP2' }, { role: 'CL', label: 'CL' },
+  { role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PARK' },
+];
+function TeamDiamond({ draftLog, teamName, record }: { draftLog: DraftEntry[]; teamName: string; record: string }) {
+  const at = (role: Position, idx = 0) => draftLog.filter(e => e.role === role)[idx]?.player;
   return (
-    <div className="sheet">
-      <div className="sheet__title">{teamName} · STARTING NINE</div>
-      <div className="sheet__grid">
-        {SHEET_SLOTS.map((slot, i) => {
-          const idx = cursor.get(slot.role) ?? 0;
-          cursor.set(slot.role, idx + 1);
-          const entry = draftLog.filter(e => e.role === slot.role)[idx];
-          const color = entry ? TIER_COLORS[getTier(entry.player.overall)] : 'var(--text-dim)';
+    <div className="teamcard">
+      <div className="teamcard__hd">
+        <span className="teamcard__nm">{teamName}</span>
+        <span className="teamcard__rec">{record}</span>
+      </div>
+      <div className="diamond">
+        <div className="diamond__grass" />
+        {FIELD_SPOTS.map((s, i) => {
+          const p = at(s.role, s.idx ?? 0);
+          const color = p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)';
           return (
-            <div key={i} className="sheet__cell">
-              <span className="sheet__pos">{slot.label}</span>
-              <span className="sheet__nm">{entry ? sheetName(entry.player.name) : '—'}</span>
-              <span className="sheet__gr" style={{ color }}>{entry ? overallToGrade(entry.player.overall) : ''}</span>
+            <div key={i} className="dchip" style={{ left: `${s.l}%`, top: `${s.t}%`, borderColor: color }}>
+              <span className="dchip__pos">{s.label}</span>
+              <span className="dchip__nm">{p ? sheetName(p.name) : '—'}</span>
+              <span className="dchip__g" style={{ color }}>{p ? overallToGrade(p.overall) : ''}</span>
             </div>
           );
         })}
       </div>
+      <div className="teamcard__strip">
+        {STRIP_SPOTS.map((s, i) => {
+          const p = at(s.role, s.idx ?? 0);
+          const color = p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)';
+          return (
+            <div key={i} className="scell">
+              <span className="scell__pos">{s.label}</span>
+              <span className="scell__nm">{p ? sheetName(p.name) : '—'}</span>
+              <span className="scell__g" style={{ color }}>{p ? overallToGrade(p.overall) : ''}</span>
+            </div>
+          );
+        })}
+      </div>
+      <div className="teamcard__tag">⚾ DUGOUT GAUNTLET</div>
     </div>
   );
 }
@@ -418,7 +443,7 @@ export function RunOverScreen({ g }: { g: G }) {
       <strong style={{ fontSize: 20 }}>{team?.name}</strong>
       {finalFoe && <p className="dim" style={{ fontSize: 13 }}>fell to the {finalFoe}</p>}
 
-      <TeamSheet draftLog={g.state.draftLog} teamName={team?.name ?? 'My Squad'} />
+      <TeamDiamond draftLog={g.state.draftLog} teamName={team?.name ?? 'My Squad'} record={`${streak}-0`} />
 
       <div className="card stack" style={{ width: '100%', gap: 8 }}>
         <Row label="Series won" value={`${streak}`} />

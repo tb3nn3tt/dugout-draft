@@ -248,8 +248,8 @@ strong, b { font-weight: 700; }
 .draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
 .draft__head { display: flex; flex-direction: column; gap: 6px; }
 .draft__body { flex: 1; min-height: 0; display: flex; gap: 8px; }
-.draft__offers { flex: 1; min-width: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding-right: 2px; }
-.draft__depth { width: 142px; flex: 0 0 auto; overflow-y: auto; }
+.draft__offers { flex: 1; min-width: 0; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; align-content: start; padding-right: 2px; }
+.draft__depth { width: 122px; flex: 0 0 auto; overflow-y: auto; }
 .draft__autofill { min-height: 46px; font-size: 13px; }
 
 /* Depth sidebar — HUD roster */
@@ -447,3 +447,79 @@ strong, b { font-weight: 700; }
 .sheet__pos { font-weight: 800; color: var(--ink-dim); width: 32px; flex: 0 0 auto; font-size: 10px; letter-spacing: 0.3px; }
 .sheet__nm { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; min-width: 0; }
 .sheet__gr { font-family: 'Russo One', sans-serif; font-weight: 400; font-size: 13px; flex: 0 0 auto; }
+
+/* ===========================================================================
+   PLAYER CARD (v3) — compact premium card for the 2-column draft grid.
+   Big tier-glow letter grade, position chip, archetype, headline rating bars,
+   foil sweep on gold/diamond. Reads like a sports-game card, not a table row.
+   =========================================================================== */
+.pcard {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--tile-tier) 28%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid color-mix(in srgb, var(--tile-tier) 55%, var(--line));
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45), inset 0 0 18px color-mix(in srgb, var(--tile-tier) 10%, transparent);
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+.pcard::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: var(--tile-tier); box-shadow: 0 0 16px var(--tile-tier);
+}
+.pcard:active { transform: scale(0.97); }
+.pcard__btn { display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: left; background: transparent; border: none; color: var(--ink); cursor: pointer; padding: 8px 9px 9px 12px; }
+.pcard__btn:disabled { cursor: default; }
+.pcard__head { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.pcard__grade {
+  font-family: 'Russo One', sans-serif; font-size: 27px; line-height: 0.85; color: var(--tile-tier);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--tile-tier) 65%, transparent);
+}
+.pcard__pos {
+  font-family: 'Russo One', sans-serif; font-size: 11px; letter-spacing: 0.5px; color: var(--ink);
+  padding: 3px 7px; background: color-mix(in srgb, var(--tile-tier) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tile-tier) 45%, var(--line));
+}
+.pcard__name { font-family: 'Russo One', sans-serif; font-size: 13px; line-height: 1.04; letter-spacing: 0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+.pcard__arch { font-size: 9px; font-weight: 800; letter-spacing: 0.5px; color: var(--tile-tier); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; }
+.pcard__bars { display: flex; flex-direction: column; gap: 3px; margin-top: 3px; }
+.pcard__bar { display: grid; grid-template-columns: 30px 1fr 15px; align-items: center; gap: 5px; }
+.pcard__bar--staff { grid-template-columns: 1fr auto; }
+.pcard__blbl { font-size: 8px; font-weight: 800; color: var(--ink-faint); letter-spacing: 0.3px; }
+.pcard__track { height: 5px; background: rgba(0,0,0,0.5); overflow: hidden; box-shadow: inset 0 0 3px rgba(0,0,0,0.6); }
+.pcard__fill { display: block; height: 100%; }
+.pcard__bv { font-family: 'Barlow', sans-serif; font-size: 10px; font-weight: 800; text-align: right; }
+.pcard__foot { font-size: 8.5px; color: var(--ink-faint); letter-spacing: 0.3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 22px; margin-top: 2px; }
+.pcard__info { position: absolute; bottom: 6px; right: 6px; width: 20px; height: 20px; border: 1px solid var(--line-bright); background: rgba(0,0,0,0.55); color: var(--ink-dim); font-size: 11px; font-weight: 900; cursor: pointer; z-index: 2; }
+/* Foil sweep on premium tiers */
+.pcard--diamond::after, .pcard--gold::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, transparent 42%, rgba(255,255,255,0.16) 50%, transparent 58%);
+  background-size: 280% 100%; animation: foilSweep 3.6s ease-in-out infinite;
+}
+@keyframes foilSweep { 0%, 100% { background-position: 130% 0; } 50% { background-position: -30% 0; } }
+
+/* ===========================================================================
+   TEAM CARD — the drafted nine ON A DIAMOND. The shareable money shot.
+   =========================================================================== */
+.teamcard { width: 100%; border: 1px solid var(--line-bright); background: linear-gradient(180deg, var(--panel-2), var(--panel)); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.teamcard__hd { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; background: linear-gradient(90deg, color-mix(in srgb, var(--amber) 22%, transparent), transparent); border-bottom: 1px solid var(--line-bright); }
+.teamcard__nm { font-family: 'Russo One', sans-serif; font-size: 16px; letter-spacing: 0.4px; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.teamcard__rec { font-family: 'Russo One', sans-serif; font-size: 20px; color: var(--amber); flex: 0 0 auto; text-shadow: 0 0 12px rgba(255,178,36,0.5); }
+.diamond { position: relative; width: 100%; aspect-ratio: 1 / 0.86; overflow: hidden; background: radial-gradient(ellipse 80% 70% at 50% 24%, #16401f 0%, #0d2a16 55%, #07180d 100%); }
+.diamond__grass { position: absolute; left: 50%; top: 52%; width: 52%; height: 52%; transform: translate(-50%, -50%) rotate(45deg); background: linear-gradient(135deg, #6b4424, #4d3018); border: 2px solid rgba(255,255,255,0.18); box-shadow: inset 0 0 24px rgba(0,0,0,0.45); }
+.diamond__grass::after { content: ''; position: absolute; inset: 16%; border: 2px dashed rgba(255,255,255,0.10); }
+.dchip {
+  position: absolute; transform: translate(-50%, -50%); z-index: 1;
+  width: 30%; min-width: 78px; text-align: center; padding: 3px 4px;
+  background: rgba(6,13,24,0.86); border: 1px solid; box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.dchip__pos { display: block; font-size: 7.5px; font-weight: 800; letter-spacing: 0.6px; color: var(--ink-faint); }
+.dchip__nm { display: block; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 11px; line-height: 1.05; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dchip__g { display: block; font-family: 'Russo One', sans-serif; font-size: 12px; line-height: 1; }
+.teamcard__strip { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line-bright); }
+.scell { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 3px; border-right: 1px solid var(--line); text-align: center; min-width: 0; }
+.scell:last-child { border-right: none; }
+.scell__pos { font-size: 7.5px; font-weight: 800; letter-spacing: 0.5px; color: var(--ink-faint); }
+.scell__nm { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.scell__g { font-family: 'Russo One', sans-serif; font-size: 12px; }
+.teamcard__tag { text-align: center; font-family: 'Russo One', sans-serif; font-size: 8px; letter-spacing: 2px; color: var(--ink-faint); padding: 5px; border-top: 1px solid var(--line); background: rgba(0,0,0,0.25); }
