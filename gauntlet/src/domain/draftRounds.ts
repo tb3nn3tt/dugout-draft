@@ -113,6 +113,9 @@ export function offerForRound(
     candidates = usable.filter(t);
     if (candidates.length >= count) break;
   }
+  // If a restrictive mutator left no affordable themed cards for this slot, fall
+  // back to affordable cards (any theme) so the draft never stalls.
+  if (candidates.length === 0) candidates = base;
   // Random sample from the matched candidates.
   const shuffled = [...candidates];
   for (let i = shuffled.length - 1; i > 0; i--) {
