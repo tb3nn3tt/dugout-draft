@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global async ladder. Reads are public (leaderboard). Anyone signed in can
+    // create their own team at 0 wins, and matches (run by any client) may only
+    // advance a team by exactly +1 win or retire it — roster/owner/name are
+    // immutable. This caps how far a malicious client can distort a record;
+    // true anti-cheat would require a server-side (Blaze) match worker.
+    match /ladder_teams/{id} {
+      allow read: if true;
+
+      allow create: if request.auth != null
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.wins == 0
+        && request.resource.data.status == 'queued';
+
+      allow update: if request.auth != null
+        && request.resource.data.ownerUid == resource.data.ownerUid
+        && request.resource.data.playerIds == resource.data.playerIds
+        && request.resource.data.teamName == resource.data.teamName
+        && (
+          (request.resource.data.wins == resource.data.wins + 1
+            && request.resource.data.status == 'queued')
+          || (request.resource.data.status == 'retired'
+            && request.resource.data.wins == resource.data.wins)
+        );
+
+      allow delete: if false;
+    }
+  }
+}

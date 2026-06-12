@@ -9,6 +9,8 @@ import { MUTATORS, getMutator } from '../domain/mutators';
 import { CardTile } from './CardTile';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
+import { LadderScreen } from './LadderScreen';
+import { submitTeam } from '../firebase/ladder';
 
 type G = ReturnType<typeof useGauntlet>;
 
@@ -17,7 +19,7 @@ type G = ReturnType<typeof useGauntlet>;
 // ---------------------------------------------------------------------------
 export function MenuScreen({ g }: { g: G }) {
   const [name, setName] = useState(localStorage.getItem('dugout-gauntlet-name') ?? '');
-  const [view, setView] = useState<'menu' | 'hof'>('menu');
+  const [view, setView] = useState<'menu' | 'hof' | 'ladder'>('menu');
   const [mutatorId, setMutatorId] = useState('standard');
   const top = rankHof(loadHof()).slice(0, 3);
   const mutator = getMutator(mutatorId);
@@ -29,6 +31,7 @@ export function MenuScreen({ g }: { g: G }) {
   };
 
   if (view === 'hof') return <HallOfFameScreen onBack={() => setView('menu')} />;
+  if (view === 'ladder') return <LadderScreen onBack={() => setView('menu')} />;
 
   return (
     <div className="stack" style={{ marginTop: 24, gap: 20 }}>
@@ -60,6 +63,7 @@ export function MenuScreen({ g }: { g: G }) {
           maxLength={22}
         />
         <button className="btn" onClick={start}>Start a Run ⚾</button>
+        <button className="btn btn--secondary" onClick={() => setView('ladder')}>🌐 Global Ladder</button>
       </div>
 
       <div className="card stack" style={{ gap: 10 }}>
@@ -337,6 +341,14 @@ export function RunOverScreen({ g }: { g: G }) {
   const hof = g.hofResult;
   const mut = getMutator(mutatorId);
   const [shared, setShared] = useState(false);
+  const [ladderState, setLadderState] = useState<'idle' | 'sending' | 'sent'>('idle');
+
+  const sendToLadder = async () => {
+    if (!team || ladderState !== 'idle') return;
+    setLadderState('sending');
+    try { await submitTeam(team, streak, team.name); setLadderState('sent'); }
+    catch { setLadderState('idle'); }
+  };
 
   const modeTag = mut.id === 'standard' ? '' : ` [${mut.emoji} ${mut.name}]`;
   const shareText =
@@ -377,10 +389,13 @@ export function RunOverScreen({ g }: { g: G }) {
         </div>
       )}
 
+      <button className="btn" onClick={sendToLadder} disabled={ladderState !== 'idle'}>
+        {ladderState === 'sent' ? '✓ On the Global Ladder!' : ladderState === 'sending' ? 'Sending…' : '⚔️ Send team to the Global Ladder'}
+      </button>
       <button className="btn btn--secondary" onClick={share}>
         {shared ? '✓ Copied!' : '📲 Share result'}
       </button>
-      <button className="btn" onClick={() => g.startRun(team?.name ?? 'My Squad', mutatorId)}>Run it back ⚾</button>
+      <button className="btn btn--ghost" onClick={() => g.startRun(team?.name ?? 'My Squad', mutatorId)}>Run it back ⚾</button>
       <button className="btn btn--ghost" onClick={g.backToMenu}>Main menu</button>
 
       {history.length > 0 && (
