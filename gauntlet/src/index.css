@@ -401,3 +401,30 @@ h1 { letter-spacing: -0.5px; }
 .rt__single { font-size: 11px; font-weight: 700; color: var(--text-dim); display: inline-flex; gap: 4px; align-items: baseline; }
 .rt__single b { font-weight: 900; font-size: 13px; }
 .rt__style { font-size: 13px; font-weight: 800; color: var(--accent); margin-top: 5px; }
+
+/* ===========================================================================
+   Denser draft cards — smaller type, tighter spacing, fewer truncations.
+   =========================================================================== */
+.tile__main { padding: 9px 38px 9px 11px; gap: 9px; min-height: 0; }
+.tile__ovr { min-width: 34px; height: 34px; font-size: 16px; border-radius: 0; }
+.tile__name { font-size: 13px; }
+.tile__meta { font-size: 9px; }
+.tile__pos { font-size: 12px; }
+.tile__tier { font-size: 8px; }
+.tile__cost { font-size: 10px; }
+.tile__info { width: 24px; height: 24px; font-size: 12px; top: 7px; right: 7px; }
+
+.rt { margin-top: 5px; }
+.rt__head { font-size: 8px; grid-template-columns: 68px 1fr 1fr 1fr; }
+.rt__row { grid-template-columns: 68px 1fr 1fr 1fr; }
+.rt__lbl { font-size: 9px; }
+.rt__side { font-size: 11px; }
+.rt__tot { font-size: 14px; }
+.rt__singles { gap: 3px 13px; margin-top: 5px; padding-top: 5px; }
+.rt__single { font-size: 10px; }
+.rt__single b { font-size: 11px; }
+.rt__style { font-size: 12px; }
+
+/* Depth sidebar a touch tighter too. */
+.depth__row { font-size: 10px; }
+.depth__title { font-size: 8px; }
