@@ -3,15 +3,22 @@ import { Position } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
 import { overallToGrade } from '../domain/sim/helpers';
 
-// Only the MARQUEE 14 you actually draft — the depth (bullpen + bench) auto-fills.
+// The MARQUEE roster you actually draft — only incidental depth auto-fills.
 const GROUPS: { title: string; slots: { role: Position; label: string }[] }[] = [
   { title: 'LINEUP', slots: [
     { role: 'C', label: 'C' }, { role: '1B', label: '1B' }, { role: '2B', label: '2B' },
     { role: '3B', label: '3B' }, { role: 'SS', label: 'SS' }, { role: 'LF', label: 'LF' },
     { role: 'CF', label: 'CF' }, { role: 'RF', label: 'RF' }, { role: 'DH', label: 'DH' },
   ]},
-  { title: 'ROTATION', slots: [{ role: 'SP', label: 'SP1' }, { role: 'SP', label: 'SP2' }] },
-  { title: 'CLOSER', slots: [{ role: 'CL', label: 'CL' }] },
+  { title: 'ROTATION', slots: [
+    { role: 'SP', label: 'SP1' }, { role: 'SP', label: 'SP2' },
+    { role: 'SP', label: 'SP3' }, { role: 'SP', label: 'SP4' },
+  ]},
+  { title: 'BULLPEN', slots: [
+    { role: 'CL', label: 'CL' }, { role: 'SU', label: 'SU1' },
+    { role: 'SU', label: 'SU2' }, { role: 'LOOGY', label: 'vL' },
+  ]},
+  { title: 'BENCH', slots: [{ role: 'PH', label: 'PH' }, { role: 'PR', label: 'PR' }] },
   { title: 'STAFF', slots: [{ role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PRK' }] },
 ];
 
@@ -55,7 +62,7 @@ export function DepthSidebar({ draftLog, activeRole }: { draftLog: DraftEntry[];
           })}
         </div>
       ))}
-      <div className="depth__note">+ bullpen &amp; bench auto-filled</div>
+      <div className="depth__note">+ middle/long relief &amp; bench depth auto-filled</div>
     </div>
   );
 }

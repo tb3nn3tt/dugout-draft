@@ -22,16 +22,21 @@ export const ROLE_REQUIREMENTS: Record<string, number> = {
   HC: 1, ST: 1,
 };
 
-// You only INTERACTIVELY draft the marquee 14 — the players who define a team —
-// so a run is quick to click through. The depth (extra arms + bench) auto-fills.
+// You interactively draft the full STRATEGIC roster — every piece that defines
+// how a team plays: the lineup, the whole rotation, the high-leverage bullpen
+// (closer + setup + lefty specialist) and your bench weapons (PH/PR). Only
+// incidental depth (middle/long relief, backup C, 2nd PH, defensive subs) auto-
+// fills, so you're never handed your 4th starter or your setup man by the CPU.
 export const MARQUEE_REQUIREMENTS: Record<string, number> = {
   C: 1, '1B': 1, '2B': 1, '3B': 1, SS: 1, LF: 1, CF: 1, RF: 1, DH: 1, // 9 lineup
-  SP: 2, CL: 1,                                                       // ace + #2 + closer
+  SP: 4,                                                              // full 4-man rotation
+  CL: 1, SU: 2, LOOGY: 1,                                             // closer, 2 setup, lefty specialist
+  PH: 1, PR: 1,                                                       // pinch hitter + pinch runner
   HC: 1, ST: 1,                                                       // manager + ballpark
 };
 export const DEPTH_REQUIREMENTS: Record<string, number> = {
-  SP: 2, SU: 2, MRP: 2, LRP: 1, LOOGY: 1,   // rotation depth + bullpen
-  BC: 1, PH: 2, PR: 1, IFD: 1, OFD: 1,      // bench
+  MRP: 2, LRP: 1,                           // middle + long relief
+  BC: 1, PH: 1, IFD: 1, OFD: 1,             // backup C, 2nd PH, defensive subs
 };
 export const TOTAL_PICKS = Object.values(MARQUEE_REQUIREMENTS).reduce((a, b) => a + b, 0);
 

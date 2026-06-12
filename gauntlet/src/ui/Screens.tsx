@@ -357,7 +357,10 @@ const FIELD_SPOTS: { role: Position; idx?: number; label: string; l: number; t: 
   { role: 'C', label: 'C', l: 50, t: 90 },
 ];
 const STRIP_SPOTS: { role: Position; idx?: number; label: string }[] = [
-  { role: 'DH', label: 'DH' }, { role: 'SP', idx: 1, label: 'SP2' }, { role: 'CL', label: 'CL' },
+  { role: 'DH', label: 'DH' },
+  { role: 'SP', idx: 1, label: 'SP2' }, { role: 'SP', idx: 2, label: 'SP3' }, { role: 'SP', idx: 3, label: 'SP4' },
+  { role: 'CL', label: 'CL' }, { role: 'SU', idx: 0, label: 'SU' }, { role: 'LOOGY', label: 'vL' },
+  { role: 'PH', label: 'PH' }, { role: 'PR', label: 'PR' },
   { role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PARK' },
 ];
 function TeamDiamond({ draftLog, teamName, record }: { draftLog: DraftEntry[]; teamName: string; record: string }) {
