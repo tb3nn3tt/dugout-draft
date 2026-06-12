@@ -1,11 +1,15 @@
 import { useState, useMemo } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
-import { DRAFT_SLOTS, TOTAL_PICKS } from '../domain/draftFlow';
+import { TOTAL_PICKS } from '../domain/draftRounds';
+import { TIER_COLORS } from '../domain/players';
+import { Player } from '../domain/types';
 import { loadHof, rankHof } from '../domain/hallOfFame';
 import { computeAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { projectTeam, ratingColor } from '../domain/teamRating';
 import { CardTile } from './CardTile';
+import { RosterBoard } from './RosterBoard';
+import { PlayerDetail } from './PlayerDetail';
 
 type G = ReturnType<typeof useGauntlet>;
 
@@ -118,17 +122,20 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
 // Draft
 // ---------------------------------------------------------------------------
 export function DraftScreen({ g }: { g: G }) {
-  const { currentSlot, offered, picks } = g.state;
-  const slot = DRAFT_SLOTS[currentSlot];
-  const progress = Math.round((currentSlot / TOTAL_PICKS) * 100);
+  const { offered, picks, currentRound, draftLog } = g.state;
+  const [detail, setDetail] = useState<Player | null>(null);
+  const [showBoard, setShowBoard] = useState(false);
   const proj = projectTeam(picks);
+  const pickNum = picks.length + 1;
+  const progress = Math.round((picks.length / TOTAL_PICKS) * 100);
+  const tierColor = currentRound ? TIER_COLORS[currentRound.tier] : 'var(--accent)';
 
   return (
-    <div className="stack" style={{ marginTop: 8, gap: 14 }}>
+    <div className="stack" style={{ marginTop: 8, gap: 12 }}>
       <div className="stack" style={{ gap: 8 }}>
         <div className="row" style={{ justifyContent: 'space-between' }}>
           <strong>{g.state.teamName}</strong>
-          <span className="dim">Pick {currentSlot + 1} / {TOTAL_PICKS}</span>
+          <span className="dim">Pick {pickNum} / {TOTAL_PICKS}</span>
         </div>
         <div className="progress"><div className="progress__fill" style={{ width: `${progress}%` }} /></div>
       </div>
@@ -141,21 +148,37 @@ export function DraftScreen({ g }: { g: G }) {
         </div>
       )}
 
-      <div className="center stack" style={{ gap: 2 }}>
-        <span className="dim" style={{ fontSize: 13, letterSpacing: 1 }}>NOW DRAFTING</span>
-        <h2>{slot?.label}</h2>
-      </div>
+      {/* Named, themed round banner */}
+      {currentRound && (
+        <div className="round-banner" style={{ borderColor: tierColor }}>
+          <div className="round-banner__name">{currentRound.emoji} {currentRound.name}</div>
+          <div className="round-banner__flavor dim">{currentRound.flavor}</div>
+          <div className="round-banner__role">
+            <span className="badge" style={{ borderColor: tierColor, color: tierColor }}>
+              {currentRound.tier.toUpperCase()}
+            </span>
+            <span>Drafting: <strong>{currentRound.roleLabel}</strong></span>
+          </div>
+        </div>
+      )}
 
       <div className="stack" style={{ gap: 10 }}>
-        {offered.map(p => <CardTile key={p.id} player={p} onPick={g.pick} />)}
+        {offered.map(p => <CardTile key={p.id} player={p} onPick={g.pick} onInfo={setDetail} />)}
       </div>
+
+      <button className="btn btn--ghost" onClick={() => setShowBoard(s => !s)}>
+        {showBoard ? '▲ Hide roster' : `▼ Your roster (${picks.length}/${TOTAL_PICKS})`}
+      </button>
+      {showBoard && <RosterBoard draftLog={draftLog} activeRole={currentRound?.role} />}
 
       <button className="btn btn--ghost" onClick={g.autofill}>⚡ Auto-fill the rest</button>
 
-      {picks.length > 0 && (
-        <p className="dim center" style={{ fontSize: 13 }}>
-          {picks.length} drafted · last: {picks[picks.length - 1].name}
-        </p>
+      {detail && (
+        <PlayerDetail
+          player={detail}
+          onDraft={(p) => { setDetail(null); g.pick(p); }}
+          onClose={() => setDetail(null)}
+        />
       )}
     </div>
   );

@@ -185,3 +185,54 @@ h2 { font-size: 20px; font-weight: 800; }
 .gameline__r { font-size: 11px; font-weight: 900; }
 .gameline--w .gameline__r { color: var(--win); }
 .gameline--l .gameline__r { color: var(--loss); }
+
+/* --- Restructured card tile (body + info button) --- */
+.tile { display: block; position: relative; padding: 0; }
+.tile__main {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; text-align: left; background: transparent;
+  border: none; color: var(--text); cursor: pointer;
+  padding: 12px 42px 12px 14px; min-height: 66px;
+}
+.tile__main:active { transform: scale(0.98); }
+.tile__grades { font-size: 11px; font-weight: 800; color: var(--accent-2); margin-top: 3px; letter-spacing: 0.3px; }
+.tile__info {
+  position: absolute; top: 9px; right: 9px;
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1.5px solid var(--line); background: var(--bg);
+  color: var(--text-dim); font-size: 13px; font-weight: 900; cursor: pointer;
+}
+
+/* --- Themed round banner --- */
+.round-banner { background: var(--bg-card); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 14px; }
+.round-banner__name { font-size: 19px; font-weight: 900; }
+.round-banner__flavor { font-size: 13px; margin-top: 2px; }
+.round-banner__role { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; }
+
+/* --- Roster board --- */
+.board { display: flex; flex-direction: column; gap: 10px; }
+.board__title { font-size: 11px; font-weight: 800; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 4px; }
+.board__cells { display: flex; flex-wrap: wrap; gap: 5px; }
+.cell {
+  width: 60px; height: 44px; border: 1.5px solid var(--line); border-radius: 8px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--bg); overflow: hidden;
+}
+.cell--on { background: var(--bg-card); }
+.cell--next { box-shadow: 0 0 0 2px var(--accent); }
+.cell__ovr { font-size: 14px; font-weight: 900; line-height: 1; }
+.cell__nm { font-size: 9px; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 56px; }
+.cell__lbl { font-size: 11px; font-weight: 800; color: var(--text-dim); }
+
+/* --- Player detail modal --- */
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.72); display: flex; align-items: flex-end; justify-content: center; z-index: 50; }
+.modal__card {
+  background: var(--bg-elev); border-radius: 20px 20px 0 0;
+  padding: 20px 16px calc(var(--safe-bottom) + 20px);
+  width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.statline { display: flex; gap: 8px; }
+.stat { flex: 1; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 8px; text-align: center; }
+.stat__k { font-size: 10px; font-weight: 800; color: var(--text-dim); }
+.stat__v { font-size: 18px; font-weight: 900; }
