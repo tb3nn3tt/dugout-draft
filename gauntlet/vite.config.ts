@@ -2,8 +2,13 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// Mobile-first PWA: installable to home screen, offline shell, served at root.
+// Mobile-first PWA: installable to home screen, offline shell.
+// base is '/' locally and on root hosts; the Pages workflow sets DEPLOY_BASE
+// to the project subpath (e.g. '/dugout-draft/') so asset URLs resolve there.
+const base = process.env.DEPLOY_BASE || '/';
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -16,7 +21,8 @@ export default defineConfig({
         background_color: '#0b1220',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
+        start_url: base,
+        scope: base,
         icons: [],
       },
       workbox: {

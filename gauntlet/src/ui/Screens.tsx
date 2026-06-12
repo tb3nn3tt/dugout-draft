@@ -4,6 +4,7 @@ import { DRAFT_SLOTS, TOTAL_PICKS } from '../domain/draftFlow';
 import { loadHof, rankHof } from '../domain/hallOfFame';
 import { computeAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
+import { projectTeam, ratingColor } from '../domain/teamRating';
 import { CardTile } from './CardTile';
 
 type G = ReturnType<typeof useGauntlet>;
@@ -120,6 +121,7 @@ export function DraftScreen({ g }: { g: G }) {
   const { currentSlot, offered, picks } = g.state;
   const slot = DRAFT_SLOTS[currentSlot];
   const progress = Math.round((currentSlot / TOTAL_PICKS) * 100);
+  const proj = projectTeam(picks);
 
   return (
     <div className="stack" style={{ marginTop: 8, gap: 14 }}>
@@ -130,6 +132,14 @@ export function DraftScreen({ g }: { g: G }) {
         </div>
         <div className="progress"><div className="progress__fill" style={{ width: `${progress}%` }} /></div>
       </div>
+
+      {picks.length > 0 && (
+        <div className="row" style={{ gap: 10 }}>
+          <RatingBar label="OFF" value={proj.offense} />
+          <RatingBar label="PIT" value={proj.pitching} />
+          <RatingBar label="OVR" value={proj.overall} />
+        </div>
+      )}
 
       <div className="center stack" style={{ gap: 2 }}>
         <span className="dim" style={{ fontSize: 13, letterSpacing: 1 }}>NOW DRAFTING</span>
@@ -319,6 +329,21 @@ export function RunOverScreen({ g }: { g: G }) {
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+function RatingBar({ label, value }: { label: string; value: number }) {
+  const color = ratingColor(value);
+  return (
+    <div className="stack" style={{ flex: 1, gap: 4 }}>
+      <div className="row" style={{ justifyContent: 'space-between' }}>
+        <span className="dim" style={{ fontSize: 11, fontWeight: 800 }}>{label}</span>
+        <span style={{ fontSize: 14, fontWeight: 900, color }}>{value || '—'}</span>
+      </div>
+      <div className="progress" style={{ height: 6 }}>
+        <div className="progress__fill" style={{ width: `${value}%`, background: color }} />
+      </div>
     </div>
   );
 }
