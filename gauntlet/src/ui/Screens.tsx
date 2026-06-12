@@ -7,6 +7,7 @@ import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
 import { computeAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { BUDGET } from '../domain/salary';
+import { ACHIEVEMENTS, loadUnlocked } from '../domain/achievements';
 import { CardTile } from './CardTile';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
@@ -20,7 +21,7 @@ type G = ReturnType<typeof useGauntlet>;
 // ---------------------------------------------------------------------------
 export function MenuScreen({ g }: { g: G }) {
   const [name, setName] = useState(localStorage.getItem('dugout-gauntlet-name') ?? '');
-  const [view, setView] = useState<'menu' | 'hof' | 'ladder'>('menu');
+  const [view, setView] = useState<'menu' | 'hof' | 'ladder' | 'achievements'>('menu');
   const [mutatorId, setMutatorId] = useState('standard');
   const top = rankHof(loadHof()).slice(0, 3);
   const mutator = getMutator(mutatorId);
@@ -33,6 +34,7 @@ export function MenuScreen({ g }: { g: G }) {
 
   if (view === 'hof') return <HallOfFameScreen onBack={() => setView('menu')} />;
   if (view === 'ladder') return <LadderScreen onBack={() => setView('menu')} />;
+  if (view === 'achievements') return <AchievementsScreen onBack={() => setView('menu')} />;
 
   return (
     <div className="stack" style={{ marginTop: 24, gap: 20 }}>
@@ -65,6 +67,7 @@ export function MenuScreen({ g }: { g: G }) {
         />
         <button className="btn" onClick={start}>Start a Run ⚾</button>
         <button className="btn btn--secondary" onClick={() => setView('ladder')}>🌐 Global Ladder</button>
+        <button className="btn btn--ghost" onClick={() => setView('achievements')}>🎖️ Achievements</button>
       </div>
 
       <div className="card stack" style={{ gap: 10 }}>
@@ -152,6 +155,36 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
           })}
         </div>
       )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Achievements
+// ---------------------------------------------------------------------------
+export function AchievementsScreen({ onBack }: { onBack: () => void }) {
+  const unlocked = loadUnlocked();
+  return (
+    <div className="stack" style={{ marginTop: 16, gap: 14 }}>
+      <div className="row" style={{ justifyContent: 'space-between' }}>
+        <h1 style={{ fontSize: 26 }}>🎖️ Achievements</h1>
+        <button className="btn btn--ghost" style={{ width: 'auto', minHeight: 40, padding: '0 14px' }} onClick={onBack}>Back</button>
+      </div>
+      <p className="dim center" style={{ fontSize: 13 }}>{unlocked.size} / {ACHIEVEMENTS.length} unlocked</p>
+      <div className="stack" style={{ gap: 8 }}>
+        {ACHIEVEMENTS.map(a => {
+          const got = unlocked.has(a.id);
+          return (
+            <div key={a.id} className={`ach ${got ? 'ach--on' : ''}`}>
+              <span className="ach__emoji">{got ? a.emoji : '🔒'}</span>
+              <div className="ach__body">
+                <strong>{got ? a.name : '???'}</strong>
+                <div className="dim" style={{ fontSize: 12 }}>{a.description}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

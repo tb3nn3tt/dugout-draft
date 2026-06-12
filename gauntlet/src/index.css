@@ -382,3 +382,9 @@ h1 { letter-spacing: -0.5px; }
 .round-banner--spin .round-banner__name { opacity: 0.85; filter: blur(0.3px); }
 .round-banner--lock { animation: lockPop 0.3s ease; }
 @keyframes lockPop { 0% { transform: scale(1.04); } 60% { transform: scale(0.99); } 100% { transform: none; } }
+
+/* --- Achievements list --- */
+.ach { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--bg-card); border: 1px solid var(--line); opacity: 0.55; }
+.ach--on { opacity: 1; border-color: var(--accent); }
+.ach__emoji { font-size: 26px; flex: 0 0 auto; }
+.ach__body { min-width: 0; }
