@@ -42,6 +42,22 @@ const ROSTER = [
   ['Ziggy Marsh', 'Ziggy', 'OFD', 80, 'R', 'R', 'Fan Favorites', 'Late-game outfield insurance who robbed three would-be homers in a week.'],
   ['Iron Mike Cassidy', 'Iron Mike', 'IFD', 81, 'R', 'R', '1980s', 'Defensive wizard. Protected a lead with nothing but his leather.'],
   ['Spaceman Dupree', 'Spaceman', 'MRP', 83, 'R', 'R', 'Beer League Saga', 'A fireman with a rubber arm and a thousand-yard stare.'],
+  ['Honus Krall', 'The Flying Dutchman', 'SS', 95, 'R', 'R', 'Dead Ball Days', 'Bowlegged and unbeatable. The greatest shortstop nobody filmed.'],
+  ['El Tigre Mendez', 'El Tigre', 'CF', 92, 'S', 'R', 'World Baseball', 'Winter-ball royalty. Hit .400 across three leagues in one calendar year.'],
+  ['Smoky Joe Brennan', 'Smoky Joe', 'SP', 93, 'R', 'R', 'Lore & Legend', 'His heater smoked the catcher\'s mitt. Literally, once.'],
+  ['Buck "Bull" Tatum', 'The Bull', '1B', 88, 'L', 'L', 'Negro Leagues', 'Cleanup hitter who made grown pitchers ask for a day off.'],
+  ['Pinky Delacroix', 'Pinky', '2B', 79, 'L', 'R', '1960s', 'Scrappy keystone glue. Fouled off twelve pitches then bunted you to death.'],
+  ['The Reverend Gaines', 'The Reverend', 'CL', 90, 'R', 'R', 'Modern Legends', 'Preached fire and brimstone in the ninth. Congregation: zero baserunners.'],
+  ['Footsie Magoon', 'Footsie', 'PR', 80, 'L', 'L', 'Cinematic Classic', 'Forty stolen bases in a movie that was only two hours long.'],
+  ['Duke Kahale', 'Duke', 'RF', 87, 'R', 'R', 'World Baseball', 'Island power, cannon arm. Surfed in the morning, mashed in the evening.'],
+  ['Gunner Pavlik', 'Gunner', 'SU', 85, 'R', 'R', '1990s', 'Triple-digit heat out of the pen. The eighth inning was a no-fly zone.'],
+  ['Old Hoss Tweed', 'Old Hoss', 'SP', 86, 'R', 'R', 'Dead Ball Days', 'Started both ends of a doubleheader and complained about the rest.'],
+  ['Coco Vandenberg', 'Coco', '3B', 81, 'R', 'R', 'Fan Favorites', 'A magician at the hot corner with a flair for the walk-off.'],
+  ['Mama Mae Robinson', 'Mama Mae', 'C', 89, 'R', 'R', 'Winter Ball Myth', 'Ran the whole defense from behind the plate. Pitchers called her boss.'],
+  ['Razor Hopkins', 'Razor', 'LOOGY', 82, 'L', 'L', 'Roadside Legend', 'Sidearm sweep that left lefties muttering all the way back to the dugout.'],
+  ['Tiny Toledo', 'Tiny', 'DH', 90, 'L', 'R', 'Steroid Era', 'Six-foot-eight of bad intentions. The upper deck was in play.'],
+  ['Whisper Boudin', 'Whisper', 'LRP', 77, 'L', 'L', 'Bush League Tale', 'Never threw hard, never walked anybody. Soft-tossed his way to folk hero.'],
+  ['Chief Two Rivers', 'Chief', 'CF', 88, 'S', 'R', 'Lore & Legend', 'Ran down everything in the gaps. They said the wind owed him favors.'],
 ];
 
 const TEAMS = ['LOR', 'MYT', 'LEG', 'DUG', 'VAL', 'SLT', 'HVN', 'PEN'];

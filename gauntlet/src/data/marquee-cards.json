@@ -844,5 +844,489 @@
    "stamina": 48,
    "clutch": 67
   }
+ },
+ {
+  "id": "marquee-29",
+  "name": "Honus Krall",
+  "team": "VAL",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.261,
+   "obp": 0.335,
+   "slg": 0.441,
+   "hr": 37,
+   "speed": 95
+  },
+  "overall": 95,
+  "category": "fictional",
+  "era": "Dead Ball Days",
+  "nickname": "The Flying Dutchman",
+  "funFact": "Bowlegged and unbeatable. The greatest shortstop nobody filmed.",
+  "grades": {
+   "contact": 68,
+   "power": 70,
+   "speed": 76,
+   "fielding": 80,
+   "arm": 70,
+   "eye": 74,
+   "clutch": 80
+  }
+ },
+ {
+  "id": "marquee-30",
+  "name": "El Tigre Mendez",
+  "team": "SLT",
+  "positions": [
+   "CF"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {
+   "avg": 0.265,
+   "obp": 0.337,
+   "slg": 0.461,
+   "hr": 39,
+   "speed": 100
+  },
+  "overall": 92,
+  "category": "fictional",
+  "era": "World Baseball",
+  "nickname": "El Tigre",
+  "funFact": "Winter-ball royalty. Hit .400 across three leagues in one calendar year.",
+  "grades": {
+   "contact": 70,
+   "power": 74,
+   "speed": 80,
+   "fielding": 74,
+   "arm": 77,
+   "eye": 73,
+   "clutch": 70
+  }
+ },
+ {
+  "id": "marquee-31",
+  "name": "Smoky Joe Brennan",
+  "team": "HVN",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.34,
+   "whip": 1.3,
+   "k9": 9,
+   "bb9": 1.3
+  },
+  "overall": 93,
+  "category": "fictional",
+  "era": "Lore & Legend",
+  "nickname": "Smoky Joe",
+  "funFact": "His heater smoked the catcher's mitt. Literally, once.",
+  "grades": {
+   "fastball": 77,
+   "breaking": 76,
+   "changeup": 75,
+   "control": 79,
+   "stamina": 74,
+   "clutch": 71
+  }
+ },
+ {
+  "id": "marquee-32",
+  "name": "Buck \"Bull\" Tatum",
+  "team": "PEN",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "avg": 0.253,
+   "obp": 0.321,
+   "slg": 0.449,
+   "hr": 39,
+   "speed": 85
+  },
+  "overall": 88,
+  "category": "fictional",
+  "era": "Negro Leagues",
+  "nickname": "The Bull",
+  "funFact": "Cleanup hitter who made grown pitchers ask for a day off.",
+  "grades": {
+   "contact": 64,
+   "power": 74,
+   "speed": 68,
+   "fielding": 61,
+   "arm": 68,
+   "eye": 70,
+   "clutch": 70
+  }
+ },
+ {
+  "id": "marquee-33",
+  "name": "Pinky Delacroix",
+  "team": "LOR",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {
+   "avg": 0.249,
+   "obp": 0.303,
+   "slg": 0.381,
+   "hr": 30,
+   "speed": 88
+  },
+  "overall": 79,
+  "category": "fictional",
+  "era": "1960s",
+  "nickname": "Pinky",
+  "funFact": "Scrappy keystone glue. Fouled off twelve pitches then bunted you to death.",
+  "grades": {
+   "contact": 62,
+   "power": 58,
+   "speed": 70,
+   "fielding": 71,
+   "arm": 62,
+   "eye": 60,
+   "clutch": 61
+  }
+ },
+ {
+  "id": "marquee-34",
+  "name": "The Reverend Gaines",
+  "team": "MYT",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.51,
+   "whip": 1.36,
+   "k9": 9.2,
+   "bb9": 2.6
+  },
+  "overall": 90,
+  "category": "fictional",
+  "era": "Modern Legends",
+  "nickname": "The Reverend",
+  "funFact": "Preached fire and brimstone in the ninth. Congregation: zero baserunners.",
+  "grades": {
+   "fastball": 79,
+   "breaking": 73,
+   "changeup": 67,
+   "control": 67,
+   "stamina": 47,
+   "clutch": 66
+  }
+ },
+ {
+  "id": "marquee-35",
+  "name": "Footsie Magoon",
+  "team": "LEG",
+  "positions": [
+   "PR"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "avg": 0.241,
+   "obp": 0.292,
+   "slg": 0.337,
+   "hr": 26,
+   "speed": 100
+  },
+  "overall": 80,
+  "category": "fictional",
+  "era": "Cinematic Classic",
+  "nickname": "Footsie",
+  "funFact": "Forty stolen bases in a movie that was only two hours long.",
+  "grades": {
+   "contact": 58,
+   "power": 49,
+   "speed": 80,
+   "fielding": 63,
+   "arm": 56,
+   "eye": 58,
+   "clutch": 60
+  }
+ },
+ {
+  "id": "marquee-36",
+  "name": "Duke Kahale",
+  "team": "DUG",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.247,
+   "obp": 0.307,
+   "slg": 0.435,
+   "hr": 38,
+   "speed": 80
+  },
+  "overall": 87,
+  "category": "fictional",
+  "era": "World Baseball",
+  "nickname": "Duke",
+  "funFact": "Island power, cannon arm. Surfed in the morning, mashed in the evening.",
+  "grades": {
+   "contact": 61,
+   "power": 72,
+   "speed": 64,
+   "fielding": 71,
+   "arm": 69,
+   "eye": 64,
+   "clutch": 71
+  }
+ },
+ {
+  "id": "marquee-37",
+  "name": "Gunner Pavlik",
+  "team": "VAL",
+  "positions": [
+   "SU"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.8,
+   "whip": 1.37,
+   "k9": 8.5,
+   "bb9": 2.7
+  },
+  "overall": 85,
+  "category": "fictional",
+  "era": "1990s",
+  "nickname": "Gunner",
+  "funFact": "Triple-digit heat out of the pen. The eighth inning was a no-fly zone.",
+  "grades": {
+   "fastball": 73,
+   "breaking": 73,
+   "changeup": 63,
+   "control": 66,
+   "stamina": 44,
+   "clutch": 65
+  }
+ },
+ {
+  "id": "marquee-38",
+  "name": "Old Hoss Tweed",
+  "team": "SLT",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "era": 2.74,
+   "whip": 1.33,
+   "k9": 7.7,
+   "bb9": 1.9
+  },
+  "overall": 86,
+  "category": "fictional",
+  "era": "Dead Ball Days",
+  "nickname": "Old Hoss",
+  "funFact": "Started both ends of a doubleheader and complained about the rest.",
+  "grades": {
+   "fastball": 65,
+   "breaking": 68,
+   "changeup": 73,
+   "control": 74,
+   "stamina": 67,
+   "clutch": 61
+  }
+ },
+ {
+  "id": "marquee-39",
+  "name": "Coco Vandenberg",
+  "team": "HVN",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.245,
+   "obp": 0.298,
+   "slg": 0.425,
+   "hr": 37,
+   "speed": 71
+  },
+  "overall": 81,
+  "category": "fictional",
+  "era": "Fan Favorites",
+  "nickname": "Coco",
+  "funFact": "A magician at the hot corner with a flair for the walk-off.",
+  "grades": {
+   "contact": 60,
+   "power": 70,
+   "speed": 57,
+   "fielding": 66,
+   "arm": 58,
+   "eye": 59,
+   "clutch": 62
+  }
+ },
+ {
+  "id": "marquee-40",
+  "name": "Mama Mae Robinson",
+  "team": "PEN",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {
+   "avg": 0.253,
+   "obp": 0.327,
+   "slg": 0.441,
+   "hr": 38,
+   "speed": 65
+  },
+  "overall": 89,
+  "category": "fictional",
+  "era": "Winter Ball Myth",
+  "nickname": "Mama Mae",
+  "funFact": "Ran the whole defense from behind the plate. Pitchers called her boss.",
+  "grades": {
+   "contact": 64,
+   "power": 72,
+   "speed": 52,
+   "fielding": 80,
+   "arm": 80,
+   "eye": 74,
+   "clutch": 65
+  }
+ },
+ {
+  "id": "marquee-41",
+  "name": "Razor Hopkins",
+  "team": "LOR",
+  "positions": [
+   "LOOGY"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "era": 2.97,
+   "whip": 1.4,
+   "k9": 7.9,
+   "bb9": 3.4
+  },
+  "overall": 82,
+  "category": "fictional",
+  "era": "Roadside Legend",
+  "nickname": "Razor",
+  "funFact": "Sidearm sweep that left lefties muttering all the way back to the dugout.",
+  "grades": {
+   "fastball": 67,
+   "breaking": 80,
+   "changeup": 53,
+   "control": 60,
+   "stamina": 40,
+   "clutch": 55
+  }
+ },
+ {
+  "id": "marquee-42",
+  "name": "Tiny Toledo",
+  "team": "MYT",
+  "positions": [
+   "DH"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {
+   "avg": 0.273,
+   "obp": 0.338,
+   "slg": 0.493,
+   "hr": 42,
+   "speed": 94
+  },
+  "overall": 90,
+  "category": "fictional",
+  "era": "Steroid Era",
+  "nickname": "Tiny",
+  "funFact": "Six-foot-eight of bad intentions. The upper deck was in play.",
+  "grades": {
+   "contact": 74,
+   "power": 80,
+   "speed": 75,
+   "fielding": 62,
+   "arm": 70,
+   "eye": 68,
+   "clutch": 64
+  }
+ },
+ {
+  "id": "marquee-43",
+  "name": "Whisper Boudin",
+  "team": "LEG",
+  "positions": [
+   "LRP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {
+   "era": 3.26,
+   "whip": 1.37,
+   "k9": 6.7,
+   "bb9": 2.7
+  },
+  "overall": 77,
+  "category": "fictional",
+  "era": "Bush League Tale",
+  "nickname": "Whisper",
+  "funFact": "Never threw hard, never walked anybody. Soft-tossed his way to folk hero.",
+  "grades": {
+   "fastball": 56,
+   "breaking": 52,
+   "changeup": 58,
+   "control": 66,
+   "stamina": 54,
+   "clutch": 59
+  }
+ },
+ {
+  "id": "marquee-44",
+  "name": "Chief Two Rivers",
+  "team": "DUG",
+  "positions": [
+   "CF"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {
+   "avg": 0.249,
+   "obp": 0.307,
+   "slg": 0.413,
+   "hr": 35,
+   "speed": 96
+  },
+  "overall": 88,
+  "category": "fictional",
+  "era": "Lore & Legend",
+  "nickname": "Chief",
+  "funFact": "Ran down everything in the gaps. They said the wind owed him favors.",
+  "grades": {
+   "contact": 62,
+   "power": 66,
+   "speed": 77,
+   "fielding": 77,
+   "arm": 64,
+   "eye": 63,
+   "clutch": 61
+  }
  }
 ]
