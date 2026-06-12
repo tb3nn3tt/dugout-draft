@@ -17,6 +17,7 @@ import lore from '../data/lore-players.json';
 import marquee from '../data/marquee-cards.json';
 import extraRegulars from '../data/extra-regulars.json';
 import rolePlayers from '../data/role-players.json';
+import rolePlayers2 from '../data/role-players-2.json';
 import coachesData from '../data/coaches.json';
 import stadiumsData from '../data/stadiums.json';
 
@@ -38,6 +39,7 @@ export const playersPool: Player[] = [
   ...(marquee as Player[]),
   ...(extraRegulars as Player[]),
   ...(rolePlayers as Player[]),
+  ...(rolePlayers2 as Player[]),
 ];
 
 export const managersPool: Player[] = coachesData as Player[];
