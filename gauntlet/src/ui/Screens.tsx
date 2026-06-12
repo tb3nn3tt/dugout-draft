@@ -8,7 +8,7 @@ import { computeAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { projectTeam, ratingColor } from '../domain/teamRating';
 import { CardTile } from './CardTile';
-import { RosterBoard } from './RosterBoard';
+import { FieldChart } from './FieldChart';
 import { PlayerDetail } from './PlayerDetail';
 
 type G = ReturnType<typeof useGauntlet>;
@@ -167,9 +167,9 @@ export function DraftScreen({ g }: { g: G }) {
       </div>
 
       <button className="btn btn--ghost" onClick={() => setShowBoard(s => !s)}>
-        {showBoard ? '▲ Hide roster' : `▼ Your roster (${picks.length}/${TOTAL_PICKS})`}
+        {showBoard ? '▲ Hide depth chart' : `▼ Depth chart (${picks.length}/${TOTAL_PICKS})`}
       </button>
-      {showBoard && <RosterBoard draftLog={draftLog} activeRole={currentRound?.role} />}
+      {showBoard && <FieldChart draftLog={draftLog} activeRole={currentRound?.role} />}
 
       <button className="btn btn--ghost" onClick={g.autofill}>⚡ Auto-fill the rest</button>
 

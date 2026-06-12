@@ -257,3 +257,24 @@ h2 { font-size: 20px; font-weight: 800; }
 .chipg__l { font-size: 9px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.3px; }
 .chipg__v { font-size: 16px; font-weight: 900; line-height: 1.1; }
 .tile__stats { font-size: 12px; font-weight: 700; color: var(--text); letter-spacing: 0.2px; }
+
+/* --- Field depth chart --- */
+.fc { display: flex; flex-direction: column; gap: 12px; }
+.fc__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.fc__cell {
+  background: var(--bg-card); border: 1.5px solid var(--line); border-radius: 10px;
+  min-height: 60px; padding: 6px 4px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; overflow: hidden;
+}
+.fc__cell--next { box-shadow: 0 0 0 2px var(--accent); }
+.fc__pos { font-size: 10px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.5px; }
+.fc__ovr { font-size: 18px; font-weight: 900; line-height: 1.05; }
+.fc__nm { font-size: 10px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.fc__sub { font-size: 9px; color: var(--text-dim); }
+.fc__empty { font-size: 18px; color: var(--line); font-weight: 900; }
+.fc__lines { display: flex; flex-direction: column; gap: 6px; }
+.fc__line { display: flex; gap: 8px; align-items: baseline; }
+.fc__line-lbl { width: 64px; flex: 0 0 auto; font-size: 11px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.5px; }
+.fc__line-vals { display: flex; flex-wrap: wrap; gap: 4px; }
+.fc__pill { font-size: 11px; font-weight: 700; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 2px 7px; }
+.fc__pill--empty { color: var(--text-dim); opacity: 0.6; }
