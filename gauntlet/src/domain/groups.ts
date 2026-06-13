@@ -106,6 +106,17 @@ function buildGroups(): Group[] {
   add('fun-diamonds', 'Diamond Tier', '💎', 'The highest-rated cards in the game.', p => p.overall >= 92);
   add('fun-sleepers', 'Hidden Gems', '🔍', 'Underrated role players worth a flier.', p => p.overall >= 66 && p.overall < 76);
 
+  // --- more cross-cuts (quality-mixed, for wheel variety) ---
+  const FIELD8 = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF'];
+  add('fun-utility', 'Utility Men', '🧰', 'Do-it-all gloves who line up anywhere.', p => isHitter(p) && p.positions.filter(x => FIELD8.includes(x)).length >= 3);
+  add('fun-twoway', 'Two-Way Threats', '🔀', 'They rake AND deal.', p => p.positions.includes('SP') && p.positions.some(x => ['DH', '1B', 'LF', 'RF', 'CF'].includes(x)), 2);
+  add('fun-cannon', 'Cannon Arms', '🎯', 'Plus-plus throwing arms.', p => isHitter(p) && (p.grades?.arm ?? 0) >= 66);
+  add('fun-vets', 'The Old-Timers', '👴', 'Ballplayers from a bygone era.', p => !!p.era && /19[0-7]0|Dead Ball|Sandlot/.test(p.era));
+  add('fun-glovef', 'Glove-First Infield', '🧤', 'Leather wizards around the horn.', p => { const r = getRatings(p); return r.kind === 'hitter' && ['C', '1B', '2B', '3B', 'SS'].includes(p.positions[0]) && r.field >= 64; });
+  add('fun-rockets', 'Rocket Launchers', '🚀', 'Light-tower, tape-measure power.', p => { const r = getRatings(p); return r.kind === 'hitter' && avg(r.hrVL, r.hrVR) >= 70; });
+  add('fun-contact', 'Contact Maestros', '🪄', 'They square it up every time.', p => { const r = getRatings(p); return r.kind === 'hitter' && avg(r.conVL, r.conVR) >= 70; });
+  add('fun-speedd', 'Speed & Defense', '🏃', 'Run it down, then steal a base.', p => { const r = getRatings(p); return r.kind === 'hitter' && r.run >= 62 && r.field >= 60; });
+
   return groups;
 }
 
