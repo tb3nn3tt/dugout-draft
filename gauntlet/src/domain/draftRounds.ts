@@ -1,18 +1,20 @@
 import { Player, Position, Tier, PlayerCategory } from './types';
-import { playersPool, managersPool, stadiumsPool, getTier } from './players';
-import { getPositionLabel } from './sim/helpers';
+import { playersPool, getCard, getTier } from './players';
+import { canPlayPosition } from './sim/helpers';
 import { rand } from './sim/rng';
-import { capTier, affordable, cardCost } from './salary';
+import { GROUPS, STAFF_GROUPS, Group } from './groups';
+
+// ============================================================================
+// Spin-the-wheel draft. Each pick spins a THEMED GROUP ("Texas Rangers", "Movie
+// Shortstops", "Flamethrowers"…); you choose one of four of its players, and the
+// pick auto-slots into the best open roster position it's eligible for. Roster
+// positions can be reshuffled before you submit (see the roster editor).
+// ============================================================================
 
 const PITCHING_ROLES = ['SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY'];
+const RELIEVER_POS = ['CL', 'SU', 'MRP', 'LRP', 'LOOGY'];
+const BENCH_POS = ['PH', 'PR', 'BC', 'IFD', 'OFD'];
 const isHitterCard = (p: Player) => !PITCHING_ROLES.includes(p.positions[0]) && p.positions[0] !== 'HC' && p.positions[0] !== 'ST';
-
-// ============================================================================
-// Spin-draft rounds. Each pick "spins" a quality (tier) and a role you still
-// need, sometimes themed from baseball history/fiction/lore — producing a named
-// round with a flavored offer. Backed by the expanded pool so every (role x
-// tier) cell has a full slate.
-// ============================================================================
 
 // Full 28-man roster the sim needs.
 export const ROLE_REQUIREMENTS: Record<string, number> = {
@@ -22,15 +24,12 @@ export const ROLE_REQUIREMENTS: Record<string, number> = {
   HC: 1, ST: 1,
 };
 
-// You interactively draft the full STRATEGIC roster — every piece that defines
-// how a team plays: the lineup, the whole rotation, the high-leverage bullpen
-// (closer + setup + lefty specialist) and your bench weapons (PH/PR). Only
-// incidental depth (middle/long relief, backup C, 2nd PH, defensive subs) auto-
-// fills, so you're never handed your 4th starter or your setup man by the CPU.
+// You interactively draft 9 batters, 4 SP, 4 RP, 2 bench, a coach + a field (21).
+// Generic RP/BN roles: the sim sorts bullpen leverage + bench use from the cards.
 export const MARQUEE_REQUIREMENTS: Record<string, number> = {
   C: 1, '1B': 1, '2B': 1, '3B': 1, SS: 1, LF: 1, CF: 1, RF: 1, DH: 1, // 9 batters
   SP: 4,                                                              // 4 starters
-  RP: 4,                                                              // 4 relievers (generic — sim sorts leverage)
+  RP: 4,                                                              // 4 relievers
   BN: 2,                                                              // 2 bench
   HC: 1, ST: 1,                                                       // coach + field
 };
@@ -40,177 +39,125 @@ export const DEPTH_REQUIREMENTS: Record<string, number> = {
 };
 export const TOTAL_PICKS = Object.values(MARQUEE_REQUIREMENTS).reduce((a, b) => a + b, 0);
 
+/** A spun round is now a GROUP, not a tier/position. */
 export interface DraftRound {
-  role: Position;
-  roleLabel: string;
-  tier: Tier;
-  name: string;       // round title, e.g. "The Diamond Mine"
+  groupId: string;
+  name: string;       // group name, e.g. "Texas Rangers"
   emoji: string;
-  flavor: string;     // one-line theme blurb
-  category?: PlayerCategory; // themed pool, when applicable
+  flavor: string;     // one-line blurb
 }
 
-// --- tiers: weighted so diamond is a treat and silver is the workhorse ---
-const TIER_WEIGHTS: { tier: Tier; w: number }[] = [
-  { tier: 'diamond', w: 12 },
-  { tier: 'gold', w: 26 },
-  { tier: 'silver', w: 34 },
-  { tier: 'bronze', w: 18 },
-  { tier: 'common', w: 10 },
-];
-function spinTier(): Tier {
-  const total = TIER_WEIGHTS.reduce((a, t) => a + t.w, 0);
-  let r = rand() * total;
-  for (const t of TIER_WEIGHTS) { if ((r -= t.w) < 0) return t.tier; }
-  return 'silver';
+// ---------------------------------------------------------------------------
+// Role eligibility + assignment
+// ---------------------------------------------------------------------------
+
+/** Can this player legally fill this OPEN roster role? */
+export function playerFitsRole(p: Player, role: Position): boolean {
+  switch (role) {
+    case 'HC': return p.positions.includes('HC');
+    case 'ST': return p.positions.includes('ST');
+    case 'SP': return p.positions.includes('SP');
+    case 'RP': return RELIEVER_POS.includes(p.positions[0]);
+    case 'BN': return isHitterCard(p);     // any position player can sit the bench
+    case 'DH': return isHitterCard(p);     // any hitter can DH
+    default: return canPlayPosition(p, role); // C/1B/2B/3B/SS/LF/CF/RF (+ flex)
+  }
 }
 
-const TIER_META: Record<Tier, { label: string; emoji: string }> = {
-  diamond: { label: 'Diamond', emoji: '💎' },
-  gold: { label: 'Gold', emoji: '🏅' },
-  silver: { label: 'Silver', emoji: '⚪' },
-  bronze: { label: 'Bronze', emoji: '🟫' },
-  common: { label: 'Common', emoji: '⚾' },
-};
+// Order in which a picked player claims an open slot — scarce defense first, then
+// rotation, pen, then DH/bench as catch-alls so a hitter always lands somewhere.
+const ASSIGN_PRIORITY: Position[] = ['C', 'SS', '2B', '3B', 'CF', 'RF', 'LF', '1B', 'SP', 'RP', 'DH', 'BN', 'HC', 'ST'];
 
-// --- themed pools drawn from real card categories (fact + fiction + lore) ---
-interface Theme { category: PlayerCategory; name: string; emoji: string; flavor: string; }
-const THEMES: Theme[] = [
-  { category: 'legend', name: 'Cooperstown Calls', emoji: '🏆', flavor: 'The immortals. History\'s very best step to the plate.' },
-  { category: 'fictional', name: 'Hollywood Heaters', emoji: '🎬', flavor: 'Straight off the silver screen — fact\'s wilder cousins.' },
-  { category: 'oddity', name: 'Tales from the Bush Leagues', emoji: '🃏', flavor: 'Cult heroes, one-game wonders, and beautiful weirdos.' },
-  { category: 'decade', name: 'Throwback Threads', emoji: '📻', flavor: 'Dialed back to a golden age of the game.' },
-  { category: 'playoff', name: 'October Legends', emoji: '🍂', flavor: 'Forged under the brightest lights.' },
-  { category: 'international', name: 'Around the Horn of the World', emoji: '🌎', flavor: 'Stars from every corner of the baseball globe.' },
-  { category: 'niners', name: 'The Niners Sandlot', emoji: '🐻', flavor: 'The misfits, the kids, the heart of the game.' },
-  { category: 'busts', name: 'Bust or Boom', emoji: '🎲', flavor: 'Phenoms who never were — or maybe, this time, will be.' },
-];
+/** The best open role this player should slot into, or null if nothing fits. */
+export function assignRole(p: Player, remaining: Record<string, number>): Position | null {
+  const prim = p.positions[0] as Position;
+  if ((remaining[prim] ?? 0) > 0 && playerFitsRole(p, prim)) return prim;
+  for (const role of ASSIGN_PRIORITY) {
+    if ((remaining[role] ?? 0) > 0 && playerFitsRole(p, role)) return role;
+  }
+  return null;
+}
 
-// Some named "pure tier" rounds for flavor when no theme is rolled.
-// Named by QUALITY TIER (not player archetype) so a slick-fielding silver hitter
-// in a silver round doesn't read as a contradiction.
-const TIER_ROUND_NAMES: Record<Tier, { name: string; flavor: string }> = {
-  diamond: { name: 'The Diamond Vault', flavor: 'The rarest, highest-rated players in the game.' },
-  gold: { name: 'The Gold Standard', flavor: 'Bona fide A-list talent — the backbone of a contender.' },
-  silver: { name: 'The Silver Circuit', flavor: 'Solid, reliable pros who quietly win you ballgames.' },
-  bronze: { name: 'The Bronze League', flavor: 'Affordable role players and blue-collar depth.' },
-  common: { name: 'The Open Tryout', flavor: 'Bargain-bin fliers and diamonds in the rough.' },
-};
+const isStaffCard = (p: Player) => p.positions[0] === 'HC' || p.positions[0] === 'ST';
+
+/** Group members that are pickable now: not drafted, pass the mutator filter, and fit an open slot. */
+function fittingMembers(group: Group, remaining: Record<string, number>, picked: Set<string>, poolFilter?: (p: Player) => boolean): Player[] {
+  const out: Player[] = [];
+  for (const id of group.memberIds) {
+    const p = getCard(id);
+    if (!p || picked.has(p.id)) continue;
+    if (poolFilter && !isStaffCard(p) && !poolFilter(p)) continue;
+    if (assignRole(p, remaining) !== null) out.push(p);
+  }
+  return out;
+}
+
+function shuffle<T>(a: T[]): T[] {
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
 
 /**
- * Who's eligible when a round rolls `role`. The DRAFT is stricter than the SIM:
- * a "Third Base" round offers players whose PRIMARY position is 3B — actual
- * third basemen — not every infielder who could merely cover the bag. The lone
- * exception is DH, which (being a hitting-only slot) draws from every hitter.
+ * Spin a group and offer up to 4 of its players that fit an open roster slot.
+ * Returns null only when the roster is full.
  */
-const RELIEVER_POS = ['CL', 'SU', 'MRP', 'LRP', 'LOOGY'];
-const BENCH_POS = ['PH', 'PR', 'BC', 'IFD', 'OFD'];
+export function spinGroupRound(
+  remaining: Record<string, number>,
+  picked: Set<string>,
+  poolFilter?: (p: Player) => boolean
+): { round: DraftRound; offered: Player[] } | null {
+  const open = Object.keys(remaining).filter(r => (remaining[r] ?? 0) > 0);
+  if (open.length === 0) return null;
+
+  const candidates: Group[] = [...GROUPS];
+  if ((remaining['HC'] ?? 0) > 0) candidates.push(STAFF_GROUPS.HC);
+  if ((remaining['ST'] ?? 0) > 0) candidates.push(STAFF_GROUPS.ST);
+
+  const viable = candidates.filter(g => fittingMembers(g, remaining, picked, poolFilter).length > 0);
+
+  let chosen: Group;
+  if (viable.length > 0) {
+    chosen = viable[Math.floor(rand() * viable.length)];
+  } else {
+    // Fallback: an ad-hoc "free agents" group of everyone who fits an open slot.
+    const ids = playersPool
+      .filter(p => !picked.has(p.id) && (!poolFilter || poolFilter(p)) && assignRole(p, remaining) !== null)
+      .map(p => p.id);
+    if ((remaining['HC'] ?? 0) > 0) ids.push(...STAFF_GROUPS.HC.memberIds);
+    if ((remaining['ST'] ?? 0) > 0) ids.push(...STAFF_GROUPS.ST.memberIds);
+    chosen = { id: 'free-agents', name: 'Free Agents', emoji: '🎲', blurb: 'A grab bag of available talent.', memberIds: ids };
+  }
+
+  const members = shuffle(fittingMembers(chosen, remaining, picked, poolFilter));
+  const offered = members.slice(0, 4).sort((a, b) => b.overall - a.overall);
+  return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb }, offered };
+}
+
+// ---------------------------------------------------------------------------
+// Depth auto-fill — still pulls the best available for a specific role.
+// ---------------------------------------------------------------------------
+
 function eligibleForRole(role: Position): Player[] {
-  if (role === 'HC') return managersPool;
-  if (role === 'ST') return stadiumsPool;
   if (role === 'DH') return playersPool.filter(isHitterCard);
   if (role === 'RP') return playersPool.filter(p => RELIEVER_POS.includes(p.positions[0]));
   if (role === 'BN') return playersPool.filter(p => BENCH_POS.includes(p.positions[0]));
   return playersPool.filter(p => p.positions[0] === role);
 }
 
-/** Build a tiered, optionally-themed offer for a role, widening if a cell is thin. */
+/** A simple tiered offer for auto-filling depth roles (RP/BN). */
 export function offerForRound(
   role: Position,
   tier: Tier,
-  pickedIds: Set<string>,
-  category?: PlayerCategory,
+  picked: Set<string>,
+  _category?: PlayerCategory,
   count = 5,
   poolFilter?: (p: Player) => boolean,
-  budgetRemaining = Infinity
 ): Player[] {
-  const all = eligibleForRole(role).filter(p => !pickedIds.has(p.id));
-  let base = all.filter(p => affordable(p, budgetRemaining));
-  // Safety net: if nothing's affordable for this slot, offer the cheapest cards
-  // anyway so the draft always completes (a forced cheap fill).
-  if (base.length === 0) {
-    return [...all].sort((a, b) => cardCost(a) - cardCost(b)).slice(0, count);
-  }
-  const restrict = poolFilter && role !== 'HC' && role !== 'ST' ? poolFilter : undefined;
-  const usable = restrict ? base.filter(restrict) : base;
-
-  // Try progressively looser constraints until we have a full slate.
-  const tries: ((p: Player) => boolean)[] = [
-    p => getTier(p.overall) === tier && (!category || p.category === category),
-    p => getTier(p.overall) === tier,
-    p => (!category || p.category === category),
-    () => true,
-  ];
+  const all = eligibleForRole(role).filter(p => !picked.has(p.id) && (!poolFilter || poolFilter(p)));
+  const base = all.length ? all : eligibleForRole(role).filter(p => !picked.has(p.id));
+  const tries: ((p: Player) => boolean)[] = [p => getTier(p.overall) === tier, () => true];
   let candidates: Player[] = [];
-  for (const t of tries) {
-    candidates = usable.filter(t);
-    if (candidates.length >= count) break;
-  }
-  // If a restrictive mutator left no affordable themed cards for this slot, fall
-  // back to affordable cards (any theme) so the draft never stalls.
+  for (const t of tries) { candidates = base.filter(t); if (candidates.length >= count) break; }
   if (candidates.length === 0) candidates = base;
-  // Random sample from the matched candidates.
-  const shuffled = [...candidates];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled.slice(0, count).sort((a, b) => b.overall - a.overall);
-}
-
-// Highest tier each role's PRIMARY pool can actually supply. Inherently low-tier
-// specialists (pinch runners, pinch hitters) have no diamond/gold cards, so a
-// round must not promise "Diamond" and then show bronze — clamp the rolled tier
-// to what the role can really field. Computed once from the pool.
-const TIER_RANK: Record<Tier, number> = { common: 0, bronze: 1, silver: 2, gold: 3, diamond: 4 };
-const RANK_TIER: Tier[] = ['common', 'bronze', 'silver', 'gold', 'diamond'];
-const ROLE_MAX_TIER: Partial<Record<Position, Tier>> = (() => {
-  const roles: Position[] = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH', 'SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY', 'PH', 'PR', 'BC', 'IFD', 'OFD', 'RP', 'BN'];
-  const m: Partial<Record<Position, Tier>> = {};
-  for (const role of roles) {
-    let max = 0;
-    for (const p of eligibleForRole(role)) { const r = TIER_RANK[getTier(p.overall)]; if (r > max) max = r; }
-    m[role] = RANK_TIER[max];
-  }
-  return m;
-})();
-function clampTierToRole(role: Position, tier: Tier): Tier {
-  const max = ROLE_MAX_TIER[role];
-  return max && TIER_RANK[tier] > TIER_RANK[max] ? max : tier;
-}
-
-/** Spin the next round given which roles are still needed + the budget left. */
-export function spinRound(
-  remaining: Record<string, number>,
-  budgetRemaining = Infinity,
-  slotsLeft = 1
-): DraftRound {
-  const needed = Object.keys(remaining).filter(r => remaining[r] > 0) as Position[];
-  const role = needed[Math.floor(rand() * needed.length)];
-  const roleLabel = getPositionLabel(role);
-
-  // Manager + stadium get their own bespoke rounds (free — no budget impact).
-  if (role === 'HC') {
-    return { role, roleLabel: 'Manager', tier: 'gold', name: 'Hire a Skipper', emoji: '🎩', flavor: 'Every great club needs a great mind in the dugout.' };
-  }
-  if (role === 'ST') {
-    return { role, roleLabel: 'Ballpark', tier: 'gold', name: 'Claim Your Cathedral', emoji: '🏟️', flavor: 'Pick the field you\'ll call home — it shapes every game.' };
-  }
-
-  // Budget caps how rich a tier you can roll; the role clamp keeps the banner
-  // honest (no "Diamond" round for a role with no diamond cards).
-  const tier = clampTierToRole(role, capTier(spinTier(), budgetRemaining, slotsLeft));
-  // ~38% of player rounds get a history/fiction theme.
-  const themed = rand() < 0.38;
-  if (themed) {
-    const theme = THEMES[Math.floor(rand() * THEMES.length)];
-    return {
-      role, roleLabel, tier,
-      name: theme.name, emoji: theme.emoji, flavor: theme.flavor,
-      category: theme.category,
-    };
-  }
-  const tm = TIER_META[tier];
-  const tn = TIER_ROUND_NAMES[tier];
-  return { role, roleLabel, tier, name: tn.name, emoji: tm.emoji, flavor: tn.flavor };
+  return shuffle([...candidates]).slice(0, count).sort((a, b) => b.overall - a.overall);
 }

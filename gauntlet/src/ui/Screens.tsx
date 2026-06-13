@@ -236,7 +236,6 @@ export function DraftScreen({ g }: { g: G }) {
   const { offered, picks, currentRound, draftLog } = g.state;
   const [detail, setDetail] = useState<Player | null>(null);
   const pickNum = picks.length + 1;
-  const tierColor = currentRound ? TIER_COLORS[currentRound.tier] : 'var(--accent)';
 
   return (
     <div className="draft">
@@ -245,7 +244,7 @@ export function DraftScreen({ g }: { g: G }) {
           <strong>{g.state.teamName}</strong>
           <span className="dim">Pick {pickNum} / {TOTAL_PICKS}</span>
         </div>
-        {currentRound && <RoundBanner round={currentRound} color={tierColor} />}
+        {currentRound && <RoundBanner round={currentRound} />}
       </div>
 
       <div className="draft__body">
@@ -253,7 +252,7 @@ export function DraftScreen({ g }: { g: G }) {
           {offered.map(p => <CardTile key={p.id} player={p} onPick={(pl) => { sfxPick(); g.pick(pl); }} onInfo={setDetail} />)}
         </div>
         <aside className="draft__depth">
-          <DepthSidebar draftLog={draftLog} activeRole={currentRound?.role} />
+          <DepthSidebar draftLog={draftLog} />
         </aside>
       </div>
 
@@ -270,13 +269,11 @@ export function DraftScreen({ g }: { g: G }) {
   );
 }
 
-// Slot-machine reveal for the spun round — tier/name/role roll, then lock.
-const SPIN_TIERS = ['DIAMOND', 'GOLD', 'SILVER', 'BRONZE', 'COMMON'];
-const SPIN_NAMES = ['💎 The Diamond Vault', '🏆 Cooperstown Calls', '🎬 Hollywood Heaters', '🐻 The Sandlot',
-  '⚪ The Silver Circuit', '🟫 The Bronze League', '🎲 Bust or Boom', '🌎 Around the World', '🍂 October Legends'];
-const SPIN_ROLES = ['Catcher', 'Shortstop', 'Ace Starter', 'Closer', 'Center Field', 'Pinch Hitter', 'Setup Man', 'Third Base'];
+// Slot-machine reveal — group names flash by, then lock onto the spun group.
+const SPIN_GROUPS = ['🔥 Flamethrowers', '🏛️ Cooperstown Immortals', '🎬 Hollywood Heroes', '🧢 The Sandlot Kids',
+  '⚾ Texas Rangers', '💪 The Sluggers', '🌎 World Baseball Stars', '⚡ Peak Seasons', '🪄 Wizards at Short', '🍂 October Heroes'];
 
-function RoundBanner({ round, color }: { round: DraftRound; color: string }) {
+function RoundBanner({ round }: { round: DraftRound }) {
   const [spin, setSpin] = useState(true);
   const [t, setT] = useState(0);
   useEffect(() => {
@@ -285,17 +282,13 @@ function RoundBanner({ round, color }: { round: DraftRound; color: string }) {
     const iv = setInterval(() => { setT(x => x + 1); if (++n >= 9) { clearInterval(iv); setSpin(false); sfxLock(); } }, 60);
     return () => clearInterval(iv);
   }, [round]);
-  const tier = spin ? SPIN_TIERS[t % SPIN_TIERS.length] : round.tier.toUpperCase();
-  const name = spin ? SPIN_NAMES[t % SPIN_NAMES.length] : `${round.emoji} ${round.name}`;
-  const role = spin ? SPIN_ROLES[t % SPIN_ROLES.length] : round.roleLabel;
-  const c = spin ? 'var(--accent-2)' : color;
+  const label = spin ? SPIN_GROUPS[t % SPIN_GROUPS.length] : `${round.emoji} ${round.name}`;
+  const c = spin ? 'var(--accent-2)' : 'var(--accent)';
   return (
     <div className={`round-banner ${spin ? 'round-banner--spin' : 'round-banner--lock'}`} style={{ borderColor: c }}>
-      <div className="round-banner__name">{name}</div>
-      <div className="round-banner__role">
-        <span className="badge" style={{ borderColor: c, color: c }}>{tier}</span>
-        <span>Drafting: <strong>{role}</strong></span>
-      </div>
+      <div className="round-banner__name">{label}</div>
+      <div className="round-banner__flavor">{spin ? 'Spinning the wheel…' : round.flavor}</div>
+      <div className="round-banner__role"><span className="dim">Pick a player — they’ll fill an open spot</span></div>
     </div>
   );
 }

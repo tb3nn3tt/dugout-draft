@@ -1,5 +1,5 @@
 import { GauntletTeam, Player, Position, RunPhase, SeriesOutcome } from '../domain/types';
-import { MARQUEE_REQUIREMENTS, DEPTH_REQUIREMENTS, spinRound, offerForRound, DraftRound } from '../domain/draftRounds';
+import { MARQUEE_REQUIREMENTS, DEPTH_REQUIREMENTS, spinGroupRound, assignRole, offerForRound, DraftRound } from '../domain/draftRounds';
 import { MatchedOpponent } from '../domain/matchmaking';
 import { SeriesResult } from '../domain/sim/series';
 import { getMutator } from '../domain/mutators';
@@ -77,20 +77,15 @@ function buildTeamFromPicks(name: string, picks: Player[]): GauntletTeam {
 }
 
 /**
- * Spin the next marquee round + build its offer, or null when marquee is done.
- * No salary cap any more — every round is a pure tier × role spin, so teams come
- * out as a believable mix of stars and role players rather than a stacked squad.
+ * Spin the next round — a THEMED GROUP whose players can fill an open slot — or
+ * null when the roster is full. The pick then auto-assigns to the best open role.
  */
 function nextRound(
   remaining: Record<string, number>,
   picks: Player[],
   filter: ((p: Player) => boolean) | undefined
 ): { round: DraftRound; offered: Player[] } | null {
-  const slotsLeft = Object.values(remaining).reduce((a, n) => a + n, 0);
-  if (slotsLeft <= 0) return null;
-  const round = spinRound(remaining, Infinity, slotsLeft);
-  const offered = offerForRound(round.role, round.tier, pickedIds(picks), round.category, 5, filter);
-  return { round, offered };
+  return spinGroupRound(remaining, pickedIds(picks), filter);
 }
 
 /**
@@ -152,7 +147,9 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
 
     case 'PICK': {
       if (!state.currentRound) return state;
-      const role = state.currentRound.role;
+      // The picked player auto-slots into the best open role they're eligible for.
+      const role = assignRole(action.player, state.remaining);
+      if (!role) return state; // not eligible for any open slot (shouldn't happen)
       const picks = [...state.picks, action.player];
       const draftLog = [...state.draftLog, { role, player: action.player }];
       const remaining = { ...state.remaining, [role]: (state.remaining[role] ?? 0) - 1 };
@@ -168,19 +165,21 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       const picks = [...state.picks];
       const draftLog = [...state.draftLog];
       const remaining = { ...state.remaining };
-      let round: DraftRound | null = state.currentRound;
       let offered = state.offered;
       let guard = 0;
-      while (round && Object.values(remaining).some(n => n > 0) && guard++ < 30) {
+      while (Object.values(remaining).some(n => n > 0) && guard++ < 40) {
         const choice = offered[0];
         if (choice) {
-          picks.push(choice);
-          draftLog.push({ role: round.role, player: choice });
-          remaining[round.role] = (remaining[round.role] ?? 0) - 1;
+          const role = assignRole(choice, remaining);
+          if (role) {
+            picks.push(choice);
+            draftLog.push({ role, player: choice });
+            remaining[role] = (remaining[role] ?? 0) - 1;
+          }
         }
         const next = nextRound(remaining, picks, filter);
-        round = next?.round ?? null;
         offered = next?.offered ?? [];
+        if (!next) break;
       }
       return finishDraft(state, picks, draftLog, filter);
     }
