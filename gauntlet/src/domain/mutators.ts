@@ -45,7 +45,7 @@ export const MUTATORS: Mutator[] = [
     id: 'sluggers',
     name: 'Sluggers Only',
     emoji: '💪',
-    description: 'Only big bats and power arms. Draft a wrecking crew.',
+    description: 'Only big bats and power arms — draft a wrecking crew. A stacked, higher-scoring romp.',
     poolFilter: (p) =>
       isPitcher(p)
         ? (p.grades?.fastball ?? 50) >= 55
@@ -55,7 +55,7 @@ export const MUTATORS: Mutator[] = [
     id: 'legends',
     name: 'Legends Only',
     emoji: '👑',
-    description: 'History\'s greatest. The draft pool is all-time legends.',
+    description: 'History\'s greatest only — an all-time roster. The power-fantasy victory lap.',
     poolFilter: (p) => p.overall >= 85,
   },
   {
