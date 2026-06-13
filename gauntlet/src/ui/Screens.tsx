@@ -14,7 +14,11 @@ import { CardTile } from './CardTile';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
 import { LadderScreen } from './LadderScreen';
+import { shareTeamImage, ShareSection } from './shareCard';
 import { submitTeam } from '../firebase/ladder';
+
+// Resolved tier hex (canvas can't read CSS vars) for the share image.
+const TIER_HEX: Record<string, string> = { diamond: '#79f0ff', gold: '#ffce4a', silver: '#cdd9ea', bronze: '#e3914f', common: '#7286a3' };
 
 type G = ReturnType<typeof useGauntlet>;
 
@@ -470,7 +474,33 @@ export function RunOverScreen({ g }: { g: G }) {
   const mut = getMutator(mutatorId);
   const award = useMemo(() => runAwards(g.state.runStats), [g.state.runStats]);
   const [shared, setShared] = useState(false);
+  const [imgState, setImgState] = useState<'idle' | 'working' | 'shared' | 'saved'>('idle');
   const [ladderState, setLadderState] = useState<'idle' | 'sending' | 'sent'>('idle');
+
+  // Build the share-image sections from the drafted roster (same grouping as the team sheet).
+  const shareImage = async () => {
+    if (imgState === 'working') return;
+    setImgState('working');
+    const cursor = new Map<string, number>();
+    const sections: ShareSection[] = SHEET_SECTIONS.map(sec => ({
+      title: sec.title,
+      rows: sec.slots.map(slot => {
+        const k = cursor.get(slot.role) ?? 0; cursor.set(slot.role, k + 1);
+        const p = g.state.draftLog.filter(e => e.role === slot.role)[k]?.player;
+        return {
+          pos: slot.label,
+          name: p ? abbrevName(p.name) : '—',
+          grade: p ? overallToGrade(p.overall) : '',
+          color: p ? TIER_HEX[getTier(p.overall)] : '#56678a',
+        };
+      }),
+    }));
+    const sub = `${runDiff >= 0 ? '+' : ''}${runDiff} run diff${hof ? ` · #${hof.rank} all-time` : ''}`;
+    try {
+      const res = await shareTeamImage(team?.name ?? 'My Squad', `${streak}-0`, sub, sections);
+      setImgState(res);
+    } catch { setImgState('idle'); }
+  };
 
   const sendToLadder = async () => {
     if (!team || ladderState !== 'idle') return;
@@ -545,8 +575,11 @@ export function RunOverScreen({ g }: { g: G }) {
       <button className="btn" onClick={sendToLadder} disabled={ladderState !== 'idle'}>
         {ladderState === 'sent' ? '✓ On the Global Ladder!' : ladderState === 'sending' ? 'Sending…' : '⚔️ Send team to the Global Ladder'}
       </button>
-      <button className="btn btn--secondary" onClick={share}>
-        {shared ? '✓ Copied!' : '📲 Share result'}
+      <button className="btn btn--secondary" onClick={shareImage} disabled={imgState === 'working'}>
+        {imgState === 'working' ? 'Building…' : imgState === 'shared' ? '✓ Shared!' : imgState === 'saved' ? '✓ Image saved!' : '📸 Share team image'}
+      </button>
+      <button className="btn btn--ghost" onClick={share}>
+        {shared ? '✓ Copied!' : '📲 Share as text'}
       </button>
       <button className="btn btn--ghost" onClick={() => g.startRun(team?.name ?? 'My Squad', mutatorId)}>Run it back ⚾</button>
       <button className="btn btn--ghost" onClick={g.backToMenu}>Main menu</button>
