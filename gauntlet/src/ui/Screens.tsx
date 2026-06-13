@@ -174,10 +174,11 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
 // How to play
 // ---------------------------------------------------------------------------
 const HELP_STEPS: { emoji: string; title: string; body: string }[] = [
-  { emoji: '🎰', title: 'Spin your team', body: 'Each pick spins a tier × position — a Diamond shortstop, a Bronze closer, a themed throwback round. You\'ll get a real mix of stars and grinders, just like a big-league roster.' },
-  { emoji: '🏆', title: 'Run the gauntlet', body: 'Your team faces a ladder of legendary clubs — the Sandlot, the Bronx Bombers, Cooperstown Immortals — best-of-7 each, getting tougher as you climb.' },
-  { emoji: '🔥', title: 'Build a streak', body: 'Win a series, move on. Lose one, your run ends and your team is logged forever. How far can you go?' },
-  { emoji: '🌐', title: 'Climb the world', body: 'Send your team to the Global Ladder — it keeps battling other real players\' teams over time. Survive the most series and you\'re the world champ.' },
+  { emoji: '🎡', title: 'Spin the wheel', body: 'Every pick spins a themed group — a real club, a movie cast, an archetype like Flamethrowers — then you choose one of four players to fill an open spot.' },
+  { emoji: '⚾', title: 'Build your 18', body: 'Draft a 9-man lineup, 4 starters, 3 relievers, plus a coach and a ballpark — only the pieces that actually win playoff series.' },
+  { emoji: '🔀', title: 'Set your lineup', body: 'Before you lock in, move any player to a position they can play. Put your best bats where you want them.' },
+  { emoji: '🏆', title: 'Run the gauntlet', body: 'Your team auto-plays best-of-7 series up a ladder of legendary clubs — the Sandlot, the Bronx Bombers, Cooperstown — getting tougher every win.' },
+  { emoji: '🌐', title: 'Climb the world', body: 'Lose and your run is logged forever. Send your team to the Global Ladder to keep battling real players\' teams. How far can you go?' },
 ];
 export function HelpScreen({ onBack }: { onBack: () => void }) {
   return (
