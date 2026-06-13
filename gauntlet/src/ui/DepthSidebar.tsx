@@ -15,10 +15,10 @@ const GROUPS: { title: string; slots: { role: Position; label: string }[] }[] = 
     { role: 'SP', label: 'SP3' }, { role: 'SP', label: 'SP4' },
   ]},
   { title: 'BULLPEN', slots: [
-    { role: 'CL', label: 'CL' }, { role: 'SU', label: 'SU1' },
-    { role: 'SU', label: 'SU2' }, { role: 'LOOGY', label: 'vL' },
+    { role: 'RP', label: 'RP1' }, { role: 'RP', label: 'RP2' },
+    { role: 'RP', label: 'RP3' }, { role: 'RP', label: 'RP4' },
   ]},
-  { title: 'BENCH', slots: [{ role: 'PH', label: 'PH' }, { role: 'PR', label: 'PR' }] },
+  { title: 'BENCH', slots: [{ role: 'BN', label: 'BN1' }, { role: 'BN', label: 'BN2' }] },
   { title: 'STAFF', slots: [{ role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PRK' }] },
 ];
 
@@ -62,7 +62,7 @@ export function DepthSidebar({ draftLog, activeRole }: { draftLog: DraftEntry[];
           })}
         </div>
       ))}
-      <div className="depth__note">+ middle/long relief &amp; bench depth auto-filled</div>
+      <div className="depth__note">+ bullpen &amp; bench depth auto-filled</div>
     </div>
   );
 }

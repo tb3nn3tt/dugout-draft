@@ -28,15 +28,15 @@ export const ROLE_REQUIREMENTS: Record<string, number> = {
 // incidental depth (middle/long relief, backup C, 2nd PH, defensive subs) auto-
 // fills, so you're never handed your 4th starter or your setup man by the CPU.
 export const MARQUEE_REQUIREMENTS: Record<string, number> = {
-  C: 1, '1B': 1, '2B': 1, '3B': 1, SS: 1, LF: 1, CF: 1, RF: 1, DH: 1, // 9 lineup
-  SP: 4,                                                              // full 4-man rotation
-  CL: 1, SU: 2, LOOGY: 1,                                             // closer, 2 setup, lefty specialist
-  PH: 1, PR: 1,                                                       // pinch hitter + pinch runner
-  HC: 1, ST: 1,                                                       // manager + ballpark
+  C: 1, '1B': 1, '2B': 1, '3B': 1, SS: 1, LF: 1, CF: 1, RF: 1, DH: 1, // 9 batters
+  SP: 4,                                                              // 4 starters
+  RP: 4,                                                              // 4 relievers (generic — sim sorts leverage)
+  BN: 2,                                                              // 2 bench
+  HC: 1, ST: 1,                                                       // coach + field
 };
 export const DEPTH_REQUIREMENTS: Record<string, number> = {
-  MRP: 2, LRP: 1,                           // middle + long relief
-  BC: 1, PH: 1, IFD: 1, OFD: 1,             // backup C, 2nd PH, defensive subs
+  RP: 3,                                    // round out the 7-man bullpen
+  BN: 4,                                    // round out the bench
 };
 export const TOTAL_PICKS = Object.values(MARQUEE_REQUIREMENTS).reduce((a, b) => a + b, 0);
 
@@ -103,10 +103,14 @@ const TIER_ROUND_NAMES: Record<Tier, { name: string; flavor: string }> = {
  * third basemen — not every infielder who could merely cover the bag. The lone
  * exception is DH, which (being a hitting-only slot) draws from every hitter.
  */
+const RELIEVER_POS = ['CL', 'SU', 'MRP', 'LRP', 'LOOGY'];
+const BENCH_POS = ['PH', 'PR', 'BC', 'IFD', 'OFD'];
 function eligibleForRole(role: Position): Player[] {
   if (role === 'HC') return managersPool;
   if (role === 'ST') return stadiumsPool;
   if (role === 'DH') return playersPool.filter(isHitterCard);
+  if (role === 'RP') return playersPool.filter(p => RELIEVER_POS.includes(p.positions[0]));
+  if (role === 'BN') return playersPool.filter(p => BENCH_POS.includes(p.positions[0]));
   return playersPool.filter(p => p.positions[0] === role);
 }
 
@@ -161,7 +165,7 @@ export function offerForRound(
 const TIER_RANK: Record<Tier, number> = { common: 0, bronze: 1, silver: 2, gold: 3, diamond: 4 };
 const RANK_TIER: Tier[] = ['common', 'bronze', 'silver', 'gold', 'diamond'];
 const ROLE_MAX_TIER: Partial<Record<Position, Tier>> = (() => {
-  const roles: Position[] = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH', 'SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY', 'PH', 'PR', 'BC', 'IFD', 'OFD'];
+  const roles: Position[] = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH', 'SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY', 'PH', 'PR', 'BC', 'IFD', 'OFD', 'RP', 'BN'];
   const m: Partial<Record<Position, Tier>> = {};
   for (const role of roles) {
     let max = 0;

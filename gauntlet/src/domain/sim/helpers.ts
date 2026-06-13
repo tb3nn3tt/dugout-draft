@@ -53,6 +53,8 @@ export function getPositionColor(position: Position): string {
     MRP: '#d35400',
     LRP: '#a04000',
     LOOGY: '#6c3483',
+    RP: '#d35400',
+    BN: '#7f8c8d',
     HC: '#2c3e50',
     ST: '#1a5276',
   };
@@ -81,6 +83,8 @@ export function getPositionLabel(position: Position): string {
     MRP: 'Middle Relief',
     LRP: 'Long Relief',
     LOOGY: 'LOOGY',
+    RP: 'Reliever',
+    BN: 'Bench',
     HC: 'Head Coach',
     ST: 'Stadium',
   };
@@ -152,6 +156,7 @@ export function getRosterNeeds(roster: Player[]): Position[] {
     LF: 0, CF: 0, RF: 0, DH: 0,
     BC: 0, PH: 0, PR: 0, IFD: 0, OFD: 0,
     SP: 0, CL: 0, SU: 0, MRP: 0, LRP: 0, LOOGY: 0,
+    RP: 0, BN: 0,
     HC: 0, ST: 0,
   };
 
@@ -161,7 +166,7 @@ export function getRosterNeeds(roster: Player[]): Position[] {
   });
 
   const needs: Position[] = [];
-  (Object.keys(ROSTER_REQUIREMENTS) as Position[]).forEach(pos => {
+  (Object.keys(ROSTER_REQUIREMENTS) as (keyof typeof ROSTER_REQUIREMENTS)[]).forEach(pos => {
     if (counts[pos] < ROSTER_REQUIREMENTS[pos]) {
       needs.push(pos);
     }

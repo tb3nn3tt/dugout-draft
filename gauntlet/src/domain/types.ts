@@ -2,6 +2,7 @@ export type Position =
   | 'C' | '1B' | '2B' | '3B' | 'SS' | 'LF' | 'CF' | 'RF' | 'DH'
   | 'BC' | 'PH' | 'PR' | 'IFD' | 'OFD'
   | 'SP' | 'CL' | 'SU' | 'MRP' | 'LRP' | 'LOOGY'
+  | 'RP' | 'BN'   // draft-only generic roles (Reliever / Bench) — never tag a real player
   | 'HC'
   | 'ST';
 
