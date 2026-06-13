@@ -1,5 +1,5 @@
 import { GauntletTeam, Player, Position, RunPhase, SeriesOutcome } from '../domain/types';
-import { MARQUEE_REQUIREMENTS, DEPTH_REQUIREMENTS, spinGroupRound, assignRole, offerForRound, DraftRound } from '../domain/draftRounds';
+import { MARQUEE_REQUIREMENTS, DEPTH_REQUIREMENTS, spinGroupRound, assignRole, playerFitsRole, offerForRound, DraftRound } from '../domain/draftRounds';
 import { MatchedOpponent } from '../domain/matchmaking';
 import { SeriesResult } from '../domain/sim/series';
 import { getMutator } from '../domain/mutators';
@@ -39,9 +39,14 @@ export type GauntletAction =
   | { type: 'START_RUN'; teamName: string; seed: number; mutatorId: string }
   | { type: 'PICK'; player: Player }
   | { type: 'AUTOFILL_REST' }
+  | { type: 'SWAP_SLOTS'; a: number; b: number } // roster editor: swap two slots' players
+  | { type: 'SUBMIT_ROSTER' }                    // lock the roster, start the gauntlet
   | { type: 'APPEND_SERIES'; opponent: MatchedOpponent; result: SeriesResult }
   | { type: 'END_RUN' }
   | { type: 'BACK_TO_MENU' };
+
+// The lineup defensive slots whose assignment the sim honors (incl. DH).
+const LINEUP_ROLES = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH'];
 
 export const initialState: GauntletState = {
   phase: 'menu',
@@ -69,11 +74,16 @@ function pickedIds(picks: Player[]): Set<string> {
   return new Set(picks.map(p => p.id));
 }
 
-function buildTeamFromPicks(name: string, picks: Player[]): GauntletTeam {
+function buildTeamFromPicks(name: string, picks: Player[], draftLog: DraftEntry[]): GauntletTeam {
   const manager = picks.find(p => p.positions.includes('HC')) ?? null;
   const stadium = picks.find(p => p.positions.includes('ST')) ?? null;
   const roster = picks.filter(p => p !== manager && p !== stadium);
-  return { name, roster, manager, stadium };
+  // Freeze the player's chosen defensive alignment so the sim honors it.
+  const lineup: Record<string, string> = {};
+  for (const e of draftLog) {
+    if (LINEUP_ROLES.includes(e.role) && !lineup[e.role]) lineup[e.role] = e.player.id;
+  }
+  return { name, roster, manager, stadium, lineup };
 }
 
 /**
@@ -112,15 +122,13 @@ function fillDepth(
   }
 }
 
-/** Marquee draft complete → fill depth, freeze the team, start the auto-run. */
-function finishDraft(state: GauntletState, picks: Player[], draftLog: DraftEntry[], filter: ((p: Player) => boolean) | undefined): GauntletState {
-  fillDepth(picks, draftLog, filter);
+/** Marquee draft complete → go to the roster editor (depth + team build happen at submit). */
+function finishDraft(state: GauntletState, picks: Player[], draftLog: DraftEntry[]): GauntletState {
   return {
     ...state,
     picks, draftLog,
     remaining: {},
-    team: buildTeamFromPicks(state.teamName, picks),
-    phase: 'gauntlet',
+    phase: 'roster_review',
     currentRound: null,
     offered: [],
   };
@@ -156,7 +164,7 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       const filter = getMutator(state.mutatorId).poolFilter;
       const next = nextRound(remaining, picks, filter);
 
-      if (!next) return finishDraft(state, picks, draftLog, filter);
+      if (!next) return finishDraft(state, picks, draftLog);
       return { ...state, picks, draftLog, remaining, currentRound: next.round, offered: next.offered };
     }
 
@@ -181,7 +189,27 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
         offered = next?.offered ?? [];
         if (!next) break;
       }
-      return finishDraft(state, picks, draftLog, filter);
+      return finishDraft(state, picks, draftLog);
+    }
+
+    case 'SWAP_SLOTS': {
+      const { a, b } = action;
+      const dl = state.draftLog;
+      if (a === b || a < 0 || b < 0 || a >= dl.length || b >= dl.length) return state;
+      const ea = dl[a], eb = dl[b];
+      // Legal only if each player can play the other's role.
+      if (!playerFitsRole(eb.player, ea.role) || !playerFitsRole(ea.player, eb.role)) return state;
+      const draftLog = dl.map((e, i) => i === a ? { ...e, player: eb.player } : i === b ? { ...e, player: ea.player } : e);
+      return { ...state, draftLog };
+    }
+
+    case 'SUBMIT_ROSTER': {
+      if (state.phase !== 'roster_review') return state;
+      const filter = getMutator(state.mutatorId).poolFilter;
+      const picks = [...state.picks];
+      const draftLog = [...state.draftLog];
+      fillDepth(picks, draftLog, filter); // round out bullpen + bench
+      return { ...state, picks, draftLog, team: buildTeamFromPicks(state.teamName, picks, draftLog), phase: 'gauntlet' };
     }
 
     case 'APPEND_SERIES': {

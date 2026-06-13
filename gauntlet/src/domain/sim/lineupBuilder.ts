@@ -46,12 +46,27 @@ function sortIntoBattingOrder(entries: LineupEntry[]): LineupEntry[] {
  * Ensures one player per defensive position (C, 1B, 2B, 3B, SS, LF, CF, RF, DH).
  * Returns LineupEntry[] with each player's assigned defensive position.
  */
-export function generateOptimalLineup(roster: Player[]): LineupEntry[] {
+export function generateOptimalLineup(roster: Player[], forced?: Record<string, string>): LineupEntry[] {
   const hitters = roster.filter(isHitter);
   const starters = hitters.filter(h => !isBenchOnly(h));
 
   const usedIds = new Set<string>();
   const assigned: LineupEntry[] = [];
+  const byId = new Map(roster.map(p => [p.id, p]));
+
+  // Step 0: Honor the player's chosen alignment first — place any forced player at
+  // its position if it's a legal fit (DH accepts any hitter). The auto-fill below
+  // then covers only the positions the player didn't pin.
+  if (forced) {
+    for (const pos of [...DEFENSIVE_POSITIONS, 'DH' as Position]) {
+      const id = forced[pos];
+      const p = id ? byId.get(id) : undefined;
+      if (p && !usedIds.has(p.id) && isHitter(p) && (pos === 'DH' || canPlayPosition(p, pos))) {
+        assigned.push({ player: p, assignedPosition: pos });
+        usedIds.add(p.id);
+      }
+    }
+  }
 
   // Step 1: Sort defensive positions by scarcity (fewest eligible candidates first)
   // This prevents conflicts — fill C and SS before 1B and DH
@@ -61,8 +76,11 @@ export function generateOptimalLineup(roster: Player[]): LineupEntry[] {
     return aCount - bCount;
   });
 
-  // Step 2: Assign best available player to each defensive position
+  const filledPos = new Set(assigned.map(e => e.assignedPosition));
+
+  // Step 2: Assign best available player to each still-open defensive position
   for (const pos of positionsByScarcity) {
+    if (filledPos.has(pos)) continue;
     const candidates = starters.filter(
       h => canPlayPosition(h, pos) && !usedIds.has(h.id)
     );
@@ -74,7 +92,7 @@ export function generateOptimalLineup(roster: Player[]): LineupEntry[] {
   }
 
   // Step 3: Fill DH with best remaining hitter (including bench players as DH)
-  const dhCandidates = hitters.filter(h => !usedIds.has(h.id));
+  const dhCandidates = filledPos.has('DH') ? [] : hitters.filter(h => !usedIds.has(h.id));
   if (dhCandidates.length > 0) {
     const bestDH = dhCandidates.sort((a, b) => b.overall - a.overall)[0];
     assigned.push({ player: bestDH, assignedPosition: 'DH' });

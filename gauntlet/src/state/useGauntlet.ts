@@ -38,6 +38,8 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
 
   const pick = useCallback((player: Player) => dispatch({ type: 'PICK', player }), []);
   const autofill = useCallback(() => dispatch({ type: 'AUTOFILL_REST' }), []);
+  const swapSlots = useCallback((a: number, b: number) => dispatch({ type: 'SWAP_SLOTS', a, b }), []);
+  const submitRoster = useCallback(() => dispatch({ type: 'SUBMIT_ROSTER' }), []);
   const backToMenu = useCallback(() => dispatch({ type: 'BACK_TO_MENU' }), []);
 
   // Auto-run the gauntlet: face opponent after opponent until a loss.
@@ -99,6 +101,8 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
     startRun,
     pick,
     autofill,
+    swapSlots,
+    submitRoster,
     backToMenu,
   };
 }

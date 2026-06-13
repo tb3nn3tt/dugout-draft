@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
-import { TOTAL_PICKS, DraftRound } from '../domain/draftRounds';
+import { TOTAL_PICKS, DraftRound, playerFitsRole } from '../domain/draftRounds';
 import { TIER_COLORS, getTier } from '../domain/players';
 import { overallToGrade } from '../domain/sim/helpers';
 import { Player, Position } from '../domain/types';
@@ -387,6 +387,67 @@ function TeamSheet({ draftLog, teamName, record }: { draftLog: DraftEntry[]; tea
         </div>
       </div>
       <div className="tsheet__tag">⚾ DUGOUT GAUNTLET</div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Roster review — set your lineup before locking the roster in
+// ---------------------------------------------------------------------------
+export function RosterReviewScreen({ g }: { g: G }) {
+  const { draftLog, teamName } = g.state;
+  const [sel, setSel] = useState<number | null>(null);
+
+  // Map each grouped display slot to its draftLog index (one cursor per role).
+  const byRole = new Map<string, number[]>();
+  draftLog.forEach((e, i) => { const a = byRole.get(e.role) ?? []; a.push(i); byRole.set(e.role, a); });
+
+  // Which slots can legally swap with the selected one (each fits the other's role).
+  const targets = new Set<number>();
+  if (sel != null) {
+    const si = draftLog[sel];
+    draftLog.forEach((e, j) => {
+      if (j !== sel && playerFitsRole(e.player, si.role) && playerFitsRole(si.player, e.role)) targets.add(j);
+    });
+  }
+  const tap = (idx: number) => {
+    if (sel == null || sel === idx) setSel(sel === idx ? null : idx);
+    else if (targets.has(idx)) { g.swapSlots(sel, idx); setSel(null); }
+    else setSel(idx);
+  };
+
+  const cursor = new Map<string, number>();
+  return (
+    <div className="stack" style={{ marginTop: 16, gap: 12 }}>
+      <div className="center stack" style={{ gap: 2 }}>
+        <span className="dim" style={{ letterSpacing: 2, fontSize: 11 }}>SET YOUR LINEUP</span>
+        <h1 style={{ fontSize: 23 }}>{teamName}</h1>
+        <p className="dim" style={{ fontSize: 12 }}>Tap a player, then a highlighted slot to swap. Put your bats where you want them.</p>
+      </div>
+      <div className="redit">
+        {SHEET_SECTIONS.map(sec => (
+          <div key={sec.title} className="redit__sec">
+            <div className="redit__title">{sec.title}</div>
+            {sec.slots.map((slot, n) => {
+              const k = cursor.get(slot.role) ?? 0; cursor.set(slot.role, k + 1);
+              const idx = (byRole.get(slot.role) ?? [])[k];
+              const p = idx != null ? draftLog[idx]?.player : undefined;
+              const color = p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)';
+              const isSel = idx === sel;
+              const isTgt = idx != null && targets.has(idx);
+              return (
+                <button key={n} className={`redit__row${isSel ? ' redit__row--sel' : ''}${isTgt ? ' redit__row--tgt' : ''}`}
+                  onClick={() => idx != null && tap(idx)} disabled={idx == null}>
+                  <span className="redit__pos">{slot.label}</span>
+                  <span className="redit__nm">{p ? sheetName(p.name) : '—'}</span>
+                  <span className="redit__gr" style={{ color }}>{p ? overallToGrade(p.overall) : ''}</span>
+                </button>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+      <button className="btn" onClick={g.submitRoster}>🔒 Lock roster & start the gauntlet</button>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export function buildSimTeam(team: GauntletTeam, owner: 'player1' | 'player2'): 
   if (team.manager && !roster.some(p => p.id === team.manager!.id)) roster.push(team.manager);
   if (team.stadium && !roster.some(p => p.id === team.stadium!.id)) roster.push(team.stadium);
 
-  const battingOrder = generateOptimalLineup(roster).map(e => e.player);
+  const battingOrder = generateOptimalLineup(roster, team.lineup).map(e => e.player);
   const rotation = generateOptimalRotation(roster);
   const bullpenConfig = generateOptimalBullpen(roster);
   const bullpen = [

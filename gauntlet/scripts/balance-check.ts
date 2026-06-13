@@ -68,6 +68,8 @@ function draft(seed: number, mode: 'best' | 'mid' | 'worst', mutatorId = 'standa
     const pick = mode === 'best' ? o[0] : mode === 'worst' ? o[o.length - 1] : o[o.length >> 1];
     s = gauntletReducer(s, { type: 'PICK', player: pick });
   }
+  // Draft now ends at the roster editor — lock it in to build the team + start.
+  if (s.phase === 'roster_review') s = gauntletReducer(s, { type: 'SUBMIT_ROSTER' });
   return s;
 }
 function runGauntlet(team: GauntletState['team']): number {

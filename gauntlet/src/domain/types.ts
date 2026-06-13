@@ -473,6 +473,7 @@ export interface GauntletTeam {
   roster: Player[];        // hitters + pitchers, in pick order
   manager: Player | null;  // HC card
   stadium: Player | null;  // ST card
+  lineup?: Record<string, string>; // chosen defensive alignment: position -> playerId (incl. DH)
 }
 
 // A serialized opponent snapshot stored in the shared pool. Only ids persist;
@@ -492,6 +493,7 @@ export interface GhostTeam {
 export type RunPhase =
   | 'menu'
   | 'drafting'
+  | 'roster_review' // set your lineup positions before locking the roster in
   | 'gauntlet'      // auto-playing the run; the series list fills in live
   | 'run_over';
 

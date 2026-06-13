@@ -4,7 +4,7 @@ import { GhostTeam } from './domain/types';
 import { ensureAuth } from './firebase/firebase';
 import { tickLadder, getGhostPool } from './firebase/ladder';
 import {
-  MenuScreen, DraftScreen, GauntletRunScreen, RunOverScreen,
+  MenuScreen, DraftScreen, RosterReviewScreen, GauntletRunScreen, RunOverScreen,
 } from './ui/Screens';
 
 export default function App() {
@@ -32,6 +32,7 @@ export default function App() {
     <div className="app-shell">
       {phase === 'menu' && <MenuScreen g={g} />}
       {phase === 'drafting' && <DraftScreen g={g} />}
+      {phase === 'roster_review' && <RosterReviewScreen g={g} />}
       {phase === 'gauntlet' && <GauntletRunScreen g={g} />}
       {phase === 'run_over' && <RunOverScreen g={g} />}
     </div>
