@@ -32,6 +32,7 @@ const TEAM_NAMES: Record<string, string> = {
   PHI: 'Philadelphia Phillies', PIT: 'Pittsburgh Pirates', SD: 'San Diego Padres',
   SEA: 'Seattle Mariners', SF: 'San Francisco Giants', STL: 'St. Louis Cardinals',
   TB: 'Tampa Bay Rays', TEX: 'Texas Rangers', TOR: 'Toronto Blue Jays', WSH: 'Washington Nationals',
+  MIA: 'Miami Marlins', CAL: 'California Angels',
 };
 
 const CATEGORY_GROUPS: { cat: string; name: string; emoji: string; blurb: string }[] = [
