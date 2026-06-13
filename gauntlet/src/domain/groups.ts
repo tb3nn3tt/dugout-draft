@@ -61,10 +61,25 @@ function buildGroups(): Group[] {
     add(`team-${code}`, name, '⚾', `The ${name} all-time roster.`, p => p.team === code, 8);
   }
 
-  // --- Eras ---
+  // --- Eras (real decades/periods only — movie titles carry "(YYYY)", handled below) ---
   const eras = [...new Set(playersPool.map(p => p.era).filter(Boolean))] as string[];
   for (const era of eras) {
+    if (era.includes('(')) continue;
     add(`era-${era}`, era, '📅', `Ballplayers of ${era}.`, p => p.era === era, 6);
+  }
+
+  // --- Movie & TV casts — fictional players carry their film/show as `era`.
+  // Only real titles (with a "(YYYY)" year) become film groups; the lore flavor-
+  // eras without a year stay as normal era groups above. Avoids duplicates. ---
+  const films = [...new Set(playersPool
+    .filter(p => p.category === 'fictional' && p.era && /\(\d{4}\)\s*$/.test(p.era))
+    .map(p => p.era as string))];
+  const usedNames = new Set(groups.map(g => g.name));
+  for (const film of films) {
+    const bare = film.replace(/\s*\([^)]*\)\s*$/, '').trim();
+    const title = usedNames.has(bare) ? film : bare; // keep year if it'd collide (e.g. "The Sandlot")
+    add(`film-${film}`, title, '🎬', `The cast of ${title}.`, p => p.category === 'fictional' && p.era === film, 4);
+    usedNames.add(title);
   }
 
   // --- Card categories ---
