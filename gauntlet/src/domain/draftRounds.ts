@@ -87,6 +87,10 @@ function fittingMembers(group: Group, remaining: Record<string, number>, picked:
   for (const id of group.memberIds) {
     const p = getCard(id);
     if (!p || picked.has(p.id)) continue;
+    // Don't OFFER pure bench specialists (pinch runners, defensive subs, backup
+    // catchers, pinch hitters) as draftable starters — they're auto-fill depth.
+    // The draft surfaces only impactful starters / arms / staff.
+    if (BENCH_POS.includes(p.positions[0])) continue;
     if (poolFilter && !isStaffCard(p) && !poolFilter(p)) continue;
     if (assignRole(p, remaining) !== null) out.push(p);
   }
