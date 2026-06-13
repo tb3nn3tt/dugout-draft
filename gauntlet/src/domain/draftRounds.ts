@@ -14,6 +14,7 @@ import { GROUPS, STAFF_GROUPS, Group } from './groups';
 const PITCHING_ROLES = ['SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY'];
 const RELIEVER_POS = ['CL', 'SU', 'MRP', 'LRP', 'LOOGY'];
 const BENCH_POS = ['PH', 'PR', 'BC', 'IFD', 'OFD'];
+const FIELD_ROLES: Position[] = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF'];
 const isHitterCard = (p: Player) => !PITCHING_ROLES.includes(p.positions[0]) && p.positions[0] !== 'HC' && p.positions[0] !== 'ST';
 
 // Full 28-man roster the sim needs.
@@ -87,10 +88,12 @@ function fittingMembers(group: Group, remaining: Record<string, number>, picked:
   for (const id of group.memberIds) {
     const p = getCard(id);
     if (!p || picked.has(p.id)) continue;
-    // Don't OFFER pure bench specialists (pinch runners, defensive subs, backup
-    // catchers, pinch hitters) as draftable starters — they're auto-fill depth.
-    // The draft surfaces only impactful starters / arms / staff.
-    if (BENCH_POS.includes(p.positions[0])) continue;
+    // A bench-tagged player is offerable ONLY if they can actually FIELD an open
+    // defensive spot — a backup catcher at C, an IF/OF defender at their position
+    // (this rescues high-rated cards mis-tagged as bench). Pure pinch-runners /
+    // pinch-hitters, who'd only slide into DH via the catch-all, stay auto-fill depth.
+    if (BENCH_POS.includes(p.positions[0]) &&
+        !FIELD_ROLES.some(r => (remaining[r] ?? 0) > 0 && canPlayPosition(p, r))) continue;
     if (poolFilter && !isStaffCard(p) && !poolFilter(p)) continue;
     if (assignRole(p, remaining) !== null) out.push(p);
   }
