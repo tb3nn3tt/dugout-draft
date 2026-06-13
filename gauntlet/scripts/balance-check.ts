@@ -35,27 +35,35 @@ import { seedRng } from '../src/domain/sim/rng';
 
 const band = (v: number, lo: number, hi: number) => (v >= lo && v <= hi ? 'ok ' : '⚠  ');
 
-// ---- 1. Calibration: all-50 vs all-50 -------------------------------------
+// ---- 1. Calibration: all-50, HAND-BALANCED --------------------------------
+// IMPORTANT: sample over batter-hand × pitcher-hand evenly. The platoon split in
+// deriveHitter makes a grades-50 hitter below-average vs same-hand and above vs
+// opposite-hand; sampling only RHBvRHP measures the disadvantaged side and falsely
+// reads "drifted" (K 25.8 / AVG .225). Balanced, the engine hits MLB by identity.
+// Also note the 'walk' outcome folds in HBP, so its target is ~9.6 (BB+HBP), not 8.5.
 function calibration() {
   seedRng(7);
-  const avg = (pos: string) => ({
-    id: pos, name: pos, team: 'AVG', positions: [pos], bats: 'R', throws: 'R',
+  let uid = 0;
+  const avg = (pos: string, bats: string, throws: string) => ({
+    id: 'cal' + (uid++), name: pos, team: 'AVG', positions: [pos], bats, throws,
     stats: { avg: .25, obp: .32, slg: .4, hr: 20, speed: 50 }, overall: 70,
     grades: { contact: 50, power: 50, speed: 50, eye: 50, fielding: 50, arm: 50, fastball: 50, breaking: 50, changeup: 50, control: 50, stamina: 50 },
   } as any);
-  const b = avg('LF'), p = avg('SP');
-  const N = 400000; const c: Record<string, number> = {};
-  for (let i = 0; i < N; i++) { const r = simulateAtBat(b, p, undefined, undefined, undefined, undefined) as unknown as string; c[r] = (c[r] || 0) + 1; }
+  const c: Record<string, number> = {}; const per = 150000; let N = 0;
+  for (const [bh, ph] of [['R', 'R'], ['R', 'L'], ['L', 'R'], ['L', 'L']] as [string, string][]) {
+    const b = avg('LF', bh, 'R'), p = avg('SP', 'R', ph);
+    for (let i = 0; i < per; i++) { const r = simulateAtBat(b, p, undefined, undefined, undefined, undefined) as unknown as string; c[r] = (c[r] || 0) + 1; N++; }
+  }
   const g = (k: string) => c[k] || 0;
   const K = g('strikeout') / N * 100, BB = g('walk') / N * 100, HR = g('homerun') / N * 100;
   const hits = g('single') + g('double') + g('triple') + g('homerun');
   const ab = N - g('walk') - g('hbp') - g('sacrifice') - g('sac_fly') - g('sacrifice_fly');
   const AVG = hits / ab;
-  console.log('1) CALIBRATION (all-50 vs all-50):');
-  console.log(`   ${band(K, 21, 24)}K   ${K.toFixed(1)}%  (target ~22.5)`);
-  console.log(`   ${band(BB, 7.5, 9.5)}BB  ${BB.toFixed(1)}%  (target ~8.5)`);
-  console.log(`   ${band(HR, 2.9, 3.7)}HR  ${HR.toFixed(2)}%  (target ~3.3)`);
-  console.log(`   ${band(AVG, .240, .256)}AVG ${AVG.toFixed(3)}  (target ~.248)`);
+  console.log('1) CALIBRATION (all-50, hand-balanced):');
+  console.log(`   ${band(K, 21, 24)}K       ${K.toFixed(1)}%  (target ~22.5)`);
+  console.log(`   ${band(BB, 8.5, 10.7)}BB+HBP  ${BB.toFixed(1)}%  (target ~9.6)`);
+  console.log(`   ${band(HR, 2.9, 3.7)}HR      ${HR.toFixed(2)}%  (target ~3.3)`);
+  console.log(`   ${band(AVG, .242, .260)}AVG     ${AVG.toFixed(3)}  (target ~.248)`);
 }
 
 // ---- draft helpers ---------------------------------------------------------
