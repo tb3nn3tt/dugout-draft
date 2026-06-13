@@ -243,14 +243,22 @@ strong, b { font-weight: 700; }
 @keyframes lockPop { 0% { transform: scale(1.06); } 100% { transform: none; } }
 
 /* ===========================================================================
-   DRAFT — fit-on-screen, two-column
+   DRAFT — phone-first: 4 options in a roomy 2×2, no scroll, roster on a sheet
    =========================================================================== */
-.draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
-.draft__head { display: flex; flex-direction: column; gap: 6px; }
-.draft__body { flex: 1; min-height: 0; display: flex; gap: 8px; }
-.draft__offers { flex: 1; min-width: 0; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; align-content: start; padding-right: 2px; }
-.draft__depth { width: 122px; flex: 0 0 auto; overflow-y: auto; }
-.draft__autofill { min-height: 46px; font-size: 13px; }
+.draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 7px; }
+.draft__head { display: flex; flex-direction: column; gap: 5px; }
+.draft__hrow { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 13px; }
+.draft__team { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* The four cards fill the screen as a 2×2 — each card big enough to read. */
+.draft__offers { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 7px; overflow: hidden; }
+.draft__bar { display: flex; gap: 7px; }
+.draft__barbtn { min-height: 44px; font-size: 12px; padding: 0 10px; }
+
+/* Roster bottom-sheet (tap "Roster" to peek what you've built so far) */
+.sheetwrap { position: fixed; inset: 0; z-index: 40; background: rgba(3,7,14,0.7); backdrop-filter: blur(3px); display: flex; align-items: flex-end; animation: fadeIn 0.16s ease; }
+.sheetwrap__panel { width: 100%; max-width: 480px; margin: 0 auto; max-height: 82vh; overflow-y: auto; background: linear-gradient(180deg, var(--panel-2), var(--panel)); border-top: 2px solid var(--cyan); padding: 12px 12px calc(var(--safe-bottom) + 16px); animation: sheetUp 0.24s cubic-bezier(.2,1,.3,1); }
+.sheetwrap__hd { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; font-family: 'Oswald', sans-serif; letter-spacing: 1px; }
+.sheetwrap__x { background: rgba(0,0,0,0.4); border: 1px solid var(--line-bright); color: var(--ink-dim); width: 30px; height: 30px; font-size: 14px; cursor: pointer; }
 
 /* Depth sidebar — HUD roster */
 .depth { display: flex; flex-direction: column; gap: 6px; }
@@ -465,17 +473,17 @@ strong, b { font-weight: 700; }
 .scard__pick { display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: left; background: transparent; border: none; color: var(--ink); cursor: pointer; padding: 9px 10px 10px; }
 .scard__pick:disabled { cursor: default; }
 .scard__top { display: flex; align-items: flex-start; gap: 7px; padding-right: 18px; }
-.scard__grade { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 21px; line-height: 1; color: var(--tile-tier); flex: 0 0 auto; min-width: 22px; }
+.scard__grade { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 25px; line-height: 1; color: var(--tile-tier); flex: 0 0 auto; min-width: 26px; }
 .scard__id { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 1px; }
-.scard__name { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px; line-height: 1.08; letter-spacing: 0.2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.scard__meta { font-size: 8.5px; font-weight: 700; letter-spacing: 0.4px; color: var(--ink-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.scard__name { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px; line-height: 1.06; letter-spacing: 0.2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.scard__meta { font-size: 10px; font-weight: 700; letter-spacing: 0.4px; color: var(--ink-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 /* bordered, aligned ratings table — label · vL · OVR · vR */
-.rtab { display: grid; grid-template-columns: 1fr 17px 22px 17px; border: 1px solid var(--line); margin-top: 1px; }
-.rtab > span { border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); padding: 1.5px 2px; font-size: 9px; line-height: 1.3; text-align: center; font-variant-numeric: tabular-nums; }
+.rtab { display: grid; grid-template-columns: 1fr 22px 26px 22px; border: 1px solid var(--line); margin-top: 2px; }
+.rtab > span { border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); padding: 2px 2px; font-size: 11px; line-height: 1.3; text-align: center; font-variant-numeric: tabular-nums; }
 .rtab > span:nth-child(4n+1) { border-left: none; text-align: left; padding-left: 5px; }
 .rtab > span:nth-last-child(-n+4) { border-bottom: none; }
-.rtab__h { font-size: 7px; font-weight: 800; color: var(--ink-faint); letter-spacing: 0.2px; background: rgba(0,0,0,0.28); }
-.rtab__lbl { font-weight: 700; font-size: 8px; color: var(--ink-dim); letter-spacing: 0.2px; }
+.rtab__h { font-size: 8.5px; font-weight: 800; color: var(--ink-faint); letter-spacing: 0.2px; background: rgba(0,0,0,0.28); }
+.rtab__lbl { font-weight: 700; font-size: 9.5px; color: var(--ink-dim); letter-spacing: 0.2px; }
 .rtab__side { color: var(--ink-faint); font-weight: 600; }
 .rtab__ovr { font-family: 'Barlow', sans-serif; font-weight: 800; }
 .scard__chips { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 1px; }

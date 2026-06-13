@@ -18,6 +18,27 @@ export function getDisplayName(name: string): string {
   return lastPart;
 }
 
+const NAME_SUFFIXES = ['Jr.', 'Jr', 'Sr.', 'Sr', 'II', 'III', 'IV', 'V'];
+const isNameTag = (s: string) => /^'?\d{2,4}$/.test(s) || NAME_SUFFIXES.includes(s);
+
+/**
+ * Compact "F. Surname" abbreviation that KEEPS trailing season/suffix tags on the
+ * surname — never drops them onto the initial:
+ *   "Ken Griffey '97"  -> "K. Griffey '97"
+ *   "Cal Ripken Jr."   -> "C. Ripken Jr."
+ *   "Dottie Hinson"    -> "D. Hinson"
+ */
+export function abbrevName(name: string): string {
+  const clean = name.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  const parts = clean.split(/\s+/).filter(Boolean);
+  if (parts.length <= 1) return clean || name;
+  let end = parts.length - 1;
+  const tags: string[] = [];
+  while (end > 1 && isNameTag(parts[end])) { tags.unshift(parts[end]); end--; }
+  const surname = parts[end];
+  return `${parts[0][0]}. ${surname}${tags.length ? ' ' + tags.join(' ') : ''}`;
+}
+
 export function shuffleArray<T>(array: T[]): T[] {
   const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {

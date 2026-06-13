@@ -24,18 +24,19 @@ export const ROLE_REQUIREMENTS: Record<string, number> = {
   HC: 1, ST: 1,
 };
 
-// You interactively draft 9 batters, 4 SP, 4 RP, 2 bench, a coach + a field (21).
-// Generic RP/BN roles: the sim sorts bullpen leverage + bench use from the cards.
+// You draft only the IMPACTFUL pieces of a playoff roster: 9 batters, 4 starters,
+// 3 high-leverage relievers (closer + 2 setup-equivalent), a coach + a field = 18.
+// No bench in the draft — extra arms + a small bench auto-fill behind the scenes
+// so the sim still plays full games.
 export const MARQUEE_REQUIREMENTS: Record<string, number> = {
   C: 1, '1B': 1, '2B': 1, '3B': 1, SS: 1, LF: 1, CF: 1, RF: 1, DH: 1, // 9 batters
   SP: 4,                                                              // 4 starters
-  RP: 4,                                                              // 4 relievers
-  BN: 2,                                                              // 2 bench
+  RP: 3,                                                              // 3 high-leverage relievers
   HC: 1, ST: 1,                                                       // coach + field
 };
 export const DEPTH_REQUIREMENTS: Record<string, number> = {
-  RP: 3,                                    // round out the 7-man bullpen
-  BN: 4,                                    // round out the bench
+  RP: 4,                                    // round out the bullpen for the sim
+  BN: 4,                                    // a small bench for pinch/defense subs
 };
 export const TOTAL_PICKS = Object.values(MARQUEE_REQUIREMENTS).reduce((a, b) => a + b, 0);
 
@@ -129,8 +130,17 @@ export function spinGroupRound(
   }
 
   const members = shuffle(fittingMembers(chosen, remaining, picked, poolFilter));
-  const offered = members.slice(0, 4).sort((a, b) => b.overall - a.overall);
-  return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb }, offered };
+  // Offer VARIETY: prefer one player per distinct open slot this group can fill,
+  // so a round shows e.g. a catcher, a center fielder, a third baseman and an arm
+  // — you choose which position to fill — rather than four of the same spot.
+  const byRole = new Map<string, Player>();
+  for (const m of members) { const r = assignRole(m, remaining); if (r && !byRole.has(r)) byRole.set(r, m); }
+  const offered: Player[] = [...byRole.values()];
+  if (offered.length < 4) {
+    const used = new Set(offered.map(p => p.id));
+    for (const m of members) { if (offered.length >= 4) break; if (!used.has(m.id)) offered.push(m); }
+  }
+  return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb }, offered: offered.slice(0, 4).sort((a, b) => b.overall - a.overall) };
 }
 
 // ---------------------------------------------------------------------------

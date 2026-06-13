@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound, playerFitsRole } from '../domain/draftRounds';
 import { TIER_COLORS, getTier } from '../domain/players';
-import { overallToGrade } from '../domain/sim/helpers';
+import { overallToGrade, abbrevName } from '../domain/sim/helpers';
 import { Player, Position } from '../domain/types';
 import { DraftEntry } from '../state/gauntletReducer';
 import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
@@ -235,28 +235,40 @@ export function AchievementsScreen({ onBack }: { onBack: () => void }) {
 export function DraftScreen({ g }: { g: G }) {
   const { offered, picks, currentRound, draftLog } = g.state;
   const [detail, setDetail] = useState<Player | null>(null);
-  const pickNum = picks.length + 1;
+  const [showRoster, setShowRoster] = useState(false);
+  const pickNum = Math.min(picks.length + 1, TOTAL_PICKS);
 
   return (
     <div className="draft">
       <div className="draft__head">
-        <div className="row" style={{ justifyContent: 'space-between' }}>
-          <strong>{g.state.teamName}</strong>
-          <span className="dim">Pick {pickNum} / {TOTAL_PICKS}</span>
+        <div className="draft__hrow">
+          <strong className="draft__team">{g.state.teamName}</strong>
+          <span className="dim">Pick {pickNum}/{TOTAL_PICKS}</span>
         </div>
         {currentRound && <RoundBanner round={currentRound} />}
       </div>
 
-      <div className="draft__body">
-        <div className="draft__offers">
-          {offered.map(p => <CardTile key={p.id} player={p} onPick={(pl) => { sfxPick(); g.pick(pl); }} onInfo={setDetail} />)}
-        </div>
-        <aside className="draft__depth">
-          <DepthSidebar draftLog={draftLog} />
-        </aside>
+      {/* Four options in a roomy 2×2 — full width, no scroll. */}
+      <div className="draft__offers">
+        {offered.map(p => <CardTile key={p.id} player={p} onPick={(pl) => { sfxPick(); g.pick(pl); }} onInfo={setDetail} />)}
       </div>
 
-      <button className="btn btn--ghost draft__autofill" onClick={g.autofill}>⚡ Auto-fill the rest</button>
+      <div className="draft__bar">
+        <button className="btn btn--ghost draft__barbtn" onClick={() => setShowRoster(true)}>📋 Roster {picks.length}/{TOTAL_PICKS}</button>
+        <button className="btn btn--ghost draft__barbtn" onClick={g.autofill}>⚡ Auto-fill</button>
+      </div>
+
+      {showRoster && (
+        <div className="sheetwrap" onClick={() => setShowRoster(false)}>
+          <div className="sheetwrap__panel" onClick={e => e.stopPropagation()}>
+            <div className="sheetwrap__hd">
+              <strong>YOUR ROSTER</strong>
+              <button className="sheetwrap__x" onClick={() => setShowRoster(false)} aria-label="Close">✕</button>
+            </div>
+            <DepthSidebar draftLog={draftLog} />
+          </div>
+        </div>
+      )}
 
       {detail && (
         <PlayerDetail
@@ -330,13 +342,9 @@ export function GauntletRunScreen({ g }: { g: G }) {
 }
 
 // ---------------------------------------------------------------------------
-// Team card — the drafted nine laid out ON A DIAMOND, built to screenshot/share
+// Team sheet + roster editor share these grouped sections.
 // ---------------------------------------------------------------------------
-function sheetName(name: string): string {
-  const clean = name.replace(/\s*\([^)]*\)\s*$/, '').trim();
-  const parts = clean.split(' ');
-  return parts.length === 1 ? parts[0] : `${parts[0][0]}. ${parts[parts.length - 1]}`;
-}
+const sheetName = abbrevName;
 // Roster sections, in draft order — one cursor walks the draftLog per role.
 const SHEET_SECTIONS: { title: string; slots: { role: Position; label: string }[] }[] = [
   { title: 'LINEUP', slots: [
@@ -348,9 +356,8 @@ const SHEET_SECTIONS: { title: string; slots: { role: Position; label: string }[
     { role: 'SP', label: 'SP1' }, { role: 'SP', label: 'SP2' }, { role: 'SP', label: 'SP3' }, { role: 'SP', label: 'SP4' },
   ]},
   { title: 'BULLPEN', slots: [
-    { role: 'RP', label: 'RP1' }, { role: 'RP', label: 'RP2' }, { role: 'RP', label: 'RP3' }, { role: 'RP', label: 'RP4' },
+    { role: 'RP', label: 'RP1' }, { role: 'RP', label: 'RP2' }, { role: 'RP', label: 'RP3' },
   ]},
-  { title: 'BENCH', slots: [{ role: 'BN', label: 'BN1' }, { role: 'BN', label: 'BN2' }] },
   { title: 'STAFF', slots: [{ role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PARK' }] },
 ];
 /** Clean, screenshot-friendly roster list — easy to read + share on socials. */
