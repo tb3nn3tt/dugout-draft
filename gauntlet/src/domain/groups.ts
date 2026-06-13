@@ -78,7 +78,7 @@ function buildGroups(): Group[] {
   for (const film of films) {
     const bare = film.replace(/\s*\([^)]*\)\s*$/, '').trim();
     const title = usedNames.has(bare) ? film : bare; // keep year if it'd collide (e.g. "The Sandlot")
-    add(`film-${film}`, title, '🎬', `The cast of ${title}.`, p => p.category === 'fictional' && p.era === film, 4);
+    add(`film-${film}`, title, '🎬', `The cast of ${title}.`, p => p.category === 'fictional' && p.era === film, 3);
     usedNames.add(title);
   }
 
