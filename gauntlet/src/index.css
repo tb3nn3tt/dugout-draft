@@ -464,26 +464,25 @@ strong, b { font-weight: 700; }
 .scard:active { transform: scale(0.98); }
 .scard__pick { display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: left; background: transparent; border: none; color: var(--ink); cursor: pointer; padding: 9px 10px 10px; }
 .scard__pick:disabled { cursor: default; }
-.scard__top { display: flex; align-items: center; gap: 9px; padding-right: 20px; }
-.scard__grade { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 26px; line-height: 0.9; color: var(--tile-tier); flex: 0 0 auto; min-width: 28px; }
+.scard__top { display: flex; align-items: flex-start; gap: 7px; padding-right: 18px; }
+.scard__grade { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 21px; line-height: 1; color: var(--tile-tier); flex: 0 0 auto; min-width: 22px; }
 .scard__id { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 1px; }
-.scard__name { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 15px; line-height: 1; letter-spacing: 0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.scard__pos { font-size: 9px; font-weight: 700; letter-spacing: 0.5px; color: var(--ink-dim); }
-.scard__sub { font-size: 9.5px; font-weight: 700; letter-spacing: 0.4px; color: var(--ink-dim); text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.scard__bars { display: flex; flex-direction: column; gap: 3px; margin-top: 2px; }
-.scard__bar { display: grid; grid-template-columns: 26px 1fr 14px; align-items: center; gap: 6px; }
-.scard__blbl { font-size: 8px; font-weight: 700; color: var(--ink-faint); letter-spacing: 0.3px; }
-.scard__track { height: 4px; background: rgba(0,0,0,0.5); overflow: hidden; }
-.scard__fill { display: block; height: 100%; }
-.scard__bv { font-family: 'Barlow', sans-serif; font-size: 10px; font-weight: 800; text-align: right; }
-.scard__split { display: flex; justify-content: space-between; gap: 6px; margin-top: 4px; padding-top: 5px; border-top: 1px solid var(--line); font-size: 9px; font-weight: 700; color: var(--ink-dim); letter-spacing: 0.2px; }
-.scard__split b { font-weight: 800; }
-.scard__line { font-family: 'Barlow', sans-serif; font-size: 9.5px; font-weight: 600; color: var(--ink-faint); letter-spacing: 0.2px; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.scard__chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
-.scard__chip { display: flex; align-items: baseline; gap: 4px; padding: 3px 6px; background: rgba(0,0,0,0.3); border: 1px solid var(--line); font-size: 9px; }
-.scard__chip i { font-style: normal; font-weight: 700; color: var(--ink-faint); letter-spacing: 0.3px; }
+.scard__name { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px; line-height: 1.08; letter-spacing: 0.2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.scard__meta { font-size: 8.5px; font-weight: 700; letter-spacing: 0.4px; color: var(--ink-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* bordered, aligned ratings table — label · vL · OVR · vR */
+.rtab { display: grid; grid-template-columns: 1fr 17px 22px 17px; border: 1px solid var(--line); margin-top: 1px; }
+.rtab > span { border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); padding: 1.5px 2px; font-size: 9px; line-height: 1.3; text-align: center; font-variant-numeric: tabular-nums; }
+.rtab > span:nth-child(4n+1) { border-left: none; text-align: left; padding-left: 5px; }
+.rtab > span:nth-last-child(-n+4) { border-bottom: none; }
+.rtab__h { font-size: 7px; font-weight: 800; color: var(--ink-faint); letter-spacing: 0.2px; background: rgba(0,0,0,0.28); }
+.rtab__lbl { font-weight: 700; font-size: 8px; color: var(--ink-dim); letter-spacing: 0.2px; }
+.rtab__side { color: var(--ink-faint); font-weight: 600; }
+.rtab__ovr { font-family: 'Barlow', sans-serif; font-weight: 800; }
+.scard__chips { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 1px; }
+.scard__chip { display: flex; align-items: baseline; gap: 3px; padding: 2px 5px; background: rgba(0,0,0,0.3); border: 1px solid var(--line); font-size: 8.5px; }
+.scard__chip i { font-style: normal; font-weight: 700; color: var(--ink-faint); letter-spacing: 0.2px; }
 .scard__chip b { font-family: 'Barlow', sans-serif; font-weight: 800; color: var(--tile-tier); }
-.scard__info { position: absolute; top: 6px; right: 6px; width: 19px; height: 19px; border: 1px solid var(--line-bright); background: rgba(0,0,0,0.5); color: var(--ink-dim); font-size: 10px; font-weight: 900; cursor: pointer; z-index: 2; }
+.scard__info { position: absolute; top: 5px; right: 5px; width: 18px; height: 18px; border: 1px solid var(--line-bright); background: rgba(0,0,0,0.5); color: var(--ink-dim); font-size: 10px; font-weight: 900; cursor: pointer; z-index: 2; }
 
 /* ===========================================================================
    TEAM SHEET — a clean, screenshot-friendly roster list (no drawn field).

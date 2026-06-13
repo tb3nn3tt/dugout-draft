@@ -10,77 +10,29 @@ const POS_LABEL: Record<string, string> = {
 };
 const avg = (a: number, b: number) => Math.round((a + b) / 2);
 const cleanName = (n: string) => n.replace(/\s*\([^)]*\)\s*$/, '').trim() || n;
-const pct = (g: number) => Math.max(5, Math.min(100, Math.round(((g - 20) / 60) * 100)));
-const dec = (n?: number) => (n == null ? '—' : n.toFixed(3).replace(/^0/, '')); // .288
 
-/** One-glance "what is this player" tag from the ratings. */
-function archetype(player: Player): string {
-  const r = getRatings(player);
-  if (r.kind === 'pitcher') {
-    if (player.positions.includes('LOOGY')) return '🥷 LEFTY SPEC';
-    const stuff = avg(r.stuffVL, r.stuffVR), cmd = avg(r.cmdVL, r.cmdVR);
-    if (player.positions.includes('CL')) return '🔒 CLOSER';
-    if (stuff >= 66) return '🔥 POWER ARM';
-    if (r.control >= 66) return '🎯 CONTROL';
-    if (r.gb >= 50) return '⬇️ GROUNDBALL';
-    if (cmd >= 64) return '🧠 CRAFTY';
-    if (r.stamina >= 68) return '🐴 WORKHORSE';
-    return '⚾ INNINGS';
-  }
-  const con = avg(r.conVL, r.conVR), hr = avg(r.hrVL, r.hrVR), gap = avg(r.gapVL, r.gapVR);
-  const tools = [hr >= 62, con >= 62, r.run >= 62, r.field >= 62, r.eye >= 62].filter(Boolean).length;
-  if (tools >= 4) return '⭐ 5-TOOL';
-  if (hr >= 66) return '💪 SLUGGER';
-  if (con >= 66) return '🎯 CONTACT';
-  if (gap >= 62 && con >= 58) return '↔️ GAP HITTER';
-  if (r.run >= 66) return '⚡ SPEEDSTER';
-  if (r.eye >= 66) return '👁️ ON-BASE';
-  if (r.field >= 66) return '🧤 GLOVE';
-  return '⚾ BALANCED';
-}
+interface RRow { label: string; vL?: number; ovr: number; vR?: number }
 
-/** The tool grades to show as bars, by player kind. */
-function tools(player: Player): { label: string; g: number }[] {
+/** The ratings table rows: vL/OVR/vR for platoon ratings, OVR only for the rest. */
+function ratingRows(player: Player): RRow[] {
   const r = getRatings(player);
   if (r.kind === 'pitcher') {
     return [
-      { label: 'STUF', g: avg(r.stuffVL, r.stuffVR) },
-      { label: 'CTL', g: r.control },
-      { label: 'CMD', g: avg(r.cmdVL, r.cmdVR) },
-      { label: 'STAM', g: r.stamina },
+      { label: 'STUFF', vL: r.stuffVL, ovr: avg(r.stuffVL, r.stuffVR), vR: r.stuffVR },
+      { label: 'CMD', vL: r.cmdVL, ovr: avg(r.cmdVL, r.cmdVR), vR: r.cmdVR },
+      { label: 'CTL', ovr: r.control },
+      { label: 'STAM', ovr: r.stamina },
+      { label: 'GB%', ovr: r.gb, raw: `${r.gb}` } as RRow & { raw: string },
     ];
   }
   return [
-    { label: 'CON', g: avg(r.conVL, r.conVR) },
-    { label: 'POW', g: avg(r.hrVL, r.hrVR) },
-    { label: 'SPD', g: r.run },
-    { label: 'EYE', g: r.eye },
-    { label: 'FLD', g: r.field },
+    { label: 'CON', vL: r.conVL, ovr: avg(r.conVL, r.conVR), vR: r.conVR },
+    { label: 'POW', vL: r.hrVL, ovr: avg(r.hrVL, r.hrVR), vR: r.hrVR },
+    { label: 'GAP', vL: r.gapVL, ovr: avg(r.gapVL, r.gapVR), vR: r.gapVR },
+    { label: 'EYE', ovr: r.eye },
+    { label: 'SPD', ovr: r.run },
+    { label: 'FLD', ovr: r.field },
   ];
-}
-
-/** Effectiveness vs LHP / RHP (the platoon read), 20-80. */
-function platoon(player: Player): { vL: number; vR: number } {
-  const r = getRatings(player);
-  if (r.kind === 'pitcher') {
-    return { vL: avg(r.stuffVL, r.cmdVL), vR: avg(r.stuffVR, r.cmdVR) };
-  }
-  return { vL: Math.round((r.conVL + r.hrVL + r.gapVL) / 3), vR: Math.round((r.conVR + r.hrVR + r.gapVR) / 3) };
-}
-
-/** Real-life stat line for recognition + context. */
-function statLine(player: Player): string {
-  const s = player.stats;
-  const r = getRatings(player);
-  if (r.kind === 'pitcher') {
-    const parts: string[] = [];
-    if (s.era != null) parts.push(`${s.era.toFixed(2)} ERA`);
-    if (s.k9 != null) parts.push(`${s.k9.toFixed(1)} K/9`);
-    parts.push(`${r.gb}% GB`);
-    return parts.join(' · ');
-  }
-  const slash = `${dec(s.avg)}/${dec(s.obp)}/${dec(s.slg)}`;
-  return s.hr != null ? `${slash} · ${s.hr} HR` : slash;
 }
 
 /** Non-zero coach / park effects, as compact chips. */
@@ -88,31 +40,26 @@ function staffChips(player: Player): { label: string; val: string }[] {
   const c = player.coachEffect, p = player.parkEffect;
   const out: { label: string; val: string }[] = [];
   if (c) {
-    const add = (label: string, v: number, suffix = '') => { if (v) out.push({ label, val: `+${v}${suffix}` }); };
-    add('OFFENSE', c.offensiveBonus, '%'); add('PITCHING', c.pitchingBonus, '%');
-    add('CLUTCH', c.clutchBonus); add('STAMINA', c.staminaBonus);
-    add('SPEED', c.speedBonus); add('DEFENSE', c.fieldingBonus);
+    const add = (label: string, v: number, sfx = '') => { if (v) out.push({ label, val: `+${v}${sfx}` }); };
+    add('OFF', c.offensiveBonus, '%'); add('PIT', c.pitchingBonus, '%');
+    add('CLUTCH', c.clutchBonus); add('STAM', c.staminaBonus);
+    add('SPD', c.speedBonus); add('DEF', c.fieldingBonus);
   }
   if (p) {
     const mul = (label: string, v?: number) => { if (v != null && Math.abs(v - 1) > 0.001) out.push({ label, val: `×${v.toFixed(2)}` }); };
     mul('HR', p.hrFactor); mul('2B', p.doublesFactor); mul('3B', p.triplesFactor);
-    mul('RUNS', p.runFactor); mul('ERRORS', p.errorFactor);
+    mul('RUN', p.runFactor); mul('ERR', p.errorFactor);
   }
   return out;
 }
 
-function Bar({ label, g }: { label: string; g: number }) {
-  const color = getGradeColor(g);
-  return (
-    <div className="scard__bar">
-      <span className="scard__blbl">{label}</span>
-      <span className="scard__track"><span className="scard__fill" style={{ width: `${pct(g)}%`, background: color }} /></span>
-      <span className="scard__bv" style={{ color }}>{gradeToLetter(g)}</span>
-    </div>
-  );
+function Cell({ v, raw }: { v?: number; raw?: string }) {
+  if (raw != null) return <span className="rtab__side">{raw}</span>;
+  if (v == null) return <span className="rtab__side" />;
+  return <span className="rtab__side">{gradeToLetter(v)}</span>;
 }
 
-/** A draftable scouting card: grade, archetype, full tool grades, platoon split, stat line. */
+/** A clean scouting card: grade, name, pos · B/T, and a bordered ratings table. */
 export function CardTile({ player, onPick, onInfo }: {
   player: Player;
   onPick?: (p: Player) => void;
@@ -122,10 +69,9 @@ export function CardTile({ player, onPick, onInfo }: {
   const tierColor = TIER_COLORS[tier];
   const pos = player.positions[0];
   const isStaff = pos === 'HC' || pos === 'ST';
-  const pl = !isStaff ? platoon(player) : null;
-  const sub = isStaff
+  const meta = isStaff
     ? (player.coachEffect?.style ?? player.parkEffect?.name ?? '')
-    : archetype(player);
+    : `${POS_LABEL[pos] ?? pos} · ${player.bats}/${player.throws}`;
 
   return (
     <div className={`scard scard--${tier}`} style={{ ['--tile-tier' as never]: tierColor }}>
@@ -134,25 +80,19 @@ export function CardTile({ player, onPick, onInfo }: {
           <span className="scard__grade">{overallToGrade(player.overall)}</span>
           <div className="scard__id">
             <span className="scard__name">{cleanName(player.name)}</span>
-            <span className="scard__pos">{POS_LABEL[pos] ?? pos}{!isStaff ? ` · ${player.bats}/${player.throws}` : ''}</span>
+            <span className="scard__meta">{meta}</span>
           </div>
         </div>
-        <div className="scard__sub">{sub}</div>
 
-        {!isStaff && (
-          <>
-            <div className="scard__bars">{tools(player).map(t => <Bar key={t.label} {...t} />)}</div>
-            {pl && (
-              <div className="scard__split">
-                <span>vs LHP <b style={{ color: getGradeColor(pl.vL) }}>{gradeToLetter(pl.vL)}</b></span>
-                <span>vs RHP <b style={{ color: getGradeColor(pl.vR) }}>{gradeToLetter(pl.vR)}</b></span>
-              </div>
-            )}
-            <div className="scard__line">{statLine(player)}</div>
-          </>
-        )}
-
-        {isStaff && (
+        {!isStaff ? (
+          <div className="rtab">
+            <span className="rtab__h rtab__h--lbl" />
+            <span className="rtab__h">vL</span><span className="rtab__h">OVR</span><span className="rtab__h">vR</span>
+            {ratingRows(player).map(row => (
+              <RowCells key={row.label} row={row} />
+            ))}
+          </div>
+        ) : (
           <div className="scard__chips">
             {staffChips(player).map(ch => (
               <span key={ch.label} className="scard__chip"><i>{ch.label}</i><b>{ch.val}</b></span>
@@ -162,5 +102,16 @@ export function CardTile({ player, onPick, onInfo }: {
       </button>
       {onInfo && <button className="scard__info" onClick={() => onInfo(player)} aria-label="Player details">ℹ</button>}
     </div>
+  );
+}
+
+function RowCells({ row }: { row: RRow & { raw?: string } }) {
+  return (
+    <>
+      <span className="rtab__lbl">{row.label}</span>
+      <Cell v={row.vL} />
+      <span className="rtab__ovr" style={{ color: getGradeColor(row.ovr) }}>{row.raw != null ? `${row.raw}%` : gradeToLetter(row.ovr)}</span>
+      <Cell v={row.vR} />
+    </>
   );
 }
