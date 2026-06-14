@@ -83,11 +83,13 @@ export function assignRole(p: Player, remaining: Record<string, number>): Positi
 const isStaffCard = (p: Player) => p.positions[0] === 'HC' || p.positions[0] === 'ST';
 
 /** Group members that are pickable now: not drafted, pass the mutator filter, and fit an open slot. */
-function fittingMembers(group: Group, remaining: Record<string, number>, picked: Set<string>, poolFilter?: (p: Player) => boolean): Player[] {
+function fittingMembers(group: Group, remaining: Record<string, number>, picked: Set<string>, poolFilter?: (p: Player) => boolean, capA = false, capB = false): Player[] {
   const out: Player[] = [];
   for (const id of group.memberIds) {
     const p = getCard(id);
     if (!p || picked.has(p.id)) continue;
+    if (capA && p.overall >= 85) continue;                       // star cap reached — no more A's
+    if (capB && p.overall >= 70 && p.overall < 85) continue;     // regular cap reached — no more B's
     // A bench-tagged player is offerable ONLY if they can actually FIELD an open
     // defensive spot — a backup catcher at C, an IF/OF defender at their position
     // (this rescues high-rated cards mis-tagged as bench). Pure pinch-runners /
@@ -105,6 +107,27 @@ function shuffle<T>(a: T[]): T[] {
   return a;
 }
 
+// Draft weight: a gentle decay above ~72 OVR, PLUS a team-aware soft cap — once a
+// team already has a few A-grade studs (85+), further A's are strongly suppressed
+// in the offers. So every team ends up a believable spread: a handful of stars and
+// a lot of solid B/C role players, never an A at every position. `teamA` = how many
+// A-grade players are already on the roster.
+const A_SOFT_CAP = 3;   // A-grade odds start decaying once the team has this many
+const A_HARD_CAP = 4;   // ...and stop entirely here
+const B_HARD_CAP = 7;   // after the stars + this many B-grade regulars, the rest is C/role-player
+function draftWeight(overall: number, teamA: number): number {
+  let w = Math.exp(-Math.max(0, overall - 72) / 14);
+  if (overall >= 85) w *= Math.exp(-Math.max(0, teamA - A_SOFT_CAP) * 1.15);
+  return w;
+}
+/** Order players by a quality-WEIGHTED random key (low OVR + the star cap come first). */
+function weightedOrder(players: Player[], teamA: number): Player[] {
+  return players
+    .map(p => ({ p, k: Math.pow(rand(), 1 / draftWeight(p.overall, teamA)) }))
+    .sort((a, b) => b.k - a.k)
+    .map(x => x.p);
+}
+
 /**
  * Spin a group and offer up to 4 of its players that fit an open roster slot.
  * Returns null only when the roster is full.
@@ -117,26 +140,42 @@ export function spinGroupRound(
   const open = Object.keys(remaining).filter(r => (remaining[r] ?? 0) > 0);
   if (open.length === 0) return null;
 
+  // Quality caps: count A/B-grade players already on the roster. Once at a cap,
+  // offers exclude that tier so a team fills out with a few stars, some regulars,
+  // and a healthy number of C-grade role players — never A/B at every spot.
+  let teamA = 0, teamB = 0;
+  for (const id of picked) { const cp = getCard(id); if (!cp) continue; if (cp.overall >= 85) teamA++; else if (cp.overall >= 70) teamB++; }
+  const capA = teamA >= A_HARD_CAP;
+  const capB = teamB >= B_HARD_CAP;
+
   const candidates: Group[] = [...GROUPS];
   if ((remaining['HC'] ?? 0) > 0) candidates.push(STAFF_GROUPS.HC);
   if ((remaining['ST'] ?? 0) > 0) candidates.push(STAFF_GROUPS.ST);
 
-  const viable = candidates.filter(g => fittingMembers(g, remaining, picked, poolFilter).length > 0);
+  const viable = candidates.filter(g => fittingMembers(g, remaining, picked, poolFilter, capA, capB).length > 0);
 
   let chosen: Group;
   if (viable.length > 0) {
     chosen = viable[Math.floor(rand() * viable.length)];
   } else {
     // Fallback: an ad-hoc "free agents" group of everyone who fits an open slot.
-    const ids = playersPool
-      .filter(p => !picked.has(p.id) && (!poolFilter || poolFilter(p)) && assignRole(p, remaining) !== null)
+    // Respect the caps if possible; relax them only if nothing else is available.
+    const buildFA = (caps: boolean) => playersPool
+      .filter(p => !picked.has(p.id) && (!poolFilter || poolFilter(p)) && assignRole(p, remaining) !== null
+        && (!caps || (!(capA && p.overall >= 85) && !(capB && p.overall >= 70 && p.overall < 85))))
       .map(p => p.id);
+    let ids = buildFA(true);
+    if (ids.length === 0) ids = buildFA(false);
     if ((remaining['HC'] ?? 0) > 0) ids.push(...STAFF_GROUPS.HC.memberIds);
     if ((remaining['ST'] ?? 0) > 0) ids.push(...STAFF_GROUPS.ST.memberIds);
     chosen = { id: 'free-agents', name: 'Free Agents', emoji: '🎲', blurb: 'A grab bag of available talent.', memberIds: ids };
   }
 
-  const members = shuffle(fittingMembers(chosen, remaining, picked, poolFilter));
+  // Honor the caps; but if that leaves nothing (only A/B players remain for the
+  // open slots), relax them so the draft always has something to offer.
+  let fitting = fittingMembers(chosen, remaining, picked, poolFilter, capA, capB);
+  if (fitting.length === 0) fitting = fittingMembers(chosen, remaining, picked, poolFilter);
+  const members = weightedOrder(fitting, teamA);
   // Offer VARIETY: prefer one player per distinct open slot this group can fill,
   // so a round shows e.g. a catcher, a center fielder, a third baseman and an arm
   // — you choose which position to fill — rather than four of the same spot.

@@ -22,7 +22,6 @@ function ratingRows(player: Player): RRow[] {
       { label: 'CMD', vL: r.cmdVL, ovr: avg(r.cmdVL, r.cmdVR), vR: r.cmdVR },
       { label: 'CTL', ovr: r.control },
       { label: 'STAM', ovr: r.stamina },
-      { label: 'GB%', ovr: r.gb, raw: `${r.gb}` } as RRow & { raw: string },
     ];
   }
   return [
@@ -53,8 +52,7 @@ function staffChips(player: Player): { label: string; val: string }[] {
   return out;
 }
 
-function Cell({ v, raw }: { v?: number; raw?: string }) {
-  if (raw != null) return <span className="rtab__side">{raw}</span>;
+function Cell({ v }: { v?: number }) {
   if (v == null) return <span className="rtab__side" />;
   return <span className="rtab__side">{gradeToLetter(v)}</span>;
 }
@@ -105,12 +103,12 @@ export function CardTile({ player, onPick, onInfo }: {
   );
 }
 
-function RowCells({ row }: { row: RRow & { raw?: string } }) {
+function RowCells({ row }: { row: RRow }) {
   return (
     <>
       <span className="rtab__lbl">{row.label}</span>
       <Cell v={row.vL} />
-      <span className="rtab__ovr" style={{ color: getGradeColor(row.ovr) }}>{row.raw != null ? `${row.raw}%` : gradeToLetter(row.ovr)}</span>
+      <span className="rtab__ovr" style={{ color: getGradeColor(row.ovr) }}>{gradeToLetter(row.ovr)}</span>
       <Cell v={row.vR} />
     </>
   );

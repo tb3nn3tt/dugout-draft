@@ -39,7 +39,7 @@ function Bars({ axes }: { axes: Axis[] }) {
             <div className="progress" style={{ flex: 1, height: 8 }}>
               <div className="progress__fill" style={{ width: `${norm(ax.value) * 100}%`, background: c }} />
             </div>
-            <span style={{ width: 40, textAlign: 'right', fontSize: 12, fontWeight: 900, color: c }}>{ax.value} {gradeToLetter(ax.value)}</span>
+            <span style={{ width: 28, textAlign: 'right', fontSize: 13, fontWeight: 900, color: c }}>{gradeToLetter(ax.value)}</span>
           </div>
         );
       })}
@@ -52,7 +52,7 @@ function Split({ label, l, r }: { label: string; l: number; r: number }) {
     <div className="row" style={{ justifyContent: 'space-between' }}>
       <span className="dim" style={{ fontSize: 12 }}>{label}</span>
       <span style={{ fontWeight: 800 }}>
-        vs L <span style={{ color: getGradeColor(l) }}>{l}</span> &nbsp;·&nbsp; vs R <span style={{ color: getGradeColor(r) }}>{r}</span>
+        vs L <span style={{ color: getGradeColor(l) }}>{gradeToLetter(l)}</span> &nbsp;·&nbsp; vs R <span style={{ color: getGradeColor(r) }}>{gradeToLetter(r)}</span>
       </span>
     </div>
   );
@@ -112,7 +112,7 @@ export function PlayerDetail({ player, onDraft, onClose }: {
                 <Split label="Gap Power" l={r.gapVL} r={r.gapVR} />
                 <div className="row" style={{ justifyContent: 'space-between' }}>
                   <span className="dim" style={{ fontSize: 12 }}>Bunting</span>
-                  <span style={{ fontWeight: 800 }}>{r.bunt}</span>
+                  <span style={{ fontWeight: 800, color: getGradeColor(r.bunt) }}>{gradeToLetter(r.bunt)}</span>
                 </div>
               </div>
             ) : (
@@ -121,8 +121,8 @@ export function PlayerDetail({ player, onDraft, onClose }: {
                 <Split label="Stuff (K)" l={r.stuffVL} r={r.stuffVR} />
                 <Split label="Command" l={r.cmdVL} r={r.cmdVR} />
                 <div className="row" style={{ justifyContent: 'space-between' }}>
-                  <span className="dim" style={{ fontSize: 12 }}>Control · GB% · IP/G</span>
-                  <span style={{ fontWeight: 800 }}>{r.control} · {r.gb}% · {r.ipg.toFixed(1)}</span>
+                  <span className="dim" style={{ fontSize: 12 }}>Control</span>
+                  <span style={{ fontWeight: 800, color: getGradeColor(r.control) }}>{gradeToLetter(r.control)}</span>
                 </div>
               </div>
             )}
