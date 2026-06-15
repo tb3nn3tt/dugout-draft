@@ -1,6 +1,6 @@
 import { Player, Position, Tier, PlayerCategory } from './types';
-import { playersPool, managersPool, stadiumsPool, getCard, getTier } from './players';
-import { canPlayPosition, getPositionLabel } from './sim/helpers';
+import { playersPool, getCard, getTier } from './players';
+import { canPlayPosition } from './sim/helpers';
 import { rand } from './sim/rng';
 import { GROUPS, STAFF_GROUPS, Group } from './groups';
 
@@ -41,18 +41,12 @@ export const DEPTH_REQUIREMENTS: Record<string, number> = {
 };
 export const TOTAL_PICKS = Object.values(MARQUEE_REQUIREMENTS).reduce((a, b) => a + b, 0);
 
-/** A spun round targets a ROLE (the slot machine lands on a position). */
+/** A spun round is a GROUP (Texas Rangers, Speedsters, Playoff Heroes…). */
 export interface DraftRound {
-  role: Position;
-  roleLabel: string;  // e.g. "Shortstop", "Closer"
-}
-
-/** Friendly label for the generic draft roles too (RP/BN aren't in getPositionLabel cleanly). */
-export function roleLabel(role: Position): string {
-  if (role === 'RP') return 'Reliever';
-  if (role === 'HC') return 'Manager';
-  if (role === 'ST') return 'Ballpark';
-  return getPositionLabel(role);
+  groupId: string;
+  name: string;       // group name, e.g. "Texas Rangers"
+  emoji: string;
+  flavor: string;     // one-line blurb
 }
 
 // ---------------------------------------------------------------------------
@@ -135,13 +129,18 @@ function weightedOrder(players: Player[], teamA: number): Player[] {
 }
 
 /**
- * Spin a group and offer up to 4 of its players that fit an open roster slot.
+ * Spin a GROUP and offer up to 4 of its players that fit an open roster slot.
+ * The pick then auto-slots into the best open role it qualifies for.
  * Returns null only when the roster is full.
+ *
+ * opts.forceGroupId   → keep this group, re-deal 4 members ("Refresh").
+ * opts.excludeGroupId → spin a DIFFERENT group ("New Group").
  */
 export function spinGroupRound(
   remaining: Record<string, number>,
   picked: Set<string>,
-  poolFilter?: (p: Player) => boolean
+  poolFilter?: (p: Player) => boolean,
+  opts?: { forceGroupId?: string; excludeGroupId?: string }
 ): { round: DraftRound; offered: Player[] } | null {
   const open = Object.keys(remaining).filter(r => (remaining[r] ?? 0) > 0);
   if (open.length === 0) return null;
@@ -158,10 +157,18 @@ export function spinGroupRound(
   if ((remaining['HC'] ?? 0) > 0) candidates.push(STAFF_GROUPS.HC);
   if ((remaining['ST'] ?? 0) > 0) candidates.push(STAFF_GROUPS.ST);
 
-  const viable = candidates.filter(g => fittingMembers(g, remaining, picked, poolFilter, capA, capB).length > 0);
+  let viable = candidates.filter(g => fittingMembers(g, remaining, picked, poolFilter, capA, capB).length > 0);
+  // "New Group" → don't land on the same one again (when alternatives exist).
+  if (opts?.excludeGroupId) {
+    const others = viable.filter(g => g.id !== opts.excludeGroupId);
+    if (others.length > 0) viable = others;
+  }
 
   let chosen: Group;
-  if (viable.length > 0) {
+  const forced = opts?.forceGroupId ? candidates.find(g => g.id === opts.forceGroupId) : undefined;
+  if (forced && fittingMembers(forced, remaining, picked, poolFilter).length > 0) {
+    chosen = forced;                                   // "Refresh" — same group, new members
+  } else if (viable.length > 0) {
     chosen = viable[Math.floor(rand() * viable.length)];
   } else {
     // Fallback: an ad-hoc "free agents" group of everyone who fits an open slot.
@@ -192,56 +199,7 @@ export function spinGroupRound(
     const used = new Set(offered.map(p => p.id));
     for (const m of members) { if (offered.length >= 4) break; if (!used.has(m.id)) offered.push(m); }
   }
-  return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb } as unknown as DraftRound, offered: offered.slice(0, 4).sort((a, b) => b.overall - a.overall) };
-}
-
-/**
- * ROLE-based spin (the slot machine lands on a position). Offers up to 4 players
- * who play that role, quality-capped (a few A's, some B's, plenty of C role
- * players) so a roster is never stacked. Returns null when the roster is full.
- *
- * opts.role   → force this exact role (used by "different players, same role").
- * opts.exclude → land on any OTHER open role (used by "new role" re-roll).
- */
-export function spinRoleRound(
-  remaining: Record<string, number>,
-  picked: Set<string>,
-  poolFilter?: (p: Player) => boolean,
-  opts?: { role?: Position; exclude?: Position }
-): { round: DraftRound; offered: Player[] } | null {
-  const open = (Object.keys(remaining) as Position[]).filter(r => (remaining[r] ?? 0) > 0);
-  if (open.length === 0) return null;
-
-  // Eligible (unpicked, fits role, in-pool) players for a role. Staff come from
-  // their own pools (managers/stadiums aren't in the player pool).
-  const baseFor = (role: Position) => {
-    if (role === 'HC') return managersPool.filter(p => !picked.has(p.id));
-    if (role === 'ST') return stadiumsPool.filter(p => !picked.has(p.id));
-    return playersPool.filter(p => !picked.has(p.id) && playerFitsRole(p, role) && (!poolFilter || poolFilter(p)));
-  };
-
-  // Choose the role the wheel lands on — only roles that actually have candidates.
-  let prefer = open;
-  if (opts?.role && (remaining[opts.role] ?? 0) > 0) prefer = [opts.role];
-  else if (opts?.exclude) { const o = open.filter(r => r !== opts.exclude); if (o.length) prefer = o; }
-  let viable = prefer.filter(r => baseFor(r).length > 0);
-  if (viable.length === 0) viable = open.filter(r => baseFor(r).length > 0); // widen if the preferred set is dry
-  if (viable.length === 0) return null;
-  const role = viable[Math.floor(rand() * viable.length)];
-
-  // Same A/B quality caps as the group spin.
-  let teamA = 0, teamB = 0;
-  for (const id of picked) { const cp = getCard(id); if (!cp) continue; if (cp.overall >= 85) teamA++; else if (cp.overall >= 70) teamB++; }
-  const capA = teamA >= A_HARD_CAP;
-  const capB = teamB >= B_HARD_CAP;
-
-  const base = baseFor(role);
-  const passesCaps = (p: Player) => !(capA && p.overall >= 85) && !(capB && p.overall >= 70 && p.overall < 85);
-  let fitting = base.filter(passesCaps);
-  if (fitting.length < 4) fitting = base; // relax caps if the role is thin
-  const offered = weightedOrder(fitting, teamA).slice(0, 4).sort((a, b) => b.overall - a.overall);
-
-  return { round: { role, roleLabel: roleLabel(role) }, offered };
+  return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb }, offered: offered.slice(0, 4).sort((a, b) => b.overall - a.overall) };
 }
 
 // ---------------------------------------------------------------------------

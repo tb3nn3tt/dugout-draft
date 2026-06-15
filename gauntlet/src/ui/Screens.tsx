@@ -248,7 +248,7 @@ export function DraftScreen({ g }: { g: G }) {
     setRolling(true);
     const iv = setTimeout(() => { setRolling(false); sfxLock(); }, 620);
     return () => clearTimeout(iv);
-  }, [currentRound?.role, offered]);
+  }, [currentRound?.groupId, offered]);
 
   return (
     <div className="draft">
@@ -257,20 +257,21 @@ export function DraftScreen({ g }: { g: G }) {
           <strong className="draft__team">{g.state.teamName}</strong>
           <span className="dim">Pick {pickNum}/{TOTAL_PICKS}</span>
         </div>
-        {currentRound && <RoleSlot round={currentRound} rolling={rolling} />}
+        {currentRound && <GroupSlot round={currentRound} rolling={rolling} />}
       </div>
 
       {/* Re-roll controls — change the role, or re-deal players for this role. */}
       <div className="reroll">
         <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollRole(); }} disabled={rolling}>
-          🎰 New Role
+          ↻ New Group
         </button>
         <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollPlayers(); }} disabled={rolling}>
-          🔄 New Players
+          ↻ Refresh
         </button>
       </div>
 
-      {/* Four candidates as clean text rows — name, grade, key ratings in letters. */}
+      {/* Four group members as plain text rows — every rating shown, split = vsL/vsR. */}
+      <div className="optlegend">tap to draft (fills an open spot they qualify for) · splits are <b>vs LHP / vs RHP</b></div>
       <div className={`optlist ${rolling ? 'optlist--rolling' : ''}`}>
         {offered.map(p => (
           <OptionRow key={p.id} player={p}
@@ -285,8 +286,8 @@ export function DraftScreen({ g }: { g: G }) {
       </button>
 
       <div className="draft__bar">
-        <button className="btn btn--ghost draft__barbtn" onClick={() => setShowRoster(true)}>📋 View Roster</button>
-        <button className="btn btn--ghost draft__barbtn" onClick={g.autofill}>⚡ Auto-fill rest</button>
+        <button className="btn btn--ghost draft__barbtn" onClick={() => setShowRoster(true)}>View Roster</button>
+        <button className="btn btn--ghost draft__barbtn" onClick={g.autofill}>Auto-fill rest</button>
       </div>
 
       {showRoster && (
@@ -312,46 +313,58 @@ export function DraftScreen({ g }: { g: G }) {
   );
 }
 
-// Role names that flash by while the slot machine "rolls".
-const ROLE_SPIN = ['CATCHER', 'SHORTSTOP', 'CENTER FIELD', 'ACE', 'CLOSER', 'CLEANUP', 'THIRD BASE', 'SETUP', 'LEADOFF', 'MANAGER'];
+// Group names that flash by while the slot machine "rolls".
+const GROUP_SPIN = ['TEXAS RANGERS', 'SANDLOT KIDS', 'SPEEDSTERS', 'POWER HITTERS', 'AAA LEGENDS',
+  'PLAYOFF HEROES', 'COOPERSTOWN', 'FLAMETHROWERS', 'COLLEGE LEGENDS', 'WORLD STARS'];
 
-/** The slot machine: role labels flash by, then lock onto the spun role. */
-function RoleSlot({ round, rolling }: { round: DraftRound; rolling: boolean }) {
+/** The slot machine: group names flash by, then lock onto the spun group. */
+function GroupSlot({ round, rolling }: { round: DraftRound; rolling: boolean }) {
   const [t, setT] = useState(0);
   useEffect(() => {
     if (!rolling) return;
     const iv = setInterval(() => setT(x => x + 1), 70);
     return () => clearInterval(iv);
   }, [rolling, round]);
-  const label = rolling ? ROLE_SPIN[t % ROLE_SPIN.length] : round.roleLabel.toUpperCase();
+  const label = rolling ? GROUP_SPIN[t % GROUP_SPIN.length] : `${round.emoji} ${round.name}`.toUpperCase();
   return (
     <div className={`roleslot ${rolling ? 'roleslot--spin' : 'roleslot--lock'}`}>
-      <div className="roleslot__cap">{rolling ? 'spinning…' : 'now drafting'}</div>
+      <div className="roleslot__cap">{rolling ? 'spinning…' : 'drafting from'}</div>
       <div className="roleslot__role">{label}</div>
+      {!rolling && <div className="roleslot__flavor">{round.flavor}</div>}
     </div>
   );
 }
 
-/** Up to 5 key ratings for a player, as A-F letters. */
-function keyStats(player: Player): { label: string; grade: number }[] {
+// A grade cell: either a single value, or a platoon split (vs L | vs R).
+interface SCell { label: string; vL?: number; vR?: number; v?: number }
+
+/** Every rating shown up front — platoon splits for CON/POW (STF/CMD), singles for the rest. */
+function statCells(player: Player): SCell[] {
   const r = getRatings(player);
-  const avg = (a: number, b: number) => Math.round((a + b) / 2);
   if (r.kind === 'pitcher') {
     return [
-      { label: 'STF', grade: avg(r.stuffVL, r.stuffVR) },
-      { label: 'CMD', grade: avg(r.cmdVL, r.cmdVR) },
-      { label: 'CTL', grade: r.control },
-      { label: 'STM', grade: r.stamina },
+      { label: 'STF', vL: r.stuffVL, vR: r.stuffVR },
+      { label: 'CMD', vL: r.cmdVL, vR: r.cmdVR },
+      { label: 'CTL', v: r.control },
+      { label: 'STM', v: r.stamina },
     ];
   }
   return [
-    { label: 'CON', grade: avg(r.conVL, r.conVR) },
-    { label: 'POW', grade: avg(r.hrVL, r.hrVR) },
-    { label: 'EYE', grade: r.eye },
-    { label: 'SPD', grade: r.run },
-    { label: 'FLD', grade: r.field },
+    { label: 'CON', vL: r.conVL, vR: r.conVR },
+    { label: 'POW', vL: r.hrVL, vR: r.hrVR },
+    { label: 'EYE', v: r.eye },
+    { label: 'RUN', v: r.run },
+    { label: 'FLD', v: r.field },
   ];
 }
+
+/** Overall grade → a single accent color (mirrors the A-F bands). */
+function ovrColor(o: number): string {
+  if (o >= 85) return '#ffd700'; if (o >= 70) return '#00d4ff'; if (o >= 58) return '#4ade80';
+  if (o >= 46) return '#94a3b8'; if (o >= 40) return '#f97316'; return '#ef4444';
+}
+
+function Letter({ g }: { g: number }) { return <span style={{ color: getGradeColor(g) }}>{gradeToLetter(g)}</span>; }
 
 /** Compact staff (coach / park) summary line. */
 function staffLine(player: Player): string {
@@ -370,33 +383,32 @@ function staffLine(player: Player): string {
   return out.join(' · ') || (c?.style ?? p?.name ?? '');
 }
 
-/** One candidate as a readable text row: grade · name · pos/B/T · key ratings. */
+/** One candidate as a plain text line: grade · name · pos/B/T, then every rating. */
 function OptionRow({ player, onPick, onInfo }: { player: Player; onPick: () => void; onInfo: () => void }) {
-  const tier = getTier(player.overall);
   const grade = overallToGrade(player.overall);
   const pos = player.positions[0];
   const isStaff = pos === 'HC' || pos === 'ST';
   return (
-    <div className="opt" style={{ ['--opt-tier' as never]: TIER_COLORS[tier] }}>
+    <div className="opt">
       <button className="opt__pick" onClick={onPick}>
-        <span className="opt__grade">{grade}</span>
-        <span className="opt__id">
+        <div className="opt__hd">
+          <span className="opt__grade" style={{ color: ovrColor(player.overall) }}>{grade}</span>
           <span className="opt__name">{abbrevName(player.name)}</span>
-          <span className="opt__meta">
-            {isStaff ? (pos === 'HC' ? 'Manager' : 'Ballpark') : `${pos} · ${player.bats}/${player.throws}`}
-          </span>
-        </span>
+          <span className="opt__meta">{isStaff ? (pos === 'HC' ? 'MGR' : 'PARK') : `${pos} · ${player.bats}/${player.throws}`}</span>
+        </div>
         {isStaff ? (
-          <span className="opt__staff">{staffLine(player)}</span>
+          <div className="opt__staff">{staffLine(player)}</div>
         ) : (
-          <span className="opt__stats">
-            {keyStats(player).map(s => (
-              <span key={s.label} className="opt__stat">
+          <div className="opt__stats">
+            {statCells(player).map(s => (
+              <span key={s.label} className="opt__c">
                 <i>{s.label}</i>
-                <b style={{ color: getGradeColor(s.grade) }}>{gradeToLetter(s.grade)}</b>
+                {s.v != null
+                  ? <b><Letter g={s.v} /></b>
+                  : <b><Letter g={s.vL!} /><span className="opt__sl">/</span><Letter g={s.vR!} /></b>}
               </span>
             ))}
-          </span>
+          </div>
         )}
       </button>
       <button className="opt__info" onClick={onInfo} aria-label="Player details">ℹ</button>
