@@ -330,7 +330,6 @@ function GroupSlot({ round, rolling }: { round: DraftRound; rolling: boolean }) 
     <div className={`roleslot ${rolling ? 'roleslot--spin' : 'roleslot--lock'}`}>
       <div className="roleslot__cap">{rolling ? 'spinning…' : 'drafting from'}</div>
       <div className="roleslot__role">{label}</div>
-      {!rolling && <div className="roleslot__flavor">{round.flavor}</div>}
     </div>
   );
 }

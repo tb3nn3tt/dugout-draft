@@ -184,21 +184,36 @@ export function spinGroupRound(
     chosen = { id: 'free-agents', name: 'Free Agents', emoji: '🎲', blurb: 'A grab bag of available talent.', memberIds: ids };
   }
 
-  // Honor the caps; but if that leaves nothing (only A/B players remain for the
-  // open slots), relax them so the draft always has something to offer.
+  const isStaff = chosen.id === STAFF_GROUPS.HC.id || chosen.id === STAFF_GROUPS.ST.id;
+
+  // Build a SPREAD of 4 FROM THIS GROUP: role variety, and AT MOST ONE A-grade
+  // card per offer — so you're never handed four stars to pick from. The ROSTER
+  // A/B caps still gate the candidate pool (so a maxed-out team is offered no
+  // more A's/B's, even under reroll abuse); relax only if that empties the group.
   let fitting = fittingMembers(chosen, remaining, picked, poolFilter, capA, capB);
   if (fitting.length === 0) fitting = fittingMembers(chosen, remaining, picked, poolFilter);
-  const members = weightedOrder(fitting, teamA);
-  // Offer VARIETY: prefer one player per distinct open slot this group can fill,
-  // so a round shows e.g. a catcher, a center fielder, a third baseman and an arm
-  // — you choose which position to fill — rather than four of the same spot.
-  const byRole = new Map<string, Player>();
-  for (const m of members) { const r = assignRole(m, remaining); if (r && !byRole.has(r)) byRole.set(r, m); }
-  const offered: Player[] = [...byRole.values()];
-  if (offered.length < 4) {
-    const used = new Set(offered.map(p => p.id));
-    for (const m of members) { if (offered.length >= 4) break; if (!used.has(m.id)) offered.push(m); }
-  }
+  const groupMembers = weightedOrder(fitting, teamA);
+
+  const offered: Player[] = [];
+  const usedIds = new Set<string>();
+  const usedRoles = new Set<string>();
+  let aCount = 0;
+  const tryAdd = (p: Player, opts: { variety?: boolean; capA?: boolean } = {}) => {
+    if (offered.length >= 4 || usedIds.has(p.id)) return;
+    const r = assignRole(p, remaining);
+    if (!r) return;
+    if (opts.variety && usedRoles.has(r)) return;
+    if (opts.capA && !isStaff && p.overall >= 85 && aCount >= 1) return;
+    offered.push(p); usedIds.add(p.id); usedRoles.add(r);
+    if (p.overall >= 85) aCount++;
+  };
+  // 1) non-A, one per open role   2) allow the single A, by role
+  for (const m of groupMembers) if (m.overall < 85) tryAdd(m, { variety: true, capA: true });
+  for (const m of groupMembers) tryAdd(m, { variety: true, capA: true });
+  // 3) drop the role-variety constraint, still ≤1 A   4) last resort: fill to 4
+  for (const m of groupMembers) tryAdd(m, { capA: true });
+  for (const m of groupMembers) tryAdd(m, {});
+
   return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb }, offered: offered.slice(0, 4).sort((a, b) => b.overall - a.overall) };
 }
 
