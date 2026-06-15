@@ -1,5 +1,5 @@
 import { Player, Position, Tier, PlayerCategory } from './types';
-import { playersPool, managersPool, stadiumsPool, getCard, getTier } from './players';
+import { draftPool, managersPool, stadiumsPool, getCard, getTier } from './players';
 import { canPlayPosition } from './sim/helpers';
 import { rand } from './sim/rng';
 import { GROUPS, STAFF_GROUPS, Group } from './groups';
@@ -205,7 +205,7 @@ export function spinGroupRound(
   } else {
     // Fallback: an ad-hoc "free agents" group of everyone who fits an open slot.
     // Respect the caps if possible; relax them only if nothing else is available.
-    const buildFA = (caps: boolean) => playersPool
+    const buildFA = (caps: boolean) => draftPool
       .filter(p => !picked.has(p.id) && (!poolFilter || poolFilter(p)) && assignRole(p, remaining) !== null
         && (!caps || (!(capA && p.overall >= 85) && !(capB && p.overall >= 70 && p.overall < 85))))
       .map(p => p.id);
@@ -261,7 +261,7 @@ export function spinGroupRound(
     const pool = isStaff
       ? (chosen.id === STAFF_GROUPS.HC.id ? managersPool : stadiumsPool)
           .filter(p => !usedIds.has(p.id) && !picked.has(p.id))
-      : playersPool.filter(p => p.overall < 70 && !usedIds.has(p.id) && !picked.has(p.id)
+      : draftPool.filter(p => p.overall < 70 && !usedIds.has(p.id) && !picked.has(p.id)
           && (!poolFilter || poolFilter(p)) && assignRole(p, remaining) !== null);
     for (const m of weightedOrder(pool, teamA)) tryAdd(m, {});
   }
@@ -277,10 +277,10 @@ export function spinGroupRound(
 // ---------------------------------------------------------------------------
 
 function eligibleForRole(role: Position): Player[] {
-  if (role === 'DH') return playersPool.filter(isHitterCard);
-  if (role === 'RP') return playersPool.filter(p => RELIEVER_POS.includes(p.positions[0]));
-  if (role === 'BN') return playersPool.filter(p => BENCH_POS.includes(p.positions[0]));
-  return playersPool.filter(p => p.positions[0] === role);
+  if (role === 'DH') return draftPool.filter(isHitterCard);
+  if (role === 'RP') return draftPool.filter(p => RELIEVER_POS.includes(p.positions[0]));
+  if (role === 'BN') return draftPool.filter(p => BENCH_POS.includes(p.positions[0]));
+  return draftPool.filter(p => p.positions[0] === role);
 }
 
 /** A simple tiered offer for auto-filling depth roles (RP/BN). */

@@ -49,6 +49,29 @@ export const playersPool: Player[] = [
 export const managersPool: Player[] = coachesData as Player[];
 export const stadiumsPool: Player[] = stadiumsData as Player[];
 
+// What YOU draft from: real players + intentional movie fiction only. Excludes
+// the AI-generated filler (lore-players, marquee-cards) and the single-name
+// Sandlot kids (niners) — those stay in playersPool so the famous-team OPPONENTS
+// (Bush League Bears, Niners 12U, Sandlot Legends) still build with their flavor.
+export const draftPool: Player[] = [
+  ...(playersData as Player[]),
+  ...(historical as Player[]),
+  ...(singleSeason as Player[]),
+  ...(decade6070 as Player[]),
+  ...(decade8090 as Player[]),
+  ...(playoff as Player[]),
+  ...(steroid as Player[]),
+  ...(international as Player[]),
+  ...(oneYear as Player[]),
+  ...(busts as Player[]),
+  ...(fictional as Player[]),
+  ...(extraRegulars as Player[]),
+  ...(rolePlayers as Player[]),
+  ...(rolePlayers2 as Player[]),
+  ...(rolePlayers3 as Player[]),
+  ...(realPlayers as Player[]),
+];
+
 // Everything, for hydration by id.
 export const allCards: Player[] = [...playersPool, ...managersPool, ...stadiumsPool];
 

@@ -1,5 +1,5 @@
 import { Player } from './types';
-import { playersPool, managersPool, stadiumsPool } from './players';
+import { draftPool, managersPool, stadiumsPool } from './players';
 import { getRatings } from './ratings';
 
 // ============================================================================
@@ -53,7 +53,7 @@ const isPitcher = (p: Player) => getRatings(p).kind === 'pitcher';
 function buildGroups(): Group[] {
   const groups: Group[] = [];
   const add = (id: string, name: string, emoji: string, blurb: string, filter: (p: Player) => boolean, min = 4) => {
-    const memberIds = playersPool.filter(filter).map(p => p.id);
+    const memberIds = draftPool.filter(filter).map(p => p.id);
     if (memberIds.length >= min) groups.push({ id, name, emoji, blurb, memberIds });
   };
 
@@ -63,7 +63,7 @@ function buildGroups(): Group[] {
   }
 
   // --- Eras (real decades/periods only — movie titles carry "(YYYY)", handled below) ---
-  const eras = [...new Set(playersPool.map(p => p.era).filter(Boolean))] as string[];
+  const eras = [...new Set(draftPool.map(p => p.era).filter(Boolean))] as string[];
   for (const era of eras) {
     if (era.includes('(')) continue;
     add(`era-${era}`, era, '📅', `Ballplayers of ${era}.`, p => p.era === era, 6);
@@ -72,7 +72,7 @@ function buildGroups(): Group[] {
   // --- Movie & TV casts — fictional players carry their film/show as `era`.
   // Only real titles (with a "(YYYY)" year) become film groups; the lore flavor-
   // eras without a year stay as normal era groups above. Avoids duplicates. ---
-  const films = [...new Set(playersPool
+  const films = [...new Set(draftPool
     .filter(p => p.category === 'fictional' && p.era && /\(\d{4}\)\s*$/.test(p.era))
     .map(p => p.era as string))];
   const usedNames = new Set(groups.map(g => g.name));
