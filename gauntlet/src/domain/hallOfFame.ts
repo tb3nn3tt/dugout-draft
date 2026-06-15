@@ -6,7 +6,7 @@ import { GauntletTeam, SeriesOutcome } from './types';
 // Score is streak-first, run-differential as the tiebreaker.
 // ============================================================================
 
-const KEY = 'dugout-gauntlet-hof';
+const KEY = 'dugout-gauntlet-hof-v2';   // bumped to clear the old local leaderboard
 const MAX_ENTRIES = 50;
 
 export interface HofEntry {

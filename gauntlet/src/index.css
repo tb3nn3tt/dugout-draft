@@ -234,6 +234,11 @@ strong, b { font-weight: 700; }
 .draft__barbtn { min-height: 42px; font-size: 12px; padding: 0 10px; }
 .draft__sidehd { font-size: 12px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px; }
 
+/* "Still need" — open positions, always visible */
+.needbar { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+.needbar__lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; color: var(--ink-faint); }
+.needbar__chip { font-size: 11px; font-weight: 700; color: var(--accent); border: 1px solid var(--line-bright); padding: 1px 6px; }
+
 /* Wide screens: widen the column, lay the draft and a PERSISTENT lineup panel
    side by side. Everything lines up; nothing scrolls or resizes dynamically. */
 @media (min-width: 860px) {

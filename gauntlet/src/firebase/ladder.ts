@@ -18,7 +18,7 @@ import { resetRng } from '../domain/sim/rng';
 // whichever player's browser is open (clients-as-workers) — no server needed.
 // ============================================================================
 
-const COL = 'ladder_teams';
+const COL = 'ladder_teams_v2';   // bumped to wipe the old global board (fresh start)
 
 export interface LadderTeam {
   id: string;
@@ -48,7 +48,7 @@ function hydrate(t: { teamName: string; playerIds: string[]; managerId: string |
   };
 }
 
-const MY_KEY = 'dugout-gauntlet-my-ladder';
+const MY_KEY = 'dugout-gauntlet-my-ladder-v2';
 /** Doc ids of teams this device has submitted (for highlighting on the ladder). */
 export function getMyTeamIds(): Set<string> {
   try { return new Set(JSON.parse(localStorage.getItem(MY_KEY) || '[]') as string[]); }

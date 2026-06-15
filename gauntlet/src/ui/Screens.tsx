@@ -274,6 +274,7 @@ export function DraftScreen({ g }: { g: G }) {
           <span className="dim">Pick {pickNum}/{TOTAL_PICKS}</span>
         </div>
         {currentRound && <GroupSlot round={currentRound} rolling={rolling} />}
+        <NeedBar remaining={g.state.remaining} />
       </div>
 
       {/* Re-roll controls — limited budget per pick (New Group + Refresh combined). */}
@@ -333,6 +334,26 @@ export function DraftScreen({ g }: { g: G }) {
           onClose={() => setDetail(null)}
         />
       )}
+    </div>
+  );
+}
+
+// Open positions still to fill — always visible so you know what you need.
+const NEED_ORDER: { role: string; label: string }[] = [
+  { role: 'C', label: 'C' }, { role: '1B', label: '1B' }, { role: '2B', label: '2B' },
+  { role: '3B', label: '3B' }, { role: 'SS', label: 'SS' }, { role: 'LF', label: 'LF' },
+  { role: 'CF', label: 'CF' }, { role: 'RF', label: 'RF' }, { role: 'DH', label: 'DH' },
+  { role: 'SP', label: 'SP' }, { role: 'RP', label: 'RP' }, { role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PARK' },
+];
+function NeedBar({ remaining }: { remaining: Record<string, number> }) {
+  const open = NEED_ORDER.filter(r => (remaining[r.role] ?? 0) > 0);
+  if (open.length === 0) return null;
+  return (
+    <div className="needbar">
+      <span className="needbar__lbl">STILL NEED</span>
+      {open.map(r => (
+        <span key={r.role} className="needbar__chip">{r.label}{(remaining[r.role] ?? 0) > 1 ? `×${remaining[r.role]}` : ''}</span>
+      ))}
     </div>
   );
 }
