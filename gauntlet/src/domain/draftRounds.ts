@@ -1,5 +1,5 @@
 import { Player, Position, Tier, PlayerCategory } from './types';
-import { playersPool, getCard, getTier } from './players';
+import { playersPool, managersPool, stadiumsPool, getCard, getTier } from './players';
 import { canPlayPosition } from './sim/helpers';
 import { rand } from './sim/rng';
 import { GROUPS, STAFF_GROUPS, Group } from './groups';
@@ -112,9 +112,9 @@ function shuffle<T>(a: T[]): T[] {
 // in the offers. So every team ends up a believable spread: a handful of stars and
 // a lot of solid B/C role players, never an A at every position. `teamA` = how many
 // A-grade players are already on the roster.
-const A_SOFT_CAP = 1;   // A-grade odds start decaying once the team has this many
-const A_HARD_CAP = 2;   // ...and stop entirely here — at most a couple of stars
-const B_HARD_CAP = 5;   // after the stars + this many B-grade regulars, the rest is C/role-player
+const A_SOFT_CAP = 2;   // A-grade odds start decaying once the team has this many
+const A_HARD_CAP = 4;   // ...and stop entirely here — a few genuine stars
+const B_HARD_CAP = 7;   // after the stars + this many B-grade regulars, the rest is C/role-player
 function draftWeight(overall: number, teamA: number): number {
   let w = Math.exp(-Math.max(0, overall - 72) / 14);
   if (overall >= 85) w *= Math.exp(-Math.max(0, teamA - A_SOFT_CAP) * 1.15);
@@ -148,8 +148,14 @@ export function spinGroupRound(
   // Quality caps: count A/B-grade players already on the roster. Once at a cap,
   // offers exclude that tier so a team fills out with a few stars, some regulars,
   // and a healthy number of C-grade role players — never A/B at every spot.
+  // Only POSITION PLAYERS count toward the star caps — a great manager or
+  // ballpark shouldn't eat your A-budget or thin out the staff offer.
   let teamA = 0, teamB = 0;
-  for (const id of picked) { const cp = getCard(id); if (!cp) continue; if (cp.overall >= 85) teamA++; else if (cp.overall >= 70) teamB++; }
+  for (const id of picked) {
+    const cp = getCard(id); if (!cp) continue;
+    if (cp.positions[0] === 'HC' || cp.positions[0] === 'ST') continue;
+    if (cp.overall >= 85) teamA++; else if (cp.overall >= 70) teamB++;
+  }
   const capA = teamA >= A_HARD_CAP;
   const capB = teamB >= B_HARD_CAP;
 
@@ -213,6 +219,18 @@ export function spinGroupRound(
   // 3) drop the role-variety constraint, still ≤1 A   4) last resort: fill to 4
   for (const m of groupMembers) tryAdd(m, { capA: true });
   for (const m of groupMembers) tryAdd(m, {});
+  // 5) if the group is too thin for a full slate, pad to four. Staff rounds pad
+  //    from the full manager/ballpark pool; field rounds pad with C-grade (<70)
+  //    role players (never stronger than the group's own picks, so padding can't
+  //    inflate the team) — the offer is always four options.
+  if (offered.length < 4) {
+    const pool = isStaff
+      ? (chosen.id === STAFF_GROUPS.HC.id ? managersPool : stadiumsPool)
+          .filter(p => !usedIds.has(p.id) && !picked.has(p.id))
+      : playersPool.filter(p => p.overall < 70 && !usedIds.has(p.id) && !picked.has(p.id)
+          && (!poolFilter || poolFilter(p)) && assignRole(p, remaining) !== null);
+    for (const m of weightedOrder(pool, teamA)) tryAdd(m, {});
+  }
 
   return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb }, offered: offered.slice(0, 4).sort((a, b) => b.overall - a.overall) };
 }
