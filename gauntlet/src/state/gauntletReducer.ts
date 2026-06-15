@@ -1,5 +1,5 @@
 import { GauntletTeam, Player, Position, RunPhase, SeriesOutcome } from '../domain/types';
-import { MARQUEE_REQUIREMENTS, DEPTH_REQUIREMENTS, spinGroupRound, assignRole, playerFitsRole, offerForRound, DraftRound } from '../domain/draftRounds';
+import { MARQUEE_REQUIREMENTS, DEPTH_REQUIREMENTS, spinRoleRound, playerFitsRole, offerForRound, DraftRound } from '../domain/draftRounds';
 import { MatchedOpponent } from '../domain/matchmaking';
 import { SeriesResult } from '../domain/sim/series';
 import { getMutator } from '../domain/mutators';
@@ -38,6 +38,8 @@ export interface GauntletState {
 export type GauntletAction =
   | { type: 'START_RUN'; teamName: string; seed: number; mutatorId: string }
   | { type: 'PICK'; player: Player }
+  | { type: 'REROLL_ROLE' }                      // re-spin to a different open role
+  | { type: 'REROLL_PLAYERS' }                   // same role, four new candidates
   | { type: 'AUTOFILL_REST' }
   | { type: 'SWAP_SLOTS'; a: number; b: number } // roster editor: swap two slots' players
   | { type: 'SUBMIT_ROSTER' }                    // lock the roster, start the gauntlet
@@ -95,7 +97,7 @@ function nextRound(
   picks: Player[],
   filter: ((p: Player) => boolean) | undefined
 ): { round: DraftRound; offered: Player[] } | null {
-  return spinGroupRound(remaining, pickedIds(picks), filter);
+  return spinRoleRound(remaining, pickedIds(picks), filter);
 }
 
 /**
@@ -155,9 +157,9 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
 
     case 'PICK': {
       if (!state.currentRound) return state;
-      // The picked player auto-slots into the best open role they're eligible for.
-      const role = assignRole(action.player, state.remaining);
-      if (!role) return state; // not eligible for any open slot (shouldn't happen)
+      // The slot machine already landed on a role; the pick fills THAT role.
+      const role = state.currentRound.role;
+      if ((state.remaining[role] ?? 0) <= 0) return state; // role already full (shouldn't happen)
       const picks = [...state.picks, action.player];
       const draftLog = [...state.draftLog, { role, player: action.player }];
       const remaining = { ...state.remaining, [role]: (state.remaining[role] ?? 0) - 1 };
@@ -168,24 +170,39 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       return { ...state, picks, draftLog, remaining, currentRound: next.round, offered: next.offered };
     }
 
+    case 'REROLL_ROLE': {
+      if (!state.currentRound) return state;
+      const filter = getMutator(state.mutatorId).poolFilter;
+      const next = spinRoleRound(state.remaining, pickedIds(state.picks), filter, { exclude: state.currentRound.role });
+      if (!next) return state;
+      return { ...state, currentRound: next.round, offered: next.offered };
+    }
+
+    case 'REROLL_PLAYERS': {
+      if (!state.currentRound) return state;
+      const filter = getMutator(state.mutatorId).poolFilter;
+      const next = spinRoleRound(state.remaining, pickedIds(state.picks), filter, { role: state.currentRound.role });
+      if (!next) return state;
+      return { ...state, currentRound: next.round, offered: next.offered };
+    }
+
     case 'AUTOFILL_REST': {
       const filter = getMutator(state.mutatorId).poolFilter;
       const picks = [...state.picks];
       const draftLog = [...state.draftLog];
       const remaining = { ...state.remaining };
+      let round = state.currentRound;
       let offered = state.offered;
       let guard = 0;
       while (Object.values(remaining).some(n => n > 0) && guard++ < 40) {
         const choice = offered[0];
-        if (choice) {
-          const role = assignRole(choice, remaining);
-          if (role) {
-            picks.push(choice);
-            draftLog.push({ role, player: choice });
-            remaining[role] = (remaining[role] ?? 0) - 1;
-          }
+        if (round && choice && (remaining[round.role] ?? 0) > 0) {
+          picks.push(choice);
+          draftLog.push({ role: round.role, player: choice });
+          remaining[round.role] = (remaining[round.role] ?? 0) - 1;
         }
         const next = nextRound(remaining, picks, filter);
+        round = next?.round ?? null;
         offered = next?.offered ?? [];
         if (!next) break;
       }

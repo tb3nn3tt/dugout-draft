@@ -2,7 +2,8 @@ import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound, playerFitsRole } from '../domain/draftRounds';
 import { TIER_COLORS, getTier } from '../domain/players';
-import { overallToGrade, abbrevName } from '../domain/sim/helpers';
+import { overallToGrade, abbrevName, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
+import { getRatings } from '../domain/ratings';
 import { Player, Position } from '../domain/types';
 import { DraftEntry } from '../state/gauntletReducer';
 import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
@@ -10,7 +11,6 @@ import { runAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { ACHIEVEMENTS, loadUnlocked } from '../domain/achievements';
 import { isSoundOn, setSoundOn, sfxPick, sfxLock } from '../domain/sound';
-import { CardTile } from './CardTile';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
 import { LadderScreen } from './LadderScreen';
@@ -242,6 +242,13 @@ export function DraftScreen({ g }: { g: G }) {
   const [detail, setDetail] = useState<Player | null>(null);
   const [showRoster, setShowRoster] = useState(false);
   const pickNum = Math.min(picks.length + 1, TOTAL_PICKS);
+  // Slot machine is "rolling" briefly each time a new role is spun.
+  const [rolling, setRolling] = useState(true);
+  useEffect(() => {
+    setRolling(true);
+    const iv = setTimeout(() => { setRolling(false); sfxLock(); }, 620);
+    return () => clearTimeout(iv);
+  }, [currentRound?.role, offered]);
 
   return (
     <div className="draft">
@@ -250,17 +257,36 @@ export function DraftScreen({ g }: { g: G }) {
           <strong className="draft__team">{g.state.teamName}</strong>
           <span className="dim">Pick {pickNum}/{TOTAL_PICKS}</span>
         </div>
-        {currentRound && <RoundBanner round={currentRound} />}
+        {currentRound && <RoleSlot round={currentRound} rolling={rolling} />}
       </div>
 
-      {/* Four options in a roomy 2×2 — full width, no scroll. */}
-      <div className="draft__offers">
-        {offered.map(p => <CardTile key={p.id} player={p} onPick={(pl) => { sfxPick(); g.pick(pl); }} onInfo={setDetail} />)}
+      {/* Re-roll controls — change the role, or re-deal players for this role. */}
+      <div className="reroll">
+        <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollRole(); }} disabled={rolling}>
+          🎰 New Role
+        </button>
+        <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollPlayers(); }} disabled={rolling}>
+          🔄 New Players
+        </button>
       </div>
+
+      {/* Four candidates as clean text rows — name, grade, key ratings in letters. */}
+      <div className={`optlist ${rolling ? 'optlist--rolling' : ''}`}>
+        {offered.map(p => (
+          <OptionRow key={p.id} player={p}
+            onPick={() => { if (rolling) return; sfxPick(); g.pick(p); }}
+            onInfo={() => setDetail(p)} />
+        ))}
+      </div>
+
+      {/* Always-visible roster ribbon (tap to manage in detail). */}
+      <button className="rribbon" onClick={() => setShowRoster(true)}>
+        <RosterRibbon draftLog={draftLog} total={TOTAL_PICKS} />
+      </button>
 
       <div className="draft__bar">
-        <button className="btn btn--ghost draft__barbtn" onClick={() => setShowRoster(true)}>📋 Roster {picks.length}/{TOTAL_PICKS}</button>
-        <button className="btn btn--ghost draft__barbtn" onClick={g.autofill}>⚡ Auto-fill</button>
+        <button className="btn btn--ghost draft__barbtn" onClick={() => setShowRoster(true)}>📋 View Roster</button>
+        <button className="btn btn--ghost draft__barbtn" onClick={g.autofill}>⚡ Auto-fill rest</button>
       </div>
 
       {showRoster && (
@@ -286,29 +312,119 @@ export function DraftScreen({ g }: { g: G }) {
   );
 }
 
-// Slot-machine reveal — group names flash by, then lock onto the spun group.
-const SPIN_GROUPS = ['🔥 Flamethrowers', '🏛️ Cooperstown Immortals', '🎬 Hollywood Heroes', '🧢 The Sandlot Kids',
-  '⚾ Texas Rangers', '💪 The Sluggers', '🌎 World Baseball Stars', '⚡ Peak Seasons', '🪄 Wizards at Short', '🍂 October Heroes'];
+// Role names that flash by while the slot machine "rolls".
+const ROLE_SPIN = ['CATCHER', 'SHORTSTOP', 'CENTER FIELD', 'ACE', 'CLOSER', 'CLEANUP', 'THIRD BASE', 'SETUP', 'LEADOFF', 'MANAGER'];
 
-function RoundBanner({ round }: { round: DraftRound }) {
-  const [spin, setSpin] = useState(true);
+/** The slot machine: role labels flash by, then lock onto the spun role. */
+function RoleSlot({ round, rolling }: { round: DraftRound; rolling: boolean }) {
   const [t, setT] = useState(0);
   useEffect(() => {
-    setSpin(true); setT(0);
-    let n = 0;
-    const iv = setInterval(() => { setT(x => x + 1); if (++n >= 9) { clearInterval(iv); setSpin(false); sfxLock(); } }, 60);
+    if (!rolling) return;
+    const iv = setInterval(() => setT(x => x + 1), 70);
     return () => clearInterval(iv);
-  }, [round]);
-  const label = spin ? SPIN_GROUPS[t % SPIN_GROUPS.length] : `${round.emoji} ${round.name}`;
-  const c = spin ? 'var(--accent-2)' : 'var(--accent)';
+  }, [rolling, round]);
+  const label = rolling ? ROLE_SPIN[t % ROLE_SPIN.length] : round.roleLabel.toUpperCase();
   return (
-    <div className={`round-banner ${spin ? 'round-banner--spin' : 'round-banner--lock'}`} style={{ borderColor: c }}>
-      <div className="round-banner__name">{label}</div>
-      <div className="round-banner__flavor">{spin ? 'Spinning the wheel…' : round.flavor}</div>
-      <div className="round-banner__role"><span className="dim">Pick a player — they’ll fill an open spot</span></div>
+    <div className={`roleslot ${rolling ? 'roleslot--spin' : 'roleslot--lock'}`}>
+      <div className="roleslot__cap">{rolling ? 'spinning…' : 'now drafting'}</div>
+      <div className="roleslot__role">{label}</div>
     </div>
   );
 }
+
+/** Up to 5 key ratings for a player, as A-F letters. */
+function keyStats(player: Player): { label: string; grade: number }[] {
+  const r = getRatings(player);
+  const avg = (a: number, b: number) => Math.round((a + b) / 2);
+  if (r.kind === 'pitcher') {
+    return [
+      { label: 'STF', grade: avg(r.stuffVL, r.stuffVR) },
+      { label: 'CMD', grade: avg(r.cmdVL, r.cmdVR) },
+      { label: 'CTL', grade: r.control },
+      { label: 'STM', grade: r.stamina },
+    ];
+  }
+  return [
+    { label: 'CON', grade: avg(r.conVL, r.conVR) },
+    { label: 'POW', grade: avg(r.hrVL, r.hrVR) },
+    { label: 'EYE', grade: r.eye },
+    { label: 'SPD', grade: r.run },
+    { label: 'FLD', grade: r.field },
+  ];
+}
+
+/** Compact staff (coach / park) summary line. */
+function staffLine(player: Player): string {
+  const c = player.coachEffect, p = player.parkEffect;
+  const out: string[] = [];
+  if (c) {
+    if (c.offensiveBonus) out.push(`+${c.offensiveBonus}% OFF`);
+    if (c.pitchingBonus) out.push(`+${c.pitchingBonus}% PIT`);
+    if (c.clutchBonus) out.push(`+${c.clutchBonus} CLT`);
+    if (c.staminaBonus) out.push(`+${c.staminaBonus} STM`);
+  }
+  if (p) {
+    if (p.hrFactor && Math.abs(p.hrFactor - 1) > 0.001) out.push(`HR ×${p.hrFactor.toFixed(2)}`);
+    if (p.runFactor && Math.abs(p.runFactor - 1) > 0.001) out.push(`RUN ×${p.runFactor.toFixed(2)}`);
+  }
+  return out.join(' · ') || (c?.style ?? p?.name ?? '');
+}
+
+/** One candidate as a readable text row: grade · name · pos/B/T · key ratings. */
+function OptionRow({ player, onPick, onInfo }: { player: Player; onPick: () => void; onInfo: () => void }) {
+  const tier = getTier(player.overall);
+  const grade = overallToGrade(player.overall);
+  const pos = player.positions[0];
+  const isStaff = pos === 'HC' || pos === 'ST';
+  return (
+    <div className="opt" style={{ ['--opt-tier' as never]: TIER_COLORS[tier] }}>
+      <button className="opt__pick" onClick={onPick}>
+        <span className="opt__grade">{grade}</span>
+        <span className="opt__id">
+          <span className="opt__name">{abbrevName(player.name)}</span>
+          <span className="opt__meta">
+            {isStaff ? (pos === 'HC' ? 'Manager' : 'Ballpark') : `${pos} · ${player.bats}/${player.throws}`}
+          </span>
+        </span>
+        {isStaff ? (
+          <span className="opt__staff">{staffLine(player)}</span>
+        ) : (
+          <span className="opt__stats">
+            {keyStats(player).map(s => (
+              <span key={s.label} className="opt__stat">
+                <i>{s.label}</i>
+                <b style={{ color: getGradeColor(s.grade) }}>{gradeToLetter(s.grade)}</b>
+              </span>
+            ))}
+          </span>
+        )}
+      </button>
+      <button className="opt__info" onClick={onInfo} aria-label="Player details">ℹ</button>
+    </div>
+  );
+}
+
+/** A glanceable ribbon of every filled slot, in pick order. */
+function RosterRibbon({ draftLog, total }: { draftLog: DraftEntry[]; total: number }) {
+  if (draftLog.length === 0) return <span className="rribbon__empty">Your roster fills in here — tap to manage</span>;
+  return (
+    <>
+      <span className="rribbon__count">{draftLog.length}/{total}</span>
+      <span className="rribbon__chips">
+        {draftLog.map((e, i) => (
+          <span key={i} className="rribbon__chip">
+            <i>{ROLE_ABBR[e.role] ?? e.role}</i> {abbrevName(e.player.name).split(' ').slice(-2).join(' ')}
+          </span>
+        ))}
+      </span>
+    </>
+  );
+}
+
+const ROLE_ABBR: Record<string, string> = {
+  C: 'C', '1B': '1B', '2B': '2B', '3B': '3B', SS: 'SS', LF: 'LF', CF: 'CF', RF: 'RF', DH: 'DH',
+  SP: 'SP', RP: 'RP', CL: 'CL', SU: 'SU', HC: 'MGR', ST: 'PARK', BN: 'BN',
+};
 
 // ---------------------------------------------------------------------------
 // The Gauntlet — auto-runs the whole run; the "This Run" list fills in live

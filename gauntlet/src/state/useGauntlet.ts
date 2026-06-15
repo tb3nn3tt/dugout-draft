@@ -37,6 +37,8 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
   }, []);
 
   const pick = useCallback((player: Player) => dispatch({ type: 'PICK', player }), []);
+  const rerollRole = useCallback(() => dispatch({ type: 'REROLL_ROLE' }), []);
+  const rerollPlayers = useCallback(() => dispatch({ type: 'REROLL_PLAYERS' }), []);
   const autofill = useCallback(() => dispatch({ type: 'AUTOFILL_REST' }), []);
   const swapSlots = useCallback((a: number, b: number) => dispatch({ type: 'SWAP_SLOTS', a, b }), []);
   const submitRoster = useCallback(() => dispatch({ type: 'SUBMIT_ROSTER' }), []);
@@ -100,6 +102,8 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
     newAchievements: freshAchievementsRef.current,
     startRun,
     pick,
+    rerollRole,
+    rerollPlayers,
     autofill,
     swapSlots,
     submitRoster,
