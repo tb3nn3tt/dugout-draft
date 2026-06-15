@@ -408,12 +408,15 @@ function staffLine(player: Player): string {
 function OptionRow({ player, onPick, onInfo }: { player: Player; onPick: () => void; onInfo: () => void }) {
   const pos = player.positions[0];
   const isStaff = pos === 'HC' || pos === 'ST';
+  const posStr = isStaff ? (pos === 'HC' ? 'Manager' : 'Ballpark') : player.positions.slice(0, 3).join(' · ');
+  const org = [player.team, player.era].filter(Boolean).join(' · ');
   return (
     <div className="opt">
       <button className="opt__pick" onClick={onPick}>
-        <div className="opt__hd">
-          <span className="opt__name">{abbrevName(player.name)}</span>
-          <span className="opt__meta">{isStaff ? (pos === 'HC' ? 'MGR' : 'PARK') : `${player.positions.slice(0, 3).join('/')} · ${player.bats}/${player.throws}`}</span>
+        <div className="opt__idblock">
+          <div className="opt__name">{abbrevName(player.name)}</div>
+          <div className="opt__pos">{posStr}{!isStaff && ` · ${player.bats}/${player.throws}`}</div>
+          {org && <div className="opt__org">{org}</div>}
         </div>
         {isStaff ? (
           <div className="opt__staff">{staffLine(player)}</div>
@@ -421,10 +424,10 @@ function OptionRow({ player, onPick, onInfo }: { player: Player; onPick: () => v
           <div className="opt__stats">
             {statCells(player).map(s => (
               <span key={s.label} className="opt__c">
-                <i>{s.label}</i>
-                {s.v != null
-                  ? <b><Letter g={s.v} /></b>
-                  : <b><Letter g={s.vL!} /><span className="opt__sl">/</span><Letter g={s.vR!} /></b>}
+                <b className="opt__v">{s.v != null
+                  ? <Letter g={s.v} />
+                  : <><Letter g={s.vL!} /><span className="opt__sl">/</span><Letter g={s.vR!} /></>}</b>
+                <i className="opt__lbl">{s.label}</i>
               </span>
             ))}
           </div>
