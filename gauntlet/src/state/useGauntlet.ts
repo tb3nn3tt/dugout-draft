@@ -82,7 +82,7 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
       const gameWins = state.history.reduce((a, h) => a + h.wins, 0);
       const gameLosses = state.history.reduce((a, h) => a + h.losses, 0);
       hofResultRef.current = recordRun(
-        state.team, state.streak, state.totalRunsFor, state.totalRunsAgainst, gameWins, gameLosses
+        state.team, state.streak, state.totalRunsFor, state.totalRunsAgainst, gameWins, gameLosses, state.history
       );
       freshAchievementsRef.current = checkAchievements({
         streak: state.streak,

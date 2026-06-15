@@ -1,4 +1,4 @@
-import { GauntletTeam } from './types';
+import { GauntletTeam, SeriesOutcome } from './types';
 
 // ============================================================================
 // Hall of Fame — the "best teams of all time" board. Phase 1 is local
@@ -19,7 +19,10 @@ export interface HofEntry {
   runsAgainst: number;
   managerName: string | null;
   stadiumName: string | null;
+  managerId: string | null;
+  stadiumId: string | null;
   playerIds: string[];     // to rehydrate the roster for display / re-runs
+  series: SeriesOutcome[]; // per-series results from the run (opponent, W-L, runs)
   date: number;            // epoch ms
 }
 
@@ -58,7 +61,8 @@ export function recordRun(
   runsFor: number,
   runsAgainst: number,
   gameWins: number,
-  gameLosses: number
+  gameLosses: number,
+  series: SeriesOutcome[] = []
 ): { entry: HofEntry; rank: number } {
   const entry: HofEntry = {
     teamName: team.name,
@@ -70,7 +74,10 @@ export function recordRun(
     runsAgainst,
     managerName: team.manager?.name ?? null,
     stadiumName: team.stadium?.name ?? null,
+    managerId: team.manager?.id ?? null,
+    stadiumId: team.stadium?.id ?? null,
     playerIds: team.roster.map(p => p.id),
+    series,
     date: Date.now(),
   };
 

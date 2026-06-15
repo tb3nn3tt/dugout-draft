@@ -1,12 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ensureAuth } from '../firebase/firebase';
 import { getLadder, getChamp, tickLadder, getMyTeamIds, seedLadderIfEmpty, LadderTeam } from '../firebase/ladder';
+import { hydrateIds, getCard } from '../domain/players';
+import { TeamDetail } from './TeamDetail';
 
 export function LadderScreen({ onBack }: { onBack: () => void }) {
   const [teams, setTeams] = useState<LadderTeam[]>([]);
   const [champ, setChamp] = useState<LadderTeam | null>(null);
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [syncing, setSyncing] = useState(false);
+  const [peek, setPeek] = useState<LadderTeam | null>(null);
   const mine = getMyTeamIds();
 
   const refresh = useCallback(async () => {
@@ -82,18 +85,18 @@ export function LadderScreen({ onBack }: { onBack: () => void }) {
                 <span>W</span><span>RD</span><span>ST</span>
               </div>
               {teams.map((t, i) => (
-                <div key={t.id} className="lb__row" style={mine.has(t.id) ? { background: 'rgba(56,189,248,0.10)' } : undefined}>
+                <button key={t.id} className="lb__row lb__row--tap" onClick={() => setPeek(t)} style={mine.has(t.id) ? { background: 'rgba(14,116,144,0.08)' } : undefined}>
                   <span className="lb__rank">{i + 1}</span>
                   <span className="lb__team">
                     <span className="lb__name">{mine.has(t.id) ? '⭐ ' : ''}{t.teamName}</span>
-                    <span className="lb__streak dim">{t.ownerName}</span>
+                    <span className="lb__streak dim">{t.ownerName} ›</span>
                   </span>
                   <span><b>{t.wins}</b></span>
                   <span style={{ color: t.runsFor - t.runsAgainst >= 0 ? 'var(--win)' : 'var(--loss)' }}>
                     {t.runsFor - t.runsAgainst >= 0 ? '+' : ''}{t.runsFor - t.runsAgainst}
                   </span>
                   <span className="dim" style={{ fontSize: 10 }}>{t.status === 'queued' ? 'ALIVE' : 'OUT'}</span>
-                </div>
+                </button>
               ))}
             </div>
           )}
@@ -102,6 +105,17 @@ export function LadderScreen({ onBack }: { onBack: () => void }) {
             {syncing ? 'Running matches…' : '▶ Advance the ladder (run 5 matches)'}
           </button>
         </>
+      )}
+
+      {peek && (
+        <TeamDetail
+          teamName={peek.teamName}
+          subtitle={`by ${peek.ownerName} · ${peek.wins} ladder wins · entered at ${peek.gauntletStreak}-0`}
+          roster={hydrateIds(peek.playerIds)}
+          manager={peek.managerId ? getCard(peek.managerId) ?? null : null}
+          stadium={peek.stadiumId ? getCard(peek.stadiumId) ?? null : null}
+          onClose={() => setPeek(null)}
+        />
       )}
     </div>
   );

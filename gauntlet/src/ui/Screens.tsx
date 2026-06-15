@@ -1,18 +1,19 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound, playerFitsRole } from '../domain/draftRounds';
-import { getTier } from '../domain/players';
+import { getTier, hydrateIds, getCard } from '../domain/players';
 import { overallToGrade, abbrevName, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
 import { Player, Position } from '../domain/types';
 import { DraftEntry } from '../state/gauntletReducer';
-import { loadHof, rankHof, entryRates } from '../domain/hallOfFame';
+import { loadHof, rankHof, entryRates, HofEntry } from '../domain/hallOfFame';
 import { runAwards, fmtAvg } from '../domain/seriesAwards';
 import { MUTATORS, getMutator } from '../domain/mutators';
 import { ACHIEVEMENTS, loadUnlocked } from '../domain/achievements';
 import { isSoundOn, setSoundOn, sfxPick, sfxLock } from '../domain/sound';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
+import { TeamDetail } from './TeamDetail';
 import { LadderScreen } from './LadderScreen';
 import { shareTeamImage, ShareSection } from './shareCard';
 import { submitTeam } from '../firebase/ladder';
@@ -126,6 +127,7 @@ export function MenuScreen({ g }: { g: G }) {
 export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
   const entries = rankHof(loadHof());
   const champ = entries[0];
+  const [peek, setPeek] = useState<HofEntry | null>(null);
   return (
     <div className="stack" style={{ marginTop: 16, gap: 14 }}>
       <div className="row" style={{ justifyContent: 'space-between' }}>
@@ -155,20 +157,32 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
           {entries.map((e, i) => {
             const r = entryRates(e);
             return (
-              <div key={i} className="lb__row">
+              <button key={i} className="lb__row lb__row--tap" onClick={() => setPeek(e)}>
                 <span className="lb__rank">{i + 1}</span>
                 <span className="lb__team">
                   <span className="lb__name">{e.teamName}</span>
-                  <span className="lb__streak dim">{e.streak} series</span>
+                  <span className="lb__streak dim">{e.streak} series ›</span>
                 </span>
                 <span><b>{e.gameWins}-{e.gameLosses}</b></span>
                 <span>{r.rsg.toFixed(1)}</span>
                 <span>{r.rag.toFixed(1)}</span>
                 <span style={{ color: r.rd >= 0 ? 'var(--win)' : 'var(--loss)' }}>{r.rd >= 0 ? '+' : ''}{r.rd}</span>
-              </div>
+              </button>
             );
           })}
         </div>
+      )}
+
+      {peek && (
+        <TeamDetail
+          teamName={peek.teamName}
+          subtitle={`${peek.streak}-0 · ${peek.runDiff >= 0 ? '+' : ''}${peek.runDiff} run diff`}
+          roster={hydrateIds(peek.playerIds)}
+          manager={peek.managerId ? getCard(peek.managerId) ?? null : null}
+          stadium={peek.stadiumId ? getCard(peek.stadiumId) ?? null : null}
+          series={peek.series}
+          onClose={() => setPeek(null)}
+        />
       )}
     </div>
   );
@@ -399,7 +413,7 @@ function OptionRow({ player, onPick, onInfo }: { player: Player; onPick: () => v
       <button className="opt__pick" onClick={onPick}>
         <div className="opt__hd">
           <span className="opt__name">{abbrevName(player.name)}</span>
-          <span className="opt__meta">{isStaff ? (pos === 'HC' ? 'MGR' : 'PARK') : `${pos} · ${player.bats}/${player.throws}`}</span>
+          <span className="opt__meta">{isStaff ? (pos === 'HC' ? 'MGR' : 'PARK') : `${player.positions.slice(0, 3).join('/')} · ${player.bats}/${player.throws}`}</span>
         </div>
         {isStaff ? (
           <div className="opt__staff">{staffLine(player)}</div>
@@ -710,6 +724,7 @@ export function RunOverScreen({ g }: { g: G }) {
       <button className="btn" onClick={sendToLadder} disabled={ladderState !== 'idle'}>
         {ladderState === 'sent' ? '✓ On the Global Ladder!' : ladderState === 'sending' ? 'Sending…' : '⚔️ Send team to the Global Ladder'}
       </button>
+      <p className="dim center" style={{ fontSize: 11, marginTop: -8 }}>No sign-up — your team posts under its name and battles other players' teams.</p>
       <button className="btn btn--secondary" onClick={shareImage} disabled={imgState === 'working'}>
         {imgState === 'working' ? 'Building…' : imgState === 'shared' ? '✓ Shared!' : imgState === 'saved' ? '✓ Image saved!' : '📸 Share team image'}
       </button>
