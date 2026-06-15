@@ -364,6 +364,14 @@ function ovrColor(o: number): string {
   if (o >= 46) return '#94a3b8'; if (o >= 40) return '#f97316'; return '#ef4444';
 }
 
+/** A ballpark's RUN ENVIRONMENT (not a quality grade): hitter- vs pitcher-friendly. */
+function parkEnv(p: Player): { text: string; color: string } {
+  const pct = Math.round(((p.parkEffect?.runFactor ?? 1) - 1) * 100);
+  if (pct >= 2) return { text: `+${pct}% R`, color: '#f97316' };   // hitter's park
+  if (pct <= -2) return { text: `${pct}% R`, color: '#00d4ff' };   // pitcher's park
+  return { text: 'EVEN', color: 'var(--ink-dim)' };
+}
+
 function Letter({ g }: { g: number }) { return <span style={{ color: getGradeColor(g) }}>{gradeToLetter(g)}</span>; }
 
 /** Compact staff (coach / park) summary line. */
@@ -503,12 +511,13 @@ function TeamSheet({ draftLog, teamName, record }: { draftLog: DraftEntry[]; tea
         const idx = cursor.get(slot.role) ?? 0;
         cursor.set(slot.role, idx + 1);
         const p = draftLog.filter(e => e.role === slot.role)[idx]?.player;
-        const color = p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)';
+        const env = p && slot.role === 'ST' ? parkEnv(p) : null;
+        const color = env ? env.color : (p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)');
         return (
           <div key={i} className="tsheet__row">
             <span className="tsheet__pos">{slot.label}</span>
             <span className="tsheet__nm">{p ? sheetName(p.name) : '—'}</span>
-            <span className="tsheet__gr" style={{ color }}>{p ? overallToGrade(p.overall) : ''}</span>
+            <span className={`tsheet__gr${env ? ' redit__gr--env' : ''}`} style={{ color }}>{env ? env.text : (p ? overallToGrade(p.overall) : '')}</span>
           </div>
         );
       })}
@@ -572,7 +581,8 @@ export function RosterReviewScreen({ g }: { g: G }) {
               const k = cursor.get(slot.role) ?? 0; cursor.set(slot.role, k + 1);
               const idx = (byRole.get(slot.role) ?? [])[k];
               const p = idx != null ? draftLog[idx]?.player : undefined;
-              const color = p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)';
+              const env = p && slot.role === 'ST' ? parkEnv(p) : null;
+              const color = env ? env.color : (p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)');
               const isSel = idx === sel;
               const isTgt = idx != null && targets.has(idx);
               return (
@@ -580,7 +590,7 @@ export function RosterReviewScreen({ g }: { g: G }) {
                   onClick={() => idx != null && tap(idx)} disabled={idx == null}>
                   <span className="redit__pos">{slot.label}</span>
                   <span className="redit__nm">{p ? sheetName(p.name) : '—'}</span>
-                  <span className="redit__gr" style={{ color }}>{p ? overallToGrade(p.overall) : ''}</span>
+                  <span className={`redit__gr${env ? ' redit__gr--env' : ''}`} style={{ color }}>{env ? env.text : (p ? overallToGrade(p.overall) : '')}</span>
                 </button>
               );
             })}

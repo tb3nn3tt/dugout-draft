@@ -112,9 +112,9 @@ function shuffle<T>(a: T[]): T[] {
 // in the offers. So every team ends up a believable spread: a handful of stars and
 // a lot of solid B/C role players, never an A at every position. `teamA` = how many
 // A-grade players are already on the roster.
-const A_SOFT_CAP = 3;   // A-grade odds start decaying once the team has this many
-const A_HARD_CAP = 4;   // ...and stop entirely here
-const B_HARD_CAP = 7;   // after the stars + this many B-grade regulars, the rest is C/role-player
+const A_SOFT_CAP = 1;   // A-grade odds start decaying once the team has this many
+const A_HARD_CAP = 2;   // ...and stop entirely here — at most a couple of stars
+const B_HARD_CAP = 5;   // after the stars + this many B-grade regulars, the rest is C/role-player
 function draftWeight(overall: number, teamA: number): number {
   let w = Math.exp(-Math.max(0, overall - 72) / 14);
   if (overall >= 85) w *= Math.exp(-Math.max(0, teamA - A_SOFT_CAP) * 1.15);

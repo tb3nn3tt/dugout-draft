@@ -19,7 +19,11 @@ export function getDisplayName(name: string): string {
 }
 
 const NAME_SUFFIXES = ['Jr.', 'Jr', 'Sr.', 'Sr', 'II', 'III', 'IV', 'V'];
-const isNameTag = (s: string) => /^'?\d{2,4}$/.test(s) || NAME_SUFFIXES.includes(s);
+// Trailing descriptor tokens that AREN'T the surname: years ('97, 2001), name
+// suffixes (Jr.), and short all-caps tags (WS, ALCS, MVP…). The surname is the
+// last real name token before any run of these — so "Edgar Renteria '97 WS"
+// abbreviates to "E. Renteria '97 WS", never "E. WS".
+const isNameTag = (s: string) => /^'?\d{2,4}$/.test(s) || /^[A-Z]{2,5}$/.test(s) || NAME_SUFFIXES.includes(s);
 
 /**
  * Compact "F. Surname" abbreviation that KEEPS trailing season/suffix tags on the
