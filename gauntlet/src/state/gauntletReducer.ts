@@ -22,6 +22,7 @@ export interface GauntletState {
   picks: Player[];                     // every drafted card
   draftLog: DraftEntry[];              // which role each pick filled (for the board)
   budget: number;                      // salary-cap points remaining
+  rerolls: number;                     // re-rolls left for THIS pick (resets each pick)
 
   // --- run ---
   team: GauntletTeam | null;
@@ -50,6 +51,10 @@ export type GauntletAction =
 // The lineup defensive slots whose assignment the sim honors (incl. DH).
 const LINEUP_ROLES = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH'];
 
+// Re-rolls allowed per pick (New Group + Refresh combined). Resets each pick so
+// you can reshuffle a couple of times, but can't endlessly fish for stars.
+const REROLL_LIMIT = 3;
+
 export const initialState: GauntletState = {
   phase: 'menu',
   teamName: '',
@@ -61,6 +66,7 @@ export const initialState: GauntletState = {
   picks: [],
   draftLog: [],
   budget: BUDGET,
+  rerolls: REROLL_LIMIT,
   team: null,
   streak: 0,
   opponent: null,
@@ -167,23 +173,24 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
       const next = nextRound(remaining, picks, filter);
 
       if (!next) return finishDraft(state, picks, draftLog);
-      return { ...state, picks, draftLog, remaining, currentRound: next.round, offered: next.offered };
+      // Fresh pick → fresh re-roll budget.
+      return { ...state, picks, draftLog, remaining, currentRound: next.round, offered: next.offered, rerolls: REROLL_LIMIT };
     }
 
     case 'REROLL_ROLE': {   // "New Group" — spin a different group
-      if (!state.currentRound) return state;
+      if (!state.currentRound || state.rerolls <= 0) return state;
       const filter = getMutator(state.mutatorId).poolFilter;
       const next = spinGroupRound(state.remaining, pickedIds(state.picks), filter, { excludeGroupId: state.currentRound.groupId });
       if (!next) return state;
-      return { ...state, currentRound: next.round, offered: next.offered };
+      return { ...state, currentRound: next.round, offered: next.offered, rerolls: state.rerolls - 1 };
     }
 
     case 'REROLL_PLAYERS': {   // "Refresh" — same group, new members
-      if (!state.currentRound) return state;
+      if (!state.currentRound || state.rerolls <= 0) return state;
       const filter = getMutator(state.mutatorId).poolFilter;
       const next = spinGroupRound(state.remaining, pickedIds(state.picks), filter, { forceGroupId: state.currentRound.groupId });
       if (!next) return state;
-      return { ...state, currentRound: next.round, offered: next.offered };
+      return { ...state, currentRound: next.round, offered: next.offered, rerolls: state.rerolls - 1 };
     }
 
     case 'AUTOFILL_REST': {

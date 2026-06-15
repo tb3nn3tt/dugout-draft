@@ -254,6 +254,7 @@ strong, b { font-weight: 700; }
 }
 .reroll__btn:active { background: rgba(0,0,0,0.05); }
 .reroll__btn:disabled { opacity: 0.35; cursor: default; }
+.reroll__count { flex: 0 0 auto; align-self: center; font-size: 10px; font-weight: 700; color: var(--ink-faint); letter-spacing: 0.3px; }
 
 .optlegend { font-size: 10px; color: var(--ink-faint); text-align: center; letter-spacing: 0.2px; }
 .optlegend b { color: var(--ink-dim); font-weight: 700; }
@@ -275,6 +276,7 @@ strong, b { font-weight: 700; }
 .opt__name { display: block; min-width: 0; font-weight: 700; font-size: 14.5px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .opt__pos { font-size: 11px; font-weight: 700; color: var(--cyan); letter-spacing: 0.2px; }
 .opt__org { font-size: 10.5px; font-weight: 500; color: var(--ink-dim); }
+.opt__fills { color: var(--accent); font-weight: 700; }
 /* rating columns — value on top, label under, fixed width so columns align */
 .opt__stats { display: flex; gap: 2px; flex: 0 0 auto; font-variant-numeric: tabular-nums; }
 .opt__c { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 38px; }

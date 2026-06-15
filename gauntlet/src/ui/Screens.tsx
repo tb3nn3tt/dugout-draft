@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
-import { TOTAL_PICKS, DraftRound, playerFitsRole } from '../domain/draftRounds';
+import { TOTAL_PICKS, DraftRound, playerFitsRole, assignRole } from '../domain/draftRounds';
 import { getTier, hydrateIds, getCard } from '../domain/players';
 import { overallToGrade, abbrevName, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
@@ -276,21 +276,22 @@ export function DraftScreen({ g }: { g: G }) {
         {currentRound && <GroupSlot round={currentRound} rolling={rolling} />}
       </div>
 
-      {/* Re-roll controls — change the role, or re-deal players for this role. */}
+      {/* Re-roll controls — limited budget per pick (New Group + Refresh combined). */}
       <div className="reroll">
-        <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollRole(); }} disabled={rolling}>
+        <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollRole(); }} disabled={rolling || g.state.rerolls <= 0}>
           ↻ New Group
         </button>
-        <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollPlayers(); }} disabled={rolling}>
+        <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollPlayers(); }} disabled={rolling || g.state.rerolls <= 0}>
           ↻ Refresh
         </button>
+        <span className="reroll__count">{g.state.rerolls} left</span>
       </div>
 
       {/* Four group members as plain text rows — every rating shown, split = vsL/vsR. */}
       <div className="optlegend">tap to draft (fills an open spot they qualify for) · splits are <b>vs LHP / vs RHP</b></div>
       <div className={`optlist ${rolling ? 'optlist--rolling' : ''}`}>
         {offered.map(p => (
-          <OptionRow key={p.id} player={p}
+          <OptionRow key={p.id} player={p} remaining={g.state.remaining}
             onPick={() => { if (rolling) return; sfxPick(); g.pick(p); }}
             onInfo={() => setDetail(p)} />
         ))}
@@ -414,17 +415,24 @@ function staffLine(player: Player): string {
 }
 
 /** One candidate as a plain text line: grade · name · pos/B/T, then every rating. */
-function OptionRow({ player, onPick, onInfo }: { player: Player; onPick: () => void; onInfo: () => void }) {
+const HIDDEN_POS = new Set(['IFD', 'OFD', 'PH', 'PR', 'BC']); // deprecated tags — never shown
+
+function OptionRow({ player, remaining, onPick, onInfo }: { player: Player; remaining: Record<string, number>; onPick: () => void; onInfo: () => void }) {
   const pos = player.positions[0];
   const isStaff = pos === 'HC' || pos === 'ST';
-  const posStr = isStaff ? (pos === 'HC' ? 'Manager' : 'Ballpark') : player.positions.slice(0, 3).join(' · ');
+  const real = player.positions.filter(p => !HIDDEN_POS.has(p));
+  const posStr = isStaff ? (pos === 'HC' ? 'Manager' : 'Ballpark') : (real.slice(0, 3).join(' · ') || pos);
   const org = [player.team, player.era].filter(Boolean).join(' · ');
+  const slot = isStaff ? null : assignRole(player, remaining); // the open slot they'd fill
   return (
     <div className="opt">
       <button className="opt__pick" onClick={onPick}>
         <div className="opt__idblock">
           <FitName name={player.name} className="opt__name" />
-          <div className="opt__pos">{posStr}{!isStaff && ` · ${player.bats}/${player.throws}`}</div>
+          <div className="opt__pos">
+            {posStr}{!isStaff && ` · ${player.bats}/${player.throws}`}
+            {slot && <span className="opt__fills"> → {slot}</span>}
+          </div>
           {org && <div className="opt__org">{org}</div>}
         </div>
         {isStaff ? (
