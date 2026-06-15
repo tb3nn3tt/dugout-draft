@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound, playerFitsRole } from '../domain/draftRounds';
-import { TIER_COLORS, getTier } from '../domain/players';
+import { getTier } from '../domain/players';
 import { overallToGrade, abbrevName, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
 import { Player, Position } from '../domain/types';
@@ -357,10 +357,10 @@ function statCells(player: Player): SCell[] {
   ];
 }
 
-/** Overall grade → a single accent color (mirrors the A-F bands). */
+/** Overall grade → a dark, light-bg-readable color (mirrors the A-F bands). */
 function ovrColor(o: number): string {
-  if (o >= 85) return '#ffd700'; if (o >= 70) return '#00d4ff'; if (o >= 58) return '#4ade80';
-  if (o >= 46) return '#94a3b8'; if (o >= 40) return '#f97316'; return '#ef4444';
+  if (o >= 85) return '#1a7f37'; if (o >= 70) return '#0e7490'; if (o >= 58) return '#5b5547';
+  if (o >= 46) return '#bc4c00'; return '#c8102e';
 }
 
 /** A ballpark's RUN ENVIRONMENT (not a quality grade): hitter- vs pitcher-friendly. */
@@ -511,7 +511,7 @@ function TeamSheet({ draftLog, teamName, record }: { draftLog: DraftEntry[]; tea
         cursor.set(slot.role, idx + 1);
         const p = draftLog.filter(e => e.role === slot.role)[idx]?.player;
         const env = p && slot.role === 'ST' ? parkEnv(p) : null;
-        const color = env ? env.color : (p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)');
+        const color = env ? env.color : (p ? ovrColor(p.overall) : 'var(--ink-faint)');
         return (
           <div key={i} className="tsheet__row">
             <span className="tsheet__pos">{slot.label}</span>
@@ -581,7 +581,7 @@ export function RosterReviewScreen({ g }: { g: G }) {
               const idx = (byRole.get(slot.role) ?? [])[k];
               const p = idx != null ? draftLog[idx]?.player : undefined;
               const env = p && slot.role === 'ST' ? parkEnv(p) : null;
-              const color = env ? env.color : (p ? TIER_COLORS[getTier(p.overall)] : 'var(--ink-faint)');
+              const color = env ? env.color : (p ? ovrColor(p.overall) : 'var(--ink-faint)');
               const isSel = idx === sel;
               const isTgt = idx != null && targets.has(idx);
               return (

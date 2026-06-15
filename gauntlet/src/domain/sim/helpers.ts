@@ -266,14 +266,13 @@ export function gradeToLetter(grade: number): string {
   return 'F';
 }
 
-// Get grade color for visual display
+// Grade color (20-80 scale) — dark, high-contrast ramp readable on a light bg.
 export function getGradeColor(grade: number): string {
-  if (grade >= 80) return '#ffd700'; // Gold for elite
-  if (grade >= 70) return '#00d4ff'; // Cyan for plus-plus
-  if (grade >= 60) return '#4ade80'; // Green for plus
-  if (grade >= 50) return '#94a3b8'; // Gray for average
-  if (grade >= 40) return '#f97316'; // Orange for below avg
-  return '#ef4444'; // Red for poor
+  if (grade >= 70) return '#1a7f37'; // green — elite (A / A+)
+  if (grade >= 60) return '#0e7490'; // teal — plus (B / B+)
+  if (grade >= 50) return '#5b5547'; // slate ink — average (C / C+)
+  if (grade >= 40) return '#bc4c00'; // burnt orange — below avg (C- / D+)
+  return '#c8102e';                  // red — poor (D / F)
 }
 
 // Get specialty badge based on grades
