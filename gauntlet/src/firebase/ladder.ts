@@ -18,7 +18,12 @@ import { resetRng } from '../domain/sim/rng';
 // whichever player's browser is open (clients-as-workers) — no server needed.
 // ============================================================================
 
-const COL = 'ladder_teams_v2';   // bumped to wipe the old global board (fresh start)
+const COL = 'ladder_teams';   // (deployed Firestore rules already permit writes here)
+
+// Soft board reset: only teams submitted at/after this cutoff are shown & matched.
+// Old test/seed teams stay in Firestore but vanish from the board — clears the
+// leaderboard without a rules redeploy and without breaking new submissions.
+const CLEAR_BEFORE = 1781554021662; // 2026-06-15
 
 export interface LadderTeam {
   id: string;
@@ -48,7 +53,7 @@ function hydrate(t: { teamName: string; playerIds: string[]; managerId: string |
   };
 }
 
-const MY_KEY = 'dugout-gauntlet-my-ladder-v2';
+const MY_KEY = 'dugout-gauntlet-my-ladder-v2';   // fresh "my teams" list for the reset board
 /** Doc ids of teams this device has submitted (for highlighting on the ladder). */
 export function getMyTeamIds(): Set<string> {
   try { return new Set(JSON.parse(localStorage.getItem(MY_KEY) || '[]') as string[]); }
@@ -104,8 +109,12 @@ export async function seedLadderIfEmpty(): Promise<void> {
 
 /** Top teams by wins (queued + retired) for the global leaderboard. */
 export async function getLadder(n = 50): Promise<LadderTeam[]> {
-  const qs = await getDocs(query(collection(db, COL), orderBy('wins', 'desc'), limit(n)));
-  return qs.docs.map(d => ({ id: d.id, ...(d.data() as Omit<LadderTeam, 'id'>) }));
+  // Fetch a wider window, drop pre-reset teams, then take the top n.
+  const qs = await getDocs(query(collection(db, COL), orderBy('wins', 'desc'), limit(Math.max(n * 3, 120))));
+  return qs.docs
+    .map(d => ({ id: d.id, ...(d.data() as Omit<LadderTeam, 'id'>) }))
+    .filter(t => (t.createdAt ?? 0) >= CLEAR_BEFORE)
+    .slice(0, n);
 }
 
 /** Fetch the ladder pool as gauntlet-ready ghost teams (for mid-gauntlet foes). */
@@ -140,7 +149,7 @@ export async function processOneMatch(): Promise<MatchSummary | null> {
   const qs = await getDocs(query(collection(db, COL), orderBy('wins', 'desc'), limit(80)));
   const queued = qs.docs
     .map(d => ({ id: d.id, ...(d.data() as Omit<LadderTeam, 'id'>) }))
-    .filter(t => t.status === 'queued');
+    .filter(t => t.status === 'queued' && (t.createdAt ?? 0) >= CLEAR_BEFORE);
   if (queued.length < 2) return null;
 
   // Pick an adjacent pair with equal wins (different owners preferred), else nearest.

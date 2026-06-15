@@ -665,7 +665,7 @@ export function RunOverScreen({ g }: { g: G }) {
   const award = useMemo(() => runAwards(g.state.runStats), [g.state.runStats]);
   const [shared, setShared] = useState(false);
   const [imgState, setImgState] = useState<'idle' | 'working' | 'shared' | 'saved'>('idle');
-  const [ladderState, setLadderState] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [ladderState, setLadderState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   // Build the share-image sections from the drafted roster (same grouping as the team sheet).
   const shareImage = async () => {
@@ -693,10 +693,10 @@ export function RunOverScreen({ g }: { g: G }) {
   };
 
   const sendToLadder = async () => {
-    if (!team || ladderState !== 'idle') return;
+    if (!team || ladderState === 'sending' || ladderState === 'sent') return;
     setLadderState('sending');
     try { await submitTeam(team, streak, team.name); setLadderState('sent'); }
-    catch { setLadderState('idle'); }
+    catch (e) { console.error('ladder submit failed', e); setLadderState('error'); }
   };
 
   const modeTag = mut.id === 'standard' ? '' : ` [${mut.emoji} ${mut.name}]`;
@@ -762,8 +762,8 @@ export function RunOverScreen({ g }: { g: G }) {
         </div>
       )}
 
-      <button className="btn" onClick={sendToLadder} disabled={ladderState !== 'idle'}>
-        {ladderState === 'sent' ? '✓ On the Global Ladder!' : ladderState === 'sending' ? 'Sending…' : '⚔️ Send team to the Global Ladder'}
+      <button className="btn" onClick={sendToLadder} disabled={ladderState === 'sending' || ladderState === 'sent'}>
+        {ladderState === 'sent' ? '✓ On the Global Ladder!' : ladderState === 'sending' ? 'Sending…' : ladderState === 'error' ? '✗ Failed — tap to retry' : '⚔️ Send team to the Global Ladder'}
       </button>
       <p className="dim center" style={{ fontSize: 11, marginTop: -8 }}>No sign-up — your team posts under its name and battles other players' teams.</p>
       <button className="btn btn--secondary" onClick={shareImage} disabled={imgState === 'working'}>
