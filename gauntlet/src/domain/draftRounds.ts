@@ -112,6 +112,12 @@ function shuffle<T>(a: T[]): T[] {
 // in the offers. So every team ends up a believable spread: a handful of stars and
 // a lot of solid B/C role players, never an A at every position. `teamA` = how many
 // A-grade players are already on the roster.
+// How much to favor a group that can fill each open role. Scarce, specific
+// roles (ballpark, reliever, catcher, starter) outrank the 1B/DH catch-all so
+// late-draft spins land on what you still NEED.
+const ROLE_WEIGHT: Record<string, number> = {
+  ST: 8, HC: 6, RP: 5, C: 4, SP: 3, SS: 2, '2B': 2, '3B': 2, CF: 2, LF: 1, RF: 1, '1B': 1, DH: 1, BN: 1,
+};
 const A_SOFT_CAP = 2;   // A-grade odds start decaying once the team has this many
 const A_HARD_CAP = 4;   // ...and stop entirely here — a few genuine stars
 const B_HARD_CAP = 7;   // after the stars + this many B-grade regulars, the rest is C/role-player
@@ -163,19 +169,39 @@ export function spinGroupRound(
   if ((remaining['HC'] ?? 0) > 0) candidates.push(STAFF_GROUPS.HC);
   if ((remaining['ST'] ?? 0) > 0) candidates.push(STAFF_GROUPS.ST);
 
-  let viable = candidates.filter(g => fittingMembers(g, remaining, picked, poolFilter, capA, capB).length > 0);
+  // For each viable group, the OPEN roles its members would actually fill.
+  const rolesOf = (fit: Player[]): Set<string> => {
+    const s = new Set<string>();
+    for (const m of fit) { const r = assignRole(m, remaining); if (r) s.add(r); }
+    return s;
+  };
+  const scored = candidates
+    .map(g => ({ g, fit: fittingMembers(g, remaining, picked, poolFilter, capA, capB) }))
+    .filter(x => x.fit.length > 0)
+    .map(x => ({ ...x, roles: rolesOf(x.fit) }));
   // "New Group" → don't land on the same one again (when alternatives exist).
-  if (opts?.excludeGroupId) {
-    const others = viable.filter(g => g.id !== opts.excludeGroupId);
-    if (others.length > 0) viable = others;
-  }
+  let pool = scored;
+  if (opts?.excludeGroupId) { const o = scored.filter(x => x.g.id !== opts.excludeGroupId); if (o.length) pool = o; }
 
   let chosen: Group;
+  let targetRole: string | null = null;
   const forced = opts?.forceGroupId ? candidates.find(g => g.id === opts.forceGroupId) : undefined;
   if (forced && fittingMembers(forced, remaining, picked, poolFilter).length > 0) {
     chosen = forced;                                   // "Refresh" — same group, new members
-  } else if (viable.length > 0) {
-    chosen = viable[Math.floor(rand() * viable.length)];
+  } else if (pool.length > 0) {
+    // Pick a TARGET open role FIRST, weighted by scarcity × how many still needed.
+    // This stops the lone ballpark/closer group from being drowned out by the
+    // hundreds of infielder groups — when you need a PARK or RP, the wheel lands
+    // on one. Then choose a group that actually serves that role.
+    const roleW = new Map<string, number>();
+    for (const x of pool) for (const r of x.roles) roleW.set(r, (ROLE_WEIGHT[r] ?? 1) * (remaining[r] ?? 1));
+    const entries = [...roleW.entries()];
+    const totalW = entries.reduce((s, [, w]) => s + w, 0);
+    let rr = rand() * totalW;
+    targetRole = entries[entries.length - 1][0];
+    for (const [role, w] of entries) { rr -= w; if (rr <= 0) { targetRole = role; break; } }
+    const serving = pool.filter(x => x.roles.has(targetRole!));
+    chosen = serving[Math.floor(rand() * serving.length)].g;
   } else {
     // Fallback: an ad-hoc "free agents" group of everyone who fits an open slot.
     // Respect the caps if possible; relax them only if nothing else is available.
@@ -213,6 +239,14 @@ export function spinGroupRound(
     offered.push(p); usedIds.add(p.id); usedRoles.add(r);
     if (p.overall >= 85) aCount++;
   };
+  // 0) lead with up to 2 players for the role you actually NEED this spin.
+  if (targetRole) {
+    let t = 0;
+    for (const m of groupMembers) {
+      if (t >= 2) break;
+      if (assignRole(m, remaining) === targetRole) { const n = offered.length; tryAdd(m, { capA: true }); if (offered.length > n) t++; }
+    }
+  }
   // 1) non-A, one per open role   2) allow the single A, by role
   for (const m of groupMembers) if (m.overall < 85) tryAdd(m, { variety: true, capA: true });
   for (const m of groupMembers) tryAdd(m, { variety: true, capA: true });
