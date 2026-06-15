@@ -140,12 +140,14 @@ strong, b { font-weight: 700; }
 .badge--ghost { color: var(--cyan); border-color: var(--cyan); }
 .badge--cpu { color: var(--ink-dim); }
 
-.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+/* Even grid — equal cells, centered labels, everything lines up (no ragged wrap). */
+.chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; }
 .chip {
   appearance: none; cursor: pointer; font-family: 'Inter', system-ui, sans-serif;
-  background: var(--panel); color: var(--ink-dim);
-  border: 1px solid var(--line-bright); padding: 8px 13px; font-size: 13px; font-weight: 600;
-  letter-spacing: 0.3px; transition: all 0.12s ease;
+  display: flex; align-items: center; justify-content: center; gap: 5px; text-align: center;
+  min-height: 42px; background: var(--panel); color: var(--ink-dim);
+  border: 1px solid var(--line-bright); padding: 8px 10px; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.2px; transition: all 0.12s ease;
 }
 .chip--on { background: var(--amber); color: #fff; border-color: var(--amber-deep); }
 .chip:active { transform: scale(0.96); }
@@ -223,11 +225,25 @@ strong, b { font-weight: 700; }
    DRAFT — stark text list: role, re-rolls, 4 plain rows w/ every rating
    =========================================================================== */
 .draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 6px; }
+.draft__main { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 6px; }
+.draft__side { display: none; }            /* shown only on wide screens (below) */
 .draft__head { display: flex; flex-direction: column; gap: 3px; }
 .draft__hrow { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 13px; }
 .draft__team { font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .draft__bar { display: flex; gap: 7px; }
 .draft__barbtn { min-height: 42px; font-size: 12px; padding: 0 10px; }
+.draft__sidehd { font-size: 12px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px; }
+
+/* Wide screens: widen the column, lay the draft and a PERSISTENT lineup panel
+   side by side. Everything lines up; nothing scrolls or resizes dynamically. */
+@media (min-width: 860px) {
+  .app-shell:has(.draft) { max-width: 860px; }
+  .draft { flex-direction: row; gap: 22px; align-items: start; }
+  .draft__main { flex: 1; min-width: 0; }
+  .draft__side { display: block; flex: 0 0 280px; }
+  .rribbon { display: none; }             /* the side panel replaces the mobile ribbon */
+  .draft__bar .draft__barbtn:first-child { display: none; } /* "View Roster" redundant */
+}
 
 /* Re-roll controls — plain bordered buttons */
 .reroll { display: flex; gap: 7px; }
@@ -256,7 +272,7 @@ strong, b { font-weight: 700; }
   padding: 9px 34px 9px 11px; text-align: left; background: transparent; border: none; color: var(--ink); cursor: pointer;
 }
 .opt__idblock { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
-.opt__name { font-weight: 700; font-size: 14.5px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.opt__name { display: block; min-width: 0; font-weight: 700; font-size: 14.5px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .opt__pos { font-size: 11px; font-weight: 700; color: var(--cyan); letter-spacing: 0.2px; }
 .opt__org { font-size: 10.5px; font-weight: 500; color: var(--ink-dim); }
 /* rating columns — value on top, label under, fixed width so columns align */
@@ -337,7 +353,7 @@ strong, b { font-weight: 700; }
 .tdt__row { grid-template-columns: 38px 1fr auto; }
 .tdt__srow { grid-template-columns: 16px 1fr auto; }
 .tdt__pos { color: var(--ink-faint); font-weight: 700; font-size: 11px; }
-.tdt__name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tdt__name { display: block; min-width: 0; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tdt__sub { color: var(--ink-dim); font-size: 11px; white-space: nowrap; text-align: right; }
 
 /* ===========================================================================

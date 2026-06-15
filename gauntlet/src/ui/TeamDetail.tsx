@@ -1,5 +1,5 @@
 import { Player, SeriesOutcome } from '../domain/types';
-import { abbrevName } from '../domain/sim/helpers';
+import { FitName } from './FitName';
 
 const PITCHER_POS = new Set(['SP', 'CL', 'SU', 'MRP', 'LRP', 'LOOGY', 'RP']);
 const isPitcher = (p: Player) => PITCHER_POS.has(p.positions[0]);
@@ -8,7 +8,7 @@ function Line({ p }: { p: Player }) {
   return (
     <div className="tdt__row">
       <span className="tdt__pos">{p.positions[0]}</span>
-      <span className="tdt__name">{abbrevName(p.name)}</span>
+      <FitName name={p.name} className="tdt__name" />
       <span className="tdt__sub">{p.positions.slice(0, 3).join('/')} · {p.bats}/{p.throws}</span>
     </div>
   );
@@ -55,8 +55,8 @@ export function TeamDetail({ teamName, subtitle, roster, manager, stadium, serie
         {(manager || stadium) && (
           <div className="tdt__sec">
             <div className="tdt__h">STAFF</div>
-            {manager && <div className="tdt__row"><span className="tdt__pos">MGR</span><span className="tdt__name">{abbrevName(manager.name)}</span><span className="tdt__sub">{manager.coachEffect?.style ?? ''}</span></div>}
-            {stadium && <div className="tdt__row"><span className="tdt__pos">PARK</span><span className="tdt__name">{stadium.name}</span><span className="tdt__sub">{stadium.parkEffect ? `runs ×${stadium.parkEffect.runFactor.toFixed(2)}` : ''}</span></div>}
+            {manager && <div className="tdt__row"><span className="tdt__pos">MGR</span><FitName name={manager.name} className="tdt__name" /><span className="tdt__sub">{manager.coachEffect?.style ?? ''}</span></div>}
+            {stadium && <div className="tdt__row"><span className="tdt__pos">PARK</span><FitName name={stadium.name} className="tdt__name" /><span className="tdt__sub">{stadium.parkEffect ? `runs ×${stadium.parkEffect.runFactor.toFixed(2)}` : ''}</span></div>}
           </div>
         )}
 

@@ -232,7 +232,10 @@ export function spinGroupRound(
     for (const m of weightedOrder(pool, teamA)) tryAdd(m, {});
   }
 
-  return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb }, offered: offered.slice(0, 4).sort((a, b) => b.overall - a.overall) };
+  // Present in a NEUTRAL (shuffled) order — never ranked by rating, so the draft
+  // doesn't telegraph who's "best". Quality is only revealed once a player is on
+  // the roster.
+  return { round: { groupId: chosen.id, name: chosen.name, emoji: chosen.emoji, flavor: chosen.blurb }, offered: shuffle(offered.slice(0, 4)) };
 }
 
 // ---------------------------------------------------------------------------

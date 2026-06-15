@@ -14,6 +14,7 @@ import { isSoundOn, setSoundOn, sfxPick, sfxLock } from '../domain/sound';
 import { DepthSidebar } from './DepthSidebar';
 import { PlayerDetail } from './PlayerDetail';
 import { TeamDetail } from './TeamDetail';
+import { FitName } from './FitName';
 import { LadderScreen } from './LadderScreen';
 import { shareTeamImage, ShareSection } from './shareCard';
 import { submitTeam } from '../firebase/ladder';
@@ -266,6 +267,7 @@ export function DraftScreen({ g }: { g: G }) {
 
   return (
     <div className="draft">
+      <div className="draft__main">
       <div className="draft__head">
         <div className="draft__hrow">
           <strong className="draft__team">{g.state.teamName}</strong>
@@ -303,6 +305,13 @@ export function DraftScreen({ g }: { g: G }) {
         <button className="btn btn--ghost draft__barbtn" onClick={() => setShowRoster(true)}>View Roster</button>
         <button className="btn btn--ghost draft__barbtn" onClick={g.autofill}>Auto-fill rest</button>
       </div>
+      </div>{/* /draft__main */}
+
+      {/* Persistent lineup — visible at all times on wide (desktop) screens. */}
+      <aside className="draft__side">
+        <div className="draft__sidehd">Your Lineup · {picks.length}/{TOTAL_PICKS}</div>
+        <DepthSidebar draftLog={draftLog} />
+      </aside>
 
       {showRoster && (
         <div className="sheetwrap" onClick={() => setShowRoster(false)}>
@@ -414,7 +423,7 @@ function OptionRow({ player, onPick, onInfo }: { player: Player; onPick: () => v
     <div className="opt">
       <button className="opt__pick" onClick={onPick}>
         <div className="opt__idblock">
-          <div className="opt__name">{abbrevName(player.name)}</div>
+          <FitName name={player.name} className="opt__name" />
           <div className="opt__pos">{posStr}{!isStaff && ` · ${player.bats}/${player.throws}`}</div>
           {org && <div className="opt__org">{org}</div>}
         </div>
