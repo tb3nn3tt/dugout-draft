@@ -1,0 +1,4575 @@
+[
+ {
+  "id": "real-1",
+  "name": "Ty Cobb",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "contact": 76,
+   "power": 60,
+   "speed": 79,
+   "eye": 79,
+   "fielding": 72,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-2",
+  "name": "Honus Wagner",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "contact": 75,
+   "power": 75,
+   "speed": 75,
+   "eye": 74,
+   "fielding": 75,
+   "arm": 73
+  }
+ },
+ {
+  "id": "real-3",
+  "name": "Walter Johnson",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 97,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "fastball": 78,
+   "breaking": 78,
+   "control": 76,
+   "stamina": 77,
+   "changeup": 75,
+   "contact": 43,
+   "power": 45,
+   "speed": 51,
+   "eye": 47,
+   "fielding": 59,
+   "arm": 71
+  }
+ },
+ {
+  "id": "real-4",
+  "name": "Christy Mathewson",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 94,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "fastball": 61,
+   "breaking": 71,
+   "control": 79,
+   "stamina": 73,
+   "changeup": 75,
+   "contact": 40,
+   "power": 42,
+   "speed": 48,
+   "eye": 44,
+   "fielding": 56,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-5",
+  "name": "Tris Speaker",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "contact": 77,
+   "power": 57,
+   "speed": 65,
+   "eye": 73,
+   "fielding": 65,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-6",
+  "name": "Nap Lajoie",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "contact": 76,
+   "power": 56,
+   "speed": 64,
+   "eye": 72,
+   "fielding": 64,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-7",
+  "name": "Grover Alexander",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "fastball": 59,
+   "breaking": 69,
+   "control": 77,
+   "stamina": 71,
+   "changeup": 73,
+   "contact": 38,
+   "power": 40,
+   "speed": 46,
+   "eye": 42,
+   "fielding": 54,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-8",
+  "name": "Eddie Collins",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "contact": 75,
+   "power": 55,
+   "speed": 63,
+   "eye": 71,
+   "fielding": 63,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-9",
+  "name": "Shoeless Joe Jackson",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "contact": 76,
+   "power": 56,
+   "speed": 64,
+   "eye": 72,
+   "fielding": 64,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-10",
+  "name": "Cy Young",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 93,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "fastball": 68,
+   "breaking": 68,
+   "control": 72,
+   "stamina": 78,
+   "changeup": 69,
+   "contact": 39,
+   "power": 41,
+   "speed": 47,
+   "eye": 43,
+   "fielding": 55,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-11",
+  "name": "Babe Ruth",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 99,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 67,
+   "power": 80,
+   "speed": 59,
+   "eye": 74,
+   "fielding": 65,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-12",
+  "name": "Lou Gehrig",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 97,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 71,
+   "power": 79,
+   "speed": 65,
+   "eye": 73,
+   "fielding": 68,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-13",
+  "name": "Rogers Hornsby",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 95,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 69,
+   "power": 77,
+   "speed": 63,
+   "eye": 71,
+   "fielding": 66,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-14",
+  "name": "Jimmie Foxx",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 94,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 62,
+   "power": 79,
+   "speed": 54,
+   "eye": 69,
+   "fielding": 60,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-15",
+  "name": "Ted Williams",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 98,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 72,
+   "power": 80,
+   "speed": 66,
+   "eye": 74,
+   "fielding": 69,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-16",
+  "name": "Joe DiMaggio",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 75,
+   "power": 75,
+   "speed": 75,
+   "eye": 74,
+   "fielding": 75,
+   "arm": 73
+  }
+ },
+ {
+  "id": "real-17",
+  "name": "Hank Greenberg",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 60,
+   "power": 77,
+   "speed": 52,
+   "eye": 67,
+   "fielding": 58,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-18",
+  "name": "Lefty Grove",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 94,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "fastball": 75,
+   "breaking": 75,
+   "control": 73,
+   "stamina": 74,
+   "changeup": 72,
+   "contact": 40,
+   "power": 42,
+   "speed": 48,
+   "eye": 44,
+   "fielding": 56,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-19",
+  "name": "Mel Ott",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 65,
+   "power": 73,
+   "speed": 59,
+   "eye": 67,
+   "fielding": 62,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-20",
+  "name": "Bob Feller",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 93,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "fastball": 79,
+   "breaking": 74,
+   "control": 61,
+   "stamina": 68,
+   "changeup": 65,
+   "contact": 39,
+   "power": 41,
+   "speed": 47,
+   "eye": 43,
+   "fielding": 55,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-21",
+  "name": "Satchel Paige",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "fastball": 55,
+   "breaking": 73,
+   "control": 73,
+   "stamina": 69,
+   "changeup": 76,
+   "contact": 38,
+   "power": 40,
+   "speed": 46,
+   "eye": 42,
+   "fielding": 54,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-22",
+  "name": "Josh Gibson",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 95,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 63,
+   "power": 80,
+   "speed": 55,
+   "eye": 70,
+   "fielding": 61,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-23",
+  "name": "Cool Papa Bell",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 67,
+   "power": 52,
+   "speed": 77,
+   "eye": 65,
+   "fielding": 67,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-24",
+  "name": "Stan Musial",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 75,
+   "power": 75,
+   "speed": 75,
+   "eye": 74,
+   "fielding": 75,
+   "arm": 73
+  }
+ },
+ {
+  "id": "real-25",
+  "name": "Willie Mays",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 99,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 78,
+   "power": 78,
+   "speed": 78,
+   "eye": 77,
+   "fielding": 78,
+   "arm": 76
+  }
+ },
+ {
+  "id": "real-26",
+  "name": "Mickey Mantle",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 97,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 71,
+   "power": 79,
+   "speed": 65,
+   "eye": 73,
+   "fielding": 68,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-27",
+  "name": "Hank Aaron",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 98,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 72,
+   "power": 80,
+   "speed": 66,
+   "eye": 74,
+   "fielding": 69,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-28",
+  "name": "Sandy Koufax",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "L",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "fastball": 77,
+   "breaking": 77,
+   "control": 75,
+   "stamina": 76,
+   "changeup": 74,
+   "contact": 42,
+   "power": 44,
+   "speed": 50,
+   "eye": 46,
+   "fielding": 58,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-29",
+  "name": "Bob Gibson",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 95,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "fastball": 80,
+   "breaking": 76,
+   "control": 63,
+   "stamina": 70,
+   "changeup": 67,
+   "contact": 41,
+   "power": 43,
+   "speed": 49,
+   "eye": 45,
+   "fielding": 57,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-30",
+  "name": "Roberto Clemente",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 95,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 74,
+   "power": 74,
+   "speed": 74,
+   "eye": 73,
+   "fielding": 74,
+   "arm": 72
+  }
+ },
+ {
+  "id": "real-31",
+  "name": "Frank Robinson",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 93,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 67,
+   "power": 75,
+   "speed": 61,
+   "eye": 69,
+   "fielding": 64,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-32",
+  "name": "Ernie Banks",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 65,
+   "power": 73,
+   "speed": 59,
+   "eye": 67,
+   "fielding": 62,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-33",
+  "name": "Yogi Berra",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 63,
+   "power": 64,
+   "speed": 51,
+   "eye": 65,
+   "fielding": 73,
+   "arm": 73
+  }
+ },
+ {
+  "id": "real-34",
+  "name": "Warren Spahn",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "fastball": 59,
+   "breaking": 69,
+   "control": 77,
+   "stamina": 71,
+   "changeup": 73,
+   "contact": 38,
+   "power": 40,
+   "speed": 46,
+   "eye": 42,
+   "fielding": 54,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-35",
+  "name": "Whitey Ford",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "fastball": 57,
+   "breaking": 67,
+   "control": 75,
+   "stamina": 69,
+   "changeup": 71,
+   "contact": 36,
+   "power": 38,
+   "speed": 44,
+   "eye": 40,
+   "fielding": 52,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-36",
+  "name": "Al Kaline",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 70,
+   "power": 70,
+   "speed": 70,
+   "eye": 69,
+   "fielding": 70,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-37",
+  "name": "Brooks Robinson",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "star",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 60,
+   "power": 56,
+   "speed": 66,
+   "eye": 62,
+   "fielding": 75,
+   "arm": 71
+  }
+ },
+ {
+  "id": "real-38",
+  "name": "Harmon Killebrew",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 58,
+   "power": 75,
+   "speed": 50,
+   "eye": 65,
+   "fielding": 56,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-39",
+  "name": "Juan Marichal",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "fastball": 57,
+   "breaking": 67,
+   "control": 75,
+   "stamina": 69,
+   "changeup": 71,
+   "contact": 36,
+   "power": 38,
+   "speed": 44,
+   "eye": 40,
+   "fielding": 52,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-40",
+  "name": "Tom Seaver",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 95,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "fastball": 76,
+   "breaking": 76,
+   "control": 74,
+   "stamina": 75,
+   "changeup": 73,
+   "contact": 41,
+   "power": 43,
+   "speed": 49,
+   "eye": 45,
+   "fielding": 57,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-41",
+  "name": "Johnny Bench",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 94,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "contact": 67,
+   "power": 68,
+   "speed": 55,
+   "eye": 69,
+   "fielding": 77,
+   "arm": 77
+  }
+ },
+ {
+  "id": "real-42",
+  "name": "Joe Morgan",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "contact": 71,
+   "power": 71,
+   "speed": 71,
+   "eye": 70,
+   "fielding": 71,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-43",
+  "name": "Reggie Jackson",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "contact": 59,
+   "power": 76,
+   "speed": 51,
+   "eye": 66,
+   "fielding": 57,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-44",
+  "name": "Rod Carew",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "contact": 77,
+   "power": 57,
+   "speed": 65,
+   "eye": 73,
+   "fielding": 65,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-45",
+  "name": "Mike Schmidt",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 95,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "contact": 69,
+   "power": 77,
+   "speed": 63,
+   "eye": 71,
+   "fielding": 66,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-46",
+  "name": "Nolan Ryan",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 94,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "fastball": 80,
+   "breaking": 75,
+   "control": 62,
+   "stamina": 69,
+   "changeup": 66,
+   "contact": 40,
+   "power": 42,
+   "speed": 48,
+   "eye": 44,
+   "fielding": 56,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-47",
+  "name": "Steve Carlton",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 93,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "fastball": 74,
+   "breaking": 74,
+   "control": 72,
+   "stamina": 73,
+   "changeup": 71,
+   "contact": 39,
+   "power": 41,
+   "speed": 47,
+   "eye": 43,
+   "fielding": 55,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-48",
+  "name": "Pete Rose",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "contact": 75,
+   "power": 55,
+   "speed": 63,
+   "eye": 71,
+   "fielding": 63,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-49",
+  "name": "Carl Yastrzemski",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "contact": 69,
+   "power": 69,
+   "speed": 69,
+   "eye": 68,
+   "fielding": 69,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-50",
+  "name": "Rollie Fingers",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "1970s",
+  "grades": {
+   "fastball": 71,
+   "breaking": 69,
+   "control": 59,
+   "stamina": 44,
+   "changeup": 56,
+   "contact": 32,
+   "power": 34,
+   "speed": 40,
+   "eye": 36,
+   "fielding": 48,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-51",
+  "name": "Gaylord Perry",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "1970s",
+  "grades": {
+   "fastball": 51,
+   "breaking": 69,
+   "control": 69,
+   "stamina": 65,
+   "changeup": 72,
+   "contact": 34,
+   "power": 36,
+   "speed": 42,
+   "eye": 38,
+   "fielding": 50,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-52",
+  "name": "Willie Stargell",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 89,
+  "category": "star",
+  "era": "1970s",
+  "grades": {
+   "contact": 57,
+   "power": 74,
+   "speed": 49,
+   "eye": 64,
+   "fielding": 55,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-53",
+  "name": "Jim Palmer",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1970s",
+  "grades": {
+   "fastball": 57,
+   "breaking": 67,
+   "control": 75,
+   "stamina": 69,
+   "changeup": 71,
+   "contact": 36,
+   "power": 38,
+   "speed": 44,
+   "eye": 40,
+   "fielding": 52,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-54",
+  "name": "Rickey Henderson",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "R",
+  "throws": "L",
+  "stats": {},
+  "overall": 95,
+  "category": "legend",
+  "era": "1980s",
+  "grades": {
+   "contact": 75,
+   "power": 59,
+   "speed": 78,
+   "eye": 78,
+   "fielding": 71,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-55",
+  "name": "Wade Boggs",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1980s",
+  "grades": {
+   "contact": 76,
+   "power": 56,
+   "speed": 64,
+   "eye": 72,
+   "fielding": 64,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-56",
+  "name": "Cal Ripken Jr.",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1980s",
+  "grades": {
+   "contact": 71,
+   "power": 71,
+   "speed": 71,
+   "eye": 70,
+   "fielding": 71,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-57",
+  "name": "Tony Gwynn",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 93,
+  "category": "legend",
+  "era": "1980s",
+  "grades": {
+   "contact": 78,
+   "power": 58,
+   "speed": 66,
+   "eye": 74,
+   "fielding": 66,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-58",
+  "name": "Ozzie Smith",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 60,
+   "power": 56,
+   "speed": 66,
+   "eye": 62,
+   "fielding": 75,
+   "arm": 71
+  }
+ },
+ {
+  "id": "real-59",
+  "name": "Dale Murphy",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 62,
+   "power": 70,
+   "speed": 56,
+   "eye": 64,
+   "fielding": 59,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-60",
+  "name": "George Brett",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1980s",
+  "grades": {
+   "contact": 77,
+   "power": 57,
+   "speed": 65,
+   "eye": 73,
+   "fielding": 65,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-61",
+  "name": "Robin Yount",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1980s",
+  "grades": {
+   "contact": 69,
+   "power": 69,
+   "speed": 69,
+   "eye": 68,
+   "fielding": 69,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-62",
+  "name": "Roger Clemens",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "1980s",
+  "grades": {
+   "fastball": 80,
+   "breaking": 77,
+   "control": 64,
+   "stamina": 71,
+   "changeup": 68,
+   "contact": 42,
+   "power": 44,
+   "speed": 50,
+   "eye": 46,
+   "fielding": 58,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-63",
+  "name": "Dennis Eckersley",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "fastball": 73,
+   "breaking": 71,
+   "control": 61,
+   "stamina": 46,
+   "changeup": 58,
+   "contact": 34,
+   "power": 36,
+   "speed": 42,
+   "eye": 38,
+   "fielding": 50,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-64",
+  "name": "Ryne Sandberg",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 68,
+   "power": 68,
+   "speed": 68,
+   "eye": 67,
+   "fielding": 68,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-65",
+  "name": "Eddie Murray",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 63,
+   "power": 71,
+   "speed": 57,
+   "eye": 65,
+   "fielding": 60,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-66",
+  "name": "Dwight Gooden",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "fastball": 73,
+   "breaking": 68,
+   "control": 55,
+   "stamina": 62,
+   "changeup": 59,
+   "contact": 33,
+   "power": 35,
+   "speed": 41,
+   "eye": 37,
+   "fielding": 49,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-67",
+  "name": "Andre Dawson",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 62,
+   "power": 70,
+   "speed": 56,
+   "eye": 64,
+   "fielding": 59,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-68",
+  "name": "Alan Trammell",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 65,
+   "power": 65,
+   "speed": 65,
+   "eye": 64,
+   "fielding": 65,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-69",
+  "name": "Ken Griffey Jr.",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 97,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 76,
+   "power": 76,
+   "speed": 76,
+   "eye": 75,
+   "fielding": 76,
+   "arm": 74
+  }
+ },
+ {
+  "id": "real-70",
+  "name": "Barry Bonds",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 98,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 72,
+   "power": 80,
+   "speed": 66,
+   "eye": 74,
+   "fielding": 69,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-71",
+  "name": "Greg Maddux",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "fastball": 63,
+   "breaking": 73,
+   "control": 80,
+   "stamina": 75,
+   "changeup": 77,
+   "contact": 42,
+   "power": 44,
+   "speed": 50,
+   "eye": 46,
+   "fielding": 58,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-72",
+  "name": "Frank Thomas",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 93,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 61,
+   "power": 78,
+   "speed": 53,
+   "eye": 68,
+   "fielding": 59,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-73",
+  "name": "Pedro Martinez",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 97,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "fastball": 78,
+   "breaking": 78,
+   "control": 76,
+   "stamina": 77,
+   "changeup": 75,
+   "contact": 43,
+   "power": 45,
+   "speed": 51,
+   "eye": 47,
+   "fielding": 59,
+   "arm": 71
+  }
+ },
+ {
+  "id": "real-74",
+  "name": "Randy Johnson",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "L",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "fastball": 80,
+   "breaking": 77,
+   "control": 64,
+   "stamina": 71,
+   "changeup": 68,
+   "contact": 42,
+   "power": 44,
+   "speed": 50,
+   "eye": 46,
+   "fielding": 58,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-75",
+  "name": "Jeff Bagwell",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 66,
+   "power": 74,
+   "speed": 60,
+   "eye": 68,
+   "fielding": 63,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-76",
+  "name": "Craig Biggio",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 68,
+   "power": 68,
+   "speed": 68,
+   "eye": 67,
+   "fielding": 68,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-77",
+  "name": "Mike Piazza",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 60,
+   "power": 77,
+   "speed": 52,
+   "eye": 67,
+   "fielding": 58,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-78",
+  "name": "Roberto Alomar",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 69,
+   "power": 69,
+   "speed": 69,
+   "eye": 68,
+   "fielding": 69,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-79",
+  "name": "John Smoltz",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "fastball": 77,
+   "breaking": 72,
+   "control": 59,
+   "stamina": 66,
+   "changeup": 63,
+   "contact": 37,
+   "power": 39,
+   "speed": 45,
+   "eye": 41,
+   "fielding": 53,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-80",
+  "name": "Tom Glavine",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "fastball": 57,
+   "breaking": 67,
+   "control": 75,
+   "stamina": 69,
+   "changeup": 71,
+   "contact": 36,
+   "power": 38,
+   "speed": 44,
+   "eye": 40,
+   "fielding": 52,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-81",
+  "name": "Curt Schilling",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "fastball": 77,
+   "breaking": 72,
+   "control": 59,
+   "stamina": 66,
+   "changeup": 63,
+   "contact": 37,
+   "power": 39,
+   "speed": 45,
+   "eye": 41,
+   "fielding": 53,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-82",
+  "name": "Mariano Rivera",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 95,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "fastball": 80,
+   "breaking": 78,
+   "control": 68,
+   "stamina": 53,
+   "changeup": 65,
+   "contact": 41,
+   "power": 43,
+   "speed": 49,
+   "eye": 45,
+   "fielding": 57,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-83",
+  "name": "Trevor Hoffman",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "fastball": 73,
+   "breaking": 71,
+   "control": 61,
+   "stamina": 46,
+   "changeup": 58,
+   "contact": 34,
+   "power": 36,
+   "speed": 42,
+   "eye": 38,
+   "fielding": 50,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-84",
+  "name": "Larry Walker",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 70,
+   "power": 70,
+   "speed": 70,
+   "eye": 69,
+   "fielding": 70,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-85",
+  "name": "Chipper Jones",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 65,
+   "power": 73,
+   "speed": 59,
+   "eye": 67,
+   "fielding": 62,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-86",
+  "name": "Kenny Lofton",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 63,
+   "power": 48,
+   "speed": 73,
+   "eye": 61,
+   "fielding": 63,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-87",
+  "name": "Edgar Martinez",
+  "team": "",
+  "positions": [
+   "DH"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1990s",
+  "grades": {
+   "contact": 75,
+   "power": 55,
+   "speed": 63,
+   "eye": 71,
+   "fielding": 63,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-88",
+  "name": "Alex Rodriguez",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 70,
+   "power": 78,
+   "speed": 64,
+   "eye": 72,
+   "fielding": 67,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-89",
+  "name": "Albert Pujols",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 96,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 70,
+   "power": 78,
+   "speed": 64,
+   "eye": 72,
+   "fielding": 67,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-90",
+  "name": "Manny Ramirez",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 60,
+   "power": 77,
+   "speed": 52,
+   "eye": 67,
+   "fielding": 58,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-91",
+  "name": "Sammy Sosa",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 57,
+   "power": 74,
+   "speed": 49,
+   "eye": 64,
+   "fielding": 55,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-92",
+  "name": "Mark McGwire",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 58,
+   "power": 75,
+   "speed": 50,
+   "eye": 65,
+   "fielding": 56,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-93",
+  "name": "Vladimir Guerrero",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 93,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 67,
+   "power": 75,
+   "speed": 61,
+   "eye": 69,
+   "fielding": 64,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-94",
+  "name": "Derek Jeter",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 76,
+   "power": 56,
+   "speed": 64,
+   "eye": 72,
+   "fielding": 64,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-95",
+  "name": "Ichiro Suzuki",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 69,
+   "power": 54,
+   "speed": 79,
+   "eye": 67,
+   "fielding": 69,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-96",
+  "name": "Jim Thome",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 58,
+   "power": 75,
+   "speed": 50,
+   "eye": 65,
+   "fielding": 56,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-97",
+  "name": "David Ortiz",
+  "team": "",
+  "positions": [
+   "DH"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 92,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 60,
+   "power": 77,
+   "speed": 52,
+   "eye": 67,
+   "fielding": 58,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-98",
+  "name": "Miguel Cabrera",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 94,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 68,
+   "power": 76,
+   "speed": 62,
+   "eye": 70,
+   "fielding": 65,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-99",
+  "name": "Johan Santana",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 71,
+   "breaking": 71,
+   "control": 69,
+   "stamina": 70,
+   "changeup": 68,
+   "contact": 36,
+   "power": 38,
+   "speed": 44,
+   "eye": 40,
+   "fielding": 52,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-100",
+  "name": "Roy Halladay",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 93,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 68,
+   "breaking": 68,
+   "control": 72,
+   "stamina": 78,
+   "changeup": 69,
+   "contact": 39,
+   "power": 41,
+   "speed": 47,
+   "eye": 43,
+   "fielding": 55,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-101",
+  "name": "CC Sabathia",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 63,
+   "breaking": 63,
+   "control": 67,
+   "stamina": 73,
+   "changeup": 64,
+   "contact": 34,
+   "power": 36,
+   "speed": 42,
+   "eye": 38,
+   "fielding": 50,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-102",
+  "name": "Chase Utley",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 67,
+   "power": 67,
+   "speed": 67,
+   "eye": 66,
+   "fielding": 67,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-103",
+  "name": "Todd Helton",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 73,
+   "power": 53,
+   "speed": 61,
+   "eye": 69,
+   "fielding": 61,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-104",
+  "name": "Carlos Beltran",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 68,
+   "power": 68,
+   "speed": 68,
+   "eye": 67,
+   "fielding": 68,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-105",
+  "name": "Scott Rolen",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 58,
+   "power": 54,
+   "speed": 64,
+   "eye": 60,
+   "fielding": 73,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-106",
+  "name": "Andruw Jones",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 59,
+   "power": 55,
+   "speed": 65,
+   "eye": 61,
+   "fielding": 74,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-107",
+  "name": "Billy Wagner",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 87,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 72,
+   "breaking": 70,
+   "control": 60,
+   "stamina": 45,
+   "changeup": 57,
+   "contact": 33,
+   "power": 35,
+   "speed": 41,
+   "eye": 37,
+   "fielding": 49,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-108",
+  "name": "Mike Trout",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 97,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 76,
+   "power": 76,
+   "speed": 76,
+   "eye": 75,
+   "fielding": 76,
+   "arm": 74
+  }
+ },
+ {
+  "id": "real-109",
+  "name": "Mookie Betts",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 94,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 73,
+   "power": 73,
+   "speed": 73,
+   "eye": 72,
+   "fielding": 73,
+   "arm": 71
+  }
+ },
+ {
+  "id": "real-110",
+  "name": "Aaron Judge",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 95,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 63,
+   "power": 80,
+   "speed": 55,
+   "eye": 70,
+   "fielding": 61,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-111",
+  "name": "Clayton Kershaw",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 94,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 75,
+   "breaking": 75,
+   "control": 73,
+   "stamina": 74,
+   "changeup": 72,
+   "contact": 40,
+   "power": 42,
+   "speed": 48,
+   "eye": 44,
+   "fielding": 56,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-112",
+  "name": "Max Scherzer",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 93,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 79,
+   "breaking": 74,
+   "control": 61,
+   "stamina": 68,
+   "changeup": 65,
+   "contact": 39,
+   "power": 41,
+   "speed": 47,
+   "eye": 43,
+   "fielding": 55,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-113",
+  "name": "Justin Verlander",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 78,
+   "breaking": 73,
+   "control": 60,
+   "stamina": 67,
+   "changeup": 64,
+   "contact": 38,
+   "power": 40,
+   "speed": 46,
+   "eye": 42,
+   "fielding": 54,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-114",
+  "name": "Jacob deGrom",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 94,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 75,
+   "breaking": 75,
+   "control": 73,
+   "stamina": 74,
+   "changeup": 72,
+   "contact": 40,
+   "power": 42,
+   "speed": 48,
+   "eye": 44,
+   "fielding": 56,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-115",
+  "name": "Freddie Freeman",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 76,
+   "power": 56,
+   "speed": 64,
+   "eye": 72,
+   "fielding": 64,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-116",
+  "name": "Jose Altuve",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 74,
+   "power": 54,
+   "speed": 62,
+   "eye": 70,
+   "fielding": 62,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-117",
+  "name": "Nolan Arenado",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 61,
+   "power": 57,
+   "speed": 67,
+   "eye": 63,
+   "fielding": 76,
+   "arm": 72
+  }
+ },
+ {
+  "id": "real-118",
+  "name": "Francisco Lindor",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 69,
+   "power": 69,
+   "speed": 69,
+   "eye": 68,
+   "fielding": 69,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-119",
+  "name": "Bryce Harper",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 66,
+   "power": 74,
+   "speed": 60,
+   "eye": 68,
+   "fielding": 63,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-120",
+  "name": "Manny Machado",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 65,
+   "power": 73,
+   "speed": 59,
+   "eye": 67,
+   "fielding": 62,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-121",
+  "name": "Juan Soto",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 94,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 68,
+   "power": 76,
+   "speed": 62,
+   "eye": 70,
+   "fielding": 65,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-122",
+  "name": "Yordan Alvarez",
+  "team": "",
+  "positions": [
+   "DH"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 60,
+   "power": 77,
+   "speed": 52,
+   "eye": 67,
+   "fielding": 58,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-123",
+  "name": "Gerrit Cole",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 92,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 78,
+   "breaking": 73,
+   "control": 60,
+   "stamina": 67,
+   "changeup": 64,
+   "contact": 38,
+   "power": 40,
+   "speed": 46,
+   "eye": 42,
+   "fielding": 54,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-124",
+  "name": "Corey Seager",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 63,
+   "power": 71,
+   "speed": 57,
+   "eye": 65,
+   "fielding": 60,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-125",
+  "name": "Jose Ramirez",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 69,
+   "power": 69,
+   "speed": 69,
+   "eye": 68,
+   "fielding": 69,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-126",
+  "name": "Vladimir Guerrero Jr.",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 64,
+   "power": 72,
+   "speed": 58,
+   "eye": 66,
+   "fielding": 61,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-127",
+  "name": "Ronald Acuna Jr.",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 94,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 73,
+   "power": 73,
+   "speed": 73,
+   "eye": 72,
+   "fielding": 73,
+   "arm": 71
+  }
+ },
+ {
+  "id": "real-128",
+  "name": "Bobby Witt Jr.",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 91,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 70,
+   "power": 70,
+   "speed": 70,
+   "eye": 69,
+   "fielding": 70,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-129",
+  "name": "Gunnar Henderson",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 68,
+   "power": 68,
+   "speed": 68,
+   "eye": 67,
+   "fielding": 68,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-130",
+  "name": "Emmanuel Clase",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 74,
+   "breaking": 72,
+   "control": 62,
+   "stamina": 47,
+   "changeup": 59,
+   "contact": 35,
+   "power": 37,
+   "speed": 43,
+   "eye": 39,
+   "fielding": 51,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-131",
+  "name": "Edwin Diaz",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 73,
+   "breaking": 71,
+   "control": 61,
+   "stamina": 46,
+   "changeup": 58,
+   "contact": 34,
+   "power": 36,
+   "speed": 42,
+   "eye": 38,
+   "fielding": 50,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-132",
+  "name": "Spencer Strider",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 75,
+   "breaking": 70,
+   "control": 57,
+   "stamina": 64,
+   "changeup": 61,
+   "contact": 35,
+   "power": 37,
+   "speed": 43,
+   "eye": 39,
+   "fielding": 51,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-133",
+  "name": "Kyle Tucker",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 68,
+   "power": 68,
+   "speed": 68,
+   "eye": 67,
+   "fielding": 68,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-134",
+  "name": "Marcus Semien",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 65,
+   "power": 65,
+   "speed": 65,
+   "eye": 64,
+   "fielding": 65,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-135",
+  "name": "Matt Olson",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 56,
+   "power": 73,
+   "speed": 48,
+   "eye": 63,
+   "fielding": 54,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-136",
+  "name": "Adley Rutschman",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 60,
+   "power": 61,
+   "speed": 48,
+   "eye": 62,
+   "fielding": 70,
+   "arm": 70
+  }
+ },
+ {
+  "id": "real-137",
+  "name": "William Contreras",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 58,
+   "power": 59,
+   "speed": 46,
+   "eye": 60,
+   "fielding": 68,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-138",
+  "name": "Don Mattingly",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 71,
+   "power": 51,
+   "speed": 59,
+   "eye": 67,
+   "fielding": 59,
+   "arm": 57
+  }
+ },
+ {
+  "id": "real-139",
+  "name": "Keith Hernandez",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 55,
+   "power": 51,
+   "speed": 61,
+   "eye": 57,
+   "fielding": 70,
+   "arm": 66
+  }
+ },
+ {
+  "id": "real-140",
+  "name": "Dave Winfield",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 61,
+   "power": 69,
+   "speed": 55,
+   "eye": 63,
+   "fielding": 58,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-141",
+  "name": "Gary Carter",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 59,
+   "power": 60,
+   "speed": 47,
+   "eye": 61,
+   "fielding": 69,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-142",
+  "name": "Lou Whitaker",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 63,
+   "power": 63,
+   "speed": 63,
+   "eye": 62,
+   "fielding": 63,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-143",
+  "name": "Tim Raines",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "contact": 68,
+   "power": 52,
+   "speed": 71,
+   "eye": 71,
+   "fielding": 64,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-144",
+  "name": "Fernando Valenzuela",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "fastball": 46,
+   "breaking": 64,
+   "control": 64,
+   "stamina": 60,
+   "changeup": 67,
+   "contact": 29,
+   "power": 31,
+   "speed": 37,
+   "eye": 33,
+   "fielding": 45,
+   "arm": 57
+  }
+ },
+ {
+  "id": "real-145",
+  "name": "Orel Hershiser",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "fastball": 51,
+   "breaking": 61,
+   "control": 69,
+   "stamina": 63,
+   "changeup": 65,
+   "contact": 30,
+   "power": 32,
+   "speed": 38,
+   "eye": 34,
+   "fielding": 46,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-146",
+  "name": "Bret Saberhagen",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "1980s",
+  "grades": {
+   "fastball": 51,
+   "breaking": 61,
+   "control": 69,
+   "stamina": 63,
+   "changeup": 65,
+   "contact": 30,
+   "power": 32,
+   "speed": 38,
+   "eye": 34,
+   "fielding": 46,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-147",
+  "name": "Will Clark",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 85,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 70,
+   "power": 50,
+   "speed": 58,
+   "eye": 66,
+   "fielding": 58,
+   "arm": 56
+  }
+ },
+ {
+  "id": "real-148",
+  "name": "Barry Larkin",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 67,
+   "power": 67,
+   "speed": 67,
+   "eye": 66,
+   "fielding": 67,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-149",
+  "name": "Kirby Puckett",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 72,
+   "power": 52,
+   "speed": 60,
+   "eye": 68,
+   "fielding": 60,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-150",
+  "name": "Tim Salmon",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 82,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 56,
+   "power": 64,
+   "speed": 50,
+   "eye": 58,
+   "fielding": 53,
+   "arm": 54
+  }
+ },
+ {
+  "id": "real-151",
+  "name": "Bernie Williams",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 64,
+   "power": 64,
+   "speed": 64,
+   "eye": 63,
+   "fielding": 64,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-152",
+  "name": "Paul O’Neill",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 82,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 67,
+   "power": 47,
+   "speed": 55,
+   "eye": 63,
+   "fielding": 55,
+   "arm": 53
+  }
+ },
+ {
+  "id": "real-153",
+  "name": "David Cone",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "fastball": 72,
+   "breaking": 67,
+   "control": 54,
+   "stamina": 61,
+   "changeup": 58,
+   "contact": 32,
+   "power": 34,
+   "speed": 40,
+   "eye": 36,
+   "fielding": 48,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-154",
+  "name": "Kevin Brown",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "fastball": 72,
+   "breaking": 67,
+   "control": 54,
+   "stamina": 61,
+   "changeup": 58,
+   "contact": 32,
+   "power": 34,
+   "speed": 40,
+   "eye": 36,
+   "fielding": 48,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-155",
+  "name": "Moises Alou",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 57,
+   "power": 65,
+   "speed": 51,
+   "eye": 59,
+   "fielding": 54,
+   "arm": 55
+  }
+ },
+ {
+  "id": "real-156",
+  "name": "Jeff Kent",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "star",
+  "era": "1990s",
+  "grades": {
+   "contact": 59,
+   "power": 67,
+   "speed": 53,
+   "eye": 61,
+   "fielding": 56,
+   "arm": 57
+  }
+ },
+ {
+  "id": "real-157",
+  "name": "Jim Edmonds",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 57,
+   "power": 53,
+   "speed": 63,
+   "eye": 59,
+   "fielding": 72,
+   "arm": 68
+  }
+ },
+ {
+  "id": "real-158",
+  "name": "Bobby Abreu",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 64,
+   "power": 64,
+   "speed": 64,
+   "eye": 63,
+   "fielding": 64,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-159",
+  "name": "Lance Berkman",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 60,
+   "power": 68,
+   "speed": 54,
+   "eye": 62,
+   "fielding": 57,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-160",
+  "name": "Magglio Ordonez",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 68,
+   "power": 48,
+   "speed": 56,
+   "eye": 64,
+   "fielding": 56,
+   "arm": 54
+  }
+ },
+ {
+  "id": "real-161",
+  "name": "Roy Oswalt",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 52,
+   "breaking": 62,
+   "control": 70,
+   "stamina": 64,
+   "changeup": 66,
+   "contact": 31,
+   "power": 33,
+   "speed": 39,
+   "eye": 35,
+   "fielding": 47,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-162",
+  "name": "Tim Hudson",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 50,
+   "breaking": 60,
+   "control": 68,
+   "stamina": 62,
+   "changeup": 64,
+   "contact": 29,
+   "power": 31,
+   "speed": 37,
+   "eye": 33,
+   "fielding": 45,
+   "arm": 57
+  }
+ },
+ {
+  "id": "real-163",
+  "name": "Mark Buehrle",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 82,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 45,
+   "breaking": 63,
+   "control": 63,
+   "stamina": 59,
+   "changeup": 66,
+   "contact": 28,
+   "power": 30,
+   "speed": 36,
+   "eye": 32,
+   "fielding": 44,
+   "arm": 56
+  }
+ },
+ {
+  "id": "real-164",
+  "name": "Torii Hunter",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 54,
+   "power": 50,
+   "speed": 60,
+   "eye": 56,
+   "fielding": 69,
+   "arm": 65
+  }
+ },
+ {
+  "id": "real-165",
+  "name": "Adrian Beltre",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 61,
+   "power": 57,
+   "speed": 67,
+   "eye": 63,
+   "fielding": 76,
+   "arm": 72
+  }
+ },
+ {
+  "id": "real-166",
+  "name": "Joe Mauer",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 72,
+   "power": 52,
+   "speed": 60,
+   "eye": 68,
+   "fielding": 60,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-167",
+  "name": "Dustin Pedroia",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 63,
+   "power": 63,
+   "speed": 63,
+   "eye": 62,
+   "fielding": 63,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-168",
+  "name": "Robinson Cano",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 72,
+   "power": 52,
+   "speed": 60,
+   "eye": 68,
+   "fielding": 60,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-169",
+  "name": "Felix Hernandez",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 74,
+   "breaking": 69,
+   "control": 56,
+   "stamina": 63,
+   "changeup": 60,
+   "contact": 34,
+   "power": 36,
+   "speed": 42,
+   "eye": 38,
+   "fielding": 50,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-170",
+  "name": "Cole Hamels",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "fastball": 51,
+   "breaking": 61,
+   "control": 69,
+   "stamina": 63,
+   "changeup": 65,
+   "contact": 30,
+   "power": 32,
+   "speed": 38,
+   "eye": 34,
+   "fielding": 46,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-171",
+  "name": "Zack Greinke",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 55,
+   "breaking": 65,
+   "control": 73,
+   "stamina": 67,
+   "changeup": 69,
+   "contact": 34,
+   "power": 36,
+   "speed": 42,
+   "eye": 38,
+   "fielding": 50,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-172",
+  "name": "Paul Goldschmidt",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 62,
+   "power": 70,
+   "speed": 56,
+   "eye": 64,
+   "fielding": 59,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-173",
+  "name": "Anthony Rizzo",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 84,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 58,
+   "power": 66,
+   "speed": 52,
+   "eye": 60,
+   "fielding": 55,
+   "arm": 56
+  }
+ },
+ {
+  "id": "real-174",
+  "name": "Christian Yelich",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 66,
+   "power": 66,
+   "speed": 66,
+   "eye": 65,
+   "fielding": 66,
+   "arm": 64
+  }
+ },
+ {
+  "id": "real-175",
+  "name": "Trea Turner",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 65,
+   "power": 50,
+   "speed": 75,
+   "eye": 63,
+   "fielding": 65,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-176",
+  "name": "Xander Bogaerts",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 70,
+   "power": 50,
+   "speed": 58,
+   "eye": 66,
+   "fielding": 58,
+   "arm": 56
+  }
+ },
+ {
+  "id": "real-177",
+  "name": "J.T. Realmuto",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 59,
+   "power": 60,
+   "speed": 47,
+   "eye": 61,
+   "fielding": 69,
+   "arm": 69
+  }
+ },
+ {
+  "id": "real-178",
+  "name": "Salvador Perez",
+  "team": "",
+  "positions": [
+   "C"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 57,
+   "power": 58,
+   "speed": 45,
+   "eye": 59,
+   "fielding": 67,
+   "arm": 67
+  }
+ },
+ {
+  "id": "real-179",
+  "name": "DJ LeMahieu",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 68,
+   "power": 48,
+   "speed": 56,
+   "eye": 64,
+   "fielding": 56,
+   "arm": 54
+  }
+ },
+ {
+  "id": "real-180",
+  "name": "George Springer",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 59,
+   "power": 67,
+   "speed": 53,
+   "eye": 61,
+   "fielding": 56,
+   "arm": 57
+  }
+ },
+ {
+  "id": "real-181",
+  "name": "Starling Marte",
+  "team": "",
+  "positions": [
+   "CF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 60,
+   "power": 45,
+   "speed": 70,
+   "eye": 58,
+   "fielding": 60,
+   "arm": 56
+  }
+ },
+ {
+  "id": "real-182",
+  "name": "Pete Alonso",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 54,
+   "power": 71,
+   "speed": 46,
+   "eye": 61,
+   "fielding": 52,
+   "arm": 56
+  }
+ },
+ {
+  "id": "real-183",
+  "name": "Rafael Devers",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 62,
+   "power": 70,
+   "speed": 56,
+   "eye": 64,
+   "fielding": 59,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-184",
+  "name": "Ozzie Albies",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 63,
+   "power": 63,
+   "speed": 63,
+   "eye": 62,
+   "fielding": 63,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-185",
+  "name": "Austin Riley",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "contact": 60,
+   "power": 68,
+   "speed": 54,
+   "eye": 62,
+   "fielding": 57,
+   "arm": 58
+  }
+ },
+ {
+  "id": "real-186",
+  "name": "Sandy Alcantara",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 62,
+   "breaking": 62,
+   "control": 66,
+   "stamina": 72,
+   "changeup": 63,
+   "contact": 33,
+   "power": 35,
+   "speed": 41,
+   "eye": 37,
+   "fielding": 49,
+   "arm": 61
+  }
+ },
+ {
+  "id": "real-187",
+  "name": "Corbin Burnes",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 89,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 70,
+   "breaking": 70,
+   "control": 68,
+   "stamina": 69,
+   "changeup": 67,
+   "contact": 35,
+   "power": 37,
+   "speed": 43,
+   "eye": 39,
+   "fielding": 51,
+   "arm": 63
+  }
+ },
+ {
+  "id": "real-188",
+  "name": "Shane Bieber",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 52,
+   "breaking": 62,
+   "control": 70,
+   "stamina": 64,
+   "changeup": 66,
+   "contact": 31,
+   "power": 33,
+   "speed": 39,
+   "eye": 35,
+   "fielding": 47,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-189",
+  "name": "Framber Valdez",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 85,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 60,
+   "breaking": 60,
+   "control": 64,
+   "stamina": 70,
+   "changeup": 61,
+   "contact": 31,
+   "power": 33,
+   "speed": 39,
+   "eye": 35,
+   "fielding": 47,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-190",
+  "name": "Josh Hader",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 88,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 73,
+   "breaking": 71,
+   "control": 61,
+   "stamina": 46,
+   "changeup": 58,
+   "contact": 34,
+   "power": 36,
+   "speed": 42,
+   "eye": 38,
+   "fielding": 50,
+   "arm": 62
+  }
+ },
+ {
+  "id": "real-191",
+  "name": "Ryan Helsley",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 71,
+   "breaking": 69,
+   "control": 59,
+   "stamina": 44,
+   "changeup": 56,
+   "contact": 32,
+   "power": 34,
+   "speed": 40,
+   "eye": 36,
+   "fielding": 48,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-192",
+  "name": "Devin Williams",
+  "team": "",
+  "positions": [
+   "CL"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 71,
+   "breaking": 69,
+   "control": 59,
+   "stamina": 44,
+   "changeup": 56,
+   "contact": 32,
+   "power": 34,
+   "speed": 40,
+   "eye": 36,
+   "fielding": 48,
+   "arm": 60
+  }
+ },
+ {
+  "id": "real-193",
+  "name": "Logan Webb",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 52,
+   "breaking": 62,
+   "control": 70,
+   "stamina": 64,
+   "changeup": 66,
+   "contact": 31,
+   "power": 33,
+   "speed": 39,
+   "eye": 35,
+   "fielding": 47,
+   "arm": 59
+  }
+ },
+ {
+  "id": "real-194",
+  "name": "Tarik Skubal",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 90,
+  "category": "current",
+  "era": "Current Stars",
+  "grades": {
+   "fastball": 71,
+   "breaking": 71,
+   "control": 69,
+   "stamina": 70,
+   "changeup": 68,
+   "contact": 36,
+   "power": 38,
+   "speed": 44,
+   "eye": 40,
+   "fielding": 52,
+   "arm": 64
+  }
+ }
+]

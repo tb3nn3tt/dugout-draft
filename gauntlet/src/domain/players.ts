@@ -19,6 +19,7 @@ import extraRegulars from '../data/extra-regulars.json';
 import rolePlayers from '../data/role-players.json';
 import rolePlayers2 from '../data/role-players-2.json';
 import rolePlayers3 from '../data/role-players-3.json';
+import realPlayers from '../data/real-players.json';
 import coachesData from '../data/coaches.json';
 import stadiumsData from '../data/stadiums.json';
 
@@ -42,6 +43,7 @@ export const playersPool: Player[] = [
   ...(rolePlayers as Player[]),
   ...(rolePlayers2 as Player[]),
   ...(rolePlayers3 as Player[]),
+  ...(realPlayers as Player[]),
 ];
 
 export const managersPool: Player[] = coachesData as Player[];
