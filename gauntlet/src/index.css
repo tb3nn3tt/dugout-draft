@@ -260,12 +260,12 @@ strong, b { font-weight: 700; }
 .opt__name { font-weight: 700; font-size: 15px; line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1 1 auto; min-width: 0; }
 .opt__meta { font-size: 10px; font-weight: 600; letter-spacing: 0.3px; color: var(--ink-dim); white-space: nowrap; flex: 0 0 auto; }
 /* The rating strip — clean tabular row of label+grade(s) */
-.opt__stats { display: flex; flex-wrap: wrap; gap: 1px 13px; padding-left: 34px; font-variant-numeric: tabular-nums; }
+.opt__stats { display: flex; flex-wrap: wrap; gap: 1px 13px; font-variant-numeric: tabular-nums; }
 .opt__c { display: inline-flex; align-items: baseline; gap: 4px; }
 .opt__c i { font-style: normal; font-size: 9px; font-weight: 600; letter-spacing: 0.2px; color: var(--ink-faint); }
 .opt__c b { font-weight: 700; font-size: 13px; line-height: 1; }
 .opt__sl { color: var(--ink-faint); font-weight: 400; margin: 0 1px; }
-.opt__staff { padding-left: 34px; font-size: 11px; font-weight: 600; color: var(--cyan); }
+.opt__staff { font-size: 11px; font-weight: 600; color: var(--cyan); }
 .opt__info { position: absolute; top: 0; right: 0; width: 30px; height: 100%; border: none; border-left: 1px solid var(--line); background: transparent; color: var(--ink-faint); font-size: 12px; font-weight: 700; cursor: pointer; }
 
 /* Roster ribbon — plain text line */

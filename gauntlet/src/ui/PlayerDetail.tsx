@@ -1,6 +1,6 @@
 import { Player } from '../domain/types';
 import { getTier, TIER_COLORS } from '../domain/players';
-import { getPositionLabel, gradeToLetter, getGradeColor, overallToGrade } from '../domain/sim/helpers';
+import { getPositionLabel, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
 
 interface Axis { label: string; value: number; }
@@ -97,7 +97,6 @@ export function PlayerDetail({ player, onDraft, onClose }: {
               {player.positions.map(getPositionLabel).join(' / ')} · bats {player.bats}/throws {player.throws} · {player.team}
             </div>
           </div>
-          <div className="tile__ovr" style={{ background: color, minWidth: 48, height: 48, fontSize: 22 }}>{overallToGrade(player.overall)}</div>
         </div>
 
         {!isStaff && (

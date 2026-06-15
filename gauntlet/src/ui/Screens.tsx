@@ -392,14 +392,12 @@ function staffLine(player: Player): string {
 
 /** One candidate as a plain text line: grade · name · pos/B/T, then every rating. */
 function OptionRow({ player, onPick, onInfo }: { player: Player; onPick: () => void; onInfo: () => void }) {
-  const grade = overallToGrade(player.overall);
   const pos = player.positions[0];
   const isStaff = pos === 'HC' || pos === 'ST';
   return (
     <div className="opt">
       <button className="opt__pick" onClick={onPick}>
         <div className="opt__hd">
-          <span className="opt__grade" style={{ color: ovrColor(player.overall) }}>{grade}</span>
           <span className="opt__name">{abbrevName(player.name)}</span>
           <span className="opt__meta">{isStaff ? (pos === 'HC' ? 'MGR' : 'PARK') : `${pos} · ${player.bats}/${player.throws}`}</span>
         </div>
