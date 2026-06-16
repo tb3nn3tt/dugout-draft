@@ -19,7 +19,8 @@
    "eye": 79,
    "fielding": 72,
    "arm": 69
-  }
+  },
+  "funFact": "A table-setting center fielder — Dead Ball Days."
  },
  {
   "id": "real-2",
@@ -41,7 +42,8 @@
    "eye": 74,
    "fielding": 75,
    "arm": 73
-  }
+  },
+  "funFact": "A five-tool shortstop — Dead Ball Days."
  },
  {
   "id": "real-3",
@@ -68,7 +70,8 @@
    "eye": 47,
    "fielding": 59,
    "arm": 71
-  }
+  },
+  "funFact": "An ace starter — Dead Ball Days."
  },
  {
   "id": "real-4",
@@ -95,7 +98,8 @@
    "eye": 44,
    "fielding": 56,
    "arm": 68
-  }
+  },
+  "funFact": "A pinpoint-control starter — Dead Ball Days."
  },
  {
   "id": "real-5",
@@ -117,7 +121,8 @@
    "eye": 73,
    "fielding": 65,
    "arm": 63
-  }
+  },
+  "funFact": "A pure-hitting center fielder — Dead Ball Days."
  },
  {
   "id": "real-6",
@@ -139,7 +144,8 @@
    "eye": 72,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A pure-hitting second baseman — Dead Ball Days."
  },
  {
   "id": "real-7",
@@ -166,7 +172,8 @@
    "eye": 42,
    "fielding": 54,
    "arm": 66
-  }
+  },
+  "funFact": "A pinpoint-control starter — Dead Ball Days."
  },
  {
   "id": "real-8",
@@ -188,7 +195,8 @@
    "eye": 71,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A pure-hitting second baseman — Dead Ball Days."
  },
  {
   "id": "real-9",
@@ -210,7 +218,8 @@
    "eye": 72,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A pure-hitting left fielder — Dead Ball Days."
  },
  {
   "id": "real-10",
@@ -237,7 +246,8 @@
    "eye": 43,
    "fielding": 55,
    "arm": 67
-  }
+  },
+  "funFact": "An innings-eating starter — Dead Ball Days."
  },
  {
   "id": "real-11",
@@ -259,7 +269,8 @@
    "eye": 74,
    "fielding": 65,
    "arm": 69
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — 1920s-40s."
  },
  {
   "id": "real-12",
@@ -281,7 +292,8 @@
    "eye": 73,
    "fielding": 68,
    "arm": 69
-  }
+  },
+  "funFact": "A dangerous first baseman — 1920s-40s."
  },
  {
   "id": "real-13",
@@ -303,7 +315,8 @@
    "eye": 71,
    "fielding": 66,
    "arm": 67
-  }
+  },
+  "funFact": "A dangerous second baseman — 1920s-40s."
  },
  {
   "id": "real-14",
@@ -325,7 +338,8 @@
    "eye": 69,
    "fielding": 60,
    "arm": 64
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — 1920s-40s."
  },
  {
   "id": "real-15",
@@ -347,7 +361,8 @@
    "eye": 74,
    "fielding": 69,
    "arm": 70
-  }
+  },
+  "funFact": "A dangerous left fielder — 1920s-40s."
  },
  {
   "id": "real-16",
@@ -369,7 +384,8 @@
    "eye": 74,
    "fielding": 75,
    "arm": 73
-  }
+  },
+  "funFact": "A five-tool center fielder — 1920s-40s."
  },
  {
   "id": "real-17",
@@ -391,7 +407,8 @@
    "eye": 67,
    "fielding": 58,
    "arm": 62
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — 1920s-40s."
  },
  {
   "id": "real-18",
@@ -418,7 +435,8 @@
    "eye": 44,
    "fielding": 56,
    "arm": 68
-  }
+  },
+  "funFact": "An ace starter — 1920s-40s."
  },
  {
   "id": "real-19",
@@ -440,7 +458,8 @@
    "eye": 67,
    "fielding": 62,
    "arm": 63
-  }
+  },
+  "funFact": "A dangerous right fielder — 1920s-40s."
  },
  {
   "id": "real-20",
@@ -467,7 +486,8 @@
    "eye": 43,
    "fielding": 55,
    "arm": 67
-  }
+  },
+  "funFact": "A flamethrowing starter — 1920s-40s."
  },
  {
   "id": "real-21",
@@ -494,7 +514,8 @@
    "eye": 42,
    "fielding": 54,
    "arm": 66
-  }
+  },
+  "funFact": "A crafty starter — 1920s-40s."
  },
  {
   "id": "real-22",
@@ -516,7 +537,8 @@
    "eye": 70,
    "fielding": 61,
    "arm": 65
-  }
+  },
+  "funFact": "A fearsome power-hitting catcher — 1920s-40s."
  },
  {
   "id": "real-23",
@@ -538,7 +560,8 @@
    "eye": 65,
    "fielding": 67,
    "arm": 63
-  }
+  },
+  "funFact": "A blazing-fast center fielder — 1920s-40s."
  },
  {
   "id": "real-24",
@@ -560,7 +583,8 @@
    "eye": 74,
    "fielding": 75,
    "arm": 73
-  }
+  },
+  "funFact": "A five-tool left fielder — 1920s-40s."
  },
  {
   "id": "real-25",
@@ -582,7 +606,8 @@
    "eye": 77,
    "fielding": 78,
    "arm": 76
-  }
+  },
+  "funFact": "A five-tool center fielder — 1950s-60s."
  },
  {
   "id": "real-26",
@@ -604,7 +629,8 @@
    "eye": 73,
    "fielding": 68,
    "arm": 69
-  }
+  },
+  "funFact": "A dangerous center fielder — 1950s-60s."
  },
  {
   "id": "real-27",
@@ -626,7 +652,8 @@
    "eye": 74,
    "fielding": 69,
    "arm": 70
-  }
+  },
+  "funFact": "A dangerous right fielder — 1950s-60s."
  },
  {
   "id": "real-28",
@@ -653,7 +680,8 @@
    "eye": 46,
    "fielding": 58,
    "arm": 70
-  }
+  },
+  "funFact": "An ace starter — 1950s-60s."
  },
  {
   "id": "real-29",
@@ -680,7 +708,8 @@
    "eye": 45,
    "fielding": 57,
    "arm": 69
-  }
+  },
+  "funFact": "A flamethrowing starter — 1950s-60s."
  },
  {
   "id": "real-30",
@@ -702,7 +731,8 @@
    "eye": 73,
    "fielding": 74,
    "arm": 72
-  }
+  },
+  "funFact": "A five-tool right fielder — 1950s-60s."
  },
  {
   "id": "real-31",
@@ -724,7 +754,8 @@
    "eye": 69,
    "fielding": 64,
    "arm": 65
-  }
+  },
+  "funFact": "A dangerous right fielder — 1950s-60s."
  },
  {
   "id": "real-32",
@@ -746,7 +777,8 @@
    "eye": 67,
    "fielding": 62,
    "arm": 63
-  }
+  },
+  "funFact": "A dangerous shortstop — 1950s-60s."
  },
  {
   "id": "real-33",
@@ -768,7 +800,8 @@
    "eye": 65,
    "fielding": 73,
    "arm": 73
-  }
+  },
+  "funFact": "A rock-solid catcher — 1950s-60s."
  },
  {
   "id": "real-34",
@@ -795,7 +828,8 @@
    "eye": 42,
    "fielding": 54,
    "arm": 66
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1950s-60s."
  },
  {
   "id": "real-35",
@@ -822,7 +856,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1950s-60s."
  },
  {
   "id": "real-36",
@@ -844,7 +879,8 @@
    "eye": 69,
    "fielding": 70,
    "arm": 68
-  }
+  },
+  "funFact": "A five-tool right fielder — 1950s-60s."
  },
  {
   "id": "real-37",
@@ -866,7 +902,8 @@
    "eye": 62,
    "fielding": 75,
    "arm": 71
-  }
+  },
+  "funFact": "A slick-fielding third baseman — 1950s-60s."
  },
  {
   "id": "real-38",
@@ -888,7 +925,8 @@
    "eye": 65,
    "fielding": 56,
    "arm": 60
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — 1950s-60s."
  },
  {
   "id": "real-39",
@@ -915,7 +953,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1950s-60s."
  },
  {
   "id": "real-40",
@@ -942,7 +981,8 @@
    "eye": 45,
    "fielding": 57,
    "arm": 69
-  }
+  },
+  "funFact": "An ace starter — 1970s."
  },
  {
   "id": "real-41",
@@ -964,7 +1004,8 @@
    "eye": 69,
    "fielding": 77,
    "arm": 77
-  }
+  },
+  "funFact": "A rock-solid catcher — 1970s."
  },
  {
   "id": "real-42",
@@ -986,7 +1027,8 @@
    "eye": 70,
    "fielding": 71,
    "arm": 69
-  }
+  },
+  "funFact": "A five-tool second baseman — 1970s."
  },
  {
   "id": "real-43",
@@ -1008,7 +1050,8 @@
    "eye": 66,
    "fielding": 57,
    "arm": 61
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — 1970s."
  },
  {
   "id": "real-44",
@@ -1030,7 +1073,8 @@
    "eye": 73,
    "fielding": 65,
    "arm": 63
-  }
+  },
+  "funFact": "A pure-hitting first baseman — 1970s."
  },
  {
   "id": "real-45",
@@ -1052,7 +1096,8 @@
    "eye": 71,
    "fielding": 66,
    "arm": 67
-  }
+  },
+  "funFact": "A dangerous third baseman — 1970s."
  },
  {
   "id": "real-46",
@@ -1079,7 +1124,8 @@
    "eye": 44,
    "fielding": 56,
    "arm": 68
-  }
+  },
+  "funFact": "A flamethrowing starter — 1970s."
  },
  {
   "id": "real-47",
@@ -1106,7 +1152,8 @@
    "eye": 43,
    "fielding": 55,
    "arm": 67
-  }
+  },
+  "funFact": "An ace starter — 1970s."
  },
  {
   "id": "real-48",
@@ -1128,7 +1175,8 @@
    "eye": 71,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A pure-hitting first baseman — 1970s."
  },
  {
   "id": "real-49",
@@ -1150,7 +1198,8 @@
    "eye": 68,
    "fielding": 69,
    "arm": 67
-  }
+  },
+  "funFact": "A five-tool left fielder — 1970s."
  },
  {
   "id": "real-50",
@@ -1177,7 +1226,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A lockdown closer — 1970s."
  },
  {
   "id": "real-51",
@@ -1204,7 +1254,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A crafty starter — 1970s."
  },
  {
   "id": "real-52",
@@ -1226,7 +1277,8 @@
    "eye": 64,
    "fielding": 55,
    "arm": 59
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — 1970s."
  },
  {
   "id": "real-53",
@@ -1253,7 +1305,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1970s."
  },
  {
   "id": "real-54",
@@ -1275,7 +1328,8 @@
    "eye": 78,
    "fielding": 71,
    "arm": 68
-  }
+  },
+  "funFact": "A table-setting left fielder — 1980s."
  },
  {
   "id": "real-55",
@@ -1297,7 +1351,8 @@
    "eye": 72,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A pure-hitting third baseman — 1980s."
  },
  {
   "id": "real-56",
@@ -1319,7 +1374,8 @@
    "eye": 70,
    "fielding": 71,
    "arm": 69
-  }
+  },
+  "funFact": "A five-tool shortstop — 1980s."
  },
  {
   "id": "real-57",
@@ -1341,7 +1397,8 @@
    "eye": 74,
    "fielding": 66,
    "arm": 64
-  }
+  },
+  "funFact": "A pure-hitting right fielder — 1980s."
  },
  {
   "id": "real-58",
@@ -1363,7 +1420,8 @@
    "eye": 62,
    "fielding": 75,
    "arm": 71
-  }
+  },
+  "funFact": "A slick-fielding shortstop — 1980s."
  },
  {
   "id": "real-59",
@@ -1385,7 +1443,8 @@
    "eye": 64,
    "fielding": 59,
    "arm": 60
-  }
+  },
+  "funFact": "A dangerous center fielder — 1980s."
  },
  {
   "id": "real-60",
@@ -1407,7 +1466,8 @@
    "eye": 73,
    "fielding": 65,
    "arm": 63
-  }
+  },
+  "funFact": "A pure-hitting third baseman — 1980s."
  },
  {
   "id": "real-61",
@@ -1429,7 +1489,8 @@
    "eye": 68,
    "fielding": 69,
    "arm": 67
-  }
+  },
+  "funFact": "A five-tool shortstop — 1980s."
  },
  {
   "id": "real-62",
@@ -1456,7 +1517,8 @@
    "eye": 46,
    "fielding": 58,
    "arm": 70
-  }
+  },
+  "funFact": "A flamethrowing starter — 1980s."
  },
  {
   "id": "real-63",
@@ -1483,7 +1545,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A lockdown closer — 1980s."
  },
  {
   "id": "real-64",
@@ -1505,7 +1568,8 @@
    "eye": 67,
    "fielding": 68,
    "arm": 66
-  }
+  },
+  "funFact": "A five-tool second baseman — 1980s."
  },
  {
   "id": "real-65",
@@ -1527,7 +1591,8 @@
    "eye": 65,
    "fielding": 60,
    "arm": 61
-  }
+  },
+  "funFact": "A dangerous first baseman — 1980s."
  },
  {
   "id": "real-66",
@@ -1554,7 +1619,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "A flamethrowing starter — 1980s."
  },
  {
   "id": "real-67",
@@ -1576,7 +1642,8 @@
    "eye": 64,
    "fielding": 59,
    "arm": 60
-  }
+  },
+  "funFact": "A dangerous right fielder — 1980s."
  },
  {
   "id": "real-68",
@@ -1598,7 +1665,8 @@
    "eye": 64,
    "fielding": 65,
    "arm": 63
-  }
+  },
+  "funFact": "A five-tool shortstop — 1980s."
  },
  {
   "id": "real-69",
@@ -1620,7 +1688,8 @@
    "eye": 75,
    "fielding": 76,
    "arm": 74
-  }
+  },
+  "funFact": "A five-tool center fielder — 1990s."
  },
  {
   "id": "real-70",
@@ -1642,7 +1711,8 @@
    "eye": 74,
    "fielding": 69,
    "arm": 70
-  }
+  },
+  "funFact": "A dangerous left fielder — 1990s."
  },
  {
   "id": "real-71",
@@ -1669,7 +1739,8 @@
    "eye": 46,
    "fielding": 58,
    "arm": 70
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1990s."
  },
  {
   "id": "real-72",
@@ -1691,7 +1762,8 @@
    "eye": 68,
    "fielding": 59,
    "arm": 63
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — 1990s."
  },
  {
   "id": "real-73",
@@ -1718,7 +1790,8 @@
    "eye": 47,
    "fielding": 59,
    "arm": 71
-  }
+  },
+  "funFact": "An ace starter — 1990s."
  },
  {
   "id": "real-74",
@@ -1745,7 +1818,8 @@
    "eye": 46,
    "fielding": 58,
    "arm": 70
-  }
+  },
+  "funFact": "A flamethrowing starter — 1990s."
  },
  {
   "id": "real-75",
@@ -1767,7 +1841,8 @@
    "eye": 68,
    "fielding": 63,
    "arm": 64
-  }
+  },
+  "funFact": "A dangerous first baseman — 1990s."
  },
  {
   "id": "real-76",
@@ -1789,7 +1864,8 @@
    "eye": 67,
    "fielding": 68,
    "arm": 66
-  }
+  },
+  "funFact": "A five-tool second baseman — 1990s."
  },
  {
   "id": "real-77",
@@ -1811,7 +1887,8 @@
    "eye": 67,
    "fielding": 58,
    "arm": 62
-  }
+  },
+  "funFact": "A fearsome power-hitting catcher — 1990s."
  },
  {
   "id": "real-78",
@@ -1833,7 +1910,8 @@
    "eye": 68,
    "fielding": 69,
    "arm": 67
-  }
+  },
+  "funFact": "A five-tool second baseman — 1990s."
  },
  {
   "id": "real-79",
@@ -1860,7 +1938,8 @@
    "eye": 41,
    "fielding": 53,
    "arm": 65
-  }
+  },
+  "funFact": "A flamethrowing starter — 1990s."
  },
  {
   "id": "real-80",
@@ -1887,7 +1966,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1990s."
  },
  {
   "id": "real-81",
@@ -1914,7 +1994,8 @@
    "eye": 41,
    "fielding": 53,
    "arm": 65
-  }
+  },
+  "funFact": "A flamethrowing starter — 1990s."
  },
  {
   "id": "real-82",
@@ -1941,7 +2022,8 @@
    "eye": 45,
    "fielding": 57,
    "arm": 69
-  }
+  },
+  "funFact": "A lockdown closer — 1990s."
  },
  {
   "id": "real-83",
@@ -1968,7 +2050,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A lockdown closer — 1990s."
  },
  {
   "id": "real-84",
@@ -1990,7 +2073,8 @@
    "eye": 69,
    "fielding": 70,
    "arm": 68
-  }
+  },
+  "funFact": "A five-tool right fielder — 1990s."
  },
  {
   "id": "real-85",
@@ -2012,7 +2096,8 @@
    "eye": 67,
    "fielding": 62,
    "arm": 63
-  }
+  },
+  "funFact": "A dangerous third baseman — 1990s."
  },
  {
   "id": "real-86",
@@ -2034,7 +2119,8 @@
    "eye": 61,
    "fielding": 63,
    "arm": 59
-  }
+  },
+  "funFact": "A blazing-fast center fielder — 1990s."
  },
  {
   "id": "real-87",
@@ -2056,7 +2142,8 @@
    "eye": 71,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A pure-hitting designated hitter — 1990s."
  },
  {
   "id": "real-88",
@@ -2078,7 +2165,8 @@
    "eye": 72,
    "fielding": 67,
    "arm": 68
-  }
+  },
+  "funFact": "A dangerous shortstop — Steroid Era."
  },
  {
   "id": "real-89",
@@ -2100,7 +2188,8 @@
    "eye": 72,
    "fielding": 67,
    "arm": 68
-  }
+  },
+  "funFact": "A dangerous first baseman — Steroid Era."
  },
  {
   "id": "real-90",
@@ -2122,7 +2211,8 @@
    "eye": 67,
    "fielding": 58,
    "arm": 62
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — Steroid Era."
  },
  {
   "id": "real-91",
@@ -2144,7 +2234,8 @@
    "eye": 64,
    "fielding": 55,
    "arm": 59
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — Steroid Era."
  },
  {
   "id": "real-92",
@@ -2166,7 +2257,8 @@
    "eye": 65,
    "fielding": 56,
    "arm": 60
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Steroid Era."
  },
  {
   "id": "real-93",
@@ -2188,7 +2280,8 @@
    "eye": 69,
    "fielding": 64,
    "arm": 65
-  }
+  },
+  "funFact": "A dangerous right fielder — Steroid Era."
  },
  {
   "id": "real-94",
@@ -2210,7 +2303,8 @@
    "eye": 72,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A pure-hitting shortstop — Steroid Era."
  },
  {
   "id": "real-95",
@@ -2232,7 +2326,8 @@
    "eye": 67,
    "fielding": 69,
    "arm": 65
-  }
+  },
+  "funFact": "A blazing-fast right fielder — Steroid Era."
  },
  {
   "id": "real-96",
@@ -2254,7 +2349,8 @@
    "eye": 65,
    "fielding": 56,
    "arm": 60
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Steroid Era."
  },
  {
   "id": "real-97",
@@ -2276,7 +2372,8 @@
    "eye": 67,
    "fielding": 58,
    "arm": 62
-  }
+  },
+  "funFact": "A fearsome power-hitting designated hitter — Steroid Era."
  },
  {
   "id": "real-98",
@@ -2298,7 +2395,8 @@
    "eye": 70,
    "fielding": 65,
    "arm": 66
-  }
+  },
+  "funFact": "A dangerous third baseman — Steroid Era."
  },
  {
   "id": "real-99",
@@ -2325,7 +2423,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "An ace starter — Steroid Era."
  },
  {
   "id": "real-100",
@@ -2352,7 +2451,8 @@
    "eye": 43,
    "fielding": 55,
    "arm": 67
-  }
+  },
+  "funFact": "An innings-eating starter — Steroid Era."
  },
  {
   "id": "real-101",
@@ -2379,7 +2479,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "An innings-eating starter — Steroid Era."
  },
  {
   "id": "real-102",
@@ -2401,7 +2502,8 @@
    "eye": 66,
    "fielding": 67,
    "arm": 65
-  }
+  },
+  "funFact": "A five-tool second baseman — Steroid Era."
  },
  {
   "id": "real-103",
@@ -2423,7 +2525,8 @@
    "eye": 69,
    "fielding": 61,
    "arm": 59
-  }
+  },
+  "funFact": "A pure-hitting first baseman — Steroid Era."
  },
  {
   "id": "real-104",
@@ -2445,7 +2548,8 @@
    "eye": 67,
    "fielding": 68,
    "arm": 66
-  }
+  },
+  "funFact": "A five-tool center fielder — Steroid Era."
  },
  {
   "id": "real-105",
@@ -2467,7 +2571,8 @@
    "eye": 60,
    "fielding": 73,
    "arm": 69
-  }
+  },
+  "funFact": "A slick-fielding third baseman — Steroid Era."
  },
  {
   "id": "real-106",
@@ -2489,7 +2594,8 @@
    "eye": 61,
    "fielding": 74,
    "arm": 70
-  }
+  },
+  "funFact": "A slick-fielding center fielder — Steroid Era."
  },
  {
   "id": "real-107",
@@ -2516,7 +2622,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "A lockdown closer — Steroid Era."
  },
  {
   "id": "real-108",
@@ -2538,7 +2645,8 @@
    "eye": 75,
    "fielding": 76,
    "arm": 74
-  }
+  },
+  "funFact": "A five-tool center fielder — Current Stars."
  },
  {
   "id": "real-109",
@@ -2560,7 +2668,8 @@
    "eye": 72,
    "fielding": 73,
    "arm": 71
-  }
+  },
+  "funFact": "A five-tool right fielder — Current Stars."
  },
  {
   "id": "real-110",
@@ -2582,7 +2691,8 @@
    "eye": 70,
    "fielding": 61,
    "arm": 65
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — Current Stars."
  },
  {
   "id": "real-111",
@@ -2609,7 +2719,8 @@
    "eye": 44,
    "fielding": 56,
    "arm": 68
-  }
+  },
+  "funFact": "An ace starter — Current Stars."
  },
  {
   "id": "real-112",
@@ -2636,7 +2747,8 @@
    "eye": 43,
    "fielding": 55,
    "arm": 67
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-113",
@@ -2663,7 +2775,8 @@
    "eye": 42,
    "fielding": 54,
    "arm": 66
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-114",
@@ -2690,7 +2803,8 @@
    "eye": 44,
    "fielding": 56,
    "arm": 68
-  }
+  },
+  "funFact": "An ace starter — Current Stars."
  },
  {
   "id": "real-115",
@@ -2712,7 +2826,8 @@
    "eye": 72,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A pure-hitting first baseman — Current Stars."
  },
  {
   "id": "real-116",
@@ -2734,7 +2849,8 @@
    "eye": 70,
    "fielding": 62,
    "arm": 60
-  }
+  },
+  "funFact": "A pure-hitting second baseman — Current Stars."
  },
  {
   "id": "real-117",
@@ -2756,7 +2872,8 @@
    "eye": 63,
    "fielding": 76,
    "arm": 72
-  }
+  },
+  "funFact": "A slick-fielding third baseman — Current Stars."
  },
  {
   "id": "real-118",
@@ -2778,7 +2895,8 @@
    "eye": 68,
    "fielding": 69,
    "arm": 67
-  }
+  },
+  "funFact": "A five-tool shortstop — Current Stars."
  },
  {
   "id": "real-119",
@@ -2800,7 +2918,8 @@
    "eye": 68,
    "fielding": 63,
    "arm": 64
-  }
+  },
+  "funFact": "A dangerous right fielder — Current Stars."
  },
  {
   "id": "real-120",
@@ -2822,7 +2941,8 @@
    "eye": 67,
    "fielding": 62,
    "arm": 63
-  }
+  },
+  "funFact": "A dangerous third baseman — Current Stars."
  },
  {
   "id": "real-121",
@@ -2844,7 +2964,8 @@
    "eye": 70,
    "fielding": 65,
    "arm": 66
-  }
+  },
+  "funFact": "A dangerous right fielder — Current Stars."
  },
  {
   "id": "real-122",
@@ -2866,7 +2987,8 @@
    "eye": 67,
    "fielding": 58,
    "arm": 62
-  }
+  },
+  "funFact": "A fearsome power-hitting designated hitter — Current Stars."
  },
  {
   "id": "real-123",
@@ -2893,7 +3015,8 @@
    "eye": 42,
    "fielding": 54,
    "arm": 66
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-124",
@@ -2915,7 +3038,8 @@
    "eye": 65,
    "fielding": 60,
    "arm": 61
-  }
+  },
+  "funFact": "A dangerous shortstop — Current Stars."
  },
  {
   "id": "real-125",
@@ -2937,7 +3061,8 @@
    "eye": 68,
    "fielding": 69,
    "arm": 67
-  }
+  },
+  "funFact": "A five-tool third baseman — Current Stars."
  },
  {
   "id": "real-126",
@@ -2959,7 +3084,8 @@
    "eye": 66,
    "fielding": 61,
    "arm": 62
-  }
+  },
+  "funFact": "A dangerous first baseman — Current Stars."
  },
  {
   "id": "real-127",
@@ -2981,7 +3107,8 @@
    "eye": 72,
    "fielding": 73,
    "arm": 71
-  }
+  },
+  "funFact": "A five-tool right fielder — Current Stars."
  },
  {
   "id": "real-128",
@@ -3003,7 +3130,8 @@
    "eye": 69,
    "fielding": 70,
    "arm": 68
-  }
+  },
+  "funFact": "A five-tool shortstop — Current Stars."
  },
  {
   "id": "real-129",
@@ -3025,7 +3153,8 @@
    "eye": 67,
    "fielding": 68,
    "arm": 66
-  }
+  },
+  "funFact": "A five-tool shortstop — Current Stars."
  },
  {
   "id": "real-130",
@@ -3052,7 +3181,8 @@
    "eye": 39,
    "fielding": 51,
    "arm": 63
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-131",
@@ -3079,7 +3209,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-132",
@@ -3106,7 +3237,8 @@
    "eye": 39,
    "fielding": 51,
    "arm": 63
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-133",
@@ -3128,7 +3260,8 @@
    "eye": 67,
    "fielding": 68,
    "arm": 66
-  }
+  },
+  "funFact": "A five-tool right fielder — Current Stars."
  },
  {
   "id": "real-134",
@@ -3150,7 +3283,8 @@
    "eye": 64,
    "fielding": 65,
    "arm": 63
-  }
+  },
+  "funFact": "A five-tool second baseman — Current Stars."
  },
  {
   "id": "real-135",
@@ -3172,7 +3306,8 @@
    "eye": 63,
    "fielding": 54,
    "arm": 58
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Current Stars."
  },
  {
   "id": "real-136",
@@ -3194,7 +3329,8 @@
    "eye": 62,
    "fielding": 70,
    "arm": 70
-  }
+  },
+  "funFact": "A rock-solid catcher — Current Stars."
  },
  {
   "id": "real-137",
@@ -3216,7 +3352,8 @@
    "eye": 60,
    "fielding": 68,
    "arm": 68
-  }
+  },
+  "funFact": "A rock-solid catcher — Current Stars."
  },
  {
   "id": "real-138",
@@ -3238,7 +3375,8 @@
    "eye": 67,
    "fielding": 59,
    "arm": 57
-  }
+  },
+  "funFact": "A pure-hitting first baseman — 1980s."
  },
  {
   "id": "real-139",
@@ -3260,7 +3398,8 @@
    "eye": 57,
    "fielding": 70,
    "arm": 66
-  }
+  },
+  "funFact": "A slick-fielding first baseman — 1980s."
  },
  {
   "id": "real-140",
@@ -3282,7 +3421,8 @@
    "eye": 63,
    "fielding": 58,
    "arm": 59
-  }
+  },
+  "funFact": "A dangerous right fielder — 1980s."
  },
  {
   "id": "real-141",
@@ -3304,7 +3444,8 @@
    "eye": 61,
    "fielding": 69,
    "arm": 69
-  }
+  },
+  "funFact": "A rock-solid catcher — 1980s."
  },
  {
   "id": "real-142",
@@ -3326,7 +3467,8 @@
    "eye": 62,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A five-tool second baseman — 1980s."
  },
  {
   "id": "real-143",
@@ -3348,7 +3490,8 @@
    "eye": 71,
    "fielding": 64,
    "arm": 61
-  }
+  },
+  "funFact": "A table-setting left fielder — 1980s."
  },
  {
   "id": "real-144",
@@ -3375,7 +3518,8 @@
    "eye": 33,
    "fielding": 45,
    "arm": 57
-  }
+  },
+  "funFact": "A crafty starter — 1980s."
  },
  {
   "id": "real-145",
@@ -3402,7 +3546,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1980s."
  },
  {
   "id": "real-146",
@@ -3429,7 +3574,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1980s."
  },
  {
   "id": "real-147",
@@ -3451,7 +3597,8 @@
    "eye": 66,
    "fielding": 58,
    "arm": 56
-  }
+  },
+  "funFact": "A pure-hitting first baseman — 1990s."
  },
  {
   "id": "real-148",
@@ -3473,7 +3620,8 @@
    "eye": 66,
    "fielding": 67,
    "arm": 65
-  }
+  },
+  "funFact": "A five-tool shortstop — 1990s."
  },
  {
   "id": "real-149",
@@ -3495,7 +3643,8 @@
    "eye": 68,
    "fielding": 60,
    "arm": 58
-  }
+  },
+  "funFact": "A pure-hitting center fielder — 1990s."
  },
  {
   "id": "real-150",
@@ -3517,7 +3666,8 @@
    "eye": 58,
    "fielding": 53,
    "arm": 54
-  }
+  },
+  "funFact": "A dangerous right fielder — 1990s."
  },
  {
   "id": "real-151",
@@ -3539,7 +3689,8 @@
    "eye": 63,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A five-tool center fielder — 1990s."
  },
  {
   "id": "real-152",
@@ -3561,7 +3712,8 @@
    "eye": 63,
    "fielding": 55,
    "arm": 53
-  }
+  },
+  "funFact": "A pure-hitting right fielder — 1990s."
  },
  {
   "id": "real-153",
@@ -3588,7 +3740,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A flamethrowing starter — 1990s."
  },
  {
   "id": "real-154",
@@ -3615,7 +3768,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A flamethrowing starter — 1990s."
  },
  {
   "id": "real-155",
@@ -3637,7 +3791,8 @@
    "eye": 59,
    "fielding": 54,
    "arm": 55
-  }
+  },
+  "funFact": "A dangerous left fielder — 1990s."
  },
  {
   "id": "real-156",
@@ -3659,7 +3814,8 @@
    "eye": 61,
    "fielding": 56,
    "arm": 57
-  }
+  },
+  "funFact": "A dangerous second baseman — 1990s."
  },
  {
   "id": "real-157",
@@ -3681,7 +3837,8 @@
    "eye": 59,
    "fielding": 72,
    "arm": 68
-  }
+  },
+  "funFact": "A slick-fielding center fielder — Steroid Era."
  },
  {
   "id": "real-158",
@@ -3703,7 +3860,8 @@
    "eye": 63,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A five-tool right fielder — Steroid Era."
  },
  {
   "id": "real-159",
@@ -3725,7 +3883,8 @@
    "eye": 62,
    "fielding": 57,
    "arm": 58
-  }
+  },
+  "funFact": "A dangerous first baseman — Steroid Era."
  },
  {
   "id": "real-160",
@@ -3747,7 +3906,8 @@
    "eye": 64,
    "fielding": 56,
    "arm": 54
-  }
+  },
+  "funFact": "A pure-hitting right fielder — Steroid Era."
  },
  {
   "id": "real-161",
@@ -3774,7 +3934,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — Steroid Era."
  },
  {
   "id": "real-162",
@@ -3801,7 +3962,8 @@
    "eye": 33,
    "fielding": 45,
    "arm": 57
-  }
+  },
+  "funFact": "A pinpoint-control starter — Steroid Era."
  },
  {
   "id": "real-163",
@@ -3828,7 +3990,8 @@
    "eye": 32,
    "fielding": 44,
    "arm": 56
-  }
+  },
+  "funFact": "A crafty starter — Steroid Era."
  },
  {
   "id": "real-164",
@@ -3850,7 +4013,8 @@
    "eye": 56,
    "fielding": 69,
    "arm": 65
-  }
+  },
+  "funFact": "A slick-fielding center fielder — Steroid Era."
  },
  {
   "id": "real-165",
@@ -3872,7 +4036,8 @@
    "eye": 63,
    "fielding": 76,
    "arm": 72
-  }
+  },
+  "funFact": "A slick-fielding third baseman — Steroid Era."
  },
  {
   "id": "real-166",
@@ -3894,7 +4059,8 @@
    "eye": 68,
    "fielding": 60,
    "arm": 58
-  }
+  },
+  "funFact": "A pure-hitting catcher — Steroid Era."
  },
  {
   "id": "real-167",
@@ -3916,7 +4082,8 @@
    "eye": 62,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A five-tool second baseman — Steroid Era."
  },
  {
   "id": "real-168",
@@ -3938,7 +4105,8 @@
    "eye": 68,
    "fielding": 60,
    "arm": 58
-  }
+  },
+  "funFact": "A pure-hitting second baseman — Steroid Era."
  },
  {
   "id": "real-169",
@@ -3965,7 +4133,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A flamethrowing starter — Steroid Era."
  },
  {
   "id": "real-170",
@@ -3992,7 +4161,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A pinpoint-control starter — Steroid Era."
  },
  {
   "id": "real-171",
@@ -4019,7 +4189,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
   "id": "real-172",
@@ -4041,7 +4212,8 @@
    "eye": 64,
    "fielding": 59,
    "arm": 60
-  }
+  },
+  "funFact": "A dangerous first baseman — Current Stars."
  },
  {
   "id": "real-173",
@@ -4063,7 +4235,8 @@
    "eye": 60,
    "fielding": 55,
    "arm": 56
-  }
+  },
+  "funFact": "A dangerous first baseman — Current Stars."
  },
  {
   "id": "real-174",
@@ -4085,7 +4258,8 @@
    "eye": 65,
    "fielding": 66,
    "arm": 64
-  }
+  },
+  "funFact": "A five-tool left fielder — Current Stars."
  },
  {
   "id": "real-175",
@@ -4107,7 +4281,8 @@
    "eye": 63,
    "fielding": 65,
    "arm": 61
-  }
+  },
+  "funFact": "A blazing-fast shortstop — Current Stars."
  },
  {
   "id": "real-176",
@@ -4129,7 +4304,8 @@
    "eye": 66,
    "fielding": 58,
    "arm": 56
-  }
+  },
+  "funFact": "A pure-hitting shortstop — Current Stars."
  },
  {
   "id": "real-177",
@@ -4151,7 +4327,8 @@
    "eye": 61,
    "fielding": 69,
    "arm": 69
-  }
+  },
+  "funFact": "A rock-solid catcher — Current Stars."
  },
  {
   "id": "real-178",
@@ -4173,7 +4350,8 @@
    "eye": 59,
    "fielding": 67,
    "arm": 67
-  }
+  },
+  "funFact": "A rock-solid catcher — Current Stars."
  },
  {
   "id": "real-179",
@@ -4195,7 +4373,8 @@
    "eye": 64,
    "fielding": 56,
    "arm": 54
-  }
+  },
+  "funFact": "A pure-hitting second baseman — Current Stars."
  },
  {
   "id": "real-180",
@@ -4217,7 +4396,8 @@
    "eye": 61,
    "fielding": 56,
    "arm": 57
-  }
+  },
+  "funFact": "A dangerous center fielder — Current Stars."
  },
  {
   "id": "real-181",
@@ -4239,7 +4419,8 @@
    "eye": 58,
    "fielding": 60,
    "arm": 56
-  }
+  },
+  "funFact": "A blazing-fast center fielder — Current Stars."
  },
  {
   "id": "real-182",
@@ -4261,7 +4442,8 @@
    "eye": 61,
    "fielding": 52,
    "arm": 56
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Current Stars."
  },
  {
   "id": "real-183",
@@ -4283,7 +4465,8 @@
    "eye": 64,
    "fielding": 59,
    "arm": 60
-  }
+  },
+  "funFact": "A dangerous third baseman — Current Stars."
  },
  {
   "id": "real-184",
@@ -4305,7 +4488,8 @@
    "eye": 62,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A five-tool second baseman — Current Stars."
  },
  {
   "id": "real-185",
@@ -4327,7 +4511,8 @@
    "eye": 62,
    "fielding": 57,
    "arm": 58
-  }
+  },
+  "funFact": "A dangerous third baseman — Current Stars."
  },
  {
   "id": "real-186",
@@ -4354,7 +4539,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "An innings-eating starter — Current Stars."
  },
  {
   "id": "real-187",
@@ -4381,7 +4567,8 @@
    "eye": 39,
    "fielding": 51,
    "arm": 63
-  }
+  },
+  "funFact": "An ace starter — Current Stars."
  },
  {
   "id": "real-188",
@@ -4408,7 +4595,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
   "id": "real-189",
@@ -4435,7 +4623,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "An innings-eating starter — Current Stars."
  },
  {
   "id": "real-190",
@@ -4462,7 +4651,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-191",
@@ -4489,7 +4679,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-192",
@@ -4516,7 +4707,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-193",
@@ -4543,7 +4735,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
   "id": "real-194",
@@ -4570,7 +4763,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "An ace starter — Current Stars."
  },
  {
   "id": "real-195",
@@ -4592,7 +4786,8 @@
    "eye": 62,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A five-tool second baseman — Top Prospects."
  },
  {
   "id": "real-196",
@@ -4614,7 +4809,8 @@
    "eye": 60,
    "fielding": 55,
    "arm": 56
-  }
+  },
+  "funFact": "A dangerous third baseman — Top Prospects."
  },
  {
   "id": "real-197",
@@ -4636,7 +4832,8 @@
    "eye": 59,
    "fielding": 54,
    "arm": 55
-  }
+  },
+  "funFact": "A dangerous left fielder — Top Prospects."
  },
  {
   "id": "real-198",
@@ -4658,7 +4855,8 @@
    "eye": 61,
    "fielding": 62,
    "arm": 60
-  }
+  },
+  "funFact": "A five-tool center fielder — Top Prospects."
  },
  {
   "id": "real-199",
@@ -4680,7 +4878,8 @@
    "eye": 59,
    "fielding": 50,
    "arm": 54
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — Top Prospects."
  },
  {
   "id": "real-200",
@@ -4702,7 +4901,8 @@
    "eye": 63,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A five-tool right fielder — Top Prospects."
  },
  {
   "id": "real-201",
@@ -4729,7 +4929,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "A flamethrowing starter — Top Prospects."
  },
  {
   "id": "real-202",
@@ -4751,7 +4952,8 @@
    "eye": 63,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A five-tool center fielder — Top Prospects."
  },
  {
   "id": "real-203",
@@ -4773,7 +4975,8 @@
    "eye": 61,
    "fielding": 53,
    "arm": 51
-  }
+  },
+  "funFact": "A pure-hitting second baseman — Top Prospects."
  },
  {
   "id": "real-204",
@@ -4795,7 +4998,8 @@
    "eye": 64,
    "fielding": 57,
    "arm": 54
-  }
+  },
+  "funFact": "A table-setting left fielder — Top Prospects."
  },
  {
   "id": "real-205",
@@ -4817,7 +5021,8 @@
    "eye": 58,
    "fielding": 53,
    "arm": 54
-  }
+  },
+  "funFact": "A dangerous center fielder — Top Prospects."
  },
  {
   "id": "real-206",
@@ -4839,7 +5044,8 @@
    "eye": 57,
    "fielding": 70,
    "arm": 66
-  }
+  },
+  "funFact": "A slick-fielding center fielder — Top Prospects."
  },
  {
   "id": "real-207",
@@ -4861,7 +5067,8 @@
    "eye": 60,
    "fielding": 61,
    "arm": 59
-  }
+  },
+  "funFact": "A five-tool shortstop — Top Prospects."
  },
  {
   "id": "real-208",
@@ -4883,7 +5090,8 @@
    "eye": 60,
    "fielding": 55,
    "arm": 56
-  }
+  },
+  "funFact": "A dangerous right fielder — Top Prospects."
  },
  {
   "id": "real-209",
@@ -4905,7 +5113,8 @@
    "eye": 57,
    "fielding": 65,
    "arm": 65
-  }
+  },
+  "funFact": "A rock-solid catcher — Top Prospects."
  },
  {
   "id": "real-210",
@@ -4927,7 +5136,8 @@
    "eye": 56,
    "fielding": 64,
    "arm": 64
-  }
+  },
+  "funFact": "A rock-solid catcher — Top Prospects."
  },
  {
   "id": "real-211",
@@ -4949,7 +5159,8 @@
    "eye": 56,
    "fielding": 51,
    "arm": 52
-  }
+  },
+  "funFact": "A dangerous shortstop — Top Prospects."
  },
  {
   "id": "real-212",
@@ -4971,7 +5182,8 @@
    "eye": 54,
    "fielding": 45,
    "arm": 49
-  }
+  },
+  "funFact": "A fearsome power-hitting third baseman — Top Prospects."
  },
  {
   "id": "real-213",
@@ -4993,7 +5205,8 @@
    "eye": 59,
    "fielding": 60,
    "arm": 58
-  }
+  },
+  "funFact": "A five-tool shortstop — Top Prospects."
  },
  {
   "id": "real-214",
@@ -5020,7 +5233,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "An ace starter — Top Prospects."
  },
  {
   "id": "real-215",
@@ -5047,7 +5261,8 @@
    "eye": 31,
    "fielding": 43,
    "arm": 55
-  }
+  },
+  "funFact": "A flamethrowing starter — Top Prospects."
  },
  {
   "id": "real-216",
@@ -5069,7 +5284,8 @@
    "eye": 61,
    "fielding": 53,
    "arm": 51
-  }
+  },
+  "funFact": "A pure-hitting second baseman — Top Prospects."
  },
  {
   "id": "real-217",
@@ -5091,7 +5307,8 @@
    "eye": 56,
    "fielding": 47,
    "arm": 51
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Top Prospects."
  },
  {
   "id": "real-218",
@@ -5113,7 +5330,8 @@
    "eye": 57,
    "fielding": 48,
    "arm": 52
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Top Prospects."
  },
  {
   "id": "real-219",
@@ -5135,7 +5353,8 @@
    "eye": 61,
    "fielding": 53,
    "arm": 51
-  }
+  },
+  "funFact": "A pure-hitting shortstop — Top Prospects."
  },
  {
   "id": "real-220",
@@ -5157,7 +5376,8 @@
    "eye": 60,
    "fielding": 61,
    "arm": 59
-  }
+  },
+  "funFact": "A five-tool left fielder — Top Prospects."
  },
  {
   "id": "real-221",
@@ -5179,7 +5399,8 @@
    "eye": 60,
    "fielding": 61,
    "arm": 59
-  }
+  },
+  "funFact": "A five-tool second baseman — Top Prospects."
  },
  {
   "id": "real-222",
@@ -5201,7 +5422,8 @@
    "eye": 55,
    "fielding": 57,
    "arm": 53
-  }
+  },
+  "funFact": "A blazing-fast center fielder — Top Prospects."
  },
  {
   "id": "real-223",
@@ -5223,7 +5445,8 @@
    "eye": 58,
    "fielding": 59,
    "arm": 57
-  }
+  },
+  "funFact": "A five-tool shortstop — Top Prospects."
  },
  {
   "id": "real-224",
@@ -5250,7 +5473,8 @@
    "eye": 30,
    "fielding": 42,
    "arm": 54
-  }
+  },
+  "funFact": "A flamethrowing starter — Top Prospects."
  },
  {
   "id": "real-225",
@@ -5277,7 +5501,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A flamethrowing starter — Hyped Prospects."
  },
  {
   "id": "real-226",
@@ -5304,7 +5529,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A flamethrowing starter — Hyped Prospects."
  },
  {
   "id": "real-227",
@@ -5331,7 +5557,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A flamethrowing starter — Hyped Prospects."
  },
  {
   "id": "real-228",
@@ -5358,7 +5585,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A flamethrowing starter — Hyped Prospects."
  },
  {
   "id": "real-229",
@@ -5385,7 +5613,8 @@
    "eye": 30,
    "fielding": 42,
    "arm": 54
-  }
+  },
+  "funFact": "A crafty starter — Hyped Prospects."
  },
  {
   "id": "real-230",
@@ -5412,7 +5641,8 @@
    "eye": 24,
    "fielding": 36,
    "arm": 48
-  }
+  },
+  "funFact": "A flamethrowing starter — Hyped Prospects."
  },
  {
   "id": "real-231",
@@ -5439,7 +5669,8 @@
    "eye": 20,
    "fielding": 30,
    "arm": 42
-  }
+  },
+  "funFact": "A flamethrowing starter — Hyped Prospects."
  },
  {
   "id": "real-232",
@@ -5466,7 +5697,8 @@
    "eye": 20,
    "fielding": 30,
    "arm": 42
-  }
+  },
+  "funFact": "A flamethrowing starter — Hyped Prospects."
  },
  {
   "id": "real-233",
@@ -5493,7 +5725,8 @@
    "eye": 26,
    "fielding": 38,
    "arm": 50
-  }
+  },
+  "funFact": "A flamethrowing starter — Hyped Prospects."
  },
  {
   "id": "real-234",
@@ -5515,7 +5748,8 @@
    "eye": 50,
    "fielding": 45,
    "arm": 46
-  }
+  },
+  "funFact": "A dangerous left fielder — Hyped Prospects."
  },
  {
   "id": "real-235",
@@ -5542,7 +5776,8 @@
    "eye": 28,
    "fielding": 40,
    "arm": 52
-  }
+  },
+  "funFact": "A flamethrowing reliever — Hyped Prospects."
  },
  {
   "id": "real-236",
@@ -5564,7 +5799,8 @@
    "eye": 62,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A five-tool center fielder — Hyped Prospects."
  },
  {
   "id": "real-237",
@@ -5586,7 +5822,8 @@
    "eye": 63,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A five-tool center fielder — Hyped Prospects."
  },
  {
   "id": "real-238",
@@ -5608,7 +5845,8 @@
    "eye": 61,
    "fielding": 52,
    "arm": 56
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — Hyped Prospects."
  },
  {
   "id": "real-239",
@@ -5630,7 +5868,8 @@
    "eye": 60,
    "fielding": 51,
    "arm": 55
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — Hyped Prospects."
  },
  {
   "id": "real-240",
@@ -5652,7 +5891,8 @@
    "eye": 41,
    "fielding": 43,
    "arm": 39
-  }
+  },
+  "funFact": "A blazing-fast center fielder — Hyped Prospects."
  },
  {
   "id": "real-241",
@@ -5674,7 +5914,8 @@
    "eye": 42,
    "fielding": 37,
    "arm": 38
-  }
+  },
+  "funFact": "A dangerous shortstop — Hyped Prospects."
  },
  {
   "id": "real-242",
@@ -5696,7 +5937,8 @@
    "eye": 45,
    "fielding": 36,
    "arm": 40
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — Hyped Prospects."
  },
  {
   "id": "real-243",
@@ -5718,7 +5960,8 @@
    "eye": 73,
    "fielding": 74,
    "arm": 72
-  }
+  },
+  "funFact": "A five-tool center fielder — Famous Seasons."
  },
  {
   "id": "real-244",
@@ -5740,7 +5983,8 @@
    "eye": 72,
    "fielding": 67,
    "arm": 68
-  }
+  },
+  "funFact": "A dangerous left fielder — Famous Seasons."
  },
  {
   "id": "real-245",
@@ -5762,7 +6006,8 @@
    "eye": 65,
    "fielding": 56,
    "arm": 60
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — Famous Seasons."
  },
  {
   "id": "real-246",
@@ -5784,7 +6029,8 @@
    "eye": 72,
    "fielding": 67,
    "arm": 68
-  }
+  },
+  "funFact": "A dangerous center fielder — Famous Seasons."
  },
  {
   "id": "real-247",
@@ -5806,7 +6052,8 @@
    "eye": 70,
    "fielding": 71,
    "arm": 69
-  }
+  },
+  "funFact": "A five-tool left fielder — Famous Seasons."
  },
  {
   "id": "real-248",
@@ -5833,7 +6080,8 @@
    "eye": 46,
    "fielding": 58,
    "arm": 70
-  }
+  },
+  "funFact": "An ace starter — Famous Seasons."
  },
  {
   "id": "real-249",
@@ -5860,7 +6108,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "An innings-eating starter — Famous Seasons."
  },
  {
   "id": "real-250",
@@ -5887,7 +6136,8 @@
    "eye": 44,
    "fielding": 56,
    "arm": 68
-  }
+  },
+  "funFact": "An ace starter — Famous Seasons."
  },
  {
   "id": "real-251",
@@ -5914,7 +6164,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "An innings-eating starter — Famous Seasons."
  },
  {
   "id": "real-252",
@@ -5941,7 +6192,8 @@
    "eye": 32,
    "fielding": 44,
    "arm": 56
-  }
+  },
+  "funFact": "A pinpoint-control starter — Famous Seasons."
  },
  {
   "id": "real-253",
@@ -5968,7 +6220,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A crafty starter — Famous Seasons."
  },
  {
   "id": "real-254",
@@ -5995,7 +6248,8 @@
    "eye": 48,
    "fielding": 60,
    "arm": 72
-  }
+  },
+  "funFact": "An ace starter — Famous Seasons."
  },
  {
   "id": "real-255",
@@ -6022,7 +6276,8 @@
    "eye": 42,
    "fielding": 54,
    "arm": 66
-  }
+  },
+  "funFact": "A flamethrowing starter — Famous Seasons."
  },
  {
   "id": "real-256",
@@ -6044,7 +6299,8 @@
    "eye": 66,
    "fielding": 68,
    "arm": 64
-  }
+  },
+  "funFact": "A blazing-fast right fielder — Famous Seasons."
  },
  {
   "id": "real-257",
@@ -6066,7 +6322,8 @@
    "eye": 74,
    "fielding": 65,
    "arm": 69
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — Famous Seasons."
  },
  {
   "id": "real-258",
@@ -6088,7 +6345,8 @@
    "eye": 68,
    "fielding": 59,
    "arm": 63
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Famous Seasons."
  },
  {
   "id": "real-259",
@@ -6110,7 +6368,8 @@
    "eye": 64,
    "fielding": 55,
    "arm": 59
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — Famous Seasons."
  },
  {
   "id": "real-260",
@@ -6132,7 +6391,8 @@
    "eye": 69,
    "fielding": 64,
    "arm": 65
-  }
+  },
+  "funFact": "A dangerous third baseman — Famous Seasons."
  },
  {
   "id": "real-261",
@@ -6154,7 +6414,8 @@
    "eye": 63,
    "fielding": 54,
    "arm": 58
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — Famous Seasons."
  },
  {
   "id": "real-262",
@@ -6176,7 +6437,8 @@
    "eye": 73,
    "fielding": 66,
    "arm": 63
-  }
+  },
+  "funFact": "A table-setting left fielder — Famous Seasons."
  },
  {
   "id": "real-263",
@@ -6203,7 +6465,8 @@
    "eye": 42,
    "fielding": 54,
    "arm": 66
-  }
+  },
+  "funFact": "A flamethrowing starter — Famous Seasons."
  },
  {
   "id": "real-264",
@@ -6230,7 +6493,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "An ace starter — Famous Seasons."
  },
  {
   "id": "real-265",
@@ -6252,7 +6516,8 @@
    "eye": 55,
    "fielding": 57,
    "arm": 53
-  }
+  },
+  "funFact": "A blazing-fast shortstop — Famous Seasons."
  },
  {
   "id": "real-266",
@@ -6274,7 +6539,8 @@
    "eye": 61,
    "fielding": 52,
    "arm": 56
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — Famous Seasons."
  },
  {
   "id": "real-267",
@@ -6296,7 +6562,8 @@
    "eye": 67,
    "fielding": 60,
    "arm": 57
-  }
+  },
+  "funFact": "A table-setting center fielder — October Legends."
  },
  {
   "id": "real-268",
@@ -6318,7 +6585,8 @@
    "eye": 62,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A five-tool second baseman — October Legends."
  },
  {
   "id": "real-269",
@@ -6340,7 +6608,8 @@
    "eye": 58,
    "fielding": 53,
    "arm": 54
-  }
+  },
+  "funFact": "A dangerous left fielder — October Legends."
  },
  {
   "id": "real-270",
@@ -6362,7 +6631,8 @@
    "eye": 59,
    "fielding": 50,
    "arm": 54
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — October Legends."
  },
  {
   "id": "real-271",
@@ -6384,7 +6654,8 @@
    "eye": 56,
    "fielding": 51,
    "arm": 52
-  }
+  },
+  "funFact": "A dangerous third baseman — October Legends."
  },
  {
   "id": "real-272",
@@ -6406,7 +6677,8 @@
    "eye": 54,
    "fielding": 49,
    "arm": 50
-  }
+  },
+  "funFact": "A dangerous third baseman — October Legends."
  },
  {
   "id": "real-273",
@@ -6428,7 +6700,8 @@
    "eye": 47,
    "fielding": 60,
    "arm": 56
-  }
+  },
+  "funFact": "A slick-fielding shortstop — October Legends."
  },
  {
   "id": "real-274",
@@ -6455,7 +6728,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "An ace starter — October Legends."
  },
  {
   "id": "real-275",
@@ -6482,7 +6756,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "An innings-eating starter — October Legends."
  },
  {
   "id": "real-276",
@@ -6509,7 +6784,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "A flamethrowing starter — October Legends."
  },
  {
   "id": "real-277",
@@ -6531,7 +6807,8 @@
    "eye": 69,
    "fielding": 61,
    "arm": 59
-  }
+  },
+  "funFact": "A pure-hitting shortstop — October Legends."
  },
  {
   "id": "real-278",
@@ -6553,7 +6830,8 @@
    "eye": 65,
    "fielding": 56,
    "arm": 60
-  }
+  },
+  "funFact": "A fearsome power-hitting designated hitter — October Legends."
  },
  {
   "id": "real-279",
@@ -6580,7 +6858,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A lockdown closer — 1970s."
  },
  {
   "id": "real-280",
@@ -6607,7 +6886,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1970s."
  },
  {
   "id": "real-281",
@@ -6634,7 +6914,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1970s."
  },
  {
   "id": "real-282",
@@ -6661,7 +6942,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A crafty starter — 1970s."
  },
  {
   "id": "real-283",
@@ -6688,7 +6970,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A crafty starter — 1970s."
  },
  {
   "id": "real-284",
@@ -6715,7 +6998,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1970s."
  },
  {
   "id": "real-285",
@@ -6742,7 +7026,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A flamethrowing starter — 1970s."
  },
  {
   "id": "real-286",
@@ -6764,7 +7049,8 @@
    "eye": 59,
    "fielding": 67,
    "arm": 67
-  }
+  },
+  "funFact": "A rock-solid catcher — 1970s."
  },
  {
   "id": "real-287",
@@ -6786,7 +7072,8 @@
    "eye": 61,
    "fielding": 69,
    "arm": 69
-  }
+  },
+  "funFact": "A rock-solid catcher — 1970s."
  },
  {
   "id": "real-288",
@@ -6808,7 +7095,8 @@
    "eye": 62,
    "fielding": 57,
    "arm": 58
-  }
+  },
+  "funFact": "A dangerous right fielder — 1970s."
  },
  {
   "id": "real-289",
@@ -6830,7 +7118,8 @@
    "eye": 53,
    "fielding": 66,
    "arm": 62
-  }
+  },
+  "funFact": "A slick-fielding shortstop — 1970s."
  },
  {
   "id": "real-290",
@@ -6857,7 +7146,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A lockdown closer — 1980s."
  },
  {
   "id": "real-291",
@@ -6884,7 +7174,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A lockdown closer — 1980s."
  },
  {
   "id": "real-292",
@@ -6906,7 +7197,8 @@
    "eye": 61,
    "fielding": 52,
    "arm": 56
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — 1980s."
  },
  {
   "id": "real-293",
@@ -6928,7 +7220,8 @@
    "eye": 62,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A five-tool center fielder — 1980s."
  },
  {
   "id": "real-294",
@@ -6950,7 +7243,8 @@
    "eye": 57,
    "fielding": 48,
    "arm": 52
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — 1980s."
  },
  {
   "id": "real-295",
@@ -6977,7 +7271,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "An innings-eating starter — 1980s."
  },
  {
   "id": "real-296",
@@ -7004,7 +7299,8 @@
    "eye": 33,
    "fielding": 45,
    "arm": 57
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1980s."
  },
  {
   "id": "real-297",
@@ -7026,7 +7322,8 @@
    "eye": 63,
    "fielding": 55,
    "arm": 53
-  }
+  },
+  "funFact": "A pure-hitting center fielder — 1980s."
  },
  {
   "id": "real-298",
@@ -7048,7 +7345,8 @@
    "eye": 59,
    "fielding": 54,
    "arm": 55
-  }
+  },
+  "funFact": "A dangerous third baseman — 1980s."
  },
  {
   "id": "real-299",
@@ -7070,7 +7368,8 @@
    "eye": 65,
    "fielding": 73,
    "arm": 73
-  }
+  },
+  "funFact": "A rock-solid catcher — 1990s."
  },
  {
   "id": "real-300",
@@ -7097,7 +7396,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1990s."
  },
  {
   "id": "real-301",
@@ -7119,7 +7419,8 @@
    "eye": 67,
    "fielding": 59,
    "arm": 57
-  }
+  },
+  "funFact": "A pure-hitting shortstop — 1990s."
  },
  {
   "id": "real-302",
@@ -7146,7 +7447,8 @@
    "eye": 30,
    "fielding": 42,
    "arm": 54
-  }
+  },
+  "funFact": "A lockdown closer — 1990s."
  },
  {
   "id": "real-303",
@@ -7168,7 +7470,8 @@
    "eye": 64,
    "fielding": 59,
    "arm": 60
-  }
+  },
+  "funFact": "A dangerous right fielder — Steroid Era."
  },
  {
   "id": "real-304",
@@ -7190,7 +7493,8 @@
    "eye": 60,
    "fielding": 51,
    "arm": 55
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Steroid Era."
  },
  {
   "id": "real-305",
@@ -7212,7 +7516,8 @@
    "eye": 60,
    "fielding": 51,
    "arm": 55
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Steroid Era."
  },
  {
   "id": "real-306",
@@ -7234,7 +7539,8 @@
    "eye": 58,
    "fielding": 66,
    "arm": 66
-  }
+  },
+  "funFact": "A rock-solid catcher — Steroid Era."
  },
  {
   "id": "real-307",
@@ -7261,7 +7567,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A pinpoint-control starter — Steroid Era."
  },
  {
   "id": "real-308",
@@ -7288,7 +7595,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A lockdown closer — Steroid Era."
  },
  {
   "id": "real-309",
@@ -7315,7 +7623,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A lockdown closer — Steroid Era."
  },
  {
   "id": "real-310",
@@ -7342,7 +7651,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A lockdown closer — Steroid Era."
  },
  {
   "id": "real-311",
@@ -7369,7 +7679,8 @@
    "eye": 26,
    "fielding": 38,
    "arm": 50
-  }
+  },
+  "funFact": "A crafty starter — Steroid Era."
  },
  {
   "id": "real-312",
@@ -7391,7 +7702,8 @@
    "eye": 67,
    "fielding": 68,
    "arm": 66
-  }
+  },
+  "funFact": "A five-tool shortstop — Current Stars."
  },
  {
   "id": "real-313",
@@ -7413,7 +7725,8 @@
    "eye": 68,
    "fielding": 69,
    "arm": 67
-  }
+  },
+  "funFact": "A five-tool center fielder — Current Stars."
  },
  {
   "id": "real-314",
@@ -7435,7 +7748,8 @@
    "eye": 63,
    "fielding": 65,
    "arm": 61
-  }
+  },
+  "funFact": "A blazing-fast left fielder — Current Stars."
  },
  {
   "id": "real-315",
@@ -7457,7 +7771,8 @@
    "eye": 63,
    "fielding": 65,
    "arm": 61
-  }
+  },
+  "funFact": "A blazing-fast shortstop — Current Stars."
  },
  {
   "id": "real-316",
@@ -7479,7 +7794,8 @@
    "eye": 59,
    "fielding": 50,
    "arm": 54
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — Current Stars."
  },
  {
   "id": "real-317",
@@ -7501,7 +7817,8 @@
    "eye": 60,
    "fielding": 68,
    "arm": 68
-  }
+  },
+  "funFact": "A rock-solid catcher — Current Stars."
  },
  {
   "id": "real-318",
@@ -7523,7 +7840,8 @@
    "eye": 58,
    "fielding": 66,
    "arm": 66
-  }
+  },
+  "funFact": "A rock-solid catcher — Current Stars."
  },
  {
   "id": "real-319",
@@ -7550,7 +7868,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
   "id": "real-320",
@@ -7577,7 +7896,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
   "id": "real-321",
@@ -7604,7 +7924,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-322",
@@ -7631,7 +7952,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-323",
@@ -7658,7 +7980,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-324",
@@ -7685,7 +8008,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-325",
@@ -7712,7 +8036,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-326",
@@ -7739,7 +8064,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-327",
@@ -7766,7 +8092,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-328",
@@ -7793,7 +8120,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-329",
@@ -7815,7 +8143,8 @@
    "eye": 67,
    "fielding": 58,
    "arm": 62
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — International Stars."
  },
  {
   "id": "real-330",
@@ -7837,7 +8166,8 @@
    "eye": 60,
    "fielding": 55,
    "arm": 56
-  }
+  },
+  "funFact": "A dangerous left fielder — International Stars."
  },
  {
   "id": "real-331",
@@ -7864,7 +8194,8 @@
    "eye": 32,
    "fielding": 44,
    "arm": 56
-  }
+  },
+  "funFact": "A flamethrowing starter — International Stars."
  },
  {
   "id": "real-332",
@@ -7891,7 +8222,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "A flamethrowing starter — International Stars."
  },
  {
   "id": "real-333",
@@ -7918,7 +8250,8 @@
    "eye": 32,
    "fielding": 44,
    "arm": 56
-  }
+  },
+  "funFact": "A pinpoint-control starter — International Stars."
  },
  {
   "id": "real-334",
@@ -7945,7 +8278,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "An ace starter — International Stars."
  },
  {
   "id": "real-335",
@@ -7972,7 +8306,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A flamethrowing starter — International Stars."
  },
  {
   "id": "real-336",
@@ -7999,7 +8334,8 @@
    "eye": 33,
    "fielding": 45,
    "arm": 57
-  }
+  },
+  "funFact": "A pinpoint-control starter — International Stars."
  },
  {
   "id": "real-337",
@@ -8021,7 +8357,8 @@
    "eye": 61,
    "fielding": 53,
    "arm": 51
-  }
+  },
+  "funFact": "A pure-hitting left fielder — International Stars."
  },
  {
   "id": "real-338",
@@ -8043,7 +8380,8 @@
    "eye": 61,
    "fielding": 53,
    "arm": 51
-  }
+  },
+  "funFact": "A pure-hitting center fielder — International Stars."
  },
  {
   "id": "real-339",
@@ -8070,7 +8408,8 @@
    "eye": 32,
    "fielding": 44,
    "arm": 56
-  }
+  },
+  "funFact": "A pinpoint-control starter — International Stars."
  },
  {
   "id": "real-340",
@@ -8092,7 +8431,8 @@
    "eye": 60,
    "fielding": 55,
    "arm": 56
-  }
+  },
+  "funFact": "A dangerous first baseman — International Stars."
  },
  {
   "id": "real-341",
@@ -8114,7 +8454,8 @@
    "eye": 58,
    "fielding": 49,
    "arm": 53
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — International Stars."
  },
  {
   "id": "real-342",
@@ -8136,7 +8477,8 @@
    "eye": 63,
    "fielding": 64,
    "arm": 62
-  }
+  },
+  "funFact": "A five-tool center fielder — International Stars."
  },
  {
   "id": "real-343",
@@ -8158,7 +8500,8 @@
    "eye": 63,
    "fielding": 58,
    "arm": 59
-  }
+  },
+  "funFact": "A dangerous first baseman — International Stars."
  },
  {
   "id": "real-344",
@@ -8180,7 +8523,8 @@
    "eye": 66,
    "fielding": 58,
    "arm": 56
-  }
+  },
+  "funFact": "A pure-hitting right fielder — International Stars."
  },
  {
   "id": "real-345",
@@ -8207,7 +8551,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A crafty starter — International Stars."
  },
  {
   "id": "real-346",
@@ -8229,7 +8574,8 @@
    "eye": 55,
    "fielding": 57,
    "arm": 53
-  }
+  },
+  "funFact": "A blazing-fast shortstop — International Stars."
  },
  {
   "id": "real-347",
@@ -8256,7 +8602,8 @@
    "eye": 32,
    "fielding": 44,
    "arm": 56
-  }
+  },
+  "funFact": "A pinpoint-control starter — International Stars."
  },
  {
   "id": "real-348",
@@ -8283,7 +8630,8 @@
    "eye": 33,
    "fielding": 45,
    "arm": 57
-  }
+  },
+  "funFact": "An innings-eating starter — International Stars."
  },
  {
   "id": "real-349",
@@ -8305,7 +8653,8 @@
    "eye": 57,
    "fielding": 70,
    "arm": 66
-  }
+  },
+  "funFact": "A slick-fielding shortstop — International Stars."
  },
  {
   "id": "real-350",
@@ -8327,7 +8676,8 @@
    "eye": 58,
    "fielding": 49,
    "arm": 53
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — International Stars."
  },
  {
   "id": "real-351",
@@ -8349,7 +8699,8 @@
    "eye": 60,
    "fielding": 51,
    "arm": 55
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — International Stars."
  },
  {
   "id": "real-352",
@@ -8371,7 +8722,8 @@
    "eye": 60,
    "fielding": 51,
    "arm": 55
-  }
+  },
+  "funFact": "A fearsome power-hitting designated hitter — International Stars."
  },
  {
   "id": "real-353",
@@ -8393,7 +8745,8 @@
    "eye": 73,
    "fielding": 74,
    "arm": 72
-  }
+  },
+  "funFact": "A five-tool center fielder — Negro Leagues."
  },
  {
   "id": "real-354",
@@ -8415,7 +8768,8 @@
    "eye": 66,
    "fielding": 61,
    "arm": 62
-  }
+  },
+  "funFact": "A dangerous first baseman — Negro Leagues."
  },
  {
   "id": "real-355",
@@ -8437,7 +8791,8 @@
    "eye": 71,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A pure-hitting shortstop — Negro Leagues."
  },
  {
   "id": "real-356",
@@ -8464,7 +8819,8 @@
    "eye": 42,
    "fielding": 54,
    "arm": 66
-  }
+  },
+  "funFact": "A flamethrowing starter — Negro Leagues."
  },
  {
   "id": "real-357",
@@ -8486,7 +8842,8 @@
    "eye": 66,
    "fielding": 61,
    "arm": 62
-  }
+  },
+  "funFact": "A dangerous center fielder — Negro Leagues."
  },
  {
   "id": "real-358",
@@ -8508,7 +8865,8 @@
    "eye": 64,
    "fielding": 55,
    "arm": 59
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Negro Leagues."
  },
  {
   "id": "real-359",
@@ -8530,7 +8888,8 @@
    "eye": 59,
    "fielding": 72,
    "arm": 68
-  }
+  },
+  "funFact": "A slick-fielding third baseman — Negro Leagues."
  },
  {
   "id": "real-360",
@@ -8557,7 +8916,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "A starter — Negro Leagues."
  },
  {
   "id": "real-361",
@@ -8584,7 +8944,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A flamethrowing starter — Negro Leagues."
  },
  {
   "id": "real-362",
@@ -8606,7 +8967,8 @@
    "eye": 65,
    "fielding": 66,
    "arm": 64
-  }
+  },
+  "funFact": "A five-tool shortstop — Negro Leagues."
  },
  {
   "id": "real-363",
@@ -8628,7 +8990,8 @@
    "eye": 66,
    "fielding": 58,
    "arm": 56
-  }
+  },
+  "funFact": "A pure-hitting third baseman — Negro Leagues."
  },
  {
   "id": "real-364",
@@ -8650,7 +9013,8 @@
    "eye": 66,
    "fielding": 61,
    "arm": 62
-  }
+  },
+  "funFact": "A dangerous third baseman — 1950s-60s."
  },
  {
   "id": "real-365",
@@ -8672,7 +9036,8 @@
    "eye": 65,
    "fielding": 60,
    "arm": 61
-  }
+  },
+  "funFact": "A dangerous center fielder — 1950s-60s."
  },
  {
   "id": "real-366",
@@ -8694,7 +9059,8 @@
    "eye": 65,
    "fielding": 56,
    "arm": 60
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — 1950s-60s."
  },
  {
   "id": "real-367",
@@ -8716,7 +9082,8 @@
    "eye": 62,
    "fielding": 57,
    "arm": 58
-  }
+  },
+  "funFact": "A dangerous left fielder — 1950s-60s."
  },
  {
   "id": "real-368",
@@ -8738,7 +9105,8 @@
    "eye": 67,
    "fielding": 60,
    "arm": 57
-  }
+  },
+  "funFact": "A table-setting center fielder — 1950s-60s."
  },
  {
   "id": "real-369",
@@ -8760,7 +9128,8 @@
    "eye": 60,
    "fielding": 55,
    "arm": 56
-  }
+  },
+  "funFact": "A dangerous center fielder — 1950s-60s."
  },
  {
   "id": "real-370",
@@ -8787,7 +9156,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A flamethrowing starter — 1950s-60s."
  },
  {
   "id": "real-371",
@@ -8814,7 +9184,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1950s-60s."
  },
  {
   "id": "real-372",
@@ -8841,7 +9212,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A crafty closer — 1950s-60s."
  },
  {
   "id": "real-373",
@@ -8863,7 +9235,8 @@
    "eye": 61,
    "fielding": 56,
    "arm": 57
-  }
+  },
+  "funFact": "A dangerous first baseman — 1970s."
  },
  {
   "id": "real-374",
@@ -8885,7 +9258,8 @@
    "eye": 61,
    "fielding": 63,
    "arm": 59
-  }
+  },
+  "funFact": "A blazing-fast left fielder — 1970s."
  },
  {
   "id": "real-375",
@@ -8912,7 +9286,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — 1970s."
  },
  {
   "id": "real-376",
@@ -8934,7 +9309,8 @@
    "eye": 67,
    "fielding": 59,
    "arm": 57
-  }
+  },
+  "funFact": "A pure-hitting designated hitter — 1980s."
  },
  {
   "id": "real-377",
@@ -8956,7 +9332,8 @@
    "eye": 61,
    "fielding": 52,
    "arm": 56
-  }
+  },
+  "funFact": "A fearsome power-hitting left fielder — 1990s."
  },
  {
   "id": "real-378",
@@ -8978,7 +9355,8 @@
    "eye": 59,
    "fielding": 50,
    "arm": 54
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — 1990s."
  },
  {
   "id": "real-379",
@@ -9000,7 +9378,8 @@
    "eye": 61,
    "fielding": 52,
    "arm": 56
-  }
+  },
+  "funFact": "A fearsome power-hitting right fielder — 1990s."
  },
  {
   "id": "real-380",
@@ -9022,7 +9401,8 @@
    "eye": 61,
    "fielding": 56,
    "arm": 57
-  }
+  },
+  "funFact": "A dangerous first baseman — 1990s."
  },
  {
   "id": "real-381",
@@ -9044,7 +9424,8 @@
    "eye": 62,
    "fielding": 57,
    "arm": 58
-  }
+  },
+  "funFact": "A dangerous first baseman — Steroid Era."
  },
  {
   "id": "real-382",
@@ -9066,7 +9447,8 @@
    "eye": 62,
    "fielding": 57,
    "arm": 58
-  }
+  },
+  "funFact": "A dangerous first baseman — Steroid Era."
  },
  {
   "id": "real-383",
@@ -9088,7 +9470,8 @@
    "eye": 60,
    "fielding": 51,
    "arm": 55
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Steroid Era."
  },
  {
   "id": "real-384",
@@ -9110,7 +9493,8 @@
    "eye": 59,
    "fielding": 54,
    "arm": 55
-  }
+  },
+  "funFact": "A dangerous right fielder — Steroid Era."
  },
  {
   "id": "real-385",
@@ -9132,7 +9516,8 @@
    "eye": 57,
    "fielding": 48,
    "arm": 52
-  }
+  },
+  "funFact": "A fearsome power-hitting first baseman — Steroid Era."
  },
  {
   "id": "real-386",
@@ -9154,7 +9539,8 @@
    "eye": 59,
    "fielding": 54,
    "arm": 55
-  }
+  },
+  "funFact": "A dangerous first baseman — Steroid Era."
  },
  {
   "id": "real-387",
@@ -9176,7 +9562,8 @@
    "eye": 59,
    "fielding": 54,
    "arm": 55
-  }
+  },
+  "funFact": "A dangerous third baseman — Steroid Era."
  },
  {
   "id": "real-388",
@@ -9203,7 +9590,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A lockdown closer — Steroid Era."
  },
  {
   "id": "real-389",
@@ -9230,7 +9618,8 @@
    "eye": 32,
    "fielding": 44,
    "arm": 56
-  }
+  },
+  "funFact": "A lockdown closer — Steroid Era."
  },
  {
   "id": "real-390",
@@ -9252,7 +9641,8 @@
    "eye": 65,
    "fielding": 57,
    "arm": 55
-  }
+  },
+  "funFact": "A pure-hitting shortstop — Current Stars."
  },
  {
   "id": "real-391",
@@ -9274,7 +9664,8 @@
    "eye": 61,
    "fielding": 62,
    "arm": 60
-  }
+  },
+  "funFact": "A five-tool left fielder — Current Stars."
  },
  {
   "id": "real-392",
@@ -9296,7 +9687,8 @@
    "eye": 57,
    "fielding": 59,
    "arm": 55
-  }
+  },
+  "funFact": "A blazing-fast center fielder — Current Stars."
  },
  {
   "id": "real-393",
@@ -9318,7 +9710,8 @@
    "eye": 60,
    "fielding": 55,
    "arm": 56
-  }
+  },
+  "funFact": "A dangerous left fielder — Current Stars."
  },
  {
   "id": "real-394",
@@ -9340,7 +9733,8 @@
    "eye": 65,
    "fielding": 58,
    "arm": 55
-  }
+  },
+  "funFact": "A table-setting center fielder — Current Stars."
  },
  {
   "id": "real-395",
@@ -9362,7 +9756,8 @@
    "eye": 64,
    "fielding": 65,
    "arm": 63
-  }
+  },
+  "funFact": "A five-tool second baseman — Current Stars."
  },
  {
   "id": "real-396",
@@ -9384,7 +9779,8 @@
    "eye": 58,
    "fielding": 60,
    "arm": 56
-  }
+  },
+  "funFact": "A blazing-fast center fielder — Current Stars."
  },
  {
   "id": "real-397",
@@ -9406,7 +9802,8 @@
    "eye": 57,
    "fielding": 59,
    "arm": 55
-  }
+  },
+  "funFact": "A blazing-fast shortstop — Current Stars."
  },
  {
   "id": "real-398",
@@ -9428,7 +9825,8 @@
    "eye": 59,
    "fielding": 60,
    "arm": 58
-  }
+  },
+  "funFact": "A five-tool shortstop — Current Stars."
  },
  {
   "id": "real-399",
@@ -9450,7 +9848,8 @@
    "eye": 58,
    "fielding": 59,
    "arm": 57
-  }
+  },
+  "funFact": "A five-tool shortstop — Current Stars."
  },
  {
   "id": "real-400",
@@ -9472,7 +9871,8 @@
    "eye": 62,
    "fielding": 63,
    "arm": 61
-  }
+  },
+  "funFact": "A five-tool left fielder — Current Stars."
  },
  {
   "id": "real-401",
@@ -9494,7 +9894,8 @@
    "eye": 58,
    "fielding": 53,
    "arm": 54
-  }
+  },
+  "funFact": "A dangerous first baseman — Current Stars."
  },
  {
   "id": "real-402",
@@ -9516,7 +9917,8 @@
    "eye": 63,
    "fielding": 55,
    "arm": 53
-  }
+  },
+  "funFact": "A pure-hitting left fielder — Current Stars."
  },
  {
   "id": "real-403",
@@ -9538,7 +9940,8 @@
    "eye": 59,
    "fielding": 54,
    "arm": 55
-  }
+  },
+  "funFact": "A dangerous first baseman — Current Stars."
  },
  {
   "id": "real-404",
@@ -9560,7 +9963,8 @@
    "eye": 60,
    "fielding": 55,
    "arm": 56
-  }
+  },
+  "funFact": "A dangerous shortstop — Current Stars."
  },
  {
   "id": "real-405",
@@ -9582,7 +9986,8 @@
    "eye": 56,
    "fielding": 69,
    "arm": 65
-  }
+  },
+  "funFact": "A slick-fielding shortstop — Current Stars."
  },
  {
   "id": "real-406",
@@ -9604,7 +10009,8 @@
    "eye": 55,
    "fielding": 68,
    "arm": 64
-  }
+  },
+  "funFact": "A slick-fielding second baseman — Current Stars."
  },
  {
   "id": "real-407",
@@ -9626,7 +10032,8 @@
    "eye": 65,
    "fielding": 57,
    "arm": 55
-  }
+  },
+  "funFact": "A pure-hitting second baseman — Current Stars."
  },
  {
   "id": "real-408",
@@ -9648,7 +10055,8 @@
    "eye": 59,
    "fielding": 50,
    "arm": 54
-  }
+  },
+  "funFact": "A fearsome power-hitting designated hitter — Current Stars."
  },
  {
   "id": "real-409",
@@ -9670,7 +10078,8 @@
    "eye": 58,
    "fielding": 53,
    "arm": 54
-  }
+  },
+  "funFact": "A dangerous third baseman — Current Stars."
  },
  {
   "id": "real-410",
@@ -9697,7 +10106,8 @@
    "eye": 37,
    "fielding": 49,
    "arm": 61
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-411",
@@ -9724,7 +10134,8 @@
    "eye": 38,
    "fielding": 50,
    "arm": 62
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-412",
@@ -9751,7 +10162,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
   "id": "real-413",
@@ -9778,7 +10190,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
   "id": "real-414",
@@ -9805,7 +10218,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-415",
@@ -9832,7 +10246,8 @@
    "eye": 40,
    "fielding": 52,
    "arm": 64
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-416",
@@ -9859,7 +10274,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-417",
@@ -9886,7 +10302,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-418",
@@ -9913,7 +10330,8 @@
    "eye": 35,
    "fielding": 47,
    "arm": 59
-  }
+  },
+  "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
   "id": "real-419",
@@ -9940,7 +10358,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A crafty starter — Current Stars."
  },
  {
   "id": "real-420",
@@ -9967,7 +10386,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A flamethrowing starter — Current Stars."
  },
  {
   "id": "real-421",
@@ -9994,7 +10414,8 @@
    "eye": 36,
    "fielding": 48,
    "arm": 60
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-422",
@@ -10021,7 +10442,8 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  },
  {
   "id": "real-423",
@@ -10048,6 +10470,7 @@
    "eye": 34,
    "fielding": 46,
    "arm": 58
-  }
+  },
+  "funFact": "A lockdown closer — Current Stars."
  }
 ]

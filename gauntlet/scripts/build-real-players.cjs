@@ -515,9 +515,28 @@ const P = [
   ['Andres Munoz','CL','R','R','Current Stars','closer',84],
 ];
 
+const NOUN = {
+  C: 'catcher', '1B': 'first baseman', '2B': 'second baseman', '3B': 'third baseman', SS: 'shortstop',
+  LF: 'left fielder', CF: 'center fielder', RF: 'right fielder', DH: 'designated hitter',
+  SP: 'starter', CL: 'closer', SU: 'reliever', RP: 'reliever',
+};
+const HIT_DESC = {
+  slugger: 'A fearsome power-hitting', power: 'A dangerous', contact: 'A pure-hitting',
+  allaround: 'A five-tool', speed: 'A blazing-fast', defense: 'A slick-fielding',
+  catcher: 'A rock-solid', leadoff: 'A table-setting',
+};
+const PIT_DESC = {
+  ace: 'An ace', power: 'A flamethrowing', control: 'A pinpoint-control',
+  closer: 'A lockdown', workhorse: 'an innings-eating', crafty: 'A crafty',
+};
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
 const cards = P.map((row, i) => {
   const [name, pos, bats, throws, era, arch, overall, catOverride] = row;
   const positions = [pos];
+  const noun = NOUN[pos] || 'ballplayer';
+  const desc = (isPitcherPos(pos) ? PIT_DESC[arch] : HIT_DESC[arch]) || 'A';
+  const funFact = `${cap(desc)} ${noun} — ${era}.`;
   return {
     id: `real-${i + 1}`,
     name, team: '', positions, bats, throws,
@@ -526,6 +545,7 @@ const cards = P.map((row, i) => {
     category: catOverride || categoryFor(era, overall),
     era,
     grades: gradesFor(arch, overall, isPitcherPos(pos)),
+    funFact,
   };
 });
 

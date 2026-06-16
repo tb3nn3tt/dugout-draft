@@ -29,6 +29,7 @@ type G = ReturnType<typeof useGauntlet>;
 // ---------------------------------------------------------------------------
 export function MenuScreen({ g }: { g: G }) {
   const [name, setName] = useState(localStorage.getItem('dugout-gauntlet-name') ?? '');
+  const [handle, setHandle] = useState(localStorage.getItem('dugout-gauntlet-handle') ?? '');
   const [view, setView] = useState<'menu' | 'hof' | 'ladder' | 'achievements' | 'help'>(
     () => (localStorage.getItem('dugout-gauntlet-seen-intro') ? 'menu' : 'help')
   );
@@ -40,6 +41,7 @@ export function MenuScreen({ g }: { g: G }) {
   const start = () => {
     const teamName = name.trim() || 'My Squad';
     localStorage.setItem('dugout-gauntlet-name', teamName);
+    localStorage.setItem('dugout-gauntlet-handle', handle.trim());
     g.startRun(teamName, mutatorId);
   };
 
@@ -77,6 +79,14 @@ export function MenuScreen({ g }: { g: G }) {
           onChange={e => setName(e.target.value)}
           placeholder="My Squad"
           maxLength={22}
+        />
+        <label className="dim" style={{ fontSize: 13, fontWeight: 700 }}>MANAGER <span style={{ fontWeight: 400 }}>· you, on the global ladder</span></label>
+        <input
+          className="input"
+          value={handle}
+          onChange={e => setHandle(e.target.value)}
+          placeholder="e.g. Edmond"
+          maxLength={20}
         />
         <button className="btn" onClick={start}>Start a Run ⚾</button>
         <button className="btn btn--secondary" onClick={() => setView('ladder')}>🌐 Global Ladder</button>
@@ -455,6 +465,7 @@ function OptionRow({ player, remaining, onPick, onInfo }: { player: Player; rema
             {slot && <span className="opt__fills"> → {slot}</span>}
           </div>
           {org && <div className="opt__org">{org}</div>}
+          {player.funFact && <div className="opt__blurb">{player.funFact}</div>}
         </div>
         {isStaff ? (
           <div className="opt__staff">{staffLine(player)}</div>
@@ -695,7 +706,10 @@ export function RunOverScreen({ g }: { g: G }) {
   const sendToLadder = async () => {
     if (!team || ladderState === 'sending' || ladderState === 'sent') return;
     setLadderState('sending');
-    try { await submitTeam(team, streak, team.name); setLadderState('sent'); }
+    // Post under the persistent manager handle (your identity across teams);
+    // each submission is still its own unique ladder entry.
+    const manager = (localStorage.getItem('dugout-gauntlet-handle') || '').trim() || team.name;
+    try { await submitTeam(team, streak, manager); setLadderState('sent'); }
     catch (e) { console.error('ladder submit failed', e); setLadderState('error'); }
   };
 
