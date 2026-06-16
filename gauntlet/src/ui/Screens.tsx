@@ -18,6 +18,9 @@ import { FitName } from './FitName';
 import { LadderScreen } from './LadderScreen';
 import { shareTeamImage, ShareSection } from './shareCard';
 import { submitTeam, tickLadder, getTeam, getLadder, LadderTeam } from '../firebase/ladder';
+import { todayKey, dailyLabel, dailyMutatorId } from '../domain/daily';
+import { getDailyScores, DailyScore } from '../firebase/dailyBoard';
+import { ensureAuth } from '../firebase/firebase';
 
 type G = ReturnType<typeof useGauntlet>;
 
@@ -27,7 +30,7 @@ type G = ReturnType<typeof useGauntlet>;
 export function MenuScreen({ g }: { g: G }) {
   const [name, setName] = useState(localStorage.getItem('dugout-gauntlet-name') ?? '');
   const [handle, setHandle] = useState(localStorage.getItem('dugout-gauntlet-handle') ?? '');
-  const [view, setView] = useState<'menu' | 'hof' | 'ladder' | 'achievements' | 'help'>(
+  const [view, setView] = useState<'menu' | 'hof' | 'ladder' | 'achievements' | 'help' | 'daily'>(
     () => (localStorage.getItem('dugout-gauntlet-seen-intro') ? 'menu' : 'help')
   );
   const [mutatorId, setMutatorId] = useState('standard');
@@ -41,8 +44,17 @@ export function MenuScreen({ g }: { g: G }) {
     localStorage.setItem('dugout-gauntlet-handle', handle.trim());
     g.startRun(teamName, mutatorId);
   };
+  const startDaily = () => {
+    const teamName = name.trim() || 'My Squad';
+    localStorage.setItem('dugout-gauntlet-name', teamName);
+    localStorage.setItem('dugout-gauntlet-handle', handle.trim());
+    g.startDaily(teamName);
+  };
+  const dKey = todayKey();
+  const dMut = getMutator(dailyMutatorId(dKey));
 
   if (view === 'hof') return <HallOfFameScreen onBack={() => setView('menu')} />;
+  if (view === 'daily') return <DailyBoardScreen onBack={() => setView('menu')} />;
   if (view === 'ladder') return <LadderScreen onBack={() => setView('menu')} />;
   if (view === 'achievements') return <AchievementsScreen onBack={() => setView('menu')} />;
   if (view === 'help') return <HelpScreen onBack={() => { localStorage.setItem('dugout-gauntlet-seen-intro', '1'); setView('menu'); }} />;
@@ -92,6 +104,16 @@ export function MenuScreen({ g }: { g: G }) {
         <button className="btn btn--ghost" onClick={() => { const n = !sound; setSoundOn(n); setSound(n); }}>
           {sound ? '🔊 Sound: On' : '🔇 Sound: Off'}
         </button>
+      </div>
+
+      <div className="card stack" style={{ gap: 8, borderLeftColor: 'var(--cyan)' }}>
+        <div className="row" style={{ justifyContent: 'space-between' }}>
+          <strong style={{ fontSize: 15 }}>🗓️ Today's Challenge</strong>
+          <span className="badge badge--ghost">{dMut.emoji} {dMut.name}</span>
+        </div>
+        <p className="dim" style={{ fontSize: 12 }}>Same draft, same foes for everyone today — pure skill. Post your score and beat your friends. ({dailyLabel(dKey)})</p>
+        <button className="btn btn--secondary" onClick={startDaily}>▶ Play Today's Challenge</button>
+        <button className="btn btn--ghost" onClick={() => setView('daily')}>🏅 Today's Leaderboard</button>
       </div>
 
       <div className="card stack" style={{ gap: 10 }}>
@@ -191,6 +213,64 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
           series={peek.series}
           onClose={() => setPeek(null)}
         />
+      )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Daily Challenge leaderboard
+// ---------------------------------------------------------------------------
+export function DailyBoardScreen({ onBack }: { onBack: () => void }) {
+  const key = todayKey();
+  const mut = getMutator(dailyMutatorId(key));
+  const [scores, setScores] = useState<DailyScore[]>([]);
+  const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try { await ensureAuth(); const s = await getDailyScores(key); if (alive) { setScores(s); setStatus('ready'); } }
+      catch { if (alive) setStatus('error'); }
+    })();
+    return () => { alive = false; };
+  }, [key]);
+
+  return (
+    <div className="stack" style={{ marginTop: 16, gap: 14 }}>
+      <div className="row" style={{ justifyContent: 'space-between' }}>
+        <h1 style={{ fontSize: 23 }}>🏅 Today's Challenge</h1>
+        <button className="btn btn--ghost" style={{ width: 'auto', minHeight: 40, padding: '0 14px' }} onClick={onBack}>Back</button>
+      </div>
+      <div className="card row" style={{ justifyContent: 'space-between', borderLeftColor: 'var(--cyan)' }}>
+        <div>
+          <div className="dim" style={{ fontSize: 11, letterSpacing: 1 }}>{dailyLabel(key)}</div>
+          <strong>{mut.emoji} {mut.name}</strong>
+        </div>
+        <span className="dim" style={{ fontSize: 12 }}>{scores.length} played</span>
+      </div>
+
+      {status === 'loading' && <div className="stack center" style={{ marginTop: 30, gap: 12 }}><div className="spinner" /><p className="dim">Loading today's board…</p></div>}
+      {status === 'error' && <p className="dim center" style={{ marginTop: 30 }}>Couldn't reach the leaderboard. Check your connection.</p>}
+      {status === 'ready' && scores.length === 0 && <p className="dim center" style={{ marginTop: 24 }}>No scores yet today — be the first to post one!</p>}
+      {status === 'ready' && scores.length > 0 && (
+        <div className="lb">
+          <div className="lb__row lb__row--head">
+            <span className="lb__rank">#</span>
+            <span className="lb__team">Manager · Team</span>
+            <span>W</span><span>RD</span>
+          </div>
+          {scores.map((s, i) => (
+            <div key={s.id} className="lb__row">
+              <span className="lb__rank">{i + 1}</span>
+              <span className="lb__team">
+                <span className="lb__name">{i === 0 ? '👑 ' : ''}{s.handle}</span>
+                <span className="lb__streak dim">{s.teamName}</span>
+              </span>
+              <span><b>{s.streak}-0</b></span>
+              <span style={{ color: s.runDiff >= 0 ? 'var(--win)' : 'var(--loss)' }}>{s.runDiff >= 0 ? '+' : ''}{s.runDiff}</span>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
@@ -697,7 +777,7 @@ export function RunOverScreen({ g }: { g: G }) {
         };
       }),
     }));
-    const sub = `${runDiff >= 0 ? '+' : ''}${runDiff} run diff${hof ? ` · #${hof.rank} all-time` : ''}`;
+    const sub = `${runDiff >= 0 ? '+' : ''}${runDiff} run diff${hof ? ` · #${hof.rank} all-time` : ''}${g.state.dailyDate ? " · Today's Challenge" : ''}`;
     try {
       const res = await shareTeamImage(team?.name ?? 'My Squad', `${streak}-0`, sub, sections);
       setImgState(res);
@@ -734,12 +814,12 @@ export function RunOverScreen({ g }: { g: G }) {
   const modeTag = mut.id === 'standard' ? '' : ` [${mut.emoji} ${mut.name}]`;
   const finalFoe = history[history.length - 1]?.won === false ? history[history.length - 1].opponentName : null;
   const shareText =
-    `⚾ Dugout Gauntlet${modeTag}\n${team?.name} went ${streak}-0` +
+    `${g.state.dailyDate ? "🗓️ Today's Challenge — " : ''}⚾ Dugout Gauntlet${modeTag}\n${team?.name} went ${streak}-0` +
     (finalFoe ? `, falling to the ${finalFoe}!\n` : ' before falling!\n') +
     `Run diff: ${runDiff >= 0 ? '+' : ''}${runDiff}` +
     (hof ? ` · #${hof.rank} all-time` : '') +
     (award.mvp ? `\nRun MVP: ${award.mvp.name} — ${award.mvp.hr} HR` : '') +
-    `\nHow far can you go?`;
+    `\nCan you beat it? tb3nn3tt.github.io/dugout-draft`;
 
   const share = async () => {
     try {
@@ -748,12 +828,16 @@ export function RunOverScreen({ g }: { g: G }) {
     } catch { /* user cancelled */ }
   };
 
+  const daily = g.state.dailyDate;
   return (
     <div className="stack center" style={{ marginTop: 28, gap: 16 }}>
-      <span className="dim" style={{ letterSpacing: 1 }}>RUN COMPLETE{mut.id !== 'standard' ? ` · ${mut.emoji} ${mut.name}` : ''}</span>
+      <span className="dim" style={{ letterSpacing: 1 }}>
+        {daily ? '🗓️ TODAY’S CHALLENGE' : 'RUN COMPLETE'}{mut.id !== 'standard' ? ` · ${mut.emoji} ${mut.name}` : ''}
+      </span>
       <h1 style={{ fontSize: 64, lineHeight: 1 }}>{streak}-0</h1>
       <strong style={{ fontSize: 20 }}>{team?.name}</strong>
       {finalFoe && <p className="dim" style={{ fontSize: 13 }}>fell to the {finalFoe}</p>}
+      {daily && <p className="dim center" style={{ fontSize: 12 }}>✓ Posted to today's leaderboard — see how you stack up.</p>}
 
       <TeamSheet draftLog={g.state.draftLog} teamName={team?.name ?? 'My Squad'} record={`${streak}-0`} />
 
@@ -839,7 +923,9 @@ export function RunOverScreen({ g }: { g: G }) {
       <button className="btn btn--ghost" onClick={share}>
         {shared ? '✓ Copied!' : '📲 Share as text'}
       </button>
-      <button className="btn btn--ghost" onClick={() => g.startRun(team?.name ?? 'My Squad', mutatorId)}>Run it back ⚾</button>
+      <button className="btn btn--ghost" onClick={() => daily ? g.startDaily(team?.name ?? 'My Squad') : g.startRun(team?.name ?? 'My Squad', mutatorId)}>
+        {daily ? 'Retry today’s challenge ⚾' : 'Run it back ⚾'}
+      </button>
       <button className="btn btn--ghost" onClick={g.backToMenu}>Main menu</button>
 
       {history.length > 0 && (

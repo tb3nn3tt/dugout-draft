@@ -8,6 +8,8 @@ import { seedRng } from '../domain/sim/rng';
 import { recordRun, HofEntry } from '../domain/hallOfFame';
 import { getMutator } from '../domain/mutators';
 import { getMyTeamIds } from '../firebase/ladder';
+import { todayKey, dailySeed, dailyMutatorId } from '../domain/daily';
+import { submitDailyScore } from '../firebase/dailyBoard';
 import { checkAchievements, Achievement } from '../domain/achievements';
 import { sfxWin, sfxLoss } from '../domain/sound';
 
@@ -34,6 +36,17 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
     hofResultRef.current = null;
     setCurrentFoe(null);
     dispatch({ type: 'START_RUN', teamName, seed, mutatorId });
+  }, []);
+
+  // Today's Challenge: same seed + run-mode for everyone, so scores compare.
+  const startDaily = useCallback((teamName: string) => {
+    const key = todayKey();
+    seedRng(dailySeed(key));
+    recordedRef.current = false;
+    runningRef.current = false;
+    hofResultRef.current = null;
+    setCurrentFoe(null);
+    dispatch({ type: 'START_RUN', teamName, seed: dailySeed(key), mutatorId: dailyMutatorId(key), dailyDate: key });
   }, []);
 
   const pick = useCallback((player: Player) => dispatch({ type: 'PICK', player }), []);
@@ -92,8 +105,14 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
         history: state.history,
         mutatorId: state.mutatorId,
       });
+      // Daily challenge → post the score to today's leaderboard (fire-and-forget).
+      if (state.dailyDate) {
+        const handle = (localStorage.getItem('dugout-gauntlet-handle') || '').trim() || state.team.name;
+        submitDailyScore(state.dailyDate, handle, state.team.name, state.streak,
+          state.totalRunsFor - state.totalRunsAgainst, state.mutatorId).catch(e => console.error('daily submit failed', e));
+      }
     }
-  }, [state.phase, state.team, state.streak, state.totalRunsFor, state.totalRunsAgainst, state.history, state.mutatorId]);
+  }, [state.phase, state.team, state.streak, state.totalRunsFor, state.totalRunsAgainst, state.history, state.mutatorId, state.dailyDate]);
 
   return {
     state,
@@ -101,6 +120,7 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
     hofResult: hofResultRef.current,
     newAchievements: freshAchievementsRef.current,
     startRun,
+    startDaily,
     pick,
     rerollRole,
     rerollPlayers,

@@ -14,6 +14,7 @@ export interface GauntletState {
   teamName: string;
   mutatorId: string;
   seed: number;
+  dailyDate: string | null;            // set → this run is the daily challenge
 
   // --- draft (spin model) ---
   remaining: Record<string, number>;  // marquee roles still needed
@@ -37,7 +38,7 @@ export interface GauntletState {
 }
 
 export type GauntletAction =
-  | { type: 'START_RUN'; teamName: string; seed: number; mutatorId: string }
+  | { type: 'START_RUN'; teamName: string; seed: number; mutatorId: string; dailyDate?: string | null }
   | { type: 'PICK'; player: Player }
   | { type: 'REROLL_ROLE' }                      // re-spin to a different open role
   | { type: 'REROLL_PLAYERS' }                   // same role, four new candidates
@@ -60,6 +61,7 @@ export const initialState: GauntletState = {
   teamName: '',
   mutatorId: 'standard',
   seed: 0,
+  dailyDate: null,
   remaining: {},
   currentRound: null,
   offered: [],
@@ -154,6 +156,7 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
         teamName: action.teamName,
         mutatorId: action.mutatorId,
         seed: action.seed,
+        dailyDate: action.dailyDate ?? null,
         remaining,
         budget: BUDGET,
         currentRound: next?.round ?? null,
