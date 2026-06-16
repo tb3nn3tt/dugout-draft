@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound, playerFitsRole, assignRole } from '../domain/draftRounds';
-import { getTier, hydrateIds, getCard } from '../domain/players';
+import { hydrateIds, getCard } from '../domain/players';
 import { overallToGrade, abbrevName, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
 import { Player, Position } from '../domain/types';
@@ -18,9 +18,6 @@ import { FitName } from './FitName';
 import { LadderScreen } from './LadderScreen';
 import { shareTeamImage, ShareSection } from './shareCard';
 import { submitTeam, tickLadder, getTeam, getLadder, LadderTeam } from '../firebase/ladder';
-
-// Resolved tier hex (canvas can't read CSS vars) for the share image.
-const TIER_HEX: Record<string, string> = { diamond: '#79f0ff', gold: '#ffce4a', silver: '#cdd9ea', bronze: '#e3914f', common: '#7286a3' };
 
 type G = ReturnType<typeof useGauntlet>;
 
@@ -548,7 +545,6 @@ export function GauntletRunScreen({ g }: { g: G }) {
 // ---------------------------------------------------------------------------
 // Team sheet + roster editor share these grouped sections.
 // ---------------------------------------------------------------------------
-const sheetName = abbrevName;
 const fullName = (n: string) => n.replace(/\s*\([^)]*\)\s*$/, '').trim() || n;
 // Roster sections, in draft order — one cursor walks the draftLog per role.
 const SHEET_SECTIONS: { title: string; slots: { role: Position; label: string }[] }[] = [
@@ -653,7 +649,7 @@ export function RosterReviewScreen({ g }: { g: G }) {
                 <button key={n} className={`redit__row${isSel ? ' redit__row--sel' : ''}${isTgt ? ' redit__row--tgt' : ''}`}
                   onClick={() => idx != null && tap(idx)} disabled={idx == null}>
                   <span className="redit__pos">{slot.label}</span>
-                  <span className="redit__nm">{p ? sheetName(p.name) : '—'}</span>
+                  <span className="redit__nm">{p ? fullName(p.name) : '—'}</span>
                   <span className={`redit__gr${env ? ' redit__gr--env' : ''}`} style={{ color }}>{env ? env.text : (p ? overallToGrade(p.overall) : '')}</span>
                 </button>
               );
@@ -695,9 +691,9 @@ export function RunOverScreen({ g }: { g: G }) {
         const p = g.state.draftLog.filter(e => e.role === slot.role)[k]?.player;
         return {
           pos: slot.label,
-          name: p ? abbrevName(p.name) : '—',
+          name: p ? fullName(p.name) : '—',
           grade: p ? overallToGrade(p.overall) : '',
-          color: p ? TIER_HEX[getTier(p.overall)] : '#56678a',
+          color: p ? ovrColor(p.overall) : '#a8a08d',
         };
       }),
     }));

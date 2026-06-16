@@ -1,37 +1,38 @@
 // Dependency-free shareable team card. Renders the drafted roster to a <canvas>
 // (no html2canvas) and hands it to the Web Share API on mobile, or downloads it
-// on desktop. On-brand: night-game navy, infield-amber header, cyan section
-// labels, tier-colored grades.
+// on desktop. On-brand with the app: clean paper-white "championship card",
+// stitch-red accents, a record to brag about, and a built-in challenge.
 
 export interface ShareRow { pos: string; name: string; grade: string; color: string }
 export interface ShareSection { title: string; rows: ShareRow[] }
 
 const C = {
-  bgTop: '#13243d', bgBot: '#070f1c', line: '#34527a', faint: '#56678a',
-  ink: '#ecf3ff', dim: '#8194b3', amber: '#ffb224', cyan: '#2fe3ff',
+  paper: '#f4f1ea', panel: '#ffffff', line: '#ddd7ca', lineBright: '#bcb5a3',
+  ink: '#16130d', dim: '#6a6456', faint: '#a8a08d', accent: '#c8102e', cyan: '#0e7490',
 };
+const FB = 'Inter, system-ui, -apple-system, sans-serif';
 
 function drawSection(ctx: CanvasRenderingContext2D, s: ShareSection, x: number, y: number, w: number, rowH: number): number {
   ctx.textAlign = 'left';
   ctx.fillStyle = C.cyan;
-  ctx.font = '600 15px Oswald, "Arial Narrow", sans-serif';
+  ctx.font = `700 13px ${FB}`;
   ctx.fillText(s.title, x, y);
-  let yy = y + 10;
+  let yy = y + 8;
   for (const r of s.rows) {
     yy += rowH;
     ctx.fillStyle = C.faint;
-    ctx.font = '800 12px Barlow, sans-serif';
+    ctx.font = `800 11px ${FB}`;
     ctx.fillText(r.pos, x, yy);
     ctx.fillStyle = C.ink;
-    ctx.font = '600 17px Oswald, "Arial Narrow", sans-serif';
-    ctx.fillText(r.name, x + 34, yy, w - 60);
+    ctx.font = `700 16px ${FB}`;
+    ctx.fillText(r.name, x + 34, yy, w - 58);
     ctx.fillStyle = r.color;
-    ctx.font = '700 17px Barlow, sans-serif';
+    ctx.font = `800 16px ${FB}`;
     ctx.textAlign = 'right';
     ctx.fillText(r.grade, x + w, yy);
     ctx.textAlign = 'left';
   }
-  return yy + 14;
+  return yy + 16;
 }
 
 /** Build the share card canvas. `sections[0]` (lineup) gets the left column. */
@@ -41,40 +42,49 @@ export function buildShareCanvas(teamName: string, record: string, subtitle: str
   cv.width = W * dpr; cv.height = H * dpr;
   const ctx = cv.getContext('2d')!;
   ctx.scale(dpr, dpr);
-
-  // Background + frame
-  const g = ctx.createLinearGradient(0, 0, 0, H);
-  g.addColorStop(0, C.bgTop); g.addColorStop(1, C.bgBot);
-  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  ctx.strokeStyle = C.line; ctx.lineWidth = 2; ctx.strokeRect(7, 7, W - 14, H - 14);
-
-  // Header band
-  ctx.fillStyle = 'rgba(255,178,36,0.13)'; ctx.fillRect(7, 7, W - 14, 92);
-  ctx.fillStyle = C.amber; ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.moveTo(7, 99); ctx.lineTo(W - 7, 99); ctx.strokeStyle = C.amber; ctx.stroke();
   ctx.textBaseline = 'alphabetic';
+
+  // Paper + frame
+  ctx.fillStyle = C.paper; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = C.panel; ctx.fillRect(10, 10, W - 20, H - 20);
+  ctx.strokeStyle = C.lineBright; ctx.lineWidth = 1; ctx.strokeRect(10, 10, W - 20, H - 20);
+  // Red championship top bar
+  ctx.fillStyle = C.accent; ctx.fillRect(10, 10, W - 20, 6);
+
+  // Header
+  const hY = 16;
+  ctx.fillStyle = 'rgba(200,16,46,0.06)'; ctx.fillRect(10, hY, W - 20, 86);
   ctx.fillStyle = C.ink; ctx.textAlign = 'left';
-  ctx.font = '600 34px Oswald, "Arial Narrow", sans-serif';
-  ctx.fillText(teamName.toUpperCase(), 26, 58, W - 190);
-  ctx.fillStyle = C.amber; ctx.textAlign = 'right';
-  ctx.font = '700 42px Oswald, "Arial Narrow", sans-serif';
-  ctx.fillText(record, W - 26, 62);
+  ctx.font = `800 33px ${FB}`;
+  ctx.fillText(`🏆 ${teamName}`.toUpperCase(), 28, hY + 46, W - 200);
+  ctx.fillStyle = C.accent; ctx.textAlign = 'right';
+  ctx.font = `800 46px ${FB}`;
+  ctx.fillText(record, W - 26, hY + 50);
   ctx.fillStyle = C.dim; ctx.textAlign = 'left';
-  ctx.font = '600 14px Barlow, sans-serif';
-  ctx.fillText(subtitle, 26, 84);
+  ctx.font = `600 14px ${FB}`;
+  ctx.fillText(subtitle, 28, hY + 72);
+  ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(10, hY + 86); ctx.lineTo(W - 10, hY + 86); ctx.stroke();
 
   // Two columns: lineup left, the rest right
-  const colW = (W - 26 * 2 - 24) / 2;
-  const leftX = 26, rightX = 26 + colW + 24;
-  const top = 132, rowH = 30;
+  const colW = (W - 28 * 2 - 24) / 2;
+  const leftX = 28, rightX = 28 + colW + 24;
+  const top = 150, rowH = 29;
   if (sections[0]) drawSection(ctx, sections[0], leftX, top, colW, rowH);
   let ry = top;
   for (const s of sections.slice(1)) ry = drawSection(ctx, s, rightX, ry, colW, rowH);
 
+  // Challenge banner
+  const bY = H - 96;
+  ctx.fillStyle = C.accent; ctx.fillRect(10, bY, W - 20, 44);
+  ctx.fillStyle = '#fff'; ctx.textAlign = 'center';
+  ctx.font = `800 20px ${FB}`;
+  ctx.fillText(`⚔  CAN YOU BEAT ${record}?  ⚔`, W / 2, bY + 29);
+
   // Footer
-  ctx.fillStyle = C.faint; ctx.textAlign = 'center';
-  ctx.font = '600 13px Oswald, "Arial Narrow", sans-serif';
-  ctx.fillText('⚾  DUGOUT GAUNTLET  ·  tb3nn3tt.github.io/dugout-draft', W / 2, H - 22);
+  ctx.fillStyle = C.dim; ctx.textAlign = 'center';
+  ctx.font = `700 13px ${FB}`;
+  ctx.fillText('DUGOUT GAUNTLET  ·  tb3nn3tt.github.io/dugout-draft', W / 2, H - 26);
   ctx.textAlign = 'left';
   return cv;
 }
@@ -89,7 +99,7 @@ export async function shareTeamImage(teamName: string, record: string, subtitle:
   const nav = navigator as Navigator & { canShare?: (d: unknown) => boolean; share?: (d: unknown) => Promise<void> };
   if (nav.canShare && nav.share && nav.canShare({ files: [file] })) {
     try {
-      await nav.share({ files: [file], text: `${teamName} went ${record} in Dugout Gauntlet! ⚾` });
+      await nav.share({ files: [file], text: `My ${teamName} went ${record} in Dugout Gauntlet ⚾ Can you beat it? tb3nn3tt.github.io/dugout-draft` });
       return 'shared';
     } catch { /* user cancelled or unsupported → fall through to download */ }
   }
