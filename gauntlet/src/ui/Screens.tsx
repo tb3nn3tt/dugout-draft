@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
 import { TOTAL_PICKS, DraftRound, playerFitsRole, assignRole } from '../domain/draftRounds';
 import { getTier, hydrateIds, getCard } from '../domain/players';
@@ -17,7 +17,7 @@ import { TeamDetail } from './TeamDetail';
 import { FitName } from './FitName';
 import { LadderScreen } from './LadderScreen';
 import { shareTeamImage, ShareSection } from './shareCard';
-import { submitTeam } from '../firebase/ladder';
+import { submitTeam, tickLadder, getTeam, getLadder, LadderTeam } from '../firebase/ladder';
 
 // Resolved tier hex (canvas can't read CSS vars) for the share image.
 const TIER_HEX: Record<string, string> = { diamond: '#79f0ff', gold: '#ffce4a', silver: '#cdd9ea', bronze: '#e3914f', common: '#7286a3' };
@@ -549,6 +549,7 @@ export function GauntletRunScreen({ g }: { g: G }) {
 // Team sheet + roster editor share these grouped sections.
 // ---------------------------------------------------------------------------
 const sheetName = abbrevName;
+const fullName = (n: string) => n.replace(/\s*\([^)]*\)\s*$/, '').trim() || n;
 // Roster sections, in draft order — one cursor walks the draftLog per role.
 const SHEET_SECTIONS: { title: string; slots: { role: Position; label: string }[] }[] = [
   { title: 'LINEUP', slots: [
@@ -579,7 +580,7 @@ function TeamSheet({ draftLog, teamName, record }: { draftLog: DraftEntry[]; tea
         return (
           <div key={i} className="tsheet__row">
             <span className="tsheet__pos">{slot.label}</span>
-            <span className="tsheet__nm">{p ? sheetName(p.name) : '—'}</span>
+            <span className="tsheet__nm">{p ? fullName(p.name) : '—'}</span>
             <span className={`tsheet__gr${env ? ' redit__gr--env' : ''}`} style={{ color }}>{env ? env.text : (p ? overallToGrade(p.overall) : '')}</span>
           </div>
         );
@@ -589,7 +590,7 @@ function TeamSheet({ draftLog, teamName, record }: { draftLog: DraftEntry[]; tea
   return (
     <div className="tsheet">
       <div className="tsheet__hd">
-        <span className="tsheet__team">{teamName}</span>
+        <span className="tsheet__team">🏆 {teamName}</span>
         <span className="tsheet__rec">{record}</span>
       </div>
       <div className="tsheet__cols">
@@ -598,7 +599,7 @@ function TeamSheet({ draftLog, teamName, record }: { draftLog: DraftEntry[]; tea
           {SHEET_SECTIONS.slice(1).map(s => <Section key={s.title} s={s} />)}
         </div>
       </div>
-      <div className="tsheet__tag">⚾ DUGOUT GAUNTLET</div>
+      <div className="tsheet__tag">★ OFFICIAL ROSTER · DUGOUT GAUNTLET ★</div>
     </div>
   );
 }
@@ -677,6 +678,10 @@ export function RunOverScreen({ g }: { g: G }) {
   const [shared, setShared] = useState(false);
   const [imgState, setImgState] = useState<'idle' | 'working' | 'shared' | 'saved'>('idle');
   const [ladderState, setLadderState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [myTeam, setMyTeam] = useState<LadderTeam | null>(null);
+  const [myRank, setMyRank] = useState(0);
+  const [ticking, setTicking] = useState(false);
+  const myIdRef = useRef<string | null>(null);
 
   // Build the share-image sections from the drafted roster (same grouping as the team sheet).
   const shareImage = async () => {
@@ -703,13 +708,30 @@ export function RunOverScreen({ g }: { g: G }) {
     } catch { setImgState('idle'); }
   };
 
+  // Pull our team's live ladder status (and run a few matches so it actually fights).
+  const refreshStatus = async () => {
+    if (!myIdRef.current || ticking) return;
+    setTicking(true);
+    try {
+      await tickLadder(6);
+      const [mine, board] = await Promise.all([getTeam(myIdRef.current), getLadder(50)]);
+      setMyTeam(mine);
+      setMyRank(board.findIndex(t => t.id === myIdRef.current) + 1);
+    } catch (e) { console.error('ladder status failed', e); }
+    setTicking(false);
+  };
+
   const sendToLadder = async () => {
     if (!team || ladderState === 'sending' || ladderState === 'sent') return;
     setLadderState('sending');
     // Post under the persistent manager handle (your identity across teams);
     // each submission is still its own unique ladder entry.
     const manager = (localStorage.getItem('dugout-gauntlet-handle') || '').trim() || team.name;
-    try { await submitTeam(team, streak, manager); setLadderState('sent'); }
+    try {
+      myIdRef.current = await submitTeam(team, streak, manager);
+      setLadderState('sent');
+      await refreshStatus();   // immediately throw it into the arena
+    }
     catch (e) { console.error('ladder submit failed', e); setLadderState('error'); }
   };
 
@@ -776,10 +798,45 @@ export function RunOverScreen({ g }: { g: G }) {
         </div>
       )}
 
-      <button className="btn" onClick={sendToLadder} disabled={ladderState === 'sending' || ladderState === 'sent'}>
-        {ladderState === 'sent' ? '✓ On the Global Ladder!' : ladderState === 'sending' ? 'Sending…' : ladderState === 'error' ? '✗ Failed — tap to retry' : '⚔️ Send team to the Global Ladder'}
-      </button>
-      <p className="dim center" style={{ fontSize: 11, marginTop: -8 }}>No sign-up — your team posts under its name and battles other players' teams.</p>
+      {ladderState !== 'sent' && (
+        <>
+          <button className="btn" onClick={sendToLadder} disabled={ladderState === 'sending'}>
+            {ladderState === 'sending' ? 'Sending…' : ladderState === 'error' ? '✗ Failed — tap to retry' : '⚔️ Send team to the Global Ladder'}
+          </button>
+          <p className="dim center" style={{ fontSize: 11, marginTop: -8 }}>No sign-up — your team posts under its name and battles other players' teams.</p>
+        </>
+      )}
+
+      {ladderState === 'sent' && (
+        <div className="card stack" style={{ width: '100%', gap: 8, borderLeftColor: myTeam?.status === 'retired' ? 'var(--loss)' : 'var(--win)' }}>
+          <div className="row" style={{ justifyContent: 'space-between' }}>
+            <h2 style={{ fontSize: 15 }}>⚔️ On the Global Ladder</h2>
+            {myRank > 0 && <span className="badge">RANK #{myRank}</span>}
+          </div>
+          {myTeam ? (
+            <>
+              <div className="row" style={{ justifyContent: 'space-between', fontSize: 15 }}>
+                <strong>{myTeam.teamName}</strong>
+                <strong style={{ color: myTeam.status === 'retired' ? 'var(--loss)' : 'var(--win)' }}>
+                  {myTeam.wins} {myTeam.wins === 1 ? 'win' : 'wins'} · {myTeam.status === 'retired' ? 'OUT' : 'ALIVE'}
+                </strong>
+              </div>
+              <p className="dim" style={{ fontSize: 12 }}>
+                {myTeam.status === 'retired'
+                  ? `Knocked out after ${myTeam.wins} ladder ${myTeam.wins === 1 ? 'win' : 'wins'}. Run another team to climb higher.`
+                  : myTeam.wins > 0
+                    ? `Won ${myTeam.wins} and still standing — keep the matches coming to climb the board.`
+                    : 'Queued and waiting for its first matchup.'}
+              </p>
+            </>
+          ) : (
+            <p className="dim" style={{ fontSize: 12 }}>{ticking ? 'Finding a matchup…' : 'On the board.'}</p>
+          )}
+          <button className="btn btn--secondary" onClick={refreshStatus} disabled={ticking}>
+            {ticking ? 'Running matches…' : '▶ Play the next ladder matches'}
+          </button>
+        </div>
+      )}
       <button className="btn btn--secondary" onClick={shareImage} disabled={imgState === 'working'}>
         {imgState === 'working' ? 'Building…' : imgState === 'shared' ? '✓ Shared!' : imgState === 'saved' ? '✓ Image saved!' : '📸 Share team image'}
       </button>

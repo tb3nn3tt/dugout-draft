@@ -1,5 +1,5 @@
 import {
-  collection, addDoc, getDocs, query, orderBy, limit,
+  collection, addDoc, getDocs, getDoc, query, orderBy, limit,
   doc, runTransaction,
 } from 'firebase/firestore';
 import { db, ensureAuth } from './firebase';
@@ -131,6 +131,12 @@ export async function getGhostPool(n = 50): Promise<GhostTeam[]> {
     createdAt: t.createdAt,
     source: 'player' as const,
   }));
+}
+
+/** One team's live status (record / queued|retired), e.g. to show after submitting. */
+export async function getTeam(id: string): Promise<LadderTeam | null> {
+  const s = await getDoc(doc(db, COL, id));
+  return s.exists() ? ({ id: s.id, ...(s.data() as Omit<LadderTeam, 'id'>) }) : null;
 }
 
 /** The reigning champ: the still-alive team with the most wins. */
