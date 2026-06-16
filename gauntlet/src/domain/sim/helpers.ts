@@ -1,21 +1,21 @@
 import { Player, Position, ROSTER_REQUIREMENTS } from '../types';
 
-// Get a display-friendly short name (last name, handling Jr./Sr./II/III suffixes).
-// Strips a trailing parenthetical tag first, e.g. "Aroldis Chapman (Cuba)".
+// Display-friendly surname. Strips a trailing parenthetical "(Cuba)", then skips
+// trailing descriptor tokens — years ('76, '11) and all-caps tags (WS, NLCS) —
+// so "David Freese '11 NLCS" → "Freese", "Mark Fidrych '76" → "Fidrych", never
+// just "NLCS"/"'76". Real name-suffixes (Jr./Sr./II…) are kept with the surname.
 export function getDisplayName(name: string): string {
   const clean = name.replace(/\s*\([^)]*\)\s*$/, '').trim() || name;
-  const parts = clean.split(' ');
-  if (parts.length === 1) return parts[0]; // Single word name like "KB" or "Nate"
+  const parts = clean.split(/\s+/).filter(Boolean);
+  if (parts.length <= 1) return clean || name;
 
   const suffixes = ['Jr.', 'Jr', 'Sr.', 'Sr', 'II', 'III', 'IV', 'V'];
-  const lastPart = parts[parts.length - 1];
+  const skippable = (s: string) => /^'?\d{2,4}$/.test(s) || (/^[A-Z]{2,5}$/.test(s) && !suffixes.includes(s));
 
-  // If last part is a suffix, use second-to-last + suffix
-  if (suffixes.includes(lastPart) && parts.length > 2) {
-    return `${parts[parts.length - 2]} ${lastPart}`;
-  }
-
-  return lastPart;
+  let end = parts.length - 1;
+  while (end > 0 && skippable(parts[end])) end--;           // drop trailing year/all-caps tags
+  if (suffixes.includes(parts[end]) && end > 0) return `${parts[end - 1]} ${parts[end]}`;
+  return parts[end] || clean;
 }
 
 const NAME_SUFFIXES = ['Jr.', 'Jr', 'Sr.', 'Sr', 'II', 'III', 'IV', 'V'];
