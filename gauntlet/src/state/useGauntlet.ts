@@ -8,7 +8,7 @@ import { seedRng } from '../domain/sim/rng';
 import { recordRun, HofEntry } from '../domain/hallOfFame';
 import { getMutator } from '../domain/mutators';
 import { getMyTeamIds } from '../firebase/ladder';
-import { todayKey, dailySeed, dailyMutatorId } from '../domain/daily';
+import { todayKey, dailySeed, dailyMutatorId, recordDailyPlayed } from '../domain/daily';
 import { submitDailyScore } from '../firebase/dailyBoard';
 import { checkAchievements, Achievement } from '../domain/achievements';
 import { sfxWin, sfxLoss } from '../domain/sound';
@@ -105,8 +105,9 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
         history: state.history,
         mutatorId: state.mutatorId,
       });
-      // Daily challenge → post the score to today's leaderboard (fire-and-forget).
+      // Daily challenge → bump the play streak + post the score (fire-and-forget).
       if (state.dailyDate) {
+        recordDailyPlayed(state.dailyDate);
         const handle = (localStorage.getItem('dugout-gauntlet-handle') || '').trim() || state.team.name;
         submitDailyScore(state.dailyDate, handle, state.team.name, state.streak,
           state.totalRunsFor - state.totalRunsAgainst, state.mutatorId).catch(e => console.error('daily submit failed', e));

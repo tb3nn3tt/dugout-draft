@@ -18,7 +18,7 @@ import { FitName } from './FitName';
 import { LadderScreen } from './LadderScreen';
 import { shareTeamImage, ShareSection } from './shareCard';
 import { submitTeam, tickLadder, getTeam, getLadder, LadderTeam } from '../firebase/ladder';
-import { todayKey, dailyLabel, dailyMutatorId } from '../domain/daily';
+import { todayKey, dailyLabel, dailyMutatorId, getDailyStreak, playedToday } from '../domain/daily';
 import { getDailyScores, DailyScore } from '../firebase/dailyBoard';
 import { ensureAuth } from '../firebase/firebase';
 
@@ -111,8 +111,12 @@ export function MenuScreen({ g }: { g: G }) {
           <strong style={{ fontSize: 15 }}>🗓️ Today's Challenge</strong>
           <span className="badge badge--ghost">{dMut.emoji} {dMut.name}</span>
         </div>
-        <p className="dim" style={{ fontSize: 12 }}>Same draft, same foes for everyone today — pure skill. Post your score and beat your friends. ({dailyLabel(dKey)})</p>
-        <button className="btn btn--secondary" onClick={startDaily}>▶ Play Today's Challenge</button>
+        <div className="row" style={{ justifyContent: 'space-between', fontSize: 12 }}>
+          <span className="dim">{dailyLabel(dKey)}{playedToday() ? ' · ✓ played' : ''}</span>
+          {getDailyStreak() > 0 && <span style={{ color: 'var(--amber)', fontWeight: 700 }}>🔥 {getDailyStreak()}-day streak</span>}
+        </div>
+        <p className="dim" style={{ fontSize: 12 }}>Same draft, same foes for everyone today — pure skill. Post your score and beat your friends.</p>
+        <button className="btn btn--secondary" onClick={startDaily}>{playedToday() ? '▶ Play again (beat your score)' : "▶ Play Today's Challenge"}</button>
         <button className="btn btn--ghost" onClick={() => setView('daily')}>🏅 Today's Leaderboard</button>
       </div>
 
