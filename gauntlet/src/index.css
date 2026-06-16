@@ -224,10 +224,10 @@ strong, b { font-weight: 700; }
 /* ===========================================================================
    DRAFT — stark text list: role, re-rolls, 4 plain rows w/ every rating
    =========================================================================== */
-.draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 6px; }
-.draft__main { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 6px; }
+.draft { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.draft__main { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 9px; }
 .draft__side { display: none; }            /* shown only on wide screens (below) */
-.draft__head { display: flex; flex-direction: column; gap: 3px; }
+.draft__head { display: flex; flex-direction: column; gap: 5px; }
 .draft__hrow { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 13px; }
 .draft__team { font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .draft__bar { display: flex; gap: 7px; }
@@ -266,7 +266,7 @@ strong, b { font-weight: 700; }
 
 /* The four candidates — clean roster-board rows: id block on the left, a tidy
    grid of value-over-label rating columns on the right. */
-.optlist { display: flex; flex-direction: column; gap: 7px; }
+.optlist { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 11px; padding: 2px; }
 .optlist--rolling { opacity: 0.4; pointer-events: none; transition: opacity 0.1s; }
 .opt {
   position: relative; display: flex; align-items: stretch;
@@ -274,18 +274,18 @@ strong, b { font-weight: 700; }
 }
 .opt:active { border-left-color: var(--accent); background: var(--panel-2); }
 .opt__pick {
-  flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 9px 34px 9px 11px; text-align: left; background: transparent; border: none; color: var(--ink); cursor: pointer;
+  flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 13px 40px 13px 15px; text-align: left; background: transparent; border: none; color: var(--ink); cursor: pointer;
 }
-.opt__idblock { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
-.opt__name { display: block; min-width: 0; font-weight: 700; font-size: 14.5px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.opt__idblock { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.opt__name { display: block; min-width: 0; font-weight: 700; font-size: 15px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .opt__pos { font-size: 11px; font-weight: 700; color: var(--cyan); letter-spacing: 0.2px; }
 .opt__org { font-size: 10.5px; font-weight: 500; color: var(--ink-dim); }
 .opt__fills { color: var(--accent); font-weight: 700; }
-.opt__blurb { font-size: 10px; font-style: italic; color: var(--ink-faint); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.25; margin-top: 2px; max-width: 100%; }
+.opt__blurb { font-size: 10.5px; font-style: italic; color: var(--ink-faint); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; margin-top: 4px; max-width: 100%; }
 /* rating columns — value on top, label under, fixed width so columns align */
-.opt__stats { display: flex; gap: 2px; flex: 0 0 auto; font-variant-numeric: tabular-nums; }
-.opt__c { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 38px; }
+.opt__stats { display: flex; gap: 4px; flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+.opt__c { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 40px; }
 .opt__v { font-weight: 700; font-size: 13.5px; line-height: 1; white-space: nowrap; }
 .opt__lbl { font-style: normal; font-size: 9px; font-weight: 600; letter-spacing: 0.4px; color: var(--ink-faint); text-transform: uppercase; }
 .opt__sl { color: var(--ink-faint); font-weight: 400; }
@@ -293,7 +293,7 @@ strong, b { font-weight: 700; }
 .opt__info { position: absolute; top: 0; right: 0; width: 32px; height: 100%; border: none; border-left: 1px solid var(--line); background: transparent; color: var(--ink-faint); font-size: 12px; font-weight: 700; cursor: pointer; }
 
 /* Roster ribbon — plain text line */
-.rribbon { display: flex; align-items: center; gap: 7px; width: 100%; text-align: left; padding: 4px 4px; cursor: pointer;
+.rribbon { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 9px 6px; cursor: pointer;
   background: transparent; border: none; border-top: 1px solid var(--line); color: var(--ink); overflow: hidden; }
 .rribbon__empty { font-size: 11px; color: var(--ink-faint); }
 .rribbon__count { font-weight: 800; font-size: 12px; color: var(--cyan); flex: 0 0 auto; }
