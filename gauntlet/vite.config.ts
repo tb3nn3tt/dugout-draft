@@ -17,8 +17,8 @@ export default defineConfig({
         name: 'Dugout Gauntlet',
         short_name: 'Gauntlet',
         description: 'Draft a team. Run the gauntlet. See how far you go.',
-        theme_color: '#0b1220',
-        background_color: '#0b1220',
+        theme_color: '#f4f1ea',
+        background_color: '#f4f1ea',
         display: 'standalone',
         orientation: 'portrait',
         start_url: base,
@@ -32,6 +32,9 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        skipWaiting: true,           // new build takes over without waiting for all tabs to close
+        clientsClaim: true,
+        cleanupOutdatedCaches: true, // don't serve stale bundles
       },
     }),
   ],

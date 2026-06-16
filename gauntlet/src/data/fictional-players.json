@@ -2736,38 +2736,6 @@
     "funFact": "Following in his legendary father's footsteps. Carries the pride of the Shigeno family and blazes his own trail to glory."
   },
   {
-    "id": "fiction-103",
-    "name": "Gordie Lachance",
-    "team": "CSR",
-    "positions": [
-      "2B",
-      "SS"
-    ],
-    "bats": "R",
-    "throws": "R",
-    "stats": {
-      "avg": 0.258,
-      "obp": 0.35,
-      "slg": 0.37,
-      "hr": 5,
-      "speed": 55
-    },
-    "overall": 67,
-    "category": "fictional",
-    "era": "Stand by Me (1986)",
-    "nickname": "The Writer",
-    "grades": {
-      "contact": 55,
-      "power": 38,
-      "speed": 52,
-      "fielding": 55,
-      "arm": 50,
-      "eye": 60
-    },
-    "specialty": null,
-    "funFact": "The kid who told stories about everything, including baseball. Smart, scrappy, and always finding a way on base."
-  },
-  {
     "id": "fiction-104",
     "name": "Miles Finch",
     "team": "BYB",
