@@ -513,12 +513,93 @@ const P = [
   ['Jhoan Duran','CL','R','R','Current Stars','closer',86],
   ['Raisel Iglesias','CL','R','R','Current Stars','closer',84],
   ['Andres Munoz','CL','R','R','Current Stars','closer',84],
+
+  // ---- BARRIER BREAKERS (real trailblazers) ----
+  ['Jackie Robinson','2B','R','R','Barrier Breakers','allaround',92,'legend'],
+  ['Larry Doby','CF','L','R','Barrier Breakers','power',84,'legend'],
+  ['Monte Irvin','LF','R','R','Barrier Breakers','power',83,'legend'],
+  ['Don Newcombe','SP','L','R','Barrier Breakers','power',84,'legend'],
+  ['Toni Stone','2B','R','R','Barrier Breakers','contact',74,'legend'],
+  ["Mamie Johnson",'SP','R','R','Barrier Breakers','crafty',74,'legend'],
+  ['Connie Morgan','2B','R','R','Barrier Breakers','contact',73,'legend'],
+
+  // ---- MORE INTERNATIONAL ----
+  ['Seiya Suzuki','RF','R','R','International Stars','power',84,'international'],
+  ['Ha-Seong Kim','SS','R','R','International Stars','defense',82,'international'],
+  ['Munetaka Murakami','3B','L','R','International Stars','slugger',85,'international'],
+  ['Roki Sasaki','SP','R','R','International Stars','power',86,'international'],
+  ['Tetsuto Yamada','2B','R','R','International Stars','allaround',82,'international'],
+  ['Wladimir Balentien','RF','R','R','International Stars','slugger',80,'international'],
+  ['Yuki Matsui','SU','L','L','International Stars','closer',80,'international'],
+  ['Hideki Okajima','SU','L','L','International Stars','crafty',78,'international'],
+  ['Kenta Maeda','SP','R','R','International Stars','control',82,'international'],
+  ['Yoenis Despaigne','SP','R','R','International Stars','power',78,'international'],
+  ['Aroldis Chapman','CL','L','L','International Stars','closer',85,'international'],
+
+  // ---- MORE RELIEF / SPECIALISTS ----
+  ['Dan Quisenberry','CL','R','R','1980s','crafty',82],
+  ['Tug McGraw','CL','L','L','1970s','closer',80],
+  ['Sparky Lyle','CL','L','L','1970s','closer',80],
+  ['Jeff Reardon','CL','R','R','1980s','closer',81],
+  ['Randy Myers','CL','L','L','1990s','closer',80],
+  ['Rod Beck','CL','R','R','1990s','closer',81],
+  ['Keith Foulke','CL','R','R','Steroid Era','closer',82],
+  ['Jose Mesa','CL','R','R','1990s','closer',80],
+  ['Armando Benitez','CL','R','R','Steroid Era','power',80],
+  ['Mike Marshall','MRP','R','R','1970s','workhorse',80],
+  ['Kent Tekulve','MRP','R','R','1970s','crafty',79],
+  ['Tippy Martinez','SU','L','L','1980s','crafty',77],
+
+  // ---- MORE CATCHER / INFIELD DEPTH ----
+  ['Bill Freehan','C','R','R','1970s','catcher',82],
+  ['Lance Parrish','C','R','R','1980s','catcher',82],
+  ['Sandy Alomar Jr.','C','R','R','1990s','catcher',79],
+  ['Benito Santiago','C','R','R','1990s','catcher',81],
+  ['Yadier Molina','C','R','R','Steroid Era','catcher',85],
+  ['Buster Posey','C','R','R','Current Stars','catcher',87],
+  ['Bengie Molina','C','R','R','Steroid Era','catcher',78],
+  ['Brian Downing','C','R','R','1980s','contact',78],
+  ['Bert Campaneris','SS','R','R','1970s','speed',80],
+  ['Maury Wills','SS','S','R','1960s','speed',80],
+  ['Dave Concepcion','SS','R','R','1970s','defense',80],
+  ['Mark Belanger','SS','R','R','1970s','defense',78],
+  ['Bill Mazeroski','2B','R','R','1960s','defense',80],
+  ['Bobby Grich','2B','R','R','1970s','allaround',82],
+  ['Willie Randolph','2B','R','R','1980s','leadoff',81],
+  ['Buddy Bell','3B','R','R','1980s','defense',81],
+  ['Graig Nettles','3B','L','R','1970s','power',82],
+  ['Sal Bando','3B','R','R','1970s','power',81],
+  ['Ron Cey','3B','R','R','1970s','power',81],
+
+  // ---- MORE CURRENT REGULARS / DEPTH ----
+  ['Cody Bellinger','CF','L','L','Current Stars','allaround',84],
+  ['Teoscar Hernandez','RF','R','R','Current Stars','power',83],
+  ['Anthony Santander','RF','S','R','Current Stars','slugger',83],
+  ['Brandon Lowe','2B','L','R','Current Stars','power',82],
+  ['Max Muncy','3B','L','R','Current Stars','slugger',82],
+  ['Ezequiel Tovar','SS','R','R','Current Stars','defense',81],
+  ['Masyn Winn','SS','R','R','Current Stars','allaround',81],
+  ['Jordan Westburg','3B','R','R','Current Stars','allaround',82],
+  ['Colton Cowser','CF','L','R','Current Stars','power',81],
+  ['Wilyer Abreu','RF','L','L','Current Stars','allaround',81],
+  ['Lawrence Butler','RF','L','R','Current Stars','power',82],
+  ['Brenton Doyle','CF','R','R','Current Stars','defense',81],
+  ['Jurickson Profar','LF','S','R','Current Stars','contact',81],
+  ['Willson Contreras','C','R','R','Current Stars','catcher',83],
+  ['Sean Murphy','C','R','R','Current Stars','catcher',82],
+  ['Bryan Woo','SP','R','R','Current Stars','control',83],
+  ['Jared Jones','SP','R','R','Current Stars','power',82],
+  ['Reynaldo Lopez','SP','R','R','Current Stars','power',82],
+  ['Bryce Miller','SP','R','R','Current Stars','control',82],
+  ['Jordan Romano','CL','R','R','Current Stars','closer',83],
+  ['Tanner Scott','CL','L','L','Current Stars','closer',83],
+  ['Robert Suarez','CL','R','R','Current Stars','closer',82],
 ];
 
 const NOUN = {
   C: 'catcher', '1B': 'first baseman', '2B': 'second baseman', '3B': 'third baseman', SS: 'shortstop',
   LF: 'left fielder', CF: 'center fielder', RF: 'right fielder', DH: 'designated hitter',
-  SP: 'starter', CL: 'closer', SU: 'reliever', RP: 'reliever',
+  SP: 'starter', CL: 'closer', SU: 'setup man', RP: 'reliever', MRP: 'reliever', LRP: 'long reliever', LOOGY: 'lefty specialist',
 };
 const HIT_DESC = {
   slugger: 'A fearsome power-hitting', power: 'A dangerous', contact: 'A pure-hitting',
@@ -531,7 +612,11 @@ const PIT_DESC = {
 };
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 
-const cards = P.map((row, i) => {
+// Dedupe by name (keep the first listing) so no one shows up twice in a group.
+const seenNames = new Set();
+const PU = P.filter(r => { if (seenNames.has(r[0])) return false; seenNames.add(r[0]); return true; });
+
+const cards = PU.map((row, i) => {
   const [name, pos, bats, throws, era, arch, overall, catOverride] = row;
   const positions = [pos];
   const noun = NOUN[pos] || 'ballplayer';
