@@ -17,7 +17,7 @@ import { TeamDetail } from './TeamDetail';
 import { FitName } from './FitName';
 import { LadderScreen } from './LadderScreen';
 import { shareTeamImage, ShareSection } from './shareCard';
-import { submitTeam, tickLadder, getTeam, getLadder, LadderTeam } from '../firebase/ladder';
+import { submitTeam, tickLadder, getTeam, getLadder, getMyTeamIds, LadderTeam } from '../firebase/ladder';
 import { todayKey, dailyLabel, dailyMutatorId, getDailyStreak, playedToday } from '../domain/daily';
 import { getDailyScores, DailyScore } from '../firebase/dailyBoard';
 import { ensureAuth } from '../firebase/firebase';
@@ -37,8 +37,21 @@ export function MenuScreen({ g }: { g: G }) {
   );
   const [mutatorId, setMutatorId] = useState('standard');
   const [sound, setSound] = useState(isSoundOn());
+  const [myTeams, setMyTeams] = useState<LadderTeam[]>([]);
   const top = rankHof(loadHof()).slice(0, 3);
   const mutator = getMutator(mutatorId);
+
+  // Check in on your submitted ladder teams across sessions (retention nudge).
+  useEffect(() => {
+    const ids = getMyTeamIds();
+    if (ids.size === 0) return;
+    let alive = true;
+    (async () => {
+      try { await ensureAuth(); const all = await getLadder(150); if (alive) setMyTeams(all.filter(t => ids.has(t.id))); }
+      catch { /* offline — skip */ }
+    })();
+    return () => { alive = false; };
+  }, []);
 
   const start = () => {
     const teamName = name.trim() || 'My Squad';
@@ -92,6 +105,19 @@ export function MenuScreen({ g }: { g: G }) {
             <div style={{ fontWeight: 900, color: 'var(--accent)', fontSize: 20 }}>{top[0].streak}</div>
             <div className="dim" style={{ fontSize: 10 }}>SERIES WON</div>
           </div>
+        </div>
+      )}
+
+      {myTeams.length > 0 && (
+        <div className="card row" onClick={() => setView('ladder')}
+          style={{ justifyContent: 'space-between', alignItems: 'center', borderLeftColor: 'var(--accent-2)', cursor: 'pointer' }}>
+          <div>
+            <div className="dim" style={{ fontSize: 11, letterSpacing: 1 }}>⭐ YOUR LADDER TEAMS</div>
+            <strong style={{ fontSize: 15 }}>
+              {myTeams.filter(t => t.status === 'queued').length} alive · best {Math.max(...myTeams.map(t => t.wins))} {Math.max(...myTeams.map(t => t.wins)) === 1 ? 'win' : 'wins'}
+            </strong>
+          </div>
+          <span className="dim" style={{ fontSize: 20 }}>›</span>
         </div>
       )}
 
