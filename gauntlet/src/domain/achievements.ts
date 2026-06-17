@@ -39,6 +39,11 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: 'deadball_5', name: 'Small Ball Savant', emoji: '🪨', description: 'Reach a 5-streak in Dead Ball mode.', test: s => s.mutatorId === 'dead_ball' && s.streak >= 5 },
   { id: 'legends_5', name: 'Time Lord', emoji: '⏳', description: 'Reach a 5-streak in Legends Only mode.', test: s => s.mutatorId === 'legends' && s.streak >= 5 },
   { id: 'juiced_diff', name: 'Bombs Away', emoji: '🚀', description: 'Finish +80 in Juiced Balls mode.', test: s => s.mutatorId === 'juiced' && s.runDiff >= 80 },
+  { id: 'streak_3', name: 'Getting Hot', emoji: '♨️', description: 'Reach a 3-series streak.', test: s => s.streak >= 3 },
+  { id: 'slugfest', name: 'Slugfest', emoji: '💥', description: 'Score 15+ runs in a single series.', test: s => s.history.some(h => h.runsFor >= 15) },
+  { id: 'statement', name: 'Statement Win', emoji: '📣', description: 'Win a series by 20+ runs.', test: s => s.history.some(h => h.won && h.runsFor - h.runsAgainst >= 20) },
+  { id: 'perfect_run', name: 'Untouchable', emoji: '🌟', description: 'Finish a run at +100 run differential.', test: s => s.runDiff >= 100 },
+  { id: 'giant_killer', name: 'Giant Killer', emoji: '🗡️', description: 'Beat a deep-gauntlet powerhouse (a 9+ rung).', test: s => s.history.some(h => h.won && h.opponentStreak >= 9) },
 ];
 
 const KEY = 'dugout-gauntlet-achievements';
