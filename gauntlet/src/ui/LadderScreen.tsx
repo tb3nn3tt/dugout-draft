@@ -86,7 +86,7 @@ export function LadderScreen({ onBack }: { onBack: () => void }) {
               </div>
               {teams.map((t, i) => (
                 <button key={t.id} className="lb__row lb__row--tap" onClick={() => setPeek(t)} style={mine.has(t.id) ? { background: 'rgba(14,116,144,0.08)' } : undefined}>
-                  <span className="lb__rank">{i + 1}</span>
+                  <span className="lb__rank">{["🥇","🥈","🥉"][i] ?? i + 1}</span>
                   <span className="lb__team">
                     <span className="lb__name">{mine.has(t.id) ? '⭐ ' : ''}{t.teamName}</span>
                     <span className="lb__streak dim">{t.ownerName} ›</span>

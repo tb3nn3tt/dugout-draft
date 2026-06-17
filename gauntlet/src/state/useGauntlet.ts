@@ -73,13 +73,13 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
         const opp = findOpponent(streak, ghostPool, excluded, filter);
         if (opp.id) excluded.add(opp.id);
         setCurrentFoe(opp);
-        await delay(700);                 // "now facing X"
+        await delay(480);                 // "now facing X"
         if (cancelled) return;
         const result = playSeries(you, buildSimTeam(opp.team, 'player2'), env);
         if (cancelled) return;
         dispatch({ type: 'APPEND_SERIES', opponent: opp, result });
-        if (result.winner === 'you') { sfxWin(); streak++; await delay(600); }
-        else { sfxLoss(); await delay(550); if (!cancelled) { setCurrentFoe(null); dispatch({ type: 'END_RUN' }); } break; }
+        if (result.winner === 'you') { sfxWin(); streak++; await delay(360); }
+        else { sfxLoss(); await delay(450); if (!cancelled) { setCurrentFoe(null); dispatch({ type: 'END_RUN' }); } break; }
       }
       runningRef.current = false;
     })();

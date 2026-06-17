@@ -24,6 +24,8 @@ import { ensureAuth } from '../firebase/firebase';
 
 type G = ReturnType<typeof useGauntlet>;
 
+const MEDAL = ['🥇', '🥈', '🥉']; // top-3 rank badges on every leaderboard
+
 // ---------------------------------------------------------------------------
 // Menu
 // ---------------------------------------------------------------------------
@@ -192,7 +194,7 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
             const r = entryRates(e);
             return (
               <button key={i} className="lb__row lb__row--tap" onClick={() => setPeek(e)}>
-                <span className="lb__rank">{i + 1}</span>
+                <span className="lb__rank">{["🥇","🥈","🥉"][i] ?? i + 1}</span>
                 <span className="lb__team">
                   <span className="lb__name">{e.teamName}</span>
                   <span className="lb__streak dim">{e.streak} series ›</span>
@@ -230,6 +232,7 @@ export function DailyBoardScreen({ onBack }: { onBack: () => void }) {
   const mut = getMutator(dailyMutatorId(key));
   const [scores, setScores] = useState<DailyScore[]>([]);
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
+  const myHandle = (localStorage.getItem('dugout-gauntlet-handle') || '').trim();
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -263,17 +266,20 @@ export function DailyBoardScreen({ onBack }: { onBack: () => void }) {
             <span className="lb__team">Manager · Team</span>
             <span>W</span><span>RD</span>
           </div>
-          {scores.map((s, i) => (
-            <div key={s.id} className="lb__row">
-              <span className="lb__rank">{i + 1}</span>
-              <span className="lb__team">
-                <span className="lb__name">{i === 0 ? '👑 ' : ''}{s.handle}</span>
-                <span className="lb__streak dim">{s.teamName}</span>
-              </span>
-              <span><b>{s.streak}-0</b></span>
-              <span style={{ color: s.runDiff >= 0 ? 'var(--win)' : 'var(--loss)' }}>{s.runDiff >= 0 ? '+' : ''}{s.runDiff}</span>
-            </div>
-          ))}
+          {scores.map((s, i) => {
+            const mine = !!myHandle && s.handle === myHandle;
+            return (
+              <div key={s.id} className="lb__row" style={mine ? { background: 'rgba(200,16,46,0.07)' } : undefined}>
+                <span className="lb__rank">{MEDAL[i] ?? i + 1}</span>
+                <span className="lb__team">
+                  <span className="lb__name">{mine ? '⭐ ' : ''}{s.handle}</span>
+                  <span className="lb__streak dim">{s.teamName}</span>
+                </span>
+                <span><b>{s.streak}-0</b></span>
+                <span style={{ color: s.runDiff >= 0 ? 'var(--win)' : 'var(--loss)' }}>{s.runDiff >= 0 ? '+' : ''}{s.runDiff}</span>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
@@ -352,7 +358,7 @@ export function DraftScreen({ g }: { g: G }) {
   const [rolling, setRolling] = useState(true);
   useEffect(() => {
     setRolling(true);
-    const iv = setTimeout(() => { setRolling(false); sfxLock(); }, 620);
+    const iv = setTimeout(() => { setRolling(false); sfxLock(); }, 430);
     return () => clearTimeout(iv);
   }, [currentRound?.groupId, offered]);
 
