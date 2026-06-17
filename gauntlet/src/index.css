@@ -259,7 +259,12 @@ strong, b { font-weight: 700; }
 }
 .reroll__btn:active { background: rgba(0,0,0,0.05); }
 .reroll__btn:disabled { opacity: 0.35; cursor: default; }
-.reroll__count { flex: 0 0 auto; align-self: center; font-size: 10px; font-weight: 700; color: var(--ink-faint); letter-spacing: 0.3px; }
+.respinbar { display: flex; align-items: center; gap: 8px; }
+.respinbar__lbl { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: var(--ink-faint); }
+.respinbar__pips { display: flex; gap: 4px; }
+.respinbar__pip { width: 22px; height: 6px; background: rgba(0,0,0,0.10); border: 1px solid var(--line-bright); }
+.respinbar__pip--on { background: var(--accent); border-color: var(--amber-deep); }
+.respinbar__hint { margin-left: auto; font-size: 10px; font-weight: 600; color: var(--ink-faint); }
 
 .optlegend { font-size: 10px; color: var(--ink-faint); text-align: center; letter-spacing: 0.2px; }
 .optlegend b { color: var(--ink-dim); font-weight: 700; }

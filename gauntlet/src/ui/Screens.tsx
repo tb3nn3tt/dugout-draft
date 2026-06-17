@@ -399,7 +399,7 @@ export function DraftScreen({ g }: { g: G }) {
         <NeedBar remaining={g.state.remaining} />
       </div>
 
-      {/* Re-roll controls — limited budget per pick (New Group + Refresh combined). */}
+      {/* Re-spin economy: a shared pool of 3 that regenerates over clean picks. */}
       <div className="reroll">
         <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollRole(); }} disabled={rolling || g.state.rerolls <= 0}>
           ↻ New Group
@@ -407,7 +407,13 @@ export function DraftScreen({ g }: { g: G }) {
         <button className="reroll__btn" onClick={() => { sfxPick(); g.rerollPlayers(); }} disabled={rolling || g.state.rerolls <= 0}>
           ↻ Refresh
         </button>
-        <span className="reroll__count">{g.state.rerolls} left</span>
+      </div>
+      <div className="respinbar">
+        <span className="respinbar__lbl">RE-SPINS</span>
+        <span className="respinbar__pips">
+          {[0, 1, 2].map(i => <span key={i} className={`respinbar__pip${i < g.state.rerolls ? ' respinbar__pip--on' : ''}`} />)}
+        </span>
+        {g.state.rerolls < 3 && <span className="respinbar__hint">+1 in {3 - g.state.rerollClean} pick{3 - g.state.rerollClean === 1 ? '' : 's'}</span>}
       </div>
 
       {/* Four group members as plain text rows — every rating shown, split = vsL/vsR. */}
