@@ -26,6 +26,23 @@ type G = ReturnType<typeof useGauntlet>;
 
 const MEDAL = ['🥇', '🥈', '🥉']; // top-3 rank badges on every leaderboard
 
+// A punchy headline for a finished run — gives every result a story to share.
+// Underdog teams (low avg overall) that go deep get the best billing.
+function runVerdict(streak: number, teamAvg: number, history: { won: boolean; wins: number; runsFor: number; runsAgainst: number }[]): { title: string; sub: string } {
+  const last = history[history.length - 1];
+  const heartbreak = !!last && !last.won && (last.wins === 3 || Math.abs(last.runsFor - last.runsAgainst) <= 2);
+  const underdog = teamAvg < 77;
+  if (streak >= 12) return { title: 'IMMORTAL', sub: 'A run for the ages. Cooperstown is calling.' };
+  if (streak >= 8 && underdog) return { title: 'CINDERELLA STORY', sub: 'A team of nobodies shocked the world.' };
+  if (streak >= 8) return { title: 'JUGGERNAUT', sub: 'Sheer, relentless domination.' };
+  if (streak >= 5 && underdog) return { title: 'GIANT KILLERS', sub: 'Punched miles above their weight.' };
+  if (streak >= 5) return { title: 'DEEP RUN', sub: 'A serious October contender.' };
+  if (streak >= 3) return { title: 'RESPECTABLE', sub: 'Held their own out there.' };
+  if (heartbreak) return { title: 'HEARTBREAKER', sub: 'Came up just short. Run it back.' };
+  if (streak >= 1) return { title: 'EARLY EXIT', sub: 'The gauntlet is unforgiving.' };
+  return { title: 'FIRST BLOOD', sub: 'Everybody starts somewhere.' };
+}
+
 // ---------------------------------------------------------------------------
 // Menu
 // ---------------------------------------------------------------------------
@@ -815,6 +832,8 @@ export function RosterReviewScreen({ g }: { g: G }) {
 export function RunOverScreen({ g }: { g: G }) {
   const { streak, totalRunsFor, totalRunsAgainst, team, history, mutatorId } = g.state;
   const runDiff = totalRunsFor - totalRunsAgainst;
+  const teamAvg = team && team.roster.length ? team.roster.reduce((a, p) => a + p.overall, 0) / team.roster.length : 78;
+  const verdict = runVerdict(streak, teamAvg, history);
   const hof = g.hofResult;
   const mut = getMutator(mutatorId);
   const award = useMemo(() => runAwards(g.state.runStats), [g.state.runStats]);
@@ -884,7 +903,7 @@ export function RunOverScreen({ g }: { g: G }) {
         };
       }),
     }));
-    const sub = `${runDiff >= 0 ? '+' : ''}${runDiff} run diff${hof ? ` · #${hof.rank} all-time` : ''}${g.state.dailyDate ? " · Today's Challenge" : ''}`;
+    const sub = `${verdict.title} · ${runDiff >= 0 ? '+' : ''}${runDiff} run diff${hof ? ` · #${hof.rank} all-time` : ''}${g.state.dailyDate ? " · Today's Challenge" : ''}`;
     try {
       const res = await shareTeamImage(team?.name ?? 'My Squad', `${streak}-0`, sub, sections);
       setImgState(res);
@@ -921,7 +940,7 @@ export function RunOverScreen({ g }: { g: G }) {
   const modeTag = mut.id === 'standard' ? '' : ` [${mut.emoji} ${mut.name}]`;
   const finalFoe = history[history.length - 1]?.won === false ? history[history.length - 1].opponentName : null;
   const shareText =
-    `${g.state.dailyDate ? "🗓️ Today's Challenge — " : ''}⚾ Dugout Gauntlet${modeTag}\n${team?.name} went ${streak}-0` +
+    `${g.state.dailyDate ? "🗓️ Today's Challenge — " : ''}⚾ Dugout Gauntlet${modeTag} · ${verdict.title}\n${team?.name} went ${streak}-0` +
     (finalFoe ? `, falling to the ${finalFoe}!\n` : ' before falling!\n') +
     `Run diff: ${runDiff >= 0 ? '+' : ''}${runDiff}` +
     (hof ? ` · #${hof.rank} all-time` : '') +
@@ -937,13 +956,14 @@ export function RunOverScreen({ g }: { g: G }) {
 
   const daily = g.state.dailyDate;
   return (
-    <div className="stack center" style={{ marginTop: 28, gap: 16 }}>
+    <div className="stack center" style={{ marginTop: 28, gap: 14 }}>
       <span className="dim" style={{ letterSpacing: 1 }}>
         {daily ? '🗓️ TODAY’S CHALLENGE' : 'RUN COMPLETE'}{mut.id !== 'standard' ? ` · ${mut.emoji} ${mut.name}` : ''}
       </span>
+      <div style={{ fontSize: 22, fontWeight: 900, color: 'var(--accent)', letterSpacing: 1, lineHeight: 1 }}>{verdict.title}</div>
       <h1 style={{ fontSize: 64, lineHeight: 1 }}>{streak}-0</h1>
       <strong style={{ fontSize: 20 }}>{team?.name}</strong>
-      {finalFoe && <p className="dim" style={{ fontSize: 13 }}>fell to the {finalFoe}</p>}
+      <p className="dim" style={{ fontSize: 13 }}>{verdict.sub}{finalFoe ? ` · fell to the ${finalFoe}` : ''}</p>
       {daily && (
         <div className="card stack center" style={{ width: '100%', gap: 8, borderLeftColor: 'var(--cyan)' }}>
           <div style={{ fontSize: 24, letterSpacing: 3, lineHeight: 1 }}>{dailyGrid || '⚾'}</div>
