@@ -10424,6 +10424,953 @@
  },
  {
   "id": "real-422",
+  "name": "Carl Hubbell",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 90,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "fastball": 53,
+   "breaking": 71,
+   "control": 71,
+   "stamina": 67,
+   "changeup": 74,
+   "contact": 36,
+   "power": 38,
+   "speed": 44,
+   "eye": 40,
+   "fielding": 52,
+   "arm": 64
+  },
+  "funFact": "A crafty starter — 1920s-40s."
+ },
+ {
+  "id": "real-423",
+  "name": "Dizzy Dean",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "fastball": 73,
+   "breaking": 68,
+   "control": 55,
+   "stamina": 62,
+   "changeup": 59,
+   "contact": 33,
+   "power": 35,
+   "speed": 41,
+   "eye": 37,
+   "fielding": 49,
+   "arm": 61
+  },
+  "funFact": "A flamethrowing starter — 1920s-40s."
+ },
+ {
+  "id": "real-424",
+  "name": "Charlie Gehringer",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 88,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 73,
+   "power": 53,
+   "speed": 61,
+   "eye": 69,
+   "fielding": 61,
+   "arm": 59
+  },
+  "funFact": "A pure-hitting second baseman — 1920s-40s."
+ },
+ {
+  "id": "real-425",
+  "name": "Al Simmons",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 87,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 61,
+   "power": 69,
+   "speed": 55,
+   "eye": 63,
+   "fielding": 58,
+   "arm": 59
+  },
+  "funFact": "A dangerous left fielder — 1920s-40s."
+ },
+ {
+  "id": "real-426",
+  "name": "Paul Waner",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 85,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 70,
+   "power": 50,
+   "speed": 58,
+   "eye": 66,
+   "fielding": 58,
+   "arm": 56
+  },
+  "funFact": "A pure-hitting right fielder — 1920s-40s."
+ },
+ {
+  "id": "real-427",
+  "name": "Arky Vaughan",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 64,
+   "power": 64,
+   "speed": 64,
+   "eye": 63,
+   "fielding": 64,
+   "arm": 62
+  },
+  "funFact": "A five-tool shortstop — 1920s-40s."
+ },
+ {
+  "id": "real-428",
+  "name": "Bill Terry",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 70,
+   "power": 50,
+   "speed": 58,
+   "eye": 66,
+   "fielding": 58,
+   "arm": 56
+  },
+  "funFact": "A pure-hitting first baseman — 1920s-40s."
+ },
+ {
+  "id": "real-429",
+  "name": "Joe Cronin",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 58,
+   "power": 66,
+   "speed": 52,
+   "eye": 60,
+   "fielding": 55,
+   "arm": 56
+  },
+  "funFact": "A dangerous shortstop — 1920s-40s."
+ },
+ {
+  "id": "real-430",
+  "name": "Goose Goslin",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 57,
+   "power": 65,
+   "speed": 51,
+   "eye": 59,
+   "fielding": 54,
+   "arm": 55
+  },
+  "funFact": "A dangerous left fielder — 1920s-40s."
+ },
+ {
+  "id": "real-431",
+  "name": "Hal Newhouser",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 85,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "fastball": 71,
+   "breaking": 66,
+   "control": 53,
+   "stamina": 60,
+   "changeup": 57,
+   "contact": 31,
+   "power": 33,
+   "speed": 39,
+   "eye": 35,
+   "fielding": 47,
+   "arm": 59
+  },
+  "funFact": "A flamethrowing starter — 1920s-40s."
+ },
+ {
+  "id": "real-432",
+  "name": "Sam Crawford",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 84,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "contact": 58,
+   "power": 66,
+   "speed": 52,
+   "eye": 60,
+   "fielding": 55,
+   "arm": 56
+  },
+  "funFact": "A dangerous right fielder — Dead Ball Days."
+ },
+ {
+  "id": "real-433",
+  "name": "Home Run Baker",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "contact": 58,
+   "power": 66,
+   "speed": 52,
+   "eye": 60,
+   "fielding": 55,
+   "arm": 56
+  },
+  "funFact": "A dangerous third baseman — Dead Ball Days."
+ },
+ {
+  "id": "real-434",
+  "name": "Eddie Plank",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 86,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "fastball": 53,
+   "breaking": 63,
+   "control": 71,
+   "stamina": 65,
+   "changeup": 67,
+   "contact": 32,
+   "power": 34,
+   "speed": 40,
+   "eye": 36,
+   "fielding": 48,
+   "arm": 60
+  },
+  "funFact": "A pinpoint-control starter — Dead Ball Days."
+ },
+ {
+  "id": "real-435",
+  "name": "Three Finger Brown",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "fastball": 49,
+   "breaking": 67,
+   "control": 67,
+   "stamina": 63,
+   "changeup": 70,
+   "contact": 32,
+   "power": 34,
+   "speed": 40,
+   "eye": 36,
+   "fielding": 48,
+   "arm": 60
+  },
+  "funFact": "A crafty starter — Dead Ball Days."
+ },
+ {
+  "id": "real-436",
+  "name": "Rube Waddell",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "L",
+  "stats": {},
+  "overall": 85,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "fastball": 71,
+   "breaking": 66,
+   "control": 53,
+   "stamina": 60,
+   "changeup": 57,
+   "contact": 31,
+   "power": 33,
+   "speed": 39,
+   "eye": 35,
+   "fielding": 47,
+   "arm": 59
+  },
+  "funFact": "A flamethrowing starter — Dead Ball Days."
+ },
+ {
+  "id": "real-437",
+  "name": "Addie Joss",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "legend",
+  "era": "Dead Ball Days",
+  "grades": {
+   "fastball": 52,
+   "breaking": 62,
+   "control": 70,
+   "stamina": 64,
+   "changeup": 66,
+   "contact": 31,
+   "power": 33,
+   "speed": 39,
+   "eye": 35,
+   "fielding": 47,
+   "arm": 59
+  },
+  "funFact": "A pinpoint-control starter — Dead Ball Days."
+ },
+ {
+  "id": "real-438",
+  "name": "Frankie Frisch",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 85,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 64,
+   "power": 64,
+   "speed": 64,
+   "eye": 63,
+   "fielding": 64,
+   "arm": 62
+  },
+  "funFact": "A five-tool second baseman — 1920s-40s."
+ },
+ {
+  "id": "real-439",
+  "name": "Pie Traynor",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 68,
+   "power": 48,
+   "speed": 56,
+   "eye": 64,
+   "fielding": 56,
+   "arm": 54
+  },
+  "funFact": "A pure-hitting third baseman — 1920s-40s."
+ },
+ {
+  "id": "real-440",
+  "name": "Luke Appling",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 69,
+   "power": 49,
+   "speed": 57,
+   "eye": 65,
+   "fielding": 57,
+   "arm": 55
+  },
+  "funFact": "A pure-hitting shortstop — 1920s-40s."
+ },
+ {
+  "id": "real-441",
+  "name": "Bobby Doerr",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 82,
+  "category": "legend",
+  "era": "1920s-40s",
+  "grades": {
+   "contact": 56,
+   "power": 64,
+   "speed": 50,
+   "eye": 58,
+   "fielding": 53,
+   "arm": 54
+  },
+  "funFact": "A dangerous second baseman — 1920s-40s."
+ },
+ {
+  "id": "real-442",
+  "name": "Pee Wee Reese",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 62,
+   "power": 62,
+   "speed": 62,
+   "eye": 61,
+   "fielding": 62,
+   "arm": 60
+  },
+  "funFact": "A five-tool shortstop — 1950s-60s."
+ },
+ {
+  "id": "real-443",
+  "name": "Phil Rizzuto",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 81,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 52,
+   "power": 48,
+   "speed": 58,
+   "eye": 54,
+   "fielding": 67,
+   "arm": 63
+  },
+  "funFact": "A slick-fielding shortstop — 1950s-60s."
+ },
+ {
+  "id": "real-444",
+  "name": "Nellie Fox",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 82,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 67,
+   "power": 47,
+   "speed": 55,
+   "eye": 63,
+   "fielding": 55,
+   "arm": 53
+  },
+  "funFact": "A pure-hitting second baseman — 1950s-60s."
+ },
+ {
+  "id": "real-445",
+  "name": "Enos Slaughter",
+  "team": "",
+  "positions": [
+   "RF"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 82,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 67,
+   "power": 47,
+   "speed": 55,
+   "eye": 63,
+   "fielding": 55,
+   "arm": 53
+  },
+  "funFact": "A pure-hitting right fielder — 1950s-60s."
+ },
+ {
+  "id": "real-446",
+  "name": "Red Schoendienst",
+  "team": "",
+  "positions": [
+   "2B"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 81,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "contact": 66,
+   "power": 46,
+   "speed": 54,
+   "eye": 62,
+   "fielding": 54,
+   "arm": 52
+  },
+  "funFact": "A pure-hitting second baseman — 1950s-60s."
+ },
+ {
+  "id": "real-447",
+  "name": "Early Wynn",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "fastball": 59,
+   "breaking": 59,
+   "control": 63,
+   "stamina": 69,
+   "changeup": 60,
+   "contact": 30,
+   "power": 32,
+   "speed": 38,
+   "eye": 34,
+   "fielding": 46,
+   "arm": 58
+  },
+  "funFact": "An innings-eating starter — 1950s-60s."
+ },
+ {
+  "id": "real-448",
+  "name": "Jim Bunning",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "legend",
+  "era": "1950s-60s",
+  "grades": {
+   "fastball": 70,
+   "breaking": 65,
+   "control": 52,
+   "stamina": 59,
+   "changeup": 56,
+   "contact": 30,
+   "power": 32,
+   "speed": 38,
+   "eye": 34,
+   "fielding": 46,
+   "arm": 58
+  },
+  "funFact": "A flamethrowing starter — 1950s-60s."
+ },
+ {
+  "id": "real-449",
+  "name": "Billy Pierce",
+  "team": "",
+  "positions": [
+   "SP"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 82,
+  "category": "star",
+  "era": "1950s-60s",
+  "grades": {
+   "fastball": 49,
+   "breaking": 59,
+   "control": 67,
+   "stamina": 61,
+   "changeup": 63,
+   "contact": 28,
+   "power": 30,
+   "speed": 36,
+   "eye": 32,
+   "fielding": 44,
+   "arm": 56
+  },
+  "funFact": "A pinpoint-control starter — 1950s-60s."
+ },
+ {
+  "id": "real-450",
+  "name": "Joey Votto",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 86,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 71,
+   "power": 51,
+   "speed": 59,
+   "eye": 67,
+   "fielding": 59,
+   "arm": 57
+  },
+  "funFact": "A pure-hitting first baseman — Steroid Era."
+ },
+ {
+  "id": "real-451",
+  "name": "David Wright",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 63,
+   "power": 63,
+   "speed": 63,
+   "eye": 62,
+   "fielding": 63,
+   "arm": 61
+  },
+  "funFact": "A five-tool third baseman — Steroid Era."
+ },
+ {
+  "id": "real-452",
+  "name": "Troy Tulowitzki",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 58,
+   "power": 66,
+   "speed": 52,
+   "eye": 60,
+   "fielding": 55,
+   "arm": 56
+  },
+  "funFact": "A dangerous shortstop — Steroid Era."
+ },
+ {
+  "id": "real-453",
+  "name": "Ryan Braun",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 58,
+   "power": 66,
+   "speed": 52,
+   "eye": 60,
+   "fielding": 55,
+   "arm": 56
+  },
+  "funFact": "A dangerous left fielder — Steroid Era."
+ },
+ {
+  "id": "real-454",
+  "name": "Matt Holliday",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 57,
+   "power": 65,
+   "speed": 51,
+   "eye": 59,
+   "fielding": 54,
+   "arm": 55
+  },
+  "funFact": "A dangerous left fielder — Steroid Era."
+ },
+ {
+  "id": "real-455",
+  "name": "Prince Fielder",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 84,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 52,
+   "power": 69,
+   "speed": 44,
+   "eye": 59,
+   "fielding": 50,
+   "arm": 54
+  },
+  "funFact": "A fearsome power-hitting first baseman — Steroid Era."
+ },
+ {
+  "id": "real-456",
+  "name": "Jose Reyes",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "S",
+  "throws": "R",
+  "stats": {},
+  "overall": 82,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 59,
+   "power": 44,
+   "speed": 69,
+   "eye": 57,
+   "fielding": 59,
+   "arm": 55
+  },
+  "funFact": "A blazing-fast shortstop — Steroid Era."
+ },
+ {
+  "id": "real-457",
+  "name": "Hanley Ramirez",
+  "team": "",
+  "positions": [
+   "SS"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 57,
+   "power": 65,
+   "speed": 51,
+   "eye": 59,
+   "fielding": 54,
+   "arm": 55
+  },
+  "funFact": "A dangerous shortstop — Steroid Era."
+ },
+ {
+  "id": "real-458",
+  "name": "Evan Longoria",
+  "team": "",
+  "positions": [
+   "3B"
+  ],
+  "bats": "R",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 57,
+   "power": 65,
+   "speed": 51,
+   "eye": 59,
+   "fielding": 54,
+   "arm": 55
+  },
+  "funFact": "A dangerous third baseman — Steroid Era."
+ },
+ {
+  "id": "real-459",
+  "name": "Ryan Howard",
+  "team": "",
+  "positions": [
+   "1B"
+  ],
+  "bats": "L",
+  "throws": "R",
+  "stats": {},
+  "overall": 83,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 51,
+   "power": 68,
+   "speed": 43,
+   "eye": 58,
+   "fielding": 49,
+   "arm": 53
+  },
+  "funFact": "A fearsome power-hitting first baseman — Steroid Era."
+ },
+ {
+  "id": "real-460",
+  "name": "Carlos Gonzalez",
+  "team": "",
+  "positions": [
+   "LF"
+  ],
+  "bats": "L",
+  "throws": "L",
+  "stats": {},
+  "overall": 82,
+  "category": "star",
+  "era": "Steroid Era",
+  "grades": {
+   "contact": 56,
+   "power": 64,
+   "speed": 50,
+   "eye": 58,
+   "fielding": 53,
+   "arm": 54
+  },
+  "funFact": "A dangerous left fielder — Steroid Era."
+ },
+ {
+  "id": "real-461",
   "name": "Jackie Robinson",
   "team": "",
   "positions": [
@@ -10446,7 +11393,7 @@
   "funFact": "A five-tool second baseman — Barrier Breakers."
  },
  {
-  "id": "real-423",
+  "id": "real-462",
   "name": "Monte Irvin",
   "team": "",
   "positions": [
@@ -10469,7 +11416,7 @@
   "funFact": "A dangerous left fielder — Barrier Breakers."
  },
  {
-  "id": "real-424",
+  "id": "real-463",
   "name": "Don Newcombe",
   "team": "",
   "positions": [
@@ -10497,7 +11444,7 @@
   "funFact": "A flamethrowing starter — Barrier Breakers."
  },
  {
-  "id": "real-425",
+  "id": "real-464",
   "name": "Toni Stone",
   "team": "",
   "positions": [
@@ -10520,7 +11467,7 @@
   "funFact": "A pure-hitting second baseman — Barrier Breakers."
  },
  {
-  "id": "real-426",
+  "id": "real-465",
   "name": "Mamie Johnson",
   "team": "",
   "positions": [
@@ -10548,7 +11495,7 @@
   "funFact": "A crafty starter — Barrier Breakers."
  },
  {
-  "id": "real-427",
+  "id": "real-466",
   "name": "Connie Morgan",
   "team": "",
   "positions": [
@@ -10571,7 +11518,7 @@
   "funFact": "A pure-hitting second baseman — Barrier Breakers."
  },
  {
-  "id": "real-428",
+  "id": "real-467",
   "name": "Seiya Suzuki",
   "team": "",
   "positions": [
@@ -10594,7 +11541,7 @@
   "funFact": "A dangerous right fielder — International Stars."
  },
  {
-  "id": "real-429",
+  "id": "real-468",
   "name": "Ha-Seong Kim",
   "team": "",
   "positions": [
@@ -10617,7 +11564,7 @@
   "funFact": "A slick-fielding shortstop — International Stars."
  },
  {
-  "id": "real-430",
+  "id": "real-469",
   "name": "Munetaka Murakami",
   "team": "",
   "positions": [
@@ -10640,7 +11587,7 @@
   "funFact": "A fearsome power-hitting third baseman — International Stars."
  },
  {
-  "id": "real-431",
+  "id": "real-470",
   "name": "Roki Sasaki",
   "team": "",
   "positions": [
@@ -10668,7 +11615,7 @@
   "funFact": "A flamethrowing starter — International Stars."
  },
  {
-  "id": "real-432",
+  "id": "real-471",
   "name": "Tetsuto Yamada",
   "team": "",
   "positions": [
@@ -10691,7 +11638,7 @@
   "funFact": "A five-tool second baseman — International Stars."
  },
  {
-  "id": "real-433",
+  "id": "real-472",
   "name": "Wladimir Balentien",
   "team": "",
   "positions": [
@@ -10714,7 +11661,7 @@
   "funFact": "A fearsome power-hitting right fielder — International Stars."
  },
  {
-  "id": "real-434",
+  "id": "real-473",
   "name": "Yuki Matsui",
   "team": "",
   "positions": [
@@ -10742,7 +11689,7 @@
   "funFact": "A lockdown setup man — International Stars."
  },
  {
-  "id": "real-435",
+  "id": "real-474",
   "name": "Hideki Okajima",
   "team": "",
   "positions": [
@@ -10770,7 +11717,7 @@
   "funFact": "A crafty setup man — International Stars."
  },
  {
-  "id": "real-436",
+  "id": "real-475",
   "name": "Kenta Maeda",
   "team": "",
   "positions": [
@@ -10798,7 +11745,7 @@
   "funFact": "A pinpoint-control starter — International Stars."
  },
  {
-  "id": "real-437",
+  "id": "real-476",
   "name": "Yoenis Despaigne",
   "team": "",
   "positions": [
@@ -10826,7 +11773,7 @@
   "funFact": "A flamethrowing starter — International Stars."
  },
  {
-  "id": "real-438",
+  "id": "real-477",
   "name": "Dan Quisenberry",
   "team": "",
   "positions": [
@@ -10854,7 +11801,7 @@
   "funFact": "A crafty closer — 1980s."
  },
  {
-  "id": "real-439",
+  "id": "real-478",
   "name": "Tug McGraw",
   "team": "",
   "positions": [
@@ -10882,7 +11829,7 @@
   "funFact": "A lockdown closer — 1970s."
  },
  {
-  "id": "real-440",
+  "id": "real-479",
   "name": "Sparky Lyle",
   "team": "",
   "positions": [
@@ -10910,7 +11857,7 @@
   "funFact": "A lockdown closer — 1970s."
  },
  {
-  "id": "real-441",
+  "id": "real-480",
   "name": "Jeff Reardon",
   "team": "",
   "positions": [
@@ -10938,7 +11885,7 @@
   "funFact": "A lockdown closer — 1980s."
  },
  {
-  "id": "real-442",
+  "id": "real-481",
   "name": "Randy Myers",
   "team": "",
   "positions": [
@@ -10966,7 +11913,7 @@
   "funFact": "A lockdown closer — 1990s."
  },
  {
-  "id": "real-443",
+  "id": "real-482",
   "name": "Rod Beck",
   "team": "",
   "positions": [
@@ -10994,7 +11941,7 @@
   "funFact": "A lockdown closer — 1990s."
  },
  {
-  "id": "real-444",
+  "id": "real-483",
   "name": "Keith Foulke",
   "team": "",
   "positions": [
@@ -11022,7 +11969,7 @@
   "funFact": "A lockdown closer — Steroid Era."
  },
  {
-  "id": "real-445",
+  "id": "real-484",
   "name": "Jose Mesa",
   "team": "",
   "positions": [
@@ -11050,7 +11997,7 @@
   "funFact": "A lockdown closer — 1990s."
  },
  {
-  "id": "real-446",
+  "id": "real-485",
   "name": "Armando Benitez",
   "team": "",
   "positions": [
@@ -11078,7 +12025,7 @@
   "funFact": "A flamethrowing closer — Steroid Era."
  },
  {
-  "id": "real-447",
+  "id": "real-486",
   "name": "Mike Marshall",
   "team": "",
   "positions": [
@@ -11106,7 +12053,7 @@
   "funFact": "An innings-eating reliever — 1970s."
  },
  {
-  "id": "real-448",
+  "id": "real-487",
   "name": "Kent Tekulve",
   "team": "",
   "positions": [
@@ -11134,7 +12081,7 @@
   "funFact": "A crafty reliever — 1970s."
  },
  {
-  "id": "real-449",
+  "id": "real-488",
   "name": "Tippy Martinez",
   "team": "",
   "positions": [
@@ -11162,7 +12109,7 @@
   "funFact": "A crafty setup man — 1980s."
  },
  {
-  "id": "real-450",
+  "id": "real-489",
   "name": "Bill Freehan",
   "team": "",
   "positions": [
@@ -11185,7 +12132,7 @@
   "funFact": "A rock-solid catcher — 1970s."
  },
  {
-  "id": "real-451",
+  "id": "real-490",
   "name": "Lance Parrish",
   "team": "",
   "positions": [
@@ -11208,7 +12155,7 @@
   "funFact": "A rock-solid catcher — 1980s."
  },
  {
-  "id": "real-452",
+  "id": "real-491",
   "name": "Sandy Alomar Jr.",
   "team": "",
   "positions": [
@@ -11231,7 +12178,7 @@
   "funFact": "A rock-solid catcher — 1990s."
  },
  {
-  "id": "real-453",
+  "id": "real-492",
   "name": "Benito Santiago",
   "team": "",
   "positions": [
@@ -11254,7 +12201,7 @@
   "funFact": "A rock-solid catcher — 1990s."
  },
  {
-  "id": "real-454",
+  "id": "real-493",
   "name": "Yadier Molina",
   "team": "",
   "positions": [
@@ -11277,7 +12224,7 @@
   "funFact": "A rock-solid catcher — Steroid Era."
  },
  {
-  "id": "real-455",
+  "id": "real-494",
   "name": "Buster Posey",
   "team": "",
   "positions": [
@@ -11300,7 +12247,7 @@
   "funFact": "A rock-solid catcher — Current Stars."
  },
  {
-  "id": "real-456",
+  "id": "real-495",
   "name": "Bengie Molina",
   "team": "",
   "positions": [
@@ -11323,7 +12270,7 @@
   "funFact": "A rock-solid catcher — Steroid Era."
  },
  {
-  "id": "real-457",
+  "id": "real-496",
   "name": "Brian Downing",
   "team": "",
   "positions": [
@@ -11346,7 +12293,7 @@
   "funFact": "A pure-hitting catcher — 1980s."
  },
  {
-  "id": "real-458",
+  "id": "real-497",
   "name": "Maury Wills",
   "team": "",
   "positions": [
@@ -11369,7 +12316,7 @@
   "funFact": "A blazing-fast shortstop — 1960s."
  },
  {
-  "id": "real-459",
+  "id": "real-498",
   "name": "Mark Belanger",
   "team": "",
   "positions": [
@@ -11392,7 +12339,7 @@
   "funFact": "A slick-fielding shortstop — 1970s."
  },
  {
-  "id": "real-460",
+  "id": "real-499",
   "name": "Bill Mazeroski",
   "team": "",
   "positions": [
@@ -11415,7 +12362,7 @@
   "funFact": "A slick-fielding second baseman — 1960s."
  },
  {
-  "id": "real-461",
+  "id": "real-500",
   "name": "Bobby Grich",
   "team": "",
   "positions": [
@@ -11438,7 +12385,7 @@
   "funFact": "A five-tool second baseman — 1970s."
  },
  {
-  "id": "real-462",
+  "id": "real-501",
   "name": "Willie Randolph",
   "team": "",
   "positions": [
@@ -11461,7 +12408,7 @@
   "funFact": "A table-setting second baseman — 1980s."
  },
  {
-  "id": "real-463",
+  "id": "real-502",
   "name": "Buddy Bell",
   "team": "",
   "positions": [
@@ -11484,7 +12431,7 @@
   "funFact": "A slick-fielding third baseman — 1980s."
  },
  {
-  "id": "real-464",
+  "id": "real-503",
   "name": "Graig Nettles",
   "team": "",
   "positions": [
@@ -11507,7 +12454,7 @@
   "funFact": "A dangerous third baseman — 1970s."
  },
  {
-  "id": "real-465",
+  "id": "real-504",
   "name": "Sal Bando",
   "team": "",
   "positions": [
@@ -11530,7 +12477,7 @@
   "funFact": "A dangerous third baseman — 1970s."
  },
  {
-  "id": "real-466",
+  "id": "real-505",
   "name": "Ron Cey",
   "team": "",
   "positions": [
@@ -11553,7 +12500,7 @@
   "funFact": "A dangerous third baseman — 1970s."
  },
  {
-  "id": "real-467",
+  "id": "real-506",
   "name": "Cody Bellinger",
   "team": "",
   "positions": [
@@ -11576,7 +12523,7 @@
   "funFact": "A five-tool center fielder — Current Stars."
  },
  {
-  "id": "real-468",
+  "id": "real-507",
   "name": "Teoscar Hernandez",
   "team": "",
   "positions": [
@@ -11599,7 +12546,7 @@
   "funFact": "A dangerous right fielder — Current Stars."
  },
  {
-  "id": "real-469",
+  "id": "real-508",
   "name": "Anthony Santander",
   "team": "",
   "positions": [
@@ -11622,7 +12569,7 @@
   "funFact": "A fearsome power-hitting right fielder — Current Stars."
  },
  {
-  "id": "real-470",
+  "id": "real-509",
   "name": "Brandon Lowe",
   "team": "",
   "positions": [
@@ -11645,7 +12592,7 @@
   "funFact": "A dangerous second baseman — Current Stars."
  },
  {
-  "id": "real-471",
+  "id": "real-510",
   "name": "Max Muncy",
   "team": "",
   "positions": [
@@ -11668,7 +12615,7 @@
   "funFact": "A fearsome power-hitting third baseman — Current Stars."
  },
  {
-  "id": "real-472",
+  "id": "real-511",
   "name": "Ezequiel Tovar",
   "team": "",
   "positions": [
@@ -11691,7 +12638,7 @@
   "funFact": "A slick-fielding shortstop — Current Stars."
  },
  {
-  "id": "real-473",
+  "id": "real-512",
   "name": "Masyn Winn",
   "team": "",
   "positions": [
@@ -11714,7 +12661,7 @@
   "funFact": "A five-tool shortstop — Current Stars."
  },
  {
-  "id": "real-474",
+  "id": "real-513",
   "name": "Jordan Westburg",
   "team": "",
   "positions": [
@@ -11737,7 +12684,7 @@
   "funFact": "A five-tool third baseman — Current Stars."
  },
  {
-  "id": "real-475",
+  "id": "real-514",
   "name": "Colton Cowser",
   "team": "",
   "positions": [
@@ -11760,7 +12707,7 @@
   "funFact": "A dangerous center fielder — Current Stars."
  },
  {
-  "id": "real-476",
+  "id": "real-515",
   "name": "Wilyer Abreu",
   "team": "",
   "positions": [
@@ -11783,7 +12730,7 @@
   "funFact": "A five-tool right fielder — Current Stars."
  },
  {
-  "id": "real-477",
+  "id": "real-516",
   "name": "Lawrence Butler",
   "team": "",
   "positions": [
@@ -11806,7 +12753,7 @@
   "funFact": "A dangerous right fielder — Current Stars."
  },
  {
-  "id": "real-478",
+  "id": "real-517",
   "name": "Brenton Doyle",
   "team": "",
   "positions": [
@@ -11829,7 +12776,7 @@
   "funFact": "A slick-fielding center fielder — Current Stars."
  },
  {
-  "id": "real-479",
+  "id": "real-518",
   "name": "Jurickson Profar",
   "team": "",
   "positions": [
@@ -11852,7 +12799,7 @@
   "funFact": "A pure-hitting left fielder — Current Stars."
  },
  {
-  "id": "real-480",
+  "id": "real-519",
   "name": "Willson Contreras",
   "team": "",
   "positions": [
@@ -11875,7 +12822,7 @@
   "funFact": "A rock-solid catcher — Current Stars."
  },
  {
-  "id": "real-481",
+  "id": "real-520",
   "name": "Sean Murphy",
   "team": "",
   "positions": [
@@ -11898,7 +12845,7 @@
   "funFact": "A rock-solid catcher — Current Stars."
  },
  {
-  "id": "real-482",
+  "id": "real-521",
   "name": "Bryan Woo",
   "team": "",
   "positions": [
@@ -11926,7 +12873,7 @@
   "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
-  "id": "real-483",
+  "id": "real-522",
   "name": "Jared Jones",
   "team": "",
   "positions": [
@@ -11954,7 +12901,7 @@
   "funFact": "A flamethrowing starter — Current Stars."
  },
  {
-  "id": "real-484",
+  "id": "real-523",
   "name": "Reynaldo Lopez",
   "team": "",
   "positions": [
@@ -11982,7 +12929,7 @@
   "funFact": "A flamethrowing starter — Current Stars."
  },
  {
-  "id": "real-485",
+  "id": "real-524",
   "name": "Bryce Miller",
   "team": "",
   "positions": [
@@ -12010,7 +12957,7 @@
   "funFact": "A pinpoint-control starter — Current Stars."
  },
  {
-  "id": "real-486",
+  "id": "real-525",
   "name": "Jordan Romano",
   "team": "",
   "positions": [
@@ -12038,7 +12985,7 @@
   "funFact": "A lockdown closer — Current Stars."
  },
  {
-  "id": "real-487",
+  "id": "real-526",
   "name": "Tanner Scott",
   "team": "",
   "positions": [
@@ -12066,7 +13013,7 @@
   "funFact": "A lockdown closer — Current Stars."
  },
  {
-  "id": "real-488",
+  "id": "real-527",
   "name": "Robert Suarez",
   "team": "",
   "positions": [
