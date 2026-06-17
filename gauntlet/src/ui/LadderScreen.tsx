@@ -43,7 +43,7 @@ export function LadderScreen({ onBack }: { onBack: () => void }) {
   return (
     <div className="stack" style={{ marginTop: 16, gap: 14 }}>
       <div className="row" style={{ justifyContent: 'space-between' }}>
-        <h1 style={{ fontSize: 26 }}>🌐 Global Ladder</h1>
+        <h1 style={{ fontSize: 22 }}>🌐 Global Ladder</h1>
         <button className="btn btn--ghost" style={{ width: 'auto', minHeight: 40, padding: '0 14px' }} onClick={onBack}>Back</button>
       </div>
 

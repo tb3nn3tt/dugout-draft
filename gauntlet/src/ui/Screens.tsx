@@ -167,7 +167,7 @@ export function HallOfFameScreen({ onBack }: { onBack: () => void }) {
   return (
     <div className="stack" style={{ marginTop: 16, gap: 14 }}>
       <div className="row" style={{ justifyContent: 'space-between' }}>
-        <h1 style={{ fontSize: 26 }}>🏆 Leaderboard</h1>
+        <h1 style={{ fontSize: 22 }}>🏆 Leaderboard</h1>
         <button className="btn btn--ghost" style={{ width: 'auto', minHeight: 40, padding: '0 14px' }} onClick={onBack}>Back</button>
       </div>
 
@@ -245,7 +245,7 @@ export function DailyBoardScreen({ onBack }: { onBack: () => void }) {
   return (
     <div className="stack" style={{ marginTop: 16, gap: 14 }}>
       <div className="row" style={{ justifyContent: 'space-between' }}>
-        <h1 style={{ fontSize: 23 }}>🏅 Today's Challenge</h1>
+        <h1 style={{ fontSize: 22 }}>🏅 Today's Challenge</h1>
         <button className="btn btn--ghost" style={{ width: 'auto', minHeight: 40, padding: '0 14px' }} onClick={onBack}>Back</button>
       </div>
       <div className="card row" style={{ justifyContent: 'space-between', borderLeftColor: 'var(--cyan)' }}>
@@ -324,7 +324,7 @@ export function AchievementsScreen({ onBack }: { onBack: () => void }) {
   return (
     <div className="stack" style={{ marginTop: 16, gap: 14 }}>
       <div className="row" style={{ justifyContent: 'space-between' }}>
-        <h1 style={{ fontSize: 26 }}>🎖️ Achievements</h1>
+        <h1 style={{ fontSize: 22 }}>🎖️ Achievements</h1>
         <button className="btn btn--ghost" style={{ width: 'auto', minHeight: 40, padding: '0 14px' }} onClick={onBack}>Back</button>
       </div>
       <p className="dim center" style={{ fontSize: 13 }}>{unlocked.size} / {ACHIEVEMENTS.length} unlocked</p>
@@ -900,7 +900,7 @@ export function RunOverScreen({ g }: { g: G }) {
       {ladderState === 'sent' && (
         <div className="card stack" style={{ width: '100%', gap: 8, borderLeftColor: myTeam?.status === 'retired' ? 'var(--loss)' : 'var(--win)' }}>
           <div className="row" style={{ justifyContent: 'space-between' }}>
-            <h2 style={{ fontSize: 15 }}>⚔️ On the Global Ladder</h2>
+            <h2 style={{ fontSize: 16 }}>⚔️ On the Global Ladder</h2>
             {myRank > 0 && <span className="badge">RANK #{myRank}</span>}
           </div>
           {myTeam ? (
