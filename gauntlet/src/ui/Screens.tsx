@@ -820,9 +820,44 @@ export function RunOverScreen({ g }: { g: G }) {
   const award = useMemo(() => runAwards(g.state.runStats), [g.state.runStats]);
   const [shared, setShared] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
+  const [resultCopied, setResultCopied] = useState(false);
+  const [dailyRank, setDailyRank] = useState({ rank: 0, total: 0 });
   const challengeUrl = `${location.origin}${location.pathname}?c=${g.state.seed}&m=${g.state.mutatorId}`;
   const copyChallenge = async () => {
     try { await navigator.clipboard.writeText(`Beat my ${g.state.streak}-0 Dugout Gauntlet run — same exact draft: ${challengeUrl}`); setLinkCopied(true); } catch { /* ignore */ }
+  };
+
+  // Daily: rank yourself among today's field for a Wordle-style shareable result.
+  useEffect(() => {
+    const date = g.state.dailyDate;
+    if (!date) return;
+    let on = true;
+    (async () => {
+      try {
+        await ensureAuth();
+        const scores = await getDailyScores(date);
+        const rd = totalRunsFor - totalRunsAgainst;
+        const better = scores.filter(s => s.streak > streak || (s.streak === streak && s.runDiff > rd)).length;
+        if (on) setDailyRank({ rank: better + 1, total: Math.max(scores.length, better + 1) });
+      } catch { /* offline */ }
+    })();
+    return () => { on = false; };
+  }, [g.state.dailyDate, streak, totalRunsFor, totalRunsAgainst]);
+
+  const beatPct = dailyRank.total > 1 ? Math.round((dailyRank.total - dailyRank.rank) / dailyRank.total * 100) : 100;
+  const dailyGrid = history.map(h => h.won ? '🟩' : '🟥').join('');
+  const dailyResult =
+    `⚾ Dugout Gauntlet · ${dailyLabel(g.state.dailyDate || todayKey())}\n` +
+    `${streak}-0  ${dailyGrid}\n` +
+    (dailyRank.total > 1 ? `#${dailyRank.rank} of ${dailyRank.total} · beat ${beatPct}%` : `first one in today!`) +
+    `  ·  ${runDiff >= 0 ? '+' : ''}${runDiff} runs\n` +
+    `Play: ${location.origin}${location.pathname}`;
+  const shareDaily = async () => {
+    try {
+      if (navigator.share) await navigator.share({ text: dailyResult });
+      else { await navigator.clipboard.writeText(dailyResult); }
+      setResultCopied(true);
+    } catch { /* cancelled */ }
   };
   const [imgState, setImgState] = useState<'idle' | 'working' | 'shared' | 'saved'>('idle');
   const [ladderState, setLadderState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -909,7 +944,15 @@ export function RunOverScreen({ g }: { g: G }) {
       <h1 style={{ fontSize: 64, lineHeight: 1 }}>{streak}-0</h1>
       <strong style={{ fontSize: 20 }}>{team?.name}</strong>
       {finalFoe && <p className="dim" style={{ fontSize: 13 }}>fell to the {finalFoe}</p>}
-      {daily && <p className="dim center" style={{ fontSize: 12 }}>✓ Posted to today's leaderboard — see how you stack up.</p>}
+      {daily && (
+        <div className="card stack center" style={{ width: '100%', gap: 8, borderLeftColor: 'var(--cyan)' }}>
+          <div style={{ fontSize: 24, letterSpacing: 3, lineHeight: 1 }}>{dailyGrid || '⚾'}</div>
+          <strong style={{ fontSize: 15 }}>
+            {dailyRank.total > 1 ? `#${dailyRank.rank} of ${dailyRank.total} today · beat ${beatPct}%` : 'First score in today!'}
+          </strong>
+          <button className="btn btn--secondary" onClick={shareDaily}>{resultCopied ? '✓ Result copied!' : '📋 Share your result'}</button>
+        </div>
+      )}
 
       <TeamSheet draftLog={g.state.draftLog} teamName={team?.name ?? 'My Squad'} record={`${streak}-0`} />
 
