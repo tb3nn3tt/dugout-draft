@@ -28,8 +28,8 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
   const hofResultRef = useRef<{ entry: HofEntry; rank: number } | null>(null);
   const freshAchievementsRef = useRef<Achievement[]>([]);
 
-  const startRun = useCallback((teamName: string, mutatorId = 'standard') => {
-    const seed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
+  const startRun = useCallback((teamName: string, mutatorId = 'standard', forcedSeed?: number) => {
+    const seed = (forcedSeed ?? (Date.now() ^ (Math.random() * 0xffffffff))) >>> 0;
     seedRng(seed);
     recordedRef.current = false;
     runningRef.current = false;

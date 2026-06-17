@@ -54,6 +54,19 @@ export function MenuScreen({ g }: { g: G }) {
   };
   const dKey = todayKey();
   const dMut = getMutator(dailyMutatorId(dKey));
+  // A friend's challenge link: ?c=<seed>&m=<mode> → play their EXACT draft.
+  const challenge = useMemo(() => {
+    const p = new URLSearchParams(window.location.search);
+    const c = p.get('c');
+    return c && /^\d+$/.test(c) ? { seed: Number(c), mode: p.get('m') || 'standard' } : null;
+  }, []);
+  const acceptChallenge = () => {
+    if (!challenge) return;
+    const teamName = name.trim() || 'My Squad';
+    localStorage.setItem('dugout-gauntlet-name', teamName);
+    localStorage.setItem('dugout-gauntlet-handle', handle.trim());
+    g.startRun(teamName, challenge.mode, challenge.seed);
+  };
 
   if (view === 'hof') return <HallOfFameScreen onBack={() => setView('menu')} />;
   if (view === 'daily') return <DailyBoardScreen onBack={() => setView('menu')} />;
@@ -107,6 +120,16 @@ export function MenuScreen({ g }: { g: G }) {
           {sound ? '🔊 Sound: On' : '🔇 Sound: Off'}
         </button>
       </div>
+
+      {challenge && (
+        <div className="card stack" style={{ gap: 8, borderLeftColor: 'var(--accent)' }}>
+          <strong style={{ fontSize: 15 }}>⚔️ A friend's challenge</strong>
+          <p className="dim" style={{ fontSize: 12 }}>
+            Play their EXACT draft{getMutator(challenge.mode).id !== 'standard' ? ` (${getMutator(challenge.mode).emoji} ${getMutator(challenge.mode).name})` : ''} — same players offered, same opponents. Can you do better?
+          </p>
+          <button className="btn" onClick={acceptChallenge}>▶ Accept the challenge</button>
+        </div>
+      )}
 
       <div className="card stack" style={{ gap: 8, borderLeftColor: 'var(--cyan)' }}>
         <div className="row" style={{ justifyContent: 'space-between' }}>
@@ -762,6 +785,11 @@ export function RunOverScreen({ g }: { g: G }) {
   const mut = getMutator(mutatorId);
   const award = useMemo(() => runAwards(g.state.runStats), [g.state.runStats]);
   const [shared, setShared] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
+  const challengeUrl = `${location.origin}${location.pathname}?c=${g.state.seed}&m=${g.state.mutatorId}`;
+  const copyChallenge = async () => {
+    try { await navigator.clipboard.writeText(`Beat my ${g.state.streak}-0 Dugout Gauntlet run — same exact draft: ${challengeUrl}`); setLinkCopied(true); } catch { /* ignore */ }
+  };
   const [imgState, setImgState] = useState<'idle' | 'working' | 'shared' | 'saved'>('idle');
   const [ladderState, setLadderState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [myTeam, setMyTeam] = useState<LadderTeam | null>(null);
@@ -829,7 +857,7 @@ export function RunOverScreen({ g }: { g: G }) {
     `Run diff: ${runDiff >= 0 ? '+' : ''}${runDiff}` +
     (hof ? ` · #${hof.rank} all-time` : '') +
     (award.mvp ? `\nRun MVP: ${award.mvp.name} — ${award.mvp.hr} HR` : '') +
-    `\nCan you beat it? tb3nn3tt.github.io/dugout-draft`;
+    `\nBeat my exact draft → ${challengeUrl}`;
 
   const share = async () => {
     try {
@@ -932,6 +960,9 @@ export function RunOverScreen({ g }: { g: G }) {
       </button>
       <button className="btn btn--ghost" onClick={share}>
         {shared ? '✓ Copied!' : '📲 Share as text'}
+      </button>
+      <button className="btn btn--ghost" onClick={copyChallenge}>
+        {linkCopied ? '✓ Challenge link copied!' : '⚔️ Challenge a friend (same draft)'}
       </button>
       <button className="btn btn--ghost" onClick={() => daily ? g.startDaily(team?.name ?? 'My Squad') : g.startRun(team?.name ?? 'My Squad', mutatorId)}>
         {daily ? 'Retry today’s challenge ⚾' : 'Run it back ⚾'}
