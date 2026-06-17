@@ -318,6 +318,8 @@ const HELP_STEPS: { emoji: string; title: string; body: string }[] = [
   { emoji: '🔀', title: 'Set your lineup', body: 'Before you lock in, move any player to a position they can play. Put your best bats where you want them.' },
   { emoji: '🏆', title: 'Run the gauntlet', body: 'Your team auto-plays best-of-7 series up a ladder of legendary clubs — the Sandlot, the Bronx Bombers, Cooperstown — getting tougher every win.' },
   { emoji: '🌐', title: 'Climb the world', body: 'Lose and your run is logged forever. Send your team to the Global Ladder to keep battling real players\' teams. How far can you go?' },
+  { emoji: '🗓️', title: "Today's Challenge", body: 'Everyone gets the SAME draft each day — same players offered, same foes. Post your score to the daily leaderboard and keep your play streak alive.' },
+  { emoji: '⚔️', title: 'Beat your friends', body: 'Share your run as an image, or send a challenge link that drops a friend into your EXACT draft. Who builds the better team?' },
 ];
 export function HelpScreen({ onBack }: { onBack: () => void }) {
   return (
