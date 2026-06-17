@@ -944,7 +944,7 @@ export function RunOverScreen({ g }: { g: G }) {
           {history.map((h, i) => (
             <div key={i} className="row" style={{ justifyContent: 'space-between', fontSize: 14 }}>
               <span>{h.won ? '✅' : '❌'} vs {h.opponentName}</span>
-              <span className="dim">{h.wins}-{h.losses}</span>
+              <span className="dim"><b>{h.wins}-{h.losses}</b> · {h.runsFor}-{h.runsAgainst} R</span>
             </div>
           ))}
         </div>
