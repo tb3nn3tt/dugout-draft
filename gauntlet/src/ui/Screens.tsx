@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { useGauntlet } from '../state/useGauntlet';
-import { TOTAL_PICKS, DraftRound, playerFitsRole, assignRole } from '../domain/draftRounds';
+import { TOTAL_PICKS, DraftRound, playerFitsRole } from '../domain/draftRounds';
 import { hydrateIds, getCard } from '../domain/players';
 import { overallToGrade, abbrevName, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
@@ -461,11 +461,11 @@ export function DraftScreen({ g }: { g: G }) {
       </div>
 
       {/* Four group members as plain text rows — every rating shown, split = vsL/vsR. */}
-      <div className="optlegend">tap to draft (fills an open spot they qualify for) · splits are <b>vs LHP / vs RHP</b></div>
+      <div className="optlegend">tap a player to draft · tap a position pill to choose their spot · splits are <b>vs L / vs R</b></div>
       <div className={`optlist ${rolling ? 'optlist--rolling' : ''}`}>
         {offered.map(p => (
           <OptionRow key={p.id} player={p} remaining={g.state.remaining}
-            onPick={() => { if (rolling) return; sfxPick(); g.pick(p); }}
+            onPick={(role?: string) => { if (rolling) return; sfxPick(); g.pick(p, role); }}
             onInfo={() => setDetail(p)} />
         ))}
       </div>
@@ -609,22 +609,25 @@ function staffLine(player: Player): string {
 
 /** One candidate as a plain text line: grade · name · pos/B/T, then every rating. */
 const HIDDEN_POS = new Set(['IFD', 'OFD', 'PH', 'PR', 'BC']); // deprecated tags — never shown
+const SLOT_ORDER = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'DH', 'SP', 'RP', 'HC', 'ST'];
+const slotLabel = (r: string) => (r === 'HC' ? 'MGR' : r === 'ST' ? 'PARK' : r);
 
-function OptionRow({ player, remaining, onPick, onInfo }: { player: Player; remaining: Record<string, number>; onPick: () => void; onInfo: () => void }) {
+function OptionRow({ player, remaining, onPick, onInfo }: { player: Player; remaining: Record<string, number>; onPick: (role?: string) => void; onInfo: () => void }) {
   const pos = player.positions[0];
   const isStaff = pos === 'HC' || pos === 'ST';
   const real = player.positions.filter(p => !HIDDEN_POS.has(p));
   const posStr = isStaff ? (pos === 'HC' ? 'Manager' : 'Ballpark') : (real.slice(0, 3).join(' · ') || pos);
   const org = [player.team, player.era].filter(Boolean).join(' · ');
-  const slot = isStaff ? null : assignRole(player, remaining); // the open slot they'd fill
+  // Every OPEN position this player qualifies for — tap one to slot them there.
+  const slots = SLOT_ORDER.filter(r => (remaining[r] ?? 0) > 0 && playerFitsRole(player, r as Position));
   return (
     <div className="opt">
-      <button className="opt__pick" onClick={onPick}>
+      <button className="opt__pick" onClick={() => onPick()}>
         <div className="opt__idblock">
           <FitName name={player.name} className="opt__name" />
           <div className="opt__pos">
             {posStr}{!isStaff && ` · ${player.bats}/${player.throws}`}
-            {slot && <span className="opt__fills"> → {slot}</span>}
+            {slots.length === 1 && <span className="opt__fills"> → {slotLabel(slots[0])}</span>}
           </div>
           {org && <div className="opt__org">{org}</div>}
           {player.funFact && <div className="opt__blurb">{player.funFact}</div>}
@@ -644,6 +647,14 @@ function OptionRow({ player, remaining, onPick, onInfo }: { player: Player; rema
           </div>
         )}
       </button>
+      {slots.length > 1 && (
+        <div className="opt__slots">
+          <span className="opt__slotslbl">DRAFT AT</span>
+          {slots.map(r => (
+            <button key={r} className="opt__slot" onClick={() => onPick(r)}>{slotLabel(r)}</button>
+          ))}
+        </div>
+      )}
       <button className="opt__info" onClick={onInfo} aria-label="Player details">ℹ</button>
     </div>
   );

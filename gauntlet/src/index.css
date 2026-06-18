@@ -274,14 +274,23 @@ strong, b { font-weight: 700; }
 .optlist { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 11px; padding: 2px; }
 .optlist--rolling { opacity: 0.4; pointer-events: none; transition: opacity 0.1s; }
 .opt {
-  position: relative; display: flex; align-items: stretch;
+  position: relative; display: flex; flex-direction: column;
   background: var(--panel); border: 1px solid var(--line); border-left: 3px solid transparent;
 }
 .opt:active { border-left-color: var(--accent); background: var(--panel-2); }
 .opt__pick {
-  flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  width: 100%; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 14px;
   padding: 13px 40px 13px 15px; text-align: left; background: transparent; border: none; color: var(--ink); cursor: pointer;
 }
+/* Position pills — tap to slot the player there (shown when there's a choice). */
+.opt__slots { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 0 40px 12px 15px; }
+.opt__slotslbl { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; color: var(--ink-faint); }
+.opt__slot {
+  font-family: 'Inter', system-ui, sans-serif; font-size: 12px; font-weight: 800; cursor: pointer;
+  color: var(--accent); background: transparent; border: 1.5px solid var(--accent);
+  padding: 3px 9px; letter-spacing: 0.3px;
+}
+.opt__slot:active { background: var(--accent); color: #fff; }
 .opt__idblock { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .opt__name { display: block; min-width: 0; font-weight: 700; font-size: 15px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .opt__pos { font-size: 11px; font-weight: 700; color: var(--cyan); letter-spacing: 0.2px; }

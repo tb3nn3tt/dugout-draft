@@ -49,7 +49,7 @@ export function useGauntlet(ghostPool: GhostTeam[] = []) {
     dispatch({ type: 'START_RUN', teamName, seed: dailySeed(key), mutatorId: dailyMutatorId(key), dailyDate: key });
   }, []);
 
-  const pick = useCallback((player: Player) => dispatch({ type: 'PICK', player }), []);
+  const pick = useCallback((player: Player, role?: string) => dispatch({ type: 'PICK', player, role }), []);
   const rerollRole = useCallback(() => dispatch({ type: 'REROLL_ROLE' }), []);
   const rerollPlayers = useCallback(() => dispatch({ type: 'REROLL_PLAYERS' }), []);
   const autofill = useCallback(() => dispatch({ type: 'AUTOFILL_REST' }), []);

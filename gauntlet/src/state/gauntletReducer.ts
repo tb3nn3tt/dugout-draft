@@ -40,7 +40,7 @@ export interface GauntletState {
 
 export type GauntletAction =
   | { type: 'START_RUN'; teamName: string; seed: number; mutatorId: string; dailyDate?: string | null }
-  | { type: 'PICK'; player: Player }
+  | { type: 'PICK'; player: Player; role?: string }   // role = the position the user chose (else auto)
   | { type: 'REROLL_ROLE' }                      // re-spin to a different open role
   | { type: 'REROLL_PLAYERS' }                   // same role, four new candidates
   | { type: 'AUTOFILL_REST' }
@@ -169,8 +169,12 @@ export function gauntletReducer(state: GauntletState, action: GauntletAction): G
 
     case 'PICK': {
       if (!state.currentRound) return state;
-      // The picked player auto-slots into the best open role they qualify for.
-      const role = assignRole(action.player, state.remaining);
+      // Use the position the user tapped (if it's open + legal), else auto-slot
+      // into the best open role they qualify for.
+      const chosen = action.role as Position | undefined;
+      const role = (chosen && (state.remaining[chosen] ?? 0) > 0 && playerFitsRole(action.player, chosen))
+        ? chosen
+        : assignRole(action.player, state.remaining);
       if (!role) return state; // not eligible for any open slot (shouldn't happen)
       const picks = [...state.picks, action.player];
       const draftLog = [...state.draftLog, { role, player: action.player }];
