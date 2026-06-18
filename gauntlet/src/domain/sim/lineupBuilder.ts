@@ -173,9 +173,14 @@ export function canBenchReplaceStarter(
   return defPositions.size >= Math.min(8, reassigned.length - 1);
 }
 
+// Best → worst. Overall is the reliable quality signal (many cards have no
+// stats.era), with ERA as a tiebreaker. So your ace actually starts Game 1.
+const armQuality = (a: Player, b: Player) =>
+  (b.overall - a.overall) || ((a.stats.era ?? 99) - (b.stats.era ?? 99));
+
 export function generateOptimalRotation(roster: Player[]): Player[] {
   const starters = roster.filter(p => p.positions.includes('SP'));
-  return [...starters].sort((a, b) => (a.stats.era ?? 99) - (b.stats.era ?? 99)).slice(0, 4);
+  return [...starters].sort(armQuality).slice(0, 4);
 }
 
 export interface BullpenConfig {
@@ -189,7 +194,7 @@ export function generateOptimalBullpen(roster: Player[]): BullpenConfig {
   const allRelievers = roster.filter(p =>
     p.positions.some(pos => ['CL', 'SU', 'MRP', 'LRP', 'LOOGY'].includes(pos))
   );
-  const sorted = [...allRelievers].sort((a, b) => (a.stats.era ?? 99) - (b.stats.era ?? 99));
+  const sorted = [...allRelievers].sort(armQuality);   // best → worst (closer first)
   const closers = sorted.filter(p => p.positions.includes('CL'));
   const closer = closers[0] || sorted[0] || null;
   const remaining = sorted.filter(p => p.id !== closer?.id);

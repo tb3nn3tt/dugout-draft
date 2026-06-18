@@ -4,7 +4,8 @@ import { TOTAL_PICKS, DraftRound, playerFitsRole, assignRole } from '../domain/d
 import { hydrateIds, getCard } from '../domain/players';
 import { overallToGrade, abbrevName, gradeToLetter, getGradeColor } from '../domain/sim/helpers';
 import { getRatings } from '../domain/ratings';
-import { Player, Position } from '../domain/types';
+import { generateOptimalLineup, generateOptimalRotation, generateOptimalBullpen } from '../domain/sim/lineupBuilder';
+import { Player, Position, GauntletTeam } from '../domain/types';
 import { DraftEntry } from '../state/gauntletReducer';
 import { loadHof, rankHof, entryRates, HofEntry } from '../domain/hallOfFame';
 import { runAwards, fmtAvg } from '../domain/seriesAwards';
@@ -726,27 +727,22 @@ const SHEET_SECTIONS: { title: string; slots: { role: Position; label: string }[
   { title: 'STAFF', slots: [{ role: 'HC', label: 'MGR' }, { role: 'ST', label: 'PARK' }] },
 ];
 /** Clean, screenshot-friendly roster list — easy to read + share on socials. */
-function TeamSheet({ draftLog, teamName, record }: { draftLog: DraftEntry[]; teamName: string; record: string }) {
-  const cursor = new Map<string, number>();
-  const Section = ({ s }: { s: typeof SHEET_SECTIONS[number] }) => (
-    <div className="tsheet__sec">
-      <div className="tsheet__sectitle">{s.title}</div>
-      {s.slots.map((slot, i) => {
-        const idx = cursor.get(slot.role) ?? 0;
-        cursor.set(slot.role, idx + 1);
-        const p = draftLog.filter(e => e.role === slot.role)[idx]?.player;
-        const env = p && slot.role === 'ST' ? parkEnv(p) : null;
-        const color = env ? env.color : (p ? ovrColor(p.overall) : 'var(--ink-faint)');
-        return (
-          <div key={i} className="tsheet__row">
-            <span className="tsheet__pos">{slot.label}</span>
-            <span className="tsheet__nm">{p ? fullName(p.name) : '—'}</span>
-            <span className={`tsheet__gr${env ? ' redit__gr--env' : ''}`} style={{ color }}>{env ? env.text : (p ? overallToGrade(p.overall) : '')}</span>
-          </div>
-        );
-      })}
+function TsRow({ lab, name, grade, color, env }: { lab: string; name: string; grade: string; color: string; env?: boolean }) {
+  return (
+    <div className="tsheet__row">
+      <span className="tsheet__pos">{lab}</span>
+      <span className="tsheet__nm">{name}</span>
+      <span className={`tsheet__gr${env ? ' redit__gr--env' : ''}`} style={{ color }}>{grade}</span>
     </div>
   );
+}
+/** Run-over roster card — shows the ACTUAL batting order / rotation / bullpen the sim used. */
+function TeamSheet({ team, teamName, record }: { team: GauntletTeam | null; teamName: string; record: string }) {
+  const order = team ? generateOptimalLineup(team.roster, team.lineup) : [];
+  const rotation = team ? generateOptimalRotation(team.roster) : [];
+  const bp = team ? generateOptimalBullpen(team.roster) : null;
+  const pen = bp ? [bp.closer, ...bp.setup, ...bp.middleRelief, ...bp.longRelief].filter((p): p is Player => !!p) : [];
+  const grade = (p: Player) => ({ g: overallToGrade(p.overall), c: ovrColor(p.overall) });
   return (
     <div className="tsheet">
       <div className="tsheet__hd">
@@ -754,9 +750,29 @@ function TeamSheet({ draftLog, teamName, record }: { draftLog: DraftEntry[]; tea
         <span className="tsheet__rec">{record}</span>
       </div>
       <div className="tsheet__cols">
-        <div className="tsheet__col"><Section s={SHEET_SECTIONS[0]} /></div>
         <div className="tsheet__col">
-          {SHEET_SECTIONS.slice(1).map(s => <Section key={s.title} s={s} />)}
+          <div className="tsheet__sec">
+            <div className="tsheet__sectitle">BATTING ORDER</div>
+            {order.map((e, i) => {
+              const { g, c } = grade(e.player);
+              return <TsRow key={i} lab={`${i + 1}`} name={`${fullName(e.player.name)} · ${e.assignedPosition}`} grade={g} color={c} />;
+            })}
+          </div>
+        </div>
+        <div className="tsheet__col">
+          <div className="tsheet__sec">
+            <div className="tsheet__sectitle">ROTATION</div>
+            {rotation.map((p, i) => { const { g, c } = grade(p); return <TsRow key={i} lab={`SP${i + 1}`} name={fullName(p.name)} grade={g} color={c} />; })}
+          </div>
+          <div className="tsheet__sec">
+            <div className="tsheet__sectitle">BULLPEN</div>
+            {pen.slice(0, 3).map((p, i) => { const { g, c } = grade(p); return <TsRow key={i} lab={i === 0 ? 'CL' : 'SU'} name={fullName(p.name)} grade={g} color={c} />; })}
+          </div>
+          <div className="tsheet__sec">
+            <div className="tsheet__sectitle">STAFF</div>
+            {team?.manager && (() => { const { g, c } = grade(team.manager); return <TsRow lab="MGR" name={fullName(team.manager.name)} grade={g} color={c} />; })()}
+            {team?.stadium && (() => { const env = parkEnv(team.stadium); return <TsRow lab="PARK" name={fullName(team.stadium.name)} grade={env.text} color={env.color} env />; })()}
+          </div>
         </div>
       </div>
       <div className="tsheet__tag">★ OFFICIAL ROSTER · DUGOUT GAUNTLET ★</div>
@@ -885,24 +901,21 @@ export function RunOverScreen({ g }: { g: G }) {
   const [ticking, setTicking] = useState(false);
   const myIdRef = useRef<string | null>(null);
 
-  // Build the share-image sections from the drafted roster (same grouping as the team sheet).
+  // Build the share-image sections from the ACTUAL sim lineup (same as the team sheet).
   const shareImage = async () => {
-    if (imgState === 'working') return;
+    if (imgState === 'working' || !team) { if (!team) return; }
     setImgState('working');
-    const cursor = new Map<string, number>();
-    const sections: ShareSection[] = SHEET_SECTIONS.map(sec => ({
-      title: sec.title,
-      rows: sec.slots.map(slot => {
-        const k = cursor.get(slot.role) ?? 0; cursor.set(slot.role, k + 1);
-        const p = g.state.draftLog.filter(e => e.role === slot.role)[k]?.player;
-        return {
-          pos: slot.label,
-          name: p ? fullName(p.name) : '—',
-          grade: p ? overallToGrade(p.overall) : '',
-          color: p ? ovrColor(p.overall) : '#a8a08d',
-        };
-      }),
-    }));
+    const row = (p: Player, pos: string) => ({ pos, name: fullName(p.name), grade: overallToGrade(p.overall), color: ovrColor(p.overall) });
+    const order = generateOptimalLineup(team.roster, team.lineup);
+    const rotation = generateOptimalRotation(team.roster);
+    const bpc = generateOptimalBullpen(team.roster);
+    const pen = [bpc.closer, ...bpc.setup, ...bpc.middleRelief, ...bpc.longRelief].filter((p): p is Player => !!p);
+    const sections: ShareSection[] = [
+      { title: 'LINEUP', rows: order.map((e, i) => ({ ...row(e.player, e.assignedPosition), pos: `${i + 1} ${e.assignedPosition}` })) },
+      { title: 'ROTATION', rows: rotation.map((p, i) => row(p, `SP${i + 1}`)) },
+      { title: 'BULLPEN', rows: pen.slice(0, 3).map((p, i) => row(p, i === 0 ? 'CL' : 'SU')) },
+      { title: 'STAFF', rows: [team.manager && row(team.manager, 'MGR'), team.stadium && { pos: 'PARK', name: fullName(team.stadium.name), grade: parkEnv(team.stadium).text, color: parkEnv(team.stadium).color }].filter(Boolean) as ShareSection['rows'] },
+    ];
     const sub = `${verdict.title} · ${runDiff >= 0 ? '+' : ''}${runDiff} run diff${hof ? ` · #${hof.rank} all-time` : ''}${g.state.dailyDate ? " · Today's Challenge" : ''}`;
     try {
       const res = await shareTeamImage(team?.name ?? 'My Squad', `${streak}-0`, sub, sections);
@@ -974,7 +987,7 @@ export function RunOverScreen({ g }: { g: G }) {
         </div>
       )}
 
-      <TeamSheet draftLog={g.state.draftLog} teamName={team?.name ?? 'My Squad'} record={`${streak}-0`} />
+      <TeamSheet team={team} teamName={team?.name ?? 'My Squad'} record={`${streak}-0`} />
 
       <div className="card stack" style={{ width: '100%', gap: 8 }}>
         <Row label="Series won" value={`${streak}`} />
